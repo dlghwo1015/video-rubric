@@ -671,12 +671,10 @@ body {
     slides.forEach(s => s.style.display = 'none');
     const slide = slides[n];
     slide.style.display = 'flex';
-    // 약간의 딜레이 후 .go 추가 (reflow 보장)
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        slide.querySelectorAll(GO_SELECTORS).forEach(el => el.classList.add('go'));
-      });
-    });
+    // 300ms 딜레이 후 .go 추가 (폰트 로드 + reflow 보장 — iframe 환경 대응)
+    setTimeout(() => {
+      slide.querySelectorAll(GO_SELECTORS).forEach(el => el.classList.add('go'));
+    }, 300);
   }
 
   // 초기 표시

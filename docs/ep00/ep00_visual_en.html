@@ -523,9 +523,9 @@ body {
     slides.forEach(s => s.style.display = "none");
     const slide = slides[n];
     slide.style.display = "flex";
-    requestAnimationFrame(() => requestAnimationFrame(() => {
+    setTimeout(() => {
       slide.querySelectorAll(GO_SELECTORS).forEach(el => el.classList.add("go"));
-    }));
+    }, 300);
   }
   showSlide(0);
   document.body.addEventListener("click", () => { if (cur < slides.length - 1) { cur++; showSlide(cur); } });
