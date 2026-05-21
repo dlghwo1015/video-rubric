@@ -527,6 +527,17 @@ body {
       slide.querySelectorAll(GO_SELECTORS).forEach(el => el.classList.add("go"));
     }, 300);
   }
+  function applyScale() {
+    var s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    if (s < 0.99) {
+      document.body.style.transform = "scale(" + s + ")";
+      document.body.style.transformOrigin = "top left";
+      document.documentElement.style.height = Math.round(1080 * s) + "px";
+      document.documentElement.style.overflow = "hidden";
+    }
+  }
+  applyScale();
+  window.addEventListener("resize", applyScale);
   showSlide(0);
   document.body.addEventListener("click", () => { if (cur < slides.length - 1) { cur++; showSlide(cur); } });
   document.addEventListener("keydown", e => {

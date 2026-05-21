@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <script>
+    // iframe 크기에 자동 맞춤
+    document.addEventListener('DOMContentLoaded', () => {
+      function applyScale() {
+        var s = window.innerWidth / 1080;
+        document.body.style.transform = 'scale(' + s + ')';
+        document.body.style.transformOrigin = 'top left';
+        document.documentElement.style.height = Math.round(1920 * s) + 'px';
+        document.documentElement.style.overflow = 'hidden';
+      }
+      applyScale();
+      window.addEventListener('resize', applyScale);
+    });
+  </script>
+  <title>Shorts — [유튜브 수익 루브릭 EP00] 유튜브 핵심 용어 6가지 완전 정리</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+      background: #1a1410;
+    }
+
+    /* ── 슬라이드 컨테이너 ── */
+    .slide {
+      width: 1080px;
+      height: 1920px;
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 120px 96px;
+      position: relative;
+    }
+    .slide.active { display: flex; }
+
+    /* ── 공통 애니메이션 ── */
+    .go-delay-0, .go-delay-1, .go-delay-2, .go-delay-3 {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.7s cubic-bezier(0.22,1,0.36,1);
+    }
+    .go-delay-0.visible { opacity: 1; transform: none; transition-delay: 0s; }
+    .go-delay-1.visible { opacity: 1; transform: none; transition-delay: 0.2s; }
+    .go-delay-2.visible { opacity: 1; transform: none; transition-delay: 0.4s; }
+    .go-delay-3.visible { opacity: 1; transform: none; transition-delay: 0.6s; }
+
+    /* ── Hook 씬 (다크 #1a1410) ── */
+    .hook-content { width: 100%; }
+    .hook-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 26px;
+      font-weight: 400;
+      color: #2d6a4f;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 48px;
+    }
+    .hook-head {
+      font-size: 88px;
+      font-weight: 900;
+      color: #f4f0e8;
+      line-height: 1.1;
+      margin-bottom: 60px;
+      letter-spacing: -3px;
+    }
+    .hook-body {
+      font-size: 38px;
+      font-weight: 400;
+      color: rgba(244,240,232,0.65);
+      line-height: 1.75;
+    }
+
+    /* ── Point 씬 (크림 #f4f0e8) ── */
+    .point-content { width: 100%; }
+    .point-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #2d6a4f;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 52px;
+    }
+    .point-text {
+      font-size: 52px;
+      font-weight: 700;
+      color: #3a3530;
+      line-height: 1.55;
+      margin-bottom: 64px;
+    }
+    .point-duration {
+      font-family: 'Inter', sans-serif;
+      font-size: 24px;
+      color: #a09880;
+    }
+
+    /* ── Insight 씬 (크림 #f4f0e8) ── */
+    .insight-content { width: 100%; }
+    .insight-tag {
+      display: inline-block;
+      background: #2d6a4f;
+      color: #f4f0e8;
+      font-family: 'Inter', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      border-radius: 8px;
+      margin-bottom: 60px;
+    }
+    .insight-text {
+      font-size: 52px;
+      font-weight: 700;
+      color: #3a3530;
+      line-height: 1.55;
+    }
+
+    /* ── CTA 씬 (다크 #1a1410) ── */
+    .cta-content { width: 100%; }
+    .cta-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 26px;
+      font-weight: 400;
+      color: #2d6a4f;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 48px;
+    }
+    .cta-text {
+      font-size: 44px;
+      font-weight: 400;
+      color: rgba(244,240,232,0.75);
+      line-height: 1.7;
+      margin-bottom: 80px;
+    }
+    .cta-channel {
+      font-family: 'Inter', 'Noto Sans KR', sans-serif;
+      font-size: 56px;
+      font-weight: 900;
+      color: #f4f0e8;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+    .cta-sub {
+      font-size: 32px;
+      color: #52d4a0;
+    }
+
+    /* ── 하단 진행 바 ── */
+    .progress-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      height: 6px;
+      background: #2d6a4f;
+      transition: width 0.3s;
+    }
+  </style>
+</head>
+<body>
+
+    <div class="slide" id="slide-1" style="background:#1a1410;">
+      <div class="hook-content">
+        <div class="hook-eyebrow go-delay-0">알고 가세요</div>
+        <div class="hook-head go-delay-1">유튜버들이 CPM 높다고 좋아하는데요, 사실 CPM은...</div>
+        <div class="hook-body go-delay-2">유튜버들이 CPM 높다고 좋아하는데요, 사실 CPM은 내 돈이 아니에요. 진짜 내 통장에 들어오는 건 따로 있거든요.</div>
+      </div>
+    </div>
+
+    <div class="slide" id="slide-2" style="background:#f4f0e8;">
+      <div class="point-content">
+        <div class="point-label go-delay-0">핵심 포인트</div>
+        <div class="point-text go-delay-1">CPM은 광고주가 유튜브에 내는 돈이에요. 삼성이나 보험사가 광고 천 번 노출에 얼마를 낼지 정한 금액이죠. 금융 광고 CPM이 높은 이유는 보험 한 명 가입하면 수십만 원이 되니까요.</div>
+        <div class="point-duration go-delay-2">⏱ 20초</div>
+      </div>
+    </div>
+
+    <div class="slide" id="slide-3" style="background:#f4f0e8;">
+      <div class="insight-content">
+        <div class="insight-tag go-delay-0">실전 포인트</div>
+        <div class="insight-text go-delay-1">RPM이 진짜 내 수익이에요. 유튜브가 45%를 가져가고, 광고 건너뛴 시청자도 있으니까요. CPM이 45달러여도 RPM은 12~15달러밖에 안 돼요. 그러니까 CPM 말고 RPM을 보세요.</div>
+      </div>
+    </div>
+
+    <div class="slide" id="slide-4" style="background:#1a1410;">
+      <div class="cta-content">
+        <div class="cta-eyebrow go-delay-0">더 알고 싶다면</div>
+        <div class="cta-text go-delay-1">CPM, RPM, 블루오션, 포화도까지 6가지 용어 전부 정리했어요. 더 자세한 내용은 링크 블로그에서 확인하세요.</div>
+        <div class="cta-channel go-delay-2">솔직한 실험실</div>
+        <div class="cta-sub go-delay-3">구독 + 블로그 링크 ↓</div>
+      </div>
+    </div>
+
+  <div class="progress-bar" id="progress"></div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const progress = document.getElementById('progress');
+    let current = 0;
+
+    function showSlide(n) {
+      slides.forEach(s => s.classList.remove('active'));
+      slides[n].classList.add('active');
+      progress.style.width = ((n+1)/slides.length*100) + '%';
+      setTimeout(() => {
+        slides[n].querySelectorAll('[class*="go-delay"]').forEach(el => el.classList.add('visible'));
+      }, 100);
+    }
+
+    showSlide(0);
+
+    document.body.addEventListener('click', () => {
+      if (current < slides.length - 1) { current++; showSlide(current); }
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        if (current < slides.length - 1) { current++; showSlide(current); }
+      }
+      if (e.key === 'ArrowLeft') {
+        if (current > 0) { current--; showSlide(current); }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -677,6 +677,19 @@ body {
     }, 300);
   }
 
+  // iframe/브라우저 크기에 맞게 자동 스케일
+  function applyScale() {
+    var s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    if (s < 0.99) {
+      document.body.style.transform = 'scale(' + s + ')';
+      document.body.style.transformOrigin = 'top left';
+      document.documentElement.style.height = Math.round(1080 * s) + 'px';
+      document.documentElement.style.overflow = 'hidden';
+    }
+  }
+  applyScale();
+  window.addEventListener('resize', applyScale);
+
   // 초기 표시
   showSlide(0);
 
