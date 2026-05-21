@@ -645,5 +645,58 @@ body {
   </div>
 </div>
 
+
+<script>
+/* ── 블로그 iframe 인터랙티브 모드 ──
+   클릭 / 화살표키로 슬라이드 전환
+   각 슬라이드 진입 시 모든 .go 대상 요소에 클래스 추가 */
+(function () {
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  let cur = 0;
+
+  // 슬라이드 내 애니메이션 트리거 대상: .go 스타일을 가진 모든 클래스
+  const GO_SELECTORS = [
+    '.hook-word', '.hook-sub', '.hook-badge',
+    '.term-tag', '.typing-title', '.term-def',
+    '.cpm-compare', '.chart-head', '.bar-wrap',
+    '.rpm-hd', '.rpm-crd', '.rpm-arrow', '.rpm-note',
+    '.fl-tag', '.fl-title', '.fl-desc', '.fc',
+    '.ocean-hd', '.oc', '.ocean-note',
+    '.sat-tag', '.sat-title', '.sat-body',
+    '.draw-line', '.dot-ap',
+    '.outro-hd', '.sum-card', '.outro-cta'
+  ].join(',');
+
+  function showSlide(n) {
+    slides.forEach(s => s.style.display = 'none');
+    const slide = slides[n];
+    slide.style.display = 'flex';
+    // 약간의 딜레이 후 .go 추가 (reflow 보장)
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        slide.querySelectorAll(GO_SELECTORS).forEach(el => el.classList.add('go'));
+      });
+    });
+  }
+
+  // 초기 표시
+  showSlide(0);
+
+  // 클릭으로 다음 슬라이드
+  document.body.addEventListener('click', () => {
+    if (cur < slides.length - 1) { cur++; showSlide(cur); }
+  });
+
+  // 키보드
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') {
+      if (cur < slides.length - 1) { cur++; showSlide(cur); }
+    }
+    if (e.key === 'ArrowLeft') {
+      if (cur > 0) { cur--; showSlide(cur); }
+    }
+  });
+})();
+</script>
 </body>
 </html>

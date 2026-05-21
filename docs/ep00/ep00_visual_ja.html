@@ -505,5 +505,37 @@ body {
   </div>
 </div>
 
+
+<script>
+(function () {
+  const slides = Array.from(document.querySelectorAll(".slide"));
+  let cur = 0;
+  const GO_SELECTORS = [
+    ".hook-word", ".hook-sub", ".hook-badge",
+    ".term-tag", ".typing-title", ".term-def",
+    ".cpm-compare", ".chart-head", ".bar-wrap",
+    ".rpm-hd", ".rpm-crd", ".rpm-arrow", ".rpm-note",
+    ".fl-tag", ".fl-title", ".fl-desc", ".fc",
+    ".ocean-hd", ".oc", ".ocean-note",
+    ".sat-tag", ".sat-title", ".sat-body",
+    ".draw-line", ".dot-ap",
+    ".outro-hd", ".sum-card", ".outro-cta"
+  ].join(",");
+  function showSlide(n) {
+    slides.forEach(s => s.style.display = "none");
+    const slide = slides[n];
+    slide.style.display = "flex";
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      slide.querySelectorAll(GO_SELECTORS).forEach(el => el.classList.add("go"));
+    }));
+  }
+  showSlide(0);
+  document.body.addEventListener("click", () => { if (cur < slides.length - 1) { cur++; showSlide(cur); } });
+  document.addEventListener("keydown", e => {
+    if (e.key === "ArrowRight" || e.key === " ") { if (cur < slides.length - 1) { cur++; showSlide(cur); } }
+    if (e.key === "ArrowLeft") { if (cur > 0) { cur--; showSlide(cur); } }
+  });
+})();
+</script>
 </body>
 </html>
