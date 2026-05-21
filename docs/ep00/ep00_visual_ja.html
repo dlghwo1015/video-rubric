@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>知ろうよ EP00 — YouTube重要用語6選</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Inter:wght@400;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1920px; height: 1080px;
+  background: #f4f0e8;
+  font-family: 'Noto Sans JP', 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute; inset: 0;
+  display: none;
+  align-items: center; justify-content: center;
+  background: #f4f0e8;
+}
+
+.slide-label {
+  position: absolute; top: 52px; left: 80px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 22px; color: #a09880; letter-spacing: 2px;
+}
+.slide-num {
+  position: absolute; top: 52px; right: 80px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 22px; color: #a09880;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn  { to { opacity: 1; } }
+@keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
+@keyframes slideInLeft  { to { opacity: 1; transform: translateX(0); } }
+@keyframes slideInRight { to { opacity: 1; transform: translateX(0); } }
+@keyframes blink   { 50% { border-color: transparent; } }
+@keyframes drawLine { to { stroke-dashoffset: 0; } }
+@keyframes typing  { to { width: var(--tw, 600px); } }
+
+/* ══ SLIDE 1 — Hook ══ */
+#slide-1 .hook-center {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 20px; text-align: center;
+}
+.hook-word {
+  font-size: 96px; font-weight: 900;
+  color: #3a3530; letter-spacing: -2px;
+  opacity: 0; transform: translateY(40px);
+}
+.hook-word.go { animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) forwards; }
+.hook-word .accent { color: #2d6a4f; }
+.hook-word.small   { font-size: 48px; font-weight: 400; color: #7a7060; letter-spacing: 0; }
+.hook-sep          { color: #c8c0b0; margin: 0 16px; }
+
+#slide-1 .hook-sub {
+  position: absolute; bottom: 130px; left: 0; right: 0;
+  text-align: center; font-size: 34px; color: #7a7060; opacity: 0;
+}
+#slide-1 .hook-sub.go { animation: fadeIn 0.6s ease forwards; }
+#slide-1 .hook-badge {
+  position: absolute; bottom: 72px; left: 0; right: 0;
+  text-align: center; font-size: 28px; font-weight: 700; color: #2d6a4f; opacity: 0;
+}
+#slide-1 .hook-badge.go { animation: fadeIn 0.6s ease forwards; }
+
+/* ══ SLIDE 2 — CPM ══ */
+#slide-2 .cpm-wrap { display: flex; gap: 120px; align-items: center; width: 1680px; }
+#slide-2 .cpm-left  { flex: 0 0 620px; }
+#slide-2 .cpm-right { flex: 1; }
+
+.term-tag { font-family:'Roboto Mono',monospace; font-size:20px; color:#a09880; letter-spacing:3px; opacity:0; }
+.term-tag.go { animation: fadeIn 0.4s ease forwards; }
+
+.typing-title {
+  font-size: 96px; font-weight: 900; color: #1a4d2e; letter-spacing: -3px;
+  border-right: 5px solid #2d6a4f;
+  white-space: nowrap; overflow: hidden; width: 0; min-height: 116px; margin-top: 8px;
+}
+.typing-title.go {
+  animation: typing 0.9s steps(10,end) 0.2s forwards, blink 0.7s step-end infinite;
+}
+
+.term-def { margin-top: 28px; font-size: 27px; color: #5a5248; line-height: 1.8; opacity: 0; }
+.term-def.go { animation: fadeIn 0.6s ease forwards; }
+
+.cpm-compare { margin-top: 32px; display: flex; align-items: center; gap: 20px; opacity: 0; }
+.cpm-compare.go { animation: fadeIn 0.5s ease forwards; }
+.cmp-box { background: white; border-radius: 14px; padding: 16px 28px; font-size: 28px; font-weight: 700; box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+.cmp-box.red   { color: #b83030; border: 2px solid #e8aaaa; }
+.cmp-box.green { color: #1a4d2e; border: 2px solid #a0d4b8; }
+.cmp-sep { font-size: 30px; color: #c8c0b0; }
+
+.chart-head { font-size: 26px; font-weight: 700; color: #3a3530; margin-bottom: 36px; opacity: 0; }
+.chart-head.go { animation: fadeIn 0.4s ease forwards; }
+
+.bar-chart { display: flex; align-items: flex-end; gap: 40px; height: 380px; }
+.bar-col   { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.bar-wrap  { width: 96px; height: 320px; background: #ece8de; border-radius: 8px 8px 0 0; display: flex; align-items: flex-end; overflow: hidden; }
+.bar-fill  { width: 100%; height: 0%; border-radius: 8px 8px 0 0; transition: height 1.5s cubic-bezier(0.22,1,0.36,1); }
+.bar-wrap.go .bar-fill { height: var(--h); }
+.bar-val { font-size: 28px; font-weight: 900; }
+.bar-lbl { font-size: 21px; color: #7a7060; font-weight: 600; }
+
+/* ══ SLIDE 3 — RPM ══ */
+#slide-3 .rpm-wrap { display: flex; flex-direction: column; align-items: center; gap: 60px; width: 1400px; }
+.rpm-hd { display: flex; flex-direction: column; align-items: center; gap: 10px; opacity: 0; }
+.rpm-hd.go { animation: fadeIn 0.5s ease forwards; }
+.rpm-hd .rh-tag  { font-family:'Roboto Mono',monospace; font-size:20px; color:#a09880; letter-spacing:3px; }
+.rpm-hd .rh-name { font-size: 88px; font-weight: 900; color: #1a4d2e; letter-spacing: -3px; }
+
+.rpm-cards { display: flex; gap: 56px; align-items: center; }
+.rpm-crd { background: white; border-radius: 28px; padding: 48px 60px; text-align: center; box-shadow: 0 8px 40px rgba(0,0,0,0.08); opacity: 0; transform: translateY(50px); min-width: 420px; }
+.rpm-crd.go { animation: slideUp 0.7s cubic-bezier(0.22,1,0.36,1) forwards; }
+.rpm-crd .rc-tag  { font-family:'Roboto Mono',monospace; font-size:18px; color:#a09880; margin-bottom:8px; }
+.rpm-crd .rc-name { font-size: 52px; font-weight: 900; color: #3a3530; margin-bottom: 14px; }
+.rpm-crd .rc-num  { font-size: 76px; font-weight: 900; line-height: 1; }
+.rpm-crd .rc-sub  { font-size: 22px; color: #7a7060; margin-top: 12px; }
+.rpm-crd.left  { border-top: 6px solid #b83030; }
+.rpm-crd.left  .rc-num { color: #b83030; }
+.rpm-crd.right { border-top: 6px solid #2d6a4f; }
+.rpm-crd.right .rc-num { color: #2d6a4f; }
+
+.rpm-arrow { font-size: 56px; color: #c8c0b0; opacity: 0; }
+.rpm-arrow.go { animation: fadeIn 0.3s ease forwards; }
+.rpm-note { font-size: 27px; color: #5a5248; text-align: center; opacity: 0; line-height: 1.7; }
+.rpm-note.go { animation: fadeIn 0.5s ease forwards; }
+.rpm-note strong { color: #2d6a4f; }
+
+/* ══ SLIDE 4 — Faceless ══ */
+#slide-4 .fl-wrap { display: flex; gap: 80px; align-items: center; width: 1680px; }
+#slide-4 .fl-left  { flex: 0 0 460px; }
+#slide-4 .fl-right { flex: 1; display: flex; flex-wrap: wrap; gap: 28px; }
+
+.fl-tag   { font-family:'Roboto Mono',monospace; font-size:20px; color:#a09880; letter-spacing:3px; opacity:0; }
+.fl-tag.go { animation: fadeIn 0.4s ease forwards; }
+.fl-title { font-size: 88px; font-weight: 900; color: #1a4d2e; margin: 14px 0; opacity: 0; transform: translateY(30px); }
+.fl-title.go { animation: slideUp 0.6s cubic-bezier(0.22,1,0.36,1) forwards; }
+.fl-desc { font-size: 27px; color: #5a5248; line-height: 1.8; opacity: 0; }
+.fl-desc.go { animation: fadeIn 0.5s ease forwards; }
+
+.fc { background: white; border-radius: 20px; padding: 32px 32px; flex: 0 0 calc(50% - 14px); box-shadow: 0 6px 28px rgba(0,0,0,0.07); opacity: 0; transform: translateY(50px); }
+.fc.go { animation: slideUp 0.6s cubic-bezier(0.22,1,0.36,1) forwards; }
+.fc .fc-icon { font-size: 42px; margin-bottom: 10px; }
+.fc .fc-name { font-size: 27px; font-weight: 900; color: #3a3530; margin-bottom: 6px; }
+.fc .fc-desc { font-size: 21px; color: #7a7060; line-height: 1.5; }
+.fc .fc-ex   { font-size: 19px; color: #a09880; margin-top: 8px; }
+
+/* ══ SLIDE 5 — Ocean ══ */
+#slide-5 .ocean-wrap { display: flex; flex-direction: column; align-items: center; gap: 44px; width: 1680px; }
+.ocean-hd { text-align: center; opacity: 0; }
+.ocean-hd.go { animation: fadeIn 0.5s ease forwards; }
+.ocean-hd .oht { font-family:'Roboto Mono',monospace; font-size:20px; color:#a09880; letter-spacing:3px; margin-bottom:8px; }
+.ocean-hd .ohm { font-size: 58px; font-weight: 900; color: #3a3530; }
+
+.ocean-cards { display: flex; gap: 52px; width: 100%; }
+.oc { flex: 1; border-radius: 28px; padding: 44px 48px; box-shadow: 0 8px 40px rgba(0,0,0,0.09); opacity: 0; }
+.oc.red  { background: #fff5f5; border: 2px solid #f0c0c0; transform: translateX(-60px); }
+.oc.blue { background: #f0faf4; border: 2px solid #9fd4b8; transform: translateX(60px); }
+.oc.red.go  { animation: slideInLeft  0.7s cubic-bezier(0.22,1,0.36,1) forwards; }
+.oc.blue.go { animation: slideInRight 0.7s cubic-bezier(0.22,1,0.36,1) forwards; }
+
+.oc-badge { display:inline-block; font-size:18px; font-weight:700; letter-spacing:1px; padding:5px 18px; border-radius:100px; margin-bottom:12px; }
+.oc.red  .oc-badge { background:#f0c0c0; color:#b83030; }
+.oc.blue .oc-badge { background:#9fd4b8; color:#1a4d2e; }
+.oc-icon { font-size: 56px; display: block; margin: 10px 0; }
+.oc-name { font-size: 50px; font-weight: 900; margin-bottom: 12px; }
+.oc.red  .oc-name { color: #b83030; }
+.oc.blue .oc-name { color: #1a4d2e; }
+.oc-def  { font-size: 25px; color: #5a5248; line-height: 1.65; margin-bottom: 18px; }
+.oc-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+.oc-tag  { font-size: 19px; padding: 5px 16px; border-radius: 100px; font-weight: 600; }
+.oc.red  .oc-tag { background: #fcdcdc; color: #b83030; }
+.oc.blue .oc-tag { background: #c4ead4; color: #1a4d2e; }
+
+.ocean-note { font-size: 28px; color: #5a5248; text-align: center; opacity: 0; line-height: 1.6; }
+.ocean-note.go { animation: fadeIn 0.5s ease forwards; }
+.ocean-note strong { color: #2d6a4f; }
+
+/* ══ SLIDE 6 — Saturation ══ */
+#slide-6 .sat-wrap { display: flex; gap: 100px; align-items: center; width: 1680px; }
+#slide-6 .sat-left  { flex: 0 0 360px; }
+#slide-6 .sat-right { flex: 1; }
+
+.sat-tag   { font-family:'Roboto Mono',monospace; font-size:20px; color:#a09880; letter-spacing:3px; opacity:0; }
+.sat-tag.go { animation: fadeIn 0.4s ease forwards; }
+.sat-title { font-size: 80px; font-weight: 900; color: #1a4d2e; margin: 14px 0; opacity: 0; transform: translateY(30px); }
+.sat-title.go { animation: slideUp 0.6s cubic-bezier(0.22,1,0.36,1) forwards; }
+.sat-body  { font-size: 26px; color: #5a5248; line-height: 1.8; opacity: 0; }
+.sat-body.go  { animation: fadeIn 0.5s ease forwards; }
+.sat-body strong { color: #2d6a4f; }
+
+.draw-line { fill: none; stroke-width: 5; stroke-linecap: round; stroke-dasharray: 900; stroke-dashoffset: 900; }
+.draw-line.go  { animation: drawLine 2.0s ease forwards; }
+.draw-line.l1  { stroke: #d4830a; animation-delay: 0.3s; }
+.draw-line.l2  { stroke: #1e7a50; animation-delay: 0.5s; }
+.draw-line.l3  { stroke: #b83030; animation-delay: 0.7s; }
+.dot-ap      { opacity: 0; }
+.dot-ap.go   { animation: fadeIn 0.3s ease forwards; }
+
+/* ══ SLIDE 7 — Outro ══ */
+#slide-7 .outro-wrap { display: flex; flex-direction: column; align-items: center; gap: 40px; width: 1700px; }
+.outro-hd { text-align: center; opacity: 0; }
+.outro-hd.go { animation: fadeIn 0.5s ease forwards; }
+.outro-hd .oh-sub   { font-family:'Roboto Mono',monospace; font-size:20px; color:#a09880; letter-spacing:3px; margin-bottom:8px; }
+.outro-hd .oh-title { font-size: 52px; font-weight: 900; color: #3a3530; }
+
+.sum-cards { display: flex; gap: 28px; }
+.sum-card  { background: white; border-radius: 20px; padding: 32px 26px; width: 252px; box-shadow: 0 6px 28px rgba(0,0,0,0.07); text-align: center; border-top: 5px solid var(--c); opacity: 0; transform: translateY(60px); }
+.sum-card.go { animation: slideUp 0.6s cubic-bezier(0.22,1,0.36,1) forwards; }
+.sum-card .sc-icon { font-size: 38px; margin-bottom: 10px; }
+.sum-card .sc-en   { font-size: 28px; font-weight: 900; color: #3a3530; margin-bottom: 5px; }
+.sum-card .sc-kr   { font-size: 17px; color: #7a7060; margin-bottom: 10px; }
+.sum-card .sc-def  { font-size: 16px; color: #a09880; line-height: 1.6; }
+
+.outro-cta { font-size: 30px; color: #5a5248; text-align: center; opacity: 0; }
+.outro-cta.go { animation: fadeIn 0.6s ease forwards; }
+.outro-cta strong { color: #2d6a4f; }
+</style>
+</head>
+<body>
+
+<!-- ══ SLIDE 1 : Hook ══ -->
+<div class="slide" id="slide-1">
+  <div class="slide-label">知ろうよ · EP00</div>
+  <div class="slide-num">01 / 07</div>
+  <div class="hook-center">
+    <div class="hook-word" id="w1">
+      <span class="accent">CPM</span><span class="hook-sep">·</span><span class="accent">RPM</span><span class="hook-sep">·</span>Faceless
+    </div>
+    <div class="hook-word" id="w2">
+      ブルーオーシャン<span class="hook-sep">·</span>レッドオーシャン<span class="hook-sep">·</span><span class="accent">飽和度</span>
+    </div>
+    <div class="hook-word small" id="w3">この6つ、知らないとデータが読めません。</div>
+  </div>
+  <div class="hook-sub"   id="s1-sub">YouTube収益用語 完全まとめ</div>
+  <div class="hook-badge" id="s1-hl">▶ 3分で全部わかります</div>
+</div>
+
+<!-- ══ SLIDE 2 : CPM ══ -->
+<div class="slide" id="slide-2">
+  <div class="slide-label">知ろうよ · EP00</div>
+  <div class="slide-num">02 / 07</div>
+  <div class="cpm-wrap">
+    <div class="cpm-left">
+      <div class="term-tag"    id="tl-2">TERM 01</div>
+      <div class="typing-title" id="tt-2" style="--tw:300px">CPM</div>
+      <div class="term-def"    id="td-2">
+        広告主が動画に広告を<br><strong>1,000回表示</strong>させるために<br>YouTubeへ支払う費用です。
+      </div>
+      <div class="cpm-compare" id="tc-2">
+        <div class="cmp-box red">金融 $45</div>
+        <div class="cmp-sep">vs</div>
+        <div class="cmp-box green">ゲーム $4</div>
+      </div>
+    </div>
+    <div class="cpm-right">
+      <div class="chart-head" id="ch-2">カテゴリー別 平均CPM (USD)</div>
+      <div class="bar-chart"  id="bc-2">
+        <div class="bar-col">
+          <div class="bar-val" style="color:#b83030">$45</div>
+          <div class="bar-wrap" style="--h:90%"><div class="bar-fill" style="background:#b83030"></div></div>
+          <div class="bar-lbl">金融</div>
+        </div>
+        <div class="bar-col">
+          <div class="bar-val" style="color:#d4830a">$22</div>
+          <div class="bar-wrap" style="--h:50%"><div class="bar-fill" style="background:#d4830a"></div></div>
+          <div class="bar-lbl">法律</div>
+        </div>
+        <div class="bar-col">
+          <div class="bar-val" style="color:#7a7060">$15</div>
+          <div class="bar-wrap" style="--h:33%"><div class="bar-fill" style="background:#7a7060"></div></div>
+          <div class="bar-lbl">テック</div>
+        </div>
+        <div class="bar-col">
+          <div class="bar-val" style="color:#a09880">$8</div>
+          <div class="bar-wrap" style="--h:17%"><div class="bar-fill" style="background:#a09880"></div></div>
+          <div class="bar-lbl">エンタメ</div>
+        </div>
+        <div class="bar-col">
+          <div class="bar-val" style="color:#c8c0b0">$4</div>
+          <div class="bar-wrap" style="--h:8%"><div class="bar-fill" style="background:#c8c0b0"></div></div>
+          <div class="bar-lbl">ゲーム</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 3 : RPM ══ -->
+<div class="slide" id="slide-3">
+  <div class="slide-label">知ろうよ · EP00</div>
+  <div class="slide-num">03 / 07</div>
+  <div class="rpm-wrap">
+    <div class="rpm-hd" id="rh-3">
+      <div class="rh-tag">TERM 02</div>
+      <div class="rh-name">RPM</div>
+    </div>
+    <div class="rpm-cards">
+      <div class="rpm-crd left" id="rc1-3">
+        <div class="rc-tag">広告主が支払う</div>
+        <div class="rc-name">CPM</div>
+        <div class="rc-num">$10</div>
+        <div class="rc-sub">1,000回表示基準</div>
+      </div>
+      <div class="rpm-arrow" id="ra-3">→</div>
+      <div class="rpm-crd right" id="rc2-3">
+        <div class="rc-tag">口座への実際の入金</div>
+        <div class="rc-name">RPM</div>
+        <div class="rc-num">$5.5</div>
+        <div class="rc-sub">YouTube 45%手数料控除後</div>
+      </div>
+    </div>
+    <div class="rpm-note" id="rn-3">
+      CPMが高くても、実際の収益はRPMで決まります。<br>
+      <strong>RPM = チャンネル競争力の本当の指標</strong>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 4 : Faceless ══ -->
+<div class="slide" id="slide-4">
+  <div class="slide-label">知ろうよ · EP00</div>
+  <div class="slide-num">04 / 07</div>
+  <div class="fl-wrap">
+    <div class="fl-left">
+      <div class="fl-tag"   id="ft-4">TERM 03</div>
+      <div class="fl-title" id="fn-4">Faceless</div>
+      <div class="fl-desc"  id="fd-4">
+        顔出しなしで運営する<br>YouTubeスタイル。<br><br>
+        バーンアウトなしに<br>どこでも制作できます。
+      </div>
+    </div>
+    <div class="fl-right">
+      <div class="fc" id="fc1-4">
+        <div class="fc-icon">🎤</div>
+        <div class="fc-name">ナレーション型</div>
+        <div class="fc-desc">声だけ使用、画面は画像・グラフィック</div>
+        <div class="fc-ex">▶ 金融教育、歴史解説</div>
+      </div>
+      <div class="fc" id="fc2-4">
+        <div class="fc-icon">🤖</div>
+        <div class="fc-name">AI生成型</div>
+        <div class="fc-desc">AIが生成した映像でビジュアル構成</div>
+        <div class="fc-ex">▶ ミステリー、ストーリーテリング</div>
+      </div>
+      <div class="fc" id="fc3-4">
+        <div class="fc-icon">📊</div>
+        <div class="fc-name">インフォグラフィック型</div>
+        <div class="fc-desc">データ・チャート・HTMLスライド活用</div>
+        <div class="fc-ex">▶ 市場分析、用語解説</div>
+      </div>
+      <div class="fc" id="fc4-4">
+        <div class="fc-icon">🔊</div>
+        <div class="fc-name">ASMR・サウンド型</div>
+        <div class="fc-desc">音中心、映像は最小限</div>
+        <div class="fc-ex">▶ 睡眠サウンド、ホワイトノイズ</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 5 : Ocean ══ -->
+<div class="slide" id="slide-5">
+  <div class="slide-label">知ろうよ · EP00</div>
+  <div class="slide-num">05 / 07</div>
+  <div class="ocean-wrap">
+    <div class="ocean-hd" id="oh-5">
+      <div class="oht">TERM 04 · 05</div>
+      <div class="ohm">レッドオーシャン vs ブルーオーシャン</div>
+    </div>
+    <div class="ocean-cards">
+      <div class="oc red" id="oc1-5">
+        <div class="oc-badge">レッドオーシャン</div>
+        <span class="oc-icon">🔴</span>
+        <div class="oc-name">競合過多市場</div>
+        <div class="oc-def">すでに多くのチャンネルが参入した市場。<br>新規参入しても露出が難しい。</div>
+        <div class="oc-tags">
+          <span class="oc-tag">料理・グルメ</span>
+          <span class="oc-tag">ゲーム実況</span>
+          <span class="oc-tag">Vlog</span>
+          <span class="oc-tag">チャレンジ</span>
+        </div>
+      </div>
+      <div class="oc blue" id="oc2-5">
+        <div class="oc-badge">ブルーオーシャン</div>
+        <span class="oc-icon">🔵</span>
+        <div class="oc-name">チャンスの市場</div>
+        <div class="oc-def">競合が少なく需要がある市場。<br>今参入すれば素早く成長できる。</div>
+        <div class="oc-tags">
+          <span class="oc-tag">シニア健康</span>
+          <span class="oc-tag">法律教育</span>
+          <span class="oc-tag">B2B SaaS</span>
+          <span class="oc-tag">Reddit朗読</span>
+        </div>
+      </div>
+    </div>
+    <div class="ocean-note" id="on-5">
+      どの市場かよりも、<strong>今どの方向に向かっているか</strong>が重要です。<br>タイミングが大切です。
+    </div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 6 : Saturation ══ -->
+<div class="slide" id="slide-6">
+  <div class="slide-label">知ろうよ · EP00</div>
+  <div class="slide-num">06 / 07</div>
+  <div class="sat-wrap">
+    <div class="sat-left">
+      <div class="sat-tag"   id="sg-tag">TERM 06</div>
+      <div class="sat-title" id="sg-title">飽和度</div>
+      <div class="sat-body"  id="sg-body">
+        市場がどれだけ<br>埋まっているかの指標。<br><br>
+        高いこと自体は<br>悪くありません。<br><strong>上がる方向</strong>が問題です。
+      </div>
+    </div>
+    <div class="sat-right">
+      <svg width="960" height="520" viewBox="0 0 960 520" overflow="visible">
+        <line x1="70" y1="450" x2="900" y2="450" stroke="#d8d0c8" stroke-width="1.5"/>
+        <line x1="70" y1="450" x2="70"  y2="40"  stroke="#d8d0c8" stroke-width="1.5"/>
+        <line x1="70" y1="305" x2="900" y2="305" stroke="#e8e4dc" stroke-width="1" stroke-dasharray="8,5"/>
+        <line x1="70" y1="160" x2="900" y2="160" stroke="#e8e4dc" stroke-width="1" stroke-dasharray="8,5"/>
+        <text x="10" y="455" font-size="18" fill="#b0a898" font-family="Roboto Mono,monospace">0%</text>
+        <text x="5"  y="310" font-size="18" fill="#b0a898" font-family="Roboto Mono,monospace">50%</text>
+        <text x="0"  y="165" font-size="18" fill="#b0a898" font-family="Roboto Mono,monospace">100%</text>
+        <text x="58"  y="488" font-size="18" fill="#b0a898" font-family="Roboto Mono,monospace">現在</text>
+        <text x="830" y="488" font-size="18" fill="#b0a898" font-family="Roboto Mono,monospace">6ヶ月後</text>
+        <path class="draw-line l1" d="M70,400 C200,390 400,290 620,160 S860,72 900,62"/>
+        <path class="draw-line l2" d="M70,430 C220,425 480,398 900,348"/>
+        <path class="draw-line l3" d="M70,95  C220,92  540,96  900,90"/>
+        <circle class="dot-ap" cx="70"  cy="400" r="9" fill="#d4830a" style="animation-delay:2.1s"/>
+        <circle class="dot-ap" cx="900" cy="62"  r="9" fill="#d4830a" style="animation-delay:2.1s"/>
+        <circle class="dot-ap" cx="70"  cy="430" r="9" fill="#1e7a50" style="animation-delay:2.3s"/>
+        <circle class="dot-ap" cx="900" cy="348" r="9" fill="#1e7a50" style="animation-delay:2.3s"/>
+        <circle class="dot-ap" cx="70"  cy="95"  r="9" fill="#b83030" style="animation-delay:2.5s"/>
+        <circle class="dot-ap" cx="900" cy="90"  r="9" fill="#b83030" style="animation-delay:2.5s"/>
+        <rect x="575" y="198" width="28" height="5" fill="#d4830a" rx="2"/>
+        <text x="614" y="206" font-size="20" fill="#5a5248" font-family="Noto Sans JP,Inter,sans-serif">低い + 急成長  ⚠ 今がタイミング</text>
+        <rect x="575" y="238" width="28" height="5" fill="#1e7a50" rx="2"/>
+        <text x="614" y="246" font-size="20" fill="#5a5248" font-family="Noto Sans JP,Inter,sans-serif">低い + 緩やか   ✓ 安定成長</text>
+        <rect x="575" y="278" width="28" height="5" fill="#b83030" rx="2"/>
+        <text x="614" y="286" font-size="20" fill="#5a5248" font-family="Noto Sans JP,Inter,sans-serif">高い + 停滞     ✕ 既にレッドオーシャン</text>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 7 : Outro ══ -->
+<div class="slide" id="slide-7">
+  <div class="slide-label">知ろうよ · EP00</div>
+  <div class="slide-num">07 / 07</div>
+  <div class="outro-wrap">
+    <div class="outro-hd" id="oh-7">
+      <div class="oh-sub">今日学んだ6つの用語</div>
+      <div class="oh-title">YouTube収益用語 完全まとめ</div>
+    </div>
+    <div class="sum-cards">
+      <div class="sum-card" id="sc1-7" style="--c:#b83030">
+        <div class="sc-icon">💰</div>
+        <div class="sc-en">CPM</div>
+        <div class="sc-kr">広告表示単価</div>
+        <div class="sc-def">広告主が1,000回<br>表示に払う費用</div>
+      </div>
+      <div class="sum-card" id="sc2-7" style="--c:#2d6a4f">
+        <div class="sc-icon">🏦</div>
+        <div class="sc-en">RPM</div>
+        <div class="sc-kr">実収益単価</div>
+        <div class="sc-def">口座に実際に<br>振り込まれる収益</div>
+      </div>
+      <div class="sum-card" id="sc3-7" style="--c:#d4830a">
+        <div class="sc-icon">🎭</div>
+        <div class="sc-en">Faceless</div>
+        <div class="sc-kr">顔出しなし</div>
+        <div class="sc-def">顔を出さずに<br>運営するスタイル</div>
+      </div>
+      <div class="sum-card" id="sc4-7" style="--c:#b83030">
+        <div class="sc-icon">🔴</div>
+        <div class="sc-en">レッドオーシャン</div>
+        <div class="sc-kr">競合過多市場</div>
+        <div class="sc-def">競争激化で<br>参入が難しい</div>
+      </div>
+      <div class="sum-card" id="sc5-7" style="--c:#1e7a50">
+        <div class="sc-icon">🔵</div>
+        <div class="sc-en">ブルーオーシャン</div>
+        <div class="sc-kr">チャンスの市場</div>
+        <div class="sc-def">競合少なく<br>需要がある市場</div>
+      </div>
+      <div class="sum-card" id="sc6-7" style="--c:#52d4a0">
+        <div class="sc-icon">📊</div>
+        <div class="sc-en">飽和度</div>
+        <div class="sc-kr">市場飽和指標</div>
+        <div class="sc-def">市場がどれだけ<br>埋まっているか</div>
+      </div>
+    </div>
+    <div class="outro-cta" id="oc-7">
+      <strong>本編を見る準備はできましたか？</strong> 次の動画で実践戦略をすぐに公開します。
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

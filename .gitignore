@@ -1,0 +1,12 @@
+# 대용량 영상 파일 (GitHub 100MB 제한)
+ep*/narration/
+ep*/scenes/
+ep*/output/
+ep*/final/
+_shared/bgm/
+
+# 임시 파일
+*.webm
+__pycache__/
+*.pyc
+.DS_Store
