@@ -1,0 +1,105 @@
+{
+  "series": "signal",
+  "series_config": {
+    "name": "SIGNAL — 기업분석 시리즈",
+    "tagline": "시그널을 먼저 읽다",
+    "blogs": {
+      "ko": "aitrendlog",
+      "ja": "dx-pioneer-jp",
+      "en": "dx-pioneer-en"
+    },
+    "youtube_channel": "honest-lab",
+    "playlists_config": "playlists_signal.json",
+    "langs": ["ko", "ja", "en"],
+    "tts": {
+      "ko": "ko-KR-SunHiNeural",
+      "ja": "ja-JP-NanamiNeural",
+      "en": "en-US-AriaNeural"
+    }
+  },
+  "ep": {
+    "id": "signal-002",
+    "series": "signal",
+    "ep_number": 2,
+    "title_ko": "팔란티어 EP2: 사라질 수 있는 3가지 시나리오",
+    "title_ja": "パランティア EP2: 消えるかもしれない3つのシナリオ",
+    "title_en": "Palantir EP2: 3 Ways It Could Disappear",
+    "company": "Palantir",
+    "sector": "데이터·AI",
+    "ep_role": "ep2",
+    "status": "planned"
+  },
+  "color_system": "3-Tone: Sage(s01/s05) · Cream(s02/s06/s07) · Slate(s03/s04)",
+  "scene_structure": [
+    {
+      "id": "s01_hook",
+      "role": "hook",
+      "tone": "sage",
+      "desc": "훅 — PER 260배의 공포, 조금만 틀려도 폭락"
+    },
+    {
+      "id": "s02_setup",
+      "role": "data",
+      "tone": "cream",
+      "desc": "구조 설명 — 멸망 3 vs 반론 3"
+    },
+    {
+      "id": "s03_bear_1",
+      "role": "analysis",
+      "tone": "slate",
+      "desc": "멸망 시나리오 1 — MS Azure Government 추격"
+    },
+    {
+      "id": "s04_bear_23",
+      "role": "analysis",
+      "tone": "slate",
+      "desc": "멸망 시나리오 2+3 — LLM이 Ontology 대체 / Llama+GovCloud"
+    },
+    {
+      "id": "s05_bull_1",
+      "role": "pros",
+      "tone": "sage",
+      "desc": "반론 1 — Ontology가 Windows 표준이 된다"
+    },
+    {
+      "id": "s06_bull_23",
+      "role": "pros",
+      "tone": "cream",
+      "desc": "반론 2+3 — 지정학 = 성장 연료 / AIP Lock-in 완성"
+    },
+    {
+      "id": "s07_verdict",
+      "role": "verdict",
+      "tone": "cream",
+      "desc": "결론 — 시그널: 지금 당신은 어느 시나리오에 베팅하는가?"
+    }
+  ],
+  "bear_scenarios": {
+    "bear_1": {
+      "title": "MS Azure Government 추격",
+      "detail": "Azure Secret + Azure Top Secret 이미 운영 중. AWS GovCloud도 확장. 빅테크 3사가 보안 인가를 확보하면 팔란티어의 해자가 사라진다. MS의 OpenAI 통합 + 정부 계약 + 가격 경쟁력 3박자."
+    },
+    "bear_2": {
+      "title": "LLM이 Ontology를 직접 대체",
+      "detail": "2027~2028년 LLM이 비정형 데이터를 직접 이해하면 Ontology 레이어가 불필요해진다. 팔란티어의 핵심 가치(데이터 구조화)가 LLM의 native capability로 흡수되는 위험."
+    },
+    "bear_3": {
+      "title": "Llama + GovCloud = 구독료 0원",
+      "detail": "Meta의 Llama(오픈소스) + AWS/Azure GovCloud 결합. 구독료 0원 + 기밀급 보안. 비용 민감한 정부 기관이 팔란티어를 버리고 이 조합으로 이동할 수 있다."
+    }
+  },
+  "bull_scenarios": {
+    "bull_1": {
+      "title": "Ontology가 Windows처럼 표준이 된다",
+      "detail": "Ontology가 기업 AI 데이터 구조의 산업 표준이 되면 팔란티어는 인프라가 된다. Windows를 대체하기 어렵듯 Ontology도 대체 불가 수준으로 Lock-in. FY2026 가이던스 $7.66B이 현실이 되면 이 시나리오 현실화."
+    },
+    "bull_2": {
+      "title": "지정학 불안 = 성장 무한 연료",
+      "detail": "NATO 확장, 우크라이나 재건, 중동 분쟁, 대만 긴장. 세계 불안정이 계속되면 미군·동맹국 예산은 팔란티어로 향한다. DOGE 삭감도 우선순위에서 팔란티어는 보호받을 가능성."
+    },
+    "bull_3": {
+      "title": "AIP 부트캠프 → Lock-in 가속",
+      "detail": "미국 상업 매출 +133%. 부트캠프 → 파일럿 → 장기 계약 전환율이 계속 높아지면 정부 의존도 42%가 민간으로 분산된다. 리스크 헤지 + 성장 동시 달성."
+    }
+  }
+}

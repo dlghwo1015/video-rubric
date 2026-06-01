@@ -1,0 +1,89 @@
+{
+  "series": "signal",
+  "ep_number": 2,
+  "ep_role": "ep2",
+  "company": "Palantir",
+  "title_ko": "팔란티어 EP2: 사라질 수 있는 3가지 시나리오",
+  "title_ja": "パランティア EP2: 消えるかもしれない3つのシナリオ",
+  "title_en": "Palantir EP2: 3 Ways It Could Disappear",
+  "color_system": "3-Tone: Sage(s01/s05) · Cream(s02/s06/s07) · Slate(s03/s04)",
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "role": "hook",
+      "tone": "sage",
+      "bg": "#e4ece1",
+      "accent": "#4d7a5a",
+      "visual_note": "PER 260배 + 한 줄 경고: '조금만 틀려도 주가 반토막'",
+      "narration": "팔란티어. 주가 130달러, PER 260배. 역대 최고 실적을 찍었지만 이 밸류에이션은 향후 10년 성장까지 이미 반영했다는 뜻입니다. 조금이라도 기대에 못 미치면 주가는 반토막이 납니다. 오늘은 팔란티어가 사라질 수 있는 3가지 시나리오를 정면으로 다룹니다.",
+      "narration_ja": "パランティア。株価130ドル、PER260倍。過去最高の業績を記録しましたが、このバリュエーションは今後10年の成長をすでに織り込んでいるということです。少しでも期待を下回れば株価は半値になります。今日はパランティアが消えるかもしれない3つのシナリオを正面から取り上げます。",
+      "narration_en": "Palantir. Stock at $130, P/E at 260x. Record-breaking results — yet this valuation assumes the next decade of growth is already baked in. Any miss on expectations and the stock gets cut in half. Today, we tackle three scenarios where Palantir could disappear."
+    },
+    {
+      "id": "s02_setup",
+      "role": "data",
+      "tone": "cream",
+      "bg": "#faf7f0",
+      "accent": "#8a5a1e",
+      "visual_note": "구조 다이어그램: 멸망 시나리오 3개(좌) vs 반론/지배 시나리오 3개(우)",
+      "narration": "이 에피소드는 두 파트로 구성됩니다. 전반부는 팔란티어가 무너질 수 있는 3가지 구체적인 경로. 후반부는 각 위협에 대한 팔란티어 측의 반론. 어느 쪽이 더 설득력 있는지는 여러분이 판단하세요.",
+      "narration_ja": "このエピソードは二部構成です。前半はパランティアが崩壊しうる3つの具体的な経路。後半は各脅威に対するパランティア側の反論。どちらがより説得力があるかは、みなさんが判断してください。",
+      "narration_en": "This episode has two parts. The first half: three specific paths where Palantir could collapse. The second half: Palantir's counterargument to each threat. Which side is more convincing — that's for you to decide."
+    },
+    {
+      "id": "s03_bear_1",
+      "role": "analysis",
+      "tone": "slate",
+      "bg": "#edf1f8",
+      "accent": "#2c4c7e",
+      "visual_note": "멸망 시나리오 1 카드: MS(OpenAI 통합) vs Palantir — 보안 인가 확보 경쟁 다이어그램",
+      "narration": "멸망 시나리오 첫 번째. Microsoft Azure Government입니다. Azure Secret, Azure Top Secret — 이 두 서비스는 이미 운영 중입니다. Microsoft는 OpenAI와 독점 계약을 맺었고, 정부 계약 경험도 수십 년입니다. 빅테크가 보안 인가를 완전히 확보하는 순간, 팔란티어의 가장 강한 해자 하나가 사라집니다.",
+      "narration_ja": "崩壊シナリオ1つ目。Microsoft Azure Governmentです。Azure Secret、Azure Top Secret——この2つのサービスはすでに運営中です。MicrosoftはOpenAIと独占契約を結び、政府との取引経験も数十年あります。ビッグテックがセキュリティクリアランスを完全に確保した瞬間、パランティアの最も強い堀の一つが消えます。",
+      "narration_en": "Bear scenario one: Microsoft Azure Government. Azure Secret and Azure Top Secret — both already operational. Microsoft has an exclusive deal with OpenAI and decades of government contracting experience. The moment Big Tech fully secures clearance, one of Palantir's strongest moats disappears."
+    },
+    {
+      "id": "s04_bear_23",
+      "role": "analysis",
+      "tone": "slate",
+      "bg": "#edf1f8",
+      "accent": "#2c4c7e",
+      "visual_note": "2개 카드 병렬: 시나리오2(LLM이 Ontology 흡수) + 시나리오3(Llama+GovCloud 0원)",
+      "narration": "두 번째. 2027~2028년, LLM이 비정형 데이터를 직접 이해하는 수준이 되면 Ontology 레이어가 필요 없어집니다. 팔란티어의 핵심인 데이터 구조화 능력이 LLM의 native 기능이 되는 겁니다. 세 번째. Meta의 Llama는 오픈소스입니다. AWS·Azure GovCloud와 결합하면 구독료 0원, 기밀급 보안 조합이 완성됩니다. 비용에 민감한 정부 기관이 팔란티어를 버릴 명분이 생깁니다.",
+      "narration_ja": "2つ目。2027〜2028年、LLMが非構造化データを直接理解できるレベルになれば、Ontologyレイヤーが不要になります。パランティアの核心である「データ構造化能力」がLLMのネイティブ機能になるということです。3つ目。MetaのLlamaはオープンソースです。AWS・Azure GovCloudと組み合わせると、サブスクリプション料金ゼロ、機密級セキュリティの組み合わせが完成します。コストに敏感な政府機関がパランティアを手放す口実ができます。",
+      "narration_en": "Second: by 2027–2028, when LLMs can directly understand unstructured data, the Ontology layer becomes unnecessary. Palantir's core value — data structuring — gets absorbed as an LLM native capability. Third: Meta's Llama is open-source. Combined with AWS or Azure GovCloud, you get zero subscription cost plus classified-level security. Cost-sensitive government agencies now have a reason to leave Palantir."
+    },
+    {
+      "id": "s05_bull_1",
+      "role": "pros",
+      "tone": "sage",
+      "bg": "#e4ece1",
+      "accent": "#4d7a5a",
+      "visual_note": "반론 1 카드: Ontology = Windows 비유 (대체 불가 Lock-in 다이어그램)",
+      "narration": "그러나 반론이 있습니다. 첫 번째 반론. Ontology가 Windows처럼 산업 표준이 된다는 시나리오입니다. 한 번 Ontology 기반으로 구축된 데이터 파이프라인은 LLM으로 쉽게 대체되지 않습니다. Windows를 리눅스로 바꾸는 것이 이론상 가능하지만 실제로 기업이 하지 않듯이. 팔란티어가 먼저 표준을 잡으면 뒤따르는 위협은 뒤늦은 이야기가 됩니다.",
+      "narration_ja": "しかし反論があります。1つ目の反論。OntologyがWindowsのように業界標準になるというシナリオです。一度Ontologyベースで構築されたデータパイプラインはLLMで簡単には置き換えられません。WindowsをLinuxに変えることは理論上は可能でも、実際に企業がやらないように。パランティアが先に標準を確立すれば、後続の脅威は手遅れな話になります。",
+      "narration_en": "But there are counterarguments. First counterargument: Ontology becomes the industry standard — like Windows. A data pipeline built on Ontology isn't easily replaced by LLMs. It's theoretically possible to switch from Windows to Linux, but enterprises just don't do it. If Palantir locks in the standard first, every threat that follows arrives too late."
+    },
+    {
+      "id": "s06_bull_23",
+      "role": "pros",
+      "tone": "cream",
+      "bg": "#faf7f0",
+      "accent": "#8a5a1e",
+      "visual_note": "반론 2+3 카드: 지정학 지도(분쟁 지역) + AIP 부트캠프 성장 곡선",
+      "narration": "두 번째 반론. 지정학 불안은 팔란티어의 성장 연료입니다. NATO 확장, 우크라이나 재건, 대만 긴장 — 이 흐름이 멈추지 않는 한, 동맹국 정부 예산은 팔란티어로 향합니다. DOGE 삭감도 팔란티어는 우선순위에서 보호받을 가능성이 높습니다. 세 번째 반론. AIP 부트캠프가 미국 상업 매출을 133% 끌어올렸습니다. 민간 시장 비중이 높아질수록 정부 의존 리스크가 자동으로 분산됩니다.",
+      "narration_ja": "2つ目の反論。地政学的不安はパランティアの成長燃料です。NATO拡大、ウクライナ復興、台湾緊張——この流れが止まらない限り、同盟国の政府予算はパランティアに向かいます。DOGEの削減でも、パランティアは優先順位として守られる可能性が高いです。3つ目の反論。AIPブートキャンプが米国商業売上を133%押し上げました。民間市場の比率が高まるほど、政府依存のリスクが自動的に分散されます。",
+      "narration_en": "Second counterargument: geopolitical instability is Palantir's growth fuel. NATO expansion, Ukraine reconstruction, Taiwan tensions — as long as this continues, allied government budgets flow to Palantir. Even under DOGE cuts, Palantir is likely to be protected as a priority. Third: AIP bootcamps drove U.S. commercial revenue up 133%. As the private sector share grows, government dependency risk automatically diversifies."
+    },
+    {
+      "id": "s07_verdict",
+      "role": "verdict",
+      "tone": "cream",
+      "bg": "#faf7f0",
+      "accent": "#8a5a1e",
+      "visual_note": "중앙 큰 질문: '당신의 시그널은?' + 멸망/지배 양쪽 한 줄 요약 + EP3 예고",
+      "narration": "멸망 시나리오가 현실이 되는 조건. 빅테크의 보안 인가 완전 취득. LLM의 자동 데이터 이해 능력 도달. 오픈소스 무료 대안의 정부 침투. 지배 시나리오가 현실이 되는 조건. Ontology 표준화. 지정학 불안의 지속. 민간 시장 침투 가속. 여러분은 어느 시나리오에 더 가까워 보이십니까? 다음 편에서는 팔란티어의 S커브 위치를 분석합니다. EP3에서 계속됩니다.",
+      "narration_ja": "崩壊シナリオが現実になる条件。ビッグテックのセキュリティクリアランス完全取得。LLMの自動データ理解能力の到達。オープンソース無料代替手段の政府浸透。支配シナリオが現実になる条件。Ontologyの標準化。地政学的不安の継続。民間市場浸透の加速。みなさんはどちらのシナリオにより近いと感じますか？次回はパランティアのSカーブ上の位置を分析します。EP3に続きます。",
+      "narration_en": "The conditions for collapse: Big Tech fully secures clearance. LLMs reach autonomous data understanding. Open-source alternatives penetrate government. The conditions for dominance: Ontology standardizes. Geopolitical instability continues. Commercial market penetration accelerates. Which scenario feels closer to you? Next episode: we analyze Palantir's position on the S-curve. Continuing in EP3."
+    }
+  ]
+}

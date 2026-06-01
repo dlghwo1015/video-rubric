@@ -25,6 +25,26 @@ BLOG_LABELS = {
     "en": ["YouTube Revenue", "CPM", "YouTube Rubric"],
 }
 
+# 시리즈별 블로그 slug / labels 오버라이드
+SERIES_BLOG_SLUGS = {
+    "signal": {"ko": "aitrendlog", "ja": "dx-pioneer-jp", "en": "dx-pioneer-en"},
+}
+SERIES_BLOG_LABELS = {
+    "signal": {
+        "ko": ["기업분석", "주식분석", "SIGNAL", "팔란티어"],
+        "ja": ["企業分析", "株式分析", "SIGNAL", "パランティア"],
+        "en": ["CompanyAnalysis", "StockAnalysis", "SIGNAL", "Palantir"],
+    }
+}
+
+
+def get_blog_slugs(series: str) -> dict:
+    return SERIES_BLOG_SLUGS.get(series, BLOG_SLUGS)
+
+
+def get_blog_labels(series: str) -> dict:
+    return SERIES_BLOG_LABELS.get(series, BLOG_LABELS)
+
 
 def load_blogger_token():
     for p in [
@@ -110,11 +130,11 @@ def get_blogger_id(slug: str) -> str:
     return row[0]
 
 
-def save_post_id(ep_number: int, lang: str, post_id: str):
+def save_post_id(ep_number: int, lang: str, post_id: str, series: str = "youtube-rubric"):
     conn = sqlite3.connect(DB_PATH)
     conn.execute(
-        f"UPDATE video_episodes SET post_id_{lang}=? WHERE series='youtube-rubric' AND ep_number=?",
-        (post_id, ep_number)
+        f"UPDATE video_episodes SET post_id_{lang}=? WHERE series=? AND ep_number=?",
+        (post_id, series, ep_number)
     )
     conn.commit()
     conn.close()
@@ -198,13 +218,13 @@ def main():
             h1 = soup.find("h1")
             title = h1.get_text(strip=True) if h1 else f"EP{ep_number:02d}"
 
-        slug   = BLOG_SLUGS[lang]
-        labels = BLOG_LABELS[lang]
+        slug   = get_blog_slugs(series)[lang]
+        labels = get_blog_labels(series)[lang]
 
         try:
             blogger_id = get_blogger_id(slug)
             post_id    = create_draft(blogger_id, access_token, title, content, labels)
-            save_post_id(ep_number, lang, post_id)
+            save_post_id(ep_number, lang, post_id, series)
             print(f"  [{lang}] ✅ {title[:40]} → post_id: {post_id}")
         except Exception as e:
             print(f"  [{lang}] ❌ 실패: {e}")

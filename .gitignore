@@ -3,6 +3,12 @@ ep*/narration/
 ep*/scenes/
 ep*/output/
 ep*/final/
+# 시리즈 하위 ep 폴더도 제외
+*/ep*/narration/
+*/ep*/scenes/
+*/ep*/final/
+*/ep*/output/
+*/ep*/*_tmp/
 _shared/bgm/
 
 # 임시 파일

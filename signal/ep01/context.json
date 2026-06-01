@@ -1,0 +1,181 @@
+{
+  "series": "signal",
+  "series_config": {
+    "name": "SIGNAL — 기업분석 시리즈",
+    "tagline": "시그널을 먼저 읽다",
+    "blogs": {
+      "ko": "aitrendlog",
+      "ja": "dx-pioneer-jp",
+      "en": "dx-pioneer-en"
+    },
+    "youtube_channel": "honest-lab",
+    "playlists_config": "playlists_signal.json",
+    "langs": [
+      "ko",
+      "ja",
+      "en"
+    ],
+    "tts": {
+      "ko": "ko-KR-SunHiNeural",
+      "ja": "ja-JP-NanamiNeural",
+      "en": "en-US-AriaNeural"
+    },
+    "scene_structure": {
+      "ep1": [
+        "s01_hook",
+        "s02_overview",
+        "s03_what_do",
+        "s04_moat",
+        "s05_pros",
+        "s06_cons",
+        "s07_verdict"
+      ],
+      "ep2": [
+        "s01_hook",
+        "s02_setup",
+        "s03_bear_1",
+        "s04_bear_23",
+        "s05_bull_1",
+        "s06_bull_23",
+        "s07_verdict"
+      ],
+      "ep3": [
+        "s01_hook",
+        "s02_scurve",
+        "s03_trigger",
+        "s04_beneficiary",
+        "s05_timing",
+        "s06_my_life",
+        "s07_verdict"
+      ],
+      "compare": [
+        "s01_hook",
+        "s02_overview",
+        "s03_tech_compare",
+        "s04_revenue_compare",
+        "s05_risk_compare",
+        "s06_scurve_compare",
+        "s07_verdict"
+      ]
+    }
+  },
+  "ep": {
+    "id": "signal-001",
+    "series": "signal",
+    "ep_number": 1,
+    "title_ko": "팔란티어 EP1: AI 회사인 척하는 SI 업체의 민낯",
+    "category": null,
+    "section": null,
+    "cpm_2025": null,
+    "cpm_2026": null,
+    "rpm_2025": null,
+    "rpm_2026": null,
+    "faceless": null,
+    "saturation_2025": null,
+    "saturation_2026": null,
+    "growth_note": null,
+    "status": "planned",
+    "post_id_ko": null,
+    "post_id_ja": null,
+    "post_id_en": null,
+    "notes": null,
+    "created_at": "2026-05-30 05:00:47",
+    "youtube_video_id": null,
+    "youtube_shorts_id": null,
+    "yt_views": null,
+    "yt_likes": null,
+    "yt_comments": null,
+    "yt_checked_at": null,
+    "shorts_views": null,
+    "shorts_likes": null,
+    "shorts_checked_at": null,
+    "github_commit": null,
+    "github_url": null,
+    "script_json": null,
+    "script_status": "none",
+    "rejection_note": null,
+    "youtube_video_id_ja": null,
+    "youtube_video_id_en": null,
+    "youtube_shorts_id_ja": null,
+    "youtube_shorts_id_en": null,
+    "yt_public_ko": 0,
+    "yt_public_ja": 0,
+    "yt_public_en": 0,
+    "title_ja": "パランティア EP1: AI企業のふりをするSI業者の素顔",
+    "title_en": "Palantir EP1: The SI Company Pretending to Be AI",
+    "company": "Palantir",
+    "sector": "데이터·AI",
+    "ep_role": "ep1",
+    "brief_id": "palantir-ep1-2026-05-22"
+  },
+  "brief": {
+    "id": "palantir-ep1-2026-05-22",
+    "domain": "blog",
+    "blog_id": "aitrendlog",
+    "signal_source": "conversation",
+    "keyword": "PLTR,팔란티어,팔란티어 실체,팔란티어 주가",
+    "angle": "AI를 만들지 않는 AI 회사 — Claude·GPT·Gemini 갖다 쓰는 구조를 공개하고 Pros/Cons 정직하게 정리",
+    "internal_link_targets": null,
+    "audience": "중급자 (AI·테크 주식 관심 있는 일반 독자)",
+    "target_length": 4000,
+    "status": "proposed",
+    "proposed_at": "2026-05-22 00:38:39",
+    "executed_at": null,
+    "post_id": null,
+    "notes": "시리즈 EP1/3. 영상(honest-lab)과 동시 발행 예정. 역대 최고 실적+주가 -37% 역설 Hook.",
+    "metadata": "{\"series\":\"palantir-series\",\"ep\":1,\"video_channel\":\"honest-lab\",\"video_length\":\"8min\"}"
+  },
+  "obsidian_notes": "# 001. 팔란티어 (Palantir Technologies)\n\n> 상태: ✅ 브리프 완료 | 티커: PLTR | 분석일: 2026-05-22\n\n---\n\n## 핵심 한 줄\n> \"AI를 만들지 않는 AI 회사 — 보안 인가받은 데이터 통합 SI 업체\"\n\n---\n\n## S-커브 위치\n```\n발명 → 전문가 → 캐즘 → [대중화] → 보급화\n                          ↑ 정부·기업 수준\n소비자 기준으로는 영원히 간접 체감\n```\n\n---\n\n## 실체\n\n| 항목 | 내용 |\n|------|------|\n| 창업 | 2003년, Peter Thiel + Alex Karp |\n| 초기 투자 | In-Q-Tel (CIA 벤처캐피탈) |\n| 핵심 제품 | Gotham (정부), Foundry (기업), AIP (AI 플랫폼) |\n| AI 방식 | **자체 개발 아님** — OpenAI·Claude·Gemini·Llama 갖다 씀 |\n| 진짜 해자 | 보안 인가 + 20년 데이터 파이프라인 Lock-in |\n\n### 비유\n```\nNVIDIA (엔진) → OpenAI·Anthropic (지능) → 팔란티어 (보안인증 SI)\n```\n\n---\n\n## Q1 2026 실적 (역대 최고)\n\n| 지표 | 수치 |\n|------|------|\n| 매출 | $1.63B (예상 $1.54B) |\n| 매출 성장 | YoY +85% (역대 최고) |\n| EPS | 33¢ (예상 28¢) |\n| 순이익 | $870.5M (YoY 4배) |\n| 미국 정부 매출 | $687M (+84%) |\n| 미국 상업 매출 | $595M (+133%) |\n| Rule of 40 | 145% (NVIDIA 수준) |\n| FY2026 가이던스 | $7.65~7.66B (YoY +71%) |\n| 주가 (2026.05) | $130 (52주 고점 $207.52 대비 -37%) |\n\n---\n\n## PROS (강점 5가지)\n\n1. ✅ **역대 최고 실적** — 매출 +85%, 순이익 4배\n2. ✅ **정부 계약 Lock-in** — 미 육군 $100억 10년 계약 포함 $9억+ 신규\n3. ✅ **20년 데이터 파이프라인** — 빼기가 더 무서운 구조\n4. ✅ **NATO·영국·중동 주권 AI 수요** 폭증\n5. ✅ **AIP 부트캠프** → 상업 매출 +133% (작동 중이라는 증거)\n\n---\n\n## CONS (약점 5가지)\n\n1. ❌ **PER 260배** (섹터 평균 24배) — 10년 미래까지 반영\n2. ❌ **CEO Karp 폭탄 발언** — 민주당·여성 유권자 비하, 국유화 발언\n3. ❌ **유럽 연기금 €8,250억 이탈** (ABP 전량 매각)\n4. ❌ **DOGE 국방 예산 -8% 삭감** 진행 중\n5. ❌ **Databricks·Snowflake·MS Fabric** 민간 시장 잠식\n\n---\n\n## 시나리오\n\n### 멸망 시나리오\n1. **MS Azure Government 추격** — Azure Secret·Top Secret 이미 운영\n2. **LLM이 Ontology 대체** — 2027~2028년 비정형 데이터 직접 이해\n3. **Llama + GovCloud** — 구독료 0원 + 기밀급 보안 조합\n\n### 지배 시나리오\nA. **Ontology가 Windows 표준** — 기업 AI 데이터 구조의 산업 표준화\nB. **지정학 불안 = 성장 연료** — NATO 확장, 우크라이나·중동·대만\nC. **AIP Lock-in 완성** — 부트캠프 → 장기 계약 전환율 가속\n\n---\n\n## 실생활 접점\n```\n직접 체감 불가 (B2G, B2B 전용)\n간접 체감 경로:\n  → 응급실 대기시간 단축 (의료 데이터 최적화)\n  → 세금 환급 2주 → 2일 (IRS 시스템)\n  → 재난 대응 속도 향상 (FEMA 예측)\n  → \"묻지마 범죄\" 예측 치안 (미래)\n```\n\n---\n\n## 오너 리스크\n\n| 인물 | 리스크 |\n|------|--------|\n| **Alex Karp** | 폭탄 발언 반복, 슈퍼보팅 주식 독점 |\n| **Peter Thiel** | 트럼프·JD Vance 후원, CIA 연계 창업 |\n\n---\n\n## 브리프 현황\n- `palantir-ep1-2026-05-22` — proposed\n- `palantir-ep2-2026-05-22` — proposed\n- `palantir-ep3-2026-05-22` — proposed\n\n## 관련 링크\n- [[00_마스터플랜]]\n- 다음: [[../002_양자컴퓨터/00_섹터개요]]\n",
+  "scene_structure": [
+    {
+      "id": "s01_hook",
+      "role": "hook",
+      "desc": "훅 — '이 회사 뭐야?' 키네틱 타이포"
+    },
+    {
+      "id": "s02_overview",
+      "role": "data",
+      "desc": "핵심 수치 + 한 줄 정의"
+    },
+    {
+      "id": "s03_what_they_do",
+      "role": "analysis",
+      "desc": "실제로 무엇을 하는가"
+    },
+    {
+      "id": "s04_moat",
+      "role": "analysis",
+      "desc": "해자 / 차별점"
+    },
+    {
+      "id": "s05_pros",
+      "role": "pros",
+      "desc": "PROS 3가지"
+    },
+    {
+      "id": "s06_cons",
+      "role": "cons",
+      "desc": "CONS 3가지"
+    },
+    {
+      "id": "s07_verdict",
+      "role": "verdict",
+      "desc": "핵심 결론 + EP2 예고"
+    }
+  ],
+  "blogs": {
+    "ko": "aitrendlog",
+    "ja": "dx-pioneer-jp",
+    "en": "dx-pioneer-en"
+  },
+  "langs": [
+    "ko",
+    "ja",
+    "en"
+  ],
+  "tts": {
+    "ko": "ko-KR-SunHiNeural",
+    "ja": "ja-JP-NanamiNeural",
+    "en": "en-US-AriaNeural"
+  }
+}

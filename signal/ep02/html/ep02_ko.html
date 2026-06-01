@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>SIGNAL EP02 — 팔란티어: 사라질 수 있는 3가지 시나리오</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&family=Inter:wght@300;400;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { width: 1920px; height: 1080px; font-family: 'Noto Sans KR','Inter',sans-serif; color: #2a2520; overflow: hidden; }
+
+.slide { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; }
+.slide.sage  { background: #e4ece1; }
+.slide.cream { background: #faf7f0; }
+.slide.slate { background: #edf1f8; }
+
+.slide-label { position: absolute; top: 52px; left: 80px; font-family: 'Roboto Mono',monospace; font-size: 22px; color: #a09880; letter-spacing: 2px; }
+.slide.slate .slide-label { color: #8a9ab8; }
+.slide-num { position: absolute; top: 52px; right: 80px; font-family: 'Roboto Mono',monospace; font-size: 22px; color: #a09880; }
+.slide.slate .slide-num { color: #8a9ab8; }
+
+@keyframes fadeUp { from { opacity:0; transform:translateY(36px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes slideInLeft { from { opacity:0; transform:translateX(-40px); } to { opacity:1; transform:translateX(0); } }
+@keyframes slideInRight { from { opacity:0; transform:translateX(40px); } to { opacity:1; transform:translateX(0); } }
+@keyframes expandW { from { width:0; } to { width:100%; } }
+
+/* ── S1: Hook (Sage) ── */
+#slide-1 .hook-center { display:flex; flex-direction:column; align-items:center; gap:20px; text-align:center; }
+.hook-company { font-size:108px; font-weight:900; letter-spacing:-4px; color:#1a2e1f; opacity:0; }
+.hook-company.go { animation:fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) forwards; }
+.hook-per-badge { display:inline-flex; align-items:center; gap:12px; background:#fff; border:3px solid #c6dac0; border-radius:16px; padding:16px 36px; opacity:0; }
+.hook-per-badge.go { animation:fadeUp 0.7s ease 0.2s forwards; }
+.hook-per-badge .per-val { font-size:56px; font-weight:900; color:#4d7a5a; font-family:'Inter',sans-serif; letter-spacing:-2px; }
+.hook-per-badge .per-lbl { font-size:22px; color:#7a7060; }
+.hook-warning { font-size:38px; font-weight:700; color:#5a7060; margin-top:8px; opacity:0; }
+.hook-warning.go { animation:fadeUp 0.6s ease 0.45s forwards; }
+.hook-warning .w-red { color:#c0392b; }
+.hook-badge { position:absolute; bottom:68px; left:0; right:0; text-align:center; font-family:'Roboto Mono',monospace; font-size:22px; letter-spacing:4px; color:#82ae8d; opacity:0; }
+.hook-badge.go { animation:fadeIn 0.6s ease 0.75s forwards; }
+
+/* ── S2: Setup (Cream) ── */
+#slide-2 .setup-wrap { width:1680px; display:flex; flex-direction:column; gap:52px; }
+.setup-hd { opacity:0; }
+.setup-hd.go { animation:fadeUp 0.6s ease forwards; }
+.setup-eyebrow { font-family:'Roboto Mono',monospace; font-size:20px; letter-spacing:4px; color:#a09880; }
+.setup-title { font-size:52px; font-weight:900; color:#3a3530; margin-top:12px; letter-spacing:-1.5px; }
+.setup-cols { display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+.setup-col { border-radius:20px; padding:36px 40px; opacity:0; }
+.setup-col.bear { background:#fef0f0; border:2px solid #f5c6c6; }
+.setup-col.bull { background:#f0f5f1; border:2px solid #bcd4b6; }
+.setup-col.go { animation:fadeUp 0.6s ease forwards; }
+.setup-col:nth-child(1) { animation-delay:0.15s; }
+.setup-col:nth-child(2) { animation-delay:0.3s; }
+.setup-col .col-hd { font-size:24px; font-weight:900; margin-bottom:20px; }
+.setup-col.bear .col-hd { color:#c0392b; }
+.setup-col.bull .col-hd { color:#4d7a5a; }
+.setup-col .col-item { font-size:18px; color:#5a5048; line-height:1.8; padding-left:16px; border-left:3px solid; margin-bottom:10px; }
+.setup-col.bear .col-item { border-color:#e89090; }
+.setup-col.bull .col-item { border-color:#82ae8d; }
+
+/* ── S3/S4: Bear (Slate) ── */
+.bear-wrap { width:1680px; display:flex; flex-direction:column; gap:52px; }
+.bear-hd { opacity:0; }
+.bear-hd.go { animation:fadeUp 0.6s ease forwards; }
+.bear-eyebrow { font-family:'Roboto Mono',monospace; font-size:20px; letter-spacing:4px; color:#8a9ab8; }
+.bear-title { font-size:52px; font-weight:900; color:#1a2a42; margin-top:12px; letter-spacing:-1.5px; }
+.bear-title .danger { color:#c0392b; }
+
+.bear-card-single { background:#fff; border-radius:24px; padding:52px 56px; border:2px solid #c8d8f0; border-left:8px solid #c0392b; opacity:0; }
+.bear-card-single.go { animation:fadeUp 0.6s ease 0.2s forwards; }
+.bear-card-single .bc-icon { font-size:56px; margin-bottom:20px; }
+.bear-card-single .bc-num { font-family:'Roboto Mono',monospace; font-size:16px; letter-spacing:3px; color:#e89090; margin-bottom:12px; }
+.bear-card-single .bc-name { font-size:40px; font-weight:900; color:#1a2a42; margin-bottom:20px; letter-spacing:-1px; }
+.bear-card-single .bc-desc { font-size:22px; color:#5a6a8a; line-height:1.75; }
+.bear-card-single .bc-highlight { margin-top:24px; padding:16px 20px; background:#fef0f0; border-radius:12px; font-size:20px; font-weight:700; color:#c0392b; }
+
+.bear-cards-dual { display:grid; grid-template-columns:1fr 1fr; gap:36px; }
+.bear-card-dual { background:#fff; border-radius:20px; padding:44px 40px; border:2px solid #c8d8f0; border-top:6px solid #c0392b; opacity:0; }
+.bear-card-dual.go { animation:fadeUp 0.6s ease forwards; }
+.bear-card-dual:nth-child(1) { animation-delay:0.15s; }
+.bear-card-dual:nth-child(2) { animation-delay:0.3s; }
+.bear-card-dual .bc-icon { font-size:44px; margin-bottom:14px; }
+.bear-card-dual .bc-num { font-family:'Roboto Mono',monospace; font-size:15px; letter-spacing:2px; color:#e89090; margin-bottom:10px; }
+.bear-card-dual .bc-name { font-size:30px; font-weight:900; color:#1a2a42; margin-bottom:14px; }
+.bear-card-dual .bc-desc { font-size:18px; color:#5a6a8a; line-height:1.75; }
+.bear-card-dual .bc-tag { display:inline-block; margin-top:16px; background:#fef0f0; color:#c0392b; font-size:15px; font-weight:700; padding:6px 14px; border-radius:20px; }
+
+/* ── S5/S6: Bull (Sage/Cream) ── */
+.bull-wrap { width:1680px; display:flex; flex-direction:column; gap:52px; }
+.bull-hd { opacity:0; }
+.bull-hd.go { animation:fadeUp 0.6s ease forwards; }
+.bull-eyebrow { font-family:'Roboto Mono',monospace; font-size:20px; letter-spacing:4px; color:#82ae8d; }
+.bull-title { font-size:52px; font-weight:900; color:#1a2e1f; margin-top:12px; letter-spacing:-1.5px; }
+.bull-title .upside { color:#4d7a5a; }
+
+.bull-card-single { background:#fff; border-radius:24px; padding:52px 56px; border:2px solid #bcd4b6; border-left:8px solid #4d7a5a; opacity:0; }
+.bull-card-single.go { animation:fadeUp 0.6s ease 0.2s forwards; }
+.bull-card-single .bc-icon { font-size:56px; margin-bottom:20px; }
+.bull-card-single .bc-num { font-family:'Roboto Mono',monospace; font-size:16px; letter-spacing:3px; color:#82ae8d; margin-bottom:12px; }
+.bull-card-single .bc-name { font-size:40px; font-weight:900; color:#1a2e1f; margin-bottom:20px; letter-spacing:-1px; }
+.bull-card-single .bc-desc { font-size:22px; color:#5a7060; line-height:1.75; }
+.bull-card-single .bc-highlight { margin-top:24px; padding:16px 20px; background:#e4ece1; border-radius:12px; font-size:20px; font-weight:700; color:#4d7a5a; }
+
+.bull-cards-dual { display:grid; grid-template-columns:1fr 1fr; gap:36px; }
+.bull-card-dual { background:#fff; border-radius:20px; padding:44px 40px; border:2px solid #e8d5b0; border-top:6px solid #8a5a1e; opacity:0; }
+.bull-card-dual.go { animation:fadeUp 0.6s ease forwards; }
+.bull-card-dual:nth-child(1) { animation-delay:0.15s; }
+.bull-card-dual:nth-child(2) { animation-delay:0.3s; }
+.bull-card-dual .bc-icon { font-size:44px; margin-bottom:14px; }
+.bull-card-dual .bc-num { font-family:'Roboto Mono',monospace; font-size:15px; letter-spacing:2px; color:#a09880; margin-bottom:10px; }
+.bull-card-dual .bc-name { font-size:30px; font-weight:900; color:#3a3530; margin-bottom:14px; }
+.bull-card-dual .bc-desc { font-size:18px; color:#7a7060; line-height:1.75; }
+.bull-card-dual .bc-tag { display:inline-block; margin-top:16px; background:#fff8ee; color:#8a5a1e; font-size:15px; font-weight:700; padding:6px 14px; border-radius:20px; border:1px solid #e8d5b0; }
+
+/* ── S7: Verdict (Cream) ── */
+#slide-7 .verdict-wrap { display:flex; flex-direction:column; align-items:center; gap:28px; text-align:center; width:1400px; }
+.verdict-eyebrow { font-family:'Roboto Mono',monospace; font-size:20px; letter-spacing:4px; color:#a09880; opacity:0; }
+.verdict-eyebrow.go { animation:fadeIn 0.5s ease forwards; }
+.verdict-q { font-size:72px; font-weight:900; color:#3a3530; letter-spacing:-2px; opacity:0; }
+.verdict-q.go { animation:fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.15s forwards; }
+.verdict-line { width:0; height:3px; background:#d4a966; border-radius:2px; opacity:0; }
+.verdict-line.go { opacity:1; animation:expandW 0.8s ease 0.5s forwards; }
+.verdict-cols { display:grid; grid-template-columns:1fr 1fr; gap:28px; width:100%; opacity:0; }
+.verdict-cols.go { animation:fadeUp 0.6s ease 0.65s forwards; }
+.verdict-col { border-radius:16px; padding:24px 28px; text-align:left; }
+.verdict-col.bear { background:#fef0f0; border:2px solid #f5c6c6; }
+.verdict-col.bull { background:#f0f5f1; border:2px solid #bcd4b6; }
+.verdict-col .vc-title { font-size:18px; font-weight:900; margin-bottom:10px; }
+.verdict-col.bear .vc-title { color:#c0392b; }
+.verdict-col.bull .vc-title { color:#4d7a5a; }
+.verdict-col .vc-items { font-size:15px; color:#5a5048; line-height:1.8; }
+.verdict-next { display:flex; align-items:center; gap:16px; background:#fff; border-radius:50px; padding:18px 36px; border:2px solid #e8d5b0; opacity:0; }
+.verdict-next.go { animation:fadeUp 0.6s ease 0.95s forwards; }
+.verdict-next .next-label { font-family:'Roboto Mono',monospace; font-size:16px; color:#a09880; letter-spacing:2px; }
+.verdict-next .next-text { font-size:22px; font-weight:700; color:#3a3530; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1 : Hook (Sage) -->
+<div class="slide sage" id="slide-1">
+  <div class="slide-label">SIGNAL · EP02</div>
+  <div class="slide-num">01 / 07</div>
+  <div class="hook-center">
+    <div class="hook-company">팔란티어</div>
+    <div class="hook-per-badge">
+      <div class="per-val">PER 260×</div>
+      <div class="per-lbl">섹터 평균의 10배</div>
+    </div>
+    <div class="hook-warning">조금만 틀려도 <span class="w-red">주가 반토막</span></div>
+  </div>
+  <div class="hook-badge">SIGNAL — 기업분석 시리즈 EP02</div>
+</div>
+
+<!-- SLIDE 2 : Setup (Cream) -->
+<div class="slide cream" id="slide-2">
+  <div class="slide-label">SIGNAL · EP02</div>
+  <div class="slide-num">02 / 07</div>
+  <div class="setup-wrap">
+    <div class="setup-hd">
+      <div class="setup-eyebrow">EPISODE STRUCTURE</div>
+      <div class="setup-title">멸망 시나리오 3 vs 지배 반론 3</div>
+    </div>
+    <div class="setup-cols">
+      <div class="setup-col bear">
+        <div class="col-hd">🐻 멸망 시나리오</div>
+        <div class="col-item">① MS Azure Government 추격</div>
+        <div class="col-item">② LLM이 Ontology를 직접 대체</div>
+        <div class="col-item">③ Llama + GovCloud = 구독료 0원</div>
+      </div>
+      <div class="setup-col bull">
+        <div class="col-hd">🐂 지배 반론</div>
+        <div class="col-item">① Ontology = Windows 수준 표준화</div>
+        <div class="col-item">② 지정학 불안 = 무한 성장 연료</div>
+        <div class="col-item">③ AIP 부트캠프 Lock-in 가속</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3 : Bear 1 (Slate) -->
+<div class="slide slate" id="slide-3">
+  <div class="slide-label">SIGNAL · EP02</div>
+  <div class="slide-num">03 / 07</div>
+  <div class="bear-wrap">
+    <div class="bear-hd">
+      <div class="bear-eyebrow">BEAR SCENARIO 01</div>
+      <div class="bear-title"><span class="danger">멸망</span> 시나리오 1</div>
+    </div>
+    <div class="bear-card-single">
+      <div class="bc-icon">🏢</div>
+      <div class="bc-num">SCENARIO 01 · MS AZURE</div>
+      <div class="bc-name">Azure Government가 팔란티어를 잡아먹는다</div>
+      <div class="bc-desc">
+        Azure Secret · Azure Top Secret 이미 운영 중.<br>
+        Microsoft = OpenAI 독점 계약 + 수십 년 정부 계약 경험.<br>
+        빅테크가 보안 인가를 완전히 확보하는 순간, 팔란티어의 핵심 해자가 사라진다.
+      </div>
+      <div class="bc-highlight">⟶ "보안 인가"는 팔란티어만의 것이 아닐 수 있다</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4 : Bear 2+3 (Slate) -->
+<div class="slide slate" id="slide-4">
+  <div class="slide-label">SIGNAL · EP02</div>
+  <div class="slide-num">04 / 07</div>
+  <div class="bear-wrap">
+    <div class="bear-hd">
+      <div class="bear-eyebrow">BEAR SCENARIO 02 · 03</div>
+      <div class="bear-title"><span class="danger">멸망</span> 시나리오 2 + 3</div>
+    </div>
+    <div class="bear-cards-dual">
+      <div class="bear-card-dual">
+        <div class="bc-icon">🧠</div>
+        <div class="bc-num">SCENARIO 02</div>
+        <div class="bc-name">LLM이 Ontology를 흡수한다</div>
+        <div class="bc-desc">2027~2028년, LLM이 비정형 데이터를 직접 이해하면 Ontology 레이어가 불필요해진다. 팔란티어의 핵심 가치가 LLM의 native 기능이 된다.</div>
+        <div class="bc-tag">Ontology 무용지물 위험</div>
+      </div>
+      <div class="bear-card-dual">
+        <div class="bc-icon">💀</div>
+        <div class="bc-num">SCENARIO 03</div>
+        <div class="bc-name">Llama + GovCloud = 0원</div>
+        <div class="bc-desc">Meta Llama(오픈소스) + AWS/Azure GovCloud = 구독료 0원 + 기밀급 보안. 비용 민감한 정부 기관이 팔란티어를 버릴 명분이 완성된다.</div>
+        <div class="bc-tag">무료 오픈소스 공세</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5 : Bull 1 (Sage) -->
+<div class="slide sage" id="slide-5">
+  <div class="slide-label">SIGNAL · EP02</div>
+  <div class="slide-num">05 / 07</div>
+  <div class="bull-wrap">
+    <div class="bull-hd">
+      <div class="bull-eyebrow">BULL COUNTERARGUMENT 01</div>
+      <div class="bull-title"><span class="upside">반론</span> 1</div>
+    </div>
+    <div class="bull-card-single">
+      <div class="bc-icon">🪟</div>
+      <div class="bc-num">COUNTERARGUMENT 01 · ONTOLOGY STANDARD</div>
+      <div class="bc-name">Ontology가 Windows처럼 표준이 된다</div>
+      <div class="bc-desc">
+        한 번 Ontology 기반으로 구축된 데이터 파이프라인은 LLM으로 쉽게 대체되지 않는다.<br>
+        Windows를 리눅스로 바꾸는 것이 이론상 가능해도 기업은 하지 않는다.<br>
+        팔란티어가 먼저 표준을 잡으면, 뒤따르는 위협은 뒤늦은 이야기가 된다.
+      </div>
+      <div class="bc-highlight">⟶ 표준을 먼저 잡는 자가 시장을 지배한다</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6 : Bull 2+3 (Cream) -->
+<div class="slide cream" id="slide-6">
+  <div class="slide-label">SIGNAL · EP02</div>
+  <div class="slide-num">06 / 07</div>
+  <div class="bull-wrap">
+    <div class="bull-hd">
+      <div class="bull-eyebrow">BULL COUNTERARGUMENT 02 · 03</div>
+      <div class="bull-title"><span class="upside">반론</span> 2 + 3</div>
+    </div>
+    <div class="bull-cards-dual">
+      <div class="bull-card-dual">
+        <div class="bc-icon">🌍</div>
+        <div class="bc-num">COUNTERARGUMENT 02</div>
+        <div class="bc-name">지정학 불안 = 무한 성장 연료</div>
+        <div class="bc-desc">NATO 확장, 우크라이나 재건, 대만 긴장. 이 흐름이 멈추지 않으면 동맹국 정부 예산은 팔란티어로 향한다. DOGE 삭감도 팔란티어는 우선 보호.</div>
+        <div class="bc-tag">지정학 → 성장 직결</div>
+      </div>
+      <div class="bull-card-dual">
+        <div class="bc-icon">🔒</div>
+        <div class="bc-num">COUNTERARGUMENT 03</div>
+        <div class="bc-name">AIP 부트캠프 Lock-in 가속</div>
+        <div class="bc-desc">미국 상업 매출 +133%. 부트캠프 → 장기 계약 전환이 계속되면 정부 의존도 42%가 자동으로 분산된다. 리스크 헤지 + 성장 동시 달성.</div>
+        <div class="bc-tag">민간 비중 확대 중</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 7 : Verdict (Cream) -->
+<div class="slide cream" id="slide-7">
+  <div class="slide-label">SIGNAL · EP02</div>
+  <div class="slide-num">07 / 07</div>
+  <div class="verdict-wrap">
+    <div class="verdict-eyebrow">VERDICT · EP02 결론</div>
+    <div class="verdict-q">당신의 시그널은?</div>
+    <div class="verdict-line"></div>
+    <div class="verdict-cols">
+      <div class="verdict-col bear">
+        <div class="vc-title">🐻 멸망 조건</div>
+        <div class="vc-items">빅테크 보안 인가 완전 취득<br>LLM의 자동 데이터 이해 도달<br>오픈소스 무료 대안 정부 침투</div>
+      </div>
+      <div class="verdict-col bull">
+        <div class="vc-title">🐂 지배 조건</div>
+        <div class="vc-items">Ontology 산업 표준화<br>지정학 불안 지속<br>민간 시장 침투 가속</div>
+      </div>
+    </div>
+    <div class="verdict-next">
+      <div class="next-label">NEXT</div>
+      <div class="next-text">EP03 — 팔란티어의 S커브 위치 분석</div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  let cur = 0;
+  const GO_SELECTORS = [
+    '.hook-company','.hook-per-badge','.hook-warning','.hook-badge',
+    '.setup-hd','.setup-col',
+    '.bear-hd','.bear-card-single','.bear-card-dual',
+    '.bull-hd','.bull-card-single','.bull-card-dual',
+    '.verdict-eyebrow','.verdict-q','.verdict-line','.verdict-cols','.verdict-next'
+  ].join(',');
+  function showSlide(n) {
+    slides.forEach(s => {
+      s.style.display = 'none';
+      s.querySelectorAll(GO_SELECTORS).forEach(el => el.classList.remove('go'));
+    });
+    const slide = slides[n];
+    if (!slide) return;
+    slide.style.display = 'flex';
+    setTimeout(() => slide.querySelectorAll(GO_SELECTORS).forEach(el => el.classList.add('go')), 300);
+    cur = n;
+  }
+  window.goToSlide = showSlide;
+  function applyScale() {
+    var s = window.innerWidth / 1920;
+    document.body.style.transform = 'scale(' + s + ')';
+    document.body.style.transformOrigin = 'top left';
+    document.documentElement.style.height = Math.round(1080 * s) + 'px';
+    document.documentElement.style.overflow = 'hidden';
+  }
+  applyScale();
+  window.addEventListener('resize', applyScale);
+  showSlide(0);
+  document.body.addEventListener('click', () => { if (cur < slides.length-1) showSlide(cur+1); });
+  document.addEventListener('keydown', e => {
+    if (e.key==='ArrowRight'||e.key===' ') { if (cur<slides.length-1) showSlide(cur+1); }
+    if (e.key==='ArrowLeft') { if (cur>0) showSlide(cur-1); }
+  });
+})();
+</script>
+</body>
+</html>

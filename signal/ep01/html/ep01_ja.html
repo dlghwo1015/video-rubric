@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>SIGNAL EP01 — パランティア: AI企業のふりをするSI業者の素顔</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&family=Inter:wght@300;400;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1920px; height: 1080px;
+  background: #e4ece1;
+  font-family: 'Noto Sans JP', 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute; inset: 0;
+  display: none;
+  align-items: center; justify-content: center;
+}
+.slide.sage  { background: #e4ece1; }
+.slide.cream { background: #faf7f0; }
+.slide.slate { background: #edf1f8; }
+
+.slide-label {
+  position: absolute; top: 52px; left: 80px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 22px; color: #a09880; letter-spacing: 2px;
+}
+.slide.slate .slide-label { color: #8a9ab8; }
+.slide-num {
+  position: absolute; top: 52px; right: 80px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 22px; color: #a09880;
+}
+.slide.slate .slide-num { color: #8a9ab8; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(36px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideInLeft  {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes expandW {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+/* ── SLIDE 1 : Hook (Sage) ── */
+#slide-1 .hook-center {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 16px; text-align: center;
+}
+.hook-company {
+  font-size: 108px; font-weight: 900; letter-spacing: -2px;
+  color: #1a2e1f; opacity: 0;
+}
+.hook-company.go { animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) forwards; }
+.hook-metrics {
+  display: flex; gap: 60px; align-items: center; margin-top: 10px; opacity: 0;
+}
+.hook-metrics.go { animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.25s forwards; }
+.hook-metric { text-align: center; }
+.hook-metric .val {
+  font-size: 68px; font-weight: 900; color: #4d7a5a;
+  font-family: 'Inter', sans-serif; letter-spacing: -2px;
+}
+.hook-metric .lbl { font-size: 22px; color: #7a7060; font-weight: 400; margin-top: 4px; }
+.hook-metric-sep { width: 2px; height: 80px; background: #c6dac0; }
+.hook-question { font-size: 40px; font-weight: 400; color: #5a7060; margin-top: 20px; opacity: 0; }
+.hook-question.go { animation: fadeUp 0.6s ease 0.55s forwards; }
+.hook-badge {
+  position: absolute; bottom: 68px; left: 0; right: 0; text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 22px; letter-spacing: 4px; color: #82ae8d; opacity: 0;
+}
+.hook-badge.go { animation: fadeIn 0.6s ease 0.85s forwards; }
+
+/* ── SLIDE 2 : Overview (Cream) ── */
+#slide-2 .overview-wrap {
+  width: 1680px; display: flex; flex-direction: column; gap: 56px;
+}
+.overview-hd { opacity: 0; }
+.overview-hd.go { animation: fadeUp 0.6s ease forwards; }
+.overview-eyebrow {
+  font-family: 'Roboto Mono', monospace; font-size: 20px; letter-spacing: 4px; color: #a09880;
+}
+.overview-title { font-size: 50px; font-weight: 900; color: #3a3530; margin-top: 12px; letter-spacing: -1px; }
+.overview-title .accent { color: #8a5a1e; }
+.overview-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+.stat-card {
+  background: #fff; border-radius: 16px; padding: 36px 32px;
+  border-left: 5px solid #d4a966; opacity: 0;
+}
+.stat-card.go { animation: fadeUp 0.6s ease forwards; }
+.stat-card:nth-child(1) { animation-delay: 0.1s; }
+.stat-card:nth-child(2) { animation-delay: 0.2s; }
+.stat-card:nth-child(3) { animation-delay: 0.3s; }
+.stat-card:nth-child(4) { animation-delay: 0.4s; }
+.stat-label {
+  font-family: 'Roboto Mono', monospace; font-size: 16px; color: #a09880; letter-spacing: 2px;
+}
+.stat-value { font-size: 56px; font-weight: 900; color: #8a5a1e; font-family: 'Inter', sans-serif; letter-spacing: -2px; margin-top: 8px; }
+.stat-sub { font-size: 18px; color: #7a7060; margin-top: 6px; }
+.overview-products { display: flex; gap: 28px; opacity: 0; }
+.overview-products.go { animation: fadeUp 0.6s ease 0.5s forwards; }
+.prod-card {
+  flex: 1; background: #fff8ee; border-radius: 12px; padding: 24px 28px;
+  border: 1.5px solid #e8d5b0; display: flex; align-items: center; gap: 16px;
+}
+.prod-name { font-size: 28px; font-weight: 700; color: #3a3530; }
+.prod-sub { font-size: 18px; color: #7a7060; margin-top: 4px; }
+.prod-dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
+.prod-dot.gov { background: #8a5a1e; }
+.prod-dot.ent { background: #c4894a; }
+.prod-dot.ai  { background: #d4a966; }
+
+/* ── SLIDE 3 : What They Do (Slate) ── */
+#slide-3 .pipeline-wrap {
+  width: 1680px; display: flex; flex-direction: column; gap: 64px;
+}
+.pipeline-hd { opacity: 0; }
+.pipeline-hd.go { animation: fadeUp 0.6s ease forwards; }
+.pipeline-eyebrow { font-family: 'Roboto Mono', monospace; font-size: 20px; letter-spacing: 4px; color: #8a9ab8; }
+.pipeline-title { font-size: 52px; font-weight: 900; color: #1a2a42; margin-top: 12px; letter-spacing: -1px; }
+.pipeline-flow { display: flex; align-items: center; gap: 0; opacity: 0; }
+.pipeline-flow.go { animation: fadeUp 0.7s ease 0.2s forwards; }
+.pipeline-node {
+  flex: 1; background: #fff; border-radius: 20px; padding: 40px 36px;
+  border: 2px solid #c8d8f0; text-align: center; position: relative;
+}
+.pipeline-node .node-icon { font-size: 52px; margin-bottom: 16px; }
+.pipeline-node .node-name { font-size: 30px; font-weight: 900; color: #1a2a42; }
+.pipeline-node .node-sub { font-size: 17px; color: #5a6a8a; margin-top: 8px; }
+.pipeline-node .node-tag {
+  display: inline-block; margin-top: 16px; background: #dce8f8; color: #2c4c7e;
+  font-size: 15px; font-weight: 700; padding: 6px 16px; border-radius: 20px;
+  font-family: 'Roboto Mono', monospace; letter-spacing: 1px;
+}
+.pipeline-node.palantir { border-color: #2c4c7e; background: #f0f4fc; }
+.pipeline-node.palantir .node-name { color: #2c4c7e; }
+.pipeline-node.palantir .node-tag { background: #2c4c7e; color: #fff; }
+.pipeline-arrow { flex: 0 0 80px; text-align: center; font-size: 40px; color: #8a9ab8; }
+.pipeline-note { text-align: center; font-size: 26px; color: #5a6a8a; opacity: 0; }
+.pipeline-note.go { animation: fadeIn 0.6s ease 0.6s forwards; }
+.pipeline-note strong { color: #2c4c7e; font-weight: 700; }
+
+/* ── SLIDE 4 : Moat (Sage) ── */
+#slide-4 .moat-wrap {
+  width: 1680px; display: flex; flex-direction: column; gap: 60px;
+}
+.moat-hd { opacity: 0; }
+.moat-hd.go { animation: fadeUp 0.6s ease forwards; }
+.moat-eyebrow { font-family: 'Roboto Mono', monospace; font-size: 20px; letter-spacing: 4px; color: #82ae8d; }
+.moat-title { font-size: 52px; font-weight: 900; color: #1a2e1f; margin-top: 12px; }
+.moat-title .accent { color: #4d7a5a; }
+.moat-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.moat-card {
+  background: #fff; border-radius: 24px; padding: 52px 48px;
+  border: 2px solid #bcd4b6; opacity: 0;
+}
+.moat-card.go { animation: slideInLeft 0.6s ease forwards; }
+.moat-card:nth-child(2).go { animation: slideInRight 0.6s ease 0.2s forwards; }
+.moat-card .moat-icon { font-size: 60px; margin-bottom: 20px; }
+.moat-card .moat-num { font-family: 'Roboto Mono', monospace; font-size: 16px; letter-spacing: 3px; color: #82ae8d; margin-bottom: 12px; }
+.moat-card .moat-name { font-size: 36px; font-weight: 900; color: #1a2e1f; margin-bottom: 16px; }
+.moat-card .moat-desc { font-size: 21px; color: #5a7060; line-height: 1.8; }
+.moat-card .moat-highlight { margin-top: 24px; padding: 16px 20px; background: #e4ece1; border-radius: 12px; font-size: 19px; font-weight: 700; color: #4d7a5a; }
+
+/* ── SLIDE 5 : PROS (Cream) ── */
+#slide-5 .pros-wrap { width: 1680px; display: flex; flex-direction: column; gap: 52px; }
+.pros-hd { opacity: 0; }
+.pros-hd.go { animation: fadeUp 0.6s ease forwards; }
+.pros-eyebrow { font-family: 'Roboto Mono', monospace; font-size: 20px; letter-spacing: 4px; color: #a09880; }
+.pros-title { font-size: 52px; font-weight: 900; color: #3a3530; margin-top: 12px; }
+.pros-signal { color: #4d7a5a; }
+.pros-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.pros-card {
+  background: #fff; border-radius: 20px; padding: 44px 36px;
+  border-top: 6px solid #4d7a5a; opacity: 0;
+}
+.pros-card.go { animation: fadeUp 0.6s ease forwards; }
+.pros-card:nth-child(1) { animation-delay: 0.1s; }
+.pros-card:nth-child(2) { animation-delay: 0.25s; }
+.pros-card:nth-child(3) { animation-delay: 0.4s; }
+.pros-card .card-num { font-family: 'Roboto Mono', monospace; font-size: 15px; letter-spacing: 2px; color: #82ae8d; margin-bottom: 12px; }
+.pros-card .card-title { font-size: 26px; font-weight: 900; color: #3a3530; margin-bottom: 14px; line-height: 1.4; }
+.pros-card .card-desc { font-size: 18px; color: #7a7060; line-height: 1.8; }
+.pros-card .card-tag { display: inline-block; margin-top: 18px; background: #e4ece1; color: #4d7a5a; font-size: 15px; font-weight: 700; padding: 6px 14px; border-radius: 20px; }
+
+/* ── SLIDE 6 : CONS (Slate) ── */
+#slide-6 .cons-wrap { width: 1680px; display: flex; flex-direction: column; gap: 52px; }
+.cons-hd { opacity: 0; }
+.cons-hd.go { animation: fadeUp 0.6s ease forwards; }
+.cons-eyebrow { font-family: 'Roboto Mono', monospace; font-size: 20px; letter-spacing: 4px; color: #8a9ab8; }
+.cons-title { font-size: 52px; font-weight: 900; color: #1a2a42; margin-top: 12px; }
+.cons-signal { color: #2c4c7e; }
+.cons-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.cons-card {
+  background: #fff; border-radius: 20px; padding: 44px 36px;
+  border-top: 6px solid #2c4c7e; opacity: 0;
+}
+.cons-card.go { animation: fadeUp 0.6s ease forwards; }
+.cons-card:nth-child(1) { animation-delay: 0.1s; }
+.cons-card:nth-child(2) { animation-delay: 0.25s; }
+.cons-card:nth-child(3) { animation-delay: 0.4s; }
+.cons-card .card-num { font-family: 'Roboto Mono', monospace; font-size: 15px; letter-spacing: 2px; color: #8a9ab8; margin-bottom: 12px; }
+.cons-card .card-title { font-size: 26px; font-weight: 900; color: #1a2a42; margin-bottom: 14px; line-height: 1.4; }
+.cons-card .card-desc { font-size: 18px; color: #5a6a8a; line-height: 1.8; }
+.cons-card .card-tag { display: inline-block; margin-top: 18px; background: #dce8f8; color: #2c4c7e; font-size: 15px; font-weight: 700; padding: 6px 14px; border-radius: 20px; }
+
+/* ── SLIDE 7 : Verdict (Cream) ── */
+#slide-7 .verdict-wrap {
+  display: flex; flex-direction: column; align-items: center; gap: 32px;
+  text-align: center; width: 1400px;
+}
+.verdict-eyebrow { font-family: 'Roboto Mono', monospace; font-size: 20px; letter-spacing: 4px; color: #a09880; opacity: 0; }
+.verdict-eyebrow.go { animation: fadeIn 0.5s ease forwards; }
+.verdict-main { font-size: 76px; font-weight: 900; color: #3a3530; letter-spacing: -2px; line-height: 1.2; opacity: 0; }
+.verdict-main.go { animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.15s forwards; }
+.verdict-main .accent { color: #8a5a1e; }
+.verdict-line { width: 0; height: 3px; background: #d4a966; border-radius: 2px; opacity: 0; }
+.verdict-line.go { opacity: 1; animation: expandW 0.8s ease 0.5s forwards; }
+.verdict-sub { font-size: 26px; color: #7a7060; line-height: 1.8; opacity: 0; }
+.verdict-sub.go { animation: fadeUp 0.6s ease 0.65s forwards; }
+.verdict-next { display: flex; align-items: center; gap: 16px; background: #fff; border-radius: 50px; padding: 18px 36px; border: 2px solid #e8d5b0; opacity: 0; }
+.verdict-next.go { animation: fadeUp 0.6s ease 0.9s forwards; }
+.verdict-next .next-label { font-family: 'Roboto Mono', monospace; font-size: 16px; color: #a09880; letter-spacing: 2px; }
+.verdict-next .next-text { font-size: 22px; font-weight: 700; color: #3a3530; }
+</style>
+</head>
+<body>
+
+<!-- ══════════ SLIDE 1 : Hook (Sage) ══════════ -->
+<div class="slide sage" id="slide-1">
+  <div class="slide-label">SIGNAL · EP01</div>
+  <div class="slide-num">01 / 07</div>
+  <div class="hook-center">
+    <div class="hook-company">パランティア</div>
+    <div class="hook-metrics">
+      <div class="hook-metric">
+        <div class="val">$130</div>
+        <div class="lbl">現在の株価</div>
+      </div>
+      <div class="hook-metric-sep"></div>
+      <div class="hook-metric">
+        <div class="val">+85%</div>
+        <div class="lbl">売上成長 YoY</div>
+      </div>
+      <div class="hook-metric-sep"></div>
+      <div class="hook-metric">
+        <div class="val">4倍</div>
+        <div class="lbl">純利益の増加</div>
+      </div>
+    </div>
+    <div class="hook-question">でも、本当にAI企業と言えるんでしょうか？</div>
+  </div>
+  <div class="hook-badge">SIGNAL — 企業分析シリーズ</div>
+</div>
+
+<!-- ══════════ SLIDE 2 : Overview (Cream) ══════════ -->
+<div class="slide cream" id="slide-2">
+  <div class="slide-label">SIGNAL · EP01</div>
+  <div class="slide-num">02 / 07</div>
+  <div class="overview-wrap">
+    <div class="overview-hd">
+      <div class="overview-eyebrow">OVERVIEW</div>
+      <div class="overview-title">パランティア — <span class="accent">2026年Q1 過去最高業績</span></div>
+    </div>
+    <div class="overview-stats">
+      <div class="stat-card">
+        <div class="stat-label">Q1 REVENUE</div>
+        <div class="stat-value">$1.63B</div>
+        <div class="stat-sub">予想$1.54Bを上回る</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">YoY GROWTH</div>
+        <div class="stat-value">+85%</div>
+        <div class="stat-sub">過去最高の成長率</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">NET INCOME</div>
+        <div class="stat-value">$870M</div>
+        <div class="stat-sub">前年比4倍</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">RULE OF 40</div>
+        <div class="stat-value">145%</div>
+        <div class="stat-sub">NVIDIAと同水準</div>
+      </div>
+    </div>
+    <div class="overview-products">
+      <div class="prod-card">
+        <div class="prod-dot gov"></div>
+        <div>
+          <div class="prod-name">Gotham</div>
+          <div class="prod-sub">政府・国防専用</div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-dot ent"></div>
+        <div>
+          <div class="prod-name">Foundry</div>
+          <div class="prod-sub">企業データ統合</div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-dot ai"></div>
+        <div>
+          <div class="prod-name">AIP</div>
+          <div class="prod-sub">AIプラットフォーム（LLM接続）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ SLIDE 3 : What They Do (Slate) ══════════ -->
+<div class="slide slate" id="slide-3">
+  <div class="slide-label">SIGNAL · EP01</div>
+  <div class="slide-num">03 / 07</div>
+  <div class="pipeline-wrap">
+    <div class="pipeline-hd">
+      <div class="pipeline-eyebrow">REAL BUSINESS</div>
+      <div class="pipeline-title">パランティアは何をしているのか</div>
+    </div>
+    <div class="pipeline-flow">
+      <div class="pipeline-node">
+        <div class="node-icon">⚙️</div>
+        <div class="node-name">NVIDIA</div>
+        <div class="node-sub">GPU · コンピューティング基盤</div>
+        <div class="node-tag">ENGINE</div>
+      </div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-node">
+        <div class="node-icon">🧠</div>
+        <div class="node-name">OpenAI · Claude<br>Gemini · Llama</div>
+        <div class="node-sub">大規模言語モデル（自社開発）</div>
+        <div class="node-tag">INTELLIGENCE</div>
+      </div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-node palantir">
+        <div class="node-icon">🛡️</div>
+        <div class="node-name">Palantir</div>
+        <div class="node-sub">機密データ + AI統合</div>
+        <div class="node-tag">SECURE SI</div>
+      </div>
+    </div>
+    <div class="pipeline-note">
+      パランティアはAIを<strong>作りません</strong>。持ってきて<strong>軍事・政府データに接続</strong>します。
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ SLIDE 4 : Moat (Sage) ══════════ -->
+<div class="slide sage" id="slide-4">
+  <div class="slide-label">SIGNAL · EP01</div>
+  <div class="slide-num">04 / 07</div>
+  <div class="moat-wrap">
+    <div class="moat-hd">
+      <div class="moat-eyebrow">COMPETITIVE MOAT</div>
+      <div class="moat-title">本当の競争力 — <span class="accent">二つの堀</span></div>
+    </div>
+    <div class="moat-cards">
+      <div class="moat-card">
+        <div class="moat-icon">🛡️</div>
+        <div class="moat-num">MOAT 01</div>
+        <div class="moat-name">セキュリティクリアランス</div>
+        <div class="moat-desc">20年間、米軍・CIAと共に積み上げた<br>機密レベルの認証は<br>短期間では複製できません。</div>
+        <div class="moat-highlight">⟶ OpenAIにも、Googleにもない資格</div>
+      </div>
+      <div class="moat-card">
+        <div class="moat-icon">🔗</div>
+        <div class="moat-num">MOAT 02</div>
+        <div class="moat-name">データパイプラインのロックイン</div>
+        <div class="moat-desc">導入すると数千万件のデータが<br>パランティア流に構造化されます。<br>抜け出す方が怖い構造。</div>
+        <div class="moat-highlight">⟶ 離脱コスト = 事業停止レベル</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ SLIDE 5 : PROS (Cream) ══════════ -->
+<div class="slide cream" id="slide-5">
+  <div class="slide-label">SIGNAL · EP01</div>
+  <div class="slide-num">05 / 07</div>
+  <div class="pros-wrap">
+    <div class="pros-hd">
+      <div class="pros-eyebrow">SIGNAL ↑</div>
+      <div class="pros-title"><span class="pros-signal">前向きなシグナル</span> 3つ</div>
+    </div>
+    <div class="pros-cards">
+      <div class="pros-card">
+        <div class="card-num">PROS 01</div>
+        <div class="card-title">過去最高の業績</div>
+        <div class="card-desc">売上+85%、純利益4倍。<br>期待感ではなく実際の数字。</div>
+        <div class="card-tag">Revenue +85% YoY</div>
+      </div>
+      <div class="pros-card">
+        <div class="card-num">PROS 02</div>
+        <div class="card-title">AIPブートキャンプ稼働中</div>
+        <div class="card-desc">米国商業売上+133%。<br>民間市場への浸透が現実に。</div>
+        <div class="card-tag">US Commercial +133%</div>
+      </div>
+      <div class="pros-card">
+        <div class="card-num">PROS 03</div>
+        <div class="card-title">地政学リスク = 成長の燃料</div>
+        <div class="card-desc">NATO拡大・ウクライナ・台湾。<br>不安定な世界ほどパランティアが必要。</div>
+        <div class="card-tag">NATO + 主権AI需要</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ SLIDE 6 : CONS (Slate) ══════════ -->
+<div class="slide slate" id="slide-6">
+  <div class="slide-label">SIGNAL · EP01</div>
+  <div class="slide-num">06 / 07</div>
+  <div class="cons-wrap">
+    <div class="cons-hd">
+      <div class="cons-eyebrow">SIGNAL ↓</div>
+      <div class="cons-title"><span class="cons-signal">注意すべきシグナル</span> 3つ</div>
+    </div>
+    <div class="cons-cards">
+      <div class="cons-card">
+        <div class="card-num">CONS 01</div>
+        <div class="card-title">PER 260倍</div>
+        <div class="card-desc">セクター平均24倍の10倍以上。<br>今後10年の成長がすでに反映済み。</div>
+        <div class="card-tag">セクター平均 PER 24倍</div>
+      </div>
+      <div class="cons-card">
+        <div class="card-num">CONS 02</div>
+        <div class="card-title">CEO発言リスク</div>
+        <div class="card-desc">繰り返す爆弾発言で<br>欧州年金基金€8,250億が撤退。</div>
+        <div class="card-tag">ABP全量売却</div>
+      </div>
+      <div class="cons-card">
+        <div class="card-num">CONS 03</div>
+        <div class="card-title">DOGE国防予算 -8%</div>
+        <div class="card-desc">政府売上依存度42%。<br>予算削減は直撃弾。</div>
+        <div class="card-tag">政府売上42%依存</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ SLIDE 7 : Verdict (Cream) ══════════ -->
+<div class="slide cream" id="slide-7">
+  <div class="slide-label">SIGNAL · EP01</div>
+  <div class="slide-num">07 / 07</div>
+  <div class="verdict-wrap">
+    <div class="verdict-eyebrow">VERDICT · EP01 結論</div>
+    <div class="verdict-main">
+      AIを作らない<br><span class="accent">AI企業</span>
+    </div>
+    <div class="verdict-line"></div>
+    <div class="verdict-sub">
+      セキュリティクリアランス + 20年のデータパイプライン —<br>
+      OpenAIにも、Googleにも簡単には複製できない堀。
+    </div>
+    <div class="verdict-next">
+      <div class="next-label">NEXT</div>
+      <div class="next-text">EP02 — パランティア崩壊シナリオ vs 支配シナリオ</div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  let cur = 0;
+  const GO_SELECTORS = [
+    '.hook-company', '.hook-metrics', '.hook-question', '.hook-badge',
+    '.overview-hd', '.stat-card', '.overview-products',
+    '.pipeline-hd', '.pipeline-flow', '.pipeline-note',
+    '.moat-hd', '.moat-card',
+    '.pros-hd', '.pros-card',
+    '.cons-hd', '.cons-card',
+    '.verdict-eyebrow', '.verdict-main', '.verdict-line', '.verdict-sub', '.verdict-next'
+  ].join(',');
+
+  function showSlide(n) {
+    slides.forEach(s => {
+      s.style.display = 'none';
+      s.querySelectorAll(GO_SELECTORS).forEach(el => el.classList.remove('go'));
+    });
+    const slide = slides[n];
+    if (!slide) return;
+    slide.style.display = 'flex';
+    setTimeout(() => {
+      slide.querySelectorAll(GO_SELECTORS).forEach(el => el.classList.add('go'));
+    }, 300);
+    cur = n;
+  }
+
+  window.goToSlide = showSlide;
+
+  function applyScale() {
+    var s = window.innerWidth / 1920;
+    document.body.style.transform = 'scale(' + s + ')';
+    document.body.style.transformOrigin = 'top left';
+    document.documentElement.style.height = Math.round(1080 * s) + 'px';
+    document.documentElement.style.overflow = 'hidden';
+  }
+  applyScale();
+  window.addEventListener('resize', applyScale);
+
+  showSlide(0);
+
+  document.body.addEventListener('click', () => {
+    if (cur < slides.length - 1) showSlide(cur + 1);
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') {
+      if (cur < slides.length - 1) showSlide(cur + 1);
+    }
+    if (e.key === 'ArrowLeft') {
+      if (cur > 0) showSlide(cur - 1);
+    }
+  });
+})();
+</script>
+</body>
+</html>

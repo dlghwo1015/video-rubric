@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>SIGNAL EP01 — 팔란티어: AI 회사인 척하는 SI 업체의 민낯</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&family=Inter:wght@300;400;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 1920px; height: 1080px;
+  background: #e4ece1;
+  font-family: 'Noto Sans KR', 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+/* ── 공통 슬라이드 ── */
+.slide {
+  position: absolute; inset: 0;
+  display: none;
+  align-items: center; justify-content: center;
+}
+
+/* 3-Tone 배경 */
+.slide.sage  { background: #e4ece1; }
+.slide.cream { background: #faf7f0; }
+.slide.slate { background: #edf1f8; }
+
+/* 상단 레이블 */
+.slide-label {
+  position: absolute; top: 52px; left: 80px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 22px; color: #a09880; letter-spacing: 2px;
+}
+.slide.slate .slide-label { color: #8a9ab8; }
+.slide-num {
+  position: absolute; top: 52px; right: 80px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 22px; color: #a09880;
+}
+.slide.slate .slide-num { color: #8a9ab8; }
+
+/* ── 공통 keyframes ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(36px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideInLeft  {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes expandW {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+
+/* ══════════════════════════════════════
+   SLIDE 1 — Hook (Sage): 키네틱 타이포
+══════════════════════════════════════ */
+#slide-1 .hook-center {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 16px;
+  text-align: center;
+}
+
+.hook-company {
+  font-size: 108px; font-weight: 900; letter-spacing: -4px;
+  color: #1a2e1f;
+  opacity: 0;
+}
+.hook-company.go { animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) forwards; }
+
+.hook-metrics {
+  display: flex; gap: 60px; align-items: center;
+  margin-top: 10px;
+  opacity: 0;
+}
+.hook-metrics.go { animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.25s forwards; }
+
+.hook-metric {
+  text-align: center;
+}
+.hook-metric .val {
+  font-size: 68px; font-weight: 900; color: #4d7a5a;
+  font-family: 'Inter', sans-serif; letter-spacing: -2px;
+}
+.hook-metric .lbl {
+  font-size: 22px; color: #7a7060; font-weight: 400;
+  margin-top: 4px;
+}
+.hook-metric-sep {
+  width: 2px; height: 80px; background: #c6dac0;
+}
+
+.hook-question {
+  font-size: 44px; font-weight: 400; color: #5a7060;
+  margin-top: 20px;
+  opacity: 0;
+}
+.hook-question.go { animation: fadeUp 0.6s ease 0.55s forwards; }
+
+.hook-badge {
+  position: absolute; bottom: 68px; left: 0; right: 0;
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 22px; letter-spacing: 4px; color: #82ae8d;
+  opacity: 0;
+}
+.hook-badge.go { animation: fadeIn 0.6s ease 0.85s forwards; }
+
+
+/* ══════════════════════════════════════
+   SLIDE 2 — Overview (Cream): 실적 수치
+══════════════════════════════════════ */
+#slide-2 .overview-wrap {
+  width: 1680px; display: flex; flex-direction: column; gap: 56px;
+}
+.overview-hd {
+  opacity: 0;
+}
+.overview-hd.go { animation: fadeUp 0.6s ease forwards; }
+
+.overview-eyebrow {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 20px; letter-spacing: 4px; color: #a09880;
+}
+.overview-title {
+  font-size: 52px; font-weight: 900; color: #3a3530;
+  margin-top: 12px; letter-spacing: -1.5px;
+}
+.overview-title .accent { color: #8a5a1e; }
+
+.overview-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px;
+}
+.stat-card {
+  background: #fff; border-radius: 16px;
+  padding: 36px 32px;
+  border-left: 5px solid #d4a966;
+  opacity: 0;
+}
+.stat-card.go { animation: fadeUp 0.6s ease forwards; }
+.stat-card:nth-child(1) { animation-delay: 0.1s; }
+.stat-card:nth-child(2) { animation-delay: 0.2s; }
+.stat-card:nth-child(3) { animation-delay: 0.3s; }
+.stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+.stat-label {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 16px; color: #a09880; letter-spacing: 2px;
+}
+.stat-value {
+  font-size: 56px; font-weight: 900; color: #8a5a1e;
+  font-family: 'Inter', sans-serif; letter-spacing: -2px;
+  margin-top: 8px;
+}
+.stat-sub {
+  font-size: 18px; color: #7a7060; margin-top: 6px;
+}
+
+.overview-products {
+  display: flex; gap: 28px;
+  opacity: 0;
+}
+.overview-products.go { animation: fadeUp 0.6s ease 0.5s forwards; }
+
+.prod-card {
+  flex: 1; background: #fff8ee;
+  border-radius: 12px; padding: 24px 28px;
+  border: 1.5px solid #e8d5b0;
+  display: flex; align-items: center; gap: 16px;
+}
+.prod-name {
+  font-size: 28px; font-weight: 700; color: #3a3530;
+}
+.prod-sub {
+  font-size: 18px; color: #7a7060; margin-top: 4px;
+}
+.prod-dot {
+  width: 14px; height: 14px; border-radius: 50%;
+  flex-shrink: 0;
+}
+.prod-dot.gov { background: #8a5a1e; }
+.prod-dot.ent { background: #c4894a; }
+.prod-dot.ai  { background: #d4a966; }
+
+
+/* ══════════════════════════════════════
+   SLIDE 3 — What They Do (Slate): 파이프라인
+══════════════════════════════════════ */
+#slide-3 .pipeline-wrap {
+  width: 1680px; display: flex; flex-direction: column; gap: 64px;
+}
+.pipeline-hd {
+  opacity: 0;
+}
+.pipeline-hd.go { animation: fadeUp 0.6s ease forwards; }
+
+.pipeline-eyebrow {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 20px; letter-spacing: 4px; color: #8a9ab8;
+}
+.pipeline-title {
+  font-size: 52px; font-weight: 900; color: #1a2a42;
+  margin-top: 12px; letter-spacing: -1.5px;
+}
+
+.pipeline-flow {
+  display: flex; align-items: center; gap: 0;
+  opacity: 0;
+}
+.pipeline-flow.go { animation: fadeUp 0.7s ease 0.2s forwards; }
+
+.pipeline-node {
+  flex: 1;
+  background: #fff; border-radius: 20px;
+  padding: 40px 36px;
+  border: 2px solid #c8d8f0;
+  text-align: center;
+  position: relative;
+}
+.pipeline-node .node-icon {
+  font-size: 52px; margin-bottom: 16px;
+}
+.pipeline-node .node-name {
+  font-size: 34px; font-weight: 900; color: #1a2a42;
+}
+.pipeline-node .node-sub {
+  font-size: 18px; color: #5a6a8a; margin-top: 8px;
+}
+.pipeline-node .node-tag {
+  display: inline-block; margin-top: 16px;
+  background: #dce8f8; color: #2c4c7e;
+  font-size: 15px; font-weight: 700;
+  padding: 6px 16px; border-radius: 20px;
+  font-family: 'Roboto Mono', monospace; letter-spacing: 1px;
+}
+.pipeline-node.palantir {
+  border-color: #2c4c7e; background: #f0f4fc;
+}
+.pipeline-node.palantir .node-name { color: #2c4c7e; }
+.pipeline-node.palantir .node-tag { background: #2c4c7e; color: #fff; }
+
+.pipeline-arrow {
+  flex: 0 0 80px; text-align: center;
+  font-size: 40px; color: #8a9ab8;
+}
+
+.pipeline-note {
+  text-align: center;
+  font-size: 28px; color: #5a6a8a;
+  opacity: 0;
+}
+.pipeline-note.go { animation: fadeIn 0.6s ease 0.6s forwards; }
+.pipeline-note strong { color: #2c4c7e; font-weight: 700; }
+
+
+/* ══════════════════════════════════════
+   SLIDE 4 — Moat (Sage): 두 가지 해자
+══════════════════════════════════════ */
+#slide-4 .moat-wrap {
+  width: 1680px; display: flex; flex-direction: column; gap: 60px;
+}
+.moat-hd {
+  opacity: 0;
+}
+.moat-hd.go { animation: fadeUp 0.6s ease forwards; }
+
+.moat-eyebrow {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 20px; letter-spacing: 4px; color: #82ae8d;
+}
+.moat-title {
+  font-size: 52px; font-weight: 900; color: #1a2e1f;
+  margin-top: 12px; letter-spacing: -1.5px;
+}
+.moat-title .accent { color: #4d7a5a; }
+
+.moat-cards {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+}
+.moat-card {
+  background: #fff; border-radius: 24px;
+  padding: 52px 48px;
+  border: 2px solid #bcd4b6;
+  opacity: 0;
+}
+.moat-card.go { animation: slideInLeft 0.6s ease forwards; }
+.moat-card:nth-child(2).go { animation: slideInRight 0.6s ease 0.2s forwards; }
+
+.moat-card .moat-icon {
+  font-size: 60px; margin-bottom: 20px;
+}
+.moat-card .moat-num {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 16px; letter-spacing: 3px; color: #82ae8d;
+  margin-bottom: 12px;
+}
+.moat-card .moat-name {
+  font-size: 36px; font-weight: 900; color: #1a2e1f;
+  margin-bottom: 16px;
+}
+.moat-card .moat-desc {
+  font-size: 22px; color: #5a7060; line-height: 1.7;
+}
+.moat-card .moat-highlight {
+  margin-top: 24px;
+  padding: 16px 20px;
+  background: #e4ece1; border-radius: 12px;
+  font-size: 20px; font-weight: 700; color: #4d7a5a;
+}
+
+
+/* ══════════════════════════════════════
+   SLIDE 5 — PROS (Cream): 긍정 신호 3
+══════════════════════════════════════ */
+#slide-5 .pros-wrap {
+  width: 1680px; display: flex; flex-direction: column; gap: 52px;
+}
+.pros-hd {
+  opacity: 0;
+}
+.pros-hd.go { animation: fadeUp 0.6s ease forwards; }
+
+.pros-eyebrow {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 20px; letter-spacing: 4px; color: #a09880;
+}
+.pros-title {
+  font-size: 52px; font-weight: 900; color: #3a3530;
+  margin-top: 12px; letter-spacing: -1.5px;
+}
+.pros-signal { color: #4d7a5a; }
+
+.pros-cards {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+}
+.pros-card {
+  background: #fff; border-radius: 20px;
+  padding: 44px 36px;
+  border-top: 6px solid #4d7a5a;
+  opacity: 0;
+}
+.pros-card.go { animation: fadeUp 0.6s ease forwards; }
+.pros-card:nth-child(1) { animation-delay: 0.1s; }
+.pros-card:nth-child(2) { animation-delay: 0.25s; }
+.pros-card:nth-child(3) { animation-delay: 0.4s; }
+
+.pros-card .card-num {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 15px; letter-spacing: 2px; color: #82ae8d;
+  margin-bottom: 12px;
+}
+.pros-card .card-title {
+  font-size: 28px; font-weight: 900; color: #3a3530;
+  margin-bottom: 14px; line-height: 1.3;
+}
+.pros-card .card-desc {
+  font-size: 19px; color: #7a7060; line-height: 1.7;
+}
+.pros-card .card-tag {
+  display: inline-block; margin-top: 18px;
+  background: #e4ece1; color: #4d7a5a;
+  font-size: 15px; font-weight: 700;
+  padding: 6px 14px; border-radius: 20px;
+}
+
+
+/* ══════════════════════════════════════
+   SLIDE 6 — CONS (Slate): 주의 신호 3
+══════════════════════════════════════ */
+#slide-6 .cons-wrap {
+  width: 1680px; display: flex; flex-direction: column; gap: 52px;
+}
+.cons-hd {
+  opacity: 0;
+}
+.cons-hd.go { animation: fadeUp 0.6s ease forwards; }
+
+.cons-eyebrow {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 20px; letter-spacing: 4px; color: #8a9ab8;
+}
+.cons-title {
+  font-size: 52px; font-weight: 900; color: #1a2a42;
+  margin-top: 12px; letter-spacing: -1.5px;
+}
+.cons-signal { color: #2c4c7e; }
+
+.cons-cards {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+}
+.cons-card {
+  background: #fff; border-radius: 20px;
+  padding: 44px 36px;
+  border-top: 6px solid #2c4c7e;
+  opacity: 0;
+}
+.cons-card.go { animation: fadeUp 0.6s ease forwards; }
+.cons-card:nth-child(1) { animation-delay: 0.1s; }
+.cons-card:nth-child(2) { animation-delay: 0.25s; }
+.cons-card:nth-child(3) { animation-delay: 0.4s; }
+
+.cons-card .card-num {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 15px; letter-spacing: 2px; color: #8a9ab8;
+  margin-bottom: 12px;
+}
+.cons-card .card-title {
+  font-size: 28px; font-weight: 900; color: #1a2a42;
+  margin-bottom: 14px; line-height: 1.3;
+}
+.cons-card .card-desc {
+  font-size: 19px; color: #5a6a8a; line-height: 1.7;
+}
+.cons-card .card-tag {
+  display: inline-block; margin-top: 18px;
+  background: #dce8f8; color: #2c4c7e;
+  font-size: 15px; font-weight: 700;
+  padding: 6px 14px; border-radius: 20px;
+}
+
+
+/* ══════════════════════════════════════
+   SLIDE 7 — Verdict (Cream): 결론
+══════════════════════════════════════ */
+#slide-7 .verdict-wrap {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 32px;
+  text-align: center;
+  width: 1400px;
+}
+.verdict-eyebrow {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 20px; letter-spacing: 4px; color: #a09880;
+  opacity: 0;
+}
+.verdict-eyebrow.go { animation: fadeIn 0.5s ease forwards; }
+
+.verdict-main {
+  font-size: 80px; font-weight: 900; color: #3a3530;
+  letter-spacing: -3px; line-height: 1.15;
+  opacity: 0;
+}
+.verdict-main.go { animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.15s forwards; }
+.verdict-main .accent { color: #8a5a1e; }
+
+.verdict-line {
+  width: 0; height: 3px; background: #d4a966; border-radius: 2px;
+  opacity: 0;
+}
+.verdict-line.go {
+  opacity: 1;
+  animation: expandW 0.8s ease 0.5s forwards;
+}
+
+.verdict-sub {
+  font-size: 28px; color: #7a7060; line-height: 1.7;
+  opacity: 0;
+}
+.verdict-sub.go { animation: fadeUp 0.6s ease 0.65s forwards; }
+
+.verdict-next {
+  display: flex; align-items: center; gap: 16px;
+  background: #fff; border-radius: 50px;
+  padding: 18px 36px;
+  border: 2px solid #e8d5b0;
+  opacity: 0;
+}
+.verdict-next.go { animation: fadeUp 0.6s ease 0.9s forwards; }
+.verdict-next .next-label {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 16px; color: #a09880; letter-spacing: 2px;
+}
+.verdict-next .next-text {
+  font-size: 22px; font-weight: 700; color: #3a3530;
+}
+
+</style>
+</head>
+<body>
+
+<!-- ══════════ SLIDE 1 : Hook (Sage) ══════════ -->
+<div class="slide sage" id="slide-1">
+  <div class="slide-label">SIGNAL · EP01</div>
+  <div class="slide-num">01 / 07</div>
+
+  <div class="hook-center">
+    <div class="hook-company">팔란티어</div>
+
+    <div class="hook-metrics">
+      <div class="hook-metric">
+        <div class="val">$130</div>
+        <div class="lbl">현재 주가</div>
+      </div>
+      <div class="hook-metric-sep"></div>
+      <div class="hook-metric">
+        <div class="val">+85%</div>
+        <div class="lbl">매출 성장 YoY</div>
+      </div>
+      <div class="hook-metric-sep"></div>
+      <div class="hook-metric">
+        <div class="val">4배</div>
+        <div class="lbl">순이익 증가</div>
+      </div>
+    </div>
+
+    <div class="hook-question">그런데 이 회사, 정말 AI 회사 맞긴 한 건가요?</div>
+  </div>
+
+  <div class="hook-badge">SIGNAL — 기업분석 시리즈</div>
+</div>
+
+
+<!-- ══════════ SLIDE 2 : Overview (Cream) ══════════ -->
+<div class="slide cream" id="slide-2">
+  <div class="slide-label">SIGNAL · EP01</div>
+  <div class="slide-num">02 / 07</div>
+
+  <div class="overview-wrap">
+    <div class="overview-hd">
+      <div class="overview-eyebrow">OVERVIEW</div>
+      <div class="overview-title">
+        팔란티어 — <span class="accent">2026년 Q1 역대 최고 실적</span>
+      </div>
+    </div>
+
+    <div class="overview-stats">
+      <div class="stat-card">
+        <div class="stat-label">Q1 REVENUE</div>
+        <div class="stat-value">$1.63B</div>
+        <div class="stat-sub">예상 $1.54B 상회</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">YoY GROWTH</div>
+        <div class="stat-value">+85%</div>
+        <div class="stat-sub">역대 최고 성장률</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">NET INCOME</div>
+        <div class="stat-value">$870M</div>
+        <div class="stat-sub">전년 대비 4배</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">RULE OF 40</div>
+        <div class="stat-value">145%</div>
+        <div class="stat-sub">NVIDIA 수준</div>
+      </div>
+    </div>
+
+    <div class="overview-products">
+      <div class="prod-card">
+        <div class="prod-dot gov"></div>
+        <div>
+          <div class="prod-name">Gotham</div>
+          <div class="prod-sub">정부·국방 전용</div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-dot ent"></div>
+        <div>
+          <div class="prod-name">Foundry</div>
+          <div class="prod-sub">기업 데이터 통합</div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-dot ai"></div>
+        <div>
+          <div class="prod-name">AIP</div>
+          <div class="prod-sub">AI 플랫폼 (LLM 연결)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════ SLIDE 3 : What They Do (Slate) ══════════ -->
+<div class="slide slate" id="slide-3">
+  <div class="slide-label">SIGNAL · EP01</div>
+  <div class="slide-num">03 / 07</div>
+
+  <div class="pipeline-wrap">
+    <div class="pipeline-hd">
+      <div class="pipeline-eyebrow">REAL BUSINESS</div>
+      <div class="pipeline-title">팔란티어는 무엇을 하는가</div>
+    </div>
+
+    <div class="pipeline-flow">
+      <div class="pipeline-node">
+        <div class="node-icon">⚙️</div>
+        <div class="node-name">NVIDIA</div>
+        <div class="node-sub">GPU · 컴퓨팅 인프라</div>
+        <div class="node-tag">ENGINE</div>
+      </div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-node">
+        <div class="node-icon">🧠</div>
+        <div class="node-name">OpenAI · Claude<br>Gemini · Llama</div>
+        <div class="node-sub">대형 언어 모델 (직접 개발)</div>
+        <div class="node-tag">INTELLIGENCE</div>
+      </div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-node palantir">
+        <div class="node-icon">🛡️</div>
+        <div class="node-name">Palantir</div>
+        <div class="node-sub">기밀 데이터 + AI 통합</div>
+        <div class="node-tag">SECURE SI</div>
+      </div>
+    </div>
+
+    <div class="pipeline-note">
+      팔란티어는 AI를 <strong>만들지 않습니다</strong>. 가져다가<strong> 군사·정부 데이터에 연결</strong>합니다.
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════ SLIDE 4 : Moat (Sage) ══════════ -->
+<div class="slide sage" id="slide-4">
+  <div class="slide-label">SIGNAL · EP01</div>
+  <div class="slide-num">04 / 07</div>
+
+  <div class="moat-wrap">
+    <div class="moat-hd">
+      <div class="moat-eyebrow">COMPETITIVE MOAT</div>
+      <div class="moat-title">진짜 경쟁력 — <span class="accent">두 가지 해자</span></div>
+    </div>
+
+    <div class="moat-cards">
+      <div class="moat-card">
+        <div class="moat-icon">🛡️</div>
+        <div class="moat-num">MOAT 01</div>
+        <div class="moat-name">보안 인가</div>
+        <div class="moat-desc">20년간 미군·CIA와 함께 쌓은<br>기밀급 보안 인증은<br>단기간에 복제할 수 없습니다.</div>
+        <div class="moat-highlight">⟶ OpenAI도, Google도 없는 자격</div>
+      </div>
+      <div class="moat-card">
+        <div class="moat-icon">🔗</div>
+        <div class="moat-num">MOAT 02</div>
+        <div class="moat-name">데이터 파이프라인 Lock-in</div>
+        <div class="moat-desc">도입하면 수천만 건의 데이터가<br>팔란티어 방식으로 구조화됩니다.<br>빼기가 더 무서운 구조.</div>
+        <div class="moat-highlight">⟶ 이탈 비용 = 사업 마비 수준</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════ SLIDE 5 : PROS (Cream) ══════════ -->
+<div class="slide cream" id="slide-5">
+  <div class="slide-label">SIGNAL · EP01</div>
+  <div class="slide-num">05 / 07</div>
+
+  <div class="pros-wrap">
+    <div class="pros-hd">
+      <div class="pros-eyebrow">SIGNAL ↑</div>
+      <div class="pros-title"><span class="pros-signal">긍정 신호</span> 3가지</div>
+    </div>
+
+    <div class="pros-cards">
+      <div class="pros-card">
+        <div class="card-num">PROS 01</div>
+        <div class="card-title">역대 최고 실적</div>
+        <div class="card-desc">매출 +85%, 순이익 4배.<br>기대감이 아닌 실제 숫자.</div>
+        <div class="card-tag">Revenue +85% YoY</div>
+      </div>
+      <div class="pros-card">
+        <div class="card-num">PROS 02</div>
+        <div class="card-title">AIP 부트캠프 작동 중</div>
+        <div class="card-desc">미국 상업 매출 +133%.<br>민간 시장 침투가 현실이 됐다.</div>
+        <div class="card-tag">US Commercial +133%</div>
+      </div>
+      <div class="pros-card">
+        <div class="card-num">PROS 03</div>
+        <div class="card-title">지정학 리스크 = 성장 연료</div>
+        <div class="card-desc">NATO 확장·우크라이나·대만.<br>불안한 세계일수록 팔란티어가 필요.</div>
+        <div class="card-tag">NATO + 주권 AI 수요</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════ SLIDE 6 : CONS (Slate) ══════════ -->
+<div class="slide slate" id="slide-6">
+  <div class="slide-label">SIGNAL · EP01</div>
+  <div class="slide-num">06 / 07</div>
+
+  <div class="cons-wrap">
+    <div class="cons-hd">
+      <div class="cons-eyebrow">SIGNAL ↓</div>
+      <div class="cons-title"><span class="cons-signal">주의 신호</span> 3가지</div>
+    </div>
+
+    <div class="cons-cards">
+      <div class="cons-card">
+        <div class="card-num">CONS 01</div>
+        <div class="card-title">PER 260배</div>
+        <div class="card-desc">섹터 평균 24배의 10배 이상.<br>향후 10년 성장이 이미 반영됐다.</div>
+        <div class="card-tag">섹터 평균 PER 24배</div>
+      </div>
+      <div class="cons-card">
+        <div class="card-num">CONS 02</div>
+        <div class="card-title">CEO 발언 리스크</div>
+        <div class="card-desc">반복되는 폭탄 발언으로<br>유럽 연기금 €8,250억 이탈.</div>
+        <div class="card-tag">ABP 전량 매각</div>
+      </div>
+      <div class="cons-card">
+        <div class="card-num">CONS 03</div>
+        <div class="card-title">DOGE 국방 예산 -8%</div>
+        <div class="card-desc">정부 매출 의존도 42%.<br>예산 삭감은 직격탄.</div>
+        <div class="card-tag">정부 매출 42% 의존</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════ SLIDE 7 : Verdict (Cream) ══════════ -->
+<div class="slide cream" id="slide-7">
+  <div class="slide-label">SIGNAL · EP01</div>
+  <div class="slide-num">07 / 07</div>
+
+  <div class="verdict-wrap">
+    <div class="verdict-eyebrow">VERDICT · EP01 결론</div>
+
+    <div class="verdict-main">
+      AI를 만들지 않는<br><span class="accent">AI 회사</span>
+    </div>
+
+    <div class="verdict-line"></div>
+
+    <div class="verdict-sub">
+      보안 인가 + 20년 데이터 파이프라인 —<br>
+      OpenAI도 Google도 쉽게 복제할 수 없는 해자.
+    </div>
+
+    <div class="verdict-next">
+      <div class="next-label">NEXT</div>
+      <div class="next-text">EP02 — 팔란티어 멸망 시나리오 vs 지배 시나리오</div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+(function () {
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  let cur = 0;
+
+  const GO_SELECTORS = [
+    '.hook-company', '.hook-metrics', '.hook-question', '.hook-badge',
+    '.overview-hd', '.stat-card', '.overview-products',
+    '.pipeline-hd', '.pipeline-flow', '.pipeline-note',
+    '.moat-hd', '.moat-card',
+    '.pros-hd', '.pros-card',
+    '.cons-hd', '.cons-card',
+    '.verdict-eyebrow', '.verdict-main', '.verdict-line', '.verdict-sub', '.verdict-next'
+  ].join(',');
+
+  function showSlide(n) {
+    slides.forEach(s => {
+      s.style.display = 'none';
+      // 애니메이션 리셋
+      s.querySelectorAll(GO_SELECTORS).forEach(el => el.classList.remove('go'));
+    });
+    const slide = slides[n];
+    if (!slide) return;
+    slide.style.display = 'flex';
+    setTimeout(() => {
+      slide.querySelectorAll(GO_SELECTORS).forEach(el => el.classList.add('go'));
+    }, 300);
+    cur = n;
+  }
+
+  // pipeline에서 호출하는 goToSlide API
+  window.goToSlide = showSlide;
+
+  function applyScale() {
+    var s = window.innerWidth / 1920;
+    document.body.style.transform = 'scale(' + s + ')';
+    document.body.style.transformOrigin = 'top left';
+    document.documentElement.style.height = Math.round(1080 * s) + 'px';
+    document.documentElement.style.overflow = 'hidden';
+  }
+  applyScale();
+  window.addEventListener('resize', applyScale);
+
+  showSlide(0);
+
+  document.body.addEventListener('click', () => {
+    if (cur < slides.length - 1) showSlide(cur + 1);
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') {
+      if (cur < slides.length - 1) showSlide(cur + 1);
+    }
+    if (e.key === 'ArrowLeft') {
+      if (cur > 0) showSlide(cur - 1);
+    }
+  });
+})();
+</script>
+</body>
+</html>

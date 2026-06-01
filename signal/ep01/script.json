@@ -1,0 +1,89 @@
+{
+  "series": "signal",
+  "ep_number": 1,
+  "ep_role": "ep1",
+  "company": "Palantir",
+  "title_ko": "팔란티어 EP1: AI 회사인 척하는 SI 업체의 민낯",
+  "title_ja": "パランティア EP1: AI企業のふりをするSI業者の素顔",
+  "title_en": "Palantir EP1: The SI Company Pretending to Be AI",
+  "color_system": "3-tone: Sage(s01/s04) · Cream(s02/s05/s07) · Slate(s03/s06)",
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "role": "hook",
+      "tone": "sage",
+      "bg": "#e4ece1",
+      "accent": "#4d7a5a",
+      "visual_note": "키네틱 타이포: 팔란티어 / $130 / +85% / 4배 / AI 회사? 순서로 fadeUp",
+      "narration": "팔란티어. 주가는 130달러, 매출은 1년 새 85% 올랐습니다. 순이익은 무려 4배. 그런데 이 회사, 정말 AI 회사 맞긴 한 건가요?",
+      "narration_ja": "パランティア。株価は130ドル、売上は1年で85%増加。純利益は何と4倍。でも、本当にAI企業と言えるんでしょうか？",
+      "narration_en": "Palantir. Stock at $130, revenue up 85% in a year, net income quadrupled. But is this company really an AI company?"
+    },
+    {
+      "id": "s02_overview",
+      "role": "data",
+      "tone": "cream",
+      "bg": "#faf7f0",
+      "accent": "#8a5a1e",
+      "visual_note": "실적 수치 카드 4개 + 한 줄 정의: '보안 인가받은 AI 통합 SI 업체'",
+      "narration": "2003년 CIA 벤처캐피탈의 초기 투자로 시작한 팔란티어. 제품은 셋입니다. 정부용 Gotham, 기업용 Foundry, 그리고 AI 플랫폼 AIP. 2026년 1분기 매출은 16억 3천만 달러, Rule of 40 수치는 145%로 NVIDIA와 같은 수준입니다.",
+      "narration_ja": "2003年、CIAのベンチャーキャピタルの初期投資でスタートしたパランティア。製品は3つ。政府向けGotham、企業向けFoundry、そしてAIプラットフォームAIP。2026年1Qの売上は16億3千万ドル、Rule of 40は145%でNVIDIAと同水準です。",
+      "narration_en": "Founded in 2003 with early investment from the CIA's venture arm. Three products: Gotham for government, Foundry for enterprise, and AIP for AI. Q1 2026 revenue hit $1.63 billion. Rule of 40 score: 145 — same level as NVIDIA."
+    },
+    {
+      "id": "s03_what_they_do",
+      "role": "analysis",
+      "tone": "slate",
+      "bg": "#edf1f8",
+      "accent": "#2c4c7e",
+      "visual_note": "3단 파이프라인 다이어그램: NVIDIA(엔진) → OpenAI·Anthropic(지능) → Palantir(보안 SI)",
+      "narration": "그렇다면 팔란티어는 실제로 무엇을 하는 회사일까요? 비유로 설명하면 이렇습니다. NVIDIA가 엔진을 만들고, OpenAI와 Anthropic이 지능을 만든다면, 팔란티어는 그 AI를 군사·정부 기밀 데이터에 연결하는 보안 인증 SI 업체입니다. ChatGPT, Claude, Gemini를 직접 개발하지 않습니다. 가져다 씁니다.",
+      "narration_ja": "では、パランティアは実際に何をしている会社でしょうか？比喩で説明するとこうです。NVIDIAがエンジンを作り、OpenAIとAnthropicが知性を作るなら、パランティアはそのAIを軍事・政府の機密データに接続するセキュリティ認証のSIベンダーです。ChatGPT、Claude、Geminiを自社開発はしません。持ってきて使います。",
+      "narration_en": "So what does Palantir actually do? Here's the analogy: NVIDIA builds the engine, OpenAI and Anthropic build the intelligence — Palantir is the security-cleared SI integrator that connects that AI to military and government classified data. They don't build ChatGPT, Claude, or Gemini. They just use them."
+    },
+    {
+      "id": "s04_moat",
+      "role": "analysis",
+      "tone": "sage",
+      "bg": "#e4ece1",
+      "accent": "#4d7a5a",
+      "visual_note": "이중 해자 시각화: 왼쪽 방패(보안 인가 20년) / 오른쪽 체인(데이터 파이프라인 Lock-in)",
+      "narration": "팔란티어의 진짜 경쟁력은 두 가지 해자입니다. 첫째, 보안 인가. 20년 동안 미군과 CIA와 함께 쌓은 기밀급 보안 인증은 단기간에 복제할 수 없습니다. 둘째, 데이터 파이프라인 Lock-in. 기업이 팔란티어를 도입하면 수천만 건의 데이터가 팔란티어 방식으로 구조화됩니다. 한 번 들어오면 빼기가 더 무서운 구조입니다.",
+      "narration_ja": "パランティアの本当の競争力は二つの堀です。一つ目はセキュリティクリアランス。20年間、米軍とCIAと共に積み上げた機密レベルの認証は短期間では複製できません。二つ目はデータパイプラインのロックイン。企業がパランティアを導入すると、数千万件のデータがパランティア流に構造化されます。一度入ったら、抜け出す方が怖い構造です。",
+      "narration_en": "Palantir's real competitive strength is two moats. First: security clearance. Twenty years of classified-level certifications built alongside the U.S. military and CIA — impossible to replicate quickly. Second: data pipeline lock-in. Once a company adopts Palantir, tens of millions of data points get structured the Palantir way. Getting out is scarier than staying in."
+    },
+    {
+      "id": "s05_pros",
+      "role": "pros",
+      "tone": "cream",
+      "bg": "#faf7f0",
+      "accent": "#8a5a1e",
+      "visual_note": "PROS 3카드: ① 역대 최고 실적(+85%/+400%) ② AIP 부트캠프 +133% ③ 지정학 = 성장 연료",
+      "narration": "긍정적인 신호 세 가지입니다. 첫째, 역대 최고 실적. 매출 85% 성장, 순이익 4배는 단순한 기대감이 아닌 실제 숫자입니다. 둘째, AIP 부트캠프가 작동하고 있습니다. 미국 상업 매출이 133% 증가했다는 것은 민간 시장 침투가 현실이 됐다는 신호입니다. 셋째, 지정학 리스크가 오히려 성장 연료입니다. NATO 확장, 우크라이나 재건, 대만 긴장 — 불안한 세계일수록 팔란티어가 필요합니다.",
+      "narration_ja": "前向きなシグナルが三つあります。一つ目は過去最高の業績。売上85%増、純利益4倍は単なる期待感ではなく実際の数字です。二つ目はAIPブートキャンプが機能しています。米国商業売上が133%増加したことは、民間市場への浸透が現実になったことを示すシグナルです。三つ目は地政学的リスクがむしろ成長の燃料になっています。NATO拡大、ウクライナ復興、台湾の緊張—不安定な世界ほどパランティアが必要とされます。",
+      "narration_en": "Three positive signals. First: record-breaking financials. 85% revenue growth, net income quadrupled — these are real numbers, not just hype. Second: AIP bootcamps are working. U.S. commercial revenue up 133% means enterprise penetration is now real. Third: geopolitical risk is actually growth fuel. NATO expansion, Ukraine reconstruction, Taiwan tensions — the more unstable the world, the more Palantir gets called."
+    },
+    {
+      "id": "s06_cons",
+      "role": "cons",
+      "tone": "slate",
+      "bg": "#edf1f8",
+      "accent": "#2c4c7e",
+      "visual_note": "CONS 3카드: ① PER 260배(섹터평균 24배) ② CEO 발언 리스크(€8,250억 이탈) ③ DOGE 예산 삭감 -8%",
+      "narration": "반대로 주의해야 할 신호도 세 가지입니다. 첫째, PER 260배. 섹터 평균의 10배가 넘는 밸류에이션은 향후 10년 성장까지 이미 주가에 반영됐다는 뜻입니다. 둘째, CEO Alex Karp의 발언 리스크. 반복되는 정치적 폭탄 발언으로 유럽 연기금 8,250억 유로가 이탈했습니다. 셋째, DOGE의 국방 예산 8% 삭감이 진행 중입니다. 정부 매출 의존도 42%의 팔란티어에게 이것은 직격탄입니다.",
+      "narration_ja": "一方で注意すべきシグナルも三つあります。一つ目はPER260倍。セクター平均の10倍を超えるバリュエーションは、今後10年の成長がすでに株価に織り込まれているということです。二つ目はCEOアレックス・カープの発言リスク。繰り返される政治的爆弾発言で、欧州の年金基金8,250億ユーロが撤退しました。三つ目はDOGEによる国防予算8%削減が進行中です。政府売上依存度42%のパランティアにとって、これは直撃弾です。",
+      "narration_en": "Three warning signals. First: P/E ratio of 260x — more than ten times the sector average. The next decade of growth is already priced in. Second: CEO Alex Karp's statement risk. His repeated political bombshells triggered €825 billion in European pension fund exits. Third: DOGE is cutting defense budgets by 8%. With 42% government revenue dependency, this hits Palantir directly."
+    },
+    {
+      "id": "s07_verdict",
+      "role": "verdict",
+      "tone": "cream",
+      "bg": "#faf7f0",
+      "accent": "#8a5a1e",
+      "visual_note": "중앙 큰 텍스트: 'AI를 만들지 않는 AI 회사' + 하단 EP2 예고 배지",
+      "narration": "팔란티어를 한 마디로 정의하면 이렇습니다. AI를 만들지 않는 AI 회사. 하지만 그 포지셔닝이 오히려 강점일 수 있습니다. 보안 인가와 20년 데이터 파이프라인 — 이것은 OpenAI도 Google도 쉽게 복제할 수 없습니다. 다음 편에서는 팔란티어의 멸망 시나리오와 지배 시나리오를 정면으로 다룹니다. EP2에서 계속됩니다.",
+      "narration_ja": "パランティアを一言で定義するとこうです。AIを作らないAI企業。しかし、そのポジショニングがむしろ強みになり得ます。セキュリティクリアランスと20年のデータパイプライン——これはOpenAIもGoogleも簡単には複製できません。次回はパランティアの崩壊シナリオと支配シナリオを正面から扱います。EP2に続きます。",
+      "narration_en": "One sentence to define Palantir: the AI company that doesn't build AI. But that positioning might actually be the strength. Security clearance and a 20-year data pipeline — OpenAI and Google can't easily replicate that. Next episode: we go head-on into Palantir's collapse scenario and dominance scenario. Continuing in EP2."
+    }
+  ]
+}
