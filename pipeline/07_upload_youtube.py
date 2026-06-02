@@ -281,6 +281,18 @@ def update_video_ids(ep_number: int, lang: str, video_id: str | None, shorts_id:
     conn.close()
 
 
+def update_episode_status(ep_number: int, series: str, status: str):
+    """업로드/발행 완료 후 episode status 자동 갱신"""
+    conn = sqlite3.connect(DB_PATH)
+    conn.execute(
+        "UPDATE video_episodes SET status=? WHERE series=? AND ep_number=?",
+        (status, series, ep_number)
+    )
+    conn.commit()
+    conn.close()
+    print(f"  📊 DB status 갱신: {series}/EP{ep_number:02d} → {status}")
+
+
 # ── 플레이리스트 관리 ────────────────────────────────────────────────────────
 
 def load_playlist_config(series: str = "youtube-rubric") -> dict:
@@ -696,8 +708,12 @@ def main():
         add_to_playlist(youtube, shorts_id, pl_shorts_id)
         print(f"  📋 Shorts 플레이리스트 추가 완료: {meta['playlist_shorts']}")
 
-    # ③ DB 업데이트
+    # ③ DB 업데이트 — video_id 저장 + status 자동 갱신
     update_video_ids(ep_number, lang, video_id, shorts_id, shorts_only=shorts_only, series=series)
+
+    # KO 업로드 완료 시 status: planned → editing 자동 갱신
+    if lang == "ko" and ep.get("status") == "planned":
+        update_episode_status(ep_number, series, "editing")
 
     # ④ upload_result.json 업데이트 (기존 내용 유지 + 현재 언어 추가)
     result_path = ep_dir / "upload_result.json"

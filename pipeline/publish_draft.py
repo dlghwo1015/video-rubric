@@ -140,6 +140,23 @@ def save_post_id(ep_number: int, lang: str, post_id: str, series: str = "youtube
     conn.close()
 
 
+def update_status_produced(ep_number: int, series: str):
+    """KO/JA/EN 모두 발행됐을 때 status → produced 자동 갱신"""
+    conn = sqlite3.connect(DB_PATH)
+    row = conn.execute(
+        "SELECT post_id_ko, post_id_ja, post_id_en FROM video_episodes WHERE series=? AND ep_number=?",
+        (series, ep_number)
+    ).fetchone()
+    if row and all(row):
+        conn.execute(
+            "UPDATE video_episodes SET status='produced' WHERE series=? AND ep_number=?",
+            (series, ep_number)
+        )
+        conn.commit()
+        print(f"  📊 DB status 갱신: {series}/EP{ep_number:02d} → produced")
+    conn.close()
+
+
 def create_draft(blogger_id: str, access_token: str, title: str,
                  content: str, labels: list) -> str:
     body = json.dumps({
@@ -228,6 +245,9 @@ def main():
             print(f"  [{lang}] ✅ {title[:40]} → post_id: {post_id}")
         except Exception as e:
             print(f"  [{lang}] ❌ 실패: {e}")
+
+    # 전 언어 발행 완료 시 status → produced 자동 갱신
+    update_status_produced(ep_number, series)
 
     print(f"\n[publish] ✅ 완료 → Blog Manager에서 리뷰 후 발행")
 
