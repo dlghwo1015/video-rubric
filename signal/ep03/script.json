@@ -1,0 +1,89 @@
+{
+  "series": "signal",
+  "ep_number": 3,
+  "ep_role": "ep3",
+  "company": "Palantir",
+  "title_ko": "팔란티어 EP3: 세계를 지배하는 3가지 시나리오 + 결론",
+  "title_ja": "パランティア EP3: 世界を支配する3つのシナリオ＋結論",
+  "title_en": "Palantir EP3: 3 Ways It Could Dominate + Final Verdict",
+  "color_system": "3-Tone: Sage(s01/s04) · Cream(s02/s05/s07) · Slate(s03/s06)",
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "role": "hook",
+      "tone": "sage",
+      "bg": "#e4ece1",
+      "accent": "#4d7a5a",
+      "visual_note": "3편 시리즈 완결 훅: EP01·EP02 아이콘 + '이제 결론입니다'",
+      "narration": "팔란티어를 3편에 걸쳐 해부했습니다. EP1에서 실체를 봤고, EP2에서 무너질 수 있는 3가지 경로와 반론을 봤습니다. 이제 결론을 낼 시간입니다. 팔란티어는 S커브의 어디에 있고, 지금 어느 시그널이 현실이 되고 있습니까?",
+      "narration_ja": "パランティアを3回に渡って解剖してきました。EP1で実態を見て、EP2で崩壊しうる3つの経路と反論を見てきました。いよいよ結論を出す時が来ました。パランティアはSカーブのどこにいて、今どのシグナルが現実になっているのでしょうか？",
+      "narration_en": "We've dissected Palantir across three episodes. EP1 revealed the truth. EP2 mapped three paths to collapse — and three counterarguments. Now it's time for the verdict. Where is Palantir on the S-curve, and which signals are actually becoming real?"
+    },
+    {
+      "id": "s02_scurve",
+      "role": "analysis",
+      "tone": "cream",
+      "bg": "#faf7f0",
+      "accent": "#8a5a1e",
+      "visual_note": "S커브 다이어그램: 발명→전문가→[캐즘]→대중화→보급화 — 팔란티어 위치 표시",
+      "narration": "S커브로 보면 팔란티어는 '전문가와 캐즘 사이'에 있습니다. 정부와 대기업 침투는 완료됐지만, 일반 소비자가 직접 체감하는 단계는 아직입니다. 넘어야 할 캐즘이 있습니다. 바로 '민간 중소기업 침투'와 'AI 네이티브 기업과의 경쟁'입니다.",
+      "narration_ja": "Sカーブで見ると、パランティアは「専門家とキャズムの間」に位置しています。政府と大企業への浸透は完了しましたが、一般消費者が直接体感する段階にはまだ達していません。越えるべきキャズムがあります。それは「民間中小企業への浸透」と「AIネイティブ企業との競争」です。",
+      "narration_en": "On the S-curve, Palantir sits between the 'early majority' and the 'chasm.' Government and enterprise penetration is done. But mass consumer awareness remains indirect. Two chasms remain: reaching mid-market companies, and competition from AI-native alternatives."
+    },
+    {
+      "id": "s03_signal_bear",
+      "role": "analysis",
+      "tone": "slate",
+      "bg": "#edf1f8",
+      "accent": "#2c4c7e",
+      "visual_note": "멸망 시그널 점검표: ✅현실화 / ⏳진행중 / ❌미도달",
+      "narration": "멸망 시그널 점검입니다. Azure Government — 이미 진행 중입니다. DOGE 국방 예산 삭감 — 실제로 8% 삭감이 집행되고 있습니다. 그러나 LLM이 Ontology를 대체하는 시나리오는 2027~2028년 리스크로, 아직 현실화되지 않았습니다. Llama+GovCloud 무료 공세도 초기 단계입니다.",
+      "narration_ja": "崩壊シグナルの点検です。Azure Government——すでに進行中です。DOGEの国防予算削減——実際に8%削減が実行されています。しかし、LLMがOntologyを代替するシナリオは2027〜2028年のリスクで、まだ現実化していません。Llama+GovCloudの無料攻勢も初期段階です。",
+      "narration_en": "Bear signal check. Azure Government — already moving. DOGE defense budget cuts — the 8% is being executed now. However, the scenario where LLMs replace Ontology is a 2027–2028 risk — not yet materialized. Llama plus GovCloud free alternatives are also still early stage."
+    },
+    {
+      "id": "s04_signal_bull",
+      "role": "analysis",
+      "tone": "sage",
+      "bg": "#e4ece1",
+      "accent": "#4d7a5a",
+      "visual_note": "지배 시그널 점검표: AIP +133% / FY2026 가이던스 +71% / 지정학 지속",
+      "narration": "지배 시그널 점검입니다. AIP 부트캠프가 미국 상업 매출을 133% 끌어올렸습니다. 이건 숫자로 증명된 현실입니다. FY2026 가이던스는 71% 성장으로 상향됐습니다. 지정학 불안 — NATO 확장과 우크라이나 재건은 진행 중입니다. 지배 시그널이 더 많이, 더 빠르게 현실화되고 있습니다.",
+      "narration_ja": "支配シグナルの点検です。AIPブートキャンプが米国商業売上を133%押し上げました。これは数字で証明された現実です。FY2026ガイダンスは71%成長に上方修正されました。地政学的不安——NATO拡大とウクライナ復興は進行中です。支配シグナルの方が、より多く、より速く現実化しています。",
+      "narration_en": "Bull signal check. AIP bootcamps drove U.S. commercial revenue up 133%. That's proven with real numbers. FY2026 guidance was raised to 71% growth. Geopolitical instability — NATO expansion and Ukraine reconstruction are ongoing. Bull signals are materializing faster and in greater numbers."
+    },
+    {
+      "id": "s05_my_life",
+      "role": "analysis",
+      "tone": "cream",
+      "bg": "#faf7f0",
+      "accent": "#8a5a1e",
+      "visual_note": "실생활 접점 4가지: 응급실 / 세금 환급 / 재난 대응 / 치안 예측",
+      "narration": "팔란티어는 일상에서 보이지 않습니다. 그러나 이미 영향을 미치고 있습니다. 응급실 대기시간이 줄어든 것, 세금 환급이 2주에서 2일로 빨라진 것, 재난 대응이 빨라진 것 — 이 뒤에 팔란티어가 있습니다. B2G, B2B 전용이기 때문에 소비자는 영원히 간접 체감합니다.",
+      "narration_ja": "パランティアは日常では見えません。しかし、すでに影響を及ぼしています。救急室の待ち時間が短縮されたこと、税金の還付が2週間から2日に速くなったこと、災害対応が迅速になったこと——これらの背後にパランティアがいます。B2G、B2B専用のため、消費者は永遠に間接的にしか体感できません。",
+      "narration_en": "Palantir is invisible in daily life — but already making an impact. Emergency room wait times shortened. Tax refunds accelerating from two weeks to two days. Faster disaster response. Palantir is behind all of this. Because it's B2G and B2B only, consumers will always experience it indirectly."
+    },
+    {
+      "id": "s06_verdict",
+      "role": "verdict",
+      "tone": "slate",
+      "bg": "#edf1f8",
+      "accent": "#2c4c7e",
+      "visual_note": "종합 판정 카드: WATCH 판정 + 3가지 조건",
+      "narration": "종합 판정입니다. 지배 시그널이 멸망 시그널보다 빠르게 현실화되고 있습니다. 그러나 PER 260배는 완벽한 실행을 요구합니다. SIGNAL의 판단은 WATCH입니다. 세 가지를 확인하십시오. AIP 부트캠프 전환율이 계속 오르는가. Ontology가 업계 표준으로 자리를 굳히는가. 그리고 Azure Government가 팔란티어의 핵심 계약을 빼앗기 시작하는가.",
+      "narration_ja": "総合判定です。支配シグナルが崩壊シグナルよりも速く現実化しています。しかし、PER260倍は完璧な実行を要求します。SIGNALの判断はWATCHです。3つを確認してください。AIPブートキャンプの転換率が上がり続けているか。Ontologyが業界標準として確立されつつあるか。そしてAzure Governmentがパランティアの中核契約を奪い始めているか。",
+      "narration_en": "Final verdict. Bull signals are materializing faster than bear signals. But a P/E of 260x demands flawless execution. SIGNAL's call: WATCH. Monitor three things: whether AIP bootcamp conversion rates keep climbing, whether Ontology is solidifying as the industry standard, and whether Azure Government starts taking Palantir's core contracts."
+    },
+    {
+      "id": "s07_cta",
+      "role": "verdict",
+      "tone": "cream",
+      "bg": "#faf7f0",
+      "accent": "#8a5a1e",
+      "visual_note": "다음 편 예고: 양자컴퓨터 비교편 — IonQ·D-Wave·Rigetti·QUBT 아이콘",
+      "narration": "팔란티어 3부작을 마칩니다. 다음 SIGNAL은 양자컴퓨터 비교편입니다. IonQ, D-Wave, Rigetti, QUBT — ChatGPT 모멘트는 언제 오는가. 4개 회사를 한 편에 비교합니다. 구독하고 기다려 주세요.",
+      "narration_ja": "パランティアの3部作を終えます。次のSIGNALは量子コンピュータ比較編です。IonQ、D-Wave、Rigetti、QUBT——ChatGPTモメントはいつ来るのか。4社を1本で比較します。チャンネル登録してお待ちください。",
+      "narration_en": "That concludes the Palantir trilogy. The next SIGNAL is the quantum computing comparison: IonQ, D-Wave, Rigetti, and QUBT — when does the ChatGPT moment arrive? Four companies, one episode. Subscribe and stay tuned."
+    }
+  ]
+}

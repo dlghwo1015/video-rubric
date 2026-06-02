@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>SIGNAL EP03 — 팔란티어: S커브 위치 + 최종 결론</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&family=Inter:wght@300;400;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { width:1920px; height:1080px; font-family:'Noto Sans KR','Inter',sans-serif; color:#2a2520; overflow:hidden; }
+
+.slide { position:absolute; inset:0; display:none; align-items:center; justify-content:center; }
+.slide.sage  { background:#e4ece1; }
+.slide.cream { background:#faf7f0; }
+.slide.slate { background:#edf1f8; }
+
+.slide-label { position:absolute; top:52px; left:80px; font-family:'Roboto Mono',monospace; font-size:22px; color:#a09880; letter-spacing:2px; }
+.slide.slate .slide-label { color:#8a9ab8; }
+.slide-num   { position:absolute; top:52px; right:80px; font-family:'Roboto Mono',monospace; font-size:22px; color:#a09880; }
+.slide.slate .slide-num { color:#8a9ab8; }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(36px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+@keyframes slideInLeft  { from{opacity:0;transform:translateX(-40px)} to{opacity:1;transform:translateX(0)} }
+@keyframes slideInRight { from{opacity:0;transform:translateX(40px)}  to{opacity:1;transform:translateX(0)} }
+@keyframes expandW { from{width:0} to{width:100%} }
+@keyframes growH   { from{height:0} to{height:var(--h,60px)} }
+
+/* ── S1: Hook (Sage) ── */
+#slide-1 .hook-center { display:flex; flex-direction:column; align-items:center; gap:24px; text-align:center; }
+.hook-series-title { font-size:24px; font-weight:700; color:#82ae8d; font-family:'Roboto Mono',monospace; letter-spacing:4px; opacity:0; }
+.hook-series-title.go { animation:fadeIn 0.5s ease forwards; }
+.hook-ep-strip { display:flex; gap:20px; align-items:center; opacity:0; }
+.hook-ep-strip.go { animation:fadeUp 0.7s ease 0.2s forwards; }
+.hook-ep-box { background:#fff; border:2px solid #bcd4b6; border-radius:16px; padding:20px 32px; text-align:center; }
+.hook-ep-box .ep-num { font-family:'Roboto Mono',monospace; font-size:15px; color:#82ae8d; letter-spacing:2px; margin-bottom:8px; }
+.hook-ep-box .ep-tag { font-size:20px; font-weight:700; color:#3a3530; }
+.hook-ep-box.current { border-color:#4d7a5a; background:#e4ece1; }
+.hook-ep-box.current .ep-tag { color:#1a2e1f; }
+.hook-arrow { font-size:28px; color:#c6dac0; }
+.hook-question { font-size:44px; font-weight:900; color:#1a2e1f; letter-spacing:-1.5px; opacity:0; }
+.hook-question.go { animation:fadeUp 0.7s ease 0.45s forwards; }
+.hook-question .accent { color:#4d7a5a; }
+.hook-badge { position:absolute; bottom:68px; left:0; right:0; text-align:center; font-family:'Roboto Mono',monospace; font-size:22px; letter-spacing:4px; color:#82ae8d; opacity:0; }
+.hook-badge.go { animation:fadeIn 0.6s ease 0.8s forwards; }
+
+/* ── S2: S-Curve (Cream) ── */
+#slide-2 .scurve-wrap { width:1680px; display:flex; flex-direction:column; gap:52px; }
+.scurve-hd { opacity:0; }
+.scurve-hd.go { animation:fadeUp 0.6s ease forwards; }
+.scurve-eyebrow { font-family:'Roboto Mono',monospace; font-size:20px; letter-spacing:4px; color:#a09880; }
+.scurve-title { font-size:52px; font-weight:900; color:#3a3530; margin-top:12px; letter-spacing:-1.5px; }
+.scurve-title .accent { color:#8a5a1e; }
+.scurve-chart { display:flex; align-items:flex-end; gap:0; height:200px; opacity:0; }
+.scurve-chart.go { animation:fadeUp 0.7s ease 0.2s forwards; }
+.scurve-stage { flex:1; display:flex; flex-direction:column; align-items:center; gap:12px; }
+.scurve-bar { width:100%; border-radius:8px 8px 0 0; transition:height 0.6s ease; }
+.scurve-stage:nth-child(1) .scurve-bar { background:#c6dac0; height:40px; }
+.scurve-stage:nth-child(2) .scurve-bar { background:#82ae8d; height:100px; }
+.scurve-stage:nth-child(3) .scurve-bar { background:#2d5a3a; height:80px; border:3px solid #4d7a5a; }
+.scurve-stage:nth-child(4) .scurve-bar { background:#d4a966; height:160px; opacity:0.4; }
+.scurve-stage:nth-child(5) .scurve-bar { background:#8a5a1e; height:200px; opacity:0.25; }
+.scurve-label { font-size:15px; font-weight:700; color:#5a7060; text-align:center; }
+.scurve-stage:nth-child(3) .scurve-label { color:#1a2e1f; font-size:17px; }
+.scurve-now { display:flex; align-items:center; gap:12px; background:#e4ece1; border:2px solid #bcd4b6; border-radius:12px; padding:16px 24px; opacity:0; }
+.scurve-now.go { animation:fadeUp 0.6s ease 0.5s forwards; }
+.scurve-now-dot { width:16px; height:16px; border-radius:50%; background:#4d7a5a; flex-shrink:0; }
+.scurve-now-text { font-size:22px; font-weight:700; color:#1a2e1f; }
+.scurve-chasm { display:flex; gap:28px; opacity:0; }
+.scurve-chasm.go { animation:fadeUp 0.6s ease 0.7s forwards; }
+.chasm-item { flex:1; background:#fff; border-radius:12px; padding:20px 24px; border:1.5px solid #e8d5b0; }
+.chasm-label { font-size:16px; font-weight:700; color:#8a5a1e; margin-bottom:6px; font-family:'Roboto Mono',monospace; letter-spacing:1px; }
+.chasm-desc { font-size:18px; color:#7a7060; }
+
+/* ── S3: Bear Signals (Slate) ── */
+#slide-3 .check-wrap { width:1680px; display:flex; flex-direction:column; gap:48px; }
+.check-hd { opacity:0; }
+.check-hd.go { animation:fadeUp 0.6s ease forwards; }
+.check-eyebrow { font-family:'Roboto Mono',monospace; font-size:20px; letter-spacing:4px; color:#8a9ab8; }
+.check-title { font-size:52px; font-weight:900; color:#1a2a42; margin-top:12px; letter-spacing:-1.5px; }
+.check-title .danger { color:#c0392b; }
+.check-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+.check-item { background:#fff; border-radius:16px; padding:28px 32px; display:flex; gap:20px; align-items:flex-start; opacity:0; }
+.check-item.go { animation:fadeUp 0.6s ease forwards; }
+.check-item:nth-child(1) { animation-delay:0.1s; }
+.check-item:nth-child(2) { animation-delay:0.2s; }
+.check-item:nth-child(3) { animation-delay:0.3s; }
+.check-item:nth-child(4) { animation-delay:0.4s; }
+.check-item.real    { border-left:5px solid #c0392b; }
+.check-item.pending { border-left:5px solid #e8c84a; }
+.check-item.not-yet { border-left:5px solid #c8d8f0; }
+.check-icon { font-size:28px; flex-shrink:0; }
+.check-name { font-size:20px; font-weight:700; color:#1a2a42; margin-bottom:6px; }
+.check-desc { font-size:16px; color:#5a6a8a; line-height:1.7; }
+.check-badge { display:inline-block; margin-top:10px; font-size:13px; font-weight:700; padding:4px 12px; border-radius:20px; }
+.badge-real    { background:#fef0f0; color:#c0392b; }
+.badge-pending { background:#fefce8; color:#92700a; }
+.badge-not-yet { background:#edf1f8; color:#2c4c7e; }
+
+/* ── S4: Bull Signals (Sage) ── */
+#slide-4 .bull-check-wrap { width:1680px; display:flex; flex-direction:column; gap:48px; }
+.bull-check-hd { opacity:0; }
+.bull-check-hd.go { animation:fadeUp 0.6s ease forwards; }
+.bull-check-eyebrow { font-family:'Roboto Mono',monospace; font-size:20px; letter-spacing:4px; color:#82ae8d; }
+.bull-check-title { font-size:52px; font-weight:900; color:#1a2e1f; margin-top:12px; letter-spacing:-1.5px; }
+.bull-check-title .upside { color:#4d7a5a; }
+.bull-check-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+.bull-item { background:#fff; border-radius:16px; padding:28px 32px; display:flex; gap:20px; align-items:flex-start; opacity:0; }
+.bull-item.go { animation:fadeUp 0.6s ease forwards; }
+.bull-item:nth-child(1) { animation-delay:0.1s; }
+.bull-item:nth-child(2) { animation-delay:0.2s; }
+.bull-item:nth-child(3) { animation-delay:0.3s; }
+.bull-item:nth-child(4) { animation-delay:0.4s; }
+.bull-item.proven   { border-left:5px solid #4d7a5a; }
+.bull-item.emerging { border-left:5px solid #82ae8d; }
+.bull-item .check-icon { font-size:28px; flex-shrink:0; }
+.bull-item .check-name { font-size:20px; font-weight:700; color:#1a2e1f; margin-bottom:6px; }
+.bull-item .check-desc { font-size:16px; color:#5a7060; line-height:1.7; }
+.bull-item .check-badge { display:inline-block; margin-top:10px; font-size:13px; font-weight:700; padding:4px 12px; border-radius:20px; }
+.badge-proven   { background:#e4ece1; color:#4d7a5a; }
+.badge-emerging { background:#f0f5f1; color:#82ae8d; }
+
+/* ── S5: My Life (Cream) ── */
+#slide-5 .life-wrap { width:1680px; display:flex; flex-direction:column; gap:52px; }
+.life-hd { opacity:0; }
+.life-hd.go { animation:fadeUp 0.6s ease forwards; }
+.life-eyebrow { font-family:'Roboto Mono',monospace; font-size:20px; letter-spacing:4px; color:#a09880; }
+.life-title { font-size:52px; font-weight:900; color:#3a3530; margin-top:12px; letter-spacing:-1.5px; }
+.life-title .accent { color:#8a5a1e; }
+.life-note { font-size:24px; color:#7a7060; margin-top:8px; }
+.life-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+.life-card { background:#fff; border-radius:20px; padding:32px 28px; text-align:center; border-bottom:4px solid #d4a966; opacity:0; }
+.life-card.go { animation:fadeUp 0.6s ease forwards; }
+.life-card:nth-child(1) { animation-delay:0.1s; }
+.life-card:nth-child(2) { animation-delay:0.2s; }
+.life-card:nth-child(3) { animation-delay:0.3s; }
+.life-card:nth-child(4) { animation-delay:0.4s; }
+.life-card .lc-icon { font-size:48px; margin-bottom:16px; }
+.life-card .lc-name { font-size:20px; font-weight:700; color:#3a3530; margin-bottom:8px; }
+.life-card .lc-desc { font-size:15px; color:#7a7060; line-height:1.7; }
+.life-footer { text-align:center; font-size:22px; color:#7a7060; opacity:0; }
+.life-footer.go { animation:fadeIn 0.6s ease 0.6s forwards; }
+.life-footer strong { color:#3a3530; }
+
+/* ── S6: Verdict (Slate) ── */
+#slide-6 .verdict-wrap { width:1680px; display:flex; flex-direction:column; gap:44px; }
+.verdict-hd { opacity:0; }
+.verdict-hd.go { animation:fadeUp 0.6s ease forwards; }
+.verdict-eyebrow { font-family:'Roboto Mono',monospace; font-size:20px; letter-spacing:4px; color:#8a9ab8; }
+.verdict-title { font-size:52px; font-weight:900; color:#1a2a42; margin-top:12px; letter-spacing:-1.5px; }
+.verdict-call { display:flex; align-items:center; gap:32px; background:#fff; border-radius:24px; padding:40px 52px; border:3px solid #2c4c7e; opacity:0; }
+.verdict-call.go { animation:fadeUp 0.6s ease 0.2s forwards; }
+.verdict-call-badge { font-size:72px; font-weight:900; color:#2c4c7e; font-family:'Inter',sans-serif; letter-spacing:-2px; flex-shrink:0; }
+.verdict-call-text { font-size:26px; color:#1a2a42; line-height:1.7; }
+.verdict-conditions { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; opacity:0; }
+.verdict-conditions.go { animation:fadeUp 0.6s ease 0.45s forwards; }
+.vc-box { background:#fff; border-radius:16px; padding:28px 24px; border-top:5px solid #2c4c7e; }
+.vc-num { font-family:'Roboto Mono',monospace; font-size:15px; color:#8a9ab8; letter-spacing:2px; margin-bottom:10px; }
+.vc-text { font-size:18px; color:#1a2a42; line-height:1.7; font-weight:700; }
+.vc-sub  { font-size:15px; color:#5a6a8a; margin-top:6px; }
+
+/* ── S7: CTA (Cream) ── */
+#slide-7 .cta-wrap { display:flex; flex-direction:column; align-items:center; gap:36px; text-align:center; width:1400px; }
+.cta-series-done { font-family:'Roboto Mono',monospace; font-size:18px; letter-spacing:4px; color:#a09880; opacity:0; }
+.cta-series-done.go { animation:fadeIn 0.5s ease forwards; }
+.cta-title { font-size:64px; font-weight:900; color:#3a3530; letter-spacing:-2px; line-height:1.2; opacity:0; }
+.cta-title.go { animation:fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.15s forwards; }
+.cta-title .accent { color:#8a5a1e; }
+.cta-divider { width:0; height:3px; background:#d4a966; border-radius:2px; opacity:0; }
+.cta-divider.go { opacity:1; animation:expandW 0.8s ease 0.5s forwards; }
+.cta-next { display:flex; align-items:center; gap:24px; background:#1a2e1f; border-radius:20px; padding:28px 44px; opacity:0; }
+.cta-next.go { animation:fadeUp 0.6s ease 0.65s forwards; }
+.cta-next-label { font-family:'Roboto Mono',monospace; font-size:16px; color:#82ae8d; letter-spacing:2px; }
+.cta-next-title { font-size:24px; font-weight:700; color:#fff; }
+.cta-next-sub { font-size:16px; color:#a0c8a8; margin-top:4px; }
+.cta-subscribe { display:flex; align-items:center; gap:16px; background:#fff; border-radius:50px; padding:18px 36px; border:2px solid #e8d5b0; opacity:0; }
+.cta-subscribe.go { animation:fadeUp 0.6s ease 0.9s forwards; }
+.cta-subscribe .sub-text { font-size:22px; font-weight:700; color:#3a3530; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: Hook (Sage) -->
+<div class="slide sage" id="slide-1">
+  <div class="slide-label">SIGNAL · EP03</div>
+  <div class="slide-num">01 / 07</div>
+  <div class="hook-center">
+    <div class="hook-series-title">📡 SIGNAL — 팔란티어 3부작 완결</div>
+    <div class="hook-ep-strip">
+      <div class="hook-ep-box">
+        <div class="ep-num">EP01</div>
+        <div class="ep-tag">실체 분석</div>
+      </div>
+      <div class="hook-arrow">→</div>
+      <div class="hook-ep-box">
+        <div class="ep-num">EP02</div>
+        <div class="ep-tag">멸망 vs 지배</div>
+      </div>
+      <div class="hook-arrow">→</div>
+      <div class="hook-ep-box current">
+        <div class="ep-num">EP03</div>
+        <div class="ep-tag">결론</div>
+      </div>
+    </div>
+    <div class="hook-question">지금 어느 <span class="accent">시그널</span>이<br>현실이 되고 있는가</div>
+  </div>
+  <div class="hook-badge">SIGNAL — 기업분석 시리즈</div>
+</div>
+
+<!-- SLIDE 2: S-Curve (Cream) -->
+<div class="slide cream" id="slide-2">
+  <div class="slide-label">SIGNAL · EP03</div>
+  <div class="slide-num">02 / 07</div>
+  <div class="scurve-wrap">
+    <div class="scurve-hd">
+      <div class="scurve-eyebrow">S-CURVE POSITION</div>
+      <div class="scurve-title">팔란티어는 <span class="accent">S커브 어디에</span> 있는가</div>
+    </div>
+    <div class="scurve-chart">
+      <div class="scurve-stage">
+        <div class="scurve-bar"></div>
+        <div class="scurve-label">발명기</div>
+      </div>
+      <div class="scurve-stage">
+        <div class="scurve-bar"></div>
+        <div class="scurve-label">전문가</div>
+      </div>
+      <div class="scurve-stage">
+        <div class="scurve-bar"></div>
+        <div class="scurve-label">📍 캐즘<br>(현재)</div>
+      </div>
+      <div class="scurve-stage">
+        <div class="scurve-bar"></div>
+        <div class="scurve-label">대중화</div>
+      </div>
+      <div class="scurve-stage">
+        <div class="scurve-bar"></div>
+        <div class="scurve-label">보급화</div>
+      </div>
+    </div>
+    <div class="scurve-now">
+      <div class="scurve-now-dot"></div>
+      <div class="scurve-now-text">정부·대기업 침투 완료 → 민간 중소기업 침투가 다음 캐즘</div>
+    </div>
+    <div class="scurve-chasm">
+      <div class="chasm-item">
+        <div class="chasm-label">CHASM 01</div>
+        <div class="chasm-desc">민간 중소기업 침투 — AIP 부트캠프가 해결 중</div>
+      </div>
+      <div class="chasm-item">
+        <div class="chasm-label">CHASM 02</div>
+        <div class="chasm-desc">AI 네이티브 경쟁자 — Azure Gov · 오픈소스 공세</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3: Bear Signals (Slate) -->
+<div class="slide slate" id="slide-3">
+  <div class="slide-label">SIGNAL · EP03</div>
+  <div class="slide-num">03 / 07</div>
+  <div class="check-wrap">
+    <div class="check-hd">
+      <div class="check-eyebrow">BEAR SIGNAL CHECK</div>
+      <div class="check-title"><span class="danger">멸망</span> 시그널 — 현실화 점검</div>
+    </div>
+    <div class="check-grid">
+      <div class="check-item real">
+        <div class="check-icon">⚠️</div>
+        <div>
+          <div class="check-name">Azure Government 확장</div>
+          <div class="check-desc">Azure Secret · Top Secret 이미 운영. MS의 OpenAI 통합 진행 중.</div>
+          <div class="check-badge badge-real">✅ 진행 중</div>
+        </div>
+      </div>
+      <div class="check-item real">
+        <div class="check-icon">✂️</div>
+        <div>
+          <div class="check-name">DOGE 국방 예산 삭감</div>
+          <div class="check-desc">-8% 삭감 집행 중. 정부 매출 의존도 42%에 직격.</div>
+          <div class="check-badge badge-real">✅ 진행 중</div>
+        </div>
+      </div>
+      <div class="check-item not-yet">
+        <div class="check-icon">🔮</div>
+        <div>
+          <div class="check-name">LLM이 Ontology 대체</div>
+          <div class="check-desc">2027~2028년 리스크. 현재 LLM은 구조화 데이터를 직접 이해 못함.</div>
+          <div class="check-badge badge-not-yet">⏳ 2027~2028 리스크</div>
+        </div>
+      </div>
+      <div class="check-item not-yet">
+        <div class="check-icon">💀</div>
+        <div>
+          <div class="check-name">Llama + GovCloud 무료 공세</div>
+          <div class="check-desc">초기 단계. 기밀급 인프라 구축까지 수년 소요 예상.</div>
+          <div class="check-badge badge-not-yet">⏳ 초기 단계</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4: Bull Signals (Sage) -->
+<div class="slide sage" id="slide-4">
+  <div class="slide-label">SIGNAL · EP03</div>
+  <div class="slide-num">04 / 07</div>
+  <div class="bull-check-wrap">
+    <div class="bull-check-hd">
+      <div class="bull-check-eyebrow">BULL SIGNAL CHECK</div>
+      <div class="bull-check-title"><span class="upside">지배</span> 시그널 — 현실화 점검</div>
+    </div>
+    <div class="bull-check-grid">
+      <div class="bull-item proven">
+        <div class="check-icon">📈</div>
+        <div>
+          <div class="check-name">AIP 부트캠프 +133%</div>
+          <div class="check-desc">미국 상업 매출 133% 증가. 숫자로 증명된 현실.</div>
+          <div class="check-badge badge-proven">✅ 실증됨</div>
+        </div>
+      </div>
+      <div class="bull-item proven">
+        <div class="check-icon">🚀</div>
+        <div>
+          <div class="check-name">FY2026 가이던스 +71%</div>
+          <div class="check-desc">$7.65~7.66B 가이던스 상향. 경영진도 성장 확신 중.</div>
+          <div class="check-badge badge-proven">✅ 실증됨</div>
+        </div>
+      </div>
+      <div class="bull-item proven">
+        <div class="check-icon">🌍</div>
+        <div>
+          <div class="check-name">지정학 불안 지속</div>
+          <div class="check-desc">NATO 확장, 우크라이나 재건, 대만 긴장 모두 진행 중.</div>
+          <div class="check-badge badge-proven">✅ 진행 중</div>
+        </div>
+      </div>
+      <div class="bull-item emerging">
+        <div class="check-icon">🪟</div>
+        <div>
+          <div class="check-name">Ontology 표준화 징조</div>
+          <div class="check-desc">기업 AI 데이터 구조 필수 레이어로 자리잡는 중.</div>
+          <div class="check-badge badge-emerging">🔄 진행 중</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5: My Life (Cream) -->
+<div class="slide cream" id="slide-5">
+  <div class="slide-label">SIGNAL · EP03</div>
+  <div class="slide-num">05 / 07</div>
+  <div class="life-wrap">
+    <div class="life-hd">
+      <div class="life-eyebrow">REAL LIFE IMPACT</div>
+      <div class="life-title">팔란티어가 <span class="accent">내 삶에</span> 미치는 영향</div>
+      <div class="life-note">직접 체감 불가 (B2G·B2B 전용) — 그러나 간접 영향은 이미 시작됐다</div>
+    </div>
+    <div class="life-cards">
+      <div class="life-card">
+        <div class="lc-icon">🏥</div>
+        <div class="lc-name">응급실 대기 단축</div>
+        <div class="lc-desc">의료 데이터 최적화로 응급 처치 속도 향상</div>
+      </div>
+      <div class="life-card">
+        <div class="lc-icon">💰</div>
+        <div class="lc-name">세금 환급 2주→2일</div>
+        <div class="lc-desc">IRS 시스템 고도화, 환급 처리 속도 10배 향상</div>
+      </div>
+      <div class="life-card">
+        <div class="lc-icon">🌪️</div>
+        <div class="lc-name">재난 대응 가속</div>
+        <div class="lc-desc">FEMA 예측 시스템으로 대피 명령 조기 발동</div>
+      </div>
+      <div class="life-card">
+        <div class="lc-icon">🛡️</div>
+        <div class="lc-name">안보·치안 AI</div>
+        <div class="lc-desc">군사 작전 정확도 향상, 범죄 예측 치안 활용</div>
+      </div>
+    </div>
+    <div class="life-footer">소비자는 <strong>영원히 간접 체감</strong> — B2G·B2B 구조가 팔란티어의 한계이자 해자</div>
+  </div>
+</div>
+
+<!-- SLIDE 6: Verdict (Slate) -->
+<div class="slide slate" id="slide-6">
+  <div class="slide-label">SIGNAL · EP03</div>
+  <div class="slide-num">06 / 07</div>
+  <div class="verdict-wrap">
+    <div class="verdict-hd">
+      <div class="verdict-eyebrow">SIGNAL VERDICT</div>
+      <div class="verdict-title">종합 판정</div>
+    </div>
+    <div class="verdict-call">
+      <div class="verdict-call-badge">WATCH</div>
+      <div class="verdict-call-text">
+        지배 시그널이 멸망 시그널보다 빠르게 현실화 중.<br>
+        그러나 PER 260배는 <strong>완벽한 실행</strong>을 요구한다.
+      </div>
+    </div>
+    <div class="verdict-conditions">
+      <div class="vc-box">
+        <div class="vc-num">WATCH 01</div>
+        <div class="vc-text">AIP 부트캠프<br>전환율 유지</div>
+        <div class="vc-sub">분기별 상업 매출 성장 확인</div>
+      </div>
+      <div class="vc-box">
+        <div class="vc-num">WATCH 02</div>
+        <div class="vc-text">Ontology<br>산업 표준화</div>
+        <div class="vc-sub">신규 대형 엔터프라이즈 계약 여부</div>
+      </div>
+      <div class="vc-box">
+        <div class="vc-num">WATCH 03</div>
+        <div class="vc-text">Azure Gov<br>핵심 계약 탈취</div>
+        <div class="vc-sub">정부 계약 갱신율 하락 시 경보</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 7: CTA (Cream) -->
+<div class="slide cream" id="slide-7">
+  <div class="slide-label">SIGNAL · EP03</div>
+  <div class="slide-num">07 / 07</div>
+  <div class="cta-wrap">
+    <div class="cta-series-done">✅ 팔란티어 3부작 완결</div>
+    <div class="cta-title">다음 SIGNAL은<br><span class="accent">양자컴퓨터</span></div>
+    <div class="cta-divider"></div>
+    <div class="cta-next">
+      <div>
+        <div class="cta-next-label">NEXT · EP04</div>
+        <div class="cta-next-title">양자컴퓨터 비교편: IonQ · D-Wave · Rigetti · QUBT</div>
+        <div class="cta-next-sub">ChatGPT 모멘트는 언제 오는가 — 4개 회사를 한 편에 비교</div>
+      </div>
+    </div>
+    <div class="cta-subscribe">
+      <div class="sub-text">🔔 구독하고 시그널을 먼저 읽으세요</div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  let cur = 0;
+  const GO_SELECTORS = [
+    '.hook-series-title','.hook-ep-strip','.hook-question','.hook-badge',
+    '.scurve-hd','.scurve-chart','.scurve-now','.scurve-chasm',
+    '.check-hd','.check-item',
+    '.bull-check-hd','.bull-item',
+    '.life-hd','.life-card','.life-footer',
+    '.verdict-hd','.verdict-call','.verdict-conditions',
+    '.cta-series-done','.cta-title','.cta-divider','.cta-next','.cta-subscribe'
+  ].join(',');
+
+  function showSlide(n) {
+    slides.forEach(s => {
+      s.style.display = 'none';
+      s.querySelectorAll(GO_SELECTORS).forEach(el => el.classList.remove('go'));
+    });
+    const slide = slides[n];
+    if (!slide) return;
+    slide.style.display = 'flex';
+    setTimeout(() => slide.querySelectorAll(GO_SELECTORS).forEach(el => el.classList.add('go')), 300);
+    cur = n;
+  }
+
+  window.goToSlide = showSlide;
+
+  function applyScale() {
+    var s = window.innerWidth / 1920;
+    document.body.style.transform = 'scale(' + s + ')';
+    document.body.style.transformOrigin = 'top left';
+    document.documentElement.style.height = Math.round(1080 * s) + 'px';
+    document.documentElement.style.overflow = 'hidden';
+  }
+  applyScale();
+  window.addEventListener('resize', applyScale);
+  showSlide(0);
+  document.body.addEventListener('click', () => { if (cur < slides.length-1) showSlide(cur+1); });
+  document.addEventListener('keydown', e => {
+    if (e.key==='ArrowRight'||e.key===' ') { if (cur<slides.length-1) showSlide(cur+1); }
+    if (e.key==='ArrowLeft') { if (cur>0) showSlide(cur-1); }
+  });
+})();
+</script>
+</body>
+</html>

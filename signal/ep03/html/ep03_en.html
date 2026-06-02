@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>SIGNAL EP03 — Palantir: S-Curve Position + Final Verdict</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { width:1920px; height:1080px; font-family:'Inter','Helvetica Neue',sans-serif; color:#2a2520; overflow:hidden; }
+
+.slide { position:absolute; inset:0; display:none; align-items:center; justify-content:center; }
+.slide.sage  { background:#e4ece1; }
+.slide.cream { background:#faf7f0; }
+.slide.slate { background:#edf1f8; }
+
+.slide-label { position:absolute; top:52px; left:80px; font-family:'Roboto Mono',monospace; font-size:22px; color:#a09880; letter-spacing:2px; }
+.slide.slate .slide-label { color:#8a9ab8; }
+.slide-num   { position:absolute; top:52px; right:80px; font-family:'Roboto Mono',monospace; font-size:22px; color:#a09880; }
+.slide.slate .slide-num { color:#8a9ab8; }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(36px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+@keyframes slideInLeft  { from{opacity:0;transform:translateX(-40px)} to{opacity:1;transform:translateX(0)} }
+@keyframes slideInRight { from{opacity:0;transform:translateX(40px)}  to{opacity:1;transform:translateX(0)} }
+@keyframes expandW { from{width:0} to{width:100%} }
+@keyframes growH   { from{height:0} to{height:var(--h,60px)} }
+
+/* ── S1: Hook (Sage) ── */
+#slide-1 .hook-center { display:flex; flex-direction:column; align-items:center; gap:24px; text-align:center; }
+.hook-series-title { font-size:24px; font-weight:700; color:#82ae8d; font-family:'Roboto Mono',monospace; letter-spacing:4px; opacity:0; }
+.hook-series-title.go { animation:fadeIn 0.5s ease forwards; }
+.hook-ep-strip { display:flex; gap:20px; align-items:center; opacity:0; }
+.hook-ep-strip.go { animation:fadeUp 0.7s ease 0.2s forwards; }
+.hook-ep-box { background:#fff; border:2px solid #bcd4b6; border-radius:16px; padding:20px 32px; text-align:center; }
+.hook-ep-box .ep-num { font-family:'Roboto Mono',monospace; font-size:15px; color:#82ae8d; letter-spacing:2px; margin-bottom:8px; }
+.hook-ep-box .ep-tag { font-size:20px; font-weight:700; color:#3a3530; }
+.hook-ep-box.current { border-color:#4d7a5a; background:#e4ece1; }
+.hook-ep-box.current .ep-tag { color:#1a2e1f; }
+.hook-arrow { font-size:28px; color:#c6dac0; }
+.hook-question { font-size:44px; font-weight:900; color:#1a2e1f; letter-spacing:-1.5px; opacity:0; }
+.hook-question.go { animation:fadeUp 0.7s ease 0.45s forwards; }
+.hook-question .accent { color:#4d7a5a; }
+.hook-badge { position:absolute; bottom:68px; left:0; right:0; text-align:center; font-family:'Roboto Mono',monospace; font-size:22px; letter-spacing:4px; color:#82ae8d; opacity:0; }
+.hook-badge.go { animation:fadeIn 0.6s ease 0.8s forwards; }
+
+/* ── S2: S-Curve (Cream) ── */
+#slide-2 .scurve-wrap { width:1680px; display:flex; flex-direction:column; gap:52px; }
+.scurve-hd { opacity:0; }
+.scurve-hd.go { animation:fadeUp 0.6s ease forwards; }
+.scurve-eyebrow { font-family:'Roboto Mono',monospace; font-size:20px; letter-spacing:4px; color:#a09880; }
+.scurve-title { font-size:52px; font-weight:900; color:#3a3530; margin-top:12px; letter-spacing:-1.5px; }
+.scurve-title .accent { color:#8a5a1e; }
+.scurve-chart { display:flex; align-items:flex-end; gap:0; height:200px; opacity:0; }
+.scurve-chart.go { animation:fadeUp 0.7s ease 0.2s forwards; }
+.scurve-stage { flex:1; display:flex; flex-direction:column; align-items:center; gap:12px; }
+.scurve-bar { width:100%; border-radius:8px 8px 0 0; transition:height 0.6s ease; }
+.scurve-stage:nth-child(1) .scurve-bar { background:#c6dac0; height:40px; }
+.scurve-stage:nth-child(2) .scurve-bar { background:#82ae8d; height:100px; }
+.scurve-stage:nth-child(3) .scurve-bar { background:#2d5a3a; height:80px; border:3px solid #4d7a5a; }
+.scurve-stage:nth-child(4) .scurve-bar { background:#d4a966; height:160px; opacity:0.4; }
+.scurve-stage:nth-child(5) .scurve-bar { background:#8a5a1e; height:200px; opacity:0.25; }
+.scurve-label { font-size:15px; font-weight:700; color:#5a7060; text-align:center; }
+.scurve-stage:nth-child(3) .scurve-label { color:#1a2e1f; font-size:17px; }
+.scurve-now { display:flex; align-items:center; gap:12px; background:#e4ece1; border:2px solid #bcd4b6; border-radius:12px; padding:16px 24px; opacity:0; }
+.scurve-now.go { animation:fadeUp 0.6s ease 0.5s forwards; }
+.scurve-now-dot { width:16px; height:16px; border-radius:50%; background:#4d7a5a; flex-shrink:0; }
+.scurve-now-text { font-size:22px; font-weight:700; color:#1a2e1f; }
+.scurve-chasm { display:flex; gap:28px; opacity:0; }
+.scurve-chasm.go { animation:fadeUp 0.6s ease 0.7s forwards; }
+.chasm-item { flex:1; background:#fff; border-radius:12px; padding:20px 24px; border:1.5px solid #e8d5b0; }
+.chasm-label { font-size:16px; font-weight:700; color:#8a5a1e; margin-bottom:6px; font-family:'Roboto Mono',monospace; letter-spacing:1px; }
+.chasm-desc { font-size:18px; color:#7a7060; }
+
+/* ── S3: Bear Signals (Slate) ── */
+#slide-3 .check-wrap { width:1680px; display:flex; flex-direction:column; gap:48px; }
+.check-hd { opacity:0; }
+.check-hd.go { animation:fadeUp 0.6s ease forwards; }
+.check-eyebrow { font-family:'Roboto Mono',monospace; font-size:20px; letter-spacing:4px; color:#8a9ab8; }
+.check-title { font-size:52px; font-weight:900; color:#1a2a42; margin-top:12px; letter-spacing:-1.5px; }
+.check-title .danger { color:#c0392b; }
+.check-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+.check-item { background:#fff; border-radius:16px; padding:28px 32px; display:flex; gap:20px; align-items:flex-start; opacity:0; }
+.check-item.go { animation:fadeUp 0.6s ease forwards; }
+.check-item:nth-child(1) { animation-delay:0.1s; }
+.check-item:nth-child(2) { animation-delay:0.2s; }
+.check-item:nth-child(3) { animation-delay:0.3s; }
+.check-item:nth-child(4) { animation-delay:0.4s; }
+.check-item.real    { border-left:5px solid #c0392b; }
+.check-item.pending { border-left:5px solid #e8c84a; }
+.check-item.not-yet { border-left:5px solid #c8d8f0; }
+.check-icon { font-size:28px; flex-shrink:0; }
+.check-name { font-size:20px; font-weight:700; color:#1a2a42; margin-bottom:6px; }
+.check-desc { font-size:16px; color:#5a6a8a; line-height:1.7; }
+.check-badge { display:inline-block; margin-top:10px; font-size:13px; font-weight:700; padding:4px 12px; border-radius:20px; }
+.badge-real    { background:#fef0f0; color:#c0392b; }
+.badge-pending { background:#fefce8; color:#92700a; }
+.badge-not-yet { background:#edf1f8; color:#2c4c7e; }
+
+/* ── S4: Bull Signals (Sage) ── */
+#slide-4 .bull-check-wrap { width:1680px; display:flex; flex-direction:column; gap:48px; }
+.bull-check-hd { opacity:0; }
+.bull-check-hd.go { animation:fadeUp 0.6s ease forwards; }
+.bull-check-eyebrow { font-family:'Roboto Mono',monospace; font-size:20px; letter-spacing:4px; color:#82ae8d; }
+.bull-check-title { font-size:52px; font-weight:900; color:#1a2e1f; margin-top:12px; letter-spacing:-1.5px; }
+.bull-check-title .upside { color:#4d7a5a; }
+.bull-check-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+.bull-item { background:#fff; border-radius:16px; padding:28px 32px; display:flex; gap:20px; align-items:flex-start; opacity:0; }
+.bull-item.go { animation:fadeUp 0.6s ease forwards; }
+.bull-item:nth-child(1) { animation-delay:0.1s; }
+.bull-item:nth-child(2) { animation-delay:0.2s; }
+.bull-item:nth-child(3) { animation-delay:0.3s; }
+.bull-item:nth-child(4) { animation-delay:0.4s; }
+.bull-item.proven   { border-left:5px solid #4d7a5a; }
+.bull-item.emerging { border-left:5px solid #82ae8d; }
+.bull-item .check-icon { font-size:28px; flex-shrink:0; }
+.bull-item .check-name { font-size:20px; font-weight:700; color:#1a2e1f; margin-bottom:6px; }
+.bull-item .check-desc { font-size:16px; color:#5a7060; line-height:1.7; }
+.bull-item .check-badge { display:inline-block; margin-top:10px; font-size:13px; font-weight:700; padding:4px 12px; border-radius:20px; }
+.badge-proven   { background:#e4ece1; color:#4d7a5a; }
+.badge-emerging { background:#f0f5f1; color:#82ae8d; }
+
+/* ── S5: My Life (Cream) ── */
+#slide-5 .life-wrap { width:1680px; display:flex; flex-direction:column; gap:52px; }
+.life-hd { opacity:0; }
+.life-hd.go { animation:fadeUp 0.6s ease forwards; }
+.life-eyebrow { font-family:'Roboto Mono',monospace; font-size:20px; letter-spacing:4px; color:#a09880; }
+.life-title { font-size:52px; font-weight:900; color:#3a3530; margin-top:12px; letter-spacing:-1.5px; }
+.life-title .accent { color:#8a5a1e; }
+.life-note { font-size:24px; color:#7a7060; margin-top:8px; }
+.life-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+.life-card { background:#fff; border-radius:20px; padding:32px 28px; text-align:center; border-bottom:4px solid #d4a966; opacity:0; }
+.life-card.go { animation:fadeUp 0.6s ease forwards; }
+.life-card:nth-child(1) { animation-delay:0.1s; }
+.life-card:nth-child(2) { animation-delay:0.2s; }
+.life-card:nth-child(3) { animation-delay:0.3s; }
+.life-card:nth-child(4) { animation-delay:0.4s; }
+.life-card .lc-icon { font-size:48px; margin-bottom:16px; }
+.life-card .lc-name { font-size:20px; font-weight:700; color:#3a3530; margin-bottom:8px; }
+.life-card .lc-desc { font-size:15px; color:#7a7060; line-height:1.7; }
+.life-footer { text-align:center; font-size:22px; color:#7a7060; opacity:0; }
+.life-footer.go { animation:fadeIn 0.6s ease 0.6s forwards; }
+.life-footer strong { color:#3a3530; }
+
+/* ── S6: Verdict (Slate) ── */
+#slide-6 .verdict-wrap { width:1680px; display:flex; flex-direction:column; gap:44px; }
+.verdict-hd { opacity:0; }
+.verdict-hd.go { animation:fadeUp 0.6s ease forwards; }
+.verdict-eyebrow { font-family:'Roboto Mono',monospace; font-size:20px; letter-spacing:4px; color:#8a9ab8; }
+.verdict-title { font-size:52px; font-weight:900; color:#1a2a42; margin-top:12px; letter-spacing:-1.5px; }
+.verdict-call { display:flex; align-items:center; gap:32px; background:#fff; border-radius:24px; padding:40px 52px; border:3px solid #2c4c7e; opacity:0; }
+.verdict-call.go { animation:fadeUp 0.6s ease 0.2s forwards; }
+.verdict-call-badge { font-size:72px; font-weight:900; color:#2c4c7e; font-family:'Inter',sans-serif; letter-spacing:-2px; flex-shrink:0; }
+.verdict-call-text { font-size:26px; color:#1a2a42; line-height:1.7; }
+.verdict-conditions { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; opacity:0; }
+.verdict-conditions.go { animation:fadeUp 0.6s ease 0.45s forwards; }
+.vc-box { background:#fff; border-radius:16px; padding:28px 24px; border-top:5px solid #2c4c7e; }
+.vc-num { font-family:'Roboto Mono',monospace; font-size:15px; color:#8a9ab8; letter-spacing:2px; margin-bottom:10px; }
+.vc-text { font-size:18px; color:#1a2a42; line-height:1.7; font-weight:700; }
+.vc-sub  { font-size:15px; color:#5a6a8a; margin-top:6px; }
+
+/* ── S7: CTA (Cream) ── */
+#slide-7 .cta-wrap { display:flex; flex-direction:column; align-items:center; gap:36px; text-align:center; width:1400px; }
+.cta-series-done { font-family:'Roboto Mono',monospace; font-size:18px; letter-spacing:4px; color:#a09880; opacity:0; }
+.cta-series-done.go { animation:fadeIn 0.5s ease forwards; }
+.cta-title { font-size:64px; font-weight:900; color:#3a3530; letter-spacing:-2px; line-height:1.2; opacity:0; }
+.cta-title.go { animation:fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.15s forwards; }
+.cta-title .accent { color:#8a5a1e; }
+.cta-divider { width:0; height:3px; background:#d4a966; border-radius:2px; opacity:0; }
+.cta-divider.go { opacity:1; animation:expandW 0.8s ease 0.5s forwards; }
+.cta-next { display:flex; align-items:center; gap:24px; background:#1a2e1f; border-radius:20px; padding:28px 44px; opacity:0; }
+.cta-next.go { animation:fadeUp 0.6s ease 0.65s forwards; }
+.cta-next-label { font-family:'Roboto Mono',monospace; font-size:16px; color:#82ae8d; letter-spacing:2px; }
+.cta-next-title { font-size:24px; font-weight:700; color:#fff; }
+.cta-next-sub { font-size:16px; color:#a0c8a8; margin-top:4px; }
+.cta-subscribe { display:flex; align-items:center; gap:16px; background:#fff; border-radius:50px; padding:18px 36px; border:2px solid #e8d5b0; opacity:0; }
+.cta-subscribe.go { animation:fadeUp 0.6s ease 0.9s forwards; }
+.cta-subscribe .sub-text { font-size:22px; font-weight:700; color:#3a3530; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: Hook (Sage) -->
+<div class="slide sage" id="slide-1">
+  <div class="slide-label">SIGNAL · EP03</div>
+  <div class="slide-num">01 / 07</div>
+  <div class="hook-center">
+    <div class="hook-series-title">📡 SIGNAL — Palantir Trilogy: Final Chapter</div>
+    <div class="hook-ep-strip">
+      <div class="hook-ep-box">
+        <div class="ep-num">EP01</div>
+        <div class="ep-tag">Deep Dive</div>
+      </div>
+      <div class="hook-arrow">→</div>
+      <div class="hook-ep-box">
+        <div class="ep-num">EP02</div>
+        <div class="ep-tag">Bear vs Bull</div>
+      </div>
+      <div class="hook-arrow">→</div>
+      <div class="hook-ep-box current">
+        <div class="ep-num">EP03</div>
+        <div class="ep-tag">Verdict</div>
+      </div>
+    </div>
+    <div class="hook-question">Which <span class="accent">signals</span> are<br>becoming real right now?</div>
+  </div>
+  <div class="hook-badge">SIGNAL — Company Analysis Series</div>
+</div>
+
+<!-- SLIDE 2: S-Curve (Cream) -->
+<div class="slide cream" id="slide-2">
+  <div class="slide-label">SIGNAL · EP03</div>
+  <div class="slide-num">02 / 07</div>
+  <div class="scurve-wrap">
+    <div class="scurve-hd">
+      <div class="scurve-eyebrow">S-CURVE POSITION</div>
+      <div class="scurve-title">Where Is Palantir on <span class="accent">the S-Curve?</span></div>
+    </div>
+    <div class="scurve-chart">
+      <div class="scurve-stage">
+        <div class="scurve-bar"></div>
+        <div class="scurve-label">Innovators</div>
+      </div>
+      <div class="scurve-stage">
+        <div class="scurve-bar"></div>
+        <div class="scurve-label">Early Adopters</div>
+      </div>
+      <div class="scurve-stage">
+        <div class="scurve-bar"></div>
+        <div class="scurve-label">📍 Chasm<br>(Now)</div>
+      </div>
+      <div class="scurve-stage">
+        <div class="scurve-bar"></div>
+        <div class="scurve-label">Early Majority</div>
+      </div>
+      <div class="scurve-stage">
+        <div class="scurve-bar"></div>
+        <div class="scurve-label">Late Majority</div>
+      </div>
+    </div>
+    <div class="scurve-now">
+      <div class="scurve-now-dot"></div>
+      <div class="scurve-now-text">Government &amp; enterprise penetration complete → SMB penetration is the next chasm</div>
+    </div>
+    <div class="scurve-chasm">
+      <div class="chasm-item">
+        <div class="chasm-label">CHASM 01</div>
+        <div class="chasm-desc">Reaching Mid-Market — AIP Bootcamps are bridging this</div>
+      </div>
+      <div class="chasm-item">
+        <div class="chasm-label">CHASM 02</div>
+        <div class="chasm-desc">AI-Native Competition — Azure Gov &amp; open-source threats</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3: Bear Signals (Slate) -->
+<div class="slide slate" id="slide-3">
+  <div class="slide-label">SIGNAL · EP03</div>
+  <div class="slide-num">03 / 07</div>
+  <div class="check-wrap">
+    <div class="check-hd">
+      <div class="check-eyebrow">BEAR SIGNAL CHECK</div>
+      <div class="check-title"><span class="danger">Bear</span> Signals — Reality Check</div>
+    </div>
+    <div class="check-grid">
+      <div class="check-item real">
+        <div class="check-icon">⚠️</div>
+        <div>
+          <div class="check-name">Azure Government Expansion</div>
+          <div class="check-desc">Azure Secret &amp; Top Secret already live. Microsoft-OpenAI integration advancing.</div>
+          <div class="check-badge badge-real">✅ In Progress</div>
+        </div>
+      </div>
+      <div class="check-item real">
+        <div class="check-icon">✂️</div>
+        <div>
+          <div class="check-name">DOGE Defense Budget Cuts</div>
+          <div class="check-desc">-8% cuts being executed. Direct hit to 42% government revenue dependency.</div>
+          <div class="check-badge badge-real">✅ In Progress</div>
+        </div>
+      </div>
+      <div class="check-item not-yet">
+        <div class="check-icon">🔮</div>
+        <div>
+          <div class="check-name">LLMs Replace Ontology</div>
+          <div class="check-desc">2027–2028 risk. Current LLMs can't directly process structured classified data yet.</div>
+          <div class="check-badge badge-not-yet">⏳ 2027–28 Risk</div>
+        </div>
+      </div>
+      <div class="check-item not-yet">
+        <div class="check-icon">💀</div>
+        <div>
+          <div class="check-name">Llama + GovCloud Free</div>
+          <div class="check-desc">Early stage. Building classified-grade infrastructure takes years.</div>
+          <div class="check-badge badge-not-yet">⏳ Early Stage</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4: Bull Signals (Sage) -->
+<div class="slide sage" id="slide-4">
+  <div class="slide-label">SIGNAL · EP03</div>
+  <div class="slide-num">04 / 07</div>
+  <div class="bull-check-wrap">
+    <div class="bull-check-hd">
+      <div class="bull-check-eyebrow">BULL SIGNAL CHECK</div>
+      <div class="bull-check-title"><span class="upside">Bull</span> Signals — Reality Check</div>
+    </div>
+    <div class="bull-check-grid">
+      <div class="bull-item proven">
+        <div class="check-icon">📈</div>
+        <div>
+          <div class="check-name">AIP Bootcamps +133%</div>
+          <div class="check-desc">U.S. commercial revenue up 133%. Proven with real numbers.</div>
+          <div class="check-badge badge-proven">✅ Proven</div>
+        </div>
+      </div>
+      <div class="bull-item proven">
+        <div class="check-icon">🚀</div>
+        <div>
+          <div class="check-name">FY2026 Guidance +71%</div>
+          <div class="check-desc">$7.65–7.66B guidance raised. Management is convinced of growth.</div>
+          <div class="check-badge badge-proven">✅ Proven</div>
+        </div>
+      </div>
+      <div class="bull-item proven">
+        <div class="check-icon">🌍</div>
+        <div>
+          <div class="check-name">Geopolitical Risk Ongoing</div>
+          <div class="check-desc">NATO expansion, Ukraine reconstruction, Taiwan tensions — all continuing.</div>
+          <div class="check-badge badge-proven">✅ In Progress</div>
+        </div>
+      </div>
+      <div class="bull-item emerging">
+        <div class="check-icon">🪟</div>
+        <div>
+          <div class="check-name">Ontology Standardization Emerging</div>
+          <div class="check-desc">Becoming the essential data layer for enterprise AI infrastructure.</div>
+          <div class="check-badge badge-emerging">🔄 Emerging</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5: My Life (Cream) -->
+<div class="slide cream" id="slide-5">
+  <div class="slide-label">SIGNAL · EP03</div>
+  <div class="slide-num">05 / 07</div>
+  <div class="life-wrap">
+    <div class="life-hd">
+      <div class="life-eyebrow">REAL LIFE IMPACT</div>
+      <div class="life-title">Palantir's <span class="accent">Impact</span> on Daily Life</div>
+      <div class="life-note">No direct consumer access (B2G·B2B only) — but indirect impact has already begun</div>
+    </div>
+    <div class="life-cards">
+      <div class="life-card">
+        <div class="lc-icon">🏥</div>
+        <div class="lc-name">Shorter ER Wait Times</div>
+        <div class="lc-desc">Medical data optimization speeds up emergency care</div>
+      </div>
+      <div class="life-card">
+        <div class="lc-icon">💰</div>
+        <div class="lc-name">Tax Refunds: 2 Weeks → 2 Days</div>
+        <div class="lc-desc">IRS system upgrade, 10x faster processing</div>
+      </div>
+      <div class="life-card">
+        <div class="lc-icon">🌪️</div>
+        <div class="lc-name">Faster Disaster Response</div>
+        <div class="lc-desc">FEMA predictive systems enable earlier evacuation orders</div>
+      </div>
+      <div class="life-card">
+        <div class="lc-icon">🛡️</div>
+        <div class="lc-name">Defense &amp; Security AI</div>
+        <div class="lc-desc">Higher military precision, predictive policing applications</div>
+      </div>
+    </div>
+    <div class="life-footer">Consumers will <strong>always experience this indirectly</strong> — B2G·B2B structure is both Palantir's limit and its moat</div>
+  </div>
+</div>
+
+<!-- SLIDE 6: Verdict (Slate) -->
+<div class="slide slate" id="slide-6">
+  <div class="slide-label">SIGNAL · EP03</div>
+  <div class="slide-num">06 / 07</div>
+  <div class="verdict-wrap">
+    <div class="verdict-hd">
+      <div class="verdict-eyebrow">SIGNAL VERDICT</div>
+      <div class="verdict-title">Final Verdict</div>
+    </div>
+    <div class="verdict-call">
+      <div class="verdict-call-badge">WATCH</div>
+      <div class="verdict-call-text">
+        Bull signals are materializing faster than bear signals.<br>
+        But a P/E of 260× demands <strong>flawless execution</strong>.
+      </div>
+    </div>
+    <div class="verdict-conditions">
+      <div class="vc-box">
+        <div class="vc-num">WATCH 01</div>
+        <div class="vc-text">AIP Bootcamp<br>Conversion Rate</div>
+        <div class="vc-sub">Track commercial revenue growth every quarter</div>
+      </div>
+      <div class="vc-box">
+        <div class="vc-num">WATCH 02</div>
+        <div class="vc-text">Ontology<br>Industry Standard</div>
+        <div class="vc-sub">Watch for major new enterprise contract wins</div>
+      </div>
+      <div class="vc-box">
+        <div class="vc-num">WATCH 03</div>
+        <div class="vc-text">Azure Gov Stealing<br>Core Contracts</div>
+        <div class="vc-sub">Alert if government contract renewal rate drops</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 7: CTA (Cream) -->
+<div class="slide cream" id="slide-7">
+  <div class="slide-label">SIGNAL · EP03</div>
+  <div class="slide-num">07 / 07</div>
+  <div class="cta-wrap">
+    <div class="cta-series-done">✅ Palantir Trilogy Complete</div>
+    <div class="cta-title">The Next SIGNAL:<br><span class="accent">Quantum Computing</span></div>
+    <div class="cta-divider"></div>
+    <div class="cta-next">
+      <div>
+        <div class="cta-next-label">NEXT · EP04</div>
+        <div class="cta-next-title">Quantum Comparison: IonQ · D-Wave · Rigetti · QUBT</div>
+        <div class="cta-next-sub">When does the ChatGPT moment arrive? Four companies, one episode.</div>
+      </div>
+    </div>
+    <div class="cta-subscribe">
+      <div class="sub-text">🔔 Subscribe and read the signal first</div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  let cur = 0;
+  const GO_SELECTORS = [
+    '.hook-series-title','.hook-ep-strip','.hook-question','.hook-badge',
+    '.scurve-hd','.scurve-chart','.scurve-now','.scurve-chasm',
+    '.check-hd','.check-item',
+    '.bull-check-hd','.bull-item',
+    '.life-hd','.life-card','.life-footer',
+    '.verdict-hd','.verdict-call','.verdict-conditions',
+    '.cta-series-done','.cta-title','.cta-divider','.cta-next','.cta-subscribe'
+  ].join(',');
+
+  function showSlide(n) {
+    slides.forEach(s => {
+      s.style.display = 'none';
+      s.querySelectorAll(GO_SELECTORS).forEach(el => el.classList.remove('go'));
+    });
+    const slide = slides[n];
+    if (!slide) return;
+    slide.style.display = 'flex';
+    setTimeout(() => slide.querySelectorAll(GO_SELECTORS).forEach(el => el.classList.add('go')), 300);
+    cur = n;
+  }
+
+  window.goToSlide = showSlide;
+
+  function applyScale() {
+    var s = window.innerWidth / 1920;
+    document.body.style.transform = 'scale(' + s + ')';
+    document.body.style.transformOrigin = 'top left';
+    document.documentElement.style.height = Math.round(1080 * s) + 'px';
+    document.documentElement.style.overflow = 'hidden';
+  }
+  applyScale();
+  window.addEventListener('resize', applyScale);
+  showSlide(0);
+  document.body.addEventListener('click', () => { if (cur < slides.length-1) showSlide(cur+1); });
+  document.addEventListener('keydown', e => {
+    if (e.key==='ArrowRight'||e.key===' ') { if (cur<slides.length-1) showSlide(cur+1); }
+    if (e.key==='ArrowLeft') { if (cur>0) showSlide(cur-1); }
+  });
+})();
+</script>
+</body>
+</html>

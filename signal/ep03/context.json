@@ -1,0 +1,24 @@
+{
+  "series": "signal",
+  "ep": {
+    "ep_number": 3,
+    "title_ko": "팔란티어 EP3: 세계를 지배하는 3가지 시나리오 + 결론",
+    "title_ja": "パランティア EP3: 世界を支配する3つのシナリオ＋結論",
+    "title_en": "Palantir EP3: 3 Ways It Could Dominate + Final Verdict",
+    "company": "Palantir",
+    "sector": "데이터·AI",
+    "ep_role": "ep3",
+    "status": "planned"
+  },
+  "note": "EP01/EP02 context.json 참조 — Palantir 전체 데이터 보유",
+  "ep3_focus": {
+    "scurve_position": "전문가→캐즘 경계 (정부·기업 침투 완료, 소비자 직접 체감 불가)",
+    "bear_signals_real": ["Azure Gov 보안 인가 확장 진행 중", "DOGE 국방 예산 -8% 삭감 실행 중"],
+    "bear_signals_not_yet": ["LLM이 Ontology 대체 — 2027~2028년 리스크, 아직 미도달", "Llama+GovCloud — 초기 단계"],
+    "bull_signals_real": ["AIP 부트캠프 상업 매출 +133% 실증", "FY2026 가이던스 $7.66B (+71%) — 가이던스 상향", "NATO 확장·우크라이나·대만 긴장 지속"],
+    "bull_signals_emerging": ["Ontology 표준화 — Rubik's Cube처럼 업계 필수 도구가 되는 중"],
+    "my_life": ["응급실 대기시간 단축 (의료 데이터 최적화)", "세금 환급 2주→2일 (IRS 시스템)", "재난 대응 속도 향상 (FEMA 예측)", "군사·치안 AI (간접 체감)"],
+    "verdict": "WATCH — 지배 시그널이 멸망 시그널보다 강하지만 PER 260배는 완벽한 실행을 요구",
+    "next_ep": "EP04 — 양자컴퓨터 비교편: IonQ·D-Wave·Rigetti·QUBT"
+  }
+}
