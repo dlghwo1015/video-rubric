@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  SIGNAL 기업분석 시리즈 — 매일 새벽 3시 자동 파이프라인
+  실행 시각: 매일 03:00 (로컬 시각 JST)
+
+  설치 (터미널에서 1회):
+    launchctl unload ~/Library/LaunchAgents/com.lucas.signal.daily.plist 2>/dev/null
+    cp ~/Documents/Claude/Projects/video-rubric/scheduler/com.lucas.signal.daily.plist \
+       ~/Library/LaunchAgents/com.lucas.signal.daily.plist
+    launchctl load ~/Library/LaunchAgents/com.lucas.signal.daily.plist
+
+  상태 확인:
+    launchctl list | grep signal
+
+  즉시 테스트 (EP04):
+    launchctl start com.lucas.signal.daily
+    # 또는 직접:
+    python3 ~/Documents/Claude/Projects/video-rubric/scheduler/signal_pipeline.py --check
+    python3 ~/Documents/Claude/Projects/video-rubric/scheduler/signal_pipeline.py --ep 4
+
+  로그 확인:
+    tail -f ~/Documents/Claude/Projects/video-rubric/scheduler/signal_pipeline.log
+
+  비활성화:
+    launchctl unload ~/Library/LaunchAgents/com.lucas.signal.daily.plist
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.lucas.signal.daily</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/opt/homebrew/bin/python3.11</string>
+        <string>/Users/hojaelee/Documents/Claude/Projects/video-rubric/scheduler/signal_pipeline.py</string>
+    </array>
+
+    <!-- 매일 새벽 03:00 실행 (JST) -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>3</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/Users/hojaelee/Documents/Claude/Projects/video-rubric/scheduler/signal_stdout.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/hojaelee/Documents/Claude/Projects/video-rubric/scheduler/signal_stderr.log</string>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/hojaelee/Documents/Claude/Projects/video-rubric</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+        <key>HOME</key>
+        <string>/Users/hojaelee</string>
+    </dict>
+
+    <key>RunAtLoad</key>
+    <false/>
+</dict>
+</plist>
