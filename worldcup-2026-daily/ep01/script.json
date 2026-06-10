@@ -1,0 +1,40 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 1,
+  "date": "2026-06-10",
+  "title_ko": "2026-06-10 월드컵 D-1 — 개막 전날 Claude AI 완전 분석",
+  "title_ja": "2026-06-10 W杯D-1 — 開幕前日 Claude AI 完全分析",
+  "title_en": "2026-06-10 World Cup D-1 — Claude AI Opening Day Complete Preview",
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "드디어 내일입니다. 2026 FIFA 월드컵, 48개국의 꿈이 내일 아즈테카에서 시작됩니다. 오늘은 Claude AI가 개막일 3경기를 완전 해부합니다.",
+      "narration_ja": "いよいよ明日です。2026 FIFAワールドカップ、48カ国の夢が明日アステカで始まります。今日はClaude AIが開幕日3試合を完全解剖します。",
+      "narration_en": "Tomorrow is the day. The 2026 FIFA World Cup opens at the Azteca with 48 nations' dreams on the line. Today, Claude AI breaks down all three Day 1 matches."
+    },
+    {
+      "id": "s02_day1_overview",
+      "narration": "6월 11일 개막일 3경기. 멕시코 vs 에콰도르는 아즈테카에서 한국시간 12일 오전 9시. 미국 vs 볼리비아는 LA 소파이 스타디움 오전 8시. 캐나다 vs 모로코는 토론토 BMO 필드 오전 3시. 개최국 3팀이 같은 날 동시 출격, 역대 최초의 장면입니다.",
+      "narration_ja": "6月11日開幕日の3試合。メキシコ対エクアドルはアステカで韓国時間12日午前9時。アメリカ対ボリビアはLAのソーファイ・スタジアム午前8時。カナダ対モロッコはトロントのBMOフィールド午前3時。開催国3チームが同じ日に同時出撃、史上初の光景です。",
+      "narration_en": "Day 1 has three matches. Mexico vs Ecuador at the Azteca — 9am Korean time on June 12. USA vs Bolivia at SoFi Stadium in LA at 8am. Canada vs Morocco in Toronto at 3am. All three host nations playing on the same day — a World Cup first."
+    },
+    {
+      "id": "s03_main_prediction",
+      "narration": "개막전 핵심 분석: 멕시코 vs 에콰도르. AI 예측: 멕시코 2 대 1 에콰도르. 아즈테카는 해발 2240미터 — 적응 기간 없는 에콰도르에겐 최악의 조건입니다. 멕시코의 개막전 무패 기록, 홈팬 8만 7천 명의 열기. 라울 히메네스의 선제골 후 에콰도르가 동점, 그리고 멕시코의 역전골. 극적인 개막을 예측합니다.",
+      "narration_ja": "開幕戦の核心分析：メキシコ対エクアドル。AI予測：メキシコ2対1エクアドル。アステカは標高2240メートル — 適応期間なしのエクアドルには最悪の条件。メキシコの開幕戦無敗記録、ホームファン8万7千人の熱気。ラウル・ヒメネスの先制ゴール後エクアドルが同点、そしてメキシコの逆転ゴール。劇的な開幕を予測します。",
+      "narration_en": "Opening match deep dive: Mexico vs Ecuador. AI prediction: Mexico 2-1 Ecuador. The Azteca sits at 2,240 meters — Ecuador gets zero altitude adaptation time, a brutal disadvantage. Mexico's unbeaten opening match record. 87,000 home fans. Jiménez opens the scoring, Ecuador equalizes, then Mexico wins it late. A dramatic opener predicted."
+    },
+    {
+      "id": "s04_batch_predictions",
+      "narration": "나머지 Day 1 예측. 미국 vs 볼리비아: 3대 0 미국 완승. 볼리비아는 고지대 이점 없이 LA 해수면에서 무기력합니다. 풀리시치 멀티골 후보. 캐나다 vs 모로코: 1대 1 무승부. 모로코는 2022 4강의 저력, 캐나다는 홈 이점으로 맞서지만 쉽게 이기기 어렵습니다. 알폰소 데이비스 대 하키미의 풀백 대결이 승부 변수입니다.",
+      "narration_ja": "残りのDay 1試合予測。アメリカ対ボリビア：3対0アメリカの完勝。ボリビアは高地アドバンテージなしでLAの海抜ゼロでは手も足も出ません。プリシッチのマルチゴールも。カナダ対モロッコ：1対1引き分け。モロッコは2022年準決勝の底力健在、カナダはホームアドバンテージで対抗。アルフォンソ・デイビス対ハキミの左サイドバック対決が勝負のカギ。",
+      "narration_en": "Day 1 remaining predictions. USA vs Bolivia: 3-0 USA dominant win. Bolivia loses altitude edge at sea-level LA and can't handle the pace. Pulisic multi-goal candidate. Canada vs Morocco: 1-1 draw. Morocco brings genuine 2022 semifinal quality. Canada has the crowd. The Alphonso Davies vs Hakimi fullback duel will decide it."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "Claude AI 개막일 최종 픽. 멕시코 2-1 에콰도르, 미국 3-0 볼리비아, 캐나다 1-1 모로코. 최대 이변 가능성은 캐나다-모로코 — 모로코의 수비 조직이 캐나다 홈 분위기를 상쇄할 수 있습니다. 대한민국 대표팀은 6월 13일 첫 경기 — 상대 완전 분석은 내일 영상에서 공개합니다. 구독과 알림 설정해 두세요.",
+      "narration_ja": "Claude AI開幕日最終ピック。メキシコ2-1エクアドル、アメリカ3-0ボリビア、カナダ1-1モロッコ。最大の番狂わせ可能性はカナダ対モロッコ — モロッコの守備組織がカナダのホーム雰囲気を相殺する可能性があります。韓国代表は6月13日初戦 — 対戦相手完全分析は明日の動画で公開します。チャンネル登録と通知設定をお忘れなく。",
+      "narration_en": "Claude AI final Day 1 picks: Mexico 2-1 Ecuador, USA 3-0 Bolivia, Canada 1-1 Morocco. Biggest upset risk: Canada vs Morocco — Morocco's defensive discipline could cancel out the home advantage. South Korea's Group C opener is June 13 — full opponent analysis drops tomorrow. Subscribe and hit the bell."
+    }
+  ]
+}
