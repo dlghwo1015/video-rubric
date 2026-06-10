@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>2026 월드컵 완전 정복 — EP01</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #0a0e1a;
+  }
+
+  /* ── 슬라이드 베이스 ──────────────────────────────── */
+  .slide {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  /* ── 테마 ──────────────────────────────────────────── */
+  .slide.stadium { background: #0a0e1a; }
+  .slide.pitch   { background: #0d2818; }
+  .slide.trophy  { background: #1a0e2e; }
+
+  /* ── 슬라이드 번호 / 레이블 ──────────────────────── */
+  .slide-label {
+    position: absolute;
+    top: 36px; left: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .slide-num {
+    position: absolute;
+    top: 36px; right: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.08em;
+  }
+
+  /* ── 공통 진입 애니메이션 ──────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(48px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes slideLeft {
+    from { opacity: 0; transform: translateX(-60px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.85); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  @keyframes pulseGold {
+    0%, 100% { text-shadow: 0 0 40px rgba(201,162,39,0.4); }
+    50%       { text-shadow: 0 0 80px rgba(201,162,39,0.9); }
+  }
+
+  .anim { opacity: 0; }
+  .anim.go { animation-fill-mode: forwards; }
+  .anim.go.fadeUp    { animation: fadeUp    0.7s cubic-bezier(.22,.68,0,1.2) forwards; }
+  .anim.go.fadeIn    { animation: fadeIn    0.6s ease forwards; }
+  .anim.go.slideLeft { animation: slideLeft 0.6s cubic-bezier(.22,.68,0,1.2) forwards; }
+  .anim.go.scaleIn   { animation: scaleIn  0.7s cubic-bezier(.22,.68,0,1.2) forwards; }
+
+  /* ── 공통 배지 ───────────────────────────────────── */
+  .series-badge {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 10px 28px;
+    border-radius: 4px;
+    margin-bottom: 32px;
+  }
+
+  /* ── 구분선 ──────────────────────────────────────── */
+  .divider {
+    width: 120px;
+    height: 4px;
+    border-radius: 2px;
+    margin: 28px auto;
+  }
+
+  /* ════════════════════════════════════════════════════
+     S01 — HOOK
+  ════════════════════════════════════════════════════ */
+  #slide-1 {
+    background: radial-gradient(ellipse 120% 80% at 50% 110%, rgba(201,162,39,0.18) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 50% at 80% 20%, rgba(79,200,122,0.06) 0%, transparent 50%),
+                #0a0e1a;
+  }
+  #slide-1 .big-number {
+    font-size: 340px;
+    font-weight: 900;
+    line-height: 0.85;
+    color: #c9a227;
+    letter-spacing: -0.04em;
+    animation: pulseGold 3s ease-in-out infinite;
+    margin-bottom: 0;
+  }
+  #slide-1 .hook-sub {
+    font-size: 56px;
+    font-weight: 700;
+    color: #f0ede4;
+    letter-spacing: 0.04em;
+    text-align: center;
+    margin-top: -8px;
+  }
+  #slide-1 .hook-sub span { color: #c9a227; }
+  #slide-1 .hook-caption {
+    font-size: 30px;
+    font-weight: 300;
+    color: rgba(240,237,228,0.55);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-top: 40px;
+  }
+  #slide-1 .ep-badge {
+    position: absolute;
+    bottom: 52px;
+    left: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    color: rgba(201,162,39,0.7);
+    letter-spacing: 0.15em;
+  }
+
+  /* ════════════════════════════════════════════════════
+     S02 — FORMAT
+  ════════════════════════════════════════════════════ */
+  #slide-2 {
+    background: radial-gradient(ellipse 140% 90% at 50% 120%, rgba(79,200,122,0.15) 0%, transparent 55%),
+                #0d2818;
+    padding: 0 140px;
+  }
+  #slide-2 .format-title {
+    font-size: 62px;
+    font-weight: 700;
+    color: #4fc87a;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  #slide-2 .format-subtitle {
+    font-size: 30px;
+    font-weight: 300;
+    color: rgba(232,245,237,0.6);
+    text-align: center;
+    margin-bottom: 64px;
+    letter-spacing: 0.05em;
+  }
+  #slide-2 .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto 56px;
+  }
+  #slide-2 .stat-card {
+    background: rgba(79,200,122,0.08);
+    border: 1px solid rgba(79,200,122,0.25);
+    border-radius: 16px;
+    padding: 40px 28px;
+    text-align: center;
+  }
+  #slide-2 .stat-card .stat-num {
+    font-size: 96px;
+    font-weight: 900;
+    color: #4fc87a;
+    line-height: 1;
+  }
+  #slide-2 .stat-card .stat-label {
+    font-size: 24px;
+    font-weight: 400;
+    color: rgba(232,245,237,0.7);
+    margin-top: 12px;
+    letter-spacing: 0.05em;
+  }
+  #slide-2 .expand-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    font-size: 28px;
+    color: rgba(232,245,237,0.65);
+  }
+  #slide-2 .expand-row .arrow { color: #4fc87a; font-size: 40px; font-weight: 900; }
+  #slide-2 .expand-row .old  { text-decoration: line-through; opacity: 0.5; }
+  #slide-2 .expand-row .new  { color: #4fc87a; font-weight: 700; font-size: 36px; }
+
+  /* ════════════════════════════════════════════════════
+     S03 — HOSTS
+  ════════════════════════════════════════════════════ */
+  #slide-3 {
+    background: radial-gradient(ellipse 100% 70% at 60% 80%, rgba(201,162,39,0.12) 0%, transparent 55%),
+                #0a0e1a;
+    padding: 0 120px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  #slide-3 .hosts-title {
+    font-size: 58px;
+    font-weight: 700;
+    color: #c9a227;
+    margin-bottom: 12px;
+  }
+  #slide-3 .hosts-subtitle {
+    font-size: 26px;
+    font-weight: 300;
+    color: rgba(240,237,228,0.55);
+    margin-bottom: 60px;
+    letter-spacing: 0.04em;
+  }
+  #slide-3 .hosts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    width: 100%;
+    max-width: 1640px;
+  }
+  #slide-3 .host-card {
+    background: rgba(201,162,39,0.07);
+    border: 1px solid rgba(201,162,39,0.2);
+    border-radius: 20px;
+    padding: 44px 40px;
+  }
+  #slide-3 .host-card .flag { font-size: 72px; margin-bottom: 16px; }
+  #slide-3 .host-card .country {
+    font-size: 42px;
+    font-weight: 700;
+    color: #c9a227;
+    margin-bottom: 8px;
+  }
+  #slide-3 .host-card .city-count {
+    font-size: 26px;
+    font-weight: 300;
+    color: rgba(240,237,228,0.5);
+    margin-bottom: 24px;
+  }
+  #slide-3 .host-card .cities {
+    font-size: 22px;
+    font-weight: 400;
+    color: rgba(240,237,228,0.75);
+    line-height: 1.7;
+  }
+  #slide-3 .key-venues {
+    margin-top: 48px;
+    font-size: 26px;
+    color: rgba(240,237,228,0.55);
+  }
+  #slide-3 .key-venues span { color: #c9a227; font-weight: 600; }
+
+  /* ════════════════════════════════════════════════════
+     S04 — SCHEDULE
+  ════════════════════════════════════════════════════ */
+  #slide-4 {
+    background: radial-gradient(ellipse 120% 80% at 50% 110%, rgba(79,200,122,0.12) 0%, transparent 55%),
+                #0d2818;
+    padding: 0 140px;
+    flex-direction: row;
+    gap: 100px;
+    align-items: center;
+    justify-content: center;
+  }
+  #slide-4 .sched-left { flex: 0 0 560px; }
+  #slide-4 .sched-left .sched-title {
+    font-size: 58px;
+    font-weight: 700;
+    color: #4fc87a;
+    margin-bottom: 16px;
+  }
+  #slide-4 .sched-left .sched-sub {
+    font-size: 28px;
+    font-weight: 300;
+    color: rgba(232,245,237,0.55);
+    margin-bottom: 48px;
+  }
+  #slide-4 .sched-left .sched-highlight {
+    font-size: 30px;
+    font-weight: 500;
+    color: rgba(232,245,237,0.85);
+    line-height: 1.9;
+  }
+  #slide-4 .sched-left .sched-highlight b { color: #4fc87a; }
+  #slide-4 .sched-right { flex: 1; }
+  #slide-4 .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  #slide-4 .tl-item {
+    display: flex;
+    align-items: stretch;
+    gap: 32px;
+  }
+  #slide-4 .tl-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 32px;
+  }
+  #slide-4 .tl-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #4fc87a;
+    flex-shrink: 0;
+    margin-top: 12px;
+  }
+  #slide-4 .tl-line {
+    width: 3px;
+    background: rgba(79,200,122,0.25);
+    flex: 1;
+    margin: 4px 0;
+  }
+  #slide-4 .tl-item:last-child .tl-line { display: none; }
+  #slide-4 .tl-content {
+    padding: 10px 0 40px;
+    flex: 1;
+  }
+  #slide-4 .tl-date {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    color: rgba(232,245,237,0.45);
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+  #slide-4 .tl-event {
+    font-size: 32px;
+    font-weight: 700;
+    color: #e8f5ed;
+    margin-bottom: 4px;
+  }
+  #slide-4 .tl-detail {
+    font-size: 22px;
+    font-weight: 300;
+    color: rgba(232,245,237,0.5);
+  }
+
+  /* ════════════════════════════════════════════════════
+     S05 — TEAMS
+  ════════════════════════════════════════════════════ */
+  #slide-5 {
+    background: radial-gradient(ellipse 120% 70% at 50% 90%, rgba(232,192,90,0.14) 0%, transparent 55%),
+                #1a0e2e;
+    padding: 0 120px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  #slide-5 .teams-title {
+    font-size: 56px;
+    font-weight: 700;
+    color: #e8c05a;
+    margin-bottom: 12px;
+  }
+  #slide-5 .teams-subtitle {
+    font-size: 26px;
+    font-weight: 300;
+    color: rgba(245,240,232,0.55);
+    margin-bottom: 52px;
+  }
+  #slide-5 .confed-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    width: 100%;
+    max-width: 1640px;
+    margin-bottom: 48px;
+  }
+  #slide-5 .confed-card {
+    background: rgba(232,192,90,0.07);
+    border: 1px solid rgba(232,192,90,0.18);
+    border-radius: 16px;
+    padding: 32px 36px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  #slide-5 .confed-card .conf-icon {
+    font-size: 56px;
+    flex-shrink: 0;
+  }
+  #slide-5 .confed-card .conf-info {}
+  #slide-5 .confed-card .conf-name {
+    font-size: 30px;
+    font-weight: 700;
+    color: #e8c05a;
+    margin-bottom: 4px;
+  }
+  #slide-5 .confed-card .conf-slots {
+    font-size: 26px;
+    color: rgba(245,240,232,0.6);
+  }
+  #slide-5 .confed-card .conf-slots .old { opacity: 0.4; text-decoration: line-through; }
+  #slide-5 .confed-card .conf-slots .new { color: #e8c05a; font-weight: 700; margin-left: 8px; }
+  #slide-5 .asia-note {
+    font-size: 28px;
+    font-weight: 500;
+    color: rgba(245,240,232,0.75);
+    line-height: 1.7;
+  }
+  #slide-5 .asia-note b { color: #e8c05a; }
+
+  /* ════════════════════════════════════════════════════
+     S06 — BIG STORIES
+  ════════════════════════════════════════════════════ */
+  #slide-6 {
+    background: radial-gradient(ellipse 110% 70% at 50% 100%, rgba(201,162,39,0.16) 0%, transparent 55%),
+                radial-gradient(ellipse 60% 40% at 15% 20%, rgba(201,162,39,0.07) 0%, transparent 50%),
+                #0a0e1a;
+    padding: 0 120px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  #slide-6 .stories-title {
+    font-size: 56px;
+    font-weight: 700;
+    color: #c9a227;
+    margin-bottom: 52px;
+  }
+  #slide-6 .stories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    width: 100%;
+    max-width: 1640px;
+  }
+  #slide-6 .story-card {
+    background: rgba(201,162,39,0.07);
+    border: 1px solid rgba(201,162,39,0.22);
+    border-radius: 20px;
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  #slide-6 .story-num {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 72px;
+    font-weight: 900;
+    color: rgba(201,162,39,0.25);
+    line-height: 1;
+  }
+  #slide-6 .story-icon { font-size: 52px; }
+  #slide-6 .story-heading {
+    font-size: 36px;
+    font-weight: 700;
+    color: #f0ede4;
+    line-height: 1.2;
+  }
+  #slide-6 .story-body {
+    font-size: 24px;
+    font-weight: 300;
+    color: rgba(240,237,228,0.65);
+    line-height: 1.65;
+  }
+
+  /* ════════════════════════════════════════════════════
+     S07 — VERDICT
+  ════════════════════════════════════════════════════ */
+  #slide-7 {
+    background: radial-gradient(ellipse 100% 80% at 50% 60%, rgba(232,192,90,0.18) 0%, transparent 55%),
+                radial-gradient(ellipse 50% 40% at 85% 85%, rgba(232,192,90,0.08) 0%, transparent 50%),
+                #1a0e2e;
+  }
+  #slide-7 .trophy-icon {
+    font-size: 120px;
+    margin-bottom: 32px;
+    filter: drop-shadow(0 0 40px rgba(232,192,90,0.5));
+  }
+  #slide-7 .verdict-title {
+    font-size: 64px;
+    font-weight: 900;
+    color: #e8c05a;
+    text-align: center;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+  }
+  #slide-7 .verdict-body {
+    font-size: 32px;
+    font-weight: 300;
+    color: rgba(245,240,232,0.75);
+    text-align: center;
+    max-width: 1100px;
+    line-height: 1.7;
+    margin-bottom: 56px;
+  }
+  #slide-7 .next-ep-box {
+    background: rgba(232,192,90,0.1);
+    border: 1px solid rgba(232,192,90,0.3);
+    border-radius: 16px;
+    padding: 32px 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  #slide-7 .next-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    color: rgba(232,192,90,0.6);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  #slide-7 .next-title {
+    font-size: 34px;
+    font-weight: 700;
+    color: #e8c05a;
+    text-align: center;
+  }
+  #slide-7 .cta-line {
+    margin-top: 48px;
+    font-size: 26px;
+    font-weight: 400;
+    color: rgba(245,240,232,0.45);
+    letter-spacing: 0.08em;
+  }
+  #slide-7 .cta-line span { color: #e8c05a; }
+</style>
+</head>
+<body>
+
+<!-- ─────────────── S01 HOOK ─────────────── -->
+<div class="slide stadium active" id="slide-1">
+  <div class="slide-label anim fadeIn go" style="animation-delay:0.1s">2026 월드컵 예측 대결 · EP01</div>
+  <div class="slide-num anim fadeIn go" style="animation-delay:0.1s">01 / 07</div>
+
+  <div class="big-number anim scaleIn go" style="animation-delay:0.3s">48</div>
+  <div class="hook-sub anim fadeUp go" style="animation-delay:0.7s">
+    팀이 <span>하나</span>의 트로피를 위해 싸운다
+  </div>
+  <div class="hook-caption anim fadeIn go" style="animation-delay:1.1s">
+    2026 FIFA WORLD CUP · USA · CANADA · MEXICO
+  </div>
+
+  <div class="ep-badge anim fadeIn go" style="animation-delay:1.3s">worldcup-2026 // ep-01</div>
+</div>
+
+<!-- ─────────────── S02 FORMAT ─────────────── -->
+<div class="slide pitch" id="slide-2">
+  <div class="slide-label">포맷 개요</div>
+  <div class="slide-num">02 / 07</div>
+
+  <div class="format-title anim fadeUp go" style="animation-delay:0.2s">역사상 가장 큰 월드컵</div>
+  <div class="format-subtitle anim fadeUp go" style="animation-delay:0.4s">32팀 → 48팀 / 8조 → 12조 / 64경기 → 104경기</div>
+
+  <div class="stats-grid">
+    <div class="stat-card anim fadeUp go" style="animation-delay:0.5s">
+      <div class="stat-num">48</div>
+      <div class="stat-label">참가국</div>
+    </div>
+    <div class="stat-card anim fadeUp go" style="animation-delay:0.65s">
+      <div class="stat-num">12</div>
+      <div class="stat-label">조</div>
+    </div>
+    <div class="stat-card anim fadeUp go" style="animation-delay:0.8s">
+      <div class="stat-num">104</div>
+      <div class="stat-label">총 경기</div>
+    </div>
+    <div class="stat-card anim fadeUp go" style="animation-delay:0.95s">
+      <div class="stat-num">39</div>
+      <div class="stat-label">대회 일수</div>
+    </div>
+  </div>
+
+  <div class="expand-row anim fadeIn go" style="animation-delay:1.1s">
+    <span>아시아 <span class="old">4.5</span><span class="new">8</span>장</span>
+    <span class="arrow">·</span>
+    <span>아프리카 <span class="old">5</span><span class="new">9</span>장</span>
+    <span class="arrow">·</span>
+    <span>유럽 <span class="old">13</span><span class="new">16</span>장</span>
+    <span class="arrow">·</span>
+    <span>남미 <span class="old">4.5</span><span class="new">6</span>장</span>
+  </div>
+</div>
+
+<!-- ─────────────── S03 HOSTS ─────────────── -->
+<div class="slide stadium" id="slide-3">
+  <div class="slide-label">개최지</div>
+  <div class="slide-num">03 / 07</div>
+
+  <div class="hosts-title anim slideLeft go" style="animation-delay:0.2s">3개국 · 16개 도시</div>
+  <div class="hosts-subtitle anim fadeIn go" style="animation-delay:0.35s">개막: 멕시코시티 아즈테카 · 결승: 뉴욕 메트라이프 스타디움</div>
+
+  <div class="hosts-grid">
+    <div class="host-card anim fadeUp go" style="animation-delay:0.5s">
+      <div class="flag">🇺🇸</div>
+      <div class="country">미국</div>
+      <div class="city-count">11개 도시</div>
+      <div class="cities">
+        뉴욕/뉴저지 · 로스앤젤레스<br>
+        달라스 · 샌프란시스코<br>
+        시애틀 · 보스턴 · 마이애미<br>
+        애틀랜타 · 캔자스시티<br>
+        휴스턴 · 필라델피아
+      </div>
+    </div>
+    <div class="host-card anim fadeUp go" style="animation-delay:0.65s">
+      <div class="flag">🇨🇦</div>
+      <div class="country">캐나다</div>
+      <div class="city-count">2개 도시</div>
+      <div class="cities">
+        토론토<br>
+        밴쿠버
+      </div>
+    </div>
+    <div class="host-card anim fadeUp go" style="animation-delay:0.8s">
+      <div class="flag">🇲🇽</div>
+      <div class="country">멕시코</div>
+      <div class="city-count">3개 도시</div>
+      <div class="cities">
+        멕시코시티 (아즈테카)<br>
+        과달라하라<br>
+        몬테레이
+      </div>
+    </div>
+  </div>
+
+  <div class="key-venues anim fadeIn go" style="animation-delay:1s">
+    ⚽ 개막전 <span>아즈테카</span> (최초 월드컵 3회 개최) &nbsp;|&nbsp; 🏆 결승 <span>메트라이프</span> (수용 82,500명)
+  </div>
+</div>
+
+<!-- ─────────────── S04 SCHEDULE ─────────────── -->
+<div class="slide pitch" id="slide-4">
+  <div class="slide-label">대회 일정</div>
+  <div class="slide-num">04 / 07</div>
+
+  <div class="sched-left">
+    <div class="sched-title anim slideLeft go" style="animation-delay:0.2s">일정</div>
+    <div class="sched-sub anim fadeIn go" style="animation-delay:0.35s">6월 11일 ~ 7월 19일</div>
+    <div class="sched-highlight anim fadeUp go" style="animation-delay:0.5s">
+      총 <b>104경기</b><br>
+      39일 대장정<br>
+      16개 경기장<br>
+      <b>32강</b>에서 토너먼트 시작
+    </div>
+  </div>
+
+  <div class="sched-right">
+    <div class="timeline">
+      <div class="tl-item anim fadeUp go" style="animation-delay:0.55s">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-date">2026.06.11</div>
+          <div class="tl-event">개막전</div>
+          <div class="tl-detail">멕시코시티 아즈테카 스타디움</div>
+        </div>
+      </div>
+      <div class="tl-item anim fadeUp go" style="animation-delay:0.7s">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-date">06.11 ~ 07.02</div>
+          <div class="tl-event">조별리그 + 32강</div>
+          <div class="tl-detail">12조 × 4팀, 각 조 2위까지 + 3위 8팀</div>
+        </div>
+      </div>
+      <div class="tl-item anim fadeUp go" style="animation-delay:0.85s">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-date">07.04 ~ 07.14</div>
+          <div class="tl-event">16강 · 8강 · 4강</div>
+          <div class="tl-detail">토너먼트 연속 개최</div>
+        </div>
+      </div>
+      <div class="tl-item anim fadeUp go" style="animation-delay:1.0s">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-date">2026.07.19</div>
+          <div class="tl-event">결승전 🏆</div>
+          <div class="tl-detail">뉴욕 메트라이프 스타디움 (한국 7/20 새벽)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────── S05 TEAMS ─────────────── -->
+<div class="slide trophy" id="slide-5">
+  <div class="slide-label">참가국 배분</div>
+  <div class="slide-num">05 / 07</div>
+
+  <div class="teams-title anim slideLeft go" style="animation-delay:0.2s">대륙별 출전국 배분</div>
+  <div class="teams-subtitle anim fadeIn go" style="animation-delay:0.35s">개발도상국·소규모 연맹에 더 많은 기회</div>
+
+  <div class="confed-grid">
+    <div class="confed-card anim fadeUp go" style="animation-delay:0.5s">
+      <div class="conf-icon">🌍</div>
+      <div class="conf-info">
+        <div class="conf-name">UEFA (유럽)</div>
+        <div class="conf-slots"><span class="old">13</span><span class="new">→ 16장</span></div>
+      </div>
+    </div>
+    <div class="confed-card anim fadeUp go" style="animation-delay:0.6s">
+      <div class="conf-icon">🌍</div>
+      <div class="conf-info">
+        <div class="conf-name">CAF (아프리카)</div>
+        <div class="conf-slots"><span class="old">5</span><span class="new">→ 9장</span></div>
+      </div>
+    </div>
+    <div class="confed-card anim fadeUp go" style="animation-delay:0.7s">
+      <div class="conf-icon">🌏</div>
+      <div class="conf-info">
+        <div class="conf-name">AFC (아시아)</div>
+        <div class="conf-slots"><span class="old">4.5</span><span class="new">→ 8장</span></div>
+      </div>
+    </div>
+    <div class="confed-card anim fadeUp go" style="animation-delay:0.8s">
+      <div class="conf-icon">🌎</div>
+      <div class="conf-info">
+        <div class="conf-name">CONMEBOL (남미)</div>
+        <div class="conf-slots"><span class="old">4.5</span><span class="new">→ 6장</span></div>
+      </div>
+    </div>
+    <div class="confed-card anim fadeUp go" style="animation-delay:0.9s">
+      <div class="conf-icon">🌎</div>
+      <div class="conf-info">
+        <div class="conf-name">CONCACAF (북중미)</div>
+        <div class="conf-slots"><span class="old">3.5</span><span class="new">→ 6+2장</span></div>
+      </div>
+    </div>
+    <div class="confed-card anim fadeUp go" style="animation-delay:1.0s">
+      <div class="conf-icon">🌊</div>
+      <div class="conf-info">
+        <div class="conf-name">OFC (오세아니아)</div>
+        <div class="conf-slots"><span class="old">0.5</span><span class="new">→ 1장</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="asia-note anim fadeIn go" style="animation-delay:1.1s">
+    🏆 아시아 대표: <b>한국 · 일본 · 호주 · 이란 · 사우디 · 카타르</b> 등 8개국 진출 기대
+  </div>
+</div>
+
+<!-- ─────────────── S06 BIG STORIES ─────────────── -->
+<div class="slide stadium" id="slide-6">
+  <div class="slide-label">빅 스토리</div>
+  <div class="slide-num">06 / 07</div>
+
+  <div class="stories-title anim slideLeft go" style="animation-delay:0.2s">2026 월드컵 3대 관전 포인트</div>
+
+  <div class="stories-grid">
+    <div class="story-card anim fadeUp go" style="animation-delay:0.45s">
+      <div class="story-num">01</div>
+      <div class="story-icon">⚽</div>
+      <div class="story-heading">레전드의 마지막 장<br>메시 38세 · 호날두 41세</div>
+      <div class="story-body">
+        두 GOAT가 동시에 마지막 무대에 설 가능성. 세대의 끝을 직접 목격하는 기회.
+        다음 편에서 커리어 통계 완전 비교.
+      </div>
+    </div>
+    <div class="story-card anim fadeUp go" style="animation-delay:0.6s">
+      <div class="story-num">02</div>
+      <div class="story-icon">🏆</div>
+      <div class="story-heading">3파전 우승 레이스<br>브라질 · 프랑스 · 잉글랜드</div>
+      <div class="story-body">
+        22년 카타르의 설욕을 노리는 브라질, 음바페 세대의 프랑스,
+        60년 한을 풀 잉글랜드 — 누가 트로피를 드나?
+      </div>
+    </div>
+    <div class="story-card anim fadeUp go" style="animation-delay:0.75s">
+      <div class="story-num">03</div>
+      <div class="story-icon">🌎</div>
+      <div class="story-heading">북미 개최의 열기<br>새 팬층의 탄생</div>
+      <div class="story-body">
+        NFL·MLB 팬들이 처음 만나는 월드컵 분위기.
+        3개국 공동 개최로 역사상 최대 관중 기록 경신 예상.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────── S07 VERDICT ─────────────── -->
+<div class="slide trophy" id="slide-7">
+  <div class="slide-label">결론</div>
+  <div class="slide-num">07 / 07</div>
+
+  <div class="trophy-icon anim scaleIn go" style="animation-delay:0.3s">🏆</div>
+  <div class="verdict-title anim fadeUp go" style="animation-delay:0.55s">역사가 바뀌는 39일</div>
+  <div class="verdict-body anim fadeUp go" style="animation-delay:0.7s">
+    48팀 · 104경기 · 3개국 · 39일간의 축제.<br>
+    2026 월드컵은 단순한 대회가 아닙니다. 역사가 바뀌는 순간입니다.
+  </div>
+
+  <div class="next-ep-box anim fadeIn go" style="animation-delay:0.9s">
+    <div class="next-label">NEXT EPISODE</div>
+    <div class="next-title">EP02 — 우승 후보 완전 분석<br>브라질 · 프랑스 · 잉글랜드 · 스페인</div>
+  </div>
+
+  <div class="cta-line anim fadeIn go" style="animation-delay:1.1s">
+    <span>구독</span>과 <span>좋아요</span>로 다음 분석을 놓치지 마세요
+  </div>
+</div>
+
+<script>
+  let current = 1;
+  const total = 7;
+
+  function showSlide(n) {
+    if (n < 1 || n > total) return;
+    const prev = document.getElementById('slide-' + current);
+    if (prev) {
+      prev.classList.remove('active');
+    }
+    current = n;
+    const el = document.getElementById('slide-' + n);
+    if (!el) return;
+    el.classList.add('active');
+
+    // 애니메이션 리셋 후 재실행
+    el.querySelectorAll('.anim').forEach(a => {
+      a.classList.remove('go');
+      void a.offsetWidth;
+    });
+    setTimeout(() => {
+      el.querySelectorAll('.anim').forEach(a => a.classList.add('go'));
+    }, 50);
+  }
+
+  // Playwright 호환 필수 노출
+  window.goToSlide = showSlide;
+
+  // 키보드 내비게이션
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') showSlide(current + 1);
+    if (e.key === 'ArrowLeft')  showSlide(current - 1);
+    if (e.key >= '1' && e.key <= '7') showSlide(parseInt(e.key));
+  });
+
+  // 초기 슬라이드 진입
+  showSlide(1);
+</script>
+</body>
+</html>

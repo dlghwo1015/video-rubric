@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>2026 World Cup Guide — EP01</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    background: #0a0e1a;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+  .slide.stadium { background: #0a0e1a; }
+  .slide.pitch   { background: #0d2818; }
+  .slide.trophy  { background: #1a0e2e; }
+
+  .slide-label {
+    position: absolute;
+    top: 36px; left: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .slide-num {
+    position: absolute;
+    top: 36px; right: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    color: rgba(255,255,255,0.35);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(48px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes slideLeft {
+    from { opacity: 0; transform: translateX(-60px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.85); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  @keyframes pulseGold {
+    0%, 100% { text-shadow: 0 0 40px rgba(201,162,39,0.4); }
+    50%       { text-shadow: 0 0 80px rgba(201,162,39,0.9); }
+  }
+
+  .anim { opacity: 0; }
+  .anim.go { animation-fill-mode: forwards; }
+  .anim.go.fadeUp    { animation: fadeUp    0.7s cubic-bezier(.22,.68,0,1.2) forwards; }
+  .anim.go.fadeIn    { animation: fadeIn    0.6s ease forwards; }
+  .anim.go.slideLeft { animation: slideLeft 0.6s cubic-bezier(.22,.68,0,1.2) forwards; }
+  .anim.go.scaleIn   { animation: scaleIn  0.7s cubic-bezier(.22,.68,0,1.2) forwards; }
+
+  /* ── S01 HOOK ── */
+  #slide-1 {
+    background: radial-gradient(ellipse 120% 80% at 50% 110%, rgba(201,162,39,0.18) 0%, transparent 60%), #0a0e1a;
+  }
+  #slide-1 .big-number {
+    font-size: 340px; font-weight: 900; line-height: 0.85;
+    color: #c9a227; letter-spacing: -0.05em;
+    animation: pulseGold 3s ease-in-out infinite;
+  }
+  #slide-1 .hook-sub {
+    font-size: 54px; font-weight: 700; color: #f0ede4;
+    letter-spacing: -0.01em; text-align: center; margin-top: -4px;
+  }
+  #slide-1 .hook-sub span { color: #c9a227; }
+  #slide-1 .hook-caption {
+    font-size: 26px; font-weight: 300; color: rgba(240,237,228,0.55);
+    letter-spacing: 0.24em; text-transform: uppercase; margin-top: 44px;
+  }
+  #slide-1 .ep-badge {
+    position: absolute; bottom: 52px; left: 56px;
+    font-family: 'Roboto Mono', monospace; font-size: 22px;
+    color: rgba(201,162,39,0.7); letter-spacing: 0.15em;
+  }
+
+  /* ── S02 FORMAT ── */
+  #slide-2 {
+    background: radial-gradient(ellipse 140% 90% at 50% 120%, rgba(79,200,122,0.15) 0%, transparent 55%), #0d2818;
+    padding: 0 140px;
+  }
+  #slide-2 .format-title { font-size: 60px; font-weight: 700; color: #4fc87a; text-align: center; margin-bottom: 10px; }
+  #slide-2 .format-subtitle { font-size: 28px; font-weight: 300; color: rgba(232,245,237,0.6); text-align: center; margin-bottom: 56px; letter-spacing: -0.01em; }
+  #slide-2 .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 32px; width: 100%; max-width: 1500px; margin: 0 auto 52px; }
+  #slide-2 .stat-card { background: rgba(79,200,122,0.08); border: 1px solid rgba(79,200,122,0.25); border-radius: 16px; padding: 36px 24px; text-align: center; }
+  #slide-2 .stat-num { font-size: 92px; font-weight: 900; color: #4fc87a; line-height: 1; }
+  #slide-2 .stat-label { font-size: 24px; font-weight: 400; color: rgba(232,245,237,0.7); margin-top: 12px; letter-spacing: -0.01em; }
+  #slide-2 .expand-row { display: flex; align-items: center; justify-content: center; gap: 40px; font-size: 26px; color: rgba(232,245,237,0.65); }
+  #slide-2 .expand-row .old { text-decoration: line-through; opacity: 0.5; }
+  #slide-2 .expand-row .new { color: #4fc87a; font-weight: 700; font-size: 32px; }
+
+  /* ── S03 HOSTS ── */
+  #slide-3 {
+    background: radial-gradient(ellipse 100% 70% at 60% 80%, rgba(201,162,39,0.12) 0%, transparent 55%), #0a0e1a;
+    padding: 0 120px; align-items: flex-start; justify-content: center;
+  }
+  #slide-3 .hosts-title { font-size: 56px; font-weight: 700; color: #c9a227; margin-bottom: 8px; }
+  #slide-3 .hosts-subtitle { font-size: 24px; font-weight: 300; color: rgba(240,237,228,0.55); margin-bottom: 52px; }
+  #slide-3 .hosts-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 36px; width: 100%; max-width: 1640px; }
+  #slide-3 .host-card { background: rgba(201,162,39,0.07); border: 1px solid rgba(201,162,39,0.2); border-radius: 20px; padding: 40px 36px; }
+  #slide-3 .host-card .flag { font-size: 68px; margin-bottom: 14px; }
+  #slide-3 .host-card .country { font-size: 40px; font-weight: 700; color: #c9a227; margin-bottom: 6px; }
+  #slide-3 .host-card .city-count { font-size: 22px; font-weight: 300; color: rgba(240,237,228,0.5); margin-bottom: 20px; }
+  #slide-3 .host-card .cities { font-size: 21px; font-weight: 400; color: rgba(240,237,228,0.75); line-height: 1.7; }
+  #slide-3 .key-venues { margin-top: 44px; font-size: 24px; color: rgba(240,237,228,0.55); }
+  #slide-3 .key-venues span { color: #c9a227; font-weight: 600; }
+
+  /* ── S04 SCHEDULE ── */
+  #slide-4 {
+    background: radial-gradient(ellipse 120% 80% at 50% 110%, rgba(79,200,122,0.12) 0%, transparent 55%), #0d2818;
+    padding: 0 140px; flex-direction: row; gap: 100px; align-items: center; justify-content: center;
+  }
+  #slide-4 .sched-left { flex: 0 0 540px; }
+  #slide-4 .sched-title { font-size: 56px; font-weight: 700; color: #4fc87a; margin-bottom: 12px; }
+  #slide-4 .sched-sub { font-size: 26px; font-weight: 300; color: rgba(232,245,237,0.55); margin-bottom: 44px; }
+  #slide-4 .sched-highlight { font-size: 28px; font-weight: 500; color: rgba(232,245,237,0.85); line-height: 1.85; }
+  #slide-4 .sched-highlight b { color: #4fc87a; }
+  #slide-4 .sched-right { flex: 1; }
+  #slide-4 .timeline { display: flex; flex-direction: column; }
+  #slide-4 .tl-item { display: flex; align-items: stretch; gap: 28px; }
+  #slide-4 .tl-left { display: flex; flex-direction: column; align-items: center; width: 28px; }
+  #slide-4 .tl-dot { width: 18px; height: 18px; border-radius: 50%; background: #4fc87a; flex-shrink: 0; margin-top: 12px; }
+  #slide-4 .tl-line { width: 3px; background: rgba(79,200,122,0.25); flex: 1; margin: 4px 0; }
+  #slide-4 .tl-item:last-child .tl-line { display: none; }
+  #slide-4 .tl-content { padding: 10px 0 36px; flex: 1; }
+  #slide-4 .tl-date { font-family: 'Roboto Mono', monospace; font-size: 20px; color: rgba(232,245,237,0.45); letter-spacing: 0.1em; margin-bottom: 4px; }
+  #slide-4 .tl-event { font-size: 30px; font-weight: 700; color: #e8f5ed; margin-bottom: 4px; }
+  #slide-4 .tl-detail { font-size: 21px; font-weight: 300; color: rgba(232,245,237,0.5); }
+
+  /* ── S05 TEAMS ── */
+  #slide-5 {
+    background: radial-gradient(ellipse 120% 70% at 50% 90%, rgba(232,192,90,0.14) 0%, transparent 55%), #1a0e2e;
+    padding: 0 120px; align-items: flex-start; justify-content: center;
+  }
+  #slide-5 .teams-title { font-size: 52px; font-weight: 700; color: #e8c05a; margin-bottom: 8px; }
+  #slide-5 .teams-subtitle { font-size: 24px; font-weight: 300; color: rgba(245,240,232,0.55); margin-bottom: 48px; }
+  #slide-5 .confed-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 26px; width: 100%; max-width: 1640px; margin-bottom: 40px; }
+  #slide-5 .confed-card { background: rgba(232,192,90,0.07); border: 1px solid rgba(232,192,90,0.18); border-radius: 16px; padding: 28px 30px; display: flex; align-items: center; gap: 22px; }
+  #slide-5 .conf-icon { font-size: 50px; flex-shrink: 0; }
+  #slide-5 .conf-name { font-size: 28px; font-weight: 700; color: #e8c05a; margin-bottom: 4px; }
+  #slide-5 .conf-slots { font-size: 23px; color: rgba(245,240,232,0.6); }
+  #slide-5 .conf-slots .old { opacity: 0.4; text-decoration: line-through; }
+  #slide-5 .conf-slots .new { color: #e8c05a; font-weight: 700; margin-left: 6px; }
+  #slide-5 .asia-note { font-size: 26px; font-weight: 500; color: rgba(245,240,232,0.75); line-height: 1.7; }
+  #slide-5 .asia-note b { color: #e8c05a; }
+
+  /* ── S06 BIG STORIES ── */
+  #slide-6 {
+    background: radial-gradient(ellipse 110% 70% at 50% 100%, rgba(201,162,39,0.16) 0%, transparent 55%), #0a0e1a;
+    padding: 0 120px; align-items: flex-start; justify-content: center;
+  }
+  #slide-6 .stories-title { font-size: 52px; font-weight: 700; color: #c9a227; margin-bottom: 48px; }
+  #slide-6 .stories-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 36px; width: 100%; max-width: 1640px; }
+  #slide-6 .story-card { background: rgba(201,162,39,0.07); border: 1px solid rgba(201,162,39,0.22); border-radius: 20px; padding: 44px 36px; display: flex; flex-direction: column; gap: 16px; }
+  #slide-6 .story-num { font-family: 'Roboto Mono', monospace; font-size: 68px; font-weight: 900; color: rgba(201,162,39,0.25); line-height: 1; }
+  #slide-6 .story-icon { font-size: 48px; }
+  #slide-6 .story-heading { font-size: 32px; font-weight: 700; color: #f0ede4; line-height: 1.25; }
+  #slide-6 .story-body { font-size: 22px; font-weight: 300; color: rgba(240,237,228,0.65); line-height: 1.65; }
+
+  /* ── S07 VERDICT ── */
+  #slide-7 {
+    background: radial-gradient(ellipse 100% 80% at 50% 60%, rgba(232,192,90,0.18) 0%, transparent 55%), #1a0e2e;
+  }
+  #slide-7 .trophy-icon { font-size: 110px; margin-bottom: 28px; filter: drop-shadow(0 0 40px rgba(232,192,90,0.5)); }
+  #slide-7 .verdict-title { font-size: 60px; font-weight: 900; color: #e8c05a; text-align: center; letter-spacing: -0.02em; margin-bottom: 20px; }
+  #slide-7 .verdict-body { font-size: 30px; font-weight: 300; color: rgba(245,240,232,0.75); text-align: center; max-width: 1100px; line-height: 1.75; margin-bottom: 52px; }
+  #slide-7 .next-ep-box { background: rgba(232,192,90,0.1); border: 1px solid rgba(232,192,90,0.3); border-radius: 16px; padding: 28px 68px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  #slide-7 .next-label { font-family: 'Roboto Mono', monospace; font-size: 20px; color: rgba(232,192,90,0.6); letter-spacing: 0.18em; text-transform: uppercase; }
+  #slide-7 .next-title { font-size: 32px; font-weight: 700; color: #e8c05a; text-align: center; }
+  #slide-7 .cta-line { margin-top: 44px; font-size: 24px; font-weight: 400; color: rgba(245,240,232,0.45); }
+  #slide-7 .cta-line span { color: #e8c05a; }
+</style>
+</head>
+<body>
+
+<!-- S01 HOOK -->
+<div class="slide stadium active" id="slide-1">
+  <div class="slide-label anim fadeIn go" style="animation-delay:0.1s">World Cup 2026 Prediction Series · EP01</div>
+  <div class="slide-num anim fadeIn go" style="animation-delay:0.1s">01 / 07</div>
+  <div class="big-number anim scaleIn go" style="animation-delay:0.3s">48</div>
+  <div class="hook-sub anim fadeUp go" style="animation-delay:0.7s">
+    nations. <span>One</span> trophy.
+  </div>
+  <div class="hook-caption anim fadeIn go" style="animation-delay:1.1s">
+    2026 FIFA WORLD CUP · USA · CANADA · MEXICO
+  </div>
+  <div class="ep-badge anim fadeIn go" style="animation-delay:1.3s">worldcup-2026 // ep-01</div>
+</div>
+
+<!-- S02 FORMAT -->
+<div class="slide pitch" id="slide-2">
+  <div class="slide-label">Format Overview</div>
+  <div class="slide-num">02 / 07</div>
+  <div class="format-title anim fadeUp go" style="animation-delay:0.2s">The Biggest World Cup in History</div>
+  <div class="format-subtitle anim fadeUp go" style="animation-delay:0.4s">32 → 48 teams &nbsp;/&nbsp; 8 → 12 groups &nbsp;/&nbsp; 64 → 104 matches</div>
+  <div class="stats-grid">
+    <div class="stat-card anim fadeUp go" style="animation-delay:0.5s"><div class="stat-num">48</div><div class="stat-label">Teams</div></div>
+    <div class="stat-card anim fadeUp go" style="animation-delay:0.65s"><div class="stat-num">12</div><div class="stat-label">Groups</div></div>
+    <div class="stat-card anim fadeUp go" style="animation-delay:0.8s"><div class="stat-num">104</div><div class="stat-label">Matches</div></div>
+    <div class="stat-card anim fadeUp go" style="animation-delay:0.95s"><div class="stat-num">39</div><div class="stat-label">Days</div></div>
+  </div>
+  <div class="expand-row anim fadeIn go" style="animation-delay:1.1s">
+    <span>Asia <span class="old">4.5</span><span class="new">→ 8</span></span>
+    <span>&nbsp;·&nbsp;</span>
+    <span>Africa <span class="old">5</span><span class="new">→ 9</span></span>
+    <span>&nbsp;·&nbsp;</span>
+    <span>Europe <span class="old">13</span><span class="new">→ 16</span></span>
+    <span>&nbsp;·&nbsp;</span>
+    <span>CONMEBOL <span class="old">4.5</span><span class="new">→ 6</span></span>
+  </div>
+</div>
+
+<!-- S03 HOSTS -->
+<div class="slide stadium" id="slide-3">
+  <div class="slide-label">Host Nations</div>
+  <div class="slide-num">03 / 07</div>
+  <div class="hosts-title anim slideLeft go" style="animation-delay:0.2s">3 Nations · 16 Cities</div>
+  <div class="hosts-subtitle anim fadeIn go" style="animation-delay:0.35s">Opening: Azteca Stadium, Mexico City &nbsp;·&nbsp; Final: MetLife Stadium, New York</div>
+  <div class="hosts-grid">
+    <div class="host-card anim fadeUp go" style="animation-delay:0.5s">
+      <div class="flag">🇺🇸</div>
+      <div class="country">United States</div>
+      <div class="city-count">11 cities</div>
+      <div class="cities">New York/NJ · Los Angeles<br>Dallas · San Francisco<br>Seattle · Boston · Miami<br>Atlanta · Kansas City<br>Houston · Philadelphia</div>
+    </div>
+    <div class="host-card anim fadeUp go" style="animation-delay:0.65s">
+      <div class="flag">🇨🇦</div>
+      <div class="country">Canada</div>
+      <div class="city-count">2 cities</div>
+      <div class="cities">Toronto<br>Vancouver</div>
+    </div>
+    <div class="host-card anim fadeUp go" style="animation-delay:0.8s">
+      <div class="flag">🇲🇽</div>
+      <div class="country">Mexico</div>
+      <div class="city-count">3 cities</div>
+      <div class="cities">Mexico City (Azteca)<br>Guadalajara<br>Monterrey</div>
+    </div>
+  </div>
+  <div class="key-venues anim fadeIn go" style="animation-delay:1s">
+    ⚽ Opening at <span>Azteca</span> (first stadium to host 3 World Cup matches) &nbsp;|&nbsp; 🏆 Final at <span>MetLife</span> (cap. 82,500)
+  </div>
+</div>
+
+<!-- S04 SCHEDULE -->
+<div class="slide pitch" id="slide-4">
+  <div class="slide-label">Schedule</div>
+  <div class="slide-num">04 / 07</div>
+  <div class="sched-left">
+    <div class="sched-title anim slideLeft go" style="animation-delay:0.2s">Schedule</div>
+    <div class="sched-sub anim fadeIn go" style="animation-delay:0.35s">June 11 — July 19, 2026</div>
+    <div class="sched-highlight anim fadeUp go" style="animation-delay:0.5s">
+      <b>104</b> total matches<br>
+      39-day marathon<br>
+      16 venues<br>
+      <b>Round of 32</b> starts the knockout
+    </div>
+  </div>
+  <div class="sched-right">
+    <div class="timeline">
+      <div class="tl-item anim fadeUp go" style="animation-delay:0.55s">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-date">2026.06.11</div>
+          <div class="tl-event">Opening Match</div>
+          <div class="tl-detail">Azteca Stadium, Mexico City</div>
+        </div>
+      </div>
+      <div class="tl-item anim fadeUp go" style="animation-delay:0.7s">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-date">06.11 — 07.02</div>
+          <div class="tl-event">Group Stage + Round of 32</div>
+          <div class="tl-detail">12 groups, top 2 + best 8 third-place advance</div>
+        </div>
+      </div>
+      <div class="tl-item anim fadeUp go" style="animation-delay:0.85s">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-date">07.04 — 07.14</div>
+          <div class="tl-event">R16 · QF · SF</div>
+          <div class="tl-detail">Knockout rounds in rapid succession</div>
+        </div>
+      </div>
+      <div class="tl-item anim fadeUp go" style="animation-delay:1.0s">
+        <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-date">2026.07.19</div>
+          <div class="tl-event">Final 🏆</div>
+          <div class="tl-detail">MetLife Stadium, East Rutherford, NJ</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S05 TEAMS -->
+<div class="slide trophy" id="slide-5">
+  <div class="slide-label">Qualification Spots</div>
+  <div class="slide-num">05 / 07</div>
+  <div class="teams-title anim slideLeft go" style="animation-delay:0.2s">Slots by Confederation</div>
+  <div class="teams-subtitle anim fadeIn go" style="animation-delay:0.35s">More opportunities for developing nations and smaller federations</div>
+  <div class="confed-grid">
+    <div class="confed-card anim fadeUp go" style="animation-delay:0.5s"><div class="conf-icon">🌍</div><div><div class="conf-name">UEFA (Europe)</div><div class="conf-slots"><span class="old">13</span><span class="new">→ 16</span></div></div></div>
+    <div class="confed-card anim fadeUp go" style="animation-delay:0.6s"><div class="conf-icon">🌍</div><div><div class="conf-name">CAF (Africa)</div><div class="conf-slots"><span class="old">5</span><span class="new">→ 9</span></div></div></div>
+    <div class="confed-card anim fadeUp go" style="animation-delay:0.7s"><div class="conf-icon">🌏</div><div><div class="conf-name">AFC (Asia)</div><div class="conf-slots"><span class="old">4.5</span><span class="new">→ 8</span></div></div></div>
+    <div class="confed-card anim fadeUp go" style="animation-delay:0.8s"><div class="conf-icon">🌎</div><div><div class="conf-name">CONMEBOL (S. America)</div><div class="conf-slots"><span class="old">4.5</span><span class="new">→ 6</span></div></div></div>
+    <div class="confed-card anim fadeUp go" style="animation-delay:0.9s"><div class="conf-icon">🌎</div><div><div class="conf-name">CONCACAF (N/C America)</div><div class="conf-slots"><span class="old">3.5</span><span class="new">→ 8</span></div></div></div>
+    <div class="confed-card anim fadeUp go" style="animation-delay:1.0s"><div class="conf-icon">🌊</div><div><div class="conf-name">OFC (Oceania)</div><div class="conf-slots"><span class="old">0.5</span><span class="new">→ 1</span></div></div></div>
+  </div>
+  <div class="asia-note anim fadeIn go" style="animation-delay:1.1s">
+    🏆 Asia's 8 spots: <b>South Korea · Japan · Australia · Iran · Saudi Arabia · Qatar</b> and more expected
+  </div>
+</div>
+
+<!-- S06 BIG STORIES -->
+<div class="slide stadium" id="slide-6">
+  <div class="slide-label">Big Stories</div>
+  <div class="slide-num">06 / 07</div>
+  <div class="stories-title anim slideLeft go" style="animation-delay:0.2s">3 Storylines That Define 2026</div>
+  <div class="stories-grid">
+    <div class="story-card anim fadeUp go" style="animation-delay:0.45s">
+      <div class="story-num">01</div>
+      <div class="story-icon">⚽</div>
+      <div class="story-heading">The Last Chapter<br>Messi 38 · Ronaldo 41</div>
+      <div class="story-body">Two GOATs may share a final stage. The end of an era — watch it live. Full career stats breakdown coming next.</div>
+    </div>
+    <div class="story-card anim fadeUp go" style="animation-delay:0.6s">
+      <div class="story-num">02</div>
+      <div class="story-icon">🏆</div>
+      <div class="story-heading">Three-Way Title Race<br>Brazil · France · England</div>
+      <div class="story-body">Brazil chasing revenge after Qatar, Mbappé's France at their peak, England hoping to end 60 years of hurt — who lifts the trophy?</div>
+    </div>
+    <div class="story-card anim fadeUp go" style="animation-delay:0.75s">
+      <div class="story-num">03</div>
+      <div class="story-icon">🌎</div>
+      <div class="story-heading">North America's Awakening<br>A New Fan Base Is Born</div>
+      <div class="story-body">Millions of NFL and MLB fans experience their first World Cup. Three-nation hosting promises record crowds and unprecedented atmosphere.</div>
+    </div>
+  </div>
+</div>
+
+<!-- S07 VERDICT -->
+<div class="slide trophy" id="slide-7">
+  <div class="slide-label">Verdict</div>
+  <div class="slide-num">07 / 07</div>
+  <div class="trophy-icon anim scaleIn go" style="animation-delay:0.3s">🏆</div>
+  <div class="verdict-title anim fadeUp go" style="animation-delay:0.55s">39 Days That Rewrite History</div>
+  <div class="verdict-body anim fadeUp go" style="animation-delay:0.7s">
+    48 teams · 104 matches · 3 nations · 39 days of football.<br>
+    The 2026 World Cup isn't just a tournament — it's a moment where history gets rewritten.
+  </div>
+  <div class="next-ep-box anim fadeIn go" style="animation-delay:0.9s">
+    <div class="next-label">Next Episode</div>
+    <div class="next-title">EP02 — Contenders Analysis<br>Brazil · France · England · Spain</div>
+  </div>
+  <div class="cta-line anim fadeIn go" style="animation-delay:1.1s">
+    <span>Subscribe</span> and hit the bell — don't miss the next breakdown
+  </div>
+</div>
+
+<script>
+  let current = 1;
+  const total = 7;
+
+  function showSlide(n) {
+    if (n < 1 || n > total) return;
+    const prev = document.getElementById('slide-' + current);
+    if (prev) prev.classList.remove('active');
+    current = n;
+    const el = document.getElementById('slide-' + n);
+    if (!el) return;
+    el.classList.add('active');
+    el.querySelectorAll('.anim').forEach(a => { a.classList.remove('go'); void a.offsetWidth; });
+    setTimeout(() => { el.querySelectorAll('.anim').forEach(a => a.classList.add('go')); }, 50);
+  }
+
+  window.goToSlide = showSlide;
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') showSlide(current + 1);
+    if (e.key === 'ArrowLeft') showSlide(current - 1);
+    if (e.key >= '1' && e.key <= '7') showSlide(parseInt(e.key));
+  });
+
+  showSlide(1);
+</script>
+</body>
+</html>

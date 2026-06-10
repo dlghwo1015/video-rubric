@@ -1,0 +1,105 @@
+{
+  "series": "worldcup-2026",
+  "series_config": {
+    "name": "2026 월드컵 예측 대결",
+    "tagline": "역사상 가장 큰 월드컵을 예측하다",
+    "blogs": {
+      "ko": "honest-lab",
+      "ja": "dx-pioneer-jp",
+      "en": "dx-pioneer-en"
+    },
+    "youtube_channel": "honest-lab",
+    "langs": [
+      "ko",
+      "ja",
+      "en"
+    ],
+    "tts": {
+      "ko": "ko-KR-SunHiNeural",
+      "ja": "ja-JP-NanamiNeural",
+      "en": "en-US-AriaNeural"
+    }
+  },
+  "ep": {
+    "id": "worldcup-2026-001",
+    "series": "worldcup-2026",
+    "ep_number": 1,
+    "title_ko": "2026 월드컵 완전 정복 — 48팀, 12조, 3개국 총정리",
+    "title_ja": "2026ワールドカップ完全解説 — 48チーム・12組・3カ国",
+    "title_en": "2026 World Cup Guide — 48 Teams, 12 Groups, 3 Nations",
+    "ep_role": "overview",
+    "group_label": "",
+    "needs_live_data": 0,
+    "pub_date": null,
+    "status": "planned",
+    "post_id_ko": null,
+    "post_id_ja": null,
+    "post_id_en": null,
+    "notes": null,
+    "created_at": null,
+    "youtube_video_id": null,
+    "youtube_video_id_ja": null,
+    "youtube_video_id_en": null,
+    "yt_public_ko": 0,
+    "yt_public_ja": 0,
+    "yt_public_en": 0,
+    "script_status": "none",
+    "github_commit": null
+  },
+  "ep_role": "overview",
+  "scene_structure": [
+    {
+      "id": "s01_hook",
+      "role": "hook",
+      "desc": "훅 — 역사상 가장 큰 월드컵"
+    },
+    {
+      "id": "s02_format",
+      "role": "data",
+      "desc": "48팀·12조 포맷 설명"
+    },
+    {
+      "id": "s03_hosts",
+      "role": "analysis",
+      "desc": "개최지 USA/Canada/Mexico"
+    },
+    {
+      "id": "s04_schedule",
+      "role": "analysis",
+      "desc": "일정 + 주요 경기장"
+    },
+    {
+      "id": "s05_teams",
+      "role": "analysis",
+      "desc": "주요 참가국 & 아시아"
+    },
+    {
+      "id": "s06_stories",
+      "role": "analysis",
+      "desc": "빅 스토리 & 관전 포인트"
+    },
+    {
+      "id": "s07_verdict",
+      "role": "verdict",
+      "desc": "최종 결론 + 다음 EP 예고"
+    }
+  ],
+  "research_guide": "48-team format, 12 groups, host cities (USA/Canada/Mexico), schedule, Asia/Africa expansion, key storylines",
+  "needs_live_data": false,
+  "pub_date": null,
+  "blogs": {
+    "ko": "honest-lab",
+    "ja": "dx-pioneer-jp",
+    "en": "dx-pioneer-en"
+  },
+  "langs": [
+    "ko",
+    "ja",
+    "en"
+  ],
+  "tts": {
+    "ko": "ko-KR-SunHiNeural",
+    "ja": "ja-JP-NanamiNeural",
+    "en": "en-US-AriaNeural"
+  }
+}

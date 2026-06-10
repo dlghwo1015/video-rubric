@@ -1,0 +1,93 @@
+{
+  "series": "worldcup-2026",
+  "ep_number": 1,
+  "ep_role": "overview",
+  "group": "",
+  "title_ko": "2026 월드컵 완전 정복 — 48팀, 12조, 3개국 총정리",
+  "title_ja": "2026ワールドカップ完全解説 — 48チーム・12組・3カ国",
+  "title_en": "2026 World Cup Guide — 48 Teams, 12 Groups, 3 Nations",
+  "color_system": {
+    "stadium": { "bg": "#0a0e1a", "accent": "#c9a227", "text": "#f0ede4" },
+    "pitch":   { "bg": "#0d2818", "accent": "#4fc87a", "text": "#e8f5ed" },
+    "trophy":  { "bg": "#1a0e2e", "accent": "#e8c05a", "text": "#f5f0e8" }
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "role": "hook",
+      "tone": "stadium",
+      "bg": "#0a0e1a",
+      "accent": "#c9a227",
+      "visual_note": "키네틱 타이포 — '48' 숫자가 폭발적으로 등장, 경기장 조명 플래시",
+      "narration": "역대 최고 규모. 48개국, 12개 조, 3개 나라. 2026 FIFA 월드컵이 옵니다. 준비됐나요?",
+      "narration_ja": "史上最大規模。48カ国、12グループ、3カ国共催。2026 FIFAワールドカップが来る。準備はいいか？",
+      "narration_en": "The biggest World Cup in history. 48 nations. 12 groups. 3 host countries. The 2026 FIFA World Cup is coming. Are you ready?"
+    },
+    {
+      "id": "s02_format",
+      "role": "data",
+      "tone": "pitch",
+      "bg": "#0d2818",
+      "accent": "#4fc87a",
+      "visual_note": "인포그래픽 — 32→48팀 변화, 8조→12조, 라운드 트리, 대륙별 출전국 할당",
+      "narration": "2026년, 월드컵은 처음으로 48팀 체제로 확장됩니다. 12개 조, 각 조 4팀. 각 조 상위 2팀과 조 3위 중 성적 좋은 8팀, 총 32팀이 32강으로 진출합니다. 아시아는 4.5장에서 8장으로, 아프리카는 5장에서 9장으로 늘었습니다.",
+      "narration_ja": "2026年、ワールドカップは初めて48チーム制に拡大されます。12グループ、各グループ4チーム。各グループ上位2チームと、3位の中から成績上位8チーム、計32チームがラウンド32へ進出。アジアは4.5枠から8枠、アフリカは5枠から9枠に増加しました。",
+      "narration_en": "In 2026, the World Cup expands to 48 teams for the first time. 12 groups of 4 teams each. The top 2 from each group plus the 8 best third-place finishers — 32 teams in total — advance to the Round of 32. Asia jumps from 4.5 to 8 spots, Africa from 5 to 9."
+    },
+    {
+      "id": "s03_hosts",
+      "role": "analysis",
+      "tone": "stadium",
+      "bg": "#0a0e1a",
+      "accent": "#c9a227",
+      "visual_note": "북미 지도 애니메이션 — 16개 도시 핀 하나씩 등장: 미국 11, 캐나다 2, 멕시코 3",
+      "narration": "개최지는 미국·캐나다·멕시코 3개국 16개 도시. 미국 11개 도시에는 뉴욕·LA·달라스·마이애미·보스턴이 포함됩니다. 캐나다는 토론토·밴쿠버, 멕시코는 멕시코시티·과달라하라·몬테레이. 개막전은 멕시코시티 아즈테카 경기장, 결승은 뉴욕 메트라이프 스타디움.",
+      "narration_ja": "開催地は米国・カナダ・メキシコの3カ国16都市。米国11都市にはニューヨーク・LA・ダラス・マイアミ・ボストンが含まれます。カナダはトロント・バンクーバー、メキシコはメキシコシティ・グアダラハラ・モンテレイ。開幕戦はアステカスタジアム、決勝はニューヨーク・メットライフスタジアム。",
+      "narration_en": "The tournament spans 16 cities across 3 countries. The US hosts 11 cities — New York, LA, Dallas, Miami, and Boston among them. Canada contributes Toronto and Vancouver; Mexico adds Mexico City, Guadalajara, and Monterrey. Opening match at the Azteca, final at MetLife Stadium in New York."
+    },
+    {
+      "id": "s04_schedule",
+      "role": "analysis",
+      "tone": "pitch",
+      "bg": "#0d2818",
+      "accent": "#4fc87a",
+      "visual_note": "타임라인 슬라이드 — 6월 11일 개막 → 7월 19일 결승, 단계별 팀 수 감소 시각화",
+      "narration": "대회 일정은 2026년 6월 11일 개막, 7월 19일 결승. 총 104경기가 펼쳐집니다. 조별리그 3주, 32강 시작, 16강·8강·4강·3위전·결승. 메트라이프 스타디움 결승은 한국 시간으로 7월 20일 새벽 — 지금부터 달력에 표시해 두세요.",
+      "narration_ja": "大会日程は2026年6月11日開幕、7月19日決勝。全104試合が行われます。グループリーグ3週間、ラウンド32からスタート、16強・8強・準決勝・3位決定戦・決勝。メットライフスタジアム決勝は韓国時間で7月20日未明 — 今すぐカレンダーに印をつけておきましょう。",
+      "narration_en": "The schedule runs from June 11 to July 19, 2026, with 104 total matches. Three weeks of group stage, then the Round of 32 kicks off. From there it's the Round of 16, Quarterfinals, Semifinals, Third-Place, and Final. The MetLife Stadium final falls in the early hours of July 20th in Korean time — mark your calendar now."
+    },
+    {
+      "id": "s05_teams",
+      "role": "analysis",
+      "tone": "trophy",
+      "bg": "#1a0e2e",
+      "accent": "#e8c05a",
+      "visual_note": "대륙별 국기 그리드 — 유럽 16, 아프리카 9, 아시아 8, 남미 6, 북중미 6+1+1, 오세아니아 1",
+      "narration": "유럽 16개국, 아프리카 9개국, 아시아 8개국, 남미 6개국, 북중미카리브 8개국, 오세아니아 1개국. 한국·일본·호주·이란·사우디·카타르 등 아시아 축구의 전성기가 옵니다. 특히 한국은 손흥민 체제에서 세대교체를 마치고 이번 대회를 맞이합니다.",
+      "narration_ja": "ヨーロッパ16、アフリカ9、アジア8、南米6、北中米カリブ8、オセアニア1。韓国・日本・オーストラリア・イラン・サウジ・カタルなどアジアサッカーの全盛期が到来します。特に韓国はソン・フンミン体制で世代交代を終えてこの大会に臨みます。",
+      "narration_en": "Europe 16, Africa 9, Asia 8, South America 6, CONCACAF 8, Oceania 1. Asian football enters its golden era with South Korea, Japan, Australia, Iran, Saudi Arabia, and Qatar all qualifying. South Korea arrives with a post-Son Heung-min transition generation ready to prove itself."
+    },
+    {
+      "id": "s06_stories",
+      "role": "analysis",
+      "tone": "stadium",
+      "bg": "#0a0e1a",
+      "accent": "#c9a227",
+      "visual_note": "분할 화면 — 메시(38세) vs 호날두(41세) 얼굴, 브라질·프랑스·잉글랜드 유니폼, 북미 개최 열기",
+      "narration": "2026 월드컵의 빅 스토리 세 가지. 첫째, 메시(38세)와 호날두(41세)의 마지막 월드컵 가능성 — 세대의 끝. 둘째, 브라질·프랑스·잉글랜드 3파전 — 영국의 60년 한이 풀릴까? 셋째, 북미 개최의 폭발적 분위기 — MLB 팬들이 처음 만나는 축구의 열기. 이 모든 것을 이 채널에서 분석합니다.",
+      "narration_ja": "2026ワールドカップの3大ストーリー。第一に、メッシ（38歳）とロナウド（41歳）のラストW杯の可能性 — 一時代の終焉。第二に、ブラジル・フランス・イングランドの三つ巴 — 60年越しの夢は叶うか？第三に、北米開催の爆発的な雰囲気 — MLBファンが初めて出会うサッカーの熱狂。これらすべてをこのチャンネルで分析します。",
+      "narration_en": "Three big storylines define 2026. First: Messi at 38 and Ronaldo at 41 — is this genuinely the last chapter for two GOATs? Second: Brazil, France, and England in a three-way title race — can England finally end 60 years of hurt? Third: the North American atmosphere, where millions of new fans will discover the world's game. We break it all down on this channel."
+    },
+    {
+      "id": "s07_verdict",
+      "role": "verdict",
+      "tone": "trophy",
+      "bg": "#1a0e2e",
+      "accent": "#e8c05a",
+      "visual_note": "황금 트로피 클로즈업, 채널 로고 오버레이, EP02 예고 티저",
+      "narration": "48팀, 104경기, 3개국, 39일간의 축제. 2026 월드컵은 단순한 대회가 아닙니다. 역사가 바뀌는 순간입니다. 다음 영상에서는 우승 후보 완전 분석 — 브라질·프랑스·잉글랜드 중 누가 트로피를 들까요? 구독과 좋아요 눌러두세요.",
+      "narration_ja": "48チーム、104試合、3カ国、39日間の祭典。2026ワールドカップは単なる大会ではありません。歴史が変わる瞬間です。次の動画では優勝候補完全分析 — ブラジル・フランス・イングランドの中で誰がトロフィーを手にするのか？チャンネル登録と高評価をお忘れなく。",
+      "narration_en": "48 teams. 104 matches. 3 nations. 39 days of football. The 2026 World Cup isn't just a tournament — it's a moment where history gets rewritten. Next up: our full contenders analysis. Brazil, France, or England — who lifts the trophy? Subscribe and hit the bell so you don't miss it."
+    }
+  ]
+}
