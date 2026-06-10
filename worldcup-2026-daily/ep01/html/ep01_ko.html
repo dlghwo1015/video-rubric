@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>2026 월드컵 데일리 EP01 — D-1 개막 전날 AI 완전 분석</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Roboto+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #0a0e1a;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  .slide-label {
+    position: absolute;
+    top: 36px; left: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 17px;
+    color: rgba(255,255,255,0.28);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .slide-num {
+    position: absolute;
+    top: 36px; right: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 17px;
+    color: rgba(255,255,255,0.28);
+    letter-spacing: 0.06em;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(48px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.86); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  @keyframes pulseGold {
+    0%, 100% { text-shadow: 0 0 40px rgba(201,162,39,0.35); }
+    50%       { text-shadow: 0 0 100px rgba(201,162,39,0.85); }
+  }
+  @keyframes borderPulse {
+    0%, 100% { border-color: rgba(201,162,39,0.35); box-shadow: none; }
+    50%       { border-color: rgba(201,162,39,0.85); box-shadow: 0 0 24px rgba(201,162,39,0.2); }
+  }
+
+  .anim { opacity: 0; }
+  .anim.go { animation-fill-mode: forwards; }
+  .anim.go.fadeUp  { animation: fadeUp  0.7s cubic-bezier(.22,.68,0,1.2) forwards; }
+  .anim.go.fadeIn  { animation: fadeIn  0.6s ease forwards; }
+  .anim.go.scaleIn { animation: scaleIn 0.7s cubic-bezier(.22,.68,0,1.2) forwards; }
+
+  /* ═══════════════════════════════
+     S01 · HOOK
+  ═══════════════════════════════ */
+  #slide-1 {
+    background:
+      radial-gradient(ellipse 110% 70% at 50% 115%, rgba(201,162,39,0.18) 0%, transparent 55%),
+      radial-gradient(ellipse 55% 40% at 15% 5%, rgba(79,200,122,0.05) 0%, transparent 50%),
+      #0a0e1a;
+  }
+
+  .hook-badge {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 19px;
+    letter-spacing: 0.26em;
+    color: #c9a227;
+    background: rgba(201,162,39,0.09);
+    border: 1px solid rgba(201,162,39,0.32);
+    padding: 10px 36px;
+    border-radius: 4px;
+    margin-bottom: 36px;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.2s forwards;
+  }
+  .hook-d1 {
+    font-size: 320px;
+    font-weight: 900;
+    line-height: 0.82;
+    color: #c9a227;
+    letter-spacing: -0.05em;
+    opacity: 0;
+    animation: pulseGold 3s ease-in-out infinite, fadeUp 0.8s cubic-bezier(.22,.68,0,1.2) 0.4s forwards;
+  }
+  .hook-wc-title {
+    font-size: 54px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.78);
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.75s forwards;
+  }
+  .hook-sub {
+    font-size: 28px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.38);
+    margin-top: 18px;
+    letter-spacing: 0.04em;
+    opacity: 0;
+    animation: fadeIn 0.6s ease 1.1s forwards;
+  }
+
+  /* ═══════════════════════════════
+     S02 · DAY 1 OVERVIEW
+  ═══════════════════════════════ */
+  #slide-2 { background: #0a0e1a; gap: 52px; }
+
+  .section-header { text-align: center; }
+  .section-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    letter-spacing: 0.26em;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .section-headline {
+    font-size: 60px;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -0.02em;
+  }
+  .section-headline .gold { color: #c9a227; }
+  .section-headline .green { color: #4fc87a; }
+
+  .match-cards { display: flex; gap: 28px; }
+
+  .match-card {
+    width: 510px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 36px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .match-card.featured {
+    border-color: rgba(201,162,39,0.45);
+    background: rgba(201,162,39,0.03);
+    animation: borderPulse 2.8s ease-in-out infinite;
+  }
+
+  .card-badge {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    color: #c9a227;
+    text-transform: uppercase;
+  }
+  .match-card:not(.featured) .card-badge { color: #4fc87a; }
+
+  .match-vs {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .team-nm {
+    font-size: 27px;
+    font-weight: 700;
+    color: #fff;
+    flex: 1;
+    text-align: center;
+  }
+  .vs-div {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(255,255,255,0.25);
+    flex-shrink: 0;
+  }
+  .match-info { display: flex; flex-direction: column; gap: 7px; }
+  .info-venue { font-size: 19px; color: rgba(255,255,255,0.65); }
+  .info-time {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    font-weight: 600;
+    color: #c9a227;
+  }
+  .match-card:not(.featured) .info-time { color: #4fc87a; }
+
+  /* ═══════════════════════════════
+     S03 · MAIN PREDICTION
+  ═══════════════════════════════ */
+  #slide-3 {
+    background:
+      radial-gradient(ellipse 80% 55% at 50% -10%, rgba(201,162,39,0.07) 0%, transparent 50%),
+      #0a0e1a;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 72px;
+    padding: 0 96px;
+  }
+
+  .pred-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+  .pred-badge {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 15px;
+    letter-spacing: 0.24em;
+    color: #c9a227;
+    text-transform: uppercase;
+  }
+  .pred-match-title {
+    font-size: 50px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+  }
+  .analysis-list { display: flex; flex-direction: column; gap: 14px; }
+
+  .analysis-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 15px 18px;
+    background: rgba(255,255,255,0.04);
+    border-left: 3px solid rgba(201,162,39,0.48);
+    border-radius: 0 8px 8px 0;
+  }
+  .a-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+  .a-text { font-size: 19px; color: rgba(255,255,255,0.68); line-height: 1.5; }
+  .a-text strong { color: rgba(255,255,255,0.9); }
+
+  .pred-right {
+    width: 580px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .big-score-box {
+    width: 100%;
+    background: rgba(201,162,39,0.05);
+    border: 2px solid rgba(201,162,39,0.45);
+    border-radius: 20px;
+    padding: 44px 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    animation: borderPulse 2.8s ease-in-out infinite;
+  }
+  .bs-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    color: rgba(201,162,39,0.65);
+    text-transform: uppercase;
+  }
+  .bs-teams {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+  }
+  .bs-team {
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+    flex: 1;
+    text-align: center;
+  }
+  .bs-score {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 90px;
+    font-weight: 700;
+    color: #c9a227;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    text-shadow: 0 0 36px rgba(201,162,39,0.38);
+  }
+  .bs-conf {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 17px;
+    color: rgba(255,255,255,0.36);
+  }
+
+  .altitude-warn {
+    width: 100%;
+    padding: 18px 26px;
+    background: rgba(255,100,50,0.07);
+    border: 1px solid rgba(255,130,80,0.28);
+    border-radius: 12px;
+    font-size: 19px;
+    color: rgba(255,160,100,0.88);
+    line-height: 1.55;
+    text-align: center;
+  }
+
+  /* ═══════════════════════════════
+     S04 · BATCH PREDICTIONS
+  ═══════════════════════════════ */
+  #slide-4 { background: #0a0e1a; gap: 48px; }
+
+  .pred-cards { display: flex; gap: 44px; }
+
+  .pred-card {
+    flex: 1;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 44px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .pc-badge {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    color: #4fc87a;
+    text-transform: uppercase;
+  }
+  .pc-teams {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .pc-team {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    flex: 1;
+  }
+  .pc-team.right { text-align: right; }
+  .pc-score {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 68px;
+    font-weight: 700;
+    color: #4fc87a;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .pc-analysis {
+    font-size: 19px;
+    color: rgba(255,255,255,0.52);
+    line-height: 1.62;
+    border-top: 1px solid rgba(255,255,255,0.09);
+    padding-top: 18px;
+  }
+  .pc-watch {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    color: #4fc87a;
+    margin-top: 10px;
+  }
+
+  /* ═══════════════════════════════
+     S05 · VERDICT
+  ═══════════════════════════════ */
+  #slide-5 {
+    background:
+      radial-gradient(ellipse 85% 60% at 50% 115%, rgba(201,162,39,0.13) 0%, transparent 55%),
+      #0a0e1a;
+    gap: 0;
+  }
+
+  .verdict-header { text-align: center; margin-bottom: 44px; }
+  .verdict-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    letter-spacing: 0.24em;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .verdict-headline {
+    font-size: 62px;
+    font-weight: 900;
+    color: #c9a227;
+    letter-spacing: -0.02em;
+  }
+
+  .verdict-table {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 1240px;
+    margin-bottom: 36px;
+  }
+  .v-row {
+    display: flex;
+    align-items: stretch;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .v-match {
+    flex: 1;
+    padding: 20px 28px;
+    font-size: 23px;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .v-sep { opacity: 0.3; font-weight: 300; margin: 0 10px; }
+  .v-score {
+    width: 168px;
+    padding: 20px 20px;
+    background: rgba(201,162,39,0.09);
+    border-left: 1px solid rgba(201,162,39,0.28);
+    font-family: 'Roboto Mono', monospace;
+    font-size: 30px;
+    font-weight: 700;
+    color: #c9a227;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .v-score.draw {
+    color: #4fc87a;
+    background: rgba(79,200,122,0.08);
+    border-color: rgba(79,200,122,0.28);
+  }
+  .v-note {
+    flex: 1.2;
+    padding: 20px 24px;
+    font-size: 17px;
+    color: rgba(255,255,255,0.46);
+    border-left: 1px solid rgba(255,255,255,0.07);
+    display: flex;
+    align-items: center;
+  }
+
+  .korea-strip {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 44px;
+    background: rgba(79,200,122,0.07);
+    border: 1px solid rgba(79,200,122,0.28);
+    border-radius: 12px;
+  }
+  .ks-flag { font-size: 36px; }
+  .ks-text { display: flex; flex-direction: column; gap: 4px; }
+  .ks-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    color: rgba(79,200,122,0.6);
+    text-transform: uppercase;
+  }
+  .ks-main { font-size: 22px; color: #4fc87a; font-weight: 700; }
+</style>
+</head>
+<body>
+
+<!-- ══════════ SLIDE 1 · HOOK ══════════ -->
+<div class="slide active" id="slide-1">
+  <div class="slide-label">WORLDCUP 2026 DAILY · EP01</div>
+  <div class="slide-num">1 / 5</div>
+
+  <div class="hook-badge">CLAUDE AI · 개막 전날 완전 분석 · 2026-06-10</div>
+  <div class="hook-d1">D-1</div>
+  <div class="hook-wc-title">2026 FIFA World Cup</div>
+  <div class="hook-sub">내일, 아즈테카에서 역사가 시작됩니다 · 개막전 3경기 AI 예측</div>
+</div>
+
+<!-- ══════════ SLIDE 2 · DAY 1 OVERVIEW ══════════ -->
+<div class="slide" id="slide-2">
+  <div class="slide-label">WORLDCUP 2026 DAILY · EP01</div>
+  <div class="slide-num">2 / 5</div>
+
+  <div class="section-header anim fadeUp go" style="animation-delay:0.1s">
+    <div class="section-label">6월 11일 개막일</div>
+    <div class="section-headline">내일의 <span class="gold">3경기</span> 일정</div>
+  </div>
+
+  <div class="match-cards">
+    <div class="match-card featured anim scaleIn go" style="animation-delay:0.3s">
+      <div class="card-badge">★ OPENING MATCH · GROUP B</div>
+      <div class="match-vs">
+        <div class="team-nm">🇲🇽 멕시코</div>
+        <div class="vs-div">VS</div>
+        <div class="team-nm">에콰도르 🇪🇨</div>
+      </div>
+      <div class="match-info">
+        <div class="info-venue">Estadio Azteca, 멕시코시티</div>
+        <div class="info-time">KST 6/12 (목) 09:00</div>
+      </div>
+    </div>
+
+    <div class="match-card anim scaleIn go" style="animation-delay:0.5s">
+      <div class="card-badge">GROUP A · 미국</div>
+      <div class="match-vs">
+        <div class="team-nm">🇺🇸 미국</div>
+        <div class="vs-div">VS</div>
+        <div class="team-nm">볼리비아 🇧🇴</div>
+      </div>
+      <div class="match-info">
+        <div class="info-venue">SoFi Stadium, 로스앤젤레스</div>
+        <div class="info-time">KST 6/12 (목) 08:00</div>
+      </div>
+    </div>
+
+    <div class="match-card anim scaleIn go" style="animation-delay:0.7s">
+      <div class="card-badge">GROUP F · 캐나다</div>
+      <div class="match-vs">
+        <div class="team-nm">🇨🇦 캐나다</div>
+        <div class="vs-div">VS</div>
+        <div class="team-nm">모로코 🇲🇦</div>
+      </div>
+      <div class="match-info">
+        <div class="info-venue">BMO Field, 토론토</div>
+        <div class="info-time">KST 6/12 (목) 03:00</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ SLIDE 3 · MAIN PREDICTION ══════════ -->
+<div class="slide" id="slide-3">
+  <div class="slide-label">WORLDCUP 2026 DAILY · EP01</div>
+  <div class="slide-num">3 / 5</div>
+
+  <div class="pred-left">
+    <div class="pred-badge anim fadeIn go" style="animation-delay:0.1s">개막전 심층 분석</div>
+    <div class="pred-match-title anim fadeUp go" style="animation-delay:0.2s">멕시코<br>vs 에콰도르</div>
+    <div class="analysis-list">
+      <div class="analysis-item anim fadeUp go" style="animation-delay:0.38s">
+        <div class="a-icon">⛰</div>
+        <div class="a-text"><strong>아즈테카 고지대 2,240m</strong> — 에콰도르 적응 시간 없음, 후반 체력 급하강 예측</div>
+      </div>
+      <div class="analysis-item anim fadeUp go" style="animation-delay:0.52s">
+        <div class="a-icon">📊</div>
+        <div class="a-text">멕시코 <strong>개막전 무패 기록</strong> (7전 5승 2무) — 홈 Azteca에서 진 적 없음</div>
+      </div>
+      <div class="analysis-item anim fadeUp go" style="animation-delay:0.66s">
+        <div class="a-icon">🔥</div>
+        <div class="a-text">홈팬 <strong>87,000명</strong>의 아즈테카 열기 — 6번째 선수 역할 기대</div>
+      </div>
+      <div class="analysis-item anim fadeUp go" style="animation-delay:0.8s">
+        <div class="a-icon">⚠</div>
+        <div class="a-text">에콰도르 <strong>카이세도·에스투피냔</strong> 중원 연결 — 허용하면 동점 가능</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pred-right">
+    <div class="big-score-box anim scaleIn go" style="animation-delay:0.3s">
+      <div class="bs-label">AI PREDICTION</div>
+      <div class="bs-teams">
+        <div class="bs-team">멕시코</div>
+        <div class="bs-score">2–1</div>
+        <div class="bs-team">에콰도르</div>
+      </div>
+      <div class="bs-conf">신뢰도 72% · 선취 → 동점 → 역전 시나리오</div>
+    </div>
+    <div class="altitude-warn anim fadeIn go" style="animation-delay:0.58s">
+      고지대 페널티 — 에콰도르 후반 체력 급하강<br>
+      히메네스 선제골 → 에콰도르 동점 → 멕시코 역전골
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ SLIDE 4 · BATCH PREDICTIONS ══════════ -->
+<div class="slide" id="slide-4">
+  <div class="slide-label">WORLDCUP 2026 DAILY · EP01</div>
+  <div class="slide-num">4 / 5</div>
+
+  <div class="section-header anim fadeUp go" style="animation-delay:0.1s">
+    <div class="section-label">Day 1 나머지 경기</div>
+    <div class="section-headline">AI <span class="green">예측</span> 일람</div>
+  </div>
+
+  <div class="pred-cards">
+    <div class="pred-card anim scaleIn go" style="animation-delay:0.3s">
+      <div class="pc-badge">GROUP A · SoFi Stadium, LA</div>
+      <div class="pc-teams">
+        <div class="pc-team">🇺🇸 미국</div>
+        <div class="pc-score">3–0</div>
+        <div class="pc-team right">볼리비아 🇧🇴</div>
+      </div>
+      <div class="pc-analysis">
+        볼리비아는 홈 라파스(3,640m) 고지대 이점 없이 해수면 LA에서 체력·스피드 모두 뒤처짐. 미국은 홈 이점 + 압도적 피지컬로 완승 예측.
+        <div class="pc-watch">★ WATCH: 크리스티안 풀리시치 — 멀티골 후보</div>
+      </div>
+    </div>
+
+    <div class="pred-card anim scaleIn go" style="animation-delay:0.5s">
+      <div class="pc-badge">GROUP F · BMO Field, 토론토</div>
+      <div class="pc-teams">
+        <div class="pc-team">🇨🇦 캐나다</div>
+        <div class="pc-score" style="color:#c9a227">1–1</div>
+        <div class="pc-team right">모로코 🇲🇦</div>
+      </div>
+      <div class="pc-analysis">
+        모로코는 2022 카타르 4강의 수비 조직력 건재. 캐나다는 홈 이점 + 데이비스·데이비드의 개인 능력. 박빙 접전, 무승부가 가장 현실적인 결과.
+        <div class="pc-watch" style="color:#c9a227">★ WATCH: 알폰소 데이비스 vs 아크라프 하키미 풀백 대결</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ SLIDE 5 · VERDICT ══════════ -->
+<div class="slide" id="slide-5">
+  <div class="slide-label">WORLDCUP 2026 DAILY · EP01</div>
+  <div class="slide-num">5 / 5</div>
+
+  <div class="verdict-header anim fadeUp go" style="animation-delay:0.1s">
+    <div class="verdict-label">Claude AI · 개막일 최종 픽</div>
+    <div class="verdict-headline">Day 1 AI 픽 요약</div>
+  </div>
+
+  <div class="verdict-table">
+    <div class="v-row anim fadeUp go" style="animation-delay:0.28s">
+      <div class="v-match">
+        🇲🇽 멕시코 <span class="v-sep">vs</span> 에콰도르 🇪🇨
+      </div>
+      <div class="v-score">2 – 1</div>
+      <div class="v-note">고지대 이점 + 개막전 무패 기록 · 신뢰도 72%</div>
+    </div>
+    <div class="v-row anim fadeUp go" style="animation-delay:0.42s">
+      <div class="v-match">
+        🇺🇸 미국 <span class="v-sep">vs</span> 볼리비아 🇧🇴
+      </div>
+      <div class="v-score">3 – 0</div>
+      <div class="v-note">홈 이점 + 전력 차 명확 / 볼리비아 고지대 이점 없음 · 신뢰도 79%</div>
+    </div>
+    <div class="v-row anim fadeUp go" style="animation-delay:0.56s">
+      <div class="v-match">
+        🇨🇦 캐나다 <span class="v-sep">vs</span> 모로코 🇲🇦
+      </div>
+      <div class="v-score draw">1 – 1</div>
+      <div class="v-note">★ 이변 가능성 최대 — 모로코 수비 조직 vs 캐나다 홈팬 · 신뢰도 51%</div>
+    </div>
+  </div>
+
+  <div class="korea-strip anim fadeIn go" style="animation-delay:0.72s">
+    <div class="ks-flag">🇰🇷</div>
+    <div class="ks-text">
+      <div class="ks-label">대한민국 대표팀 — 다음 예고</div>
+      <div class="ks-main">첫 경기 6월 13일 · 상대 완전 분석 내일 영상 공개</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let current = 1;
+  const total = 5;
+
+  function showSlide(n) {
+    document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+    const target = document.getElementById('slide-' + n);
+    if (!target) return;
+    target.classList.add('active');
+    current = n;
+    target.querySelectorAll('.anim').forEach(el => {
+      el.classList.remove('go');
+      void el.offsetWidth;
+      el.classList.add('go');
+    });
+  }
+
+  window.goToSlide = showSlide;
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') showSlide(Math.min(current + 1, total));
+    if (e.key === 'ArrowLeft') showSlide(Math.max(current - 1, 1));
+  });
+</script>
+</body>
+</html>
