@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>2026 월드컵 데일리 AI 예측 — EP01 개막일</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #080c18;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  /* ── 애니메이션 ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(48px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes slideLeft {
+    from { opacity: 0; transform: translateX(-60px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.85); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.6; }
+  }
+  @keyframes scorePop {
+    0%   { opacity: 0; transform: scale(0.5); }
+    70%  { opacity: 1; transform: scale(1.08); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+  .anim { opacity: 0; }
+  .anim.go { animation-fill-mode: forwards; }
+  .anim.go.fadeUp    { animation: fadeUp    0.7s cubic-bezier(.22,.68,0,1.2) forwards; }
+  .anim.go.fadeIn    { animation: fadeIn    0.6s ease forwards; }
+  .anim.go.slideLeft { animation: slideLeft 0.6s cubic-bezier(.22,.68,0,1.2) forwards; }
+  .anim.go.scaleIn   { animation: scaleIn  0.7s cubic-bezier(.22,.68,0,1.2) forwards; }
+
+  /* ── 상단 HUD ── */
+  .hud-left {
+    position: absolute;
+    top: 32px; left: 52px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .hud-right {
+    position: absolute;
+    top: 32px; right: 52px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.08em;
+  }
+
+  /* ══════════════════════════════════════════
+     S01 — HOOK  (개막일)
+  ══════════════════════════════════════════ */
+  #slide-1 {
+    background:
+      radial-gradient(ellipse 120% 80% at 50% 110%, rgba(255,60,0,0.22) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 50% at 85% 15%, rgba(201,162,39,0.12) 0%, transparent 50%),
+      #080c18;
+  }
+
+  #slide-1 .opening-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    border: 1.5px solid rgba(255,80,0,0.5);
+    border-radius: 6px;
+    padding: 10px 28px;
+    font-size: 22px;
+    font-weight: 500;
+    color: #ff6030;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+  }
+  #slide-1 .opening-badge .live-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: #ff4020;
+    animation: pulse 1.2s ease-in-out infinite;
+  }
+
+  #slide-1 .hook-main {
+    font-size: 120px;
+    font-weight: 900;
+    color: #f0ede4;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: -0.02em;
+  }
+  #slide-1 .hook-main .em { color: #c9a227; }
+
+  #slide-1 .hook-sub {
+    font-size: 42px;
+    font-weight: 300;
+    color: rgba(240,237,228,0.65);
+    text-align: center;
+    margin-top: 24px;
+    letter-spacing: 0.06em;
+  }
+
+  #slide-1 .date-pill {
+    margin-top: 56px;
+    background: rgba(201,162,39,0.12);
+    border: 1px solid rgba(201,162,39,0.35);
+    border-radius: 50px;
+    padding: 12px 40px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 26px;
+    color: #c9a227;
+    letter-spacing: 0.15em;
+  }
+
+  #slide-1 .ep-badge {
+    position: absolute;
+    bottom: 48px; left: 52px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(201,162,39,0.6);
+    letter-spacing: 0.15em;
+  }
+
+  /* ══════════════════════════════════════════
+     S02 — DAY 1 INTRO
+  ══════════════════════════════════════════ */
+  #slide-2 {
+    background:
+      radial-gradient(ellipse 140% 90% at 50% 120%, rgba(79,200,122,0.12) 0%, transparent 55%),
+      #080c18;
+    padding: 0 140px;
+  }
+
+  #slide-2 .day1-title {
+    font-size: 64px;
+    font-weight: 700;
+    color: #4fc87a;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  #slide-2 .day1-sub {
+    font-size: 28px;
+    font-weight: 300;
+    color: rgba(232,245,237,0.55);
+    text-align: center;
+    margin-bottom: 72px;
+    letter-spacing: 0.04em;
+  }
+
+  #slide-2 .stat-row {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    margin-bottom: 64px;
+  }
+  #slide-2 .stat-box {
+    background: rgba(79,200,122,0.07);
+    border: 1px solid rgba(79,200,122,0.22);
+    border-radius: 16px;
+    padding: 44px 56px;
+    text-align: center;
+    min-width: 240px;
+  }
+  #slide-2 .stat-num {
+    font-size: 88px;
+    font-weight: 900;
+    color: #4fc87a;
+    line-height: 1;
+  }
+  #slide-2 .stat-label {
+    font-size: 22px;
+    color: rgba(232,245,237,0.6);
+    margin-top: 10px;
+    letter-spacing: 0.04em;
+  }
+
+  #slide-2 .promise-text {
+    font-size: 30px;
+    font-weight: 400;
+    color: rgba(240,237,228,0.75);
+    text-align: center;
+    line-height: 1.7;
+  }
+  #slide-2 .promise-text .em { color: #4fc87a; font-weight: 700; }
+
+  /* ══════════════════════════════════════════
+     S03 — 메인 경기 예측 (멕시코 vs 자메이카)
+  ══════════════════════════════════════════ */
+  #slide-3 {
+    background:
+      radial-gradient(ellipse 100% 70% at 30% 90%, rgba(0,150,57,0.2) 0%, transparent 50%),
+      radial-gradient(ellipse 80% 60% at 70% 10%, rgba(206,17,38,0.12) 0%, transparent 50%),
+      #080c18;
+    padding: 0 100px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  #slide-3 .match-badge {
+    display: inline-block;
+    background: rgba(201,162,39,0.15);
+    border: 1px solid rgba(201,162,39,0.4);
+    border-radius: 4px;
+    padding: 8px 22px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #c9a227;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 44px;
+  }
+
+  #slide-3 .scoreboard {
+    width: 100%;
+    max-width: 1660px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 24px;
+    padding: 56px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 48px;
+  }
+
+  #slide-3 .team-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    min-width: 360px;
+  }
+  #slide-3 .team-flag { font-size: 96px; line-height: 1; }
+  #slide-3 .team-name {
+    font-size: 46px;
+    font-weight: 700;
+    color: #f0ede4;
+    text-align: center;
+  }
+  #slide-3 .team-rank {
+    font-size: 22px;
+    color: rgba(240,237,228,0.4);
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  #slide-3 .score-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  #slide-3 .score-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    color: rgba(201,162,39,0.6);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  #slide-3 .score-box {
+    font-size: 128px;
+    font-weight: 900;
+    color: #c9a227;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    animation: scorePop 0.8s cubic-bezier(.22,.68,0,1.4) forwards;
+  }
+  #slide-3 .score-group {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(240,237,228,0.4);
+    letter-spacing: 0.12em;
+  }
+  #slide-3 .score-venue {
+    font-size: 20px;
+    color: rgba(240,237,228,0.35);
+    text-align: center;
+    letter-spacing: 0.04em;
+  }
+
+  #slide-3 .analysis-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    width: 100%;
+    max-width: 1660px;
+  }
+  #slide-3 .analysis-card {
+    background: rgba(201,162,39,0.06);
+    border: 1px solid rgba(201,162,39,0.18);
+    border-radius: 14px;
+    padding: 28px 32px;
+  }
+  #slide-3 .analysis-card .card-label {
+    font-size: 18px;
+    color: rgba(201,162,39,0.7);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  #slide-3 .analysis-card .card-body {
+    font-size: 24px;
+    color: rgba(240,237,228,0.82);
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  /* ══════════════════════════════════════════
+     S04 — 나머지 경기 예측
+  ══════════════════════════════════════════ */
+  #slide-4 {
+    background:
+      radial-gradient(ellipse 120% 70% at 50% 110%, rgba(120,80,200,0.12) 0%, transparent 55%),
+      #080c18;
+    padding: 0 100px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  #slide-4 .section-title {
+    font-size: 52px;
+    font-weight: 700;
+    color: #a78bfa;
+    margin-bottom: 12px;
+  }
+  #slide-4 .section-sub {
+    font-size: 24px;
+    font-weight: 300;
+    color: rgba(240,237,228,0.45);
+    margin-bottom: 52px;
+    letter-spacing: 0.04em;
+  }
+
+  #slide-4 .match-list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    width: 100%;
+    max-width: 1660px;
+  }
+  #slide-4 .match-row {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 16px;
+    padding: 36px 52px;
+    display: grid;
+    grid-template-columns: 120px 1fr auto 1fr 240px;
+    align-items: center;
+    gap: 32px;
+  }
+  #slide-4 .match-group-tag {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    color: rgba(167,139,250,0.7);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+  #slide-4 .match-home {
+    font-size: 32px;
+    font-weight: 700;
+    color: #f0ede4;
+    text-align: right;
+  }
+  #slide-4 .match-score-pred {
+    font-size: 48px;
+    font-weight: 900;
+    color: #a78bfa;
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    min-width: 140px;
+  }
+  #slide-4 .match-away {
+    font-size: 32px;
+    font-weight: 700;
+    color: #f0ede4;
+  }
+  #slide-4 .match-conf {
+    text-align: right;
+  }
+  #slide-4 .conf-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  #slide-4 .conf-high {
+    background: rgba(79,200,122,0.15);
+    border: 1px solid rgba(79,200,122,0.4);
+    color: #4fc87a;
+  }
+  #slide-4 .conf-medium {
+    background: rgba(251,191,36,0.12);
+    border: 1px solid rgba(251,191,36,0.4);
+    color: #fbbf24;
+  }
+
+  #slide-4 .summary-line {
+    margin-top: 44px;
+    font-size: 26px;
+    color: rgba(240,237,228,0.55);
+    text-align: center;
+    letter-spacing: 0.03em;
+    width: 100%;
+  }
+  #slide-4 .summary-line .em { color: #a78bfa; font-weight: 700; }
+
+  /* ══════════════════════════════════════════
+     S05 — AI 픽 총정리 (VERDICT)
+  ══════════════════════════════════════════ */
+  #slide-5 {
+    background:
+      radial-gradient(ellipse 140% 90% at 50% 120%, rgba(201,162,39,0.15) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 40% at 10% 10%, rgba(255,60,0,0.08) 0%, transparent 50%),
+      #080c18;
+    padding: 0 120px;
+  }
+
+  #slide-5 .verdict-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    color: rgba(201,162,39,0.65);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    text-align: center;
+  }
+  #slide-5 .verdict-title {
+    font-size: 72px;
+    font-weight: 900;
+    color: #c9a227;
+    text-align: center;
+    margin-bottom: 64px;
+    line-height: 1.1;
+  }
+
+  #slide-5 .picks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+    width: 100%;
+    max-width: 1660px;
+    margin-bottom: 56px;
+  }
+  #slide-5 .pick-card {
+    background: rgba(201,162,39,0.07);
+    border: 1px solid rgba(201,162,39,0.25);
+    border-radius: 20px;
+    padding: 40px 36px;
+    text-align: center;
+  }
+  #slide-5 .pick-matchup {
+    font-size: 28px;
+    font-weight: 500;
+    color: rgba(240,237,228,0.7);
+    margin-bottom: 16px;
+  }
+  #slide-5 .pick-score {
+    font-size: 72px;
+    font-weight: 900;
+    color: #c9a227;
+    font-family: 'Roboto Mono', monospace;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  #slide-5 .pick-tag {
+    font-size: 20px;
+    color: rgba(201,162,39,0.55);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  #slide-5 .cta-box {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 32px 56px;
+    text-align: center;
+    max-width: 1200px;
+  }
+  #slide-5 .cta-main {
+    font-size: 32px;
+    font-weight: 500;
+    color: rgba(240,237,228,0.8);
+    line-height: 1.5;
+  }
+  #slide-5 .cta-main .em { color: #c9a227; font-weight: 700; }
+</style>
+</head>
+<body>
+
+<!-- ─── S01 HOOK ─── -->
+<div class="slide" id="slide-1">
+  <div class="hud-left">worldcup-2026-daily · ep01</div>
+  <div class="hud-right">01 / 05</div>
+
+  <div class="opening-badge anim fadeIn go" style="animation-delay:0.1s">
+    <span class="live-dot"></span>
+    개막일 · 2026년 6월 11일
+  </div>
+
+  <div class="hook-main anim fadeUp go" style="animation-delay:0.3s">
+    드디어 <span class="em">개막</span>합니다
+  </div>
+
+  <div class="hook-sub anim fadeUp go" style="animation-delay:0.55s">
+    2026 FIFA 월드컵 · AI 데일리 예측 시작
+  </div>
+
+  <div class="date-pill anim fadeIn go" style="animation-delay:0.8s">
+    2026.06.11 &nbsp;·&nbsp; GROUP STAGE DAY 1
+  </div>
+
+  <div class="ep-badge anim fadeIn go" style="animation-delay:1.0s">
+    DAILY EP.01 — AI 단독 분석
+  </div>
+</div>
+
+<!-- ─── S02 DAY 1 INTRO ─── -->
+<div class="slide" id="slide-2">
+  <div class="hud-left">worldcup-2026-daily · ep01</div>
+  <div class="hud-right">02 / 05</div>
+
+  <div class="day1-title anim slideLeft go" style="animation-delay:0.2s">오늘 경기 개요</div>
+  <div class="day1-sub anim fadeIn go" style="animation-delay:0.35s">4년의 기다림, 오늘부터 AI가 매일 분석합니다</div>
+
+  <div class="stat-row">
+    <div class="stat-box anim scaleIn go" style="animation-delay:0.5s">
+      <div class="stat-num">3</div>
+      <div class="stat-label">오늘 경기 수</div>
+    </div>
+    <div class="stat-box anim scaleIn go" style="animation-delay:0.65s">
+      <div class="stat-num">A·B·C</div>
+      <div class="stat-label">활성 그룹</div>
+    </div>
+    <div class="stat-box anim scaleIn go" style="animation-delay:0.8s">
+      <div class="stat-num">5</div>
+      <div class="stat-label">AI 예측 총 골</div>
+    </div>
+  </div>
+
+  <div class="promise-text anim fadeUp go" style="animation-delay:1.0s">
+    개막전부터 결승전까지 — <span class="em">매일 경기 전 AI 예측</span>, 경기 후 검증.<br>
+    숫자와 데이터로 말하는 순수 AI 분석입니다.
+  </div>
+</div>
+
+<!-- ─── S03 MAIN MATCH ─── -->
+<div class="slide" id="slide-3">
+  <div class="hud-left">worldcup-2026-daily · ep01</div>
+  <div class="hud-right">03 / 05</div>
+
+  <div class="match-badge anim fadeIn go" style="animation-delay:0.1s">
+    주목 경기 · 그룹 A · 개막전
+  </div>
+
+  <div class="scoreboard anim fadeUp go" style="animation-delay:0.3s">
+    <div class="team-block">
+      <div class="team-flag">🇲🇽</div>
+      <div class="team-name">멕시코</div>
+      <div class="team-rank">FIFA #13 · 홈</div>
+    </div>
+
+    <div class="score-center">
+      <div class="score-label">AI 예측</div>
+      <div class="score-box">3–0</div>
+      <div class="score-group">GROUP A</div>
+      <div class="score-venue">아즈테카 경기장 · 멕시코시티</div>
+    </div>
+
+    <div class="team-block">
+      <div class="team-flag">🇯🇲</div>
+      <div class="team-name">자메이카</div>
+      <div class="team-rank">첫 월드컵 본선</div>
+    </div>
+  </div>
+
+  <div class="analysis-row">
+    <div class="analysis-card anim fadeUp go" style="animation-delay:0.55s">
+      <div class="card-label">홈 어드밴티지</div>
+      <div class="card-body">아즈테카 8만 7천 관중<br>멕시코 홈 5경기 무패</div>
+    </div>
+    <div class="analysis-card anim fadeUp go" style="animation-delay:0.7s">
+      <div class="card-label">전력 격차</div>
+      <div class="card-body">멕시코 FIFA 랭킹 13위<br>자메이카 첫 본선 진출</div>
+    </div>
+    <div class="analysis-card anim fadeUp go" style="animation-delay:0.85s">
+      <div class="card-label">AI 분석 포인트</div>
+      <div class="card-body">개막 경기 심리 + 홈팬<br>멕시코 압도적 우세</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── S04 REST OF MATCHES ─── -->
+<div class="slide" id="slide-4">
+  <div class="hud-left">worldcup-2026-daily · ep01</div>
+  <div class="hud-right">04 / 05</div>
+
+  <div class="section-title anim slideLeft go" style="animation-delay:0.2s">오늘 나머지 경기 예측</div>
+  <div class="section-sub anim fadeIn go" style="animation-delay:0.35s">그룹 B · C — AI 일괄 예측</div>
+
+  <div class="match-list">
+    <div class="match-row anim fadeUp go" style="animation-delay:0.5s">
+      <div class="match-group-tag">GRP B</div>
+      <div class="match-home">에콰도르 🇪🇨</div>
+      <div class="match-score-pred">1–1</div>
+      <div class="match-away">🇸🇳 세네갈</div>
+      <div class="match-conf"><span class="conf-badge conf-medium">보통</span></div>
+    </div>
+
+    <div class="match-row anim fadeUp go" style="animation-delay:0.65s">
+      <div class="match-group-tag">GRP C</div>
+      <div class="match-home">독일 🇩🇪</div>
+      <div class="match-score-pred">3–1</div>
+      <div class="match-away">🇸🇦 사우디</div>
+      <div class="match-conf"><span class="conf-badge conf-high">높음</span></div>
+    </div>
+  </div>
+
+  <div class="summary-line anim fadeIn go" style="animation-delay:0.9s">
+    개막일 총 예측: <span class="em">5골</span> · 멕시코·독일 승리 · 에콰도르-세네갈 무승부
+  </div>
+</div>
+
+<!-- ─── S05 VERDICT ─── -->
+<div class="slide" id="slide-5">
+  <div class="hud-left">worldcup-2026-daily · ep01</div>
+  <div class="hud-right">05 / 05</div>
+
+  <div class="verdict-label anim fadeIn go" style="animation-delay:0.2s">오늘의 AI 픽</div>
+  <div class="verdict-title anim fadeUp go" style="animation-delay:0.35s">개막일 최종 예측</div>
+
+  <div class="picks-grid">
+    <div class="pick-card anim scaleIn go" style="animation-delay:0.55s">
+      <div class="pick-matchup">🇲🇽 멕시코 vs 자메이카 🇯🇲</div>
+      <div class="pick-score">3–0</div>
+      <div class="pick-tag">신뢰도 HIGH</div>
+    </div>
+    <div class="pick-card anim scaleIn go" style="animation-delay:0.7s">
+      <div class="pick-matchup">🇪🇨 에콰도르 vs 세네갈 🇸🇳</div>
+      <div class="pick-score">1–1</div>
+      <div class="pick-tag">신뢰도 MED</div>
+    </div>
+    <div class="pick-card anim scaleIn go" style="animation-delay:0.85s">
+      <div class="pick-matchup">🇩🇪 독일 vs 사우디 🇸🇦</div>
+      <div class="pick-score">3–1</div>
+      <div class="pick-tag">신뢰도 HIGH</div>
+    </div>
+  </div>
+
+  <div class="cta-box anim fadeIn go" style="animation-delay:1.05s">
+    <div class="cta-main">
+      내일은 한국 경기 포함 <span class="em">6경기 — AI 예측 계속됩니다</span><br>
+      구독하고 매일 개막 전 분석을 받아가세요
+    </div>
+  </div>
+</div>
+
+<script>
+  let current = 1;
+  const total = 5;
+
+  function showSlide(n) {
+    if (n < 1 || n > total) return;
+    const prev = document.getElementById('slide-' + current);
+    if (prev) prev.classList.remove('active');
+    current = n;
+    const el = document.getElementById('slide-' + n);
+    if (!el) return;
+    el.classList.add('active');
+    el.querySelectorAll('.anim').forEach(a => {
+      a.classList.remove('go');
+      void a.offsetWidth;
+    });
+    setTimeout(() => {
+      el.querySelectorAll('.anim').forEach(a => a.classList.add('go'));
+    }, 50);
+  }
+
+  window.goToSlide = showSlide;
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') showSlide(current + 1);
+    if (e.key === 'ArrowLeft') showSlide(current - 1);
+    if (e.key >= '1' && e.key <= '5') showSlide(parseInt(e.key));
+  });
+
+  showSlide(1);
+</script>
+</body>
+</html>

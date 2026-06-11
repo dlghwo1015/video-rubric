@@ -1,0 +1,80 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 1,
+  "ep_role": "daily_prediction",
+  "date": "2026-06-11",
+  "title_ko": "2026-06-11 오늘의 경기 AI 예측 — 드디어 개막! 멕시코 홈 개막전",
+  "title_ja": "2026-06-11 今日の試合 AI予測 — いよいよ開幕！メキシコ本拠地開幕戦",
+  "title_en": "2026-06-11 Match Predictions by AI — Opening Day! Mexico's Home Opener",
+  "today_date": "2026-06-11",
+  "matches_today": [
+    {
+      "group": "A",
+      "match_num": 1,
+      "home": "Mexico",
+      "away": "Jamaica",
+      "venue": "Estadio Azteca, Mexico City",
+      "kickoff_kst": "06:00",
+      "prediction": "3–0",
+      "confidence": "high"
+    },
+    {
+      "group": "B",
+      "match_num": 2,
+      "home": "Ecuador",
+      "away": "Senegal",
+      "venue": "AT&T Stadium, Dallas",
+      "kickoff_kst": "09:00",
+      "prediction": "1–1",
+      "confidence": "medium"
+    },
+    {
+      "group": "C",
+      "match_num": 3,
+      "home": "Germany",
+      "away": "Saudi Arabia",
+      "venue": "SoFi Stadium, Los Angeles",
+      "kickoff_kst": "06:00",
+      "prediction": "3–1",
+      "confidence": "high"
+    }
+  ],
+  "korea_match": false,
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "role": "hook",
+      "narration": "드디어 왔습니다. 2026 FIFA 월드컵, 오늘 개막합니다! 멕시코 아즈테카에서 역사의 첫 장이 펼쳐집니다. 48개국 104경기의 서막, AI가 개막전부터 낱낱이 분석합니다.",
+      "narration_ja": "ついにこの日が来た。2026 FIFAワールドカップ、本日開幕！アステカスタジアムで歴史の第一章が幕を開ける。48カ国・104試合の序章、AIが開幕戦から徹底分析します。",
+      "narration_en": "It's finally here. The 2026 FIFA World Cup opens today! History begins at the Azteca. 48 nations, 104 matches — and AI analysis from the very first kick. Let's go."
+    },
+    {
+      "id": "s02_yesterday",
+      "role": "yesterday_results",
+      "narration": "오늘이 개막일입니다. 어제까지는 기다림의 시간이었죠. 4년의 기다림이 이 한 순간을 위한 것이었습니다. 오늘부터 매일 AI가 경기를 분석하고, 예측하고, 결과를 검증합니다.",
+      "narration_ja": "本日が開幕日。昨日まではただ待つ時間でした。4年間の積み重ねがこの瞬間のためにあった。今日から毎日AIが試合を分析し、予測し、結果を検証していきます。",
+      "narration_en": "Today is Day 1 — zero matches to recap from yesterday. Four years of waiting all led to this moment. Starting now, AI breaks down every match, every day, every prediction verified."
+    },
+    {
+      "id": "s03_prediction_main",
+      "role": "prediction_main",
+      "narration": "오늘의 주목 경기, 그룹 A — 멕시코 대 자메이카. 아즈테카 경기장, 8만 7천 명 홈 팬. 멕시코는 최근 5경기 홈 무패, 공격력 리그 상위권. 자메이카는 첫 월드컵 본선. AI 예측: 멕시코 3-0 자메이카. 홈 어드밴티지와 전력 격차가 결정적입니다.",
+      "narration_ja": "本日の注目試合、グループA — メキシコ対ジャマイカ。アステカスタジアム、8万7千人のホームファン。メキシコは直近5試合ホーム無敗、攻撃力はリーグ上位。ジャマイカは初のW杯本戦出場。AI予測：メキシコ3-0ジャマイカ。ホームアドバンテージと戦力差が決定的です。",
+      "narration_en": "Spotlight match: Group A — Mexico vs Jamaica at the Azteca. 87,000 home fans. Mexico are unbeaten in their last 5 home fixtures, top-tier attack. Jamaica making their World Cup debut. AI Prediction: Mexico 3–0 Jamaica. Home advantage and a significant talent gap are decisive here."
+    },
+    {
+      "id": "s04_prediction_rest",
+      "role": "prediction_rest",
+      "narration": "오늘 나머지 경기들. 그룹 B — 에콰도르 1-1 세네갈. 두 팀 모두 탄탄한 수비, 팽팽한 접전 예상. 그룹 C — 독일 3-1 사우디아라비아. 독일은 황금세대 전성기, 사우디는 수비 집중 전략이지만 역부족 전망. AI 종합 개막일 예측: 총 5골, 공격 축구의 향연이 시작됩니다.",
+      "narration_ja": "本日の残り試合。グループB — エクアドル1-1セネガル。両チームとも守備が堅く、拮抗した接戦の予想。グループC — ドイツ3-1サウジアラビア。ドイツはゴールデン世代の全盛期、サウジは守備集中も厳しい見込み。AI総合開幕日予測：合計5ゴール、攻撃的サッカーの饗宴が始まります。",
+      "narration_en": "The rest of today's action. Group B — Ecuador 1–1 Senegal. Both sides defensively solid; expect a tight contest. Group C — Germany 3–1 Saudi Arabia. Germany's golden generation in full flow; Saudi's defensive block won't hold up. AI opening-day summary: 5 total goals across three matches — attacking football starts now."
+    },
+    {
+      "id": "s05_verdict",
+      "role": "verdict",
+      "narration": "오늘의 AI 픽을 정리합니다. 멕시코 3-0 자메이카, 에콰도르 1-1 세네갈, 독일 3-1 사우디. 개막일 최고 관전 포인트는 멕시코 아즈테카의 열기입니다. 내일은 한국 경기 포함 6경기, 예측과 분석을 놓치지 마세요. 2026 월드컵의 AI 데일리가 시작됩니다.",
+      "narration_ja": "本日のAIピックをまとめます。メキシコ3-0ジャマイカ、エクアドル1-1セネガル、ドイツ3-1サウジアラビア。開幕日最大の注目ポイントはアステカスタジアムの熱狂です。明日は韓国試合含む6試合、予測と分析をお見逃しなく。2026ワールドカップのAIデイリーが始まります。",
+      "narration_en": "Today's AI picks: Mexico 3–0 Jamaica, Ecuador 1–1 Senegal, Germany 3–1 Saudi Arabia. The must-watch moment of opening day is the Azteca atmosphere. Tomorrow brings 6 matches including Korea's first game. Don't miss the daily AI breakdown. The 2026 World Cup Daily has begun."
+    }
+  ]
+}
