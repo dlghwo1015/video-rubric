@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>2026ワールドカップ デイリーAI予測 — EP01 (2026-06-12)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Roboto+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #080c18;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    display: none;
+    overflow: hidden;
+  }
+  .slide.active { display: block; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes slideRight {
+    from { opacity: 0; transform: translateX(-50px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.88); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  @keyframes ticker {
+    0%   { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.6; }
+  }
+  @keyframes glowGold {
+    0%, 100% { text-shadow: 0 0 30px rgba(255,200,50,0.3); }
+    50%       { text-shadow: 0 0 70px rgba(255,200,50,0.8); }
+  }
+
+  .anim-fadeUp   { opacity: 0; animation: fadeUp   0.7s ease forwards; }
+  .anim-fadeIn   { opacity: 0; animation: fadeIn   0.6s ease forwards; }
+  .anim-slideRight { opacity: 0; animation: slideRight 0.6s ease forwards; }
+  .anim-scaleIn  { opacity: 0; animation: scaleIn  0.5s ease forwards; }
+
+  .ticker-bar {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 48px;
+    background: #c9a227;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .ticker-label {
+    flex-shrink: 0;
+    padding: 0 24px;
+    background: #0a0e1a;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: #c9a227;
+    letter-spacing: 0.1em;
+    z-index: 2;
+  }
+  .ticker-content {
+    white-space: nowrap;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0a0e1a;
+    animation: ticker 22s linear infinite;
+    padding-left: 40px;
+  }
+
+  .top-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 72px;
+    background: rgba(10,14,26,0.95);
+    border-bottom: 2px solid #c9a227;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 56px;
+  }
+  .top-bar-logo {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    font-weight: 700;
+    color: #c9a227;
+    letter-spacing: 0.1em;
+  }
+  .top-bar-date {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    color: rgba(255,255,255,0.5);
+  }
+  .slide-num {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .score-box {
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .score-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 48px;
+    flex: 1;
+  }
+  .score-team-name {
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+  }
+  .score-team-flag { font-size: 56px; margin-bottom: 12px; }
+  .score-divider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+    background: rgba(255,255,255,0.07);
+    height: 100%;
+    min-width: 160px;
+  }
+  .score-number {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 88px;
+    font-weight: 700;
+    color: #c9a227;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .score-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 15px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.1em;
+    margin-top: 6px;
+  }
+
+  .result-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 8px;
+    letter-spacing: 0.06em;
+  }
+  .badge-win  { background: rgba(82,212,160,0.15); color: #52d4a0; border: 1px solid #52d4a0; }
+  .badge-lose { background: rgba(255,80,80,0.15);  color: #ff5050; border: 1px solid #ff5050; }
+
+  .ai-pick-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(201,162,39,0.12);
+    border: 1.5px solid #c9a227;
+    border-radius: 30px;
+    padding: 8px 24px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #c9a227;
+    letter-spacing: 0.04em;
+  }
+  .ai-chip-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: #c9a227;
+    animation: pulse 1.4s ease infinite;
+  }
+
+  .venue-tag {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.05em;
+    margin-top: 10px;
+  }
+  .group-tag {
+    display: inline-block;
+    padding: 3px 14px;
+    background: rgba(0,212,255,0.12);
+    border: 1px solid rgba(0,212,255,0.4);
+    border-radius: 20px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 15px;
+    color: #00d4ff;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+  }
+
+  .analysis-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .analysis-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    font-size: 25px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.4;
+  }
+  .analysis-list li::before {
+    content: '▶';
+    color: #c9a227;
+    font-size: 16px;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+
+  .korea-box {
+    background: linear-gradient(135deg, rgba(255,0,60,0.08), rgba(0,50,100,0.15));
+    border: 1.5px solid rgba(255,0,60,0.3);
+    border-radius: 16px;
+    padding: 28px 40px;
+  }
+
+  /* ── Slide backgrounds ── */
+  #s01 { background: radial-gradient(ellipse at 60% 40%, #0d1f3c 0%, #080c18 70%); }
+  #s02 { background: radial-gradient(ellipse at 40% 60%, #0d2818 0%, #080c18 65%); }
+  #s03 { background: radial-gradient(ellipse at 70% 30%, #0d1535 0%, #080c18 65%); }
+  #s04 { background: radial-gradient(ellipse at 30% 50%, #0d1a30 0%, #080c18 65%); }
+  #s05 { background: radial-gradient(ellipse at 50% 50%, #1a0e2e 0%, #080c18 70%); }
+
+  /* ── Slide 1 ── */
+  #s01 .bg-number {
+    position: absolute;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 600px;
+    font-weight: 900;
+    color: rgba(201,162,39,0.04);
+    right: -60px; top: -80px;
+    line-height: 1;
+    pointer-events: none;
+  }
+  #s01 .content {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 1400px;
+  }
+  .day-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    color: #00d4ff;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  #s01 .main-title {
+    font-size: 92px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.05;
+    margin-bottom: 20px;
+  }
+  #s01 .main-title span { color: #c9a227; }
+  #s01 .sub-title {
+    font-size: 34px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 48px;
+  }
+  #s01 .match-preview {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+  }
+  .preview-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-top: 3px solid #c9a227;
+    border-radius: 12px;
+    padding: 20px 36px;
+    text-align: center;
+  }
+  .preview-card .teams { font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+  .preview-card .kickoff { font-family: 'Roboto Mono', monospace; font-size: 16px; color: rgba(255,255,255,0.45); }
+
+  /* ── Slide 2 ── */
+  #s02 .content {
+    position: absolute;
+    top: 90px; left: 80px; right: 80px; bottom: 60px;
+    display: flex;
+    flex-direction: column;
+  }
+  #s02 .section-title {
+    font-size: 30px; font-weight: 700; color: rgba(255,255,255,0.5);
+    letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px;
+  }
+  #s02 .section-subtitle {
+    font-size: 52px; font-weight: 900; color: #fff; margin-bottom: 40px;
+  }
+  #s02 .section-subtitle span { color: #52d4a0; }
+  #s02 .results-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px; flex: 1;
+  }
+  .result-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 36px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .result-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+  .result-match-name { font-size: 26px; font-weight: 700; color: #fff; }
+  .result-score-large {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 72px; font-weight: 900; color: #52d4a0; line-height: 1;
+    text-align: center; margin-bottom: 12px;
+  }
+  .result-scorers { font-size: 20px; color: rgba(255,255,255,0.55); line-height: 1.8; margin-bottom: 16px; }
+  .result-note { font-size: 18px; color: #c9a227; font-style: italic; }
+
+  /* ── Slides 3/4 ── */
+  #s03 .content, #s04 .content {
+    position: absolute;
+    top: 90px; left: 80px; right: 80px; bottom: 60px;
+    display: flex; gap: 60px;
+  }
+  .left-panel { flex: 0 0 580px; display: flex; flex-direction: column; justify-content: center; }
+  .right-panel { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+  .match-badge {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 17px; color: #00d4ff; letter-spacing: 0.18em;
+    text-transform: uppercase; margin-bottom: 16px;
+  }
+  .match-headline {
+    font-size: 56px; font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: 20px;
+  }
+  .match-headline em { color: #c9a227; font-style: normal; }
+
+  /* ── Slide 5 ── */
+  #s05 .content {
+    position: absolute;
+    top: 90px; left: 80px; right: 80px; bottom: 60px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .verdict-title {
+    font-size: 52px; font-weight: 900; color: #c9a227;
+    letter-spacing: 0.05em; animation: glowGold 3s ease infinite;
+    text-align: center;
+  }
+  .picks-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .pick-card {
+    background: rgba(201,162,39,0.06);
+    border: 1.5px solid rgba(201,162,39,0.3);
+    border-radius: 20px; padding: 36px 40px; text-align: center;
+  }
+  .pick-card .match-name { font-size: 24px; font-weight: 700; color: rgba(255,255,255,0.7); margin-bottom: 16px; }
+  .pick-card .predicted-score {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 80px; font-weight: 900; color: #c9a227; line-height: 1;
+    animation: glowGold 3s ease infinite;
+  }
+  .pick-card .pick-note { font-size: 19px; color: rgba(255,255,255,0.5); margin-top: 12px; }
+  .cta-row { display: flex; justify-content: center; gap: 32px; }
+  .cta-btn { padding: 16px 48px; border-radius: 50px; font-size: 22px; font-weight: 700; letter-spacing: 0.04em; }
+  .cta-subscribe { background: #c9a227; color: #080c18; }
+  .cta-tomorrow { background: transparent; border: 2px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.7); }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1 — HOOK -->
+<div class="slide active" id="s01">
+  <div class="top-bar">
+    <div class="top-bar-logo">⚽ WORLDCUP 2026 · AI DAILY</div>
+    <div class="top-bar-date">2026 / 06 / 12 · DAY 2</div>
+    <div class="slide-num">01 / 05</div>
+  </div>
+  <div class="bg-number">2</div>
+  <div class="content">
+    <div class="day-label anim-fadeIn">FIFA WORLD CUP 2026 — 2日目</div>
+    <div class="main-title anim-fadeUp">今日の試合<br><span>AI予測</span></div>
+    <div class="sub-title anim-fadeIn" style="font-size:32px; color:rgba(255,255,255,0.6); margin-bottom:48px;">アメリカ・カナダ開催国デビュー — 勝者は誰か？</div>
+    <div class="match-preview anim-fadeUp">
+      <div class="preview-card">
+        <div class="teams">🇨🇦 カナダ vs ボスニア 🇧🇦</div>
+        <div class="kickoff">本日 04:00 KST · BMOフィールド, トロント</div>
+      </div>
+      <div class="preview-card">
+        <div class="teams">🇺🇸 アメリカ vs パラグアイ 🇵🇾</div>
+        <div class="kickoff">本日 10:00 KST · ソファイスタジアム, LA</div>
+      </div>
+    </div>
+  </div>
+  <div class="ticker-bar">
+    <div class="ticker-label">LIVE</div>
+    <div class="ticker-content">
+      ⚽ 昨日の結果 ▷ メキシコ 2-0 南アフリカ &nbsp;|&nbsp; 韓国 2-1 チェコ &nbsp;|&nbsp;
+      今日のAIピック ▷ カナダ 2-0 ボスニア &nbsp;|&nbsp; アメリカ 2-1 パラグアイ &nbsp;|&nbsp;
+      ⚽ 昨日の結果 ▷ メキシコ 2-0 南アフリカ &nbsp;|&nbsp; 韓国 2-1 チェコ
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 2 — YESTERDAY RESULTS -->
+<div class="slide" id="s02">
+  <div class="top-bar">
+    <div class="top-bar-logo">⚽ WORLDCUP 2026 · AI DAILY</div>
+    <div class="top-bar-date">昨日の結果 · 2026 / 06 / 11</div>
+    <div class="slide-num">02 / 05</div>
+  </div>
+  <div class="content">
+    <div class="section-title anim-fadeIn">YESTERDAY · 開幕日ハイライト</div>
+    <div class="section-subtitle anim-fadeUp">2026 W杯 <span>開幕日</span> 全結果</div>
+    <div class="results-grid">
+      <div class="result-card anim-slideRight" style="animation-delay:0.3s; border-top:3px solid #006847;">
+        <div>
+          <div class="result-card-header">
+            <div class="result-match-name">🇲🇽 メキシコ vs 南アフリカ 🇿🇦</div>
+            <span class="group-tag">GROUP A</span>
+          </div>
+          <div class="result-score-large">2 — 0</div>
+          <div class="result-scorers">
+            ⚽ キンタネス 9'（MEX）<br>
+            ⚽ ヒメネス 63'（MEX）
+          </div>
+        </div>
+        <div class="result-note">⚠️ 南アフリカ レッドカード3枚 → 9人で試合終了（W杯記録）</div>
+      </div>
+      <div class="result-card anim-slideRight" style="animation-delay:0.45s; border-top:3px solid #ff0038; border-left:3px solid #003778;">
+        <div>
+          <div class="result-card-header">
+            <div class="result-match-name">🇰🇷 韓国 vs チェコ 🇨🇿</div>
+            <span class="group-tag">GROUP C</span>
+          </div>
+          <div class="result-score-large">2 — 1</div>
+          <div class="result-scorers">
+            ⚽ クレイチ 34'（CZE）<br>
+            ⚽ 黄仁範 62'（KOR）<br>
+            ⚽ 呉賢奎 80'（KOR）🔥
+          </div>
+        </div>
+        <div class="result-note" style="color:#52d4a0;">✅ 逆転勝利！呉賢奎80分決勝点 — グループ首位スタート</div>
+      </div>
+    </div>
+  </div>
+  <div class="ticker-bar">
+    <div class="ticker-label">RESULT</div>
+    <div class="ticker-content">
+      🇲🇽 メキシコ 2-0 南アフリカ 🇿🇦 &nbsp;|&nbsp; 🇰🇷 韓国 2-1 チェコ 🇨🇿 &nbsp;|&nbsp;
+      呉賢奎 80分決勝点 &nbsp;|&nbsp; キンタネス 9分先制点 &nbsp;|&nbsp;
+      🇲🇽 メキシコ 2-0 南アフリカ 🇿🇦 &nbsp;|&nbsp; 🇰🇷 韓国 2-1 チェコ 🇨🇿
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3 — USA vs PARAGUAY -->
+<div class="slide" id="s03">
+  <div class="top-bar">
+    <div class="top-bar-logo">⚽ WORLDCUP 2026 · AI DAILY</div>
+    <div class="top-bar-date">今日の予測 #1 · 06 / 12</div>
+    <div class="slide-num">03 / 05</div>
+  </div>
+  <div class="content">
+    <div class="left-panel">
+      <div class="match-badge anim-fadeIn">MAIN MATCH · GROUP D</div>
+      <div class="match-headline anim-fadeUp">🇺🇸 アメリカ<br>vs<br>🇵🇾 <em>パラグアイ</em></div>
+      <div class="venue-tag anim-fadeIn">📍 ソファイスタジアム, イングルウッド</div>
+      <div class="venue-tag anim-fadeIn" style="animation-delay:0.05s;">⏰ 06-13 10:00 KST &nbsp;|&nbsp; 6/12 21:00 ET</div>
+      <div style="margin-top:32px;" class="anim-scaleIn">
+        <div class="score-box" style="border-top:3px solid #c9a227; border-radius:16px;">
+          <div class="score-team" style="background:rgba(0,40,104,0.2);">
+            <div class="score-team-flag">🇺🇸</div>
+            <div class="score-team-name">アメリカ</div>
+          </div>
+          <div class="score-divider">
+            <div class="score-number">2–1</div>
+            <div class="score-label">AI 予測</div>
+          </div>
+          <div class="score-team" style="background:rgba(215,37,49,0.15);">
+            <div class="score-team-flag">🇵🇾</div>
+            <div class="score-team-name">パラグアイ</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:20px; display:flex; justify-content:center;" class="anim-fadeIn">
+        <div class="ai-pick-chip"><div class="ai-chip-dot"></div>AI ピック: アメリカ勝利</div>
+      </div>
+    </div>
+    <div class="right-panel">
+      <div class="anim-fadeUp" style="animation-delay:0.3s;">
+        <div style="font-size:28px; font-weight:700; color:#c9a227; margin-bottom:20px;">分析ポイント</div>
+        <ul class="analysis-list">
+          <li>プリシッチ・レイナ・ウェア 3トップ — 攻撃力優位</li>
+          <li>ソファイスタジアム 7万ホームファンの熱気</li>
+          <li>パラグアイはコパ・アメリカ強豪もアウェーに弱い</li>
+          <li>アメリカ守備組織向上 — 失点最小化を予測</li>
+        </ul>
+      </div>
+      <div class="anim-fadeUp" style="animation-delay:0.6s; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:24px 32px;">
+        <div style="font-size:19px; color:rgba(255,255,255,0.5); margin-bottom:10px; font-family:'Roboto Mono',monospace; letter-spacing:0.1em;">PREDICTED FLOW</div>
+        <div style="display:flex; align-items:center; gap:20px; font-size:24px; font-weight:700; color:#fff;">
+          <span style="color:#52d4a0;">前半 プリシッチ先制</span>
+          <span style="color:rgba(255,255,255,0.3);">→</span>
+          <span style="color:#ff8080;">PY 同点</span>
+          <span style="color:rgba(255,255,255,0.3);">→</span>
+          <span style="color:#c9a227;">後半 逆転</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ticker-bar">
+    <div class="ticker-label">AI PICK</div>
+    <div class="ticker-content">
+      🇺🇸 アメリカ 2-1 パラグアイ 🇵🇾 &nbsp;|&nbsp; ホームアドバンテージ決定的 &nbsp;|&nbsp; プリシッチゴール期待 &nbsp;|&nbsp;
+      🇺🇸 アメリカ 2-1 パラグアイ 🇵🇾 &nbsp;|&nbsp; ソファイスタジアム 6/12 21:00 ET
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4 — CANADA vs BOSNIA -->
+<div class="slide" id="s04">
+  <div class="top-bar">
+    <div class="top-bar-logo">⚽ WORLDCUP 2026 · AI DAILY</div>
+    <div class="top-bar-date">今日の予測 #2 · 06 / 12</div>
+    <div class="slide-num">04 / 05</div>
+  </div>
+  <div class="content">
+    <div class="left-panel">
+      <div class="match-badge anim-fadeIn">OPENER MATCH · GROUP B</div>
+      <div class="match-headline anim-fadeUp">🇨🇦 カナダ<br>vs<br>🇧🇦 <em>ボスニア</em></div>
+      <div class="venue-tag anim-fadeIn">📍 BMOフィールド, トロント</div>
+      <div class="venue-tag anim-fadeIn" style="animation-delay:0.05s;">⏰ 06-13 04:00 KST &nbsp;|&nbsp; 6/12 15:00 ET</div>
+      <div style="margin-top:32px;" class="anim-scaleIn">
+        <div class="score-box" style="border-top:3px solid #c9a227; border-radius:16px;">
+          <div class="score-team" style="background:rgba(255,0,0,0.12);">
+            <div class="score-team-flag">🇨🇦</div>
+            <div class="score-team-name">カナダ</div>
+          </div>
+          <div class="score-divider">
+            <div class="score-number">2–0</div>
+            <div class="score-label">AI 予測</div>
+          </div>
+          <div class="score-team" style="background:rgba(0,50,150,0.12);">
+            <div class="score-team-flag">🇧🇦</div>
+            <div class="score-team-name">ボスニア</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:20px; display:flex; justify-content:center;" class="anim-fadeIn">
+        <div class="ai-pick-chip"><div class="ai-chip-dot"></div>AI ピック: カナダ勝利</div>
+      </div>
+    </div>
+    <div class="right-panel">
+      <div class="anim-fadeUp" style="animation-delay:0.3s;">
+        <div style="font-size:28px; font-weight:700; color:#c9a227; margin-bottom:20px;">分析ポイント</div>
+        <ul class="analysis-list">
+          <li>アルフォンソ・デイビス — 世界最高レフトバックの本拠地登場</li>
+          <li>ジョナサン・デイビッド 決定力 — 得点期待値最上位</li>
+          <li>ボスニア、2014年以来12年ぶりのW杯復帰</li>
+          <li>トロントのホームファン熱気 — カナダ史上最高応援を予想</li>
+        </ul>
+      </div>
+      <div class="anim-fadeUp" style="animation-delay:0.65s; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:24px 32px;">
+        <div style="font-size:19px; color:rgba(255,255,255,0.5); margin-bottom:10px; font-family:'Roboto Mono',monospace; letter-spacing:0.1em;">KEY PLAYERS TO WATCH</div>
+        <div style="display:flex; gap:32px;">
+          <div style="text-align:center;">
+            <div style="font-size:34px; font-weight:900; color:#c9a227;">デイビス</div>
+            <div style="font-size:17px; color:rgba(255,255,255,0.5);">カナダ主将</div>
+          </div>
+          <div style="color:rgba(255,255,255,0.2); font-size:32px; align-self:center;">|</div>
+          <div style="text-align:center;">
+            <div style="font-size:34px; font-weight:900; color:#c9a227;">J.デイビッド</div>
+            <div style="font-size:17px; color:rgba(255,255,255,0.5);">ストライカー</div>
+          </div>
+          <div style="color:rgba(255,255,255,0.2); font-size:32px; align-self:center;">|</div>
+          <div style="text-align:center;">
+            <div style="font-size:34px; font-weight:900; color:#aaa;">ジェコ (BA)</div>
+            <div style="font-size:17px; color:rgba(255,255,255,0.5);">ボスニアエース</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ticker-bar">
+    <div class="ticker-label">AI PICK</div>
+    <div class="ticker-content">
+      🇨🇦 カナダ 2-0 ボスニア 🇧🇦 &nbsp;|&nbsp; アルフォンソ・デイビス ホームデビュー &nbsp;|&nbsp; デイビッドゴール期待 &nbsp;|&nbsp;
+      🇨🇦 カナダ 2-0 ボスニア 🇧🇦 &nbsp;|&nbsp; BMOフィールド, トロント 6/12 15:00 ET
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5 — VERDICT -->
+<div class="slide" id="s05">
+  <div class="top-bar">
+    <div class="top-bar-logo">⚽ WORLDCUP 2026 · AI DAILY</div>
+    <div class="top-bar-date">今日のAIピック · 最終まとめ</div>
+    <div class="slide-num">05 / 05</div>
+  </div>
+  <div class="content">
+    <div class="anim-fadeIn" style="text-align:center;">
+      <div class="verdict-title">🤖 今日のAIピック</div>
+      <div style="font-size:22px; color:rgba(255,255,255,0.5); margin-top:8px;">2026-06-12 · DAILY PREDICTIONS</div>
+    </div>
+    <div class="picks-grid anim-fadeUp" style="animation-delay:0.25s;">
+      <div class="pick-card">
+        <div class="match-name">🇨🇦 カナダ vs ボスニア 🇧🇦</div>
+        <div class="predicted-score">2 — 0</div>
+        <div class="pick-note">ホームアドバンテージ＋デイビス・デイビッド</div>
+        <div style="margin-top:16px;"><span class="result-badge badge-win">カナダ勝利</span></div>
+      </div>
+      <div class="pick-card">
+        <div class="match-name">🇺🇸 アメリカ vs パラグアイ 🇵🇾</div>
+        <div class="predicted-score">2 — 1</div>
+        <div class="pick-note">ソファイスタジアムの熱気＋プリシッチ</div>
+        <div style="margin-top:16px;"><span class="result-badge badge-win">アメリカ勝利</span></div>
+      </div>
+    </div>
+    <div class="anim-fadeUp" style="animation-delay:0.45s;">
+      <div class="korea-box" style="display:flex; align-items:center; gap:40px; justify-content:center;">
+        <div style="font-size:40px;">🇰🇷</div>
+        <div>
+          <div style="font-size:20px; color:rgba(255,255,255,0.5); margin-bottom:4px;">昨日の韓国結果</div>
+          <div style="font-size:34px; font-weight:900; color:#fff;">韓国 <span style="color:#52d4a0; font-family:'Roboto Mono',monospace;">2–1</span> チェコ</div>
+        </div>
+        <div style="width:1px; height:60px; background:rgba(255,255,255,0.2);"></div>
+        <div>
+          <div style="font-size:20px; color:rgba(255,255,255,0.5); margin-bottom:4px;">呉賢奎決勝ゴール</div>
+          <div style="font-size:34px; font-weight:900; color:#c9a227;">80分 🔥</div>
+        </div>
+        <div style="width:1px; height:60px; background:rgba(255,255,255,0.2);"></div>
+        <div>
+          <div style="font-size:20px; color:rgba(255,255,255,0.5); margin-bottom:4px;">グループ順位</div>
+          <div style="font-size:34px; font-weight:900; color:#52d4a0;">首位 ✅</div>
+        </div>
+      </div>
+    </div>
+    <div class="cta-row anim-fadeIn" style="animation-delay:0.6s;">
+      <div class="cta-btn cta-subscribe">🔔 チャンネル登録</div>
+      <div class="cta-btn cta-tomorrow">明日のAI予測もお楽しみに →</div>
+    </div>
+  </div>
+  <div class="ticker-bar">
+    <div class="ticker-label">TODAY</div>
+    <div class="ticker-content">
+      今日のAIピック ▷ カナダ 2-0 ボスニア &nbsp;|&nbsp; アメリカ 2-1 パラグアイ &nbsp;|&nbsp;
+      昨日 🇰🇷 韓国 2-1 チェコ &nbsp;|&nbsp; チャンネル登録で明日の予測もチェック！ &nbsp;|&nbsp;
+      今日のAIピック ▷ カナダ 2-0 ボスニア &nbsp;|&nbsp; アメリカ 2-1 パラグアイ
+    </div>
+  </div>
+</div>
+
+<script>
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  let current = 0;
+
+  function showSlide(n) {
+    slides[current].classList.remove('active');
+    current = ((n % slides.length) + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    slides[current].querySelectorAll('[class*="anim-"]').forEach(el => {
+      el.style.animation = 'none';
+      el.offsetHeight;
+      el.style.animation = '';
+    });
+  }
+
+  window.goToSlide = showSlide;
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') showSlide(current + 1);
+    if (e.key === 'ArrowLeft') showSlide(current - 1);
+    if (e.key >= '1' && e.key <= '5') showSlide(parseInt(e.key) - 1);
+  });
+</script>
+</body>
+</html>
