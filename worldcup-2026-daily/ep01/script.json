@@ -1,0 +1,72 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 1,
+  "date": "2026-06-12",
+  "title_ko": "2026-06-12 오늘의 경기 AI 예측 — 미국·캐나다 개최국 데뷔전",
+  "title_ja": "2026-06-12 今日の試合 AI予測 — アメリカ・カナダ開催国デビュー",
+  "title_en": "2026-06-12 Match Predictions by AI — USA & Canada Host Nation Debuts",
+  "matches_today": [
+    {
+      "match": "Canada vs Bosnia and Herzegovina",
+      "group": "B",
+      "venue": "BMO Field, Toronto",
+      "kickoff_et": "15:00",
+      "kickoff_kst": "06-13 04:00",
+      "prediction": "2-0"
+    },
+    {
+      "match": "USA vs Paraguay",
+      "group": "D",
+      "venue": "SoFi Stadium, Inglewood",
+      "kickoff_et": "21:00",
+      "kickoff_kst": "06-13 10:00",
+      "prediction": "2-1"
+    }
+  ],
+  "yesterday_results": [
+    {
+      "match": "Mexico vs South Africa",
+      "result": "2-0",
+      "scorers": ["Quiñones 9'", "Jiménez 63'"],
+      "notes": "South Africa down to 9 men — 3 red cards, World Cup record"
+    },
+    {
+      "match": "South Korea vs Czechia",
+      "result": "2-1",
+      "scorers": ["Krejcí 34' (CZE)", "Hwang In-beom 62'", "Oh Hyeon-gyu 80'"],
+      "notes": "Korea comeback win, group stage opener"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "2026 FIFA 월드컵 둘째 날! 오늘은 역사적인 밤입니다. 미국이 파라과이를 만나고, 캐나다가 보스니아헤르체고비나를 맞이합니다. 개최국 세 나라 중 두 나라가 오늘 데뷔전을 치릅니다. AI가 분석한 오늘의 승자는 누구일까요?",
+      "narration_ja": "2026 FIFAワールドカップ2日目！今日は歴史的な夜です。アメリカがパラグアイと対戦し、カナダはボスニア・ヘルツェゴビナを迎えます。開催3カ国のうち2カ国が今日デビュー。AIが分析した今日の勝者は誰か？",
+      "narration_en": "Day two of the 2026 FIFA World Cup! Today is a historic night — two host nations make their tournament debuts. The USA faces Paraguay at SoFi Stadium; Canada opens at home against Bosnia and Herzegovina in Toronto. Who takes the W? Here's the AI breakdown."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "먼저 어제 개막일 결과입니다. 개막전에서 멕시코가 남아프리카공화국을 2대 0으로 완파했습니다. 킨타네스의 9분 선제골, 히메네스의 추가골. 남아공은 레드카드 3장으로 9명이 되는 역대급 붕괴를 겪었습니다. 그리고 우리 대한민국! 황인범 동점골, 오현규 80분 결승골로 체코를 2대 1로 꺾으며 조 1위 출발!",
+      "narration_ja": "昨日の開幕日の結果です。開幕戦はメキシコが南アフリカを2-0で完勝。キンタネスの9分先制、ヒメネスの追加点。南アフリカはレッドカード3枚で9人になる歴史的崩壊。そして韓国！黄仁範の同点弾、呉賢奎の80分決勝ゴールでチェコを2-1撃破、グループ首位スタート！",
+      "narration_en": "Yesterday's opening day: Mexico dominated South Africa 2-0 at the Azteca — Quiñones opened in the 9th minute, Jiménez sealed it. South Africa collapsed to nine men with three red cards — a World Cup record. And South Korea delivered a brilliant comeback: Hwang In-beom equalized, then Oh Hyeon-gyu's 80th-minute winner sent Korea top of their group!"
+    },
+    {
+      "id": "s03_prediction1",
+      "narration": "오늘 메인 이벤트, 미국 대 파라과이. LA 소파이 스타디엄, 현지시간 오후 9시. 미국은 홈팬 7만 명의 열기와 함께 풀리시치, 레이나, 웨아로 구성된 강력한 공격진을 앞세웁니다. 파라과이는 코파아메리카 강호지만, 이 규모의 홈 어드벤티지를 이겨내기는 어렵습니다. AI 예측: 미국 2대 1 파라과이. 풀리시치 선제골, 파라과이 동점, 그리고 미국의 결승골.",
+      "narration_ja": "今日のメインイベント、アメリカ対パラグアイ。LAソファイスタジアム、現地時間夜9時。アメリカはホームファン7万人の熱気の中、プリシッチ、レイナ、ウェアの強力な前線を擁します。パラグアイはコパ・アメリカの強豪ですが、このスケールのホームアドバンテージには対抗困難。AI予測：アメリカ2-1パラグアイ。プリシッチ先制→同点→アメリカ決勝弾。",
+      "narration_en": "Today's headliner: USA vs Paraguay at SoFi Stadium, 9pm ET. The USA brings Pulisic, Reyna, and Weah into a 70,000-seat home crowd — one of the most electric atmospheres in World Cup history. Paraguay are no pushovers in CONMEBOL, but the home advantage is decisive. AI prediction: USA 2-1 Paraguay. Pulisic opens the scoring, Paraguay hit back to make it interesting, then the hosts find the winner."
+    },
+    {
+      "id": "s04_prediction2",
+      "narration": "오늘 첫 경기, 캐나다 대 보스니아헤르체고비나. 토론토 BMO 필드, 현지시간 오후 3시. 알폰소 데이비스와 조나단 데이비드를 앞세운 캐나다는 홈에서 강합니다. 보스니아는 2014년 이후 12년 만의 월드컵 복귀지만, 조직력에서 캐나다에 밀립니다. AI 예측: 캐나다 2대 0 보스니아헤르체고비나. 데이비스의 추진력, 데이비드의 결정력이 승부를 가릅니다.",
+      "narration_ja": "今日の第1試合、カナダ対ボスニア・ヘルツェゴビナ。トロントのBMOフィールド、現地時間午後3時。アルフォンソ・デイビスとジョナサン・デイビッドを擁するカナダはホームで強力。ボスニアは2014年以来12年ぶりのW杯復帰ですが、組織力でカナダに劣ります。AI予測：カナダ2-0ボスニア・ヘルツェゴビナ。デイビスの推進力、デイビッドの決定力が勝負を決めます。",
+      "narration_en": "The opener: Canada vs Bosnia and Herzegovina at BMO Field, Toronto, 3pm ET. Canada has Alphonso Davies — arguably the world's best left back — plus Jonathan David's clinical finishing. Bosnia return to the World Cup for the first time since 2014, a great story, but Canada's home advantage and squad quality is the edge. AI prediction: Canada 2-0 Bosnia. Davies drives the play, David converts."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘의 AI 픽 최종 정리. 캐나다 2대 0 보스니아, 미국 2대 1 파라과이. 두 경기 모두 개최국 승리를 예측합니다. 홈의 힘은 무시할 수 없습니다. 어제 한국은 체코를 2대 1로 꺾으며 완벽한 출발을 했습니다. 오현규의 80분 결승골, 정말 짜릿했죠. 내일도 AI 데일리 예측으로 돌아옵니다. 구독 누르고 기다려 주세요!",
+      "narration_ja": "今日のAIピック最終まとめ。カナダ2-0ボスニア、アメリカ2-1パラグアイ。両試合とも開催国の勝利を予測します。ホームの力は無視できません。昨日の韓国はチェコを2-1で下し、完璧なスタート。呉賢奎の80分決勝ゴール、痺れましたね。明日もAIデイリー予測でお会いしましょう。チャンネル登録をお忘れなく！",
+      "narration_en": "Today's AI picks, final summary: Canada 2-0 Bosnia and Herzegovina, USA 2-1 Paraguay. Both host nations get their opening wins — home advantage is the deciding factor in both matches. Yesterday's highlight: South Korea's superb 2-1 comeback over Czechia — Oh Hyeon-gyu the hero at 80 minutes. Join us tomorrow for the next AI daily prediction. Subscribe so you never miss a pick!"
+    }
+  ]
+}
