@@ -1,0 +1,58 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 1,
+  "date": "2026-06-13",
+  "title_ko": "2026-06-13 오늘의 경기 AI 예측 — 독일 vs 아르헨티나, 한국 vs 이란",
+  "title_ja": "2026-06-13 今日の試合 AI予測 — ドイツ vs アルゼンチン、韓国 vs イラン",
+  "title_en": "2026-06-13 Match Predictions by AI — Germany vs Argentina, South Korea vs Iran",
+  "korea_match": true,
+  "matches_today": [
+    { "id": "m1", "team_a": "Germany",      "team_b": "Argentina",    "group": "A", "venue": "MetLife Stadium, New York",         "kickoff_kst": "03:00" },
+    { "id": "m2", "team_a": "South Korea",  "team_b": "Iran",         "group": "F", "venue": "SoFi Stadium, Los Angeles",         "kickoff_kst": "06:00" },
+    { "id": "m3", "team_a": "England",      "team_b": "Nigeria",      "group": "C", "venue": "AT&T Stadium, Dallas",              "kickoff_kst": "09:00" },
+    { "id": "m4", "team_a": "Spain",        "team_b": "Brazil",       "group": "H", "venue": "Allegiant Stadium, Las Vegas",      "kickoff_kst": "12:00" }
+  ],
+  "yesterday_results": [
+    { "team_a": "USA",      "score_a": 2, "score_b": 1, "team_b": "Panama",  "group": "E" },
+    { "team_a": "France",   "score_a": 2, "score_b": 1, "team_b": "Canada",  "group": "B" },
+    { "team_a": "Portugal", "score_a": 3, "score_b": 0, "team_b": "Kuwait",  "group": "D" }
+  ],
+  "ai_predictions": [
+    { "match": "Germany vs Argentina",   "pred_a": 2, "pred_b": 1, "confidence": "65%", "pick": "Germany" },
+    { "match": "South Korea vs Iran",    "pred_a": 2, "pred_b": 0, "confidence": "72%", "pick": "South Korea" },
+    { "match": "England vs Nigeria",     "pred_a": 2, "pred_b": 0, "confidence": "68%", "pick": "England" },
+    { "match": "Spain vs Brazil",        "pred_a": 1, "pred_b": 1, "confidence": "55%", "pick": "Draw" }
+  ],
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "오늘 밤 월드컵이 뜨겁습니다. 독일 대 아르헨티나 — 역사상 가장 위대한 라이벌이 조별리그에서 충돌합니다. 그리고 한국 대 이란 — 아시아의 자존심이 LA에서 맞붙습니다. AI가 오늘 4경기를 모두 예측합니다.",
+      "narration_ja": "今夜のワールドカップが熱い。ドイツ対アルゼンチン — 史上最大のライバルがグループリーグで激突。そして韓国対イラン — アジアの誇りがLAで激突。AIが今日の4試合すべてを予測します。",
+      "narration_en": "Tonight the World Cup ignites. Germany vs Argentina — the greatest rivalry in football history collides in the group stage. And South Korea vs Iran — Asian pride on the line in Los Angeles. AI predicts all four matches today."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "어제 결과 먼저 정리합니다. 개최국 미국이 파나마를 2-1로 꺾으며 완벽한 홈 데뷔를 했습니다. 프랑스는 같은 개최국 캐나다를 2-1로 눌렀고, 포르투갈은 쿠웨이트를 3-0으로 압도했습니다. 강호들이 예상대로 출발했습니다.",
+      "narration_ja": "昨日の結果から整理します。開催国アメリカがパナマを2-1で下し、完璧なホームデビュー。フランスはカナダを2-1、ポルトガルはクウェートを3-0で圧倒しました。強豪国が予想通りのスタートを切りました。",
+      "narration_en": "Yesterday's results first. Host USA defeated Panama 2-1 in a perfect home debut. France edged fellow host Canada 2-1, and Portugal dominated Kuwait 3-0. The heavyweights started exactly as expected."
+    },
+    {
+      "id": "s03_prediction1",
+      "narration": "오늘의 메인 이벤트, 독일 대 아르헨티나. AI 예측은 독일 2-1 아르헨티나입니다. 이유는 세 가지. 첫째, 독일은 뮐러 이후 세대교체를 완성하고 전방 압박이 살아났습니다. 둘째, 아르헨티나는 메시 없이 처음 맞는 월드컵 — 조직력은 있지만 마법이 없습니다. 셋째, 뉴욕 메트라이프의 유럽형 잔디와 기후가 독일에 유리합니다. AI 신뢰도 65%. 이변 가능성 있지만, 독일을 선택합니다.",
+      "narration_ja": "今日のメインイベント、ドイツ対アルゼンチン。AI予測はドイツ2-1アルゼンチン。理由は三つ。一つ目、ドイツはミュラー後の世代交代を完成させ、前線プレスが復活。二つ目、アルゼンチンはメッシなしで初めて迎えるW杯 — 組織力はあるが魔法がない。三つ目、ニューヨーク・メットライフの欧州型芝とコンディションがドイツに有利。AI信頼度65%。番狂わせの可能性はあるが、ドイツを選びます。",
+      "narration_en": "Today's main event: Germany vs Argentina. AI prediction — Germany 2-1 Argentina. Three reasons. First, Germany has completed its post-Müller rebuild and the high press is back. Second, this is Argentina's first World Cup without Messi — organized but no magic. Third, MetLife's European-style turf and conditions favor Germany. AI confidence: 65%. Upset possible, but we take Germany."
+    },
+    {
+      "id": "s04_prediction2",
+      "narration": "나머지 세 경기 빠르게 예측합니다. 한국 대 이란 — AI 픽 한국 2-0. 이강인의 중원 장악과 조규성의 피지컬이 이란 수비를 무너뜨립니다. 신뢰도 72%. 잉글랜드 대 나이지리아 — AI 픽 잉글랜드 2-0. 팔머와 살라 조합의 측면 공격이 결정적. 신뢰도 68%. 스페인 대 브라질 — 오늘 최고의 명승부, AI 픽 1-1 무승부. 두 팀 모두 체력 안배 의식. 신뢰도 55%.",
+      "narration_ja": "残りの3試合を素早く予測します。韓国対イラン — AIピック韓国2-0。イ・ガンインの中盤支配とチョ・ギュソンのフィジカルがイランの守備を崩します。信頼度72%。イングランド対ナイジェリア — AIピックイングランド2-0。パーマーとサラーのコンビの両サイド攻撃が決定的。信頼度68%。スペイン対ブラジル — 今日最大の好カード、AIピック1-1引き分け。両チームともスタミナ管理を意識。信頼度55%。",
+      "narration_en": "Three more matches, quick predictions. South Korea vs Iran — AI pick South Korea 2-0. Lee Kang-in controls the midfield, Cho Gyu-sung's physicality breaks Iran's defense. Confidence 72%. England vs Nigeria — AI pick England 2-0. Palmer and Salah combination down the flanks is decisive. Confidence 68%. Spain vs Brazil — today's best matchup, AI pick 1-1 draw. Both teams conserving energy. Confidence 55%."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘의 AI 픽 정리. 독일, 한국, 잉글랜드 승리, 스페인-브라질 무승부. 특히 한국 경기에 집중하세요. LA 소파이 스타디움의 뜨거운 한인 응원과 함께, 이강인의 발끝에서 한국의 조별리그 첫 승이 만들어질 겁니다. AI는 한국을 믿습니다. 2-0, 이강인 멀티골. 내일 결과 검증 — 채널 구독 잊지 마세요.",
+      "narration_ja": "今日のAIピックまとめ。ドイツ、韓国、イングランド勝利、スペイン対ブラジル引き分け。特に韓国の試合に注目。LA・ソファイスタジアムの熱い韓国人応援とともに、イ・ガンインの足元から韓国のグループリーグ初勝利が生まれるでしょう。AIは韓国を信じています。2-0、イ・ガンインのマルチゴール。明日は結果の検証 — チャンネル登録をお忘れなく。",
+      "narration_en": "Today's AI picks summary. Germany, South Korea, England win — Spain and Brazil draw. Focus especially on the Korea match. At SoFi Stadium in LA, surrounded by the electric Korean crowd, Lee Kang-in will deliver South Korea's first group stage win. AI believes in Korea. 2-0, Lee Kang-in brace. Result verification tomorrow — don't forget to subscribe."
+    }
+  ]
+}
