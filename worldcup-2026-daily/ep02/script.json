@@ -1,0 +1,60 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 2,
+  "date": "2026-06-14",
+  "title_ko": "2026-06-14 오늘의 경기 AI 예측 — 프랑스 vs 일본 + EP01 적중률 공개",
+  "title_ja": "2026-06-14 今日の試合 AI予測 — フランス vs 日本 + EP01的中率公開",
+  "title_en": "2026-06-14 Match Predictions by AI — France vs Japan + EP01 Accuracy Check",
+  "korea_match": false,
+  "matches_today": [
+    { "id": "m1", "team_a": "France",      "team_b": "Japan",    "group": "G", "venue": "AT&T Stadium, Dallas",            "kickoff_kst": "03:00" },
+    { "id": "m2", "team_a": "Netherlands", "team_b": "Morocco",  "group": "B", "venue": "Rose Bowl, Los Angeles",          "kickoff_kst": "06:00" },
+    { "id": "m3", "team_a": "Mexico",      "team_b": "Ecuador",  "group": "I", "venue": "Estadio Azteca, Mexico City",     "kickoff_kst": "09:00" },
+    { "id": "m4", "team_a": "Italy",       "team_b": "Senegal",  "group": "D", "venue": "Hard Rock Stadium, Miami",        "kickoff_kst": "12:00" }
+  ],
+  "yesterday_results": [
+    { "team_a": "Germany",      "score_a": 2, "score_b": 1, "team_b": "Argentina",  "group": "A", "ep01_pick": "Germany", "correct": true },
+    { "team_a": "South Korea",  "score_a": 2, "score_b": 1, "team_b": "Iran",       "group": "F", "ep01_pick": "South Korea", "correct": true },
+    { "team_a": "England",      "score_a": 2, "score_b": 0, "team_b": "Nigeria",    "group": "C", "ep01_pick": "England", "correct": true },
+    { "team_a": "Spain",        "score_a": 2, "score_b": 1, "team_b": "Brazil",     "group": "H", "ep01_pick": "Draw", "correct": false }
+  ],
+  "ep01_accuracy": { "correct": 3, "total": 4, "pct": "75%" },
+  "ai_predictions": [
+    { "match": "France vs Japan",       "pred_a": 3, "pred_b": 1, "confidence": "70%", "pick": "France" },
+    { "match": "Netherlands vs Morocco","pred_a": 2, "pred_b": 0, "confidence": "65%", "pick": "Netherlands" },
+    { "match": "Mexico vs Ecuador",     "pred_a": 2, "pred_b": 1, "confidence": "63%", "pick": "Mexico" },
+    { "match": "Italy vs Senegal",      "pred_a": 1, "pred_b": 0, "confidence": "58%", "pick": "Italy" }
+  ],
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "어제 AI 예측이 얼마나 맞았을까요? 오늘은 결과 검증과 함께 6월 14일 4경기를 완전 분석합니다. 최대 관전 포인트는 단 하나 — 음바페의 2026 월드컵 데뷔. 프랑스 대 일본, AI가 오늘도 모든 걸 예측합니다.",
+      "narration_ja": "昨日のAI予測はどこまで当たったでしょうか？今日は結果検証とともに6月14日の4試合を完全分析します。最大の見どころはただ一つ — ムバッペの2026W杯デビュー。フランス対日本、AIが今日もすべてを予測します。",
+      "narration_en": "How accurate was AI yesterday? Today we verify the results and fully analyze all four matches on June 14th. The biggest spotlight is clear — Mbappé's 2026 World Cup debut. France vs Japan, and AI predicts everything again."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "어제 예측 성적표부터 공개합니다. 독일 2-1 아르헨티나 — AI 완벽 적중. 한국 2-1 이란 — 방향 적중, 이강인 결승골. 잉글랜드 2-0 나이지리아 — 완벽 적중. 스페인 2-1 브라질 — AI 실패, 무승부 예측 빗나가고 스페인 승리. 4경기 중 3경기 방향 적중, AI 적중률 75%. 스페인의 체력 안배 의지를 과대평가한 게 실수였습니다.",
+      "narration_ja": "昨日の予測成績から公開します。ドイツ2-1アルゼンチン — AI完璧的中。韓国2-1イラン — 方向的中、イ・ガンインが決勝ゴール。イングランド2-0ナイジェリア — 完璧的中。スペイン2-1ブラジル — AI失敗、引き分けと予測しましたがスペインが勝利。4試合中3試合方向的中、AI的中率75%。スペインのスタミナ管理意識を過大評価したのが失敗でした。",
+      "narration_en": "Yesterday's report card first. Germany 2-1 Argentina — AI perfect. South Korea 2-1 Iran — direction correct, Lee Kang-in with the winner. England 2-0 Nigeria — perfect. Spain 2-1 Brazil — AI wrong, predicted draw but Spain won. 3 out of 4 picks correct, AI accuracy 75%. Overestimating Spain's energy conservation plan was the mistake."
+    },
+    {
+      "id": "s03_prediction1",
+      "narration": "오늘의 메인 이벤트, 프랑스 대 일본. AI 예측은 프랑스 3-1 일본입니다. 세 가지 근거. 첫째, 2022 준우승 이후 4년을 갈고닦은 음바페 — 25세 전성기, 2026이 그의 월드컵입니다. 둘째, 일본의 조직적 4-3-3 블록은 아시아 최강이지만, 음바페의 폭발적 전환 속도는 어떤 수비도 감당할 수 없습니다. 셋째, 달라스 AT&T 스타디움의 짧고 빠른 잔디 — 역습형 프랑스에 최적 환경. AI 신뢰도 70%. 단, 일본의 역습 골 한 방은 반드시 나올 것으로 봅니다.",
+      "narration_ja": "今日のメインイベント、フランス対日本。AI予測はフランス3-1日本です。三つの根拠。一つ目、2022準優勝後4年間磨きをかけたムバッペ — 25歳全盛期、2026は彼のW杯です。二つ目、日本の組織的4-3-3ブロックはアジア最強ですが、ムバッペの爆発的な攻守転換速度はどんな守備も対応できません。三つ目、ダラスのAT&Tスタジアムの短く速い芝 — カウンター型フランスに最適環境。AI信頼度70%。ただし、日本のカウンターゴール一発は必ず出ると見ています。",
+      "narration_en": "Today's main event: France vs Japan. AI prediction — France 3-1 Japan. Three reasons. First, Mbappé sharpened over four years since the 2022 runner-up — age 25, peak form, 2026 is his World Cup. Second, Japan's organized 4-3-3 block is Asia's best, but no defense can contain Mbappé's explosive transition speed. Third, AT&T Stadium's short, fast pitch in Dallas is optimal for France's counter-attacking style. AI confidence: 70%. One Japanese counter-attack goal is expected though."
+    },
+    {
+      "id": "s04_prediction2",
+      "narration": "나머지 세 경기 예측합니다. 네덜란드 대 모로코 — AI 픽 네덜란드 2-0. 반 다이크의 제공권과 가코포의 측면 침투가 모로코 수비를 흔듭니다. 신뢰도 65%. 멕시코 대 에콰도르 — AI 픽 멕시코 2-1. 아즈테카 홈 이점에 고지대 적응력까지 — 신뢰도 63%. 이탈리아 대 세네갈 — AI 픽 이탈리아 1-0. 이탈리아의 철벽 수비가 세네갈 공격을 차단. 신뢰도 58%. 오늘은 유럽이 전반적으로 강세를 보이는 날입니다.",
+      "narration_ja": "残りの3試合を予測します。オランダ対モロッコ — AIピックオランダ2-0。ファン・ダイクの制空権とガクポの両サイド侵入がモロッコ守備を揺さぶります。信頼度65%。メキシコ対エクアドル — AIピックメキシコ2-1。アステカのホームアドバンテージに高地適応力まで — 信頼度63%。イタリア対セネガル — AIピックイタリア1-0。イタリアの鉄壁守備がセネガル攻撃を遮断。信頼度58%。今日はヨーロッパが全体的に強勢を見せる日です。",
+      "narration_en": "Three more matches. Netherlands vs Morocco — AI pick Netherlands 2-0. Van Dijk's aerial control and Gakpo's flank runs unsettle Morocco's defense. Confidence 65%. Mexico vs Ecuador — AI pick Mexico 2-1. Azteca home advantage plus altitude adaptation — confidence 63%. Italy vs Senegal — AI pick Italy 1-0. Italy's defensive wall shuts down Senegal. Confidence 58%. Today is Europe's day across the board."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘의 AI 픽 정리. 프랑스, 네덜란드, 멕시코, 이탈리아 — 전원 승리 예측. 오늘의 핵심 관전 포인트는 음바페. 2026 월드컵 첫 경기에서 음바페가 어떤 모습을 보여주느냐가 이번 대회의 분위기를 좌우합니다. AI 픽은 음바페 2골 포함 프랑스 3-1 일본. 한국은 오늘 쉬지만, 어제 이란전 2-1 승리로 조별리그 선두로 출발했습니다. 내일 예측은 EP03에서 만납니다 — 구독과 알림 설정 잊지 마세요.",
+      "narration_ja": "今日のAIピックまとめ。フランス、オランダ、メキシコ、イタリア — 全員勝利予測。今日の核心観戦ポイントはムバッペ。2026W杯初戦でムバッペがどんな姿を見せるかが今大会の雰囲気を左右します。AIピックはムバッペ2ゴール含むフランス3-1日本。韓国は今日お休みですが、昨日のイラン戦2-1勝利でグループリーグトップスタートを切りました。明日の予測はEP03でお会いします — チャンネル登録と通知設定をお忘れなく。",
+      "narration_en": "Today's AI picks summary. France, Netherlands, Mexico, Italy — all predicted to win. Today's key focal point is Mbappé. How he performs in France's 2026 World Cup opener sets the tone for the entire tournament. AI pick: France 3-1 Japan, Mbappé brace. South Korea rests today but sits atop Group F after yesterday's 2-1 win over Iran. Tomorrow's predictions in EP03 — subscribe and hit the bell."
+    }
+  ]
+}
