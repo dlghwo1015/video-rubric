@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>2026 월드컵 우승 후보 완전 분석 — EP02</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #0a0e1a;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  .slide.stadium { background: #0a0e1a; }
+  .slide.pitch   { background: #0d2818; }
+  .slide.trophy  { background: #1a0e2e; }
+
+  .slide-label {
+    position: absolute;
+    top: 36px; left: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .slide-num {
+    position: absolute;
+    top: 36px; right: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.08em;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(48px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes slideLeft {
+    from { opacity: 0; transform: translateX(-60px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.85); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  @keyframes pulseGold {
+    0%, 100% { text-shadow: 0 0 40px rgba(201,162,39,0.4); }
+    50%       { text-shadow: 0 0 80px rgba(201,162,39,0.9); }
+  }
+
+  .anim { opacity: 0; }
+  .anim.go { animation-fill-mode: forwards; }
+  .anim.go.fadeUp    { animation: fadeUp    0.7s cubic-bezier(.22,.68,0,1.2) forwards; }
+  .anim.go.fadeIn    { animation: fadeIn    0.6s ease forwards; }
+  .anim.go.slideLeft { animation: slideLeft 0.6s cubic-bezier(.22,.68,0,1.2) forwards; }
+  .anim.go.scaleIn   { animation: scaleIn  0.7s cubic-bezier(.22,.68,0,1.2) forwards; }
+
+  .series-badge {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 10px 28px;
+    border-radius: 4px;
+    margin-bottom: 32px;
+  }
+
+  .divider {
+    width: 120px;
+    height: 4px;
+    border-radius: 2px;
+    margin: 24px auto;
+  }
+
+  /* ── SLIDE 1: Hook ───────────────────────────────────────── */
+  #slide-1 { background: #0a0e1a; }
+  #slide-1 .ep-badge {
+    background: #c9a227;
+    color: #0a0e1a;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    padding: 8px 24px;
+    border-radius: 3px;
+    margin-bottom: 48px;
+    text-transform: uppercase;
+  }
+  #slide-1 .trio-flags {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 48px;
+  }
+  #slide-1 .flag-block {
+    width: 260px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    position: relative;
+  }
+  #slide-1 .flag-block .team-name {
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 12px;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.05em;
+  }
+  #slide-1 .vs-sep {
+    font-size: 42px;
+    font-weight: 900;
+    color: #c9a227;
+    padding: 0 16px;
+  }
+  #slide-1 .hook-title {
+    font-size: 58px;
+    font-weight: 900;
+    color: #f0ede4;
+    text-align: center;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+  #slide-1 .hook-title em { color: #c9a227; font-style: normal; }
+  #slide-1 .hook-sub {
+    font-size: 28px;
+    font-weight: 400;
+    color: rgba(240,237,228,0.65);
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  /* ── SLIDE 2: Overview ───────────────────────────────────── */
+  #slide-2 { background: #0d2818; }
+  #slide-2 .ov-title {
+    font-size: 44px;
+    font-weight: 900;
+    color: #e8f5ed;
+    text-align: center;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+  }
+  #slide-2 .ov-sub {
+    font-size: 22px;
+    color: rgba(232,245,237,0.6);
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  #slide-2 .odds-grid {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: stretch;
+  }
+  #slide-2 .odds-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(79,200,122,0.2);
+    border-radius: 16px;
+    padding: 36px 40px;
+    text-align: center;
+    min-width: 220px;
+  }
+  #slide-2 .odds-card.highlight {
+    background: rgba(79,200,122,0.12);
+    border-color: rgba(79,200,122,0.5);
+  }
+  #slide-2 .odds-rank {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    color: #4fc87a;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+  }
+  #slide-2 .odds-flag { font-size: 56px; margin-bottom: 10px; }
+  #slide-2 .odds-team {
+    font-size: 26px;
+    font-weight: 700;
+    color: #e8f5ed;
+    margin-bottom: 8px;
+  }
+  #slide-2 .odds-val {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: #4fc87a;
+    font-weight: 600;
+  }
+
+  /* ── SLIDE 3: Brazil ─────────────────────────────────────── */
+  #slide-3 { background: #0a1a08; }
+  #slide-3 .br-accent { color: #ffd700; }
+  #slide-3 .section-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    letter-spacing: 0.2em;
+    color: #ffd700;
+    margin-bottom: 16px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  #slide-3 .br-title {
+    font-size: 52px;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  #slide-3 .br-subtitle {
+    font-size: 24px;
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    margin-bottom: 44px;
+  }
+  #slide-3 .player-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 36px;
+  }
+  #slide-3 .player-card {
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.25);
+    border-radius: 12px;
+    padding: 24px 28px;
+    text-align: center;
+    min-width: 190px;
+  }
+  #slide-3 .player-card .p-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffd700;
+    margin-bottom: 6px;
+  }
+  #slide-3 .player-card .p-role {
+    font-size: 15px;
+    color: rgba(255,255,255,0.55);
+  }
+  #slide-3 .trauma-note {
+    background: rgba(255,60,60,0.1);
+    border: 1px solid rgba(255,60,60,0.3);
+    border-radius: 10px;
+    padding: 16px 28px;
+    font-size: 20px;
+    color: rgba(255,200,200,0.9);
+    text-align: center;
+  }
+
+  /* ── SLIDE 4: France ─────────────────────────────────────── */
+  #slide-4 { background: #00112e; }
+  #slide-4 .fr-accent { color: #6cb8ff; }
+  #slide-4 .section-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    letter-spacing: 0.2em;
+    color: #6cb8ff;
+    margin-bottom: 16px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  #slide-4 .fr-title {
+    font-size: 52px;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  #slide-4 .fr-subtitle {
+    font-size: 24px;
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    margin-bottom: 44px;
+  }
+  #slide-4 .trophy-timeline {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 36px;
+  }
+  #slide-4 .trophy-item {
+    text-align: center;
+  }
+  #slide-4 .trophy-item .t-year {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 8px;
+  }
+  #slide-4 .trophy-item .t-icon {
+    font-size: 60px;
+    margin-bottom: 8px;
+  }
+  #slide-4 .trophy-item .t-result {
+    font-size: 22px;
+    font-weight: 700;
+    color: #6cb8ff;
+  }
+  #slide-4 .fr-arrow {
+    font-size: 48px;
+    color: rgba(255,255,255,0.3);
+  }
+  #slide-4 .mbappe-stat {
+    background: rgba(108,184,255,0.1);
+    border: 1px solid rgba(108,184,255,0.3);
+    border-radius: 12px;
+    padding: 20px 40px;
+    text-align: center;
+    font-size: 24px;
+    color: #e0f0ff;
+    font-weight: 500;
+  }
+  #slide-4 .mbappe-stat strong { color: #6cb8ff; font-size: 28px; }
+
+  /* ── SLIDE 5: England + Dark Horses ─────────────────────── */
+  #slide-5 { background: #1a0e2e; }
+  #slide-5 .section-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    letter-spacing: 0.2em;
+    color: #e8c05a;
+    margin-bottom: 16px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  #slide-5 .en-title {
+    font-size: 52px;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  #slide-5 .en-subtitle {
+    font-size: 22px;
+    color: rgba(255,255,255,0.55);
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  #slide-5 .split-grid {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    gap: 0 48px;
+    width: 1400px;
+  }
+  #slide-5 .split-divider { background: rgba(232,192,90,0.2); }
+  #slide-5 .gen-grid {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  #slide-5 .gen-card {
+    background: rgba(232,192,90,0.08);
+    border: 1px solid rgba(232,192,90,0.2);
+    border-radius: 10px;
+    padding: 18px 22px;
+    text-align: center;
+    min-width: 160px;
+  }
+  #slide-5 .gen-card .g-name { font-size: 20px; font-weight: 700; color: #e8c05a; }
+  #slide-5 .gen-card .g-age  { font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+  #slide-5 .sixty-badge {
+    background: rgba(255,255,255,0.06);
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 18px;
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    margin-top: 8px;
+  }
+  #slide-5 .sixty-badge strong { color: #e8c05a; }
+  #slide-5 .dh-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #e8c05a;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  #slide-5 .dh-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  #slide-5 .dh-item {
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  #slide-5 .dh-item .dh-flag { font-size: 32px; }
+  #slide-5 .dh-item .dh-text { font-size: 18px; color: rgba(255,255,255,0.8); }
+
+  /* ── SLIDE 6: Risks ──────────────────────────────────────── */
+  #slide-6 { background: #0a0e1a; }
+  #slide-6 .risk-title {
+    font-size: 44px;
+    font-weight: 900;
+    color: #f0ede4;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  #slide-6 .risk-sub {
+    font-size: 22px;
+    color: rgba(240,237,228,0.55);
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  #slide-6 .risk-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    width: 1500px;
+  }
+  #slide-6 .risk-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(201,162,39,0.2);
+    border-radius: 16px;
+    padding: 36px 28px;
+    text-align: center;
+  }
+  #slide-6 .risk-card .r-icon { font-size: 64px; margin-bottom: 16px; }
+  #slide-6 .risk-card .r-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #c9a227;
+    margin-bottom: 8px;
+  }
+  #slide-6 .risk-card .r-desc {
+    font-size: 17px;
+    color: rgba(240,237,228,0.65);
+    line-height: 1.6;
+  }
+
+  /* ── SLIDE 7: Verdict ────────────────────────────────────── */
+  #slide-7 { background: #1a0e2e; }
+  #slide-7 .verdict-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    letter-spacing: 0.25em;
+    color: rgba(232,192,90,0.6);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  #slide-7 .my-pick {
+    font-size: 32px;
+    font-weight: 500;
+    color: rgba(245,240,232,0.7);
+    margin-bottom: 8px;
+  }
+  #slide-7 .pick-team {
+    font-size: 96px;
+    font-weight: 900;
+    color: #e8c05a;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    text-shadow: 0 0 60px rgba(232,192,90,0.4);
+    animation: pulseGold 3s ease-in-out infinite;
+    margin-bottom: 20px;
+  }
+  #slide-7 .pick-reason {
+    font-size: 26px;
+    color: rgba(245,240,232,0.7);
+    text-align: center;
+    max-width: 900px;
+    line-height: 1.6;
+    margin-bottom: 48px;
+  }
+  #slide-7 .next-ep {
+    background: rgba(232,192,90,0.1);
+    border: 1px solid rgba(232,192,90,0.3);
+    border-radius: 12px;
+    padding: 20px 48px;
+    font-size: 22px;
+    color: rgba(245,240,232,0.8);
+    text-align: center;
+  }
+  #slide-7 .next-ep strong { color: #e8c05a; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: Hook -->
+<div class="slide stadium active" id="slide-1">
+  <div class="slide-label">⚽ 2026 WC — EP02</div>
+  <div class="slide-num">01 / 07</div>
+
+  <div class="ep-badge anim fadeIn" style="animation-delay:0.1s">
+    2026 월드컵 예측 대결 EP02
+  </div>
+
+  <div class="trio-flags anim fadeUp" style="animation-delay:0.3s">
+    <div class="flag-block">
+      <span>🇧🇷</span>
+      <span class="team-name">브라질</span>
+    </div>
+    <span class="vs-sep">VS</span>
+    <div class="flag-block">
+      <span>🇫🇷</span>
+      <span class="team-name">프랑스</span>
+    </div>
+    <span class="vs-sep">VS</span>
+    <div class="flag-block">
+      <span>🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+      <span class="team-name">잉글랜드</span>
+    </div>
+  </div>
+
+  <div class="hook-title anim fadeUp" style="animation-delay:0.6s">
+    세 팀 중 하나가 <em>트로피를 든다</em><br>— 과연 오즈는 맞는가?
+  </div>
+  <div class="hook-sub anim fadeIn" style="animation-delay:1.0s">
+    우승 후보 완전 분석
+  </div>
+</div>
+
+<!-- SLIDE 2: Overview / Odds -->
+<div class="slide pitch" id="slide-2">
+  <div class="slide-label">⚽ 2026 WC — EP02</div>
+  <div class="slide-num">02 / 07</div>
+
+  <div class="ov-title anim fadeUp" style="animation-delay:0.2s">우승 후보 베팅 오즈 & FIFA 랭킹</div>
+  <div class="ov-sub anim fadeIn" style="animation-delay:0.4s">빅3 + 다크호스 한눈에</div>
+
+  <div class="odds-grid anim fadeUp" style="animation-delay:0.5s">
+    <div class="odds-card">
+      <div class="odds-rank">🥇 1위</div>
+      <div class="odds-flag">🇫🇷</div>
+      <div class="odds-team">프랑스</div>
+      <div class="odds-val">+400</div>
+    </div>
+    <div class="odds-card highlight">
+      <div class="odds-rank">🥈 2위</div>
+      <div class="odds-flag">🇧🇷</div>
+      <div class="odds-team">브라질</div>
+      <div class="odds-val">+450</div>
+    </div>
+    <div class="odds-card">
+      <div class="odds-rank">🥉 3위</div>
+      <div class="odds-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</div>
+      <div class="odds-team">잉글랜드</div>
+      <div class="odds-val">+550</div>
+    </div>
+    <div class="odds-card">
+      <div class="odds-rank">4위</div>
+      <div class="odds-flag">🇦🇷</div>
+      <div class="odds-team">아르헨티나</div>
+      <div class="odds-val">+600</div>
+    </div>
+    <div class="odds-card">
+      <div class="odds-rank">5위</div>
+      <div class="odds-flag">🇪🇸</div>
+      <div class="odds-team">스페인</div>
+      <div class="odds-val">+700</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3: Brazil -->
+<div class="slide" id="slide-3">
+  <div class="slide-label">⚽ 2026 WC — EP02</div>
+  <div class="slide-num">03 / 07</div>
+
+  <div class="section-label anim fadeIn" style="animation-delay:0.1s">🇧🇷 핵심 포인트 1</div>
+  <div class="br-title anim fadeUp" style="animation-delay:0.2s">브라질 — 비니시우스 세대</div>
+  <div class="br-subtitle anim fadeIn" style="animation-delay:0.4s">카타르 트라우마를 넘어설 수 있는가</div>
+
+  <div class="player-grid anim fadeUp" style="animation-delay:0.55s">
+    <div class="player-card">
+      <div class="p-name">🌟 비니시우스 Jr</div>
+      <div class="p-role">좌측 윙 | 25세</div>
+    </div>
+    <div class="player-card">
+      <div class="p-name">⚡ 엔드리크</div>
+      <div class="p-role">스트라이커 | 20세</div>
+    </div>
+    <div class="player-card">
+      <div class="p-name">🎯 로드리고</div>
+      <div class="p-role">우측 윙 | 25세</div>
+    </div>
+    <div class="player-card">
+      <div class="p-name">🔥 하피냐</div>
+      <div class="p-role">공격 미드필더</div>
+    </div>
+  </div>
+
+  <div class="trauma-note anim fadeIn" style="animation-delay:0.8s">
+    ⚠️ 변수: 2022 카타르 8강 — 크로아티아에게 승부차기 탈락 트라우마
+  </div>
+</div>
+
+<!-- SLIDE 4: France -->
+<div class="slide" id="slide-4">
+  <div class="slide-label">⚽ 2026 WC — EP02</div>
+  <div class="slide-num">04 / 07</div>
+
+  <div class="section-label anim fadeIn" style="animation-delay:0.1s">🇫🇷 핵심 포인트 2</div>
+  <div class="fr-title anim fadeUp" style="animation-delay:0.2s">프랑스 — 음바페의 2026</div>
+  <div class="fr-subtitle anim fadeIn" style="animation-delay:0.4s">27세, 모든 것이 커리어 피크</div>
+
+  <div class="trophy-timeline anim fadeUp" style="animation-delay:0.55s">
+    <div class="trophy-item">
+      <div class="t-year">2018</div>
+      <div class="t-icon">🏆</div>
+      <div class="t-result">우승</div>
+    </div>
+    <div class="fr-arrow">→</div>
+    <div class="trophy-item">
+      <div class="t-year">2022</div>
+      <div class="t-icon">🥈</div>
+      <div class="t-result">준우승</div>
+    </div>
+    <div class="fr-arrow">→</div>
+    <div class="trophy-item">
+      <div class="t-year">2026</div>
+      <div class="t-icon">❓</div>
+      <div class="t-result" style="color:#e8c05a;">???</div>
+    </div>
+  </div>
+
+  <div class="mbappe-stat anim scaleIn" style="animation-delay:0.8s">
+    음바페 <strong>27세</strong> · 그리잔 · 뎀벨레 · 쉬아메니 — 세계 최고 수준의 스쿼드 깊이
+  </div>
+</div>
+
+<!-- SLIDE 5: England + Dark Horses -->
+<div class="slide trophy" id="slide-5">
+  <div class="slide-label">⚽ 2026 WC — EP02</div>
+  <div class="slide-num">05 / 07</div>
+
+  <div class="section-label anim fadeIn" style="animation-delay:0.1s">🏴󠁧󠁢󠁥󠁮󠁧󠁿 핵심 포인트 3</div>
+  <div class="en-title anim fadeUp" style="animation-delay:0.2s">잉글랜드 & 다크호스</div>
+  <div class="en-subtitle anim fadeIn" style="animation-delay:0.35s">1966년 이후 60년의 한 — 그리고 떠오르는 이변자들</div>
+
+  <div class="split-grid anim fadeUp" style="animation-delay:0.5s">
+    <div>
+      <div class="gen-grid">
+        <div class="gen-card">
+          <div class="g-name">벨링엄</div>
+          <div class="g-age">22세 | 레알 마드리드</div>
+        </div>
+        <div class="gen-card">
+          <div class="g-name">포든</div>
+          <div class="g-age">26세 | 맨체스터 시티</div>
+        </div>
+        <div class="gen-card">
+          <div class="g-name">사카</div>
+          <div class="g-age">24세 | 아스널</div>
+        </div>
+      </div>
+      <div class="sixty-badge">
+        🏆 <strong>60년</strong>의 한 — 1966 이후 월드컵 우승 없음
+      </div>
+    </div>
+    <div class="split-divider"></div>
+    <div>
+      <div class="dh-title">⚡ 다크호스</div>
+      <div class="dh-list">
+        <div class="dh-item">
+          <span class="dh-flag">🇪🇸</span>
+          <span class="dh-text">스페인 — 야말(19세) + 페드리·가비</span>
+        </div>
+        <div class="dh-item">
+          <span class="dh-flag">🇩🇪</span>
+          <span class="dh-text">독일 — 비르츠의 폼 부활</span>
+        </div>
+        <div class="dh-item">
+          <span class="dh-flag">🇲🇦</span>
+          <span class="dh-text">모로코 — 2022 4강의 재현</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6: Risks -->
+<div class="slide stadium" id="slide-6">
+  <div class="slide-label">⚽ 2026 WC — EP02</div>
+  <div class="slide-num">06 / 07</div>
+
+  <div class="risk-title anim fadeUp" style="animation-delay:0.2s">리스크 & 변수</div>
+  <div class="risk-sub anim fadeIn" style="animation-delay:0.35s">한국 · 메시 · 호날두 · 아르헨티나</div>
+
+  <div class="risk-grid anim fadeUp" style="animation-delay:0.5s">
+    <div class="risk-card">
+      <div class="r-icon">🇰🇷</div>
+      <div class="r-title">대한민국</div>
+      <div class="r-desc">손흥민(33세) + 이강인(23세)<br>역대 최강 세대 — 8강 목표</div>
+    </div>
+    <div class="risk-card">
+      <div class="r-icon">🐐</div>
+      <div class="r-title">메시 (38세)</div>
+      <div class="r-desc">2022 우승 후 마지막 WC 가능성<br>아르헨티나의 레거시 수호</div>
+    </div>
+    <div class="risk-card">
+      <div class="r-icon">🐐</div>
+      <div class="r-title">호날두 (41세)</div>
+      <div class="r-desc">국가대표 계속 여부 최대 관심<br>41세 출전 시 역대 최고령</div>
+    </div>
+    <div class="risk-card">
+      <div class="r-icon">🇦🇷</div>
+      <div class="r-title">아르헨티나</div>
+      <div class="r-desc">디펜딩 챔피언<br>라우타로·엔소 페르난데스 차세대</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 7: Verdict -->
+<div class="slide trophy" id="slide-7">
+  <div class="slide-label">⚽ 2026 WC — EP02</div>
+  <div class="slide-num">07 / 07</div>
+
+  <div class="verdict-label anim fadeIn" style="animation-delay:0.1s">최종 결론</div>
+  <div class="my-pick anim fadeUp" style="animation-delay:0.3s">제 픽</div>
+  <div class="pick-team anim scaleIn" style="animation-delay:0.5s">🇫🇷 프랑스</div>
+  <div class="pick-reason anim fadeUp" style="animation-delay:0.8s">
+    음바페(27세) 절정기 + 깊이 있는 스쿼드 + 2022 준우승의 교훈<br>
+    단, 비니시우스·벨링엄은 언제든 이 픽을 뒤집을 수 있다
+  </div>
+  <div class="next-ep anim fadeIn" style="animation-delay:1.1s">
+    📌 다음 EP03 → <strong>A조~L조 12개 조 전체 통과팀 예측</strong>
+  </div>
+</div>
+
+<script>
+  let current = 1;
+  const total = 7;
+
+  function showSlide(n) {
+    if (n < 1 || n > total) return;
+    const prev = document.getElementById('slide-' + current);
+    if (prev) {
+      prev.classList.remove('active');
+      prev.querySelectorAll('.anim').forEach(el => el.classList.remove('go'));
+    }
+    current = n;
+    const next = document.getElementById('slide-' + current);
+    if (next) {
+      next.classList.add('active');
+      next.querySelectorAll('.anim').forEach(el => el.classList.add('go'));
+    }
+  }
+
+  window.goToSlide = showSlide;
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') showSlide(current + 1);
+    if (e.key === 'ArrowLeft')  showSlide(current - 1);
+    if (e.key >= '1' && e.key <= '7') showSlide(parseInt(e.key));
+  });
+
+  showSlide(1);
+</script>
+</body>
+</html>

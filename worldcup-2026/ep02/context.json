@@ -1,0 +1,105 @@
+{
+  "series": "worldcup-2026",
+  "series_config": {
+    "name": "2026 월드컵 예측 대결",
+    "tagline": "역사상 가장 큰 월드컵을 예측하다",
+    "blogs": {
+      "ko": "honest-lab",
+      "ja": "dx-pioneer-jp",
+      "en": "dx-pioneer-en"
+    },
+    "youtube_channel": "honest-lab",
+    "langs": [
+      "ko",
+      "ja",
+      "en"
+    ],
+    "tts": {
+      "ko": "ko-KR-SunHiNeural",
+      "ja": "ja-JP-NanamiNeural",
+      "en": "en-US-AriaNeural"
+    }
+  },
+  "ep": {
+    "id": "worldcup-2026-002",
+    "series": "worldcup-2026",
+    "ep_number": 2,
+    "title_ko": "2026 월드컵 우승 후보 완전 분석 — 브라질·프랑스·잉글랜드의 진실",
+    "title_ja": "2026ワールドカップ優勝候補完全分析 — ブラジル・フランス・イングランドの真実",
+    "title_en": "2026 World Cup Contenders Deep Dive — Brazil, France & England",
+    "ep_role": "analysis",
+    "group_label": "",
+    "needs_live_data": 0,
+    "pub_date": null,
+    "status": "planned",
+    "post_id_ko": null,
+    "post_id_ja": null,
+    "post_id_en": null,
+    "notes": null,
+    "created_at": null,
+    "youtube_video_id": null,
+    "youtube_video_id_ja": null,
+    "youtube_video_id_en": null,
+    "yt_public_ko": 0,
+    "yt_public_ja": 0,
+    "yt_public_en": 0,
+    "script_status": "none",
+    "github_commit": null
+  },
+  "ep_role": "analysis",
+  "scene_structure": [
+    {
+      "id": "s01_hook",
+      "role": "hook",
+      "desc": "훅"
+    },
+    {
+      "id": "s02_overview",
+      "role": "data",
+      "desc": "분석 개요"
+    },
+    {
+      "id": "s03_point1",
+      "role": "analysis",
+      "desc": "핵심 포인트 1 — 브라질"
+    },
+    {
+      "id": "s04_point2",
+      "role": "analysis",
+      "desc": "핵심 포인트 2 — 프랑스"
+    },
+    {
+      "id": "s05_point3",
+      "role": "analysis",
+      "desc": "핵심 포인트 3 — 잉글랜드"
+    },
+    {
+      "id": "s06_risk",
+      "role": "analysis",
+      "desc": "리스크 & 변수 — 한국·메시·호날두·다크호스"
+    },
+    {
+      "id": "s07_verdict",
+      "role": "verdict",
+      "desc": "최종 결론 + EP03 예고"
+    }
+  ],
+  "research_guide": "contenders, dark horses, Messi/Ronaldo last WC, Korea squad",
+  "needs_live_data": false,
+  "pub_date": null,
+  "blogs": {
+    "ko": "honest-lab",
+    "ja": "dx-pioneer-jp",
+    "en": "dx-pioneer-en"
+  },
+  "langs": [
+    "ko",
+    "ja",
+    "en"
+  ],
+  "tts": {
+    "ko": "ko-KR-SunHiNeural",
+    "ja": "ja-JP-NanamiNeural",
+    "en": "en-US-AriaNeural"
+  }
+}
