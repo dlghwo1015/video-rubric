@@ -1,0 +1,58 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 2,
+  "date": "2026-06-15",
+  "title_ko": "2026-06-15 오늘의 경기 AI 예측 — 네덜란드 vs 세네갈, 멕시코 홈 데뷔",
+  "title_ja": "2026-06-15 今日の試合 AI予測 — オランダ vs セネガル、メキシコのホームデビュー",
+  "title_en": "2026-06-15 Match Predictions by AI — Netherlands vs Senegal, Mexico Home Debut",
+  "korea_match": false,
+  "matches_today": [
+    { "id": "m1", "team_a": "Netherlands",  "team_b": "Senegal",      "group": "E", "venue": "Levi's Stadium, Santa Clara",        "kickoff_kst": "02:00" },
+    { "id": "m2", "team_a": "Italy",         "team_b": "Chile",        "group": "G", "venue": "Mercedes-Benz Stadium, Atlanta",     "kickoff_kst": "05:00" },
+    { "id": "m3", "team_a": "Mexico",        "team_b": "Bolivia",      "group": "K", "venue": "Estadio Azteca, Mexico City",        "kickoff_kst": "08:00" },
+    { "id": "m4", "team_a": "Australia",     "team_b": "Saudi Arabia", "group": "C", "venue": "BC Place, Vancouver",               "kickoff_kst": "11:00" }
+  ],
+  "yesterday_results": [
+    { "team_a": "Japan",   "score_a": 0, "score_b": 2, "team_b": "Portugal", "group": "D" },
+    { "team_a": "France",  "score_a": 3, "score_b": 0, "team_b": "Morocco",  "group": "B" },
+    { "team_a": "Belgium", "score_a": 2, "score_b": 1, "team_b": "Ecuador",  "group": "F" }
+  ],
+  "ai_predictions": [
+    { "match": "Netherlands vs Senegal",    "pred_a": 2, "pred_b": 0, "confidence": "62%", "pick": "Netherlands" },
+    { "match": "Italy vs Chile",            "pred_a": 1, "pred_b": 0, "confidence": "64%", "pick": "Italy" },
+    { "match": "Mexico vs Bolivia",         "pred_a": 3, "pred_b": 1, "confidence": "78%", "pick": "Mexico" },
+    { "match": "Australia vs Saudi Arabia", "pred_a": 1, "pred_b": 1, "confidence": "52%", "pick": "Draw" }
+  ],
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "오늘 월드컵의 주목 경기는 두 가지입니다. 네덜란드 대 세네갈 — 유럽 정예와 아프리카 신흥 강자의 충돌. 그리고 개최국 멕시코의 아즈테카 홈 데뷔. 오늘 4경기, AI가 모두 예측합니다.",
+      "narration_ja": "今日のワールドカップで注目すべき試合は二つ。オランダ対セネガル — ヨーロッパの精鋭とアフリカの新興強豪の激突。そして開催国メキシコのアステカでのホームデビュー。今日の4試合、AIがすべて予測します。",
+      "narration_en": "Two must-watch matches today. Netherlands vs Senegal — European elite clashing with Africa's rising force. And host Mexico making their home debut at the iconic Azteca. AI predicts all four matches today."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "어제 결과부터 확인합니다. 일본이 포르투갈에 0-2로 완패했습니다 — 실력 차이가 여실히 드러났습니다. 프랑스는 모로코를 3-0으로 대파하며 조 독주를 예고했습니다. 벨기에는 에콰도르를 2-1로 꺾으며 소중한 첫 승을 챙겼습니다.",
+      "narration_ja": "昨日の結果から確認します。日本はポルトガルに0-2で完敗 — 実力差が浮き彫りになりました。フランスはモロッコを3-0で大勝し、グループ独走を予告。ベルギーはエクアドルを2-1で下し、貴重な初勝利を手にしました。",
+      "narration_en": "Starting with yesterday's results. Japan lost 0-2 to Portugal — the quality gap was stark. France dismantled Morocco 3-0, signaling a dominant group run. Belgium edged Ecuador 2-1 for a vital first win."
+    },
+    {
+      "id": "s03_prediction1",
+      "narration": "오늘의 메인 이벤트, 네덜란드 대 세네갈. AI 예측은 네덜란드 2-0 세네갈입니다. 근거 세 가지. 첫째, 판다이크의 수비 지휘력이 세네갈의 속공을 완벽하게 차단합니다. 둘째, 가크포와 시비 시몬스가 만드는 측면 연계가 세네갈 수비의 약점을 파고듭니다. 셋째, 쿨리발리가 이번 대회를 마지막으로 은퇴를 시사 — 세네갈 주장이 극도의 심리적 압박 속에 있습니다. AI 신뢰도 62%. 네덜란드, 깔끔한 승리로 출발합니다.",
+      "narration_ja": "今日のメインイベント、オランダ対セネガル。AI予測はオランダ2-0セネガル。根拠は三つ。一つ目、ファン・ダイクの守備統率がセネガルのカウンターを完全に遮断。二つ目、ガクポとシビ・シモンズが生み出すサイド連携がセネガル守備の弱点を突く。三つ目、クリバリが今大会を最後に引退示唆 — セネガルのキャプテンが極大の心理的プレッシャー下に。AI信頼度62%。オランダ、クリーンな勝利でスタートします。",
+      "narration_en": "Today's main event: Netherlands vs Senegal. AI prediction — Netherlands 2-0 Senegal. Three reasons. First, Van Dijk's defensive authority neutralizes Senegal's counter-attack. Second, Gakpo and Xavi Simons exploit Senegal's wide defensive vulnerabilities. Third, Koulibaly has hinted at retirement after this tournament — Senegal's captain carries enormous mental pressure. AI confidence: 62%. Netherlands start with a clean, controlled win."
+    },
+    {
+      "id": "s04_prediction2",
+      "narration": "나머지 세 경기 빠르게 예측합니다. 이탈리아 대 칠레 — AI 픽 이탈리아 1-0. 바렐라가 중원을 지배하고 수비 조직이 탄탄합니다. 신뢰도 64%. 멕시코 대 볼리비아 — AI 픽 멕시코 3-1. 아즈테카 11만 홈 관중의 파워가 폭발할 것입니다. 신뢰도 78%. 호주 대 사우디아라비아 — AI 픽 1-1 무승부. 양 팀 모두 조 생존을 위한 신중한 경기를 펼칠 것입니다. 신뢰도 52%.",
+      "narration_ja": "残り3試合を素早く予測。イタリア対チリ — AIピックイタリア1-0。バレッラが中盤を支配し守備組織が堅固。信頼度64%。メキシコ対ボリビア — AIピックメキシコ3-1。アステカ11万人のホームパワーが爆発するでしょう。信頼度78%。オーストラリア対サウジアラビア — AIピック1-1引き分け。両チームともグループ生存のための慎重な試合を展開。信頼度52%。",
+      "narration_en": "Three more matches, quick predictions. Italy vs Chile — AI pick Italy 1-0. Barella dominates midfield and the defensive structure is rock-solid. Confidence 64%. Mexico vs Bolivia — AI pick Mexico 3-1. The Azteca with 110,000 home fans will erupt. Confidence 78%. Australia vs Saudi Arabia — AI pick 1-1 draw. Both teams play cautiously for group survival. Confidence 52%."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘의 AI 픽 정리. 네덜란드, 이탈리아, 멕시코 승리 — 호주와 사우디아라비아 무승부. 오늘의 하이라이트는 아즈테카의 멕시코 홈 경기입니다. 세계 최대 축구 성지에서 1986년 우승 이후 40년 만의 홈 월드컵, 멕시코의 홈 파워가 작동할 것입니다. 내일은 예측 결과를 검증합니다. 채널 구독하고 내일을 기대해주세요.",
+      "narration_ja": "今日のAIピックまとめ。オランダ、イタリア、メキシコ勝利 — オーストラリアとサウジアラビア引き分け。今日のハイライトはアステカでのメキシコのホーム戦。世界最大のサッカーの聖地で1986年優勝から40年ぶりのホームW杯、メキシコのホームパワーが炸裂するでしょう。明日は予測結果を検証します。チャンネル登録して明日をお楽しみに。",
+      "narration_en": "Today's AI picks summary. Netherlands, Italy, Mexico win — Australia and Saudi Arabia draw. Today's highlight: Mexico's home game at the Azteca. At the world's most iconic football stadium, 40 years after their 1986 title, Mexico's home power will be on full display. Tomorrow we verify the predictions. Subscribe and stay tuned."
+    }
+  ]
+}
