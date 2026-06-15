@@ -1,0 +1,95 @@
+{
+  "series": "worldcup-2026",
+  "ep_number": 3,
+  "ep_role": "special",
+  "group": "",
+  "title_ko": "메시 vs 호날두 — 월드컵 대결의 완전한 진실 5회 출전, 누가 더 위대했나?",
+  "title_ja": "メッシ vs ロナウド — ワールドカップ対決の完全な真実 5回出場、どちらが偉大か？",
+  "title_en": "Messi vs Ronaldo — The Complete World Cup Truth Who Was Greater Over 5 Tournaments?",
+  "color_system": {
+    "stadium": { "bg": "#0a0e1a", "accent": "#c9a227", "text": "#f0ede4" },
+    "pitch":   { "bg": "#0d2818", "accent": "#4fc87a", "text": "#e8f5ed" },
+    "trophy":  { "bg": "#1a0e2e", "accent": "#e8c05a", "text": "#f5f0e8" },
+    "messi":   { "bg": "#071a2e", "accent": "#74b9e8", "text": "#e8f0f8" },
+    "ronaldo": { "bg": "#1a0710", "accent": "#e87474", "text": "#f8e8e8" }
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "role": "hook",
+      "tone": "stadium",
+      "bg": "#0a0e1a",
+      "accent": "#c9a227",
+      "visual_note": "좌우 분할 화면 — 왼쪽 메시(하늘색·아르헨티나), 오른쪽 호날두(빨간색·포르투갈). 중앙에 'VS' 황금 글자. 두 선수 실루엣",
+      "narration": "두 남자. 하나의 트로피. 메시와 호날두는 각자의 시대를 지배했습니다. 클럽에서는 끝없는 논쟁이 이어졌지만, 월드컵이라는 무대에서 두 사람의 이야기는 완전히 달랐습니다. 오늘, 5회 출전의 진실을 완전히 분석합니다.",
+      "narration_ja": "2人の男。1つのトロフィー。メッシとロナウドはそれぞれの時代を支配しました。クラブでは終わりなき論争が続いてきましたが、ワールドカップという舞台では、2人の物語はまったく異なりました。今日、5回の出場の真実を徹底分析します。",
+      "narration_en": "Two men. One trophy. Messi and Ronaldo have each dominated their era. In club football the debate never ends. But on the World Cup stage, their stories went in completely different directions. Today, we break down the full truth across five tournaments each."
+    },
+    {
+      "id": "s02_careers",
+      "role": "data",
+      "tone": "pitch",
+      "bg": "#0d2818",
+      "accent": "#4fc87a",
+      "visual_note": "좌우 스탯 카드 비교 — 메시 발롱도르 8회, 리그 득점왕, 바르샤/인터 마이애미. 호날두 발롱도르 5회, 챔스 5회 우승, 유럽 3대 리그 득점왕. 각자 상징색 배경",
+      "narration": "먼저 커리어 전체를 비교합니다. 메시, 1987년생, 아르헨티나. 발롱도르 8회, 클럽 월드컵 4회, UEFA 챔피언스리그 4회 우승. 그리고 마침내 2021 코파 아메리카, 2022 피파 월드컵 우승. 호날두, 1985년생, 포르투갈. 발롱도르 5회, 챔피언스리그 5회 우승, 유럽 3대 리그 최다 득점 달성. 2016 유럽 선수권 우승. 두 선수 모두 클럽에서는 역사상 최고였습니다. 차이는 월드컵에서 갈렸습니다.",
+      "narration_ja": "まずキャリア全体を比較します。メッシ、1987年生まれ、アルゼンチン。バロンドール8回、クラブワールドカップ4回、UEFAチャンピオンズリーグ4回優勝。そして2021コパ・アメリカ、2022FIFAワールドカップ制覇。ロナウド、1985年生まれ、ポルトガル。バロンドール5回、チャンピオンズリーグ5回優勝、欧州3大リーグ最多得点達成。2016UEFA欧州選手権優勝。両選手ともクラブでは史上最高でした。違いはワールドカップで生まれました。",
+      "narration_en": "Let's compare careers overall first. Messi, born 1987, Argentina. Eight Ballon d'Or, four club World Cups, four Champions League titles, then the 2021 Copa América and the 2022 FIFA World Cup. Ronaldo, born 1985, Portugal. Five Ballon d'Or, five Champions League titles, top scorer in all three major European leagues. The 2016 UEFA European Championship. Both were the greatest at club level in history. The difference was made at the World Cup."
+    },
+    {
+      "id": "s03_wc_stats",
+      "role": "analysis",
+      "tone": "stadium",
+      "bg": "#0a0e1a",
+      "accent": "#c9a227",
+      "visual_note": "통계 인포그래픽 비교 테이블 — 출전/경기수/골/어시스트/최고성적. 메시 행 파란색, 호날두 행 빨간색. 월드컵 대회별 성적 타임라인",
+      "narration": "월드컵 통계 직접 비교입니다. 메시: 5회 출전(2006·2010·2014·2018·2022), 26경기, 13골, 8어시스트. 최고 성적 — 2022 카타르 우승. 2014에는 4골 골든볼, 2022에는 7골 골든볼. 호날두: 5회 출전(2006·2010·2014·2018·2022), 22경기, 8골. 최고 성적 — 2006 독일 월드컵 3위. 숫자만 놓고 보면, 경기수·골·어시스트·트로피 모든 면에서 메시가 앞섭니다. 하지만 단순 비교가 전부는 아닙니다.",
+      "narration_ja": "ワールドカップ統計の直接比較です。メッシ：5回出場（2006・2010・2014・2018・2022）、26試合、13ゴール、8アシスト。最高成績 — 2022カタール優勝。2014年に4ゴールでゴールデンボール、2022年に7ゴールでゴールデンボール。ロナウド：5回出場（2006・2010・2014・2018・2022）、22試合、8ゴール。最高成績 — 2006年ドイツワールドカップ3位。数字だけ見れば、試合数・ゴール・アシスト・トロフィーあらゆる面でメッシが上回ります。しかし単純比較がすべてではありません。",
+      "narration_en": "World Cup stats head-to-head. Messi: five appearances — 2006, 2010, 2014, 2018, 2022 — 26 matches, 13 goals, 8 assists. Best result: 2022 Qatar champion. Golden Ball in both 2014 and 2022. Ronaldo: five appearances — 2006, 2010, 2014, 2018, 2022 — 22 matches, 8 goals. Best result: third place in 2006 Germany. On pure numbers — matches, goals, assists, trophies — Messi leads across every category. But raw stats don't tell the whole story."
+    },
+    {
+      "id": "s04_moments",
+      "role": "analysis",
+      "tone": "trophy",
+      "bg": "#1a0e2e",
+      "accent": "#e8c05a",
+      "visual_note": "명장면 하이라이트 박스 4개 — 2014 골든볼, 2022 사우디쇼크→역전우승, 2006 호날두 SF진출, 2018 스페인전 해트트릭. 드라마틱 배경",
+      "narration": "결정적 명장면들. 메시: 2014 브라질, 4골 골든볼 수상, 하지만 결승에서 독일에 0-1 패배 — 비극. 2022 카타르, 사우디에 충격 패배 후 7경기 7골로 각본 없는 드라마 — 38세를 앞둔 나이에 마침내 우승. 호날두: 2006 독일, 21세에 포르투갈을 사상 첫 월드컵 4강으로 이끌며 3위 달성. 2018 러시아, 스페인전 개인 해트트릭으로 3-3 무승부 — 개인 기량은 GOAT. 두 선수 모두 잊을 수 없는 순간들을 남겼습니다.",
+      "narration_ja": "決定的な名場面たち。メッシ：2014ブラジル、4ゴールでゴールデンボール受賞、しかし決勝でドイツに0-1敗北 — 悲劇。2022カタール、サウジアラビアへのショック敗北後に7試合7ゴールの台本なしドラマ — 38歳を目前に控えてついに優勝。ロナウド：2006ドイツ、21歳でポルトガルを史上初のワールドカップ4強に導き3位達成。2018ロシア、スペイン戦での個人ハットトリックで3-3引き分け — 個人技量はGOAT。両選手とも忘れられない瞬間を残しました。",
+      "narration_en": "The defining moments. Messi: 2014 Brazil — four goals and the Golden Ball, but a 0-1 final loss to Germany. Heartbreak. 2022 Qatar — a shocking loss to Saudi Arabia, then seven goals in seven matches of pure drama, winning it all at 35. Ronaldo: 2006 Germany — aged 21, he led Portugal to their first-ever World Cup semifinal, finishing third. 2018 Russia — a solo hat-trick in a 3-3 draw against Spain, a moment of pure individual genius. Both have given us unforgettable chapters."
+    },
+    {
+      "id": "s05_legacy",
+      "role": "analysis",
+      "tone": "stadium",
+      "bg": "#0a0e1a",
+      "accent": "#c9a227",
+      "visual_note": "2026 시나리오 분기 — 메시 38세 아르헨티나 생존 여부 / 호날두 41세 포르투갈 소집 여부. 두 선수 나이·출전 가능성 카드",
+      "narration": "레거시와 2026. 메시는 2026년 6월 기준 38세. 2022 카타르 우승 이후 인터 마이애미에서 현역을 유지 중입니다. 아르헨티나 감독 리오넬 스칼로니가 소집한다면 2026이 진짜 마지막 무대. 호날두는 2026년 2월 기준 41세. 사우디 알나스르에서 여전히 득점 중이지만, 포르투갈 감독이 41세를 소집할지가 관건. 두 레전드가 마지막으로 같은 무대에 서는 역사적 장면이 2026에서 펼쳐질 수 있습니다.",
+      "narration_ja": "レガシーと2026年。メッシは2026年6月時点で38歳。2022カタール優勝後、インテル・マイアミで現役を維持しています。アルゼンチン監督リオネル・スカローニが招集すれば、2026年が本当の最後の舞台。ロナウドは2026年2月時点で41歳。サウジアラビアのアル・ナスルで依然として得点を重ねていますが、ポルトガル監督が41歳を招集するかが鍵となります。2人のレジェンドが最後に同じ舞台に立つ歴史的な場面が2026年に展開されるかもしれません。",
+      "narration_en": "Legacy and 2026. Messi will be 38 by the time the tournament kicks off. He's stayed active with Inter Miami following the 2022 triumph. If Argentina manager Lionel Scaloni calls him up, 2026 is his real final chapter. Ronaldo turns 41 in February 2026. He's still scoring regularly for Al Nassr in Saudi Arabia, but whether the Portugal manager selects a 41-year-old remains the key question. The possibility of both legends taking the same stage one last time is one of 2026's greatest storylines."
+    },
+    {
+      "id": "s06_debate",
+      "role": "analysis",
+      "tone": "pitch",
+      "bg": "#0d2818",
+      "accent": "#4fc87a",
+      "visual_note": "GOAT 논쟁 스코어보드 — 월드컵 트로피: 메시 1-0 호날두, 월드컵 골: 메시 13-8, 월드컵 어시스트: 메시 8-0, 발롱도르: 메시 8-5, 챔피언스리그: 메시 4-5 (호날두 우위)",
+      "narration": "GOAT 논쟁 — 월드컵 한정 스코어카드입니다. 트로피: 메시 1 대 호날두 0. 골: 메시 13 대 호날두 8. 어시스트: 메시 8 대 호날두 0. 골든볼: 메시 2회 대 호날두 0. 반론: 호날두 팬들은 아르헨티나의 팀 전력이 포르투갈보다 월등했다고 주장합니다. 실제로 아르헨티나는 역대 세계적 스트라이커들(바티스투타·아이마르·테베스·아구에로·디마리아·라우타로)을 보유했습니다. 이 논쟁은 영원히 끝나지 않겠지만, 숫자는 명확하게 메시를 가리킵니다.",
+      "narration_ja": "GOATの論争 — ワールドカップ限定スコアカードです。トロフィー：メッシ1対ロナウド0。ゴール：メッシ13対ロナウド8。アシスト：メッシ8対ロナウド0。ゴールデンボール：メッシ2回対ロナウド0回。反論：ロナウドのファンはアルゼンチンのチーム戦力がポルトガルより圧倒的に高かったと主張します。実際、アルゼンチンは歴代の世界的ストライカーたちを擁していました。この論争は永遠に終わらないでしょうが、数字は明確にメッシを指しています。",
+      "narration_en": "The GOAT debate — World Cup edition scorecard. Trophy: Messi 1, Ronaldo 0. Goals: Messi 13, Ronaldo 8. Assists: Messi 8, Ronaldo 0. Golden Ball: Messi 2, Ronaldo 0. The counterargument: Ronaldo's fans point out that Argentina always had significantly stronger supporting casts than Portugal — Batistuta, Aimar, Tevez, Agüero, Di María, Lautaro. The debate will never truly end. But the numbers point clearly and consistently to Messi."
+    },
+    {
+      "id": "s07_verdict",
+      "role": "verdict",
+      "tone": "trophy",
+      "bg": "#1a0e2e",
+      "accent": "#e8c05a",
+      "visual_note": "황금 트로피 + 좌우 분할 메시·호날두 실루엣. 최종 판정 카드: 월드컵 기준 메시. EP04 예고 — A조 ~ L조 12개 조 예측 대결 시작",
+      "narration": "최종 결론. 월드컵이라는 무대에서, 메시는 호날두를 압도합니다. 13골, 8어시스트, 1회 우승, 골든볼 2회. 호날두는 클럽 무대에서는 동등한 레전드이지만, 월드컵만큼은 메시의 이야기입니다. 2026에서 두 레전드가 마지막 장을 어떻게 쓸지 — 그것이 이번 대회 최대 드라마입니다. 다음 영상부터는 드디어 12개 조 예측 대결이 시작됩니다. A조부터 L조까지, 이 채널에서 완전 정복합니다. 구독과 좋아요 눌러두세요.",
+      "narration_ja": "最終結論。ワールドカップという舞台では、メッシはロナウドを圧倒します。13ゴール、8アシスト、1回の優勝、ゴールデンボール2回。ロナウドはクラブの舞台では同等のレジェンドですが、ワールドカップに限ってはメッシの物語です。2026年に2人のレジェンドが最後の章をどのように書くか — それがこの大会最大のドラマです。次の動画からはいよいよ12グループの予測対決が始まります。Aグループから Lグループまで、このチャンネルで完全制覇します。チャンネル登録と高評価をお忘れなく。",
+      "narration_en": "Final verdict. On the World Cup stage, Messi overwhelms Ronaldo. Thirteen goals, eight assists, one title, two Golden Balls. Ronaldo is an equal legend at club level — but the World Cup belongs to Messi. How both legends will write their final chapters in 2026 is the tournament's greatest drama. Starting next episode: 12-group prediction battle begins. Group A through Group L — complete coverage, right here. Subscribe so you don't miss a single match prediction."
+    }
+  ]
+}
