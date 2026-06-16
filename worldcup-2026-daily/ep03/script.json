@@ -1,0 +1,59 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 3,
+  "date": "2026-06-16",
+  "title_ko": "2026-06-16 오늘의 경기 AI 예측 — 브라질 vs 콜롬비아, 아프리카 더비",
+  "title_ja": "2026-06-16 今日の試合 AI予測 — ブラジル vs コロンビア、アフリカダービー",
+  "title_en": "2026-06-16 Match Predictions by AI — Brazil vs Colombia, Africa Derby",
+  "korea_match": false,
+  "matches_today": [
+    { "id": "m1", "team_a": "Brazil",       "team_b": "Colombia",    "group": "H", "venue": "Hard Rock Stadium, Miami",       "kickoff_kst": "03:00" },
+    { "id": "m2", "team_a": "Croatia",      "team_b": "Denmark",     "group": "I", "venue": "Gillette Stadium, Boston",       "kickoff_kst": "06:00" },
+    { "id": "m3", "team_a": "Cameroon",     "team_b": "Ghana",       "group": "J", "venue": "NRG Stadium, Houston",           "kickoff_kst": "09:00" },
+    { "id": "m4", "team_a": "Turkey",       "team_b": "New Zealand", "group": "L", "venue": "Lumen Field, Seattle",           "kickoff_kst": "12:00" }
+  ],
+  "yesterday_results": [
+    { "team_a": "Netherlands", "score_a": 2, "score_b": 0, "team_b": "Senegal",      "group": "E", "ai_correct": true },
+    { "team_a": "Italy",       "score_a": 1, "score_b": 0, "team_b": "Chile",        "group": "G", "ai_correct": true },
+    { "team_a": "Mexico",      "score_a": 3, "score_b": 1, "team_b": "Bolivia",      "group": "K", "ai_correct": true },
+    { "team_a": "Australia",   "score_a": 1, "score_b": 1, "team_b": "Saudi Arabia", "group": "C", "ai_correct": true }
+  ],
+  "ai_predictions": [
+    { "match": "Brazil vs Colombia",    "pred_a": 2, "pred_b": 1, "confidence": "65%", "pick": "Brazil" },
+    { "match": "Croatia vs Denmark",    "pred_a": 1, "pred_b": 0, "confidence": "58%", "pick": "Croatia" },
+    { "match": "Cameroon vs Ghana",     "pred_a": 0, "pred_b": 1, "confidence": "55%", "pick": "Ghana" },
+    { "match": "Turkey vs New Zealand", "pred_a": 2, "pred_b": 0, "confidence": "82%", "pick": "Turkey" }
+  ],
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "오늘 월드컵의 주인공은 단연 브라질입니다. 마이애미 하드록 스타디움에서 콜롬비아와 격돌 — 남미 최강 라이벌의 조별리그 빅매치. 여기에 서아프리카 더비, 카메룬 대 가나까지. 오늘 4경기, AI가 모두 분석합니다.",
+      "narration_ja": "今日のワールドカップの主役は間違いなくブラジル。マイアミのハードロックスタジアムでコロンビアと激突 — 南米最強ライバルのグループステージ大一番。さらに西アフリカダービー、カメルーン対ガナも注目。今日の4試合、AIがすべて分析します。",
+      "narration_en": "Today's World Cup spotlight belongs to Brazil. At Hard Rock Stadium in Miami, they clash with Colombia — the biggest South American rivalry in the group stage. Plus the West Africa Derby: Cameroon vs Ghana. AI breaks down all four matches today."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "어제 결과를 먼저 봅니다. 네덜란드 2-0 세네갈, 이탈리아 1-0 칠레, 멕시코 3-1 볼리비아, 호주-사우디아라비아 1-1 무승부. 어제 AI 예측, 4경기 전부 정확했습니다. 스코어까지 완벽하게 일치한 4-0 퍼펙트 데이.",
+      "narration_ja": "昨日の結果から確認。オランダ2-0セネガル、イタリア1-0チリ、メキシコ3-1ボリビア、オーストラリア対サウジアラビア1-1引き分け。昨日のAI予測、4試合すべて的中。スコアまで完全一致のパーフェクトデー達成。",
+      "narration_en": "Yesterday's results first. Netherlands 2-0 Senegal, Italy 1-0 Chile, Mexico 3-1 Bolivia, Australia 1-1 Saudi Arabia. AI predictions yesterday — 4 from 4. Scores matched exactly. A perfect day."
+    },
+    {
+      "id": "s03_prediction1",
+      "narration": "오늘의 메인 이벤트, 브라질 대 콜롬비아. AI 예측은 브라질 2-1 콜롬비아입니다. 근거 세 가지. 첫째, 비니시우스 주니오르가 완전한 컨디션으로 돌아왔습니다 — 콜롬비아 오른쪽 측면이 지옥을 경험할 것입니다. 둘째, 콜롬비아의 루이스 디아스는 위협적이지만, 브라질의 수비 조직이 한층 성숙했습니다. 셋째, 마이애미의 고온다습한 날씨가 브라질 특유의 삼바 체력에 유리합니다. AI 신뢰도 65%. 브라질, 접전 끝에 승리합니다.",
+      "narration_ja": "今日のメインイベント、ブラジル対コロンビア。AI予測はブラジル2-1コロンビア。根拠は三つ。一つ目、ヴィニシウスが完全なコンディションで復帰 — コロンビアの右サイドは地獄を経験するでしょう。二つ目、コロンビアのルイス・ディアスは脅威だが、ブラジルの守備組織はより成熟。三つ目、マイアミの高温多湿がブラジル独特のサンバ体力に有利。AI信頼度65%。ブラジル、激戦の末に勝利。",
+      "narration_en": "Today's main event: Brazil vs Colombia. AI prediction — Brazil 2-1 Colombia. Three reasons. First, Vinícius Jr returns at full fitness — Colombia's right side will face a nightmare. Second, Luis Díaz is a real threat but Brazil's defensive structure has matured significantly. Third, Miami's heat and humidity favor Brazil's Samba endurance. AI confidence: 65%. Brazil win in a tight battle."
+    },
+    {
+      "id": "s04_prediction2",
+      "narration": "나머지 세 경기 예측합니다. 크로아티아 대 덴마크 — AI 픽 크로아티아 1-0. 모드리치의 마지막 월드컵 투혼과 크로아티아 특유의 조직 수비. 신뢰도 58%. 카메룬 대 가나 — AI 픽 가나 1-0. 쿠두스의 마드리드 폼이 서아프리카 더비를 지배합니다. 신뢰도 55%. 터키 대 뉴질랜드 — AI 픽 터키 2-0. 아르다 귈레르가 드디어 월드컵 무대에 서다. 신뢰도 82%.",
+      "narration_ja": "残り3試合の予測です。クロアチア対デンマーク — AIピッククロアチア1-0。モドリッチ最後のW杯の闘志とクロアチア独特の組織守備。信頼度58%。カメルーン対ガナ — AIピックガナ1-0。クドゥスのマドリードフォームが西アフリカダービーを支配。信頼度55%。トルコ対ニュージーランド — AIピックトルコ2-0。アルダ・ギュレルがついにW杯舞台に立つ。信頼度82%。",
+      "narration_en": "Three more matches. Croatia vs Denmark — AI pick Croatia 1-0. Modrić's last World Cup fire and Croatia's trademark defensive structure. Confidence 58%. Cameroon vs Ghana — AI pick Ghana 1-0. Kudus brings his Madrid form to dominate the West Africa Derby. Confidence 55%. Turkey vs New Zealand — AI pick Turkey 2-0. Arda Güler finally steps onto the World Cup stage. Confidence 82%."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘의 AI 픽 정리. 브라질, 크로아티아, 가나, 터키 승리. 오늘의 하이라이트는 브라질 대 콜롬비아입니다. 남미 최강의 자존심 대결 — 비니시우스의 드리블과 루이스 디아스의 역습이 만드는 불꽃 튀는 90분. AI는 브라질 2-1을 선택합니다. 어제 4연속 퍼펙트의 기세를 오늘도 이어갑니다. 내일 검증 — 채널 구독하고 함께하세요.",
+      "narration_ja": "今日のAIピックまとめ。ブラジル、クロアチア、ガナ、トルコ勝利。今日のハイライトはブラジル対コロンビア。南米最強のプライドをかけた対決 — ヴィニシウスのドリブルとルイス・ディアスのカウンターが生む火花散る90分。AIはブラジル2-1を選択。昨日の4連続パーフェクトの勢いを今日も続けます。明日は検証 — チャンネル登録してご一緒に。",
+      "narration_en": "Today's AI picks summary. Brazil, Croatia, Ghana, Turkey win. Today's standout: Brazil vs Colombia. South America's ultimate pride match — Vinícius's dribbles versus Díaz's counter-attacks, 90 minutes of pure fire. AI takes Brazil 2-1. Yesterday's perfect 4-for-4 streak continues today. Result verification tomorrow — subscribe and join us."
+    }
+  ]
+}
