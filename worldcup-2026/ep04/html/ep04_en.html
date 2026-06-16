@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>Group A Deep Dive — Germany vs Argentina | 2026 World Cup Predictions EP04</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1920px; height: 1080px; overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    background: #0a0e1a;
+  }
+  .slide {
+    position: absolute; top: 0; left: 0;
+    width: 1920px; height: 1080px;
+    display: none; overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  /* ── SLIDE 1 ── */
+  #slide-1 {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2d0a0a 50%, #1a0a0a 100%);
+    flex-direction: column; align-items: center; justify-content: center;
+  }
+  #slide-1 .ep-badge {
+    font-size: 20px; font-weight: 700; color: #e85454;
+    letter-spacing: 5px; text-transform: uppercase; margin-bottom: 20px;
+    border: 2px solid #e85454; padding: 8px 28px; border-radius: 4px;
+  }
+  #slide-1 .series-tag { font-size: 17px; color: rgba(232,84,84,0.6); letter-spacing: 3px; margin-bottom: 48px; }
+  #slide-1 h1 { font-size: 80px; font-weight: 900; color: #fff; text-align: center; line-height: 1.1; text-shadow: 0 0 60px rgba(232,84,84,0.5); }
+  #slide-1 h1 span { color: #e85454; }
+  #slide-1 .subtitle { font-size: 28px; color: rgba(255,255,255,0.7); margin-top: 28px; text-align: center; line-height: 1.5; }
+  #slide-1 .flag-clash { display: flex; gap: 40px; margin-top: 52px; align-items: center; }
+  #slide-1 .flag-box { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  #slide-1 .flag-emoji { font-size: 72px; line-height: 1; }
+  #slide-1 .flag-name { font-size: 20px; font-weight: 700; color: rgba(255,255,255,0.8); letter-spacing: 3px; }
+  #slide-1 .vs-text { font-size: 56px; font-weight: 900; color: #e85454; text-shadow: 0 0 30px rgba(232,84,84,0.8); }
+  #slide-1 .glow-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, transparent, #e85454, transparent); }
+  #slide-1 .corner-deco { position: absolute; top: 40px; right: 60px; font-size: 16px; color: rgba(232,84,84,0.5); letter-spacing: 2px; }
+
+  /* ── SLIDE 2 ── */
+  #slide-2 {
+    background: linear-gradient(135deg, #0a0e1a 0%, #0d1530 100%);
+    flex-direction: column; padding: 60px 100px;
+  }
+  #slide-2 .slide-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 50px; }
+  #slide-2 .slide-title { font-size: 38px; font-weight: 900; color: #c9a227; letter-spacing: 1px; }
+  #slide-2 .slide-badge { font-size: 15px; color: rgba(201,162,39,0.7); border: 1px solid rgba(201,162,39,0.4); padding: 6px 20px; border-radius: 4px; letter-spacing: 2px; }
+  #slide-2 .teams-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 32px; flex: 1; }
+  #slide-2 .team-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,162,39,0.2); border-radius: 12px; padding: 36px 28px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  #slide-2 .team-card.top { border-color: rgba(201,162,39,0.5); }
+  #slide-2 .team-flag { font-size: 80px; line-height: 1; }
+  #slide-2 .team-name { font-size: 28px; font-weight: 900; color: #fff; text-align: center; }
+  #slide-2 .team-rank { font-size: 14px; color: #c9a227; background: rgba(201,162,39,0.1); padding: 4px 14px; border-radius: 20px; }
+  #slide-2 .team-desc { font-size: 16px; color: rgba(255,255,255,0.55); text-align: center; line-height: 1.6; }
+  #slide-2 .team-seed { font-size: 13px; font-weight: 700; color: #e8c05a; letter-spacing: 3px; text-transform: uppercase; }
+  #slide-2 .bottom-info { margin-top: 28px; font-size: 17px; color: rgba(255,255,255,0.4); text-align: center; }
+
+  /* ── SLIDE 3 ── */
+  #slide-3 {
+    background: linear-gradient(135deg, #1a0e2e 0%, #12082a 100%);
+    display: grid; grid-template-columns: 1fr 1fr;
+  }
+  #slide-3 .hero-left { display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 80px 60px; border-right: 1px solid rgba(232,192,90,0.15); gap: 20px; }
+  #slide-3 .hero-flag { font-size: 120px; }
+  #slide-3 .hero-name { font-size: 60px; font-weight: 900; color: #fff; text-align: center; }
+  #slide-3 .hero-title { font-size: 20px; color: #e8c05a; letter-spacing: 1px; text-align: center; }
+  #slide-3 .champion-badge { background: linear-gradient(135deg, #e8c05a, #c9a227); color: #1a0e2e; font-size: 18px; font-weight: 900; padding: 10px 32px; border-radius: 30px; }
+  #slide-3 .hero-right { display: flex; flex-direction: column; justify-content: center; padding: 60px 80px; gap: 28px; }
+  #slide-3 .section-label { font-size: 12px; color: rgba(232,192,90,0.6); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 4px; }
+  #slide-3 .stat-row { display: flex; align-items: baseline; gap: 16px; }
+  #slide-3 .stat-num { font-size: 56px; font-weight: 900; color: #e8c05a; line-height: 1; }
+  #slide-3 .stat-label { font-size: 20px; color: rgba(255,255,255,0.7); }
+  #slide-3 .player-list { display: flex; flex-direction: column; gap: 14px; }
+  #slide-3 .player-item { display: flex; align-items: center; gap: 16px; }
+  #slide-3 .player-num { font-size: 22px; font-weight: 700; color: #e8c05a; width: 40px; text-align: center; }
+  #slide-3 .player-name { font-size: 22px; font-weight: 700; color: #fff; }
+  #slide-3 .player-role { font-size: 14px; color: rgba(255,255,255,0.5); }
+  #slide-3 .weapon-box { background: rgba(232,192,90,0.08); border: 1px solid rgba(232,192,90,0.25); border-radius: 8px; padding: 20px 24px; }
+  #slide-3 .weapon-title { font-size: 12px; color: #e8c05a; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 8px; }
+  #slide-3 .weapon-text { font-size: 20px; color: rgba(255,255,255,0.8); line-height: 1.6; }
+
+  /* ── SLIDE 4 ── */
+  #slide-4 {
+    background: linear-gradient(135deg, #0d2818 0%, #0a1e10 100%);
+    display: grid; grid-template-columns: 1fr 1fr;
+  }
+  #slide-4 .left-panel { display: flex; flex-direction: column; justify-content: center; padding: 60px 80px; gap: 32px; }
+  #slide-4 .panel-title { font-size: 34px; font-weight: 900; color: #4fc87a; letter-spacing: 2px; text-transform: uppercase; }
+  #slide-4 .mission-text { font-size: 26px; color: rgba(255,255,255,0.8); line-height: 1.6; }
+  #slide-4 .mission-text em { color: #4fc87a; font-style: normal; font-weight: 700; }
+  #slide-4 .stat-boxes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  #slide-4 .stat-box { background: rgba(79,200,122,0.07); border: 1px solid rgba(79,200,122,0.2); border-radius: 8px; padding: 20px; text-align: center; }
+  #slide-4 .stat-box .num { font-size: 44px; font-weight: 900; color: #4fc87a; line-height: 1; }
+  #slide-4 .stat-box .lbl { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+  #slide-4 .right-panel { display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 60px 60px; border-left: 1px solid rgba(79,200,122,0.15); gap: 14px; }
+  #slide-4 .flag-big { font-size: 100px; }
+  #slide-4 .right-panel h2 { font-size: 52px; font-weight: 900; color: #fff; }
+  #slide-4 .rank-badge { font-size: 17px; color: #4fc87a; border: 1px solid rgba(79,200,122,0.4); padding: 6px 20px; border-radius: 20px; margin-bottom: 24px; }
+  #slide-4 .key-players { display: flex; flex-direction: column; gap: 14px; width: 100%; }
+  #slide-4 .kp-item { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; background: rgba(79,200,122,0.05); border-radius: 8px; border-left: 3px solid #4fc87a; }
+  #slide-4 .kp-name { font-size: 20px; font-weight: 700; color: #fff; }
+  #slide-4 .kp-role { font-size: 14px; color: rgba(255,255,255,0.5); }
+  #slide-4 .kp-club { font-size: 13px; color: #4fc87a; }
+
+  /* ── SLIDE 5 ── */
+  #slide-5 {
+    background: linear-gradient(135deg, #0a0e1a 0%, #0d1530 100%);
+    display: grid; grid-template-columns: 1fr 1fr;
+  }
+  #slide-5 .half-panel { display: flex; flex-direction: column; justify-content: center; padding: 60px 70px; gap: 24px; }
+  #slide-5 .half-panel:first-child { border-right: 1px solid rgba(201,162,39,0.15); }
+  #slide-5 .team-header { display: flex; align-items: center; gap: 24px; margin-bottom: 4px; }
+  #slide-5 .team-flag-sm { font-size: 60px; }
+  #slide-5 .team-name-big { font-size: 44px; font-weight: 900; color: #fff; }
+  #slide-5 .team-sub { font-size: 17px; color: rgba(201,162,39,0.7); }
+  #slide-5 .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  #slide-5 .detail-item { background: rgba(201,162,39,0.06); border: 1px solid rgba(201,162,39,0.15); border-radius: 8px; padding: 14px 16px; }
+  #slide-5 .detail-label { font-size: 11px; color: rgba(201,162,39,0.6); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 4px; }
+  #slide-5 .detail-val { font-size: 19px; font-weight: 700; color: #fff; }
+  #slide-5 .key-player { background: rgba(201,162,39,0.08); border: 1px solid rgba(201,162,39,0.2); border-radius: 8px; padding: 14px 18px; }
+  #slide-5 .kp-header { font-size: 11px; color: rgba(201,162,39,0.6); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 6px; }
+  #slide-5 .kp-main { font-size: 22px; font-weight: 700; color: #fff; }
+  #slide-5 .kp-detail { font-size: 14px; color: rgba(255,255,255,0.5); }
+  #slide-5 .strength-bar { display: flex; flex-direction: column; gap: 10px; }
+  #slide-5 .bar-item { display: flex; align-items: center; gap: 12px; }
+  #slide-5 .bar-label { font-size: 13px; color: rgba(255,255,255,0.6); width: 72px; }
+  #slide-5 .bar-track { flex: 1; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; }
+  #slide-5 .bar-fill { height: 100%; border-radius: 4px; background: #c9a227; }
+
+  /* ── SLIDE 6 ── */
+  #slide-6 {
+    background: linear-gradient(135deg, #1a0a0a 0%, #140808 100%);
+    display: grid; grid-template-columns: 1fr 1fr;
+  }
+  #slide-6 .pred-left { display: flex; flex-direction: column; justify-content: center; padding: 60px 80px; gap: 32px; border-right: 1px solid rgba(232,84,84,0.15); }
+  #slide-6 .pred-title { font-size: 34px; font-weight: 900; color: #e85454; letter-spacing: 2px; text-transform: uppercase; }
+  #slide-6 .variable-list { display: flex; flex-direction: column; gap: 24px; }
+  #slide-6 .var-item { display: flex; gap: 20px; align-items: flex-start; }
+  #slide-6 .var-num { font-size: 40px; font-weight: 900; color: rgba(232,84,84,0.4); line-height: 1; }
+  #slide-6 .var-head { font-size: 21px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  #slide-6 .var-desc { font-size: 16px; color: rgba(255,255,255,0.55); line-height: 1.6; }
+  #slide-6 .pred-right { display: flex; flex-direction: column; justify-content: center; padding: 60px 80px; gap: 20px; }
+  #slide-6 .pred-right-title { font-size: 26px; font-weight: 700; color: rgba(232,84,84,0.8); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+  #slide-6 .head2head { background: rgba(232,84,84,0.06); border: 1px solid rgba(232,84,84,0.2); border-radius: 12px; padding: 28px; display: flex; gap: 24px; align-items: center; justify-content: center; margin-bottom: 16px; }
+  #slide-6 .h2h-team { text-align: center; }
+  #slide-6 .h2h-flag { font-size: 48px; }
+  #slide-6 .h2h-wins { font-size: 44px; font-weight: 900; color: #e85454; line-height: 1; }
+  #slide-6 .h2h-label { font-size: 13px; color: rgba(255,255,255,0.4); }
+  #slide-6 .h2h-vs { font-size: 32px; font-weight: 700; color: rgba(255,255,255,0.3); }
+  #slide-6 .matchday-box { background: rgba(232,84,84,0.08); border: 2px solid rgba(232,84,84,0.3); border-radius: 8px; padding: 18px 24px; }
+  #slide-6 .match-tag { font-size: 11px; color: rgba(232,84,84,0.7); letter-spacing: 3px; margin-bottom: 8px; }
+  #slide-6 .match-info { font-size: 21px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  #slide-6 .match-venue { font-size: 14px; color: rgba(255,255,255,0.4); }
+
+  /* ── SLIDE 7 ── */
+  #slide-7 {
+    background: linear-gradient(135deg, #1a0e2e 0%, #12082a 100%);
+    flex-direction: column; align-items: center; justify-content: center;
+    padding: 80px 120px; gap: 48px;
+  }
+  #slide-7 .verdict-title { font-size: 38px; font-weight: 900; color: #e8c05a; letter-spacing: 4px; text-transform: uppercase; text-align: center; }
+  #slide-7 .ranking-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; width: 100%; }
+  #slide-7 .rank-card { background: rgba(232,192,90,0.06); border: 1px solid rgba(232,192,90,0.2); border-radius: 12px; padding: 32px 24px; display: flex; flex-direction: column; align-items: center; gap: 12px; position: relative; }
+  #slide-7 .rank-card.advance { border-color: rgba(232,192,90,0.5); }
+  #slide-7 .rank-card.advance::after { content: 'ADVANCES'; position: absolute; top: -14px; font-size: 11px; color: #e8c05a; background: #1a0e2e; padding: 2px 12px; border: 1px solid rgba(232,192,90,0.4); border-radius: 20px; letter-spacing: 3px; font-weight: 700; }
+  #slide-7 .rank-pos { font-size: 14px; font-weight: 700; color: rgba(232,192,90,0.5); letter-spacing: 3px; text-transform: uppercase; }
+  #slide-7 .rank-flag { font-size: 56px; }
+  #slide-7 .rank-name { font-size: 26px; font-weight: 700; color: #fff; }
+  #slide-7 .rank-pts { font-size: 15px; color: #e8c05a; background: rgba(232,192,90,0.1); padding: 4px 14px; border-radius: 20px; }
+  #slide-7 .next-ep { background: rgba(232,192,90,0.08); border: 1px solid rgba(232,192,90,0.3); border-radius: 8px; padding: 20px 48px; text-align: center; }
+  #slide-7 .next-label { font-size: 12px; color: rgba(232,192,90,0.6); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 6px; }
+  #slide-7 .next-text { font-size: 20px; color: #fff; font-weight: 700; }
+  #slide-7 .series-footer { font-size: 17px; color: rgba(232,192,90,0.4); letter-spacing: 2px; }
+</style>
+</head>
+<body>
+
+<!-- ── SLIDE 1 ── -->
+<div class="slide active" id="slide-1">
+  <div class="ep-badge">EP 04 · Group A</div>
+  <div class="series-tag">2026 World Cup Predictions</div>
+  <h1>Group A is the <span>Group of Death</span></h1>
+  <p class="subtitle">Germany vs Argentina — The Greatest World Cup Rivalry Collides in New York</p>
+  <div class="flag-clash">
+    <div class="flag-box">
+      <div class="flag-emoji">🇩🇪</div>
+      <div class="flag-name">GERMANY</div>
+    </div>
+    <div class="vs-text">VS</div>
+    <div class="flag-box">
+      <div class="flag-emoji">🇦🇷</div>
+      <div class="flag-name">ARGENTINA</div>
+    </div>
+  </div>
+  <div class="glow-bar"></div>
+  <div class="corner-deco">MetLife Stadium · New York</div>
+</div>
+
+<!-- ── SLIDE 2 ── -->
+<div class="slide" id="slide-2">
+  <div class="slide-header">
+    <div class="slide-title">Group A — Four Teams</div>
+    <div class="slide-badge">GROUP A · 2026 FIFA WORLD CUP</div>
+  </div>
+  <div class="teams-grid">
+    <div class="team-card top">
+      <div class="team-flag">🇦🇷</div>
+      <div class="team-seed">Seed 1</div>
+      <div class="team-name">Argentina</div>
+      <div class="team-rank">FIFA Rank #1</div>
+      <div class="team-desc">2022 Qatar Champions<br>Post-Messi generation complete</div>
+    </div>
+    <div class="team-card top">
+      <div class="team-flag">🇩🇪</div>
+      <div class="team-seed">Seed 2</div>
+      <div class="team-name">Germany</div>
+      <div class="team-rank">FIFA Rank #4</div>
+      <div class="team-desc">Group stage exits in 2018 & 2022<br>Nagelsmann's generational rebuild</div>
+    </div>
+    <div class="team-card">
+      <div class="team-flag">🇩🇿</div>
+      <div class="team-seed">Seed 3</div>
+      <div class="team-name">Algeria</div>
+      <div class="team-rank">FIFA Rank #36</div>
+      <div class="team-desc">Africa's dark horse<br>Round of 16 in Brazil 2014</div>
+    </div>
+    <div class="team-card">
+      <div class="team-flag">🇯🇲</div>
+      <div class="team-seed">Seed 4</div>
+      <div class="team-name">Jamaica</div>
+      <div class="team-rank">FIFA Rank #55</div>
+      <div class="team-desc">CONCACAF qualifier & dark horse<br>Only their 3rd World Cup ever</div>
+    </div>
+  </div>
+  <div class="bottom-info">Venues: MetLife Stadium NY · Mercedes-Benz Stadium Atlanta · Gillette Stadium Boston</div>
+</div>
+
+<!-- ── SLIDE 3 ── -->
+<div class="slide" id="slide-3">
+  <div class="hero-left">
+    <div class="hero-flag">🇦🇷</div>
+    <div class="hero-name">Argentina</div>
+    <div class="hero-title">FIFA #1 · Defending Champions</div>
+    <div class="champion-badge">🏆 2022 Champions</div>
+  </div>
+  <div class="hero-right">
+    <div>
+      <div class="section-label">World Cup Record</div>
+      <div class="stat-row">
+        <div class="stat-num">3</div>
+        <div class="stat-label">titles (1978 · 1986 · 2022)</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">2026 Key Players</div>
+      <div class="player-list">
+        <div class="player-item">
+          <div class="player-num">9</div>
+          <div class="player-info">
+            <div class="player-name">Julian Alvarez</div>
+            <div class="player-role">Striker · Man City</div>
+          </div>
+        </div>
+        <div class="player-item">
+          <div class="player-num">8</div>
+          <div class="player-info">
+            <div class="player-name">Enzo Fernandez</div>
+            <div class="player-role">Midfielder · Chelsea</div>
+          </div>
+        </div>
+        <div class="player-item">
+          <div class="player-num">4</div>
+          <div class="player-info">
+            <div class="player-name">Lisandro Martinez</div>
+            <div class="player-role">Defender · Man United</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="weapon-box">
+      <div class="weapon-title">Signature Weapon</div>
+      <div class="weapon-text">Defensive solidity + devastating counters<br>Scaloni's organized 4-3-3 system</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SLIDE 4 ── -->
+<div class="slide" id="slide-4">
+  <div class="left-panel">
+    <div class="panel-title">Germany's Mission</div>
+    <div class="mission-text">
+      The shame of <em>back-to-back</em><br>
+      group stage exits in 2018 and 2022.<br>
+      In 2026, the <em>Wirtz generation</em><br>
+      reclaims Europe's honor.
+    </div>
+    <div class="stat-boxes">
+      <div class="stat-box">
+        <div class="num">#4</div>
+        <div class="lbl">FIFA Ranking</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">4×</div>
+        <div class="lbl">World Cup wins</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">23W</div>
+        <div class="lbl">vs Argentina</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">2014</div>
+        <div class="lbl">Last title</div>
+      </div>
+    </div>
+  </div>
+  <div class="right-panel">
+    <div class="flag-big">🇩🇪</div>
+    <h2>Germany</h2>
+    <div class="rank-badge">FIFA #4 · UEFA Powerhouse</div>
+    <div class="key-players">
+      <div class="kp-item">
+        <div class="kp-name">Florian Wirtz</div>
+        <div class="kp-role">Attacking MF</div>
+        <div class="kp-club">Leverkusen</div>
+      </div>
+      <div class="kp-item">
+        <div class="kp-name">Joshua Kimmich</div>
+        <div class="kp-role">Defensive MF</div>
+        <div class="kp-club">Bayern</div>
+      </div>
+      <div class="kp-item">
+        <div class="kp-name">Leroy Sane</div>
+        <div class="kp-role">Left Wing</div>
+        <div class="kp-club">Bayern</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SLIDE 5 ── -->
+<div class="slide" id="slide-5">
+  <div class="half-panel">
+    <div class="team-header">
+      <div class="team-flag-sm">🇩🇿</div>
+      <div>
+        <div class="team-name-big">Algeria</div>
+        <div class="team-sub">Africa's Dark Horse</div>
+      </div>
+    </div>
+    <div class="detail-grid">
+      <div class="detail-item">
+        <div class="detail-label">FIFA Rank</div>
+        <div class="detail-val">#36</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Confederation</div>
+        <div class="detail-val">CAF</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Best WC Result</div>
+        <div class="detail-val">R16 (2014)</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">WC Appearances</div>
+        <div class="detail-val">5</div>
+      </div>
+    </div>
+    <div class="key-player">
+      <div class="kp-header">Key Player</div>
+      <div class="kp-main">Said Benrahma</div>
+      <div class="kp-detail">FW · Brentford · Team's scoring engine</div>
+    </div>
+    <div class="strength-bar">
+      <div class="bar-item">
+        <div class="bar-label">Defense</div>
+        <div class="bar-track"><div class="bar-fill" style="width:75%"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-label">Shape</div>
+        <div class="bar-track"><div class="bar-fill" style="width:70%"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-label">Attack</div>
+        <div class="bar-track"><div class="bar-fill" style="width:60%"></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="half-panel">
+    <div class="team-header">
+      <div class="team-flag-sm">🇯🇲</div>
+      <div>
+        <div class="team-name-big">Jamaica</div>
+        <div class="team-sub">CONCACAF Qualifier</div>
+      </div>
+    </div>
+    <div class="detail-grid">
+      <div class="detail-item">
+        <div class="detail-label">FIFA Rank</div>
+        <div class="detail-val">#55</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Confederation</div>
+        <div class="detail-val">CONCACAF</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Best WC Result</div>
+        <div class="detail-val">Group Stage</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">WC Appearances</div>
+        <div class="detail-val">3rd ever</div>
+      </div>
+    </div>
+    <div class="key-player">
+      <div class="kp-header">Key Player</div>
+      <div class="kp-main">Leon Bailey</div>
+      <div class="kp-detail">Winger · Aston Villa · Pacey counter-attack threat</div>
+    </div>
+    <div class="strength-bar">
+      <div class="bar-item">
+        <div class="bar-label">Defense</div>
+        <div class="bar-track"><div class="bar-fill" style="width:55%"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-label">Shape</div>
+        <div class="bar-track"><div class="bar-fill" style="width:62%"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-label">Attack</div>
+        <div class="bar-track"><div class="bar-fill" style="width:50%"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SLIDE 6 ── -->
+<div class="slide" id="slide-6">
+  <div class="pred-left">
+    <div class="pred-title">3 Key Variables</div>
+    <div class="variable-list">
+      <div class="var-item">
+        <div class="var-num">01</div>
+        <div class="var-content">
+          <div class="var-head">Germany vs Argentina — The Psychological Opener</div>
+          <div class="var-desc">The loser faces the remaining two games under crushing pressure. H2H record: Germany 23W · 5D · Argentina 15W.</div>
+        </div>
+      </div>
+      <div class="var-item">
+        <div class="var-num">02</div>
+        <div class="var-content">
+          <div class="var-head">Algeria's Upset Potential</div>
+          <div class="var-desc">African teams have produced most of the World Cup's biggest shocks. Beat one giant and 2nd place is theirs.</div>
+        </div>
+      </div>
+      <div class="var-item">
+        <div class="var-num">03</div>
+        <div class="var-content">
+          <div class="var-head">Latin American Diaspora in New York</div>
+          <div class="var-desc">Large Argentine community in New York and New Jersey. MetLife Stadium effectively becomes an Argentina home game.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pred-right">
+    <div class="pred-right-title">All-Time Head-to-Head</div>
+    <div class="head2head">
+      <div class="h2h-team">
+        <div class="h2h-flag">🇩🇪</div>
+        <div class="h2h-wins">23</div>
+        <div class="h2h-label">Germany wins</div>
+      </div>
+      <div class="h2h-vs">VS</div>
+      <div class="h2h-team">
+        <div class="h2h-flag">🇦🇷</div>
+        <div class="h2h-wins">15</div>
+        <div class="h2h-label">Argentina wins</div>
+      </div>
+    </div>
+    <div class="matchday-box">
+      <div class="match-tag">MATCHDAY 1 · GROUP A</div>
+      <div class="match-info">🇩🇪 Germany  vs  Argentina 🇦🇷</div>
+      <div class="match-venue">Jun 13, 2026 · MetLife Stadium, New York</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SLIDE 7 ── -->
+<div class="slide" id="slide-7">
+  <div class="verdict-title">Group A Final Prediction</div>
+  <div class="ranking-grid">
+    <div class="rank-card advance">
+      <div class="rank-pos">1st Place</div>
+      <div class="rank-flag">🇦🇷</div>
+      <div class="rank-name">Argentina</div>
+      <div class="rank-pts">7+ points projected</div>
+    </div>
+    <div class="rank-card advance">
+      <div class="rank-pos">2nd Place</div>
+      <div class="rank-flag">🇩🇪</div>
+      <div class="rank-name">Germany</div>
+      <div class="rank-pts">5–6 points projected</div>
+    </div>
+    <div class="rank-card">
+      <div class="rank-pos">3rd Place</div>
+      <div class="rank-flag">🇩🇿</div>
+      <div class="rank-name">Algeria</div>
+      <div class="rank-pts">3–4 points projected</div>
+    </div>
+    <div class="rank-card">
+      <div class="rank-pos">4th Place</div>
+      <div class="rank-flag">🇯🇲</div>
+      <div class="rank-name">Jamaica</div>
+      <div class="rank-pts">0–1 points projected</div>
+    </div>
+  </div>
+  <div class="next-ep">
+    <div class="next-label">Next Episode</div>
+    <div class="next-text">EP05 · Group B Analysis — France vs Host Nation Canada</div>
+  </div>
+  <div class="series-footer">2026 World Cup Predictions · honest-lab</div>
+</div>
+
+<script>
+  var slides = document.querySelectorAll('.slide');
+  var current = 0;
+
+  function showSlide(n) {
+    slides.forEach(function(s) { s.classList.remove('active'); s.style.display = 'none'; });
+    var idx = ((n % slides.length) + slides.length) % slides.length;
+    slides[idx].style.display = 'flex';
+    slides[idx].classList.add('active');
+    current = idx;
+  }
+
+  window.goToSlide = showSlide;
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') showSlide(current + 1);
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   showSlide(current - 1);
+  });
+
+  showSlide(0);
+</script>
+</body>
+</html>

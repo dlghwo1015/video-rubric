@@ -1,0 +1,87 @@
+{
+  "series": "worldcup-2026",
+  "ep_number": 4,
+  "ep_role": "group_preview",
+  "group": "A조",
+  "title_ko": "A조 완전 분석 — 독일 vs 아르헨티나, 역사상 최고의 조별리그 매치",
+  "title_ja": "A組完全分析 — ドイツ vs アルゼンチン、史上最高のグループリーグの激突",
+  "title_en": "Group A Deep Dive — Germany vs Argentina, The Greatest Group Stage Clash Ever",
+  "color_system": {
+    "stadium": { "bg": "#0a0e1a", "accent": "#c9a227", "text": "#f0ede4" },
+    "pitch":   { "bg": "#0d2818", "accent": "#4fc87a", "text": "#e8f5ed" },
+    "trophy":  { "bg": "#1a0e2e", "accent": "#e8c05a", "text": "#f5f0e8" },
+    "danger":  { "bg": "#1a0a0a", "accent": "#e85454", "text": "#f8e8e8" }
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "role": "hook",
+      "tone": "danger",
+      "bg": "#1a0a0a",
+      "accent": "#e85454",
+      "narration": "A조는 단순한 조별리그가 아닙니다. 독일 대 아르헨티나 — 월드컵 역사상 가장 위대한 라이벌이 조별 예선에서 격돌합니다. 2022년 카타르의 설욕을 노리는 독일, 트로피를 지키려는 아르헨티나. 뉴욕 메트라이프에서 역사가 만들어집니다.",
+      "narration_ja": "A組は単なるグループリーグではありません。ドイツ対アルゼンチン — ワールドカップ史上最大のライバルがグループ予選で激突。2022年カタールの雪辱を狙うドイツ、トロフィーを守りたいアルゼンチン。ニューヨーク・メットライフで歴史が刻まれます。",
+      "narration_en": "Group A is no ordinary group stage. Germany vs Argentina — the greatest rivalry in World Cup history collides in the group round. Germany hungry for revenge after Qatar 2022. Argentina defending the crown. History will be written at MetLife in New York."
+    },
+    {
+      "id": "s02_teams",
+      "role": "data",
+      "tone": "stadium",
+      "bg": "#0a0e1a",
+      "accent": "#c9a227",
+      "narration": "A조 4개 팀을 소개합니다. 1번 시드 아르헨티나 — FIFA 랭킹 1위, 2022 챔피언. 독일 — FIFA 랭킹 4위, 유럽 최강 부활. 알제리 — FIFA 랭킹 36위, 아프리카의 다크호스. 자메이카 — 북중미 대표 최약체지만 홈 분위기를 등에 업은 복병. 이 네 팀이 뉴욕·아틀란타·보스턴에서 6경기를 치릅니다.",
+      "narration_ja": "A組の4チームを紹介します。第1シードアルゼンチン — FIFAランキング1位、2022年チャンピオン。ドイツ — FIFAランキング4位、ヨーロッパ最強の復活。アルジェリア — FIFAランキング36位、アフリカのダークホース。ジャマイカ — 北中米代表の最弱ながらホームの雰囲気を背にした伏兵。この4チームがニューヨーク・アトランタ・ボストンで6試合を戦います。",
+      "narration_en": "Meet the four teams of Group A. Seed 1: Argentina — FIFA No. 1, 2022 champions. Germany — FIFA No. 4, European powerhouse reborn. Algeria — FIFA No. 36, Africa's dark horse. Jamaica — CONCACAF qualifier and underdog with the crowd behind them. Six matches across New York, Atlanta, and Boston."
+    },
+    {
+      "id": "s03_team1",
+      "role": "analysis",
+      "tone": "trophy",
+      "bg": "#1a0e2e",
+      "accent": "#e8c05a",
+      "narration": "아르헨티나. 2022 카타르 챔피언. 메시가 마침내 손에 넣은 트로피를 팀 전체가 이어받았습니다. 2026 주축은 훌리안 알바레스(스트라이커), 엔소 페르난데스(미드필더), 리산드로 마르티네스(수비). 감독 리오넬 스칼로니는 메시 이후 시대를 위해 팀을 재건했습니다. 수비 안정성과 역습 속도 — 이것이 아르헨티나의 무기입니다.",
+      "narration_ja": "アルゼンチン。2022年カタールチャンピオン。メッシがついに手にしたトロフィーをチーム全体が引き継ぎました。2026年の主軸はフリアン・アルバレス（FW）、エンソ・フェルナンデス（MF）、リサンドロ・マルティネス（DF）。監督リオネル・スカローニはメッシ後の時代に向けてチームを再建。守備の安定とカウンターの速さ — これがアルゼンチンの武器です。",
+      "narration_en": "Argentina. 2022 Qatar champions. The trophy Messi finally lifted is now carried by the whole team. Key players for 2026: Julian Alvarez up front, Enzo Fernandez in midfield, Lisandro Martinez at the back. Coach Scaloni has rebuilt the squad for the post-Messi era. Defensive solidity and devastating counterattacks — that's Argentina's blueprint."
+    },
+    {
+      "id": "s04_team2",
+      "role": "analysis",
+      "tone": "pitch",
+      "bg": "#0d2818",
+      "accent": "#4fc87a",
+      "narration": "독일. 2018·2022 조별 탈락의 수치를 씻으러 왔습니다. FIFA 랭킹 4위, 감독 율리안 나겔스만의 세대교체는 완성 단계입니다. 핵심은 플로리안 비르츠 — 레버쿠젠의 20대 천재 미드필더. 요샤 키미히는 수비형 미드필더의 중심을 잡고, 레로이 자네가 왼쪽을 폭파합니다. 독일의 약점은 스트라이커 부재 — 이 문제가 해결됐을 때 독일은 무섭습니다.",
+      "narration_ja": "ドイツ。2018年・2022年グループリーグ敗退の恥を雪ぐためにやってきました。FIFAランキング4位、ナーゲルスマン監督の世代交代は完成段階。核心はフロリアン・ヴィルツ — レバークーゼンの20代天才MF。ヨシュア・キミヒは守備的MFの要で、レロイ・ザネが左を爆破します。ドイツの弱点はストライカー不在 — この問題が解決したときドイツは恐ろしい。",
+      "narration_en": "Germany. Coming to erase the shame of back-to-back group stage exits in 2018 and 2022. FIFA No. 4, Nagelsmann's generational rebuild is reaching its peak. Florian Wirtz of Leverkusen is the creative engine in his mid-20s. Joshua Kimmich anchors the midfield, Leroy Sane explodes down the left. Germany's weakness: a reliable striker — solve that and they're terrifying."
+    },
+    {
+      "id": "s05_team3",
+      "role": "analysis",
+      "tone": "stadium",
+      "bg": "#0a0e1a",
+      "accent": "#c9a227",
+      "narration": "알제리. 아프리카 9개국 중 가장 주목받는 다크호스. 2014 브라질 대회 16강 진출의 기억을 간직하고 있습니다. 핵심은 사이드 베라히노 — 브렌트포드의 스코어러이자 팀의 공격 축. 수비 기반 전술로 독일·아르헨티나에 맞서 1-0 승리를 노리는 전형적인 언더독 전략. 자메이카는? FIFA 랭킹 55위, 역대 3번째 월드컵 본선. 공격력은 부족하지만 조직력이 강점.",
+      "narration_ja": "アルジェリア。アフリカ9カ国の中で最も注目されるダークホース。2014年ブラジル大会ベスト16進出の記憶を胸に刻んでいます。核心はサイード・ベラヒーノ — ブレントフォードのスコアラーでチームの攻撃の軸。守備ベースの戦術でドイツ・アルゼンチンに挑み1-0勝利を狙う典型的なアンダードッグ戦略。ジャマイカは？FIFAランキング55位、史上3度目のワールドカップ本戦。攻撃力は欠けるが組織力が強み。",
+      "narration_en": "Algeria. The most intriguing dark horse among Africa's 9 teams. They carry the memory of reaching the round of 16 in Brazil 2014. Key man: Said Benrahma, the Brentford scorer and attacking hub. Their plan: defensive discipline and steal a 1-0 from Germany or Argentina. Jamaica? FIFA No. 55, just their third-ever World Cup. Limited in attack but well-organized and never give up."
+    },
+    {
+      "id": "s06_predict",
+      "role": "analysis",
+      "tone": "danger",
+      "bg": "#1a0a0a",
+      "accent": "#e85454",
+      "narration": "핵심 변수 세 가지. 첫째, 6월 13일 독일 vs 아르헨티나 — 이 경기 패자는 심리적으로 무너집니다. 역대 전적: 독일 23승, 아르헨티나 15승, 무승부 5회. 둘째, 알제리의 이변 가능성 — 역대 월드컵 최대 이변은 대부분 아프리카 팀이 만들었습니다. 셋째, 뉴욕·아틀란타의 남미 교민 응원 — 아르헨티나 홈 분위기. 예측: 아르헨티나 1위 확실. 2위 경쟁은 독일 vs 알제리 혈투.",
+      "narration_ja": "注目の変数は3つ。①6月13日ドイツ対アルゼンチン — この試合の敗者は心理的に崩壊します。歴代対戦成績：ドイツ23勝、アルゼンチン15勝、引き分け5回。②アルジェリアの番狂わせの可能性 — 歴代最大のワールドカップの番狂わせはほぼアフリカ勢が作ってきました。③ニューヨーク・アトランタの南米移民の応援 — アルゼンチンのホームの雰囲気。予測：アルゼンチン1位確実。2位争いはドイツ対アルジェリアの血戦。",
+      "narration_en": "Three key variables. One: Germany vs Argentina on June 13 — the loser faces a psychological collapse. Historical record: Germany 23 wins, Argentina 15 wins, 5 draws. Two: Algeria's upset potential — Africa has produced most of the biggest World Cup shocks. Three: the Latin American diaspora in New York and Atlanta creating a de facto Argentina home atmosphere. Prediction: Argentina through in first. The No. 2 spot is a battle between Germany and Algeria."
+    },
+    {
+      "id": "s07_verdict",
+      "role": "verdict",
+      "tone": "trophy",
+      "bg": "#1a0e2e",
+      "accent": "#e8c05a",
+      "narration": "A조 최종 예측. 1위: 아르헨티나. 승점 7 예상 — 수비 조직력과 경험. 2위: 독일. 승점 5~6 — 알제리전 경기력이 관건. 3위: 알제리. 승점 3~4 — 이변 연출 가능. 4위: 자메이카. 하지만 6월 13일 독일 vs 아르헨티나 하나가 모든 것을 바꿀 수 있습니다. 이 경기를 절대 놓치지 마세요. 다음 영상은 B조 — 프랑스와 개최국 캐나다의 충돌.",
+      "narration_ja": "A組最終予測。1位：アルゼンチン。勝ち点7予想 — 守備組織力と経験。2位：ドイツ。勝ち点5〜6 — アルジェリア戦のパフォーマンスが鍵。3位：アルジェリア。勝ち点3〜4 — 番狂わせ演出も可能。4位：ジャマイカ。しかし6月13日ドイツ対アルゼンチン一戦がすべてを変える可能性があります。この試合は絶対に見逃さないでください。次の動画はB組 — フランスと開催国カナダの激突。",
+      "narration_en": "Group A final prediction. 1st: Argentina — projected 7 points, defensive organization and experience. 2nd: Germany — 5-6 points, everything depends on their performance vs Algeria. 3rd: Algeria — 3-4 points, capable of an upset. 4th: Jamaica. But one match on June 13 — Germany vs Argentina — can flip everything. Do not miss it. Next up: Group B — France collides with host nation Canada."
+    }
+  ]
+}
