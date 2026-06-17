@@ -1,0 +1,58 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 3,
+  "date": "2026-06-18",
+  "title_ko": "2026-06-18 오늘의 경기 AI 예측 — 한국 vs 벨기에, F조 운명의 대결",
+  "title_ja": "2026-06-18 今日の試合 AI予測 — 韓国 vs ベルギー、F組の運命の一戦",
+  "title_en": "2026-06-18 Match Predictions by AI — South Korea vs Belgium, Group F Showdown",
+  "korea_match": true,
+  "matches_today": [
+    { "id": "m1", "team_a": "Germany",      "team_b": "Croatia",  "group": "A", "venue": "MetLife Stadium, New York",  "kickoff_kst": "02:00" },
+    { "id": "m2", "team_a": "South Korea",  "team_b": "Belgium",  "group": "F", "venue": "NRG Stadium, Houston",       "kickoff_kst": "05:00" },
+    { "id": "m3", "team_a": "France",       "team_b": "Denmark",  "group": "B", "venue": "Gillette Stadium, Boston",   "kickoff_kst": "08:00" },
+    { "id": "m4", "team_a": "Spain",        "team_b": "Colombia", "group": "H", "venue": "Hard Rock Stadium, Miami",   "kickoff_kst": "11:00" }
+  ],
+  "yesterday_results": [
+    { "team_a": "Netherlands", "score_a": 3, "score_b": 0, "team_b": "Panama",    "group": "E" },
+    { "team_a": "England",     "score_a": 2, "score_b": 0, "team_b": "Australia", "group": "C" },
+    { "team_a": "Italy",       "score_a": 2, "score_b": 1, "team_b": "Poland",    "group": "G" }
+  ],
+  "ai_predictions": [
+    { "match": "Germany vs Croatia",      "pred_a": 2, "pred_b": 0, "confidence": "69%", "pick": "Germany" },
+    { "match": "South Korea vs Belgium",  "pred_a": 1, "pred_b": 0, "confidence": "54%", "pick": "South Korea" },
+    { "match": "France vs Denmark",       "pred_a": 2, "pred_b": 0, "confidence": "71%", "pick": "France" },
+    { "match": "Spain vs Colombia",       "pred_a": 2, "pred_b": 1, "confidence": "63%", "pick": "Spain" }
+  ],
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "오늘 밤 월드컵의 모든 시선이 한 경기로 쏠립니다. F조 운명의 대결 — 한국 대 벨기에. 이강인이 이란전에서 월드컵 무대를 장악한 뒤, 이제 드 브루이너의 진짜 레드 데빌과 맞붙습니다. AI가 오늘 4경기를 전부 예측합니다.",
+      "narration_ja": "今夜のワールドカップのすべての視線が一試合に集まります。F組の運命の一戦 — 韓国対ベルギー。イ・ガンインがイラン戦でW杯の舞台を制した後、今度はデ・ブルイネ率いる真のレッドデビルズと激突。AIが今日の4試合すべてを予測します。",
+      "narration_en": "Tonight every eye in the World Cup points to one match: Group F destiny — South Korea vs Belgium. After Lee Kang-in owned the World Cup stage against Iran, South Korea now faces De Bruyne and the real Red Devils. AI predicts all four matches today."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "어제 2차전 결과를 정리합니다. 네덜란드가 파나마를 3-0으로 완파 — E조 압도적 선두. 잉글랜드는 호주를 2-0으로 제압하며 2연승으로 C조를 질주합니다. 이탈리아는 폴란드를 2-1로 꺾어 G조 1위 유지. 강호들의 2차전이 모두 예상대로 흘렀습니다.",
+      "narration_ja": "昨日の第2戦の結果を整理します。オランダがパナマを3-0で完破 — E組の圧倒的トップ。イングランドはオーストラリアを2-0で下し2連勝、C組を快走。イタリアはポーランドを2-1で退けてG組首位維持。強豪国の第2戦がすべて予想通りの展開でした。",
+      "narration_en": "Wrapping up yesterday's second-round action. Netherlands demolished Panama 3-0 — dominant at the top of Group E. England beat Australia 2-0 for back-to-back wins, cruising in Group C. Italy edged Poland 2-1 to stay top of Group G. Every heavyweight delivered exactly as expected."
+    },
+    {
+      "id": "s03_prediction1",
+      "narration": "오늘의 메인 이벤트 — F조 운명의 대결, 한국 대 벨기에. AI 예측은 한국 1-0 벨기에 — 이변을 선택합니다. 이유는 세 가지. 첫째, 이강인의 이란전 이후 상승 모멘텀 — 이번 대회 최고 컨디션에서 팀 사기가 하늘을 찌릅니다. 둘째, 홍명보 감독의 5-4-1 대인 압박 — 드 브루이너의 창의력을 중원에서 원천 봉쇄합니다. 셋째, 조규성의 세트피스 제공권 — 벨기에 수비의 키 패스 루트를 공중에서 차단합니다. AI 신뢰도 54%. 팽팽하지만, AI는 한국을 선택합니다.",
+      "narration_ja": "今日のメインイベント — F組の運命の対決、韓国対ベルギー。AI予測は韓国1-0ベルギー — 番狂わせを選択します。理由は三つ。一つ目、イ・ガンインのイラン戦後の上昇モメンタム — 今大会最高のコンディションでチームの士気は天を突く。二つ目、ホン・ミョンボ監督の5-4-1マンプレス — デ・ブルイネの創造性を中盤で完全封殺。三つ目、チョ・ギュソンのセットピース制空権 — ベルギー守備のキーパスルートを空中で遮断。AI信頼度54%。拮抗していますが、AIは韓国を選びます。",
+      "narration_en": "Today's main event — Group F destiny: South Korea vs Belgium. AI prediction: Korea 1-0 Belgium — calling the upset. Three reasons. First, Lee Kang-in's momentum from the Iran win — team morale is at its tournament peak. Second, Hong Myung-bo's 5-4-1 man-press — built to neutralize De Bruyne's creativity at the source. Third, Cho Gyu-sung's aerial dominance on set-pieces — shutting down Belgium's key delivery routes. AI confidence: 54%. It's razor-thin, but AI backs Korea."
+    },
+    {
+      "id": "s04_prediction2",
+      "narration": "나머지 세 경기 빠르게 예측합니다. 독일 대 크로아티아 — AI 픽 독일 2-0. 모드리치 없는 크로아티아는 중원 엔진을 잃었습니다. 신뢰도 69%. 프랑스 대 덴마크 — AI 픽 프랑스 2-0. 음바페와 데샹의 전술 조직이 덴마크 수비를 무너뜨립니다. 신뢰도 71%. 스페인 대 콜롬비아 — AI 픽 스페인 2-1. 야말의 개인기가 빛나지만 콜롬비아가 한 골은 되돌려줍니다. 신뢰도 63%.",
+      "narration_ja": "残りの3試合を素早く予測します。ドイツ対クロアチア — AIピックドイツ2-0。モドリッチ不在のクロアチアは中盤のエンジンを失いました。信頼度69%。フランス対デンマーク — AIピックフランス2-0。ムバッペとデシャンの戦術組織がデンマークの堅守を崩します。信頼度71%。スペイン対コロンビア — AIピックスペイン2-1。ヤマルの個人技が輝きますが、コロンビアが1点は返します。信頼度63%。",
+      "narration_en": "Three more matches, quick predictions. Germany vs Croatia — AI pick Germany 2-0. Croatia without Modric has lost its midfield engine. Confidence 69%. France vs Denmark — AI pick France 2-0. Mbappé and Deschamps' tactical structure will crack Denmark's defensive wall. Confidence 71%. Spain vs Colombia — AI pick Spain 2-1. Yamal dazzles but Colombia will find the net once. Confidence 63%."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘의 AI 픽 정리. 독일, 한국, 프랑스, 스페인 모두 승리. 하지만 오늘의 단 하나 장면은 F조 한국 대 벨기에. 이강인이 이번 대회에서 진짜 세계 무대의 주인공으로 도약하는 순간입니다. 1-0 한국 승리, AI 신뢰도 54% — 이변을 믿습니다. 내일은 오늘 예측 결과를 검증합니다. 채널 구독하고 내일을 기다려주세요.",
+      "narration_ja": "今日のAIピックまとめ。ドイツ、韓国、フランス、スペインがすべて勝利。しかし今日のただ一つの瞬間はF組韓国対ベルギー。イ・ガンインがこの大会で真の世界舞台の主役として躍り出る瞬間です。1-0韓国勝利、AI信頼度54% — 番狂わせを信じます。明日は今日の予測結果を検証します。チャンネル登録して明日をお待ちください。",
+      "narration_en": "Today's AI picks summary. Germany, South Korea, France, Spain — all four win. But the only moment that matters is Group F: Korea vs Belgium. This is where Lee Kang-in announces himself to the world. 1-0 Korea. AI confidence 54% — we believe in the upset. Tomorrow we verify today's predictions. Subscribe and stay tuned."
+    }
+  ]
+}
