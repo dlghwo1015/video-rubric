@@ -1,0 +1,60 @@
+{
+  "series": "worldcup-2026",
+  "ep_number": 5,
+  "ep_role": "group_preview",
+  "group": "B조",
+  "title_ko": "B조 완전 분석 — 프랑스 vs 포르투갈, 호날두의 마지막 무대",
+  "title_ja": "B組完全分析 — フランス vs ポルトガル、ロナウドの最後の舞台",
+  "title_en": "Group B Deep Dive — France vs Portugal, Ronaldo's Final Stage",
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "role": "hook",
+      "narration": "B조는 역대 월드컵 역사상 가장 화려한 죽음의 조입니다. 2018 챔피언 프랑스, 레전드 호날두의 포르투갈, 2022 아프리카 기적 모로코, 개최국 캐나다. 이 넷이 한 조에 만나다니 — 이것이 2026 월드컵의 선물입니다.",
+      "narration_ja": "B組は、ワールドカップ史上最も豪華な「死の組」です。2018年王者フランス、レジェンド・ロナウドのポルトガル、2022年アフリカの奇跡モロッコ、開催国カナダ。この4チームが同組に — これが2026年ワールドカップからの贈り物です。",
+      "narration_en": "Group B is the most spectacular Group of Death in World Cup history. The 2018 champions France, Ronaldo's legendary Portugal, Morocco — Africa's 2022 miracle — and host nation Canada. These four in the same group — this is the gift of the 2026 World Cup."
+    },
+    {
+      "id": "s02_teams",
+      "role": "data",
+      "narration": "B조 4개 팀을 소개합니다. 1번 시드 프랑스 — FIFA 랭킹 2위, 2018 챔피언. 포르투갈 — FIFA 랭킹 7위, 호날두의 마지막 무대. 모로코 — FIFA 랭킹 13위, 2022 4강의 기적을 이어갈 아프리카 최강. 캐나다 — FIFA 랭킹 48위, 개최국으로서 역대 첫 자국 개최 월드컵 본선. 경기 장소는 로스앤젤레스·시애틀·캔자스시티.",
+      "narration_ja": "B組の4チームを紹介します。第1シードのフランス — FIFAランキング2位、2018年王者。ポルトガル — FIFAランキング7位、ロナウドの最後の舞台。モロッコ — FIFAランキング13位、2022年の準決勝進出の奇跡を続けるアフリカ最強。カナダ — FIFAランキング48位、初の自国開催ワールドカップ本戦出場。試合会場はロサンゼルス・シアトル・カンザスシティ。",
+      "narration_en": "Meet the four teams of Group B. Top seed France — FIFA #2, 2018 World Champions. Portugal — FIFA #7, Ronaldo's final World Cup stage. Morocco — FIFA #13, carrying forward the magic of their 2022 semifinal run. Canada — FIFA #48, host nation making history at their first ever home World Cup. Venues: Los Angeles, Seattle, Kansas City."
+    },
+    {
+      "id": "s03_team1",
+      "role": "analysis",
+      "narration": "프랑스. 세계 최강의 깊이를 자랑하는 팀입니다. 2022 결승 패배의 설욕을 위해 준비된 레 블뢰. 킬리안 음바페는 레알 마드리드에서 성장했고, 두 번의 월드컵 출전으로 이미 전설의 반열에 올랐습니다. 에두아르 카마빙가, 오렐리앙 추아메니가 미드필더를 장악하고, 마르쿠스 튀랑이 아버지 릴리앙의 유산을 이어받아 수비를 지킵니다. 약점은? 골키퍼 교체 이후 수비 연결성 — 하지만 이 팀은 약점보다 강점이 훨씬 큽니다.",
+      "narration_ja": "フランス。世界最高の層の厚さを誇るチームです。2022年決勝敗退の雪辱を期す「レ・ブルー」。キリアン・ムバッペはレアル・マドリードで成長し、2度のワールドカップ出場ですでに伝説の域に達しています。エドゥアルド・カマヴィンガ、オーレリアン・チュアメニがMFを制圧し、マルクス・テュラムが父リリアンの遺産を継いで守備を支えます。弱点は？GK交代後の守備連携 — しかしこのチームは弱点より強みがはるかに大きいです。",
+      "narration_en": "France. The deepest squad on the planet. Les Bleus are ready for revenge after the 2022 final heartbreak. Kylian Mbappé has grown into a superstar at Real Madrid and is already a legend after two World Cups. Eduardo Camavinga and Aurélien Tchouaméni control midfield, while Marcus Thuram carries on his father Lilian's legacy in defense. Weakness? Post-goalkeeper-change defensive connectivity — but this team's strengths far outweigh any weakness."
+    },
+    {
+      "id": "s04_team2",
+      "role": "analysis",
+      "narration": "포르투갈. 호날두의 마지막 월드컵 무대. 41세의 그는 통계적으로 쇠퇴했지만, 포르투갈 감독 로베르토 마르티네스는 대표팀에서 호날두를 배제할 수 없습니다. 진짜 미래는 라파엘 레앙 — AC밀란의 폭발적인 윙어. 브루누 페르난데스가 창의성을 책임지고, 루벤 디아스가 수비 기둥을 세웁니다. 포르투갈의 전략은 호날두의 상징성 + 젊은 에너지의 조합. 그룹 2위 통과를 노립니다.",
+      "narration_ja": "ポルトガル。ロナウドの最後のワールドカップの舞台。41歳の彼は統計的には衰えていますが、ポルトガル監督のロベルト・マルティネスは代表チームから彼を外すことができません。本当の未来はラファエル・レオン — ACミランの爆発的なウィンガー。ブルーノ・フェルナンデスが創造性を担い、ルベン・ディアスが守備の柱を立てます。ポルトガルの戦略はロナウドの象徴性＋若いエネルギーの組み合わせ。グループ2位通過を狙います。",
+      "narration_en": "Portugal. Ronaldo's final World Cup stage. At 41, he's statistically in decline, but manager Roberto Martínez cannot leave him out of the national team. The real future is Rafael Leão — AC Milan's explosive winger. Bruno Fernandes drives the creativity, and Rúben Dias anchors the defense. Portugal's strategy: Ronaldo's iconic presence plus youthful energy. They're aiming for second place passage."
+    },
+    {
+      "id": "s05_team3",
+      "role": "analysis",
+      "narration": "모로코. 2022 카타르의 기적을 만든 팀이 돌아옵니다. 아프리카 첫 4강 진출 — 이 역사는 단순한 이변이 아니었습니다. 감독 왈리드 레그라기의 수비 조직력은 세계 최고 수준. 아크라프 하키미(PSG), 소피안 암라바트(바르셀로나)가 핵심. 유세프 엔네시리의 공격력도 무시할 수 없습니다. 개최국 캐나다는? 라이트백 알폰소 데이비스(바이에른 뮌헨)가 이끄는 팀. 2022보다 성장했지만 프랑스·포르투갈에는 벅찬 상대.",
+      "narration_ja": "モロッコ。2022年カタールの奇跡を作ったチームが帰ってきます。アフリカ初の準決勝進出 — この歴史は単なる番狂わせではありませんでした。監督ワリド・レグラギの守備組織力は世界最高水準。アシュラフ・ハキミ（PSG）、ソフィアン・アムラバト（バルセロナ）が核心。ユセフ・エン＝ネシリの攻撃力も無視できません。開催国カナダは？ライトバックのアルフォンソ・デイヴィス（バイエルン・ミュンヘン）が率いるチーム。2022年より成長しましたが、フランス・ポルトガルには荷が重い相手。",
+      "narration_en": "Morocco. The team that created the 2022 Qatar miracle is back. Africa's first-ever semifinal — that history was no fluke. Coach Walid Regragui's defensive organization is world-class. Achraf Hakimi (PSG) and Sofyan Amrabat (Barcelona) are the key cogs. Youssef En-Nesyri's attacking threat cannot be ignored. And host Canada? Led by right-back Alphonso Davies of Bayern Munich. They've grown since 2022, but France and Portugal are daunting opponents."
+    },
+    {
+      "id": "s06_predict",
+      "role": "analysis",
+      "narration": "B조의 핵심 변수 세 가지. 첫째, 6월 19일 프랑스 vs 포르투갈 — 이 경기는 역대 최고의 조별리그 매치 중 하나가 될 것입니다. 양 팀 모두 2위로 내려가는 것을 원하지 않습니다. 둘째, 호날두 효과 — 포르투갈은 호날두가 골을 넣으면 다른 팀이 됩니다. 반대로 무득점이면? 심리적 압박이 극대화됩니다. 셋째, 모로코의 수비 — 프랑스조차 2022 준결승에서 모로코를 꺾는 데 어려움을 겪었습니다. 예측: 프랑스 1위, 포르투갈 2위 — 하지만 모로코의 이변이 이 그룹을 뒤흔들 수 있습니다.",
+      "narration_ja": "B組の核心となる3つの変数。第一に、6月19日のフランス対ポルトガル — この試合は史上最高のグループリーグ試合の一つになるでしょう。両チームとも2位通過は望んでいません。第二に、ロナウド効果 — ポルトガルはロナウドがゴールを決めると別のチームになります。逆に無得点なら？心理的プレッシャーが極大化します。第三に、モロッコの守備 — フランスでさえ2022年準決勝でモロッコを下すのに苦労しました。予測：フランス1位、ポルトガル2位 — しかしモロッコの番狂わせがこのグループを揺さぶる可能性があります。",
+      "narration_en": "Three key variables in Group B. First, June 19: France vs Portugal — this match will be one of the greatest group stage games ever played. Neither team wants to finish second. Second, the Ronaldo effect — when he scores, Portugal becomes a different team; when he doesn't, the psychological pressure is immense. Third, Morocco's defense — even France struggled to beat Morocco in the 2022 semifinal. Prediction: France 1st, Portugal 2nd — but Morocco's upset potential could shake this entire group."
+    },
+    {
+      "id": "s07_verdict",
+      "role": "verdict",
+      "narration": "B조 최종 예측. 1위: 프랑스. 승점 7 — 세계 최강의 뎁스. 2위: 포르투갈. 승점 4~5 — 호날두 효과가 관건. 3위: 모로코. 승점 3~4 — 수비 조직력으로 이변 가능. 4위: 캐나다. 하지만 진짜 이 그룹의 운명은 6월 19일 프랑스 vs 포르투갈 단 한 경기가 결정합니다. 다음 영상은 C조 — 스페인과 개최국 멕시코의 충돌을 분석합니다.",
+      "narration_ja": "B組最終予測。1位：フランス。勝ち点7 — 世界最強の層の厚さ。2位：ポルトガル。勝ち点4〜5 — ロナウド効果が鍵。3位：モロッコ。勝ち点3〜4 — 守備組織力で番狂わせ可能。4位：カナダ。しかしこのグループの真の運命は、6月19日のフランス対ポルトガルのたった一試合が決めます。次の動画はC組 — スペインと開催国メキシコの衝突を分析します。",
+      "narration_en": "Group B final prediction. 1st: France, 7 points — the world's deepest squad. 2nd: Portugal, 4-5 points — the Ronaldo factor is decisive. 3rd: Morocco, 3-4 points — defensive organization makes an upset possible. 4th: Canada. But the true fate of this group will be decided by a single match: France vs Portugal on June 19. Next video: Group C — Spain vs host Mexico, the clash that will set a stadium on fire."
+    }
+  ]
+}

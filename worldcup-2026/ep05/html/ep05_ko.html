@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>2026 월드컵 예측 대결 EP05 — B조 완전 분석</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  font-family: 'Noto Sans KR', sans-serif;
+  background: #0a0e1a;
+  color: #ffffff;
+}
+.slide {
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  display: none;
+  overflow: hidden;
+}
+.slide.active { display: flex; }
+
+/* ── Shared background ── */
+.bg-stadium {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 110%, #003d8030 0%, transparent 70%),
+    linear-gradient(160deg, #0a0e1a 0%, #0d1a2e 40%, #0a1520 100%);
+}
+.bg-lines {
+  position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(90deg, transparent, transparent 119px, #ffffff06 119px, #ffffff06 120px),
+    repeating-linear-gradient(0deg,  transparent, transparent  67px, #ffffff06  67px,  #ffffff06  68px);
+}
+.accent-bar {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 8px;
+  background: linear-gradient(180deg, #002395 0%, #ED2939 100%);
+}
+.series-tag {
+  position: absolute;
+  top: 48px; left: 60px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #ffffff80;
+}
+.ep-badge {
+  position: absolute;
+  top: 44px; right: 60px;
+  background: linear-gradient(135deg, #002395, #ED2939);
+  padding: 10px 28px;
+  border-radius: 40px;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+/* ── Slide 1: HOOK ── */
+#slide-1 {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #0a0e1a;
+}
+#slide-1 .bg-stadium { opacity: 1; }
+#slide-1 .group-label {
+  font-size: 120px;
+  font-weight: 900;
+  letter-spacing: 8px;
+  background: linear-gradient(135deg, #002395 0%, #ED2939 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+#slide-1 .main-title {
+  font-size: 52px;
+  font-weight: 900;
+  text-align: center;
+  line-height: 1.25;
+  max-width: 1300px;
+}
+#slide-1 .main-title span { color: #FFD700; }
+#slide-1 .subtitle {
+  margin-top: 36px;
+  font-size: 28px;
+  color: #ffffffb0;
+  text-align: center;
+  max-width: 1000px;
+  line-height: 1.6;
+}
+#slide-1 .bottom-teams {
+  position: absolute;
+  bottom: 60px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+.flag-pill {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #ffffff10;
+  border: 1px solid #ffffff20;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 26px;
+  font-weight: 700;
+}
+.flag {
+  font-size: 36px;
+}
+
+/* ── Slide 2: TEAMS ── */
+#slide-2 {
+  flex-direction: column;
+  padding: 100px 80px 60px;
+}
+#slide-2 .slide-title {
+  font-size: 38px;
+  font-weight: 900;
+  color: #FFD700;
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+}
+.teams-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  flex: 1;
+}
+.team-card {
+  background: linear-gradient(135deg, #ffffff08, #ffffff03);
+  border: 1px solid #ffffff15;
+  border-radius: 20px;
+  padding: 40px 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+}
+.team-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.team-card.seed1::before { background: linear-gradient(90deg, #002395, #ED2939); }
+.team-card.seed2::before { background: linear-gradient(90deg, #006600, #FF0000); }
+.team-card.seed3::before { background: linear-gradient(90deg, #C1272D, #006233); }
+.team-card.seed4::before { background: linear-gradient(90deg, #FF0000, #FFFFFF); }
+.team-flag-name {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.team-flag { font-size: 52px; }
+.team-name { font-size: 34px; font-weight: 900; }
+.team-rank {
+  font-size: 20px;
+  color: #FFD70090;
+  font-weight: 700;
+}
+.team-desc {
+  font-size: 22px;
+  color: #ffffffc0;
+  line-height: 1.5;
+}
+.venues-strip {
+  margin-top: auto;
+  padding-top: 30px;
+  font-size: 21px;
+  color: #ffffff60;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ── Slide 3/4/5: TEAM ANALYSIS ── */
+.analysis-slide {
+  padding: 90px 80px 60px;
+  flex-direction: column;
+}
+.analysis-slide .slide-title {
+  font-size: 36px;
+  font-weight: 900;
+  color: #FFD700;
+  margin-bottom: 40px;
+}
+.analysis-hero {
+  display: flex;
+  gap: 60px;
+  flex: 1;
+}
+.analysis-left {
+  width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.big-flag { font-size: 160px; line-height: 1; }
+.country-name-big {
+  font-size: 48px;
+  font-weight: 900;
+  text-align: center;
+}
+.rank-badge {
+  background: #FFD70020;
+  border: 1px solid #FFD70050;
+  color: #FFD700;
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-size: 22px;
+  font-weight: 700;
+}
+.analysis-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  justify-content: center;
+}
+.stat-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.stat-label {
+  font-size: 18px;
+  color: #ffffff60;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.stat-value {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.key-player-box {
+  background: #FFD70015;
+  border-left: 4px solid #FFD700;
+  padding: 20px 24px;
+  border-radius: 0 12px 12px 0;
+}
+.key-player-box .label { font-size: 16px; color: #FFD70080; letter-spacing: 2px; margin-bottom: 8px; }
+.key-player-box .player { font-size: 28px; font-weight: 900; }
+.key-player-box .club { font-size: 20px; color: #ffffffa0; margin-top: 4px; }
+.narration-box {
+  background: #ffffff08;
+  border-radius: 16px;
+  padding: 28px 32px;
+  font-size: 24px;
+  line-height: 1.7;
+  color: #ffffffd0;
+  max-height: 280px;
+}
+
+/* ── Slide 6: PREDICT ── */
+#slide-6 {
+  flex-direction: column;
+  padding: 90px 80px 60px;
+}
+#slide-6 .slide-title {
+  font-size: 36px;
+  font-weight: 900;
+  color: #FFD700;
+  margin-bottom: 40px;
+}
+.variables-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 36px;
+  margin-bottom: 44px;
+}
+.var-card {
+  background: #ffffff08;
+  border: 1px solid #ffffff15;
+  border-radius: 20px;
+  padding: 36px 32px;
+}
+.var-num {
+  font-size: 52px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #002395, #ED2939);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+}
+.var-title { font-size: 24px; font-weight: 700; margin-bottom: 14px; }
+.var-desc { font-size: 20px; color: #ffffffa0; line-height: 1.6; }
+.predict-banner {
+  background: linear-gradient(135deg, #002395 0%, #ED2939 100%);
+  border-radius: 16px;
+  padding: 28px 40px;
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* ── Slide 7: VERDICT ── */
+#slide-7 {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px;
+}
+#slide-7 .slide-title {
+  font-size: 40px;
+  font-weight: 900;
+  color: #FFD700;
+  margin-bottom: 48px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.verdict-table {
+  width: 1300px;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  margin-bottom: 48px;
+}
+.verdict-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: #ffffff08;
+  border-radius: 16px;
+  padding: 24px 32px;
+  margin-bottom: 12px;
+}
+.verdict-rank {
+  font-size: 40px;
+  font-weight: 900;
+  width: 60px;
+  text-align: center;
+}
+.verdict-rank.r1 { color: #FFD700; }
+.verdict-rank.r2 { color: #C0C0C0; }
+.verdict-rank.r3 { color: #CD7F32; }
+.verdict-rank.r4 { color: #ffffff50; }
+.verdict-flag { font-size: 44px; }
+.verdict-team { font-size: 32px; font-weight: 700; flex: 1; }
+.verdict-pts {
+  font-size: 24px;
+  color: #FFD70090;
+  font-weight: 700;
+  min-width: 100px;
+  text-align: right;
+}
+.verdict-note { font-size: 19px; color: #ffffff70; min-width: 280px; text-align: right; }
+.verdict-advance {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 180px;
+  justify-content: flex-end;
+}
+.advance-pill {
+  background: #00cc6640;
+  border: 1px solid #00cc66;
+  color: #00cc66;
+  padding: 6px 20px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.next-ep {
+  background: #ffffff08;
+  border: 1px solid #ffffff15;
+  border-radius: 16px;
+  padding: 24px 40px;
+  font-size: 24px;
+  color: #ffffffa0;
+  text-align: center;
+  max-width: 1100px;
+}
+.next-ep span { color: #FFD700; font-weight: 700; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: HOOK -->
+<div class="slide active" id="slide-1">
+  <div class="bg-stadium"></div>
+  <div class="bg-lines"></div>
+  <div class="accent-bar"></div>
+  <div class="series-tag">2026 월드컵 예측 대결</div>
+  <div class="ep-badge">EP 05</div>
+  <div class="group-label">B조</div>
+  <div class="main-title">프랑스 vs 포르투갈<br><span>호날두의 마지막 무대</span></div>
+  <div class="subtitle">
+    B조는 역대 월드컵 역사상 가장 화려한 죽음의 조입니다.<br>
+    2018 챔피언 프랑스, 레전드 호날두의 포르투갈, 2022 아프리카 기적 모로코, 개최국 캐나다
+  </div>
+  <div class="bottom-teams">
+    <div class="flag-pill"><span class="flag">🇫🇷</span> 프랑스</div>
+    <div class="flag-pill"><span class="flag">🇵🇹</span> 포르투갈</div>
+    <div class="flag-pill"><span class="flag">🇲🇦</span> 모로코</div>
+    <div class="flag-pill"><span class="flag">🇨🇦</span> 캐나다</div>
+  </div>
+</div>
+
+<!-- SLIDE 2: TEAMS -->
+<div class="slide" id="slide-2">
+  <div class="bg-stadium"></div>
+  <div class="bg-lines"></div>
+  <div class="accent-bar"></div>
+  <div class="series-tag">2026 월드컵 예측 대결</div>
+  <div class="ep-badge">EP 05 · B조</div>
+  <div class="slide-title">🏆 B조 4개 팀 소개</div>
+  <div class="teams-grid">
+    <div class="team-card seed1">
+      <div class="team-flag-name">
+        <span class="team-flag">🇫🇷</span>
+        <div>
+          <div class="team-name">프랑스</div>
+          <div class="team-rank">FIFA 랭킹 2위 · 1번 시드</div>
+        </div>
+      </div>
+      <div class="team-desc">2018 챔피언. 음바페의 레 블뢰 — 2022 결승 설욕을 노린다</div>
+    </div>
+    <div class="team-card seed2">
+      <div class="team-flag-name">
+        <span class="team-flag">🇵🇹</span>
+        <div>
+          <div class="team-name">포르투갈</div>
+          <div class="team-rank">FIFA 랭킹 7위</div>
+        </div>
+      </div>
+      <div class="team-desc">호날두(41세)의 마지막 월드컵. 레앙·브루누가 이끄는 젊은 세대</div>
+    </div>
+    <div class="team-card seed3">
+      <div class="team-flag-name">
+        <span class="team-flag">🇲🇦</span>
+        <div>
+          <div class="team-name">모로코</div>
+          <div class="team-rank">FIFA 랭킹 13위</div>
+        </div>
+      </div>
+      <div class="team-desc">2022 아프리카 최초 4강. 하키미·암라바트의 수비 조직력</div>
+    </div>
+    <div class="team-card seed4">
+      <div class="team-flag-name">
+        <span class="team-flag">🇨🇦</span>
+        <div>
+          <div class="team-name">캐나다</div>
+          <div class="team-rank">FIFA 랭킹 48위 · 개최국</div>
+        </div>
+      </div>
+      <div class="team-desc">데이비스가 이끄는 역대 첫 자국 개최 월드컵. 홈 어드밴티지</div>
+    </div>
+  </div>
+  <div class="venues-strip">
+    📍 경기 장소: <strong>로스앤젤레스 · 시애틀 · 캔자스시티</strong>
+  </div>
+</div>
+
+<!-- SLIDE 3: FRANCE -->
+<div class="slide analysis-slide" id="slide-3">
+  <div class="bg-stadium"></div>
+  <div class="bg-lines"></div>
+  <div class="accent-bar"></div>
+  <div class="series-tag">2026 월드컵 예측 대결</div>
+  <div class="ep-badge">EP 05 · B조</div>
+  <div class="slide-title">🔵 프랑스 — 2018 챔피언, 2022 준우승</div>
+  <div class="analysis-hero">
+    <div class="analysis-left">
+      <div class="big-flag">🇫🇷</div>
+      <div class="country-name-big">프랑스</div>
+      <div class="rank-badge">FIFA 랭킹 2위</div>
+    </div>
+    <div class="analysis-right">
+      <div class="key-player-box">
+        <div class="label">⚡ 핵심 선수</div>
+        <div class="player">킬리안 음바페</div>
+        <div class="club">레알 마드리드 · 포워드 · 26세</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-label">KEY PLAYERS</div>
+        <div class="stat-value">에두아르 카마빙가 · 오렐리앙 추아메니 (미드필더)<br>마르쿠스 튀랑 (공격)</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-label">강점</div>
+        <div class="stat-value">세계 최고 수준의 스쿼드 뎁스 · 음바페의 개인기</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-label">약점</div>
+        <div class="stat-value">골키퍼 교체 이후 수비 연결성 — 단, 강점이 훨씬 압도적</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4: PORTUGAL -->
+<div class="slide analysis-slide" id="slide-4">
+  <div class="bg-stadium"></div>
+  <div class="bg-lines"></div>
+  <div class="accent-bar"></div>
+  <div class="series-tag">2026 월드컵 예측 대결</div>
+  <div class="ep-badge">EP 05 · B조</div>
+  <div class="slide-title">🔴 포르투갈 — 호날두, 마지막 무대</div>
+  <div class="analysis-hero">
+    <div class="analysis-left">
+      <div class="big-flag">🇵🇹</div>
+      <div class="country-name-big">포르투갈</div>
+      <div class="rank-badge">FIFA 랭킹 7위</div>
+    </div>
+    <div class="analysis-right">
+      <div class="key-player-box">
+        <div class="label">⚡ 핵심 선수</div>
+        <div class="player">크리스티아누 호날두</div>
+        <div class="club">사우디 프로리그 · 포워드 · 41세 · 마지막 월드컵</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-label">NEW GENERATION</div>
+        <div class="stat-value">라파엘 레앙 (AC밀란) · 브루누 페르난데스 · 루벤 디아스</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-label">전략</div>
+        <div class="stat-value">호날두의 상징성 + 레앙의 폭발력 조합</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-label">목표</div>
+        <div class="stat-value">B조 2위 통과 → 16강 이후 호날두 마지막 도전</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5: MOROCCO + CANADA -->
+<div class="slide analysis-slide" id="slide-5">
+  <div class="bg-stadium"></div>
+  <div class="bg-lines"></div>
+  <div class="accent-bar"></div>
+  <div class="series-tag">2026 월드컵 예측 대결</div>
+  <div class="ep-badge">EP 05 · B조</div>
+  <div class="slide-title">🇲🇦 모로코 &amp; 🇨🇦 캐나다 — 다크호스 vs 개최국</div>
+  <div class="analysis-hero" style="gap:40px">
+    <div style="flex:1; display:flex; flex-direction:column; gap:24px; justify-content:center;">
+      <div style="font-size:40px; font-weight:900; display:flex; align-items:center; gap:16px;">
+        🇲🇦 <span>모로코</span> <span style="font-size:22px; color:#FFD70090; margin-left:8px;">FIFA 13위</span>
+      </div>
+      <div class="key-player-box">
+        <div class="label">⚡ 핵심 선수</div>
+        <div class="player">아크라프 하키미</div>
+        <div class="club">PSG · 라이트백 + 소피안 암라바트 (바르셀로나)</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-label">강점</div>
+        <div class="stat-value">레그라기 감독의 수비 조직력 — 2022 세계 최강</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-label">목표</div>
+        <div class="stat-value">1-0 수비 축구로 이변 연출 가능</div>
+      </div>
+    </div>
+    <div style="width:1px; background:#ffffff15;"></div>
+    <div style="flex:1; display:flex; flex-direction:column; gap:24px; justify-content:center;">
+      <div style="font-size:40px; font-weight:900; display:flex; align-items:center; gap:16px;">
+        🇨🇦 <span>캐나다</span> <span style="font-size:22px; color:#ffffff60; margin-left:8px;">FIFA 48위</span>
+      </div>
+      <div class="key-player-box">
+        <div class="label">⚡ 핵심 선수</div>
+        <div class="player">알폰소 데이비스</div>
+        <div class="club">바이에른 뮌헨 · 레프트백 · 팀의 상징</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-label">강점</div>
+        <div class="stat-value">역대 최초 자국 개최 — 홈 관중 어드밴티지</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-label">현실</div>
+        <div class="stat-value">프랑스·포르투갈은 벅찬 상대 — 모로코전이 핵심</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6: PREDICT -->
+<div class="slide" id="slide-6">
+  <div class="bg-stadium"></div>
+  <div class="bg-lines"></div>
+  <div class="accent-bar"></div>
+  <div class="series-tag">2026 월드컵 예측 대결</div>
+  <div class="ep-badge">EP 05 · B조</div>
+  <div class="slide-title">🔮 B조 핵심 변수 3가지</div>
+  <div class="variables-grid">
+    <div class="var-card">
+      <div class="var-num">①</div>
+      <div class="var-title">6월 19일 프랑스 vs 포르투갈</div>
+      <div class="var-desc">역대 최고의 조별리그 매치. 양 팀 모두 2위 통과를 원하지 않는다. 이 경기 패자는 심리적으로 무너진다</div>
+    </div>
+    <div class="var-card">
+      <div class="var-num">②</div>
+      <div class="var-title">호날두 효과</div>
+      <div class="var-desc">호날두가 골을 넣으면 포르투갈은 다른 팀이 된다. 반대로 무득점이면 심리적 압박이 극대화된다</div>
+    </div>
+    <div class="var-card">
+      <div class="var-num">③</div>
+      <div class="var-title">모로코의 수비</div>
+      <div class="var-desc">프랑스조차 2022 준결승에서 모로코를 꺾는 데 고전했다. 수비 조직력 하나로 이변을 만들 수 있다</div>
+    </div>
+  </div>
+  <div class="predict-banner">
+    예측: 프랑스 1위 · 포르투갈 2위 — 하지만 모로코의 이변 가능성이 이 그룹을 뒤흔든다
+  </div>
+</div>
+
+<!-- SLIDE 7: VERDICT -->
+<div class="slide" id="slide-7">
+  <div class="bg-stadium"></div>
+  <div class="bg-lines"></div>
+  <div class="accent-bar"></div>
+  <div class="series-tag">2026 월드컵 예측 대결</div>
+  <div class="ep-badge">EP 05 · B조</div>
+  <div class="slide-title">🏆 B조 최종 예측</div>
+  <div class="verdict-row">
+    <div class="verdict-rank r1">1</div>
+    <div class="verdict-flag">🇫🇷</div>
+    <div class="verdict-team">프랑스</div>
+    <div class="verdict-pts">승점 7</div>
+    <div class="verdict-note">세계 최강의 뎁스</div>
+    <div class="verdict-advance"><span class="advance-pill">16강 진출</span></div>
+  </div>
+  <div class="verdict-row">
+    <div class="verdict-rank r2">2</div>
+    <div class="verdict-flag">🇵🇹</div>
+    <div class="verdict-team">포르투갈</div>
+    <div class="verdict-pts">승점 4~5</div>
+    <div class="verdict-note">호날두 효과가 관건</div>
+    <div class="verdict-advance"><span class="advance-pill">16강 진출</span></div>
+  </div>
+  <div class="verdict-row">
+    <div class="verdict-rank r3">3</div>
+    <div class="verdict-flag">🇲🇦</div>
+    <div class="verdict-team">모로코</div>
+    <div class="verdict-pts">승점 3~4</div>
+    <div class="verdict-note">이변 연출 가능</div>
+    <div class="verdict-advance"></div>
+  </div>
+  <div class="verdict-row">
+    <div class="verdict-rank r4">4</div>
+    <div class="verdict-flag">🇨🇦</div>
+    <div class="verdict-team">캐나다</div>
+    <div class="verdict-pts">승점 1~2</div>
+    <div class="verdict-note">홈 분위기만으로는 한계</div>
+    <div class="verdict-advance"></div>
+  </div>
+  <div class="next-ep">
+    다음 EP: <span>C조 완전 분석</span> — 스페인과 개최국 멕시코의 충돌을 분석합니다
+  </div>
+</div>
+
+<script>
+let current = 1;
+const total = 7;
+
+function showSlide(n) {
+  const prev = document.getElementById('slide-' + current);
+  if (prev) prev.classList.remove('active');
+  current = Math.max(1, Math.min(total, n));
+  const next = document.getElementById('slide-' + current);
+  if (next) next.classList.add('active');
+}
+
+window.goToSlide = showSlide;
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'ArrowRight' || e.key === ' ') showSlide(current + 1);
+  if (e.key === 'ArrowLeft') showSlide(current - 1);
+});
+</script>
+</body>
+</html>

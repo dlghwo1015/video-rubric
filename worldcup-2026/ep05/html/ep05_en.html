@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>2026 World Cup Prediction Battle EP05 — Group B Deep Dive</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  background: #0a0e1a;
+  color: #ffffff;
+}
+.slide {
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  display: none;
+  overflow: hidden;
+}
+.slide.active { display: flex; }
+
+.bg-stadium {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 110%, #003d8030 0%, transparent 70%),
+    linear-gradient(160deg, #0a0e1a 0%, #0d1a2e 40%, #0a1520 100%);
+}
+.bg-lines {
+  position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(90deg, transparent, transparent 119px, #ffffff06 119px, #ffffff06 120px),
+    repeating-linear-gradient(0deg,  transparent, transparent  67px, #ffffff06  67px,  #ffffff06  68px);
+}
+.accent-bar {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 8px;
+  background: linear-gradient(180deg, #002395 0%, #ED2939 100%);
+}
+.series-tag {
+  position: absolute;
+  top: 48px; left: 60px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #ffffff80;
+}
+.ep-badge {
+  position: absolute;
+  top: 44px; right: 60px;
+  background: linear-gradient(135deg, #002395, #ED2939);
+  padding: 10px 28px;
+  border-radius: 40px;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+/* SLIDE 1 */
+#slide-1 {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#slide-1 .group-label {
+  font-size: 120px;
+  font-weight: 900;
+  letter-spacing: 8px;
+  background: linear-gradient(135deg, #002395 0%, #ED2939 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+#slide-1 .main-title {
+  font-size: 54px;
+  font-weight: 900;
+  text-align: center;
+  line-height: 1.2;
+  max-width: 1300px;
+}
+#slide-1 .main-title span { color: #FFD700; }
+#slide-1 .subtitle {
+  margin-top: 32px;
+  font-size: 28px;
+  color: #ffffffb0;
+  text-align: center;
+  max-width: 1100px;
+  line-height: 1.6;
+}
+#slide-1 .bottom-teams {
+  position: absolute;
+  bottom: 60px;
+  display: flex;
+  gap: 36px;
+}
+.flag-pill {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #ffffff10;
+  border: 1px solid #ffffff20;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 26px;
+  font-weight: 700;
+}
+.flag { font-size: 36px; }
+
+/* SLIDE 2 */
+#slide-2 {
+  flex-direction: column;
+  padding: 100px 80px 60px;
+}
+#slide-2 .slide-title {
+  font-size: 36px;
+  font-weight: 900;
+  color: #FFD700;
+  margin-bottom: 44px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.teams-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  flex: 1;
+}
+.team-card {
+  background: linear-gradient(135deg, #ffffff08, #ffffff03);
+  border: 1px solid #ffffff15;
+  border-radius: 20px;
+  padding: 36px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+.team-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.team-card.seed1::before { background: linear-gradient(90deg, #002395, #ED2939); }
+.team-card.seed2::before { background: linear-gradient(90deg, #006600, #FF0000); }
+.team-card.seed3::before { background: linear-gradient(90deg, #C1272D, #006233); }
+.team-card.seed4::before { background: linear-gradient(90deg, #FF0000, #FFFFFF); }
+.team-flag-name { display: flex; align-items: center; gap: 18px; }
+.team-flag { font-size: 50px; }
+.team-name { font-size: 32px; font-weight: 900; }
+.team-rank { font-size: 18px; color: #FFD70090; font-weight: 700; margin-top: 4px; }
+.team-desc { font-size: 21px; color: #ffffffc0; line-height: 1.5; }
+.venues-strip {
+  margin-top: auto;
+  padding-top: 24px;
+  font-size: 20px;
+  color: #ffffff60;
+}
+
+/* SLIDES 3-5 */
+.analysis-slide {
+  padding: 90px 80px 60px;
+  flex-direction: column;
+}
+.analysis-slide .slide-title {
+  font-size: 34px;
+  font-weight: 900;
+  color: #FFD700;
+  margin-bottom: 36px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.analysis-hero { display: flex; gap: 56px; flex: 1; }
+.analysis-left {
+  width: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+.big-flag { font-size: 150px; line-height: 1; }
+.country-name-big { font-size: 44px; font-weight: 900; text-align: center; }
+.rank-badge {
+  background: #FFD70020;
+  border: 1px solid #FFD70050;
+  color: #FFD700;
+  padding: 10px 28px;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.analysis-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  justify-content: center;
+}
+.key-player-box {
+  background: #FFD70015;
+  border-left: 4px solid #FFD700;
+  padding: 18px 22px;
+  border-radius: 0 12px 12px 0;
+}
+.key-player-box .label { font-size: 14px; color: #FFD70080; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
+.key-player-box .player { font-size: 26px; font-weight: 900; }
+.key-player-box .club { font-size: 18px; color: #ffffffa0; margin-top: 4px; }
+.stat-row { display: flex; flex-direction: column; gap: 8px; }
+.stat-label { font-size: 14px; color: #ffffff60; letter-spacing: 3px; text-transform: uppercase; }
+.stat-value { font-size: 24px; font-weight: 700; line-height: 1.4; }
+
+/* SLIDE 6 */
+#slide-6 {
+  flex-direction: column;
+  padding: 90px 80px 60px;
+}
+#slide-6 .slide-title { font-size: 34px; font-weight: 900; color: #FFD700; margin-bottom: 36px; text-transform: uppercase; letter-spacing: 2px; }
+.variables-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+.var-card {
+  background: #ffffff08;
+  border: 1px solid #ffffff15;
+  border-radius: 20px;
+  padding: 32px 28px;
+}
+.var-num {
+  font-size: 48px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #002395, #ED2939);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 14px;
+}
+.var-title { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+.var-desc { font-size: 19px; color: #ffffffa0; line-height: 1.6; }
+.predict-banner {
+  background: linear-gradient(135deg, #002395 0%, #ED2939 100%);
+  border-radius: 16px;
+  padding: 26px 36px;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* SLIDE 7 */
+#slide-7 {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px;
+}
+#slide-7 .slide-title { font-size: 38px; font-weight: 900; color: #FFD700; margin-bottom: 40px; text-align: center; text-transform: uppercase; letter-spacing: 3px; }
+.verdict-row {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  background: #ffffff08;
+  border-radius: 16px;
+  padding: 22px 30px;
+  margin-bottom: 10px;
+  width: 1300px;
+}
+.verdict-rank { font-size: 38px; font-weight: 900; width: 56px; text-align: center; }
+.verdict-rank.r1 { color: #FFD700; }
+.verdict-rank.r2 { color: #C0C0C0; }
+.verdict-rank.r3 { color: #CD7F32; }
+.verdict-rank.r4 { color: #ffffff50; }
+.verdict-flag { font-size: 42px; }
+.verdict-team { font-size: 30px; font-weight: 700; flex: 1; }
+.verdict-pts { font-size: 22px; color: #FFD70090; font-weight: 700; min-width: 100px; text-align: right; }
+.verdict-note { font-size: 18px; color: #ffffff70; min-width: 280px; text-align: right; }
+.verdict-advance { min-width: 160px; display: flex; justify-content: flex-end; }
+.advance-pill {
+  background: #00cc6640;
+  border: 1px solid #00cc66;
+  color: #00cc66;
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-size: 17px;
+  font-weight: 700;
+}
+.next-ep {
+  background: #ffffff08;
+  border: 1px solid #ffffff15;
+  border-radius: 16px;
+  padding: 22px 36px;
+  font-size: 22px;
+  color: #ffffffa0;
+  text-align: center;
+  max-width: 1100px;
+  margin-top: 24px;
+}
+.next-ep span { color: #FFD700; font-weight: 700; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1 -->
+<div class="slide active" id="slide-1">
+  <div class="bg-stadium"></div>
+  <div class="bg-lines"></div>
+  <div class="accent-bar"></div>
+  <div class="series-tag">2026 World Cup Prediction Battle</div>
+  <div class="ep-badge">EP 05</div>
+  <div class="group-label">GROUP B</div>
+  <div class="main-title">France vs Portugal<br><span>Ronaldo's Final Stage</span></div>
+  <div class="subtitle">
+    Group B is the most spectacular Group of Death in World Cup history.<br>
+    2018 champions France · Ronaldo's Portugal · Africa's 2022 miracle Morocco · host Canada
+  </div>
+  <div class="bottom-teams">
+    <div class="flag-pill"><span class="flag">🇫🇷</span> France</div>
+    <div class="flag-pill"><span class="flag">🇵🇹</span> Portugal</div>
+    <div class="flag-pill"><span class="flag">🇲🇦</span> Morocco</div>
+    <div class="flag-pill"><span class="flag">🇨🇦</span> Canada</div>
+  </div>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide" id="slide-2">
+  <div class="bg-stadium"></div>
+  <div class="bg-lines"></div>
+  <div class="accent-bar"></div>
+  <div class="series-tag">2026 World Cup Prediction Battle</div>
+  <div class="ep-badge">EP 05 · GROUP B</div>
+  <div class="slide-title">🏆 Group B — Meet the Teams</div>
+  <div class="teams-grid">
+    <div class="team-card seed1">
+      <div class="team-flag-name">
+        <span class="team-flag">🇫🇷</span>
+        <div>
+          <div class="team-name">France</div>
+          <div class="team-rank">FIFA #2 · Top Seed</div>
+        </div>
+      </div>
+      <div class="team-desc">2018 Champions. Mbappé's Les Bleus — seeking revenge for the 2022 final heartbreak</div>
+    </div>
+    <div class="team-card seed2">
+      <div class="team-flag-name">
+        <span class="team-flag">🇵🇹</span>
+        <div>
+          <div class="team-name">Portugal</div>
+          <div class="team-rank">FIFA #7</div>
+        </div>
+      </div>
+      <div class="team-desc">Ronaldo's (age 41) final World Cup. Leão and Bruno lead the new generation</div>
+    </div>
+    <div class="team-card seed3">
+      <div class="team-flag-name">
+        <span class="team-flag">🇲🇦</span>
+        <div>
+          <div class="team-name">Morocco</div>
+          <div class="team-rank">FIFA #13</div>
+        </div>
+      </div>
+      <div class="team-desc">Africa's first-ever semifinalists in 2022. Hakimi &amp; Amrabat's defensive organization</div>
+    </div>
+    <div class="team-card seed4">
+      <div class="team-flag-name">
+        <span class="team-flag">🇨🇦</span>
+        <div>
+          <div class="team-name">Canada</div>
+          <div class="team-rank">FIFA #48 · Host Nation</div>
+        </div>
+      </div>
+      <div class="team-desc">Davies leads the Canucks in their historic first home World Cup. Home advantage matters</div>
+    </div>
+  </div>
+  <div class="venues-strip">📍 Venues: Los Angeles · Seattle · Kansas City</div>
+</div>
+
+<!-- SLIDE 3: FRANCE -->
+<div class="slide analysis-slide" id="slide-3">
+  <div class="bg-stadium"></div>
+  <div class="bg-lines"></div>
+  <div class="accent-bar"></div>
+  <div class="series-tag">2026 World Cup Prediction Battle</div>
+  <div class="ep-badge">EP 05 · GROUP B</div>
+  <div class="slide-title">🔵 France — 2018 Champions, 2022 Runners-Up</div>
+  <div class="analysis-hero">
+    <div class="analysis-left">
+      <div class="big-flag">🇫🇷</div>
+      <div class="country-name-big">France</div>
+      <div class="rank-badge">FIFA Ranking #2</div>
+    </div>
+    <div class="analysis-right">
+      <div class="key-player-box">
+        <div class="label">⚡ Key Player</div>
+        <div class="player">Kylian Mbappé</div>
+        <div class="club">Real Madrid · Forward · Age 26</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-label">Midfield Core</div>
+        <div class="stat-value">Eduardo Camavinga · Aurélien Tchouaméni<br>Marcus Thuram (attack)</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-label">Strengths</div>
+        <div class="stat-value">World's deepest squad · Mbappé's individual brilliance</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-label">Weakness</div>
+        <div class="stat-value">Post-GK-change defensive cohesion — but strengths vastly outweigh it</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4: PORTUGAL -->
+<div class="slide analysis-slide" id="slide-4">
+  <div class="bg-stadium"></div>
+  <div class="bg-lines"></div>
+  <div class="accent-bar"></div>
+  <div class="series-tag">2026 World Cup Prediction Battle</div>
+  <div class="ep-badge">EP 05 · GROUP B</div>
+  <div class="slide-title">🔴 Portugal — Ronaldo's Final Chapter</div>
+  <div class="analysis-hero">
+    <div class="analysis-left">
+      <div class="big-flag">🇵🇹</div>
+      <div class="country-name-big">Portugal</div>
+      <div class="rank-badge">FIFA Ranking #7</div>
+    </div>
+    <div class="analysis-right">
+      <div class="key-player-box">
+        <div class="label">⚡ Key Player</div>
+        <div class="player">Cristiano Ronaldo</div>
+        <div class="club">Saudi Pro League · Forward · Age 41 · Final World Cup</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-label">New Generation</div>
+        <div class="stat-value">Rafael Leão (AC Milan) · Bruno Fernandes · Rúben Dias</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-label">Strategy</div>
+        <div class="stat-value">Ronaldo's iconic presence + Leão's explosive energy</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-label">Goal</div>
+        <div class="stat-value">Finish 2nd in Group B → Ronaldo's final chapter in the knockouts</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5: MOROCCO + CANADA -->
+<div class="slide analysis-slide" id="slide-5">
+  <div class="bg-stadium"></div>
+  <div class="bg-lines"></div>
+  <div class="accent-bar"></div>
+  <div class="series-tag">2026 World Cup Prediction Battle</div>
+  <div class="ep-badge">EP 05 · GROUP B</div>
+  <div class="slide-title">🇲🇦 Morocco &amp; 🇨🇦 Canada — Dark Horse vs Host Nation</div>
+  <div class="analysis-hero" style="gap:40px">
+    <div style="flex:1; display:flex; flex-direction:column; gap:22px; justify-content:center;">
+      <div style="font-size:38px; font-weight:900; display:flex; align-items:center; gap:14px;">
+        🇲🇦 <span>Morocco</span> <span style="font-size:20px; color:#FFD70090; margin-left:8px;">FIFA #13</span>
+      </div>
+      <div class="key-player-box">
+        <div class="label">⚡ Key Players</div>
+        <div class="player">Achraf Hakimi</div>
+        <div class="club">PSG · RB + Sofyan Amrabat (Barcelona · CM)</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-label">Strength</div>
+        <div class="stat-value">Regragui's world-class defensive organization — proven in 2022</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-label">Goal</div>
+        <div class="stat-value">1-0 defensive football — upset is genuinely possible</div>
+      </div>
+    </div>
+    <div style="width:1px; background:#ffffff15;"></div>
+    <div style="flex:1; display:flex; flex-direction:column; gap:22px; justify-content:center;">
+      <div style="font-size:38px; font-weight:900; display:flex; align-items:center; gap:14px;">
+        🇨🇦 <span>Canada</span> <span style="font-size:20px; color:#ffffff60; margin-left:8px;">FIFA #48</span>
+      </div>
+      <div class="key-player-box">
+        <div class="label">⚡ Key Player</div>
+        <div class="player">Alphonso Davies</div>
+        <div class="club">Bayern Munich · Left Back · Team's symbol</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-label">Strength</div>
+        <div class="stat-value">Historic first home World Cup — crowd advantage is real</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-label">Reality</div>
+        <div class="stat-value">France and Portugal are massive walls — Morocco match is the key</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6: PREDICT -->
+<div class="slide" id="slide-6">
+  <div class="bg-stadium"></div>
+  <div class="bg-lines"></div>
+  <div class="accent-bar"></div>
+  <div class="series-tag">2026 World Cup Prediction Battle</div>
+  <div class="ep-badge">EP 05 · GROUP B</div>
+  <div class="slide-title">🔮 Three Key Variables in Group B</div>
+  <div class="variables-grid">
+    <div class="var-card">
+      <div class="var-num">01</div>
+      <div class="var-title">June 19: France vs Portugal</div>
+      <div class="var-desc">One of the greatest group stage matches ever. Neither side wants second place. The loser faces a psychological collapse.</div>
+    </div>
+    <div class="var-card">
+      <div class="var-num">02</div>
+      <div class="var-title">The Ronaldo Effect</div>
+      <div class="var-desc">When Ronaldo scores, Portugal becomes a different team. When he doesn't? The psychological pressure becomes immense.</div>
+    </div>
+    <div class="var-card">
+      <div class="var-num">03</div>
+      <div class="var-title">Morocco's Defense</div>
+      <div class="var-desc">Even France struggled to beat Morocco in the 2022 semifinal. Defensive organization alone can create an upset.</div>
+    </div>
+  </div>
+  <div class="predict-banner">
+    Prediction: France 1st · Portugal 2nd — but Morocco's upset potential could shake this entire group
+  </div>
+</div>
+
+<!-- SLIDE 7: VERDICT -->
+<div class="slide" id="slide-7">
+  <div class="bg-stadium"></div>
+  <div class="bg-lines"></div>
+  <div class="accent-bar"></div>
+  <div class="series-tag">2026 World Cup Prediction Battle</div>
+  <div class="ep-badge">EP 05 · GROUP B</div>
+  <div class="slide-title">🏆 Group B — Final Prediction</div>
+  <div class="verdict-row">
+    <div class="verdict-rank r1">1</div>
+    <div class="verdict-flag">🇫🇷</div>
+    <div class="verdict-team">France</div>
+    <div class="verdict-pts">7 pts</div>
+    <div class="verdict-note">World's deepest squad</div>
+    <div class="verdict-advance"><span class="advance-pill">ADVANCES</span></div>
+  </div>
+  <div class="verdict-row">
+    <div class="verdict-rank r2">2</div>
+    <div class="verdict-flag">🇵🇹</div>
+    <div class="verdict-team">Portugal</div>
+    <div class="verdict-pts">4–5 pts</div>
+    <div class="verdict-note">Ronaldo factor is decisive</div>
+    <div class="verdict-advance"><span class="advance-pill">ADVANCES</span></div>
+  </div>
+  <div class="verdict-row">
+    <div class="verdict-rank r3">3</div>
+    <div class="verdict-flag">🇲🇦</div>
+    <div class="verdict-team">Morocco</div>
+    <div class="verdict-pts">3–4 pts</div>
+    <div class="verdict-note">Upset is possible</div>
+    <div class="verdict-advance"></div>
+  </div>
+  <div class="verdict-row">
+    <div class="verdict-rank r4">4</div>
+    <div class="verdict-flag">🇨🇦</div>
+    <div class="verdict-team">Canada</div>
+    <div class="verdict-pts">1–2 pts</div>
+    <div class="verdict-note">Home support has limits</div>
+    <div class="verdict-advance"></div>
+  </div>
+  <div class="next-ep">
+    Next: <span>Group C Deep Dive</span> — Spain vs host Mexico, the clash that will set a stadium on fire
+  </div>
+</div>
+
+<script>
+let current = 1;
+const total = 7;
+
+function showSlide(n) {
+  const prev = document.getElementById('slide-' + current);
+  if (prev) prev.classList.remove('active');
+  current = Math.max(1, Math.min(total, n));
+  const next = document.getElementById('slide-' + current);
+  if (next) next.classList.add('active');
+}
+
+window.goToSlide = showSlide;
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'ArrowRight' || e.key === ' ') showSlide(current + 1);
+  if (e.key === 'ArrowLeft') showSlide(current - 1);
+});
+</script>
+</body>
+</html>
