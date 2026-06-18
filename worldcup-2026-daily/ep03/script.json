@@ -1,0 +1,58 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 3,
+  "date": "2026-06-18",
+  "title_ko": "2026-06-18 오늘의 경기 AI 예측 — 한국 vs 벨기에, 네덜란드 vs USA",
+  "title_ja": "2026-06-18 今日の試合 AI予測 — 韓国 vs ベルギー、オランダ vs USA",
+  "title_en": "2026-06-18 Match Predictions by AI — South Korea vs Belgium, Netherlands vs USA",
+  "korea_match": true,
+  "matches_today": [
+    { "id": "m1", "team_a": "Netherlands",  "team_b": "USA",      "group": "E", "venue": "AT&T Stadium, Dallas",               "kickoff_kst": "03:00" },
+    { "id": "m2", "team_a": "Portugal",     "team_b": "Croatia",  "group": "D", "venue": "Hard Rock Stadium, Miami",           "kickoff_kst": "06:00" },
+    { "id": "m3", "team_a": "South Korea",  "team_b": "Belgium",  "group": "F", "venue": "Rose Bowl Stadium, Los Angeles",     "kickoff_kst": "09:00" },
+    { "id": "m4", "team_a": "France",       "team_b": "Colombia", "group": "B", "venue": "Allegiant Stadium, Las Vegas",       "kickoff_kst": "12:00" }
+  ],
+  "yesterday_results": [
+    { "team_a": "Argentina", "score_a": 1, "score_b": 0, "team_b": "Jamaica",     "group": "A" },
+    { "team_a": "Spain",     "score_a": 2, "score_b": 1, "team_b": "Switzerland", "group": "H" },
+    { "team_a": "England",   "score_a": 2, "score_b": 0, "team_b": "Saudi Arabia","group": "C" }
+  ],
+  "ai_predictions": [
+    { "match": "Netherlands vs USA",      "pred_a": 2, "pred_b": 1, "confidence": "66%", "pick": "Netherlands" },
+    { "match": "Portugal vs Croatia",     "pred_a": 2, "pred_b": 0, "confidence": "69%", "pick": "Portugal" },
+    { "match": "South Korea vs Belgium",  "pred_a": 2, "pred_b": 1, "confidence": "59%", "pick": "South Korea" },
+    { "match": "France vs Colombia",      "pred_a": 2, "pred_b": 0, "confidence": "71%", "pick": "France" }
+  ],
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "오늘 월드컵의 승부처는 한국입니다. 한국 대 벨기에 — 조별리그 2연승을 향한 정면 승부. 그리고 네덜란드 대 USA — 뉴월드와 올드월드의 충돌. AI가 오늘 4경기를 모두 예측합니다.",
+      "narration_ja": "今日のワールドカップの焦点は韓国です。韓国対ベルギー — グループステージ2連勝をかけた正面対決。そしてオランダ対USA — 新大陸と旧大陸の激突。AIが今日の4試合すべてを予測します。",
+      "narration_en": "Today's World Cup spotlight: South Korea. Korea vs Belgium — a direct clash for back-to-back group stage wins. And Netherlands vs USA — the old world meets the new. AI predicts all four matches."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "어제 결과부터 정리합니다. 아르헨티나가 자메이카를 1-0으로 꺾으며 그룹 A 수위를 유지했습니다. 스페인은 스위스를 2-1로 제압 — 야말과 윌리엄스의 측면 공격이 또 빛났습니다. 잉글랜드는 사우디아라비아를 2-0으로 완파하며 16강 진출을 사실상 확정지었습니다.",
+      "narration_ja": "昨日の結果から整理します。アルゼンチンはジャマイカを1-0で下し、グループA首位を維持。スペインはスイスを2-1で制圧 — ヤマルとウィリアムスのサイドが再び輝きました。イングランドはサウジアラビアを2-0で完勝し、ラウンド16進出をほぼ確定しました。",
+      "narration_en": "Yesterday's results first. Argentina edged Jamaica 1-0 to stay top of Group A. Spain defeated Switzerland 2-1 — Yamal and Williams dazzled on the flanks again. England dismantled Saudi Arabia 2-0, all but securing their round of 16 spot."
+    },
+    {
+      "id": "s03_prediction1",
+      "narration": "오늘의 핵심 경기, 한국 대 벨기에. AI 예측은 한국 2-1 벨기에입니다. 근거 세 가지. 첫째, 이강인이 이번 대회 최고 컨디션 — 벨기에의 미드필드 압박을 역으로 역습으로 전환하는 능력이 탁월합니다. 둘째, 김민재의 수비 리더십이 벨기에의 포스트-루카쿠 세대 스트라이커들을 억제합니다. 셋째, 이란전 2-0 완승 이후 팀 사기가 최고조 — 한국은 지금 이 대회에서 가장 자신감 넘치는 팀입니다. AI 신뢰도 59%. 박빙의 승부지만, AI는 한국을 선택합니다.",
+      "narration_ja": "今日の焦点、韓国対ベルギー。AI予測は韓国2-1ベルギー。根拠は三つ。一つ目、イ・ガンインは今大会最高コンディション — ベルギーのプレス圧力を逆カウンターに変換する能力が際立ちます。二つ目、キム・ミンジェの守備リーダーシップがベルギーのポスト・ルカク世代ストライカーを抑制。三つ目、イラン戦2-0完勝後のチーム士気は最高潮 — 韓国は今大会で最も自信に満ちたチームです。AI信頼度59%。紙一重の勝負ですが、AIは韓国を選択します。",
+      "narration_en": "Today's key match: South Korea vs Belgium. AI prediction — Korea 2-1 Belgium. Three reasons. First, Lee Kang-in is in peak form — his ability to convert Belgian press into lethal counter-attacks is exceptional. Second, Kim Min-jae's defensive leadership neutralizes Belgium's post-Lukaku striker generation. Third, team morale is sky-high after the 2-0 demolition of Iran — Korea is the most confident squad at this tournament. AI confidence: 59%. A tight contest, but AI picks Korea."
+    },
+    {
+      "id": "s04_prediction2",
+      "narration": "나머지 세 경기 빠르게 예측합니다. 네덜란드 대 USA — AI 픽 네덜란드 2-1. 세네갈전 무실점에 이어 코디 가크포가 미국 수비를 파고듭니다. 신뢰도 66%. 포르투갈 대 크로아티아 — AI 픽 포르투갈 2-0. 라파엘 레아오, 비티냐, 곤살루 하무스의 팀 축구가 빛납니다. 신뢰도 69%. 프랑스 대 콜롬비아 — AI 픽 프랑스 2-0. 음바페의 폭발적 스피드가 콜롬비아 수비를 무력화합니다. 신뢰도 71%.",
+      "narration_ja": "残り3試合を素早く予測します。オランダ対USA — AIピックオランダ2-1。セネガル戦無失点に続き、コーディ・ガクポが米国守備を突き崩します。信頼度66%。ポルトガル対クロアチア — AIピックポルトガル2-0。ラファエル・レオン、ビティーニャ、ゴンサロ・ラモスのチームサッカーが輝きます。信頼度69%。フランス対コロンビア — AIピックフランス2-0。エムバペの爆発的スピードがコロンビア守備を無力化。信頼度71%。",
+      "narration_en": "Three more matches, quick predictions. Netherlands vs USA — AI pick Netherlands 2-1. After a clean sheet vs Senegal, Cody Gakpo dismantles the American backline. Confidence 66%. Portugal vs Croatia — AI pick Portugal 2-0. Rafael Leão, Vitinha, and Gonçalo Ramos deliver clinical team football. Confidence 69%. France vs Colombia — AI pick France 2-0. Mbappé's explosive pace neutralizes Colombia's defense. Confidence 71%."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘의 AI 픽 정리. 한국, 네덜란드, 포르투갈, 프랑스 — 오늘 4팀 모두 승리 예측. 오늘의 하이라이트는 한국 대 벨기에. 이강인과 조규성 콤비가 벨기에의 새 세대를 상대로 또 한 번 역사를 씁니다. AI는 한국의 2연승을 믿습니다. 2-1, 이강인 결승골. 내일 예측 결과 검증 — 채널 구독하고 함께 확인하세요.",
+      "narration_ja": "今日のAIピックまとめ。韓国、オランダ、ポルトガル、フランス — 今日の4チームすべて勝利予測。今日のハイライトは韓国対ベルギー。イ・ガンインとチョ・ギュソンのコンビがベルギーの新世代相手にまた歴史を刻みます。AIは韓国の2連勝を信じます。2-1、イ・ガンインの決勝ゴール。明日は予測結果を検証 — チャンネル登録して一緒に確認しましょう。",
+      "narration_en": "Today's AI picks summary. Korea, Netherlands, Portugal, France — all four predicted to win today. Today's highlight: South Korea vs Belgium. The Lee Kang-in and Cho Gyu-sung combination writes another chapter against Belgium's new generation. AI believes in Korea's second straight win. 2-1, Lee Kang-in with the winner. Result verification tomorrow — subscribe and follow along."
+    }
+  ]
+}
