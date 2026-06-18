@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>C조 완전 분석 — EP06</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #0a0e1a;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  .slide.stadium { background: linear-gradient(135deg, #0a0e1a 0%, #0d1b3e 100%); }
+  .slide.pitch   { background: linear-gradient(135deg, #0a1f0d 0%, #0d2818 100%); }
+  .slide.trophy  { background: linear-gradient(135deg, #1a0e0a 0%, #2e1505 100%); }
+  .slide.dark    { background: linear-gradient(135deg, #090912 0%, #12101e 100%); }
+
+  .slide-label {
+    position: absolute;
+    top: 36px; left: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .slide-num {
+    position: absolute;
+    top: 36px; right: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.08em;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(48px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.88); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  .slide.active .anim-up   { animation: fadeUp 0.65s cubic-bezier(.22,1,.36,1) both; }
+  .slide.active .anim-fade { animation: fadeIn 0.55s ease both; }
+  .slide.active .anim-scale{ animation: scaleIn 0.55s cubic-bezier(.22,1,.36,1) both; }
+
+  .delay-1 { animation-delay: 0.10s; }
+  .delay-2 { animation-delay: 0.22s; }
+  .delay-3 { animation-delay: 0.34s; }
+  .delay-4 { animation-delay: 0.46s; }
+  .delay-5 { animation-delay: 0.58s; }
+
+  /* ── 공통 요소 ── */
+  .series-badge {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    letter-spacing: 0.15em;
+    color: #f5a623;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .ep-tag {
+    display: inline-block;
+    background: #1a6e2a;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 6px 18px;
+    border-radius: 4px;
+    letter-spacing: 0.08em;
+    margin-bottom: 24px;
+  }
+  .group-badge {
+    display: inline-block;
+    background: linear-gradient(90deg, #f5a623, #f56223);
+    color: #fff;
+    font-size: 28px;
+    font-weight: 900;
+    padding: 10px 32px;
+    border-radius: 8px;
+    letter-spacing: 0.05em;
+    margin-bottom: 28px;
+  }
+
+  /* ── Slide 1: Hook ── */
+  .s01-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 110%, rgba(245,166,35,0.18) 0%, transparent 70%),
+      linear-gradient(170deg, #050810 0%, #0d1830 50%, #05100d 100%);
+  }
+  .s01-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+  .s01-content {
+    position: relative;
+    text-align: center;
+    padding: 0 160px;
+  }
+  .s01-title {
+    font-size: 82px;
+    font-weight: 900;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 32px;
+    text-shadow: 0 4px 40px rgba(0,0,0,0.6);
+  }
+  .s01-title em {
+    color: #f5a623;
+    font-style: normal;
+  }
+  .s01-sub {
+    font-size: 32px;
+    color: rgba(255,255,255,0.72);
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .s01-flags {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 48px;
+  }
+  .flag-chip {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 14px 28px;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    font-weight: 700;
+  }
+
+  /* ── Slide 2: Teams ── */
+  .s02-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    width: 1640px;
+    margin-top: 32px;
+  }
+  .team-card {
+    border-radius: 16px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 2px solid transparent;
+  }
+  .team-card.brazil   { background: linear-gradient(145deg,#1a3a0a,#0f2208); border-color: #4aaa22; }
+  .team-card.england  { background: linear-gradient(145deg,#0a1a3a,#080f22); border-color: #4a72cc; }
+  .team-card.japan    { background: linear-gradient(145deg,#2a0a0a,#1a0808); border-color: #cc2222; }
+  .team-card.ecuador  { background: linear-gradient(145deg,#2a2a0a,#1a1a08); border-color: #ccaa22; }
+  .team-flag  { font-size: 64px; margin-bottom: 14px; }
+  .team-name  { font-size: 26px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+  .team-rank  { font-size: 16px; color: rgba(255,255,255,0.55); margin-bottom: 12px; }
+  .team-desc  { font-size: 15px; color: rgba(255,255,255,0.72); line-height: 1.7; }
+  .seed-badge {
+    display: inline-block;
+    background: #f5a623;
+    color: #000;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 3px 12px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  /* ── Slide 3/4/5: Team Analysis ── */
+  .analysis-layout {
+    display: grid;
+    grid-template-columns: 520px 1fr;
+    gap: 60px;
+    width: 1640px;
+  }
+  .team-portrait {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .portrait-flag { font-size: 120px; margin-bottom: 16px; }
+  .portrait-name { font-size: 52px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+  .portrait-rank { font-size: 22px; color: rgba(255,255,255,0.6); margin-bottom: 20px; }
+  .portrait-tag  { font-size: 18px; color: #f5a623; font-weight: 600; font-style: italic; }
+
+  .team-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+  }
+  .stat-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 24px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 12px;
+    border-left: 4px solid #f5a623;
+  }
+  .stat-icon { font-size: 26px; flex-shrink: 0; margin-top: 2px; }
+  .stat-body {}
+  .stat-label { font-size: 15px; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
+  .stat-value { font-size: 20px; color: #fff; font-weight: 600; line-height: 1.5; }
+
+  /* ── Slide 6: Predict ── */
+  .predict-layout {
+    width: 1640px;
+  }
+  .predict-title {
+    font-size: 48px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .predict-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .predict-card {
+    background: rgba(255,255,255,0.07);
+    border-radius: 16px;
+    padding: 32px 28px;
+    border-top: 4px solid #f5a623;
+  }
+  .predict-num {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 15px;
+    color: #f5a623;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+  }
+  .predict-head {
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+  .predict-body {
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.75;
+  }
+
+  /* ── Slide 7: Verdict ── */
+  .verdict-layout {
+    width: 1640px;
+  }
+  .verdict-title {
+    font-size: 48px;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .verdict-table {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  .verdict-row {
+    border-radius: 14px;
+    padding: 28px 20px;
+    text-align: center;
+  }
+  .verdict-row.top1 { background: linear-gradient(145deg,#2a1a00,#3a2500); border: 2px solid #f5a623; }
+  .verdict-row.top2 { background: linear-gradient(145deg,#1a1a2a,#12121e); border: 2px solid #8888cc; }
+  .verdict-row.pos3 { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); }
+  .verdict-row.pos4 { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); }
+  .v-pos   { font-family: 'Roboto Mono', monospace; font-size: 15px; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
+  .v-flag  { font-size: 52px; margin-bottom: 10px; }
+  .v-name  { font-size: 24px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+  .v-pts   { font-size: 16px; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+  .v-label { font-size: 14px; color: #f5a623; font-weight: 600; }
+  .verdict-next {
+    text-align: center;
+    font-size: 22px;
+    color: rgba(255,255,255,0.55);
+  }
+  .verdict-next strong { color: #f5a623; }
+
+  /* ── Progress Bar ── */
+  .progress-bar {
+    position: absolute;
+    bottom: 0; left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #f5a623, #f56223);
+    transition: width 0.4s ease;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 1: HOOK
+═══════════════════════════════════════════ -->
+<div class="slide stadium active" id="slide-1">
+  <div class="s01-bg"></div>
+  <div class="s01-grid"></div>
+  <span class="slide-label">2026 월드컵 예측 대결</span>
+  <span class="slide-num">01 / 07</span>
+
+  <div class="s01-content">
+    <div class="series-badge anim-fade delay-1">⚽ WORLDCUP 2026 — EP06</div>
+    <div class="group-badge anim-up delay-1">C 조</div>
+    <div class="s01-title anim-up delay-2">브라질 vs 잉글랜드<br><em>60년 한을 푸는 날</em></div>
+    <div class="s01-sub anim-up delay-3">C조는 2026 월드컵의 진짜 죽음의 조입니다.<br>5번 우승의 셀레상, 1966년 이후 우승 없는 축구의 본고장, 카타르의 기적 일본, 그리고 에콰도르.</div>
+    <div class="s01-flags anim-fade delay-4">
+      <div class="flag-chip">🇧🇷 브라질</div>
+      <div class="flag-chip">🏴󠁧󠁢󠁥󠁮󠁧󠁿 잉글랜드</div>
+      <div class="flag-chip">🇯🇵 일본</div>
+      <div class="flag-chip">🇪🇨 에콰도르</div>
+    </div>
+  </div>
+  <div class="progress-bar" style="width:14.3%"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 2: TEAMS
+═══════════════════════════════════════════ -->
+<div class="slide dark" id="slide-2">
+  <span class="slide-label">2026 월드컵 예측 대결</span>
+  <span class="slide-num">02 / 07</span>
+
+  <div class="ep-tag anim-fade delay-1">EP06 · C조 팀 소개</div>
+  <div style="font-size:44px;font-weight:900;color:#fff;margin-bottom:8px;" class="anim-up delay-2">C조 4개 팀</div>
+  <div style="font-size:20px;color:rgba(255,255,255,0.5);margin-bottom:32px;" class="anim-fade delay-2">📍 댈러스 · 시카고 · 휴스턴</div>
+
+  <div class="s02-grid anim-scale delay-3">
+    <div class="team-card brazil">
+      <span class="seed-badge">1번 시드</span>
+      <div class="team-flag">🇧🇷</div>
+      <div class="team-name">브라질</div>
+      <div class="team-rank">FIFA 5위</div>
+      <div class="team-desc">5번 우승의 셀레상<br>비니시우스 주니오르 시대</div>
+    </div>
+    <div class="team-card england">
+      <div class="team-flag" style="margin-top:32px;">🏴󠁧󠁢󠁥󠁮󠁧󠁿</div>
+      <div class="team-name">잉글랜드</div>
+      <div class="team-rank">FIFA 6위</div>
+      <div class="team-desc">1966년 이후 우승 갈망<br>벨링엄·케인의 황금세대</div>
+    </div>
+    <div class="team-card japan">
+      <div class="team-flag" style="margin-top:32px;">🇯🇵</div>
+      <div class="team-name">일본</div>
+      <div class="team-rank">FIFA 17위</div>
+      <div class="team-desc">카타르 충격의 계승자<br>미토마·도안 유럽파 강화</div>
+    </div>
+    <div class="team-card ecuador">
+      <div class="team-flag" style="margin-top:32px;">🇪🇨</div>
+      <div class="team-name">에콰도르</div>
+      <div class="team-rank">FIFA 42위</div>
+      <div class="team-desc">남미의 다크호스<br>에네르 발렌시아 공격 선봉</div>
+    </div>
+  </div>
+  <div class="progress-bar" style="width:28.6%"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 3: BRAZIL
+═══════════════════════════════════════════ -->
+<div class="slide pitch" id="slide-3">
+  <span class="slide-label">2026 월드컵 예측 대결</span>
+  <span class="slide-num">03 / 07</span>
+
+  <div class="analysis-layout">
+    <div class="team-portrait anim-scale delay-1">
+      <div class="portrait-flag">🇧🇷</div>
+      <div class="portrait-name">브라질</div>
+      <div class="portrait-rank">FIFA 5위 · 5회 우승</div>
+      <div class="portrait-tag">"O Jogo Bonito"</div>
+      <div style="margin-top:24px;background:rgba(74,170,34,0.15);border:1px solid #4aaa22;border-radius:10px;padding:16px 20px;font-size:16px;color:rgba(255,255,255,0.7);line-height:1.7;text-align:left;">
+        🏆 1958·1962·1970·1994·2002<br>🎯 2022 카타르 8강 탈락<br>⚡ 2026 목표: 6번째 별
+      </div>
+    </div>
+    <div class="team-stats anim-up delay-2">
+      <div class="stat-row">
+        <div class="stat-icon">⭐</div>
+        <div class="stat-body">
+          <div class="stat-label">핵심 선수</div>
+          <div class="stat-value">비니시우스 주니오르 (레알 마드리드, 27세) — 발롱도르 수상자</div>
+        </div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-icon">🔥</div>
+        <div class="stat-body">
+          <div class="stat-label">공격 조합</div>
+          <div class="stat-value">호드리구 (레알 마드리드) · 가브리엘 마르티넬리 (아스널)</div>
+        </div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-icon">🛡️</div>
+        <div class="stat-body">
+          <div class="stat-label">미드필더 & 수비</div>
+          <div class="stat-value">카세미루 (맨유) · 마르키뇨스 (PSG) 수비 캡틴</div>
+        </div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-icon">🎯</div>
+        <div class="stat-body">
+          <div class="stat-label">전술 & 감독</div>
+          <div class="stat-value">도르발 주니오르 — 수비 안정 후 역습 폭발형 4-2-3-1</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="progress-bar" style="width:42.9%"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 4: ENGLAND
+═══════════════════════════════════════════ -->
+<div class="slide stadium" id="slide-4">
+  <div class="s01-bg" style="background:radial-gradient(ellipse 80% 60% at 50% 110%, rgba(74,114,204,0.2) 0%, transparent 70%), linear-gradient(170deg,#050810 0%,#0a1030 100%);"></div>
+  <span class="slide-label">2026 월드컵 예측 대결</span>
+  <span class="slide-num">04 / 07</span>
+
+  <div class="analysis-layout">
+    <div class="team-portrait anim-scale delay-1">
+      <div class="portrait-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</div>
+      <div class="portrait-name">잉글랜드</div>
+      <div class="portrait-rank">FIFA 6위 · 1966 챔피언</div>
+      <div class="portrait-tag">"Football's Coming Home?"</div>
+      <div style="margin-top:24px;background:rgba(74,114,204,0.15);border:1px solid #4a72cc;border-radius:10px;padding:16px 20px;font-size:16px;color:rgba(255,255,255,0.7);line-height:1.7;text-align:left;">
+        🏆 1966년 단 1회 우승<br>😤 2022 카타르 8강 탈락<br>💪 2026 황금세대 절정기
+      </div>
+    </div>
+    <div class="team-stats anim-up delay-2">
+      <div class="stat-row" style="border-left-color:#4a72cc;">
+        <div class="stat-icon">💙</div>
+        <div class="stat-body">
+          <div class="stat-label">핵심 선수</div>
+          <div class="stat-value">주드 벨링엄 (레알 마드리드, 23세) — 차세대 최고 미드필더</div>
+        </div>
+      </div>
+      <div class="stat-row" style="border-left-color:#4a72cc;">
+        <div class="stat-icon">⚽</div>
+        <div class="stat-body">
+          <div class="stat-label">공격 스트라이커</div>
+          <div class="stat-value">해리 케인 (바이에른 뮌헨, 31세) — 역대 최다득점 기록 보유</div>
+        </div>
+      </div>
+      <div class="stat-row" style="border-left-color:#4a72cc;">
+        <div class="stat-icon">🌟</div>
+        <div class="stat-body">
+          <div class="stat-label">양 날개</div>
+          <div class="stat-value">필 포든 (맨시티) · 부카요 사카 (아스널) — 최상의 컨디션</div>
+        </div>
+      </div>
+      <div class="stat-row" style="border-left-color:#4a72cc;">
+        <div class="stat-icon">⚠️</div>
+        <div class="stat-body">
+          <div class="stat-label">최대 과제</div>
+          <div class="stat-value">빅 무대 심리압박 — 2022·2020 토너먼트 연속 좌절 극복</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="progress-bar" style="width:57.2%"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 5: JAPAN
+═══════════════════════════════════════════ -->
+<div class="slide trophy" id="slide-5">
+  <span class="slide-label">2026 월드컵 예측 대결</span>
+  <span class="slide-num">05 / 07</span>
+
+  <div class="analysis-layout">
+    <div class="team-portrait anim-scale delay-1">
+      <div class="portrait-flag">🇯🇵</div>
+      <div class="portrait-name">일본</div>
+      <div class="portrait-rank">FIFA 17위 · 아시아 최강</div>
+      <div class="portrait-tag">"Samurai Blue"</div>
+      <div style="margin-top:24px;background:rgba(200,30,30,0.12);border:1px solid #cc2222;border-radius:10px;padding:16px 20px;font-size:16px;color:rgba(255,255,255,0.7);line-height:1.7;text-align:left;">
+        ✅ 2022 카타르 16강<br>😱 스페인·독일 조별 탈락<br>🎯 2026 목표: 8강 돌파
+      </div>
+    </div>
+    <div class="team-stats anim-up delay-2">
+      <div class="stat-row" style="border-left-color:#cc2222;">
+        <div class="stat-icon">⚡</div>
+        <div class="stat-body">
+          <div class="stat-label">핵심 공격수</div>
+          <div class="stat-value">미토마 카오루 (브라이튼) — 드리블·결정력 세계 정상급</div>
+        </div>
+      </div>
+      <div class="stat-row" style="border-left-color:#cc2222;">
+        <div class="stat-icon">🎯</div>
+        <div class="stat-body">
+          <div class="stat-label">미드필더 & 윙</div>
+          <div class="stat-value">도안 리츠 (프라이부르크) · 미나미노 타쿠미 (AS모나코)</div>
+        </div>
+      </div>
+      <div class="stat-row" style="border-left-color:#cc2222;">
+        <div class="stat-icon">🛡️</div>
+        <div class="stat-body">
+          <div class="stat-label">전술 핵심</div>
+          <div class="stat-value">수비 5-4-1 블록 후 고속 역습 — 강팀 킬러 전문</div>
+        </div>
+      </div>
+      <div class="stat-row" style="border-left-color:#cc2222;">
+        <div class="stat-icon">🔮</div>
+        <div class="stat-body">
+          <div class="stat-label">예측</div>
+          <div class="stat-value">브라질·잉글랜드 중 한 팀은 반드시 흔든다 — C조 이변 주역</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="progress-bar" style="width:71.5%"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 6: PREDICT
+═══════════════════════════════════════════ -->
+<div class="slide dark" id="slide-6">
+  <span class="slide-label">2026 월드컵 예측 대결</span>
+  <span class="slide-num">06 / 07</span>
+
+  <div class="predict-layout">
+    <div class="predict-title anim-up delay-1">⚡ C조 핵심 변수 3가지</div>
+    <div class="predict-grid">
+      <div class="predict-card anim-up delay-2">
+        <div class="predict-num">VARIABLE 01</div>
+        <div class="predict-head">🇧🇷 브라질 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 잉글랜드<br>6월 17일 댈러스</div>
+        <div class="predict-body">역대 전적: 브라질 8승 · 잉글랜드 3승<br><br>이 경기 패자는 심리적으로 무너집니다. 1960년대 이후 맞붙지 못한 두 거인의 조별 대결 — 사실상의 결승전.</div>
+      </div>
+      <div class="predict-card anim-up delay-3">
+        <div class="predict-num">VARIABLE 02</div>
+        <div class="predict-head">🇯🇵 일본의 이변 가능성<br>2022식 수비 블록 역습</div>
+        <div class="predict-body">잉글랜드를 상대로 2022 카타르처럼 수비 블록 후 역습이 통한다면 — 조 2위도 가능합니다. 브라질전도 상위 이변 제조 전력이 충분합니다.</div>
+      </div>
+      <div class="predict-card anim-up delay-4">
+        <div class="predict-num">VARIABLE 03</div>
+        <div class="predict-head">🇪🇨 에콰도르 깜짝 이변<br>브라질 상대 첫 경기</div>
+        <div class="predict-body">2002 한일 월드컵 이후 꾸준히 성장한 에콰도르. 에네르 발렌시아를 앞세워 브라질 수비를 흔들 수 있습니다. 조 1위 싸움 전체가 바뀔 수 있습니다.</div>
+      </div>
+    </div>
+  </div>
+  <div class="progress-bar" style="width:85.8%"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 7: VERDICT
+═══════════════════════════════════════════ -->
+<div class="slide stadium" id="slide-7">
+  <div class="s01-bg"></div>
+  <span class="slide-label">2026 월드컵 예측 대결</span>
+  <span class="slide-num">07 / 07</span>
+
+  <div class="verdict-layout">
+    <div class="verdict-title anim-up delay-1">🏆 C조 최종 예측</div>
+    <div class="verdict-table anim-scale delay-2">
+      <div class="verdict-row top1">
+        <div class="v-pos">1위 통과</div>
+        <div class="v-flag">🇧🇷</div>
+        <div class="v-name">브라질</div>
+        <div class="v-pts">예상 승점 7</div>
+        <div class="v-label">스쿼드 깊이 + 비니시우스</div>
+      </div>
+      <div class="verdict-row top2">
+        <div class="v-pos">2위 통과</div>
+        <div class="v-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</div>
+        <div class="v-name">잉글랜드</div>
+        <div class="v-pts">예상 승점 5~6</div>
+        <div class="v-label">브라질전 승리 시 1위</div>
+      </div>
+      <div class="verdict-row pos3">
+        <div class="v-pos">3위</div>
+        <div class="v-flag">🇯🇵</div>
+        <div class="v-name">일본</div>
+        <div class="v-pts">예상 승점 3~4</div>
+        <div class="v-label">이변 가능성 최고</div>
+      </div>
+      <div class="verdict-row pos4">
+        <div class="v-pos">4위</div>
+        <div class="v-flag">🇪🇨</div>
+        <div class="v-name">에콰도르</div>
+        <div class="v-pts">예상 승점 1~2</div>
+        <div class="v-label">다크호스 도전</div>
+      </div>
+    </div>
+    <div class="verdict-next anim-fade delay-3">
+      다음 EP ▶ <strong>D조 — 스페인 vs 네덜란드</strong>, 유럽 패권 대결
+    </div>
+  </div>
+  <div class="progress-bar" style="width:100%"></div>
+</div>
+
+<script>
+  var current = 1;
+  var total   = 7;
+
+  function showSlide(n) {
+    if (n < 1) n = 1;
+    if (n > total) n = total;
+    var prev = document.getElementById('slide-' + current);
+    var next = document.getElementById('slide-' + n);
+    if (prev) prev.classList.remove('active');
+    if (next) next.classList.add('active');
+    current = n;
+  }
+
+  window.goToSlide = showSlide;
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight' || e.key === ' ') showSlide(current + 1);
+    if (e.key === 'ArrowLeft')  showSlide(current - 1);
+    if (e.key >= '1' && e.key <= '7') showSlide(parseInt(e.key));
+  });
+
+  showSlide(1);
+</script>
+</body>
+</html>

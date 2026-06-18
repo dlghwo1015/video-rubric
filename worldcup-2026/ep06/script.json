@@ -1,0 +1,60 @@
+{
+  "series": "worldcup-2026",
+  "ep_number": 6,
+  "ep_role": "group_preview",
+  "group": "C조",
+  "title_ko": "C조 완전 분석 — 브라질 vs 잉글랜드, 60년 한을 푸는 날",
+  "title_ja": "C組完全分析 — ブラジル vs イングランド、60年の悲願",
+  "title_en": "Group C Deep Dive — Brazil vs England, 60 Years of Hurt",
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "role": "hook",
+      "narration": "C조는 2026 월드컵의 진짜 죽음의 조입니다. 5번 우승의 셀레상 브라질, 1966년 이후 우승이 없는 축구의 본고장 잉글랜드, 카타르의 기적을 이어갈 일본, 남미의 다크호스 에콰도르 — 댈러스 AT&T 스타디움에서 역사가 쓰여집니다.",
+      "narration_ja": "C組は2026ワールドカップ最大の死の組です。5度の王者ブラジル、1966年以来優勝のないイングランド、カタールの奇跡を継ぐ日本、南米のダークホース・エクアドル — ダラスで歴史が刻まれます。",
+      "narration_en": "Group C is the most explosive group at the 2026 World Cup. Five-time champions Brazil, England desperate for their first title since 1966, Japan carrying the torch of the Qatar miracle, and Ecuador as South America's dark horse — Dallas AT&T Stadium is where this history gets written."
+    },
+    {
+      "id": "s02_teams",
+      "role": "data",
+      "narration": "C조 4개 팀을 소개합니다. 1번 시드 브라질 — FIFA 랭킹 5위, 5번의 우승 기록. 잉글랜드 — FIFA 랭킹 6위, 60년 우승 갈망. 일본 — FIFA 랭킹 17위, 카타르 충격의 계승자. 에콰도르 — FIFA 랭킹 42위, 남미의 다크호스. 주요 경기 장소는 댈러스·시카고·휴스턴.",
+      "narration_ja": "C組の4チームを紹介します。第1シードブラジル — FIFAランキング5位、5度の優勝。イングランド — FIFAランキング6位、60年ぶりの悲願。日本 — FIFAランキング17位、カタールの衝撃の継承者。エクアドル — FIFAランキング42位、南米のダークホース。会場はダラス・シカゴ・ヒューストン。",
+      "narration_en": "Meet the four teams of Group C. Seed 1: Brazil — FIFA No. 5, five-time champions. England — FIFA No. 6, hunting their first title in 60 years. Japan — FIFA No. 17, heirs to the Qatar shock. Ecuador — FIFA No. 42, South America's dark horse. Venues: Dallas, Chicago, Houston."
+    },
+    {
+      "id": "s03_team1",
+      "role": "analysis",
+      "narration": "브라질. 셀레상, 오 조고 보니투 — 아름다운 축구. 2022 카타르 8강 탈락 후 비니시우스 주니오르가 팀의 새 왕이 됐습니다. 레알 마드리드에서 발롱도르를 수상한 그는 27세 절정기. 호드리구·카세미루·마르키뇨스가 완성형 스쿼드를 형성합니다. 도르발 주니오르 감독의 전술은 수비 안정 후 역습 폭발.",
+      "narration_ja": "ブラジル。セレソン、オ・ジョーゴ・ボニート — 美しいサッカー。2022カタール準々決勝敗退後、ヴィニシウス・ジュニオルがチームの新たな王に。レアル・マドリードでバロンドールを受賞した彼は27歳の全盛期。ホドリゴ、カゼミロ、マルキーニョスが完成されたスクワッドを形成します。ドルバル・ジュニオル監督の戦術：守備安定からの爆発的カウンター。",
+      "narration_en": "Brazil. The Seleção, O Jogo Bonito — beautiful football. After their 2022 quarterfinal exit, Vinícius Júnior has become the new king of this team. The Ballon d'Or winner from Real Madrid is at 27 — his absolute peak. Rodrygo, Casemiro, and Marquinhos complete a formidable squad. Coach Dorival Júnior's system: defensive solidity, then explosive counter-attacks."
+    },
+    {
+      "id": "s04_team2",
+      "role": "analysis",
+      "narration": "잉글랜드. 1966년 이후 우승이 없는 축구의 본고장. 주드 벨링엄(레알 마드리드, 23세)이 이 팀의 심장입니다. 해리 케인은 31세, 마지막 황금기의 전성기. 필 포든·부카요 사카가 날개를 장식합니다. 2022 카타르 8강 패배의 심리적 장벽을 넘을 수 있을까요?",
+      "narration_ja": "イングランド。1966年以来優勝のない、サッカーの母国。ジュード・ベリンガム（レアル・マドリード、23歳）がチームの心臓。ハリー・ケインは31歳、最後の黄金期の全盛。フィル・フォーデン、ブカヨ・サカが翼を飾ります。2022年カタール準々決勝敗退の心理的障壁を乗り越えられるか。",
+      "narration_en": "England. The birthplace of football, without a title since 1966. Jude Bellingham (Real Madrid, 23) is the heartbeat of this squad. Harry Kane at 31 — in the final golden chapter of his career. Phil Foden and Bukayo Saka provide the wing threat. Can they overcome the psychological wall from their 2022 quarterfinal exit?"
+    },
+    {
+      "id": "s05_team3",
+      "role": "analysis",
+      "narration": "일본. 2022 카타르에서 스페인·독일을 격파하며 아시아 최강을 증명했습니다. 미토마 카오루(브라이튼)·도안 리츠(프라이부르크)·미나미노 타쿠미가 유럽에서 단련됐습니다. 2026 스쿼드는 더욱 성장했습니다. 수비 블록을 세우고 브라질·잉글랜드를 상대로 역습 카운터를 노립니다.",
+      "narration_ja": "日本。2022年カタールでスペイン・ドイツを撃破し、アジア最強を証明。三笘薫（ブライトン）、堂安律（フライブルク）、南野拓実がヨーロッパで鍛え上げられています。2026年スクワッドはさらに成長。ブラジル・イングランド相手に守備ブロックからのカウンターを狙います。",
+      "narration_en": "Japan. In Qatar 2022, they shocked Germany and Spain — proving 'Asian powerhouse' was no exaggeration. Kaoru Mitoma, Ritsu Doan, and Takumi Minamino are Europa-hardened. The 2026 squad is even stronger. Their plan: set a deep defensive block, then unleash counter-attacks against Brazil and England."
+    },
+    {
+      "id": "s06_predict",
+      "role": "analysis",
+      "narration": "핵심 변수 세 가지. 첫째, 6월 17일 브라질 vs 잉글랜드 댈러스 — 역대 전적 브라질 8승·잉글랜드 3승. 패자는 심리적으로 무너집니다. 둘째, 일본의 이변 가능성 — 2022식 수비 블록 역습이 잉글랜드에 통하면 조 전체가 뒤집힙니다. 셋째, 에콰도르 첫 경기 — 브라질을 상대로 한 방이 나올 수 있습니다.",
+      "narration_ja": "注目の変数は3つ。①6月17日ブラジル対イングランド（ダラス）— 歴代対戦：ブラジル8勝・イングランド3勝。敗者は心理的に崩壊。②日本の番狂わせ — 2022年式守備ブロックカウンターがイングランドに通じれば、組全体がひっくり返ります。③エクアドルの初戦 — ブラジル相手に一発かます可能性。",
+      "narration_en": "Three key variables. One: June 17 Brazil vs England in Dallas — all-time record: Brazil leads 8 to 3. The loser faces a psychological collapse. Two: Japan's upset potential — if their 2022-style defensive counter-attack clicks against England, the whole group flips. Three: Ecuador's opener — a shock win against Brazil isn't impossible."
+    },
+    {
+      "id": "s07_verdict",
+      "role": "verdict",
+      "narration": "C조 최종 예측. 1위: 브라질. 승점 7 예상 — 스쿼드 깊이와 개인기. 2위: 잉글랜드. 승점 5~6 — 브라질전 승리 시 1위 가능. 3위: 일본. 승점 3~4 — 이변 가능. 4위: 에콰도르. 하지만 6월 17일 브라질 vs 잉글랜드, 이 한 경기가 전부를 바꿉니다. 다음 EP는 D조 — 스페인 vs 네덜란드입니다.",
+      "narration_ja": "C組最終予測。1位：ブラジル（勝ち点7）— スクワッド深度と個人技。2位：イングランド（勝ち点5〜6）— ブラジル戦勝利なら1位も。3位：日本（勝ち点3〜4）— 番狂わせ可能。4位：エクアドル。しかし6月17日ブラジル対イングランド、この一戦が全てを変えます。次のEPはD組 — スペイン対オランダです。",
+      "narration_en": "Group C final prediction. 1st: Brazil — projected 7 points, squad depth and individual brilliance. 2nd: England — 5-6 points, could take top spot if they beat Brazil. 3rd: Japan — 3-4 points, upset creators. 4th: Ecuador. But the June 17 Brazil vs England clash is the match that decides everything. Next episode: Group D — Spain vs Netherlands."
+    }
+  ]
+}
