@@ -1,0 +1,59 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 4,
+  "date": "2026-06-19",
+  "title_ko": "2026-06-19 오늘의 경기 AI 예측 — 브라질 vs 스위스, A조·H조 최종 결판",
+  "title_ja": "2026-06-19 今日の試合 AI予測 — ブラジル vs スイス、グループA・H組最終決戦",
+  "title_en": "2026-06-19 Match Predictions by AI — Brazil vs Switzerland, Groups A & H Decisive Day",
+  "korea_match": false,
+  "matches_today": [
+    { "id": "m1", "team_a": "Germany",    "team_b": "Jamaica",     "group": "A", "venue": "AT&T Stadium, Dallas",             "kickoff_kst": "03:00" },
+    { "id": "m2", "team_a": "Argentina",  "team_b": "Chile",       "group": "A", "venue": "Rose Bowl Stadium, Los Angeles",   "kickoff_kst": "03:00" },
+    { "id": "m3", "team_a": "Spain",      "team_b": "Uruguay",     "group": "H", "venue": "Allegiant Stadium, Las Vegas",     "kickoff_kst": "07:00" },
+    { "id": "m4", "team_a": "Brazil",     "team_b": "Switzerland", "group": "H", "venue": "MetLife Stadium, New York",        "kickoff_kst": "07:00" }
+  ],
+  "yesterday_results": [
+    { "team_a": "Netherlands",  "score_a": 2, "score_b": 1, "team_b": "USA",         "group": "E", "ai_correct": true  },
+    { "team_a": "Portugal",     "score_a": 2, "score_b": 0, "team_b": "Croatia",     "group": "D", "ai_correct": true  },
+    { "team_a": "South Korea",  "score_a": 2, "score_b": 1, "team_b": "Belgium",     "group": "F", "ai_correct": true  },
+    { "team_a": "France",       "score_a": 2, "score_b": 0, "team_b": "Colombia",    "group": "B", "ai_correct": true  }
+  ],
+  "ai_predictions": [
+    { "match": "Germany vs Jamaica",       "pred_a": 4, "pred_b": 0, "confidence": "82%", "pick": "Germany"   },
+    { "match": "Argentina vs Chile",       "pred_a": 3, "pred_b": 1, "confidence": "73%", "pick": "Argentina" },
+    { "match": "Spain vs Uruguay",         "pred_a": 2, "pred_b": 0, "confidence": "64%", "pick": "Spain"     },
+    { "match": "Brazil vs Switzerland",    "pred_a": 2, "pred_b": 1, "confidence": "67%", "pick": "Brazil"    }
+  ],
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "어제 AI 예측이 4경기 모두 적중했습니다. 특히 한국 2-1 벨기에 — AI가 믿었던 대로 이강인이 결승골을 터뜨렸습니다. 오늘은 A조와 H조 최종 3차전이 동시에 열립니다. 핵심은 브라질 대 스위스 — 조 1위를 건 한 판 승부. AI가 4경기 전부 예측합니다.",
+      "narration_ja": "昨日のAI予測は4試合すべてが的中しました。特に韓国2-1ベルギー — AIが信じた通りイ・ガンインが決勝ゴールを決めました。今日はグループAとHの最終第3戦が同時に開催されます。焦点はブラジル対スイス — グループ首位をかけた一発勝負。AIが4試合すべて予測します。",
+      "narration_en": "Yesterday the AI went 4 for 4. Most importantly, South Korea 2-1 Belgium — just as predicted, Lee Kang-in delivered the winner. Today, Groups A and H play their decisive Matchday 3 simultaneously. The key fixture: Brazil vs Switzerland — a battle for top spot. AI predicts all four matches."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "어제 결과를 정리합니다. 네덜란드가 USA를 2-1로 꺾으며 E조 1위 확정. 포르투갈은 크로아티아를 2-0으로 완파하며 D조를 완벽하게 마무리했습니다. 그리고 한국 — 2-1 벨기에! AI 예측 그대로입니다. 이강인의 후반 결승골로 한국이 F조 1위 굳히기에 성공했습니다. 프랑스는 콜롬비아를 2-0으로 완파하며 B조 독주를 이어갔습니다. AI 4/4 완벽 적중.",
+      "narration_ja": "昨日の結果を整理します。オランダがUSAを2-1で下しグループE首位確定。ポルトガルはクロアチアを2-0で完封し、グループDを完璧に締めくくりました。そして韓国 — 2-1ベルギー！AI予測通りです。イ・ガンインの後半決勝ゴールで韓国がグループF首位固めに成功しました。フランスはコロンビアを2-0で完勝しグループB独走継続。AI4/4完璧的中。",
+      "narration_en": "Yesterday's recap. Netherlands beat USA 2-1, locking up Group E. Portugal demolished Croatia 2-0, wrapping up Group D in style. And South Korea — 2-1 Belgium! Exactly as predicted. Lee Kang-in's second-half winner confirmed Korea at the top of Group F. France dismantled Colombia 2-0, continuing their Group B dominance. AI: 4 from 4. Perfect."
+    },
+    {
+      "id": "s03_prediction1",
+      "narration": "오늘의 핵심 경기, 브라질 대 스위스. AI 예측은 브라질 2-1 스위스입니다. 근거 세 가지. 첫째, 비니시우스 주니오르가 이번 대회 최고 수준의 컨디션 — 좁은 공간에서 스위스 수비를 뚫는 개인기가 결정적입니다. 둘째, 엔드리크의 전방 압박과 결정력이 스위스 수비 빌드업을 무너뜨립니다. 셋째, 브라질은 스페인전 1-1 무승부 이후 조 1위를 반드시 가져가야 하는 상황 — 절박함이 곧 동력입니다. 스위스는 수비가 견고하지만 오늘 브라질의 공격 화력을 막기엔 역부족입니다. AI 신뢰도 67%.",
+      "narration_ja": "今日の焦点、ブラジル対スイス。AI予測はブラジル2-1スイス。根拠は三つ。一つ目、ヴィニシウス・ジュニオルが今大会最高水準のコンディション — 狭いスペースでスイス守備を崩す個人技が決定的。二つ目、エンドリックの前線プレスと決定力がスイスの守備ビルドアップを崩壊させます。三つ目、ブラジルはスペイン戦1-1引き分け後にグループ首位を必ず取りに来る — 切迫感がそのまま原動力になります。スイスは守備が堅固ですが、今日のブラジルの攻撃火力を止めるには力不足。AI信頼度67%。",
+      "narration_en": "Today's key match: Brazil vs Switzerland. AI prediction — Brazil 2-1 Switzerland. Three reasons. First, Vinícius Júnior is at the peak of his powers in this tournament — his dribbling in tight spaces is impossible to contain. Second, Endrick's pressing and clinical finishing dismantle Switzerland's defensive build-up. Third, after drawing 1-1 with Spain, Brazil needs Group H top spot — desperation is their fuel. Switzerland are defensively solid but simply outgunned today. AI confidence: 67%."
+    },
+    {
+      "id": "s04_prediction2",
+      "narration": "나머지 세 경기 빠르게 예측합니다. A조 동시 킥오프 — 독일 대 자메이카, AI 픽 독일 4-0. 아르헨티나전 승리 이후 독일은 오늘 득실차 올리기에 집중합니다. 신뢰도 82%. 아르헨티나 대 칠레 — AI 픽 아르헨티나 3-1. 남미 더비이지만 아르헨티나의 선수층이 압도적입니다. 신뢰도 73%. H조 스페인 대 우루과이 — AI 픽 스페인 2-0. 이미 16강을 확정한 스페인이지만 야말이 계속 빛납니다. 신뢰도 64%.",
+      "narration_ja": "残り3試合を素早く予測。グループA同時キックオフ — ドイツ対ジャマイカ、AIピックドイツ4-0。アルゼンチン戦勝利後、ドイツは今日得失点差を上げることに集中します。信頼度82%。アルゼンチン対チリ — AIピックアルゼンチン3-1。南米ダービーですがアルゼンチンの選手層が圧倒的。信頼度73%。グループHスペイン対ウルグアイ — AIピックスペイン2-0。すでに16強確定のスペインですがヤマルが輝き続けます。信頼度64%。",
+      "narration_en": "Three more predictions, fast. Group A simultaneous kick-off — Germany vs Jamaica, AI pick Germany 4-0. After beating Argentina, Germany focuses on goal difference today. Confidence 82%. Argentina vs Chile — AI pick Argentina 3-1. It's a South American derby but Argentina's squad depth is overwhelming. Confidence 73%. Group H: Spain vs Uruguay — AI pick Spain 2-0. Spain are through already but Yamal keeps shining. Confidence 64%."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘의 AI 픽 정리. 독일, 아르헨티나, 스페인, 브라질 — 4팀 모두 승리 예측. 오늘의 하이라이트는 브라질 대 스위스. 비니시우스 주니오르의 폭발이 기대됩니다. 그리고 한국 팬 여러분께 — 어제 AI 예측이 적중했습니다. 이강인과 한국이 F조 1위로 16강에 올라섰습니다. 다음 한국 경기는 에콰도르전 — 조 1위 확정을 위한 마지막 도전. AI는 계속 한국을 응원합니다. 내일 결과 검증 — 채널 구독하고 함께 확인하세요.",
+      "narration_ja": "今日のAIピックまとめ。ドイツ、アルゼンチン、スペイン、ブラジル — 4チームすべて勝利予測。今日のハイライトはブラジル対スイス。ヴィニシウス・ジュニオルの爆発に期待です。そして韓国ファンの皆様へ — 昨日のAI予測が的中しました。イ・ガンインと韓国がグループF首位でラウンド16進出を決めました。次の韓国戦はエクアドル戦 — グループ首位確定への最終挑戦。AIは韓国を応援し続けます。明日は結果検証 — チャンネル登録してお見逃しなく。",
+      "narration_en": "Today's AI picks summary. Germany, Argentina, Spain, Brazil — all four predicted to win. Today's highlight: Brazil vs Switzerland. Expect a Vinícius Júnior explosion. And to Korean fans — yesterday's prediction came true. Lee Kang-in and South Korea are through to the Round of 16 from the top of Group F. Next Korea match: Ecuador — the final push to clinch the group. AI keeps believing in Korea. Result verification tomorrow — subscribe so you don't miss it."
+    }
+  ]
+}
