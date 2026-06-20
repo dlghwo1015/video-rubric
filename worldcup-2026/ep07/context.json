@@ -1,0 +1,69 @@
+{
+  "series": "worldcup-2026",
+  "series_config": {
+    "name": "2026 월드컵 예측 대결",
+    "tagline": "역사상 가장 큰 월드컵을 예측하다",
+    "blogs": {
+      "ko": "honest-lab",
+      "ja": "dx-pioneer-jp",
+      "en": "dx-pioneer-en"
+    },
+    "youtube_channel": "honest-lab",
+    "langs": ["ko", "ja", "en"],
+    "tts": {
+      "ko": "ko-KR-SunHiNeural",
+      "ja": "ja-JP-NanamiNeural",
+      "en": "en-US-AriaNeural"
+    }
+  },
+  "ep": {
+    "id": "worldcup-2026-007",
+    "series": "worldcup-2026",
+    "ep_number": 7,
+    "title_ko": "D조 완전 분석 — 스페인 vs 네덜란드, 2010 결승의 리매치",
+    "title_ja": "D組完全分析 — スペイン vs オランダ、2010決勝のリマッチ",
+    "title_en": "Group D Deep Dive — Spain vs Netherlands, The 2010 Final Rematch",
+    "ep_role": "group_preview",
+    "group_label": "D조",
+    "needs_live_data": 0,
+    "pub_date": null,
+    "status": "planned",
+    "post_id_ko": null,
+    "post_id_ja": null,
+    "post_id_en": null,
+    "notes": null,
+    "created_at": null,
+    "youtube_video_id": null,
+    "youtube_video_id_ja": null,
+    "youtube_video_id_en": null,
+    "yt_public_ko": 0,
+    "yt_public_ja": 0,
+    "yt_public_en": 0,
+    "script_status": "none",
+    "github_commit": null
+  },
+  "ep_role": "group_preview",
+  "scene_structure": [
+    {"id": "s01_hook",    "role": "hook",     "desc": "훅 — 2010 결승 리매치 + 대한민국"},
+    {"id": "s02_teams",   "role": "data",     "desc": "4개 팀 소개"},
+    {"id": "s03_team1",   "role": "analysis", "desc": "스페인 분석"},
+    {"id": "s04_team2",   "role": "analysis", "desc": "네덜란드 분석"},
+    {"id": "s05_team3",   "role": "analysis", "desc": "대한민국 + 세네갈 분석"},
+    {"id": "s06_predict", "role": "analysis", "desc": "예측 + 변수"},
+    {"id": "s07_verdict", "role": "verdict",  "desc": "통과 예상 2팀 발표"}
+  ],
+  "research_guide": "FIFA rankings, recent form, key players for all 4 teams in the group, head-to-head history",
+  "needs_live_data": false,
+  "pub_date": null,
+  "blogs": {
+    "ko": "honest-lab",
+    "ja": "dx-pioneer-jp",
+    "en": "dx-pioneer-en"
+  },
+  "langs": ["ko", "ja", "en"],
+  "tts": {
+    "ko": "ko-KR-SunHiNeural",
+    "ja": "ja-JP-NanamiNeural",
+    "en": "en-US-AriaNeural"
+  }
+}

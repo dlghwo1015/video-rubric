@@ -1,0 +1,60 @@
+{
+  "series": "worldcup-2026",
+  "ep_number": 7,
+  "ep_role": "group_preview",
+  "group": "D조",
+  "title_ko": "D조 완전 분석 — 스페인 vs 네덜란드, 2010 결승의 리매치",
+  "title_ja": "D組完全分析 — スペイン vs オランダ、2010決勝のリマッチ",
+  "title_en": "Group D Deep Dive — Spain vs Netherlands, The 2010 Final Rematch",
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "role": "hook",
+      "narration": "D조는 2026 월드컵의 숨겨진 핵폭탄입니다. 2010 남아공 결승 — 스페인 대 네덜란드의 전설적인 드라마가 조별리그에서 다시 불붙습니다. 그리고 대한민국이 있습니다. 2002의 기적, 그 불꽃이 다시 살아날 수 있을까요?",
+      "narration_ja": "D組は2026ワールドカップの隠れた核爆弾です。2010南アフリカ決勝——スペイン対オランダの伝説的なドラマがグループステージで再燃します。そして韓国がいます。2002年の奇跡、その炎が再び燃え上がるのでしょうか？",
+      "narration_en": "Group D is the hidden bomb of the 2026 World Cup. The 2010 South Africa final — Spain vs Netherlands, that legendary drama reignites in the group stage. And South Korea is here. Can the miracle of 2002 burn again?"
+    },
+    {
+      "id": "s02_teams",
+      "role": "data",
+      "narration": "D조 4개 팀을 소개합니다. 1번 시드 스페인 — FIFA 랭킹 7위, 2010 챔피언. 네덜란드 — FIFA 랭킹 8위, 2010 결승 준우승. 대한민국 — FIFA 랭킹 23위, 아시아의 자존심. 세네갈 — FIFA 랭킹 20위, 아프리카 최강. 주요 경기장: LA 로즈볼 · 댈러스 AT&T · 휴스턴 NRG 스타디움.",
+      "narration_ja": "D組の4チームを紹介します。第1シードのスペイン——FIFA7位、2010年チャンピオン。オランダ——FIFA8位、2010年準優勝。韓国——FIFA23位、アジアの誇り。セネガル——FIFA20位、アフリカ最強。主な会場：LAローズボウル・ダラスAT&T・ヒューストンNRGスタジアム。",
+      "narration_en": "Meet the four teams of Group D. Top seed Spain — FIFA rank 7, 2010 champions. Netherlands — FIFA rank 8, 2010 runners-up. South Korea — FIFA rank 23, Asia's pride. Senegal — FIFA rank 20, Africa's strongest. Key venues: Rose Bowl LA · AT&T Dallas · NRG Stadium Houston."
+    },
+    {
+      "id": "s03_team1",
+      "role": "analysis",
+      "narration": "스페인. 티키타카의 제국은 여전히 살아있습니다. 2024 유로 우승으로 데 라 푸엔테 감독 체제를 완성했습니다. 2026 핵심은 라민 야말 — 바르셀로나 18세 천재. 다니 올모의 창의적 미드필드, 파우 쿠바르시의 안정적 수비. FIFA 랭킹 7위, 볼 점유 기반 4-3-3. 이 조에서 가장 완성도 높은 팀입니다.",
+      "narration_ja": "スペイン。ティキタカの帝国は今も健在です。2024ユーロ優勝でデ・ラ・フエンテ監督体制を確立しました。2026年のキーマンはラミン・ヤマル——バルセロナの18歳の天才。ダニ・オルモの創造的MF、パウ・クバルシの安定した守備。FIFA7位、ポゼッション型4-3-3。このグループで最も完成度の高いチームです。",
+      "narration_en": "Spain. The tiki-taka empire lives on. Their 2024 Euro triumph solidified De La Fuente's system. The 2026 key: Lamine Yamal — Barcelona's 18-year-old genius. Dani Olmo's creative midfield, Pau Cubarsí's composed defense. FIFA rank 7, possession-based 4-3-3. The most complete team in this group."
+    },
+    {
+      "id": "s04_team2",
+      "role": "analysis",
+      "narration": "네덜란드. 2010 결승의 악몽을 씻을 차례입니다. 당시 옐로우카드 9장의 거친 경기, 이나이에스타의 연장 결승골에 무너졌습니다. 2026 주축: 비르힐 반다이크(리버풀·주장·수비), 자비 시몬스(라이프치히·미드필더), 코디 가크포(리버풀·공격). 감독 로날트 쿠만의 4-3-3. FIFA 랭킹 8위. 복수를 꿈꿉니다.",
+      "narration_ja": "オランダ。2010年決勝の悪夢を晴らす時が来ました。当時イエローカード9枚の激しい試合、イニエスタの延長決勝ゴールに崩れました。2026年の主力：フィルジル・ファン・ダイク（リバプール・主将・守備）、ザビ・シモンス（ライプツィヒ・MF）、コーディ・ガクポ（リバプール・FW）。ロナルド・クーマン監督の4-3-3。FIFA8位。リベンジを夢見ています。",
+      "narration_en": "Netherlands. It's time to wash away the nightmare of the 2010 final. Nine yellow cards in that brutal game, broken by Iniesta's extra-time winner. 2026 core: Virgil van Dijk (Liverpool, captain), Xavi Simons (Leipzig, midfielder), Cody Gakpo (Liverpool, attack). Ronald Koeman's 4-3-3. FIFA rank 8. Revenge is the mission."
+    },
+    {
+      "id": "s05_team3",
+      "role": "analysis",
+      "narration": "대한민국. 이강인(파리 생제르맹)이 이 팀의 심장입니다. 황희찬(울버햄튼)의 스피드, 김민재(바이에른 뮌헨)의 철벽 수비. FIFA 23위, 2002의 기억을 가슴에 품고 출전합니다. 세네갈은 아프리카 최강. 2022 카타르 8강 진출. 이스마일라 사르(마르세유)와 니콜라 잭슨(첼시)이 이끄는 역습 축구. FIFA 20위.",
+      "narration_ja": "韓国。イ・ガンイン（パリSG）がこのチームの心臓です。ファン・ヒチャン（ウォルバーハンプトン）のスピード、キム・ミンジェ（バイエルン・ミュンヘン）の鉄壁の守備。FIFA23位、2002年の記憶を胸に出場します。セネガルはアフリカ最強。2022カタール8強。イスマイラ・サール（マルセイユ）とニコラ・ジャクソン（チェルシー）が率いるカウンター攻撃。FIFA20位。",
+      "narration_en": "South Korea. Lee Kang-in (PSG) is the heartbeat of this team. Hwang Hee-chan's (Wolves) explosive speed, Kim Min-jae's (Bayern) iron-wall defense. FIFA rank 23, carrying the memories of 2002. Senegal — Africa's finest. 2022 Qatar quarter-finalists. Ismaïla Sarr (Marseille) and Nicolas Jackson (Chelsea) leading their counter-attack game. FIFA rank 20."
+    },
+    {
+      "id": "s06_predict",
+      "role": "analysis",
+      "narration": "핵심 변수 세 가지. 첫째, 스페인 vs 네덜란드 — 2010 결승 리매치. 역대 전적 스페인 7승·무 3·네덜란드 5승. 이 경기 패자는 심리적으로 무너집니다. 둘째, 이강인의 폼 — 파리 생제르맹에서 성장한 그가 유럽 최강팀들을 상대로 얼마나 빛날 것인가. 셋째, 세네갈의 수비 블록 — 조직적 4-4-2로 어떤 빅팀도 괴롭힐 수 있습니다.",
+      "narration_ja": "3つの重要変数。第一に、スペイン対オランダ——2010決勝リマッチ。歴代対戦成績：スペイン7勝・引き分け3・オランダ5勝。この試合の敗者は心理的に崩れます。第二に、イ・ガンインのフォーム——パリSGで成長した彼がヨーロッパの強豪を相手にどれだけ輝くか。第三に、セネガルの守備ブロック——組織的な4-4-2でどの強豪も苦しめられます。",
+      "narration_en": "Three critical variables. First, Spain vs Netherlands — the 2010 final rematch. All-time record: Spain 7 wins, 3 draws, Netherlands 5 wins. The loser collapses psychologically. Second, Lee Kang-in's form — how bright can he shine against Europe's elite? Third, Senegal's defensive block — their organized 4-4-2 can trouble any big team."
+    },
+    {
+      "id": "s07_verdict",
+      "role": "verdict",
+      "narration": "D조 최종 예측. 1위: 스페인. 승점 7 예상 — 야말의 폭발과 완벽한 빌드업. 2위: 네덜란드. 승점 5~6 — 반다이크 수비와 가크포 공격의 조화. 3위: 대한민국. 승점 2~3 — 이강인이 기적을 만들 가능성 있음. 4위: 세네갈. 승점 0~2 — 수비는 강하나 득점 결정력이 관건. 다음 EP08은 E조 — 이탈리아와 우루과이의 역사적 대결입니다.",
+      "narration_ja": "D組最終予測。1位：スペイン。勝ち点7予想——ヤマルの爆発と完璧なビルドアップ。2位：オランダ。勝ち点5〜6——ファン・ダイクの守備とガクポの攻撃の融合。3位：韓国。勝ち点2〜3——イ・ガンインが奇跡を起こす可能性あり。4位：セネガル。勝ち点0〜2——守備は強固だが得点決定力が課題。次のEP08はE組——イタリアとウルグアイの歴史的対決です。",
+      "narration_en": "Group D final prediction. 1st: Spain. 7 points — Yamal's explosion and perfect build-up play. 2nd: Netherlands. 5-6 points — Van Dijk's defense meets Gakpo's attack. 3rd: South Korea. 2-3 points — Lee Kang-in can make a miracle happen. 4th: Senegal. 0-2 points — strong defense, but finishing is the key question. Next is EP08 — Group E: Italy vs Uruguay, a historic clash."
+    }
+  ]
+}
