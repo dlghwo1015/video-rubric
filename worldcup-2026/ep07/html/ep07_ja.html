@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>D組完全分析 — スペイン vs オランダ | 2026ワールドカップ予測対決 EP07</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1920px; height: 1080px; overflow: hidden;
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #0a0e1a;
+  }
+  .slide {
+    position: absolute; top: 0; left: 0;
+    width: 1920px; height: 1080px;
+    display: none;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  /* ── SLIDE 1: HOOK ── */
+  #slide-1 {
+    background: linear-gradient(135deg, #0a0a2e 0%, #0d1050 50%, #0a0a2e 100%);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #slide-1 .ep-badge {
+    font-size: 22px; font-weight: 700; color: #5ab4e8;
+    letter-spacing: 4px; text-transform: uppercase;
+    margin-bottom: 20px;
+    border: 2px solid #5ab4e8; padding: 8px 28px; border-radius: 4px;
+  }
+  #slide-1 .series-tag {
+    font-size: 18px; color: rgba(90,180,232,0.6); letter-spacing: 2px;
+    margin-bottom: 48px;
+  }
+  #slide-1 h1 {
+    font-size: 80px; font-weight: 900; color: #fff;
+    text-align: center; line-height: 1.15;
+    text-shadow: 0 0 60px rgba(90,180,232,0.5);
+  }
+  #slide-1 h1 span { color: #5ab4e8; }
+  #slide-1 .subtitle {
+    font-size: 28px; color: rgba(255,255,255,0.7);
+    margin-top: 28px; text-align: center; line-height: 1.6;
+  }
+  #slide-1 .flag-clash {
+    display: flex; gap: 40px; margin-top: 50px; align-items: center;
+  }
+  #slide-1 .flag-box { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  #slide-1 .flag-emoji { font-size: 72px; line-height: 1; }
+  #slide-1 .flag-name {
+    font-size: 20px; font-weight: 700; color: rgba(255,255,255,0.8);
+    letter-spacing: 2px;
+  }
+  #slide-1 .vs-text {
+    font-size: 56px; font-weight: 900; color: #5ab4e8;
+    text-shadow: 0 0 30px rgba(90,180,232,0.8);
+  }
+  #slide-1 .rematch-badge {
+    font-size: 15px; color: rgba(90,180,232,0.7);
+    border: 1px solid rgba(90,180,232,0.4); padding: 5px 18px; border-radius: 20px;
+    letter-spacing: 3px; margin-top: 18px;
+  }
+  #slide-1 .glow-bar {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, transparent, #5ab4e8, transparent);
+  }
+  #slide-1 .corner-deco {
+    position: absolute; top: 40px; right: 60px;
+    font-size: 16px; color: rgba(90,180,232,0.5); letter-spacing: 2px;
+  }
+  #slide-1 .korea-tag {
+    position: absolute; bottom: 60px;
+    font-size: 18px; color: rgba(255,255,255,0.5); letter-spacing: 1px;
+  }
+  #slide-1 .korea-tag span { color: #e85454; font-weight: 700; }
+
+  /* ── SLIDE 2: 4 TEAMS ── */
+  #slide-2 {
+    background: linear-gradient(135deg, #0a0e1a 0%, #0d1530 100%);
+    flex-direction: column; padding: 60px 100px;
+  }
+  #slide-2 .slide-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 50px;
+  }
+  #slide-2 .slide-title { font-size: 40px; font-weight: 900; color: #c9a227; letter-spacing: 2px; }
+  #slide-2 .slide-badge {
+    font-size: 16px; color: rgba(201,162,39,0.7);
+    border: 1px solid rgba(201,162,39,0.4); padding: 6px 20px; border-radius: 4px;
+    letter-spacing: 2px;
+  }
+  #slide-2 .teams-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 32px; flex: 1; }
+  #slide-2 .team-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,162,39,0.2);
+    border-radius: 12px; padding: 36px 28px;
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
+  }
+  #slide-2 .team-card.top { border-color: rgba(201,162,39,0.5); }
+  #slide-2 .team-card.korea { border-color: rgba(232,84,84,0.5); }
+  #slide-2 .team-flag { font-size: 80px; line-height: 1; }
+  #slide-2 .team-name { font-size: 28px; font-weight: 900; color: #fff; text-align: center; }
+  #slide-2 .team-rank { font-size: 15px; color: #c9a227; background: rgba(201,162,39,0.1); padding: 4px 14px; border-radius: 20px; }
+  #slide-2 .team-rank.kor { color: #e85454; background: rgba(232,84,84,0.1); }
+  #slide-2 .team-desc { font-size: 16px; color: rgba(255,255,255,0.55); text-align: center; line-height: 1.6; }
+  #slide-2 .team-seed { font-size: 13px; font-weight: 700; color: #e8c05a; letter-spacing: 3px; text-transform: uppercase; }
+  #slide-2 .team-seed.kor { color: #e85454; }
+  #slide-2 .bottom-info { margin-top: 32px; font-size: 18px; color: rgba(255,255,255,0.4); text-align: center; }
+
+  /* ── SLIDE 3: SPAIN ── */
+  #slide-3 {
+    background: linear-gradient(135deg, #1e0e00 0%, #2a1200 100%);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  }
+  #slide-3 .hero-left {
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    padding: 80px 60px;
+    border-right: 1px solid rgba(201,162,39,0.2);
+  }
+  #slide-3 .hero-flag { font-size: 120px; margin-bottom: 24px; }
+  #slide-3 .hero-name { font-size: 64px; font-weight: 900; color: #fff; text-align: center; margin-bottom: 12px; }
+  #slide-3 .hero-title { font-size: 22px; color: #c9a227; letter-spacing: 2px; text-align: center; margin-bottom: 32px; }
+  #slide-3 .champion-badge {
+    background: linear-gradient(135deg, #e8c05a, #c9a227);
+    color: #1e0e00; font-size: 18px; font-weight: 900;
+    padding: 10px 32px; border-radius: 30px; letter-spacing: 2px;
+  }
+  #slide-3 .hero-right { display: flex; flex-direction: column; justify-content: center; padding: 80px 80px; gap: 28px; }
+  #slide-3 .section-label { font-size: 14px; color: rgba(201,162,39,0.6); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 4px; }
+  #slide-3 .stat-row { display: flex; align-items: baseline; gap: 16px; }
+  #slide-3 .stat-num { font-size: 56px; font-weight: 900; color: #c9a227; line-height: 1; }
+  #slide-3 .stat-label { font-size: 20px; color: rgba(255,255,255,0.7); }
+  #slide-3 .player-list { display: flex; flex-direction: column; gap: 14px; }
+  #slide-3 .player-item { display: flex; align-items: center; gap: 16px; }
+  #slide-3 .player-num { font-size: 22px; font-weight: 700; color: #c9a227; width: 40px; text-align: center; }
+  #slide-3 .player-name { font-size: 22px; font-weight: 700; color: #fff; }
+  #slide-3 .player-role { font-size: 15px; color: rgba(255,255,255,0.5); }
+  #slide-3 .weapon-box { background: rgba(201,162,39,0.08); border: 1px solid rgba(201,162,39,0.25); border-radius: 8px; padding: 20px 24px; }
+  #slide-3 .weapon-title { font-size: 14px; color: #c9a227; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
+  #slide-3 .weapon-text { font-size: 20px; color: rgba(255,255,255,0.8); line-height: 1.5; }
+
+  /* ── SLIDE 4: NETHERLANDS ── */
+  #slide-4 {
+    background: linear-gradient(135deg, #1a0d00 0%, #251200 100%);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  }
+  #slide-4 .left-panel { display: flex; flex-direction: column; justify-content: center; padding: 60px 80px; gap: 32px; }
+  #slide-4 .panel-title { font-size: 36px; font-weight: 900; color: #f47a20; letter-spacing: 2px; }
+  #slide-4 .mission-text { font-size: 26px; color: rgba(255,255,255,0.8); line-height: 1.6; }
+  #slide-4 .mission-text em { color: #f47a20; font-style: normal; font-weight: 700; }
+  #slide-4 .stat-boxes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  #slide-4 .stat-box { background: rgba(244,122,32,0.07); border: 1px solid rgba(244,122,32,0.2); border-radius: 8px; padding: 20px; text-align: center; }
+  #slide-4 .stat-box .num { font-size: 44px; font-weight: 900; color: #f47a20; line-height: 1; }
+  #slide-4 .stat-box .lbl { font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+  #slide-4 .right-panel { display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 60px 60px; border-left: 1px solid rgba(244,122,32,0.15); }
+  #slide-4 .right-panel .flag-big { font-size: 100px; margin-bottom: 20px; }
+  #slide-4 .right-panel h2 { font-size: 52px; font-weight: 900; color: #fff; margin-bottom: 8px; }
+  #slide-4 .right-panel .rank-badge { font-size: 18px; color: #f47a20; border: 1px solid rgba(244,122,32,0.4); padding: 6px 20px; border-radius: 20px; margin-bottom: 36px; }
+  #slide-4 .key-players { display: flex; flex-direction: column; gap: 16px; width: 100%; }
+  #slide-4 .kp-item { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; background: rgba(244,122,32,0.05); border-radius: 8px; border-left: 3px solid #f47a20; }
+  #slide-4 .kp-name { font-size: 20px; font-weight: 700; color: #fff; }
+  #slide-4 .kp-role { font-size: 15px; color: rgba(255,255,255,0.5); }
+  #slide-4 .kp-club { font-size: 14px; color: #f47a20; }
+
+  /* ── SLIDE 5: KOREA & SENEGAL ── */
+  #slide-5 {
+    background: linear-gradient(135deg, #0a0e1a 0%, #0d1530 100%);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  }
+  #slide-5 .half-panel { display: flex; flex-direction: column; justify-content: center; padding: 60px 70px; gap: 28px; }
+  #slide-5 .half-panel:first-child { border-right: 1px solid rgba(232,84,84,0.2); }
+  #slide-5 .team-header { display: flex; align-items: center; gap: 24px; margin-bottom: 8px; }
+  #slide-5 .team-flag-sm { font-size: 60px; }
+  #slide-5 .team-name-big { font-size: 44px; font-weight: 900; color: #fff; }
+  #slide-5 .team-sub.red { font-size: 18px; color: rgba(232,84,84,0.7); }
+  #slide-5 .team-sub.gold { font-size: 18px; color: rgba(201,162,39,0.7); }
+  #slide-5 .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  #slide-5 .detail-item { border-radius: 8px; padding: 16px 18px; }
+  #slide-5 .detail-item.red { background: rgba(232,84,84,0.06); border: 1px solid rgba(232,84,84,0.15); }
+  #slide-5 .detail-item.gold { background: rgba(201,162,39,0.06); border: 1px solid rgba(201,162,39,0.15); }
+  #slide-5 .detail-label { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+  #slide-5 .detail-label.red { color: rgba(232,84,84,0.6); }
+  #slide-5 .detail-label.gold { color: rgba(201,162,39,0.6); }
+  #slide-5 .detail-val { font-size: 20px; font-weight: 700; color: #fff; }
+  #slide-5 .strength-bar { display: flex; flex-direction: column; gap: 10px; }
+  #slide-5 .bar-item { display: flex; align-items: center; gap: 12px; }
+  #slide-5 .bar-label { font-size: 15px; color: rgba(255,255,255,0.6); width: 80px; }
+  #slide-5 .bar-track { flex: 1; height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; }
+  #slide-5 .bar-fill-red { height: 100%; border-radius: 4px; background: #e85454; }
+  #slide-5 .bar-fill-gold { height: 100%; border-radius: 4px; background: #c9a227; }
+  #slide-5 .key-player { border-radius: 8px; padding: 16px 20px; }
+  #slide-5 .key-player.red { background: rgba(232,84,84,0.08); border: 1px solid rgba(232,84,84,0.2); }
+  #slide-5 .key-player.gold { background: rgba(201,162,39,0.08); border: 1px solid rgba(201,162,39,0.2); }
+  #slide-5 .kp-header { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+  #slide-5 .kp-header.red { color: rgba(232,84,84,0.6); }
+  #slide-5 .kp-header.gold { color: rgba(201,162,39,0.6); }
+  #slide-5 .kp-main { font-size: 22px; font-weight: 700; color: #fff; }
+  #slide-5 .kp-detail { font-size: 15px; color: rgba(255,255,255,0.5); }
+
+  /* ── SLIDE 6: PREDICTION ── */
+  #slide-6 {
+    background: linear-gradient(135deg, #0a0a2e 0%, #080818 100%);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  }
+  #slide-6 .pred-left { display: flex; flex-direction: column; justify-content: center; padding: 60px 80px; gap: 32px; border-right: 1px solid rgba(90,180,232,0.15); }
+  #slide-6 .pred-title { font-size: 36px; font-weight: 900; color: #5ab4e8; letter-spacing: 2px; }
+  #slide-6 .variable-list { display: flex; flex-direction: column; gap: 22px; }
+  #slide-6 .var-item { display: flex; gap: 20px; align-items: flex-start; }
+  #slide-6 .var-num { font-size: 40px; font-weight: 900; color: rgba(90,180,232,0.4); line-height: 1; }
+  #slide-6 .var-head { font-size: 21px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  #slide-6 .var-desc { font-size: 16px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+  #slide-6 .pred-right { display: flex; flex-direction: column; justify-content: center; padding: 60px 80px; gap: 20px; }
+  #slide-6 .pred-right-title { font-size: 28px; font-weight: 700; color: rgba(90,180,232,0.8); letter-spacing: 2px; margin-bottom: 8px; }
+  #slide-6 .head2head { background: rgba(90,180,232,0.06); border: 1px solid rgba(90,180,232,0.2); border-radius: 12px; padding: 28px; display: flex; gap: 24px; align-items: center; justify-content: center; margin-bottom: 16px; }
+  #slide-6 .h2h-team { text-align: center; }
+  #slide-6 .h2h-flag { font-size: 48px; }
+  #slide-6 .h2h-wins { font-size: 44px; font-weight: 900; color: #5ab4e8; line-height: 1; }
+  #slide-6 .h2h-label { font-size: 14px; color: rgba(255,255,255,0.4); }
+  #slide-6 .h2h-vs { font-size: 32px; font-weight: 700; color: rgba(255,255,255,0.3); }
+  #slide-6 .matchday-box { background: rgba(90,180,232,0.08); border: 2px solid rgba(90,180,232,0.3); border-radius: 8px; padding: 20px 24px; }
+  #slide-6 .match-tag { font-size: 12px; color: rgba(90,180,232,0.7); letter-spacing: 3px; margin-bottom: 8px; }
+  #slide-6 .match-info { font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  #slide-6 .match-venue { font-size: 15px; color: rgba(255,255,255,0.4); }
+
+  /* ── SLIDE 7: VERDICT ── */
+  #slide-7 {
+    background: linear-gradient(135deg, #0a0a2e 0%, #0d0e3a 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 80px 120px; gap: 48px;
+  }
+  #slide-7 .verdict-title { font-size: 40px; font-weight: 900; color: #5ab4e8; letter-spacing: 4px; text-align: center; }
+  #slide-7 .ranking-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; width: 100%; }
+  #slide-7 .rank-card { background: rgba(90,180,232,0.06); border: 1px solid rgba(90,180,232,0.2); border-radius: 12px; padding: 32px 24px; display: flex; flex-direction: column; align-items: center; gap: 12px; position: relative; }
+  #slide-7 .rank-card.advance { border-color: rgba(90,180,232,0.5); }
+  #slide-7 .rank-card.advance::after { content: '通過予想'; position: absolute; top: -14px; font-size: 12px; color: #5ab4e8; background: #0a0a2e; padding: 2px 12px; border: 1px solid rgba(90,180,232,0.4); border-radius: 20px; letter-spacing: 2px; }
+  #slide-7 .rank-card.korea { border-color: rgba(232,84,84,0.4); }
+  #slide-7 .rank-pos { font-size: 16px; font-weight: 700; color: rgba(90,180,232,0.5); letter-spacing: 3px; }
+  #slide-7 .rank-pos.kor { color: rgba(232,84,84,0.5); }
+  #slide-7 .rank-flag { font-size: 56px; }
+  #slide-7 .rank-name { font-size: 26px; font-weight: 700; color: #fff; }
+  #slide-7 .rank-pts { font-size: 16px; color: #5ab4e8; background: rgba(90,180,232,0.1); padding: 4px 14px; border-radius: 20px; }
+  #slide-7 .rank-pts.kor { color: #e85454; background: rgba(232,84,84,0.1); }
+  #slide-7 .next-ep { background: rgba(90,180,232,0.08); border: 1px solid rgba(90,180,232,0.3); border-radius: 8px; padding: 20px 48px; text-align: center; }
+  #slide-7 .next-label { font-size: 13px; color: rgba(90,180,232,0.6); letter-spacing: 4px; margin-bottom: 6px; }
+  #slide-7 .next-text { font-size: 22px; color: #fff; font-weight: 700; }
+  #slide-7 .series-footer { font-size: 18px; color: rgba(90,180,232,0.4); letter-spacing: 2px; }
+</style>
+</head>
+<body>
+
+<!-- ── SLIDE 1: HOOK ── -->
+<div class="slide active" id="slide-1">
+  <div class="ep-badge">EP 07 · D組</div>
+  <div class="series-tag">2026ワールドカップ予測対決</div>
+  <h1>D組は<span>2010決勝のリマッチ</span>だ</h1>
+  <p class="subtitle">スペイン vs オランダ — 16年ぶりの再対決、そして韓国</p>
+  <div class="flag-clash">
+    <div class="flag-box">
+      <div class="flag-emoji">🇪🇸</div>
+      <div class="flag-name">SPAIN</div>
+    </div>
+    <div class="vs-text">VS</div>
+    <div class="flag-box">
+      <div class="flag-emoji">🇳🇱</div>
+      <div class="flag-name">NETHERLANDS</div>
+    </div>
+  </div>
+  <div class="rematch-badge">2010 FIFA WORLD CUP FINAL REMATCH</div>
+  <div class="korea-tag">+ <span>🇰🇷 韓国</span>の挑戦</div>
+  <div class="glow-bar"></div>
+  <div class="corner-deco">ローズボウル · ロサンゼルス</div>
+</div>
+
+<!-- ── SLIDE 2: 4 TEAMS ── -->
+<div class="slide" id="slide-2">
+  <div class="slide-header">
+    <div class="slide-title">D組 4チーム紹介</div>
+    <div class="slide-badge">GROUP D · 2026 FIFA WORLD CUP</div>
+  </div>
+  <div class="teams-grid">
+    <div class="team-card top">
+      <div class="team-flag">🇪🇸</div>
+      <div class="team-seed">第1シード</div>
+      <div class="team-name">スペイン</div>
+      <div class="team-rank">FIFA 7位</div>
+      <div class="team-desc">2010年チャンピオン<br>2024ユーロ優勝 · ヤマル世代</div>
+    </div>
+    <div class="team-card top">
+      <div class="team-flag">🇳🇱</div>
+      <div class="team-seed">第2シード</div>
+      <div class="team-name">オランダ</div>
+      <div class="team-rank">FIFA 8位</div>
+      <div class="team-desc">2010年準優勝<br>ファン・ダイク · ガクポ · シモンス</div>
+    </div>
+    <div class="team-card korea">
+      <div class="team-flag">🇰🇷</div>
+      <div class="team-seed kor">第3シード</div>
+      <div class="team-name">韓国</div>
+      <div class="team-rank kor">FIFA 23位</div>
+      <div class="team-desc">アジア最強<br>イ・ガンイン · キム・ミンジェ</div>
+    </div>
+    <div class="team-card">
+      <div class="team-flag">🇸🇳</div>
+      <div class="team-seed">第4シード</div>
+      <div class="team-name">セネガル</div>
+      <div class="team-rank">FIFA 20位</div>
+      <div class="team-desc">アフリカ最強<br>2022カタール8強</div>
+    </div>
+  </div>
+  <div class="bottom-info">会場: LAローズボウル · ダラスAT&amp;Tスタジアム · ヒューストンNRGスタジアム</div>
+</div>
+
+<!-- ── SLIDE 3: SPAIN ── -->
+<div class="slide" id="slide-3">
+  <div class="hero-left">
+    <div class="hero-flag">🇪🇸</div>
+    <div class="hero-name">スペイン</div>
+    <div class="hero-title">FIFA 7位 · 2010年チャンピオン</div>
+    <div class="champion-badge">🏆 2010チャンピオン · 2024ユーロ</div>
+  </div>
+  <div class="hero-right">
+    <div>
+      <div class="section-label">ワールドカップ歴代成績</div>
+      <div class="stat-row">
+        <div class="stat-num">1</div>
+        <div class="stat-label">回の優勝（2010南アフリカ）</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">2026年 主力選手</div>
+      <div class="player-list">
+        <div class="player-item">
+          <div class="player-num">11</div>
+          <div class="player-info">
+            <div class="player-name">ラミン・ヤマル</div>
+            <div class="player-role">右ウィング · バルセロナ · 18歳</div>
+          </div>
+        </div>
+        <div class="player-item">
+          <div class="player-num">10</div>
+          <div class="player-info">
+            <div class="player-name">ダニ・オルモ</div>
+            <div class="player-role">攻撃的MF · バルセロナ</div>
+          </div>
+        </div>
+        <div class="player-item">
+          <div class="player-num">3</div>
+          <div class="player-info">
+            <div class="player-name">パウ・クバルシ</div>
+            <div class="player-role">センターバック · バルセロナ</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="weapon-box">
+      <div class="weapon-title">核心戦術</div>
+      <div class="weapon-text">ポゼッション型4-3-3<br>ヤマルのドリブル + オルモの創造性</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SLIDE 4: NETHERLANDS ── -->
+<div class="slide" id="slide-4">
+  <div class="left-panel">
+    <div class="panel-title">オランダのミッション</div>
+    <div class="mission-text">
+      2010南アフリカ決勝、<br>
+      <em>イエローカード9枚</em>の激しい試合。<br>
+      イニエスタの延長ゴールに崩れた。<br>
+      2026年、<em>ファン・ダイク世代</em>がリベンジする。
+    </div>
+    <div class="stat-boxes">
+      <div class="stat-box">
+        <div class="num">8</div>
+        <div class="lbl">FIFA ランキング</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">3回</div>
+        <div class="lbl">決勝進出</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">5勝</div>
+        <div class="lbl">対スペイン</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">2010</div>
+        <div class="lbl">最後の決勝</div>
+      </div>
+    </div>
+  </div>
+  <div class="right-panel">
+    <div class="flag-big">🇳🇱</div>
+    <h2>オランダ</h2>
+    <div class="rank-badge">FIFA 8位 · UEFA強豪</div>
+    <div class="key-players">
+      <div class="kp-item">
+        <div class="kp-name">フィルジル・ファン・ダイク</div>
+        <div class="kp-role">CB · 主将</div>
+        <div class="kp-club">リバプール</div>
+      </div>
+      <div class="kp-item">
+        <div class="kp-name">ザビ・シモンス</div>
+        <div class="kp-role">攻撃的MF</div>
+        <div class="kp-club">RBライプツィヒ</div>
+      </div>
+      <div class="kp-item">
+        <div class="kp-name">コーディ・ガクポ</div>
+        <div class="kp-role">左ウィング · FW</div>
+        <div class="kp-club">リバプール</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SLIDE 5: KOREA & SENEGAL ── -->
+<div class="slide" id="slide-5">
+  <div class="half-panel">
+    <div class="team-header">
+      <div class="team-flag-sm">🇰🇷</div>
+      <div>
+        <div class="team-name-big">韓国</div>
+        <div class="team-sub red">アジアの誇り</div>
+      </div>
+    </div>
+    <div class="detail-grid">
+      <div class="detail-item red">
+        <div class="detail-label red">FIFA ランキング</div>
+        <div class="detail-val">23位</div>
+      </div>
+      <div class="detail-item red">
+        <div class="detail-label red">連盟</div>
+        <div class="detail-val">AFC</div>
+      </div>
+      <div class="detail-item red">
+        <div class="detail-label red">歴代最高</div>
+        <div class="detail-val">2002年4強</div>
+      </div>
+      <div class="detail-item red">
+        <div class="detail-label red">主力</div>
+        <div class="detail-val">イ・ガンイン</div>
+      </div>
+    </div>
+    <div class="key-player red">
+      <div class="kp-header red">核心選手</div>
+      <div class="kp-main">イ・ガンイン</div>
+      <div class="kp-detail">攻撃的MF · パリSG · チームの心臓</div>
+    </div>
+    <div class="strength-bar">
+      <div class="bar-item">
+        <div class="bar-label">守備力</div>
+        <div class="bar-track"><div class="bar-fill-red" style="width:82%"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-label">組織力</div>
+        <div class="bar-track"><div class="bar-fill-red" style="width:75%"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-label">攻撃力</div>
+        <div class="bar-track"><div class="bar-fill-red" style="width:70%"></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="half-panel">
+    <div class="team-header">
+      <div class="team-flag-sm">🇸🇳</div>
+      <div>
+        <div class="team-name-big">セネガル</div>
+        <div class="team-sub gold">アフリカ最強</div>
+      </div>
+    </div>
+    <div class="detail-grid">
+      <div class="detail-item gold">
+        <div class="detail-label gold">FIFA ランキング</div>
+        <div class="detail-val">20位</div>
+      </div>
+      <div class="detail-item gold">
+        <div class="detail-label gold">連盟</div>
+        <div class="detail-val">CAF</div>
+      </div>
+      <div class="detail-item gold">
+        <div class="detail-label gold">歴代最高</div>
+        <div class="detail-val">2022年8強</div>
+      </div>
+      <div class="detail-item gold">
+        <div class="detail-label gold">強み</div>
+        <div class="detail-val">守備ブロック</div>
+      </div>
+    </div>
+    <div class="key-player gold">
+      <div class="kp-header gold">核心選手</div>
+      <div class="kp-main">イスマイラ・サール</div>
+      <div class="kp-detail">ウィング · マルセイユ · カウンターの核</div>
+    </div>
+    <div class="strength-bar">
+      <div class="bar-item">
+        <div class="bar-label">守備力</div>
+        <div class="bar-track"><div class="bar-fill-gold" style="width:85%"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-label">組織力</div>
+        <div class="bar-track"><div class="bar-fill-gold" style="width:78%"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-label">攻撃力</div>
+        <div class="bar-track"><div class="bar-fill-gold" style="width:62%"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SLIDE 6: PREDICTION ── -->
+<div class="slide" id="slide-6">
+  <div class="pred-left">
+    <div class="pred-title">重要変数 3つ</div>
+    <div class="variable-list">
+      <div class="var-item">
+        <div class="var-num">01</div>
+        <div class="var-content">
+          <div class="var-head">スペイン vs オランダ — 2010決勝リマッチ</div>
+          <div class="var-desc">歴代対戦成績: スペイン7勝 · 引き分け3 · オランダ5勝。この試合の敗者は心理的に崩れる。2010年のイニエスタ、2026年はヤマルが決める。</div>
+        </div>
+      </div>
+      <div class="var-item">
+        <div class="var-num">02</div>
+        <div class="var-content">
+          <div class="var-head">イ・ガンインのフォーム — 奇跡の鍵</div>
+          <div class="var-desc">パリSGで成長した彼がスペイン・オランダ級の守備を突破できれば、韓国の決勝トーナメント進出が現実になる。</div>
+        </div>
+      </div>
+      <div class="var-item">
+        <div class="var-num">03</div>
+        <div class="var-content">
+          <div class="var-head">セネガルの守備ブロック</div>
+          <div class="var-desc">組織的4-4-2でどの強豪も苦しめられる。セネガルがスペインかオランダからポイントを奪えば、D組全体がひっくり返る。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pred-right">
+    <div class="pred-right-title">歴代対戦成績</div>
+    <div class="head2head">
+      <div class="h2h-team">
+        <div class="h2h-flag">🇪🇸</div>
+        <div class="h2h-wins">7</div>
+        <div class="h2h-label">スペイン勝利</div>
+      </div>
+      <div class="h2h-vs">VS</div>
+      <div class="h2h-team">
+        <div class="h2h-flag">🇳🇱</div>
+        <div class="h2h-wins">5</div>
+        <div class="h2h-label">オランダ勝利</div>
+      </div>
+    </div>
+    <div class="matchday-box">
+      <div class="match-tag">MATCHDAY 1 · GROUP D</div>
+      <div class="match-info">🇪🇸 スペイン  vs  オランダ 🇳🇱</div>
+      <div class="match-venue">2026.06.20 · ローズボウル、ロサンゼルス</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SLIDE 7: VERDICT ── -->
+<div class="slide" id="slide-7">
+  <div class="verdict-title">D組 最終予測</div>
+  <div class="ranking-grid">
+    <div class="rank-card advance">
+      <div class="rank-pos">1位予想</div>
+      <div class="rank-flag">🇪🇸</div>
+      <div class="rank-name">スペイン</div>
+      <div class="rank-pts">勝ち点7+ 予想</div>
+    </div>
+    <div class="rank-card advance">
+      <div class="rank-pos">2位予想</div>
+      <div class="rank-flag">🇳🇱</div>
+      <div class="rank-name">オランダ</div>
+      <div class="rank-pts">勝ち点5〜6 予想</div>
+    </div>
+    <div class="rank-card korea">
+      <div class="rank-pos kor">3位予想</div>
+      <div class="rank-flag">🇰🇷</div>
+      <div class="rank-name">韓国</div>
+      <div class="rank-pts kor">勝ち点2〜3 予想</div>
+    </div>
+    <div class="rank-card">
+      <div class="rank-pos">4位予想</div>
+      <div class="rank-flag">🇸🇳</div>
+      <div class="rank-name">セネガル</div>
+      <div class="rank-pts">勝ち点0〜2 予想</div>
+    </div>
+  </div>
+  <div class="next-ep">
+    <div class="next-label">次のエピソード</div>
+    <div class="next-text">EP08 · E組分析 — イタリアとウルグアイの歴史的対決</div>
+  </div>
+  <div class="series-footer">2026ワールドカップ予測対決 · dx-pioneer-jp</div>
+</div>
+
+<script>
+  var slides = document.querySelectorAll('.slide');
+  var current = 0;
+
+  function showSlide(n) {
+    slides.forEach(function(s) { s.classList.remove('active'); s.style.display = 'none'; });
+    var idx = ((n % slides.length) + slides.length) % slides.length;
+    slides[idx].style.display = 'flex';
+    slides[idx].classList.add('active');
+    current = idx;
+  }
+
+  window.goToSlide = showSlide;
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') showSlide(current + 1);
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   showSlide(current - 1);
+  });
+
+  showSlide(0);
+</script>
+</body>
+</html>
