@@ -1,0 +1,60 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 4,
+  "date": "2026-06-20",
+  "title_ko": "2026-06-20 오늘의 경기 AI 예측 — 독일 vs 미국, 브라질 vs 모로코",
+  "title_ja": "2026-06-20 今日の試合 AI予測 — ドイツ vs アメリカ、ブラジル vs モロッコ",
+  "title_en": "2026-06-20 Match Predictions by AI — Germany vs USA, Brazil vs Morocco",
+  "korea_match": false,
+  "matches_today": [
+    { "id": "m1", "team_a": "Germany",  "team_b": "USA",     "group": "A", "venue": "Levi's Stadium, San Francisco",    "kickoff_kst": "03:00" },
+    { "id": "m2", "team_a": "Brazil",   "team_b": "Morocco", "group": "H", "venue": "Hard Rock Stadium, Miami",         "kickoff_kst": "06:00" },
+    { "id": "m3", "team_a": "Japan",    "team_b": "Canada",  "group": "B", "venue": "BC Place, Vancouver",             "kickoff_kst": "09:00" },
+    { "id": "m4", "team_a": "Senegal",  "team_b": "Chile",   "group": "K", "venue": "NRG Stadium, Houston",            "kickoff_kst": "12:00" }
+  ],
+  "yesterday_results": [
+    { "team_a": "Netherlands", "score_a": 2, "score_b": 1, "team_b": "USA",      "group": "E", "ai_correct": true },
+    { "team_a": "Portugal",    "score_a": 2, "score_b": 0, "team_b": "Croatia",  "group": "D", "ai_correct": true },
+    { "team_a": "South Korea", "score_a": 2, "score_b": 1, "team_b": "Belgium",  "group": "F", "ai_correct": true },
+    { "team_a": "France",      "score_a": 2, "score_b": 0, "team_b": "Colombia", "group": "B", "ai_correct": true }
+  ],
+  "ai_predictions": [
+    { "match": "Germany vs USA",      "pred_a": 2, "pred_b": 1, "confidence": "67%", "pick": "Germany" },
+    { "match": "Brazil vs Morocco",   "pred_a": 2, "pred_b": 0, "confidence": "64%", "pick": "Brazil" },
+    { "match": "Japan vs Canada",     "pred_a": 1, "pred_b": 1, "confidence": "52%", "pick": "Draw" },
+    { "match": "Senegal vs Chile",    "pred_a": 1, "pred_b": 0, "confidence": "59%", "pick": "Senegal" }
+  ],
+  "ai_streak": { "yesterday_correct": 4, "yesterday_total": 4 },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "AI 4연속 적중! 어젯밤 4경기를 모두 맞췄습니다. 오늘도 4경기가 기다립니다. 최대 관전 포인트는 독일 대 미국 — 유럽의 체계와 아메리카의 역습이 충돌하는 밤입니다. 그리고 브라질이 반드시 승점 3이 필요한 모로코전도 놓칠 수 없습니다.",
+      "narration_ja": "AI4連続的中！昨夜の4試合すべてを当てました。今日も4試合が待っています。最大の注目カードはドイツ対アメリカ — ヨーロッパの組織と米大陸の速攻が激突する夜。そしてブラジルが勝利必須のモロッコ戦も見逃せません。",
+      "narration_en": "Four for four! AI called all four matches last night. Tonight brings four more — and the centrepiece is Germany vs USA, where European tactical discipline meets American counter-attacking pace. Brazil's must-win clash against Morocco is the other one you cannot miss."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "어제 결과입니다. AI 4전 전승. 네덜란드 2-1 미국, 포르투갈 2-0 크로아티아, 프랑스 2-0 콜롬비아. 그리고 가장 극적인 경기 — 한국이 벨기에를 2-1로 격파했습니다. 이강인의 후반 결승골이 대한민국을 16강 대열에 올려놓았습니다. AI가 예측한 대로였습니다.",
+      "narration_ja": "昨日の結果です。AI4戦全勝。オランダ2-1アメリカ、ポルトガル2-0クロアチア、フランス2-0コロンビア。そして最も劇的な試合 — 韓国がベルギーを2-1で撃破。イ・ガンインの後半決勝ゴールが大韓民国を16強圏内に押し上げました。AIの予測通りでした。",
+      "narration_en": "Yesterday's results — AI went 4 for 4. Netherlands 2-1 USA, Portugal 2-0 Croatia, France 2-0 Colombia. And the most dramatic: South Korea beat Belgium 2-1. Lee Kang-in's second-half winner puts Korea firmly in the knockout picture. Exactly as AI predicted."
+    },
+    {
+      "id": "s03_prediction1",
+      "narration": "오늘의 메인 이벤트, 독일 대 미국. AI 예측은 독일 2-1 미국입니다. 이유는 세 가지. 첫째, 독일은 아르헨티나를 2-1로 꺾은 게겐프레싱 완성형 — 무자파의 중원 장악과 빌츠의 창의성이 미국 라인을 무너뜨립니다. 둘째, 미국은 네덜란드전 패배 후 체력이 소모됐고, 풀백 라인이 독일 측면 질주에 노출될 위험이 큽니다. 셋째, 샌프란시스코 리바이스 스타디움의 인공잔디와 쿨한 기후는 체력 소모가 심한 미국 스타일보다 독일의 포지셔닝 게임에 유리합니다. AI 신뢰도 67%. 미국의 역습 폭발력을 경계하지만 — 독일을 선택합니다.",
+      "narration_ja": "今日のメインイベント、ドイツ対アメリカ。AI予測はドイツ2-1アメリカ。理由は三つ。一つ目、ドイツはアルゼンチンを2-1で下したゲーゲンプレス完成型 — ムシャラの中盤支配とヴィルツの創造性が米国ラインを崩します。二つ目、アメリカはオランダ戦敗北後に体力を消耗、フルバックラインがドイツのサイドアタックに晒されるリスクが大きい。三つ目、サンフランシスコ・リーバイスのピッチとすずしい気候はポジショニングゲームをするドイツに有利。AI信頼度67%。アメリカのカウンター爆発力を警戒しつつ — ドイツを選びます。",
+      "narration_en": "Today's main event: Germany vs USA. AI prediction — Germany 2-1 USA. Three reasons. First, Germany's gegenpressing machine beat Argentina 2-1 — Musah's midfield control and Wirtz's creativity will dismantle the US defensive shape. Second, the USA are carrying fatigue after their Netherlands loss; exposed fullbacks are vulnerable to Germany's wide attacks. Third, Levi's Stadium's cool conditions favour Germany's positional game over the USA's high-energy style. AI confidence: 67%. Wary of the American counter-punch — but we take Germany."
+    },
+    {
+      "id": "s04_prediction2",
+      "narration": "나머지 세 경기 빠르게 예측합니다. 브라질 대 모로코 — AI 픽 브라질 2-0. 비니시우스와 호드리구의 속도가 모로코 수비 뒤 공간을 파고듭니다. 스페인전 무승부의 아쉬움을 털어낼 것입니다. 신뢰도 64%. 일본 대 캐나다 — AI 픽 1-1 무승부. 두 팀 모두 균형 잡힌 전력, 마지막 경기를 앞두고 서로를 탐색합니다. 신뢰도 52%. 세네갈 대 칠레 — AI 픽 세네갈 1-0. 마네의 노련함과 피지컬 압박이 칠레 중원을 제압합니다. 신뢰도 59%.",
+      "narration_ja": "残りの3試合を素早く予測します。ブラジル対モロッコ — AIピックブラジル2-0。ヴィニシウスとロドリゴのスピードがモロッコの守備ラインの裏を突きます。スペイン戦の引き分けの悔しさを晴らすでしょう。信頼度64%。日本対カナダ — AIピック1-1引き分け。均衡した両チームが最終戦を見据えて慎重に様子を見ます。信頼度52%。セネガル対チリ — AIピックセネガル1-0。マネの経験と圧力でチリの中盤を制します。信頼度59%。",
+      "narration_en": "Three more matches, quick predictions. Brazil vs Morocco — AI pick Brazil 2-0. Vinicius and Rodrygo's pace tears up the space behind Morocco's compact back line. Brazil need to banish their Spain draw. Confidence 64%. Japan vs Canada — AI pick 1-1 draw. Balanced sides, both eyeing the final matchday; expect mutual caution. Confidence 52%. Senegal vs Chile — AI pick Senegal 1-0. Mane's experience and physicality controls Chile's midfield. Confidence 59%."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘의 AI 픽 총정리. 독일, 브라질, 세네갈 승리 — 일본과 캐나다 무승부. 어젯밤 4전 전승에 이어 오늘도 연속 적중에 도전합니다. 오늘의 핵심 관전 포인트는 독일 대 미국입니다 — AI는 독일의 체계적인 전술이 미국의 열정을 꺾을 것으로 봅니다. 한국은 어제 2-1로 벨기에를 잡았습니다. 이강인의 결승골, 2연승으로 16강 가시권에 들어섰습니다. 내일 결과 검증 — 채널 구독 잊지 마세요.",
+      "narration_ja": "今日のAIピック総まとめ。ドイツ、ブラジル、セネガル勝利 — 日本とカナダ引き分け。昨夜の4連勝に続き、今日も連続的中に挑みます。今日の最大の注目はドイツ対アメリカ — AIはドイツの組織的な戦術が米国の情熱を制すると見ています。韓国は昨日2-1でベルギーを下しました。イ・ガンインの決勝ゴール、2連勝で16強が見えてきました。明日は結果の検証 — チャンネル登録をお忘れなく。",
+      "narration_en": "Today's AI picks summary. Germany, Brazil, Senegal win — Japan and Canada draw. After last night's perfect 4-for-4, we push the streak. The match to watch: Germany vs USA — AI sees German tactical structure prevailing over American intensity. And a Korea update: yesterday's 2-1 win over Belgium — Lee Kang-in's winner — has South Korea on course for the Round of 32. Verify the predictions tomorrow — subscribe and don't miss it."
+    }
+  ]
+}
