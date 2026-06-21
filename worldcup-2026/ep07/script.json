@@ -1,0 +1,94 @@
+{
+  "series": "worldcup-2026",
+  "ep_number": 7,
+  "ep_role": "group_preview",
+  "group": "D조",
+  "title_ko": "D조 완전 분석 — 스페인 vs 네덜란드, 유럽 패권 대결",
+  "title_ja": "D組完全分析 — スペイン vs オランダ、欧州覇権の激突",
+  "title_en": "Group D Deep Dive — Spain vs Netherlands, Battle for European Supremacy",
+  "color_system": {
+    "stadium": { "bg": "#0a0e1a", "accent": "#c9a227", "text": "#f0ede4" },
+    "pitch":   { "bg": "#0d2818", "accent": "#4fc87a", "text": "#e8f5ed" },
+    "trophy":  { "bg": "#1a0e2e", "accent": "#e8c05a", "text": "#f5f0e8" },
+    "danger":  { "bg": "#1a0a0a", "accent": "#e85454", "text": "#f8e8e8" }
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "role": "hook",
+      "tone": "danger",
+      "bg": "#1a0a0a",
+      "accent": "#e85454",
+      "visual_note": "스페인 vs 네덜란드 엠블럼 충돌 애니메이션, 2010 결승전 장면 오마주",
+      "narration": "D조는 단순한 조별리그가 아닙니다. 스페인 대 네덜란드 — 2010 남아공 월드컵 결승의 두 팀이 조별 예선에서 다시 만납니다. 야말의 스페인, 판다이크의 네덜란드. 유럽 패권이 이 조에서 결정됩니다.",
+      "narration_ja": "D組は単なるグループリーグではありません。スペイン対オランダ — 2010年南アフリカW杯決勝の両チームがグループステージで再び激突。ヤマルのスペイン、ファン・ダイクのオランダ。欧州の覇権がこの組で決まります。",
+      "narration_en": "Group D is no ordinary group. Spain vs Netherlands — the two finalists from 2010 South Africa collide again in the group stage. Yamal's Spain against Van Dijk's Netherlands. European supremacy will be settled right here."
+    },
+    {
+      "id": "s02_teams",
+      "role": "data",
+      "tone": "stadium",
+      "bg": "#0a0e1a",
+      "accent": "#c9a227",
+      "visual_note": "4팀 카드 슬라이드인, 국기 + FIFA 랭킹 표시",
+      "narration": "D조 4개 팀을 소개합니다. 1번 시드 스페인 — FIFA 랭킹 3위, 유로 2024 챔피언. 네덜란드 — FIFA 랭킹 7위, 오렌지 군단의 부활. 세네갈 — FIFA 랭킹 20위, 아프리카 챔피언. 스위스 — FIFA 랭킹 19위, 철벽 수비의 다크호스. 이 네 팀이 뉴욕·필라델피아·달라스에서 6경기를 치릅니다.",
+      "narration_ja": "D組の4チームを紹介します。第1シードのスペイン — FIFAランキング3位、EURO2024王者。オランダ — FIFAランキング7位、オレンジ軍団の復活。セネガル — FIFAランキング20位、アフリカ王者。スイス — FIFAランキング19位、堅守のダークホース。この4チームがニューヨーク・フィラデルフィア・ダラスで6試合を戦います。",
+      "narration_en": "Meet the four teams of Group D. Seed 1: Spain — FIFA No. 3, Euro 2024 champions. Netherlands — FIFA No. 7, the Orange revival. Senegal — FIFA No. 20, African champions. Switzerland — FIFA No. 19, the defensive dark horse. Six matches across New York, Philadelphia, and Dallas."
+    },
+    {
+      "id": "s03_team1",
+      "role": "analysis",
+      "tone": "trophy",
+      "bg": "#1a0e2e",
+      "accent": "#e8c05a",
+      "visual_note": "야말 하이라이트 컷, 스페인 패스맵 그래픽",
+      "narration": "스페인. 유로 2024 챔피언. 17세 야말이 이끄는 세대교체가 완성됐습니다. 라민 야말과 니코 윌리엄스의 양 날개, 페드리의 미드필드 지배력, 로드리의 수비적 완충. 감독 루이스 데 라 푸엔테는 티키타카를 넘어 전방 압박 + 속공 전술을 완성했습니다. FIFA 랭킹 3위, 이번 대회 우승 후보 1순위. 약점은 최전방 스트라이커 — 모라타 의존도가 여전히 높습니다.",
+      "narration_ja": "スペイン。EURO2024チャンピオン。17歳のヤマルが率いる世代交代が完成しました。ラミン・ヤマルとニコ・ウィリアムスの両ウィング、ペドリのミッドフィールド支配、ロドリの守備的クッション。ルイス・デ・ラ・フエンテ監督はティキタカを超え、プレスと速攻戦術を完成させました。FIFAランキング3位、今大会優勝候補筆頭。弱点はセンターフォワード — モラタへの依存度がまだ高い。",
+      "narration_en": "Spain. Euro 2024 champions. The generational rebuild led by 17-year-old Yamal is complete. Lamine Yamal and Nico Williams on the wings, Pedri controlling the midfield, Rodri as the defensive anchor. Coach De La Fuente has evolved beyond tiki-taka into high press and rapid transitions. FIFA No. 3 and the tournament's top contender. Weakness: the center forward position — still heavily reliant on Morata."
+    },
+    {
+      "id": "s04_team2",
+      "role": "analysis",
+      "tone": "pitch",
+      "bg": "#0d2818",
+      "accent": "#4fc87a",
+      "visual_note": "판다이크 헤더 장면, 가크포 골 클립, 네덜란드 오렌지 그래픽",
+      "narration": "네덜란드. 오렌지 군단의 부활을 선언합니다. FIFA 랭킹 7위, 감독 로날트 쿠만 체제에서 세대교체를 완성했습니다. 비르힐 판다이크 — 리버풀의 수비 대장, 이번 대회 최고의 센터백 후보. 코디 가크포 — 리버풀의 공격형 미드필더, 득점력과 창조성을 겸비. 덴젤 둠프리스 — 오른쪽 측면을 지배하는 인테르의 라이트백. 약점은 중앙 스트라이커의 결정력 — 베크호르스트 이후 진정한 9번이 없습니다.",
+      "narration_ja": "オランダ。オレンジ軍団の復活を宣言します。FIFAランキング7位、ロナルド・クーマン監督のもとで世代交代を完成。フィルジル・ファン・ダイク — リバプールの守備大将、今大会最高のCB候補。コーディ・ガクポ — リバプールのアタッキングMF、得点力と創造性を兼備。デンゼル・ドゥムフリーズ — インテルの右SBで右サイドを支配。弱点は中央FWの決定力 — ウェグホルスト以降、真の9番が不在。",
+      "narration_en": "Netherlands. The Orange revival is here. FIFA No. 7 under Ronald Koeman. Virgil Van Dijk — Liverpool's defensive colossus, arguably the tournament's best center-back. Cody Gakpo — Liverpool's attacking midfielder, combines clinical finishing with creativity. Denzel Dumfries — Inter's right back, dominates the right flank. Weakness: center forward finishing — no true No. 9 since Weghorst stepped back."
+    },
+    {
+      "id": "s05_team3",
+      "role": "analysis",
+      "tone": "stadium",
+      "bg": "#0a0e1a",
+      "accent": "#c9a227",
+      "visual_note": "세네갈 사자 엠블럼 애니메이션, 스위스 산 그래픽",
+      "narration": "세네갈. 마네 이후 시대의 첫 월드컵. 2022 카타르 챔피언 세네갈이 새 세대로 돌아왔습니다. 이스마일라 사르 — 렌의 윙어, 폭발적 스피드. 파포 갈로 시씨 — 새로운 공격의 축. 칼리두 쿨리발리의 경험이 수비를 이끕니다. 스위스는? FIFA 랭킹 19위, 잔루카 섬보 + 그라니트 샤카의 중원. 2022 카타르 8강 진출의 기억. 조직력과 세트피스 능력이 강점. 스페인·네덜란드 상대로 1-0 수비 블록 전략이 통할 수 있습니다.",
+      "narration_ja": "セネガル。マネ以後の時代で初めてのワールドカップ。2022カタール王者のセネガルが新世代で戻ってきました。イスマイラ・サール — レンヌのウィンガー、爆発的なスピード。パポ・ガッロ・シッセ — 新たな攻撃の軸。カリドゥ・クリバリの経験が守備を牽引します。スイスは？FIFAランキング19位、ジャンルカ・ザンボ・アンバロとグラニト・ジャカの中盤。2022カタールベスト8の記憶。組織力とセットピースが強み。スペイン・オランダ相手に1-0守備ブロック戦略が通用するかもしれません。",
+      "narration_en": "Senegal. Their first World Cup in the post-Mané era. The 2022 Qatar champions return with a new generation. Ismaila Sarr — Rennes' winger with explosive pace. New attacking focal point Gallo Cissé. Veteran Koulibaly anchors the defense. Switzerland? FIFA No. 19, midfield anchored by Zambo Anguissa and Granit Xhaka. Memory of reaching the 2022 Qatar quarterfinals. Organized defense and set pieces are their weapons — a 1-0 defensive block against Spain or Netherlands is not out of the question."
+    },
+    {
+      "id": "s06_predict",
+      "role": "analysis",
+      "tone": "danger",
+      "bg": "#1a0a0a",
+      "accent": "#e85454",
+      "visual_note": "세 가지 핵심 변수 카드 등장, 카운트다운 효과",
+      "narration": "핵심 변수 세 가지. 첫째, 6월 14일 스페인 vs 네덜란드 — 2010 결승 리매치. 역대 전적: 스페인 7승, 네덜란드 4승, 무승부 4회. 이 경기 패자는 2위 싸움으로 밀립니다. 둘째, 세네갈의 이변 가능성 — 2022 카타르에서 네덜란드를 무너뜨린 전력. 세네갈이 네덜란드를 잡으면 조 판도가 완전히 뒤집힙니다. 셋째, 스위스의 은밀한 도전 — 역대 월드컵에서 가장 과소평가된 팀. 2022 스페인전 무승부 경험이 있습니다.",
+      "narration_ja": "注目の変数は3つ。①6月14日スペイン対オランダ — 2010決勝のリマッチ。歴代対戦成績：スペイン7勝・オランダ4勝・引き分け4回。この試合の敗者は2位争いに追われます。②セネガルのジャイアントキリングの可能性 — 2022カタールではオランダを追い詰めた。セネガルがオランダを破れば組の勢力図が完全に逆転します。③スイスの静かな挑戦 — 歴代W杯で最も過小評価されたチーム。2022年にはスペインと引き分けた経験があります。",
+      "narration_en": "Three key variables. One: June 14, Spain vs Netherlands — the 2010 final rematch. Historical record: Spain 7 wins, Netherlands 4 wins, 4 draws. The loser faces a fierce battle for second place. Two: Senegal's upset potential — they pushed Netherlands hard in Qatar 2022. If Senegal beats Netherlands, the whole group picture flips. Three: Switzerland's silent threat — the most underrated team in World Cup history, including a famous draw against Spain in 2022."
+    },
+    {
+      "id": "s07_verdict",
+      "role": "verdict",
+      "tone": "trophy",
+      "bg": "#1a0e2e",
+      "accent": "#e8c05a",
+      "visual_note": "최종 예측 테이블, 1위-4위 순서로 드라마틱 공개",
+      "narration": "D조 최종 예측. 1위: 스페인. 승점 7 예상 — 야말 세대의 기술력과 유로 2024 우승의 자신감. 2위: 네덜란드. 승점 5~6 — 판다이크 수비가 결정적 실점을 막는다면. 3위: 세네갈. 승점 3~4 — 스위스 혹은 네덜란드를 잡을 이변 가능성. 4위: 스위스. 그러나 6월 14일 스페인 vs 네덜란드 — 이 경기 하나가 모든 것을 바꿀 수 있습니다. 절대 놓치지 마세요. 다음 영상은 E조 — 아르헨티나 월드컵 2연패에 도전합니다.",
+      "narration_ja": "D組最終予測。1位：スペイン。勝ち点7予想 — ヤマル世代の技術とEURO2024優勝の自信。2位：オランダ。勝ち点5〜6 — ファン・ダイクの守備が致命的な失点を防げるなら。3位：セネガル。勝ち点3〜4 — スイスかオランダを倒すジャイアントキリングの可能性。4位：スイス。しかし6月14日スペイン対オランダ — この一戦がすべてを変えうる。絶対に見逃さないでください。次の動画はE組 — アルゼンチンのW杯2連覇への挑戦です。",
+      "narration_en": "Group D final prediction. 1st: Spain — projected 7 points, Yamal's generation armed with Euro 2024 confidence. 2nd: Netherlands — 5 to 6 points, if Van Dijk's defense holds firm. 3rd: Senegal — 3 to 4 points, upset potential against Switzerland or Netherlands. 4th: Switzerland. But June 14, Spain vs Netherlands — one match can change everything. Do not miss it. Next video: Group E — Argentina's quest for back-to-back World Cup titles."
+    }
+  ]
+}
