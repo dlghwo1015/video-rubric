@@ -1,0 +1,58 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 4,
+  "date": "2026-06-22",
+  "title_ko": "2026-06-22 오늘의 경기 AI 예측 — 독일 vs 일본, 브라질 vs 멕시코",
+  "title_ja": "2026-06-22 今日の試合 AI予測 — ドイツ vs 日本、ブラジル vs メキシコ",
+  "title_en": "2026-06-22 Match Predictions by AI — Germany vs Japan, Brazil vs Mexico",
+  "korea_match": false,
+  "matches_today": [
+    { "id": "m1", "team_a": "Germany",   "team_b": "Japan",   "group": "G", "venue": "AT&T Stadium, Dallas",          "kickoff_kst": "03:00" },
+    { "id": "m2", "team_a": "Brazil",    "team_b": "Mexico",  "group": "K", "venue": "MetLife Stadium, New York",     "kickoff_kst": "06:00" },
+    { "id": "m3", "team_a": "Spain",     "team_b": "Morocco", "group": "H", "venue": "Rose Bowl Stadium, Los Angeles","kickoff_kst": "09:00" },
+    { "id": "m4", "team_a": "Argentina", "team_b": "Canada",  "group": "A", "venue": "Allegiant Stadium, Las Vegas",  "kickoff_kst": "12:00" }
+  ],
+  "yesterday_results": [
+    { "team_a": "Netherlands", "score_a": 3, "score_b": 1, "team_b": "Senegal",   "group": "E" },
+    { "team_a": "South Korea", "score_a": 0, "score_b": 0, "team_b": "Iran",      "group": "F" },
+    { "team_a": "Portugal",    "score_a": 2, "score_b": 1, "team_b": "Australia", "group": "D" }
+  ],
+  "ai_predictions": [
+    { "match": "Germany vs Japan",    "pred_a": 2, "pred_b": 1, "confidence": "64%", "pick": "Germany" },
+    { "match": "Brazil vs Mexico",    "pred_a": 2, "pred_b": 0, "confidence": "68%", "pick": "Brazil" },
+    { "match": "Spain vs Morocco",    "pred_a": 3, "pred_b": 0, "confidence": "70%", "pick": "Spain" },
+    { "match": "Argentina vs Canada", "pred_a": 2, "pred_b": 0, "confidence": "72%", "pick": "Argentina" }
+  ],
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "오늘 월드컵은 빅매치의 연속입니다. 독일 대 일본 — 2022년 카타르의 충격을 기억하십니까? 이번엔 독일이 복수를 노립니다. 브라질 대 멕시코 — 아메리카 대전. 스페인 대 모로코, 아르헨티나 대 캐나다. AI가 오늘 4경기를 모두 예측합니다.",
+      "narration_ja": "今日のワールドカップはビッグマッチの連続です。ドイツ対日本 — 2022年カタールの衝撃を覚えていますか？今回はドイツが復讐を狙います。ブラジル対メキシコ — アメリカ大戦。スペイン対モロッコ、アルゼンチン対カナダ。AIが今日の4試合すべてを予測します。",
+      "narration_en": "Today's World Cup serves up back-to-back blockbusters. Germany vs Japan — do you remember Qatar 2022? Germany is here for revenge. Brazil vs Mexico — the Americas Derby. Spain vs Morocco, Argentina vs Canada. AI predicts all four matches today."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "어제 결과부터 정리합니다. 네덜란드가 세네갈을 3-1로 대파 — 가크포 해트트릭, 조별리그 2연승으로 16강 조기 확정. 포르투갈이 호주를 2-1로 제압 — 라파엘 레아오 결승골. 그리고 대한민국은 이란과 0-0 무승부 — 이란전 수비 집중 전략으로 F조 1위를 수성했습니다. 16강 진출 청신호.",
+      "narration_ja": "昨日の結果から整理します。オランダがセネガルを3-1で粉砕 — ガクポハットトリック、グループステージ2連勝でベスト16早期確定。ポルトガルがオーストラリアを2-1で制圧 — ラファエル・レオンの決勝ゴール。そして大韓民国はイランと0-0の引き分け — 守備集中戦略でグループF首位を守り切り、ベスト16進出へ青信号。",
+      "narration_en": "Yesterday's results first. Netherlands demolished Senegal 3-1 — Gakpo's hat-trick seals back-to-back wins and an early round-of-16 berth. Portugal edged Australia 2-1 — Rafael Leão with the winner. And South Korea drew 0-0 with Iran — a tactical defensive masterclass to hold Group F top spot. Korea's knockout stage is firmly in view."
+    },
+    {
+      "id": "s03_prediction1",
+      "narration": "오늘의 핵심 경기, 독일 대 일본. 2022년 카타르 — 일본이 독일을 2-1로 꺾은 세기의 이변. AI 예측은 독일 2-1 일본입니다. 근거 세 가지. 첫째, 플리크 감독의 독일은 뮈지알라와 비르츠의 중원 조합으로 훨씬 더 역동적이고 창의적으로 변모했습니다. 일본의 블록 수비를 허물 정교한 패스워크를 갖췄습니다. 둘째, 일본의 고강도 전방 압박은 무기이지만, 독일의 빌드업은 2022년보다 성숙해졌습니다 — 야마토형 함정에 두 번은 걸리지 않습니다. 셋째, G조 1위 확정을 위한 독일의 동기는 어느 때보다 강렬합니다. AI 신뢰도 64%. 2022년의 악몽은 없습니다 — AI는 독일을 선택합니다.",
+      "narration_ja": "今日の焦点、ドイツ対日本。2022年カタール — 日本がドイツを2-1で下した世紀の番狂わせ。AI予測はドイツ2-1日本です。根拠は三つ。第一、フリック監督のドイツはムシアラとヴィルツの中盤コンビで格段に躍動感と創造性を増しました。日本のブロック守備を崩す精巧なパスワークを持っています。第二、日本のハイプレスは武器ですが、ドイツのビルドアップは2022年より成熟しています — 同じ罠に二度は落ちません。第三、グループG首位確定を狙うドイツのモチベーションはかつてないほど高い。AI信頼度64%。2022年の悪夢の繰り返しはありません — AIはドイツを選択します。",
+      "narration_en": "Today's headline match: Germany vs Japan. Qatar 2022 — Japan stunned Germany 2-1 in one of the greatest upsets in World Cup history. AI prediction: Germany 2-1 Japan. Three reasons. First, Flick's Germany are transformed — Musiala and Wirtz in central midfield bring a dynamism and creativity to dismantle Japan's defensive block. Second, Japan's high press is lethal, but Germany's build-up has matured significantly since 2022 — they won't fall into the same trap twice. Third, Germany have overwhelming motivation to claim Group G top spot. AI confidence: 64%. No repeat of the 2022 nightmare — AI picks Germany."
+    },
+    {
+      "id": "s04_prediction2",
+      "narration": "나머지 세 경기 빠르게 예측합니다. 브라질 대 멕시코 — AI 픽 브라질 2-0. 비니시우스 주니어와 호드리구의 공격 이중주가 멕시코 수비를 해체합니다. 신뢰도 68%. 스페인 대 모로코 — AI 픽 스페인 3-0. 야말의 드리블과 윌리엄스의 폭발적 스프린트가 모로코의 저항을 무력화합니다. 오늘의 가장 확실한 베팅. 신뢰도 70%. 아르헨티나 대 캐나다 — AI 픽 아르헨티나 2-0. 메시와 알바레스의 콤비 앞에 개최국 캐나다의 열기는 한계가 있습니다. 신뢰도 72%.",
+      "narration_ja": "残り3試合を素早く予測します。ブラジル対メキシコ — AIピックブラジル2-0。ヴィニシウス・ジュニオールとロドリゴの攻撃デュオがメキシコ守備を解体します。信頼度68%。スペイン対モロッコ — AIピックスペイン3-0。ヤマルのドリブルとウィリアムスの爆発的スプリントがモロッコの抵抗を無力化します。今日最も確実なピック。信頼度70%。アルゼンチン対カナダ — AIピックアルゼンチン2-0。メッシとアルバレスのコンビの前に、開催国カナダの熱気にも限界があります。信頼度72%。",
+      "narration_en": "Three more matches, quick predictions. Brazil vs Mexico — AI pick Brazil 2-0. Vinícius Jr and Rodrygo's attacking partnership dismantles the Mexican backline. Confidence 68%. Spain vs Morocco — AI pick Spain 3-0. Yamal's dribbles and Williams' explosive sprints neutralize Moroccan resistance. Today's most certain pick. Confidence 70%. Argentina vs Canada — AI pick Argentina 2-0. Messi and Álvarez in front of goal — Canada's electric home crowd can only carry them so far. Confidence 72%."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘의 AI 픽 정리. 독일, 브라질, 스페인, 아르헨티나 — 오늘도 강팀 4연승 예측. 하지만 주목하세요 — 오늘의 최고 이변 후보는 일본. 2022년 독일전 역전 신화를 재현한다면 월드컵 역사에 영원히 이름을 남깁니다. AI는 독일을 선택하지만, 이 경기는 반드시 끝까지 봐야 합니다. 오늘의 AI 최고 픽은 스페인 3-0 모로코 — 신뢰도 70%, 오늘 가장 확실한 승부. 내일 결과 검증 — 채널 구독하고 함께 확인하세요.",
+      "narration_ja": "今日のAIピックまとめ。ドイツ、ブラジル、スペイン、アルゼンチン — 今日も強豪4連勝予測。しかし注目してください — 今日の最大アップセット候補は日本。2022年ドイツ戦の逆転神話を再現できれば、ワールドカップ史に永遠に名を刻みます。AIはドイツを選択しますが、この試合は必ず最後まで見てください。今日のAI最高ピックはスペイン3-0モロッコ — 信頼度70%、今日最も確実な勝負。明日は結果検証 — チャンネル登録してご確認ください。",
+      "narration_en": "Today's AI picks summary. Germany, Brazil, Spain, Argentina — four favourites predicted to win. But keep your eyes on Japan — reproduce the 2022 miracle and they cement themselves in World Cup folklore forever. AI chose Germany, but watch every minute of this one. Today's top AI pick: Spain 3-0 Morocco — confidence 70%, the most certain result on the card. Result verification tomorrow — subscribe and follow along."
+    }
+  ]
+}
