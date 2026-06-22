@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>Group E Deep Dive — Belgium vs Italy | 2026 World Cup Prediction Battle EP08</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1920px; height: 1080px; overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    background: #0a0e1a;
+  }
+  .slide {
+    position: absolute; top: 0; left: 0;
+    width: 1920px; height: 1080px;
+    display: none;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  #slide-1 {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2d0a0a 50%, #1a0a0a 100%);
+    flex-direction: column; align-items: center; justify-content: center;
+  }
+  #slide-1 .ep-badge {
+    font-size: 22px; font-weight: 700; color: #e85454;
+    letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px;
+    border: 2px solid #e85454; padding: 8px 28px; border-radius: 4px;
+  }
+  #slide-1 .series-tag {
+    font-size: 18px; color: rgba(232,84,84,0.6); letter-spacing: 2px;
+    margin-bottom: 48px;
+  }
+  #slide-1 h1 {
+    font-size: 84px; font-weight: 900; color: #fff;
+    text-align: center; line-height: 1.1;
+    text-shadow: 0 0 60px rgba(232,84,84,0.5);
+  }
+  #slide-1 h1 span { color: #e85454; }
+  #slide-1 .subtitle {
+    font-size: 28px; color: rgba(255,255,255,0.7);
+    margin-top: 32px; text-align: center; line-height: 1.5;
+  }
+  #slide-1 .flag-clash {
+    display: flex; gap: 40px; margin-top: 60px; align-items: center;
+  }
+  #slide-1 .flag-box { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  #slide-1 .flag-emoji { font-size: 72px; line-height: 1; }
+  #slide-1 .flag-name { font-size: 20px; font-weight: 700; color: rgba(255,255,255,0.8); letter-spacing: 2px; }
+  #slide-1 .vs-text { font-size: 48px; font-weight: 900; color: #e85454; text-shadow: 0 0 30px rgba(232,84,84,0.8); }
+  #slide-1 .glow-bar {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, transparent, #e85454, transparent);
+  }
+  #slide-1 .corner-deco {
+    position: absolute; top: 40px; right: 60px;
+    font-size: 16px; color: rgba(232,84,84,0.5); letter-spacing: 2px;
+  }
+
+  #slide-2 {
+    background: linear-gradient(135deg, #0a0e1a 0%, #0d1530 100%);
+    flex-direction: column; padding: 60px 100px;
+  }
+  #slide-2 .slide-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 50px;
+  }
+  #slide-2 .slide-title { font-size: 40px; font-weight: 900; color: #c9a227; letter-spacing: 2px; }
+  #slide-2 .slide-badge {
+    font-size: 16px; color: rgba(201,162,39,0.7);
+    border: 1px solid rgba(201,162,39,0.4); padding: 6px 20px; border-radius: 4px; letter-spacing: 2px;
+  }
+  #slide-2 .teams-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 32px; flex: 1;
+  }
+  #slide-2 .team-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(201,162,39,0.2);
+    border-radius: 12px; padding: 36px 28px;
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
+  }
+  #slide-2 .team-card.seed1 { border-color: rgba(201,162,39,0.6); background: rgba(201,162,39,0.06); }
+  #slide-2 .team-flag { font-size: 64px; line-height: 1; }
+  #slide-2 .team-name { font-size: 28px; font-weight: 900; color: #fff; text-align: center; }
+  #slide-2 .team-rank { font-size: 18px; color: rgba(201,162,39,0.9); font-weight: 700; }
+  #slide-2 .team-desc { font-size: 16px; color: rgba(255,255,255,0.6); text-align: center; line-height: 1.6; }
+  #slide-2 .seed-badge {
+    font-size: 13px; color: #c9a227; letter-spacing: 2px;
+    border: 1px solid #c9a227; padding: 4px 12px; border-radius: 3px;
+  }
+
+  #slide-3 {
+    background: linear-gradient(135deg, #1a0e2e 0%, #251545 100%);
+    flex-direction: column; padding: 60px 120px;
+  }
+  #slide-3 .team-header { display: flex; align-items: center; gap: 40px; margin-bottom: 60px; }
+  #slide-3 .team-flag-big { font-size: 96px; line-height: 1; }
+  #slide-3 .team-label { font-size: 18px; color: rgba(232,192,90,0.7); letter-spacing: 3px; margin-bottom: 8px; text-transform: uppercase; }
+  #slide-3 .team-title { font-size: 60px; font-weight: 900; color: #fff; line-height: 1; }
+  #slide-3 .team-title span { color: #e8c05a; }
+  #slide-3 .team-subtitle { font-size: 22px; color: rgba(255,255,255,0.6); margin-top: 8px; }
+  #slide-3 .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-bottom: 40px; }
+  #slide-3 .stat-box {
+    background: rgba(232,192,90,0.08); border: 1px solid rgba(232,192,90,0.25);
+    border-radius: 10px; padding: 24px; text-align: center;
+  }
+  #slide-3 .stat-value { font-size: 44px; font-weight: 900; color: #e8c05a; line-height: 1; }
+  #slide-3 .stat-label { font-size: 15px; color: rgba(255,255,255,0.6); margin-top: 8px; }
+  #slide-3 .player-row { display: flex; gap: 20px; }
+  #slide-3 .player-chip {
+    background: rgba(232,192,90,0.12); border: 1px solid rgba(232,192,90,0.3);
+    border-radius: 8px; padding: 12px 22px; font-size: 17px; color: #fff;
+  }
+  #slide-3 .player-chip strong { color: #e8c05a; }
+
+  #slide-4 {
+    background: linear-gradient(135deg, #0d2818 0%, #0a2010 100%);
+    flex-direction: column; padding: 60px 120px;
+  }
+  #slide-4 .team-header { display: flex; align-items: center; gap: 40px; margin-bottom: 60px; }
+  #slide-4 .team-flag-big { font-size: 96px; line-height: 1; }
+  #slide-4 .team-label { font-size: 18px; color: rgba(79,200,122,0.7); letter-spacing: 3px; margin-bottom: 8px; text-transform: uppercase; }
+  #slide-4 .team-title { font-size: 60px; font-weight: 900; color: #fff; line-height: 1; }
+  #slide-4 .team-title span { color: #4fc87a; }
+  #slide-4 .team-subtitle { font-size: 22px; color: rgba(255,255,255,0.6); margin-top: 8px; }
+  #slide-4 .strengths { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px; }
+  #slide-4 .strength-item {
+    background: rgba(79,200,122,0.07); border-left: 4px solid #4fc87a;
+    padding: 20px 24px; border-radius: 0 8px 8px 0;
+  }
+  #slide-4 .strength-title { font-size: 20px; font-weight: 700; color: #4fc87a; margin-bottom: 6px; }
+  #slide-4 .strength-desc { font-size: 16px; color: rgba(255,255,255,0.7); line-height: 1.5; }
+  #slide-4 .key-players { display: flex; gap: 20px; }
+  #slide-4 .player-chip {
+    background: rgba(79,200,122,0.1); border: 1px solid rgba(79,200,122,0.3);
+    border-radius: 8px; padding: 12px 22px; font-size: 17px; color: #fff;
+  }
+  #slide-4 .player-chip strong { color: #4fc87a; }
+
+  #slide-5 {
+    background: linear-gradient(135deg, #0a0e1a 0%, #0d1530 100%);
+    flex-direction: column; padding: 60px 100px;
+  }
+  #slide-5 .slide-header { margin-bottom: 50px; }
+  #slide-5 .slide-title { font-size: 40px; font-weight: 900; color: #c9a227; letter-spacing: 2px; margin-bottom: 8px; }
+  #slide-5 .slide-sub { font-size: 20px; color: rgba(255,255,255,0.5); }
+  #slide-5 .dark-horses { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; flex: 1; }
+  #slide-5 .dh-card {
+    background: rgba(255,255,255,0.03); border: 1px solid rgba(201,162,39,0.2);
+    border-radius: 12px; padding: 40px;
+  }
+  #slide-5 .dh-header { display: flex; align-items: center; gap: 24px; margin-bottom: 28px; }
+  #slide-5 .dh-flag { font-size: 56px; line-height: 1; }
+  #slide-5 .dh-name { font-size: 32px; font-weight: 900; color: #fff; }
+  #slide-5 .dh-rank { font-size: 16px; color: rgba(201,162,39,0.8); font-weight: 700; margin-top: 4px; }
+  #slide-5 .dh-points { display: flex; flex-direction: column; gap: 12px; }
+  #slide-5 .dh-point {
+    font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.5;
+    padding-left: 20px; border-left: 3px solid rgba(201,162,39,0.4);
+  }
+
+  #slide-6 {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2d0a0a 100%);
+    flex-direction: column; padding: 60px 100px;
+  }
+  #slide-6 .slide-title { font-size: 44px; font-weight: 900; color: #e85454; letter-spacing: 2px; margin-bottom: 50px; }
+  #slide-6 .variables { display: flex; flex-direction: column; gap: 28px; flex: 1; }
+  #slide-6 .var-item { display: flex; gap: 30px; align-items: flex-start; }
+  #slide-6 .var-num { font-size: 48px; font-weight: 900; color: #e85454; line-height: 1; min-width: 60px; }
+  #slide-6 .var-content { flex: 1; }
+  #slide-6 .var-title { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+  #slide-6 .var-desc { font-size: 18px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+  #slide-6 .prediction-box {
+    background: rgba(232,84,84,0.08); border: 1px solid rgba(232,84,84,0.3);
+    border-radius: 10px; padding: 24px 32px; margin-top: 32px;
+  }
+  #slide-6 .prediction-label { font-size: 16px; color: rgba(232,84,84,0.8); letter-spacing: 3px; margin-bottom: 10px; }
+  #slide-6 .prediction-text { font-size: 22px; font-weight: 700; color: #fff; line-height: 1.5; }
+
+  #slide-7 {
+    background: linear-gradient(135deg, #1a0e2e 0%, #251545 100%);
+    flex-direction: column; align-items: center; padding: 60px 100px;
+  }
+  .verdict-title { font-size: 44px; font-weight: 900; color: #e8c05a; letter-spacing: 3px; margin-bottom: 50px; text-transform: uppercase; }
+  .ranking-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; width: 100%; margin-bottom: 40px; }
+  .rank-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(232,192,90,0.15);
+    border-radius: 12px; padding: 32px 20px;
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
+  }
+  .rank-card.advance { border-color: rgba(232,192,90,0.5); background: rgba(232,192,90,0.07); }
+  .rank-pos { font-size: 16px; color: rgba(232,192,90,0.8); letter-spacing: 2px; font-weight: 700; }
+  .rank-card.advance .rank-pos { color: #e8c05a; }
+  .rank-flag { font-size: 56px; line-height: 1; }
+  .rank-name { font-size: 26px; font-weight: 900; color: #fff; text-align: center; }
+  .rank-pts { font-size: 16px; color: rgba(255,255,255,0.6); }
+  .next-ep {
+    background: rgba(232,192,90,0.08); border: 1px solid rgba(232,192,90,0.25);
+    border-radius: 10px; padding: 20px 48px; text-align: center; margin-bottom: 24px;
+  }
+  .next-label { font-size: 14px; color: rgba(232,192,90,0.7); letter-spacing: 3px; margin-bottom: 6px; }
+  .next-text { font-size: 20px; color: #fff; font-weight: 700; }
+  .series-footer { font-size: 16px; color: rgba(255,255,255,0.3); letter-spacing: 2px; }
+</style>
+</head>
+<body>
+
+<!-- ── SLIDE 1: HOOK ── -->
+<div class="slide" id="slide-1">
+  <div class="corner-deco">EP08 · GROUP E</div>
+  <div class="ep-badge">EP 08 · GROUP E</div>
+  <div class="series-tag">2026 WORLD CUP PREDICTION BATTLE</div>
+  <h1>🇧🇪 Belgium <span>VS</span> 🇮🇹 Italy</h1>
+  <div class="subtitle">The Last Blaze of the Golden Generation — Who Writes History?</div>
+  <div class="flag-clash">
+    <div class="flag-box">
+      <div class="flag-emoji">🇲🇦</div>
+      <div class="flag-name">Morocco</div>
+    </div>
+    <div class="vs-text">+</div>
+    <div class="flag-box">
+      <div class="flag-emoji">🇰🇷</div>
+      <div class="flag-name">South Korea</div>
+    </div>
+    <div class="vs-text">are</div>
+    <div class="flag-box">
+      <div class="flag-emoji">⚠️</div>
+      <div class="flag-name">Dangerous Too</div>
+    </div>
+  </div>
+  <div class="glow-bar"></div>
+</div>
+
+<!-- ── SLIDE 2: TEAMS ── -->
+<div class="slide" id="slide-2">
+  <div class="slide-header">
+    <div class="slide-title">Group E — 4 Teams</div>
+    <div class="slide-badge">GROUP E · 2026 FIFA WORLD CUP</div>
+  </div>
+  <div class="teams-grid">
+    <div class="team-card seed1">
+      <div class="seed-badge">SEED 1</div>
+      <div class="team-flag">🇧🇪</div>
+      <div class="team-name">Belgium</div>
+      <div class="team-rank">FIFA Rank #3</div>
+      <div class="team-desc">De Bruyne generation's<br>last chance</div>
+    </div>
+    <div class="team-card">
+      <div class="team-flag">🇮🇹</div>
+      <div class="team-name">Italy</div>
+      <div class="team-rank">FIFA Rank #7</div>
+      <div class="team-desc">2006 champions<br>Barella & Tonali era</div>
+    </div>
+    <div class="team-card">
+      <div class="team-flag">🇲🇦</div>
+      <div class="team-name">Morocco</div>
+      <div class="team-rank">FIFA Rank #14</div>
+      <div class="team-desc">Qatar 2022 semi-finalists<br>Africa's pride</div>
+    </div>
+    <div class="team-card">
+      <div class="team-flag">🇰🇷</div>
+      <div class="team-name">South Korea</div>
+      <div class="team-rank">FIFA Rank #25</div>
+      <div class="team-desc">Lee Kang-in & Son<br>golden generation</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SLIDE 3: BELGIUM ── -->
+<div class="slide" id="slide-3">
+  <div class="team-header">
+    <div class="team-flag-big">🇧🇪</div>
+    <div class="team-info">
+      <div class="team-label">Seed 1 · FIFA #3</div>
+      <div class="team-title">Belgium <span>Golden Generation</span></div>
+      <div class="team-subtitle">Kevin De Bruyne — Final World Cup, Final Blaze</div>
+    </div>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-box">
+      <div class="stat-value">35</div>
+      <div class="stat-label">De Bruyne's Age</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">4x</div>
+      <div class="stat-label">Consecutive WC Appearances</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">2018</div>
+      <div class="stat-label">Bronze Medal (Best Result)</div>
+    </div>
+  </div>
+  <div class="player-row">
+    <div class="player-chip"><strong>K. De Bruyne</strong> · Man City MF</div>
+    <div class="player-chip"><strong>L. Trossard</strong> · Arsenal FW</div>
+    <div class="player-chip"><strong>J. Bakayoko</strong> · AC Milan FW</div>
+    <div class="player-chip"><strong>A. Onana</strong> · Everton MF</div>
+  </div>
+</div>
+
+<!-- ── SLIDE 4: ITALY ── -->
+<div class="slide" id="slide-4">
+  <div class="team-header">
+    <div class="team-flag-big">🇮🇹</div>
+    <div class="team-info">
+      <div class="team-label">FIFA #7 · 2006 Champions</div>
+      <div class="team-title">Italy <span>Rebuild Complete</span></div>
+      <div class="team-subtitle">Spalletti's new generation — Catenaccio for the modern era</div>
+    </div>
+  </div>
+  <div class="strengths">
+    <div class="strength-item">
+      <div class="strength-title">Midfield Engine</div>
+      <div class="strength-desc">Nicolo Barella — Inter Milan's heartbeat<br>Sandro Tonali — fully recovered and firing again</div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-title">Defensive Structure</div>
+      <div class="strength-desc">Spalletti's defensive block — modern catenaccio<br>Scalvini and Bastoni form the backbone</div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-title">Attacking Variety</div>
+      <div class="strength-desc">Federico Chiesa — tactical flexibility<br>Di Lorenzo — overlapping fullback threat</div>
+    </div>
+    <div class="strength-item">
+      <div class="strength-title">World Cup Pedigree</div>
+      <div class="strength-desc">4× World Cup champions<br>(1934, 1938, 1982, 2006)</div>
+    </div>
+  </div>
+  <div class="key-players">
+    <div class="player-chip"><strong>N. Barella</strong> · Inter MF</div>
+    <div class="player-chip"><strong>S. Tonali</strong> · AC Milan MF</div>
+    <div class="player-chip"><strong>F. Chiesa</strong> · Juventus FW</div>
+    <div class="player-chip"><strong>G. Donnarumma</strong> · PSG GK</div>
+  </div>
+</div>
+
+<!-- ── SLIDE 5: DARK HORSES ── -->
+<div class="slide" id="slide-5">
+  <div class="slide-header">
+    <div class="slide-title">Dark Horse Alert</div>
+    <div class="slide-sub">Morocco & South Korea — Do NOT sleep on these two teams</div>
+  </div>
+  <div class="dark-horses">
+    <div class="dh-card">
+      <div class="dh-header">
+        <div class="dh-flag">🇲🇦</div>
+        <div>
+          <div class="dh-name">Morocco</div>
+          <div class="dh-rank">FIFA #14 · Africa's Strongest</div>
+        </div>
+      </div>
+      <div class="dh-points">
+        <div class="dh-point">Qatar 2022 semi-finalists — best result in African football history</div>
+        <div class="dh-point">Hakim Ziyech & Yassine Bounou still going strong in 2026</div>
+        <div class="dh-point">Massive North African diaspora in LA = de facto home crowd</div>
+        <div class="dh-point">Defensive solidity that knocked out Spain AND Portugal in 2022</div>
+      </div>
+    </div>
+    <div class="dh-card">
+      <div class="dh-header">
+        <div class="dh-flag">🇰🇷</div>
+        <div>
+          <div class="dh-name">South Korea</div>
+          <div class="dh-rank">FIFA #25 · Asia's Strongest</div>
+        </div>
+      </div>
+      <div class="dh-points">
+        <div class="dh-point">Lee Kang-in (PSG) + Son Heung-min (Spurs) — lethal golden combo</div>
+        <div class="dh-point">2022 comeback vs Australia — two goals from behind in the final minutes</div>
+        <div class="dh-point">Large Korean communities in LA & Seattle expected to create incredible atmosphere</div>
+        <div class="dh-point">Son's possible last World Cup — motivation at its absolute peak</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SLIDE 6: PREDICTION ── -->
+<div class="slide" id="slide-6">
+  <div class="slide-title">⚠️ Three Key Variables</div>
+  <div class="variables">
+    <div class="var-item">
+      <div class="var-num">①</div>
+      <div class="var-content">
+        <div class="var-title">Belgium vs Italy — The Opening Clash</div>
+        <div class="var-desc">The loser faces a genuine fight to reach the round of 16. Historical head-to-head: Italy 12W, Belgium 8W, 6D. Can Italy shut down De Bruyne on his last World Cup stage?</div>
+      </div>
+    </div>
+    <div class="var-item">
+      <div class="var-num">②</div>
+      <div class="var-content">
+        <div class="var-title">Morocco's 2022 Repeat</div>
+        <div class="var-desc">The North African diaspora in LA gives Morocco genuine home-crowd energy. If their 2022 defensive masterclass still holds, a second-place finish is entirely possible.</div>
+      </div>
+    </div>
+    <div class="var-item">
+      <div class="var-num">③</div>
+      <div class="var-content">
+        <div class="var-title">South Korea's Son + Lee Kang-in Combo</div>
+        <div class="var-desc">Son's last-WC desperation + Lee Kang-in's PSG-level creativity. If both fire simultaneously, a quarter-final run is not fantasy. Group E is Korea fans' maximum drama scenario.</div>
+      </div>
+    </div>
+  </div>
+  <div class="prediction-box">
+    <div class="prediction-label">PREDICTION</div>
+    <div class="prediction-text">Belgium through in 1st. Italy likely 2nd — but Morocco and South Korea can flip this table at any moment</div>
+  </div>
+</div>
+
+<!-- ── SLIDE 7: VERDICT ── -->
+<div class="slide" id="slide-7">
+  <div class="verdict-title">Group E Final Prediction</div>
+  <div class="ranking-grid">
+    <div class="rank-card advance">
+      <div class="rank-pos">1st PREDICTED</div>
+      <div class="rank-flag">🇧🇪</div>
+      <div class="rank-name">Belgium</div>
+      <div class="rank-pts">7+ points projected</div>
+    </div>
+    <div class="rank-card advance">
+      <div class="rank-pos">2nd PREDICTED</div>
+      <div class="rank-flag">🇮🇹</div>
+      <div class="rank-name">Italy</div>
+      <div class="rank-pts">5–6 points projected</div>
+    </div>
+    <div class="rank-card">
+      <div class="rank-pos">3rd PREDICTED</div>
+      <div class="rank-flag">🇲🇦</div>
+      <div class="rank-name">Morocco</div>
+      <div class="rank-pts">3–4 points projected</div>
+    </div>
+    <div class="rank-card">
+      <div class="rank-pos">4th PREDICTED</div>
+      <div class="rank-flag">🇰🇷</div>
+      <div class="rank-name">South Korea</div>
+      <div class="rank-pts">1–3 points projected</div>
+    </div>
+  </div>
+  <div class="next-ep">
+    <div class="next-label">NEXT EPISODE</div>
+    <div class="next-text">EP09 · Group F Analysis — Croatia vs Uruguay, a Battle for the Last Spot in the Round of 16</div>
+  </div>
+  <div class="series-footer">2026 World Cup Prediction Battle · honest-lab</div>
+</div>
+
+<script>
+  var slides = document.querySelectorAll('.slide');
+  var current = 0;
+
+  function showSlide(n) {
+    slides.forEach(function(s) { s.classList.remove('active'); s.style.display = 'none'; });
+    var idx = ((n % slides.length) + slides.length) % slides.length;
+    slides[idx].style.display = 'flex';
+    slides[idx].classList.add('active');
+    current = idx;
+  }
+
+  window.goToSlide = showSlide;
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') showSlide(current + 1);
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   showSlide(current - 1);
+  });
+
+  showSlide(0);
+</script>
+</body>
+</html>

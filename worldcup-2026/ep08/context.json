@@ -1,0 +1,105 @@
+{
+  "series": "worldcup-2026",
+  "series_config": {
+    "name": "2026 월드컵 예측 대결",
+    "tagline": "역사상 가장 큰 월드컵을 예측하다",
+    "blogs": {
+      "ko": "honest-lab",
+      "ja": "dx-pioneer-jp",
+      "en": "dx-pioneer-en"
+    },
+    "youtube_channel": "honest-lab",
+    "langs": [
+      "ko",
+      "ja",
+      "en"
+    ],
+    "tts": {
+      "ko": "ko-KR-SunHiNeural",
+      "ja": "ja-JP-NanamiNeural",
+      "en": "en-US-AriaNeural"
+    }
+  },
+  "ep": {
+    "id": "worldcup-2026-008",
+    "series": "worldcup-2026",
+    "ep_number": 8,
+    "title_ko": "E조 완전 분석 — 벨기에 vs 이탈리아, 황금 세대의 마지막 불꽃",
+    "title_ja": "E組完全分析 — ベルギー vs イタリア、黄金世代最後の炎",
+    "title_en": "Group E Deep Dive — Belgium vs Italy, The Last Blaze of the Golden Generation",
+    "ep_role": "group_preview",
+    "group_label": "E조",
+    "needs_live_data": 0,
+    "pub_date": null,
+    "status": "planned",
+    "post_id_ko": null,
+    "post_id_ja": null,
+    "post_id_en": null,
+    "notes": null,
+    "created_at": null,
+    "youtube_video_id": null,
+    "youtube_video_id_ja": null,
+    "youtube_video_id_en": null,
+    "yt_public_ko": 0,
+    "yt_public_ja": 0,
+    "yt_public_en": 0,
+    "script_status": "none",
+    "github_commit": null
+  },
+  "ep_role": "group_preview",
+  "scene_structure": [
+    {
+      "id": "s01_hook",
+      "role": "hook",
+      "desc": "훅 — 이 조의 핵심"
+    },
+    {
+      "id": "s02_teams",
+      "role": "data",
+      "desc": "4개 팀 소개"
+    },
+    {
+      "id": "s03_team1",
+      "role": "analysis",
+      "desc": "1번 시드 분석"
+    },
+    {
+      "id": "s04_team2",
+      "role": "analysis",
+      "desc": "2번 팀 분석"
+    },
+    {
+      "id": "s05_team3",
+      "role": "analysis",
+      "desc": "3번 팀 분석"
+    },
+    {
+      "id": "s06_predict",
+      "role": "analysis",
+      "desc": "예측 + 변수"
+    },
+    {
+      "id": "s07_verdict",
+      "role": "verdict",
+      "desc": "통과 예상 2팀 발표"
+    }
+  ],
+  "research_guide": "FIFA rankings, recent form, key players for all 4 teams in the group (Belgium, Italy, South Korea, Morocco), head-to-head history",
+  "needs_live_data": false,
+  "pub_date": null,
+  "blogs": {
+    "ko": "honest-lab",
+    "ja": "dx-pioneer-jp",
+    "en": "dx-pioneer-en"
+  },
+  "langs": [
+    "ko",
+    "ja",
+    "en"
+  ],
+  "tts": {
+    "ko": "ko-KR-SunHiNeural",
+    "ja": "ja-JP-NanamiNeural",
+    "en": "en-US-AriaNeural"
+  }
+}

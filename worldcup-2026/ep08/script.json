@@ -1,0 +1,87 @@
+{
+  "series": "worldcup-2026",
+  "ep_number": 8,
+  "ep_role": "group_preview",
+  "group": "E조",
+  "title_ko": "E조 완전 분석 — 벨기에 vs 이탈리아, 황금 세대의 마지막 불꽃",
+  "title_ja": "E組完全分析 — ベルギー vs イタリア、黄金世代最後の炎",
+  "title_en": "Group E Deep Dive — Belgium vs Italy, The Last Blaze of the Golden Generation",
+  "color_system": {
+    "stadium": { "bg": "#0a0e1a", "accent": "#c9a227", "text": "#f0ede4" },
+    "pitch":   { "bg": "#0d2818", "accent": "#4fc87a", "text": "#e8f5ed" },
+    "trophy":  { "bg": "#1a0e2e", "accent": "#e8c05a", "text": "#f5f0e8" },
+    "danger":  { "bg": "#1a0a0a", "accent": "#e85454", "text": "#f8e8e8" }
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "role": "hook",
+      "tone": "danger",
+      "bg": "#1a0a0a",
+      "accent": "#e85454",
+      "narration": "E조는 유럽 축구의 황금 세대가 마지막 불꽃을 태우는 무대입니다. 케빈 데 브라위너의 벨기에, 바렐라와 토날리의 이탈리아 — 두 유럽 강호가 조별리그에서 격돌합니다. 그리고 여기에 2022 카타르 4강 신화의 모로코, 2026 홈 어드밴티지를 노리는 대한민국까지. E조는 조용히 지나갈 수가 없습니다.",
+      "narration_ja": "E組は欧州サッカーの黄金世代が最後の炎を燃やす舞台です。ケビン・デ・ブライネのベルギー、バレッラとトナリのイタリア — 欧州の二大強豪がグループリーグで激突。そして2022年カタール準決勝進出の神話を持つモロッコ、2026年ホームアドバンテージを狙う韓国まで。E組は静かに通り過ぎることができません。",
+      "narration_en": "Group E is where European football's golden generation burns its final flame. Kevin De Bruyne's Belgium, Barella and Tonali's Italy — two continental powerhouses clash in the group stage. Add Morocco, the 2022 Qatar semi-finalists, and South Korea chasing a home advantage in 2026. Group E will not be quiet."
+    },
+    {
+      "id": "s02_teams",
+      "role": "data",
+      "tone": "stadium",
+      "bg": "#0a0e1a",
+      "accent": "#c9a227",
+      "narration": "E조 4개 팀을 소개합니다. 1번 시드 벨기에 — FIFA 랭킹 3위, 데 브라위너 세대의 마지막 찬스. 이탈리아 — FIFA 랭킹 7위, 2006 챔피언의 재도전. 모로코 — FIFA 랭킹 14위, 2022 카타르 4강의 아프리카 자존심. 대한민국 — FIFA 랭킹 25위, 이강인·손흥민의 황금 세대. 이 네 팀이 로스앤젤레스·시애틀·댈러스에서 6경기를 치릅니다.",
+      "narration_ja": "E組の4チームを紹介します。第1シードベルギー — FIFAランキング3位、デ・ブライネ世代最後のチャンス。イタリア — FIFAランキング7位、2006年チャンピオンの再挑戦。モロッコ — FIFAランキング14位、2022年カタール準決勝進出アフリカの誇り。韓国 — FIFAランキング25位、イ・ガンインと孫興民の黄金世代。この4チームがロサンゼルス・シアトル・ダラスで6試合を戦います。",
+      "narration_en": "Meet the four teams of Group E. Seed 1: Belgium — FIFA No. 3, De Bruyne's generation's last chance. Italy — FIFA No. 7, the 2006 champions making their comeback. Morocco — FIFA No. 14, Africa's pride after their Qatar 2022 semi-final run. South Korea — FIFA No. 25, the golden generation of Lee Kang-in and Son Heung-min. Six matches across Los Angeles, Seattle, and Dallas."
+    },
+    {
+      "id": "s03_team1",
+      "role": "analysis",
+      "tone": "trophy",
+      "bg": "#1a0e2e",
+      "accent": "#e8c05a",
+      "narration": "벨기에. 2026년이 마지막이라는 사실을 모두가 압니다. 케빈 데 브라위너 — 35세, 여전히 세계 최고 미드필더 중 하나. 로멜루 루카쿠는 대표팀을 떠났지만 레안드로 트로사르와 요한 바카요코가 공격을 이끕니다. 수비는 맨체스터 시티의 젊은 세대가 지탱합니다. 2018 브론즈의 아쉬움, 2022 조별 탈락의 치욕 — 2026은 마지막 기회입니다. 벨기에는 간절합니다.",
+      "narration_ja": "ベルギー。2026年が最後だということは誰もが知っています。ケビン・デ・ブライネ — 35歳、依然として世界最高のMFの一人。ロメル・ルカクは代表を去りましたが、レアンドロ・トロサルとヨハン・バカヨコが攻撃を牽引。守備はマンチェスター・シティの若い世代が支えます。2018年ブロンズの悔しさ、2022年グループリーグ敗退の屈辱 — 2026年は最後のチャンス。ベルギーは必死です。",
+      "narration_en": "Belgium. Everyone knows 2026 is the last ride. Kevin De Bruyne — 35 years old, still one of the best midfielders on the planet. Romelu Lukaku stepped away from national duty, but Leandro Trossard and Johan Bakayoko carry the attack. A young Man City generation anchors the defense. The Bronze Medal pain of 2018, the humiliation of the 2022 group exit — 2026 is the last chance. Belgium is desperate."
+    },
+    {
+      "id": "s04_team2",
+      "role": "analysis",
+      "tone": "pitch",
+      "bg": "#0d2818",
+      "accent": "#4fc87a",
+      "narration": "이탈리아. 2006 챔피언, 2018 예선 탈락의 수치, 2022 재건. 루치아노 스팔레티 감독은 새 세대를 완성했습니다. 핵심은 니콜로 바렐라 — 인테르의 심장이자 중원 사령관. 산드로 토날리는 AC밀란 미드필더 논란을 딛고 완전히 부활했습니다. 공격은 지오반니 디 로렌조와 페데리코 키에사. 이탈리아의 강점은 수비 조직력과 전술적 유연성 — catenaccio의 현대적 진화입니다.",
+      "narration_ja": "イタリア。2006年チャンピオン、2018年予選敗退の屈辱、2022年再建。ルチアーノ・スパレッティ監督は新世代を完成させました。核心はニコロ・バレッラ — インテルの心臓であり中盤の司令官。サンドロ・トナリはACミランMFの論争を乗り越え完全復活。攻撃はジョバンニ・ディ・ロレンツォとフェデリコ・キエーザ。イタリアの強みは守備組織力と戦術的柔軟性 — カテナチョの現代的進化です。",
+      "narration_en": "Italy. 2006 champions, 2018 qualifying disaster, 2022 rebuild. Manager Luciano Spalletti has completed the generational transition. The engine: Nicolo Barella — Inter Milan's heartbeat and midfield commander. Sandro Tonali has fully recovered from his controversies and is back in form. Federico Chiesa and Giovanni Di Lorenzo drive the attack. Italy's strength is defensive organization and tactical adaptability — the modern evolution of catenaccio."
+    },
+    {
+      "id": "s05_team3",
+      "role": "analysis",
+      "tone": "stadium",
+      "bg": "#0a0e1a",
+      "accent": "#c9a227",
+      "narration": "모로코. 2022 카타르의 기적을 기억하십니까? 스페인·포르투갈·벨기에를 연달아 꺾고 4강에 오른 아프리카 첫 팀. 2026에도 하킴 지예크가 이끄는 팀은 건재합니다. 그리고 대한민국. 이강인 — 파리생제르맹의 플레이메이커. 손흥민 — 토트넘의 레전드, 마지막 월드컵 가능성. 2022 호주전 신화를 기억한다면, 한국은 결코 무시할 수 없는 팀입니다.",
+      "narration_ja": "モロッコ。2022年カタールの奇跡を覚えていますか？スペイン・ポルトガル・ベルギーを連続で撃破し準決勝に進んだアフリカ初のチーム。2026年もハキム・ジヤシュが率いるチームは健在です。そして韓国。イ・ガンイン — パリ・サンジェルマンのプレーメーカー。孫興民 — トッテナムのレジェンド、最後のワールドカップの可能性。2022年オーストラリア戦の神話を覚えているなら、韓国は決して侮れないチームです。",
+      "narration_en": "Morocco. Remember the miracle of Qatar 2022? They beat Spain, Portugal, and Belgium back-to-back to become Africa's first-ever semi-finalists. Hakim Ziyech still leads the charge in 2026. And South Korea: Lee Kang-in — PSG's creative playmaker. Son Heung-min — Tottenham legend, possibly in his final World Cup. If you remember their comeback against Australia in 2022, Korea is never a team to dismiss."
+    },
+    {
+      "id": "s06_predict",
+      "role": "analysis",
+      "tone": "danger",
+      "bg": "#1a0a0a",
+      "accent": "#e85454",
+      "narration": "핵심 변수 세 가지. 첫째, 벨기에 vs 이탈리아 개막전 — 이 경기 패자는 16강 진출에 심각한 위협. 역대 전적: 이탈리아 12승, 벨기에 8승, 무승부 6회. 둘째, 모로코의 2022 재연 가능성 — LA의 대규모 북아프리카 교민 응원은 모로코의 홈 분위기를 만듭니다. 셋째, 대한민국의 이변 — 손흥민·이강인 콤비가 제 실력을 발휘하면 8강 이상도 가능. E조 예측: 벨기에 1위, 이탈리아 2위 — 하지만 모로코와 한국이 언제든 순서를 뒤집을 수 있습니다.",
+      "narration_ja": "注目の変数は3つ。①ベルギー対イタリアの開幕戦 — この試合の敗者はベスト16進出に深刻な脅威。歴代対戦成績：イタリア12勝、ベルギー8勝、引き分け6回。②モロッコの2022年再現の可能性 — LAの大規模な北アフリカ系移民の応援がモロッコのホームの雰囲気を作ります。③韓国の番狂わせ — 孫興民・イ・ガンインのコンビが実力を発揮すればベスト8以上も可能。E組予測：ベルギー1位、イタリア2位 — ただしモロッコと韓国がいつでも順序をひっくり返せます。",
+      "narration_en": "Three key variables. One: Belgium vs Italy in the opener — the loser faces a genuine threat to their round of 16 chances. Historical head-to-head: Italy 12 wins, Belgium 8 wins, 6 draws. Two: Morocco's 2022 repeat potential — the massive North African diaspora in LA creates a true home atmosphere. Three: South Korea's upset — if Son and Lee Kang-in fire together, a quarter-final run is entirely possible. Group E prediction: Belgium first, Italy second — but Morocco and South Korea can flip the table at any moment."
+    },
+    {
+      "id": "s07_verdict",
+      "role": "verdict",
+      "tone": "trophy",
+      "bg": "#1a0e2e",
+      "accent": "#e8c05a",
+      "narration": "E조 최종 예측. 1위: 벨기에. 승점 7 예상 — 데 브라위너의 마지막 불꽃. 2위: 이탈리아. 승점 5~6 — 수비력이 관건. 3위: 모로코. 승점 3~4 — 이변 연출 가능. 4위: 대한민국. 하지만 손흥민과 이강인이 동시에 빛난다면 이 예측은 틀릴 수 있습니다. E조는 반드시 지켜보세요. 다음 영상은 F조 — 크로아티아와 우루과이, 16강의 마지막 자리를 놓고 벌이는 혈전.",
+      "narration_ja": "E組最終予測。1位：ベルギー。勝ち点7予想 — デ・ブライネ最後の炎。2位：イタリア。勝ち点5〜6 — 守備力が鍵。3位：モロッコ。勝ち点3〜4 — 番狂わせ演出も可能。4位：韓国。しかし孫興民とイ・ガンインが同時に輝けばこの予測は外れるかもしれません。E組は必ず注目してください。次の動画はF組 — クロアチアとウルグアイ、ベスト16最後の椅子をかけた血戦。",
+      "narration_en": "Group E final prediction. 1st: Belgium — projected 7 points, De Bruyne's last blaze. 2nd: Italy — 5-6 points, defensive solidity is the key. 3rd: Morocco — 3-4 points, capable of a major upset. 4th: South Korea. But if Son Heung-min and Lee Kang-in shine together, this prediction could be wrong. Do not sleep on Group E. Next up: Group F — Croatia vs Uruguay, a brutal battle for the last spot in the round of 16."
+    }
+  ]
+}
