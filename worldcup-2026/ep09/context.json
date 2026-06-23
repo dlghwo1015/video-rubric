@@ -1,0 +1,105 @@
+{
+  "series": "worldcup-2026",
+  "series_config": {
+    "name": "2026 월드컵 예측 대결",
+    "tagline": "역사상 가장 큰 월드컵을 예측하다",
+    "blogs": {
+      "ko": "honest-lab",
+      "ja": "dx-pioneer-jp",
+      "en": "dx-pioneer-en"
+    },
+    "youtube_channel": "honest-lab",
+    "langs": [
+      "ko",
+      "ja",
+      "en"
+    ],
+    "tts": {
+      "ko": "ko-KR-SunHiNeural",
+      "ja": "ja-JP-NanamiNeural",
+      "en": "en-US-AriaNeural"
+    }
+  },
+  "ep": {
+    "id": "worldcup-2026-009",
+    "series": "worldcup-2026",
+    "ep_number": 9,
+    "title_ko": "F조 완전 분석 — 우루과이 vs 크로아티아, 그리고 한국의 도전",
+    "title_ja": "Fグループ完全分析 — ウルグアイvsクロアチア、そして韓国の挑戦",
+    "title_en": "Group F Deep Dive — Uruguay vs Croatia & Korea's Shot at the Knockouts",
+    "ep_role": "group_preview",
+    "group_label": "F조",
+    "needs_live_data": 0,
+    "pub_date": null,
+    "status": "planned",
+    "post_id_ko": null,
+    "post_id_ja": null,
+    "post_id_en": null,
+    "notes": null,
+    "created_at": null,
+    "youtube_video_id": null,
+    "youtube_video_id_ja": null,
+    "youtube_video_id_en": null,
+    "yt_public_ko": 0,
+    "yt_public_ja": 0,
+    "yt_public_en": 0,
+    "script_status": "none",
+    "github_commit": null
+  },
+  "ep_role": "group_preview",
+  "scene_structure": [
+    {
+      "id": "s01_hook",
+      "role": "hook",
+      "desc": "훅 — 모드리치의 고별전 vs 발베르데의 우루과이, 한국의 16강 열쇠"
+    },
+    {
+      "id": "s02_teams",
+      "role": "data",
+      "desc": "F조 4개 팀 소개 — 우루과이·크로아티아·한국·미국"
+    },
+    {
+      "id": "s03_team1",
+      "role": "analysis",
+      "desc": "우루과이 분석 — 발베르데·누녜스 세대의 우승 가능성"
+    },
+    {
+      "id": "s04_team2",
+      "role": "analysis",
+      "desc": "크로아티아 분석 — 모드리치 마지막 월드컵, 체계적 미드필드"
+    },
+    {
+      "id": "s05_team3",
+      "role": "analysis",
+      "desc": "한국 분석 — 손흥민 이후의 세대교체, 16강 가능한가"
+    },
+    {
+      "id": "s06_predict",
+      "role": "analysis",
+      "desc": "예측 + 변수 — 미국 홈 이점, 조별리그 시나리오"
+    },
+    {
+      "id": "s07_verdict",
+      "role": "verdict",
+      "desc": "최종 예측 — 16강 통과 2팀 발표"
+    }
+  ],
+  "research_guide": "FIFA rankings, recent form, key players for Uruguay/Croatia/South Korea/USA, head-to-head history, Modric last WC narrative, Valverde/Nunez era, Son Heung-min legacy",
+  "needs_live_data": false,
+  "pub_date": null,
+  "blogs": {
+    "ko": "honest-lab",
+    "ja": "dx-pioneer-jp",
+    "en": "dx-pioneer-en"
+  },
+  "langs": [
+    "ko",
+    "ja",
+    "en"
+  ],
+  "tts": {
+    "ko": "ko-KR-SunHiNeural",
+    "ja": "ja-JP-NanamiNeural",
+    "en": "en-US-AriaNeural"
+  }
+}
