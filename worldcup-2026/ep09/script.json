@@ -1,0 +1,60 @@
+{
+  "series": "worldcup-2026",
+  "ep_number": 9,
+  "ep_role": "group_preview",
+  "group": "F조",
+  "title_ko": "F조 완전 분석 — 우루과이 vs 크로아티아, 그리고 한국의 도전",
+  "title_ja": "Fグループ完全分析 — ウルグアイvsクロアチア、そして韓国の挑戦",
+  "title_en": "Group F Deep Dive — Uruguay vs Croatia & Korea's Shot at the Knockouts",
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "role": "hook",
+      "narration": "F조는 2026 월드컵에서 가장 드라마틱한 스토리가 펼쳐질 무대입니다. 루카 모드리치의 마지막 월드컵, 페데리코 발베르데가 이끄는 우루과이의 야망, 그리고 손흥민 세대를 넘어 새롭게 도약하는 한국. 4개 팀, 단 2장의 16강 티켓을 두고 전쟁이 시작됩니다.",
+      "narration_ja": "Fグループは2026ワールドカップで最もドラマチックなストーリーが展開される舞台です。ルカ・モドリッチの最後のワールドカップ、フェデリコ・バルベルデが率いるウルグアイの野望、そして孫興慜の時代を超えて新たに飛躍する韓国。4チーム、わずか2枚の決勝トーナメント進出権を巡り、戦いが始まります。",
+      "narration_en": "Group F is set to be the most dramatic stage at the 2026 World Cup. Luka Modric's farewell tournament, Uruguay's ambitions led by Federico Valverde, and a South Korea team ready to step beyond the Son Heung-min era. Four teams, only two knockout spots — the battle begins now."
+    },
+    {
+      "id": "s02_teams",
+      "role": "data",
+      "narration": "F조 4개 팀을 소개합니다. 1번 시드 우루과이 — FIFA 랭킹 9위, 발베르데·누녜스의 신세대. 크로아티아 — FIFA 랭킹 10위, 2018 준우승·2022 3위의 저력. 한국 — FIFA 랭킹 23위, 아시아 최강 도전자. 미국 — 개최국, FIFA 랭킹 13위, 홈 이점과 풀리직의 맹활약 기대.",
+      "narration_ja": "Fグループの4チームを紹介します。第1シードのウルグアイ — FIFAランキング9位、バルベルデ・ヌニェスの新世代。クロアチア — FIFAランキング10位、2018年準優勝・2022年3位の実力。韓国 — FIFAランキング23位、アジア最強の挑戦者。アメリカ — 開催国、FIFAランキング13位、ホームアドバンテージとプリシッチの活躍に期待。",
+      "narration_en": "Meet the four teams of Group F. First seed Uruguay — FIFA rank 9, powered by the new generation of Valverde and Nunez. Croatia — FIFA rank 10, 2018 runners-up and 2022 bronze medalists. South Korea — FIFA rank 23, Asia's top contender. USA — host nation, FIFA rank 13, with home advantage and Pulisic leading the charge."
+    },
+    {
+      "id": "s03_team1",
+      "role": "analysis",
+      "narration": "우루과이는 2026 월드컵에서 진정한 다크호스입니다. 페데리코 발베르데 — 레알 마드리드의 심장, 박스투박스 완전체. 다르윈 누녜스 — 폭발적인 스피드와 결정력. 로드리고 벤탄쿠르의 미드필드 장악력. 마르셀로 비엘사 감독의 조직적 압박 축구. 2010 이후 처음으로 우승을 狙える 우루과이입니다.",
+      "narration_ja": "ウルグアイは2026ワールドカップでの真のダークホースです。フェデリコ・バルベルデ — レアル・マドリードの心臓、ボックス・トゥ・ボックスの完全体。ダーウィン・ヌニェス — 爆発的なスピードと決定力。ロドリゴ・ベンタンクールのミッドフィールド支配力。マルセロ・ビエルサ監督の組織的プレスサッカー。2010年以来初めて優勝を狙えるウルグアイです。",
+      "narration_en": "Uruguay are the real dark horse of this World Cup. Federico Valverde — the engine of Real Madrid, a complete box-to-box force. Darwin Nunez — explosive pace and lethal finishing. Rodrigo Bentancur commanding the midfield. Marcelo Bielsa's intense pressing system. For the first time since 2010, Uruguay genuinely threaten to go all the way."
+    },
+    {
+      "id": "s04_team2",
+      "role": "analysis",
+      "narration": "크로아티아의 루카 모드리치 — 2026년, 그는 40세를 넘긴 나이에도 여전히 뛰고 있을 것입니다. 발롱도르 수상자, 레알 마드리드 전설. 그의 마지막 월드컵은 단순한 참가가 아닌 유산의 완성입니다. 코바시치·브로조비치의 미드필드 삼각지대. 크로아티아는 조직력으로 승부하는 팀 — 방심은 금물입니다.",
+      "narration_ja": "クロアチアのルカ・モドリッチ — 2026年、彼は40歳を超えても現役を続けているでしょう。バロンドール受賞者、レアル・マドリードのレジェンド。彼の最後のワールドカップは単なる参加ではなく、レガシーの完成です。コバチッチ・ブロゾビッチとのミッドフィールド三角形。クロアチアは組織力で勝負するチーム — 油断は禁物です。",
+      "narration_en": "Croatia's Luka Modric — by 2026, he will be playing into his forties. Ballon d'Or winner, Real Madrid legend. His final World Cup is not just an appearance — it is the completion of a legacy. The midfield triangle with Kovacic and Brozovic. Croatia are a team that wins through system and discipline — underestimate them at your peril."
+    },
+    {
+      "id": "s05_team3",
+      "role": "analysis",
+      "narration": "한국은 2026 월드컵에서 세대 교체의 기로에 서 있습니다. 손흥민의 황혼기, 이강인의 전성기, 그리고 새로운 얼굴들. 이강인 — PSG에서 성장한 창의적 플레이메이커. 백승호·황인범의 미드필드 구성. 한국의 F조 돌파 시나리오: 미국을 잡고, 우루과이나 크로아티아에서 승점 하나. 불가능하지 않습니다.",
+      "narration_ja": "韓国は2026ワールドカップで世代交代の岐路に立っています。孫興慜の黄昏、イ・ガンインの全盛期、そして新しい顔々。イ・ガンイン — PSGで成長したクリエイティブなプレイメーカー。ペク・スンホ・ファン・インボムのミッドフィールド構成。韓国のFグループ突破シナリオ: アメリカを倒し、ウルグアイかクロアチアで勝ち点1。不可能ではありません。",
+      "narration_en": "South Korea stand at a generational crossroads in 2026. Son Heung-min in twilight, Lee Kang-in in his prime, and fresh faces emerging. Lee Kang-in — a creative playmaker forged at PSG. The midfield backbone of Paik Seung-ho and Hwang In-beom. Korea's path through Group F: beat the USA, steal a point from Uruguay or Croatia. It is entirely possible."
+    },
+    {
+      "id": "s06_predict",
+      "role": "analysis",
+      "narration": "변수를 살펴봅니다. 미국의 홈 이점 — 열정적인 자국 팬 앞에서의 미국은 완전히 다른 팀입니다. 크리스티안 풀리식의 컨디션, 지오반니 레이나의 성장. 우루과이의 변수는 부상 — 발베르데나 누녜스 중 한 명만 빠져도 전력이 급락합니다. 한국의 키는 이강인의 폼과 수비 조직력. F조는 마지막 라운드까지 예측이 불가능한 조입니다.",
+      "narration_ja": "変数を見てみましょう。アメリカのホームアドバンテージ — 熱狂的な自国ファンの前でのアメリカは全く別のチームです。クリスティアン・プリシッチのコンディション、ジョヴァンニ・レイナの成長。ウルグアイの変数は負傷 — バルベルデかヌニェスのどちらかが欠けるだけで戦力が急落します。韓国の鍵はイ・ガンインのフォームと守備の組織力。Fグループは最終ラウンドまで予測不可能なグループです。",
+      "narration_en": "Let's examine the key variables. USA's home advantage — in front of their own fans, the Americans become a completely different team. Christian Pulisic's fitness, Giovanni Reyna's development. Uruguay's wildcard is injuries — lose either Valverde or Nunez and their threat drops dramatically. Korea's key is Lee Kang-in's form and defensive organization. Group F remains unpredictable right through the final matchday."
+    },
+    {
+      "id": "s07_verdict",
+      "role": "verdict",
+      "narration": "최종 예측입니다. 16강 진출팀: 우루과이와 크로아티아. 우루과이는 발베르데·누녜스의 폭발력으로 1위 통과, 크로아티아는 조직력으로 2위. 한국은 아쉽게 3위 탈락, 미국은 홈 이점에도 불구 4위 예상. 그러나 이 조의 진짜 관전 포인트는 모드리치의 마지막 월드컵 무대. 역사는 만들어지고 있습니다. 다음 EP에서는 G조를 분석합니다.",
+      "narration_ja": "最終予測です。決勝トーナメント進出チーム: ウルグアイとクロアチア。ウルグアイはバルベルデ・ヌニェスの爆発力で1位通過、クロアチアは組織力で2位。韓国は惜しくも3位敗退、アメリカはホームアドバンテージにもかかわらず4位予想。しかしこのグループの真の見どころはモドリッチの最後のワールドカップ舞台。歴史は作られています。次のEPではGグループを分析します。",
+      "narration_en": "Final verdict. Teams advancing to the Round of 32: Uruguay and Croatia. Uruguay top the group on Valverde and Nunez's firepower; Croatia squeeze through in second on their system. South Korea narrowly exit in third; USA finish fourth despite home advantage. But the real story of this group is Modric's final World Cup stage. History is being written. Next episode: Group G analysis."
+    }
+  ]
+}
