@@ -1,0 +1,66 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 5,
+  "date": "2026-06-24",
+  "title_ko": "2026-06-24 오늘의 경기 AI 예측 — 독일 vs 이탈리아, 잉글랜드 vs 호주",
+  "title_ja": "2026-06-24 今日の試合 AI予測 — ドイツ vs イタリア、イングランド vs オーストラリア",
+  "title_en": "2026-06-24 Match Predictions by AI — Germany vs Italy, England vs Australia",
+  "korea_match": false,
+  "matches_today": [
+    { "id": "m1", "team_a": "Germany",   "team_b": "Italy",       "group": "G", "venue": "AT&T Stadium, Dallas",           "kickoff_kst": "03:00" },
+    { "id": "m2", "team_a": "Japan",     "team_b": "Chile",       "group": "G", "venue": "Levi's Stadium, Santa Clara",    "kickoff_kst": "03:00" },
+    { "id": "m3", "team_a": "England",   "team_b": "Australia",   "group": "C", "venue": "MetLife Stadium, New York",      "kickoff_kst": "06:00" },
+    { "id": "m4", "team_a": "Nigeria",   "team_b": "Saudi Arabia","group": "C", "venue": "Rose Bowl Stadium, Los Angeles", "kickoff_kst": "06:00" }
+  ],
+  "yesterday_results": [
+    { "team_a": "Brazil",    "score_a": 4, "score_b": 0, "team_b": "Bolivia",  "group": "K" },
+    { "team_a": "Argentina", "score_a": 2, "score_b": 1, "team_b": "Jamaica",  "group": "A" },
+    { "team_a": "France",    "score_a": 1, "score_b": 0, "team_b": "Colombia", "group": "B" }
+  ],
+  "ai_predictions": [
+    { "match": "Germany vs Italy",        "pred_a": 2, "pred_b": 1, "confidence": "58%", "pick": "Germany" },
+    { "match": "Japan vs Chile",          "pred_a": 1, "pred_b": 0, "confidence": "61%", "pick": "Japan" },
+    { "match": "England vs Australia",    "pred_a": 2, "pred_b": 0, "confidence": "67%", "pick": "England" },
+    { "match": "Nigeria vs Saudi Arabia", "pred_a": 2, "pred_b": 1, "confidence": "59%", "pick": "Nigeria" }
+  ],
+  "korea_status": {
+    "group": "F",
+    "standing": "1위",
+    "record": "2승 1무",
+    "points": 7,
+    "r16_qualified": true,
+    "r16_opponent_tbd": true
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "오늘은 G조 운명의 날입니다. 독일 대 이탈리아 — 월드컵 역사상 가장 위대한 라이벌 대결. 2006년 카이저슬라우테른의 기억, 2012년 유로의 악몽. 두 거인이 또 한 번 맞붙습니다. 그리고 C조에서는 잉글랜드 대 호주, 나이지리아 대 사우디아라비아 — 16강 티켓 2장을 두고 4팀이 동시에 승부를 겁니다. AI가 오늘 4경기를 전부 예측합니다.",
+      "narration_ja": "今日はグループGの運命の日です。ドイツ対イタリア — ワールドカップ史上最も偉大なライバル対決。2006年カイザースラウテルンの記憶、2012年ユーロの悪夢。二つの巨人が再び激突します。そしてグループCではイングランド対オーストラリア、ナイジェリア対サウジアラビア — ベスト16の切符2枚をかけて4チームが同時に勝負します。AIが今日の4試合すべてを予測します。",
+      "narration_en": "Today is Group G's day of destiny. Germany vs Italy — the greatest rivalry in World Cup history. The memory of Kaiserslautern 2006, the nightmare of Euro 2012. Two giants collide once more. And in Group C, England vs Australia and Nigeria vs Saudi Arabia battle simultaneously for two round-of-16 spots. AI predicts all four matches today."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "어제 결과를 먼저 정리합니다. 브라질이 볼리비아를 4-0으로 대파 — K조 3전 전승, 무려 10골 무실점이라는 경이적인 성적으로 조 1위 확정. 아르헨티나가 자메이카를 2-1로 제압 — 메시의 선제 프리킥, A조 최종 1위. 그리고 프랑스가 콜롬비아를 1-0으로 잡아내며 B조 1위 질주. 남미와 유럽 강호들이 일제히 16강 확정을 마쳤습니다.",
+      "narration_ja": "昨日の結果から整理します。ブラジルがボリビアを4-0で粉砕 — グループK全勝、驚異の10ゴール無失点でグループ首位確定。アルゼンチンがジャマイカを2-1で制圧 — メッシの先制フリーキック、グループA最終首位。そしてフランスがコロンビアを1-0で抑えてグループB首位を独走。南米と欧州の強豪が一斉にベスト16進出を確定させました。",
+      "narration_en": "Yesterday's results first. Brazil demolished Bolivia 4-0 — three wins, ten goals, zero conceded: Group K wrapped up in dominant fashion. Argentina edged Jamaica 2-1 — Messi's freekick opener, Group A winners. And France held Colombia 1-0 to maintain their Group B lead. South America and Europe's elite are confirming round-of-16 spots en masse."
+    },
+    {
+      "id": "s03_prediction1",
+      "narration": "오늘의 주목 경기는 독일 대 이탈리아입니다. AI 예측: 독일 2-1 이탈리아, 신뢰도 58%. 첫 번째 근거 — 뮈지알라와 비르츠, 독일 중원 듀오의 창의성이 이탈리아 3-4-3 압박을 뚫을 핵심 변수입니다. 두 번째 — 이탈리아의 키엘리니 없는 중앙 수비는 독일의 속도에 취약합니다. 세 번째 — G조 1위 확정을 위해 독일은 반드시 이겨야 하는 강한 동기가 있습니다. 단, 신뢰도 58% — 이탈리아가 역전할 가능성도 결코 낮지 않습니다.",
+      "narration_ja": "今日の注目試合はドイツ対イタリアです。AI予測：ドイツ2-1イタリア、信頼度58%。第1の根拠 — ムジアラとヴィルツ、ドイツ中盤デュオの創造性がイタリアの3-4-3プレスを突破する鍵となります。第2 — キエッリーニ不在のイタリア中央守備はドイツのスピードに脆弱です。第3 — グループG首位確定のためドイツは必ず勝たなければならない強い動機があります。ただし、信頼度58% — イタリアが逆転する可能性も決して低くありません。",
+      "narration_en": "The featured match today: Germany vs Italy. AI prediction — Germany 2-1 Italy, confidence 58%. Reason one: Musiala and Wirtz, Germany's creative midfield duo, are the key to unlocking Italy's 3-4-3 high press. Reason two: Italy's center-back pairing without Chiellini is vulnerable to Germany's pace in behind. Reason three: Germany has a clear motivation to clinch Group G top spot today. That said, 58% confidence — Italy's counter-punching ability keeps this very open."
+    },
+    {
+      "id": "s04_prediction2",
+      "narration": "나머지 3경기 예측입니다. G조에서 일본 대 칠레 — AI 픽은 일본 1-0 승리, 신뢰도 61%. 일본은 독일전 패배 후 반드시 3점이 필요하고, 칠레는 결정력 부족으로 고전 중입니다. C조 잉글랜드 대 호주 — AI 픽은 잉글랜드 2-0, 신뢰도 67%. 잉글랜드의 공격력은 이번 대회 최정상급이며, 호주는 조직력으로 버티지만 개인 기량 차이가 너무 큽니다. 나이지리아 대 사우디아라비아 — AI 픽은 나이지리아 2-1, 신뢰도 59%. 나이지리아의 피지컬과 역습 속도가 사우디 전술을 압도합니다.",
+      "narration_ja": "残りの3試合の予測です。グループGで日本対チリ — AIピックは日本の1-0勝利、信頼度61%。日本はドイツ戦敗北後に必ず3点が必要で、チリは決定力不足に苦しんでいます。グループCのイングランド対オーストラリア — AIピックはイングランド2-0、信頼度67%。イングランドの攻撃力は今大会最高峰で、オーストラリアは組織力で粘りますが、個人技の差が大きすぎます。ナイジェリア対サウジアラビア — AIピックはナイジェリア2-1、信頼度59%。ナイジェリアのフィジカルとカウンター速度がサウジ戦術を圧倒します。",
+      "narration_en": "The remaining three matches. In Group G, Japan vs Chile — AI pick: Japan 1-0, confidence 61%. Japan desperately need three points after their Germany loss, while Chile lack the cutting edge to hold them off. Group C: England vs Australia — AI pick: England 2-0, confidence 67%. England's attack is among the tournament's best, and while Australia are well-organized, the quality gap is too wide. Nigeria vs Saudi Arabia — AI pick: Nigeria 2-1, confidence 59%. Nigeria's physicality and counter-attack speed overwhelm Saudi Arabia's tactical setup."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘의 AI 최종 판정입니다. 4경기 AI 픽 — 독일 2-1 이탈리아, 일본 1-0 칠레, 잉글랜드 2-0 호주, 나이지리아 2-1 사우디아라비아. 오늘 TOP 픽은 독일입니다 — 역사의 무게와 동기, 두 가지가 모두 독일 편입니다. 한국은요? 대한민국은 F조 1위로 16강 진출 확정. 2승 1무, 7점. 오늘 경기 결과에 따라 16강 상대가 결정됩니다. 한국의 16강 상대를 기다려 주십시오. 내일 또 검증합니다. 구독과 알림으로 AI 예측 정확도를 함께 추적하세요.",
+      "narration_ja": "今日のAI最終判定です。4試合のAIピック — ドイツ2-1イタリア、日本1-0チリ、イングランド2-0オーストラリア、ナイジェリア2-1サウジアラビア。今日のTOPピックはドイツです — 歴史の重みと動機、その両方がドイツの味方です。韓国は？大韓民国はグループF首位でベスト16進出確定。2勝1分、7点。今日の試合結果によってラウンド16の相手が決まります。韓国のラウンド16の相手にご注目ください。明日また検証します。チャンネル登録と通知でAI予測精度を一緒に追跡しましょう。",
+      "narration_en": "AI final verdict for today. Four predictions — Germany 2-1 Italy, Japan 1-0 Chile, England 2-0 Australia, Nigeria 2-1 Saudi Arabia. Today's top pick is Germany — history and motivation both point their way. And Korea? South Korea are confirmed round-of-16 qualifiers, Group F winners with 2 wins and a draw, 7 points. Today's results will determine their knockout-stage opponent. Watch this space. Join us tomorrow for the full verdict — subscribe and track AI prediction accuracy with us."
+    }
+  ]
+}
