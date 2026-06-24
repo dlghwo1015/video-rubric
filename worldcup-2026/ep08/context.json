@@ -43,7 +43,7 @@
     "yt_public_ko": 0,
     "yt_public_ja": 0,
     "yt_public_en": 0,
-    "script_status": "none",
+    "script_status": "blog_ready",
     "github_commit": null
   },
   "ep_role": "group_preview",
