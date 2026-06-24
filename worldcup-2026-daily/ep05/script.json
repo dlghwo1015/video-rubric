@@ -1,0 +1,58 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 5,
+  "date": "2026-06-24",
+  "title_ko": "2026-06-24 오늘의 경기 AI 예측 — 한국 vs 에콰도르, 미국 vs 벨기에",
+  "title_ja": "2026-06-24 今日の試合 AI予測 — 韓国 vs エクアドル、アメリカ vs ベルギー",
+  "title_en": "2026-06-24 Match Predictions by AI — Korea vs Ecuador, USA vs Belgium",
+  "korea_match": true,
+  "matches_today": [
+    { "id": "m1", "team_a": "South Korea", "team_b": "Ecuador",  "group": "F", "venue": "SoFi Stadium, Los Angeles",        "kickoff_kst": "03:00" },
+    { "id": "m2", "team_a": "USA",          "team_b": "Belgium",  "group": "E", "venue": "MetLife Stadium, New York",        "kickoff_kst": "06:00" },
+    { "id": "m3", "team_a": "England",      "team_b": "Chile",    "group": "C", "venue": "AT&T Stadium, Dallas",             "kickoff_kst": "09:00" },
+    { "id": "m4", "team_a": "Portugal",     "team_b": "Colombia", "group": "D", "venue": "Hard Rock Stadium, Miami",         "kickoff_kst": "12:00" }
+  ],
+  "yesterday_results": [
+    { "team_a": "Germany",   "score_a": 1, "score_b": 2, "team_b": "Colombia", "group": "A" },
+    { "team_a": "Italy",     "score_a": 2, "score_b": 1, "team_b": "Croatia",  "group": "G" },
+    { "team_a": "France",    "score_a": 3, "score_b": 0, "team_b": "Saudi Arabia", "group": "B" }
+  ],
+  "ai_predictions": [
+    { "match": "South Korea vs Ecuador", "pred_a": 2, "pred_b": 1, "confidence": "55%", "pick": "South Korea" },
+    { "match": "USA vs Belgium",         "pred_a": 1, "pred_b": 1, "confidence": "48%", "pick": "Draw" },
+    { "match": "England vs Chile",       "pred_a": 2, "pred_b": 0, "confidence": "66%", "pick": "England" },
+    { "match": "Portugal vs Colombia",   "pred_a": 2, "pred_b": 1, "confidence": "60%", "pick": "Portugal" }
+  ],
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "오늘은 한국 팬들이 손에 땀을 쥐는 날입니다. 새벽 3시, 로스앤젤레스 소파이 스타디움에서 대한민국이 에콰도르와 맞붙습니다. 조 3위 탈출이냐, 조기 탈락의 위기냐 — 오늘이 바로 그 갈림길입니다. AI가 오늘 4경기를 모두 낱낱이 파헤칩니다.",
+      "narration_ja": "今日は韓国ファンにとって手に汗握る一日です。深夜3時、ロサンゼルスのSoFiスタジアムで韓国がエクアドルと対戦します。グループ3位脱出か、早期敗退の危機か — 今日がまさにその分岐点です。AIが今日の4試合すべてを徹底分析します。",
+      "narration_en": "Today is a nail-biting day for Korean fans. At 3 AM, South Korea faces Ecuador at SoFi Stadium in Los Angeles. Will they escape the bottom half of Group F, or face early elimination? This is the crossroads. AI breaks down all four of today's matches."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "어제 충격의 결과부터 확인합니다. 가장 큰 이변은 독일이 콜롬비아에 1대 2로 패한 것. 전반 선제골 이후 후반 두 골을 내주며 역전패했습니다. 이탈리아는 크로아티아를 2대 1로 꺾으며 순항했고, 프랑스는 사우디아라비아를 3대 0으로 완파하며 조 1위를 굳혔습니다.",
+      "narration_ja": "まず昨日の衝撃の結果を確認します。最大の番狂わせはドイツがコロンビアに1対2で敗れたこと。前半の先制ゴール後、後半に2点を奪われ逆転負けしました。イタリアはクロアチアを2対1で下し順調に進み、フランスはサウジアラビアを3対0で完封してグループ首位を固めました。",
+      "narration_en": "First, the shock results from yesterday. The biggest upset: Germany fell 1-2 to Colombia, conceding two second-half goals to surrender a lead. Italy defeated Croatia 2-1 and remain on track, while France demolished Saudi Arabia 3-0 to cement their grip on top of Group B."
+    },
+    {
+      "id": "s03_korea_prediction",
+      "narration": "자, 오늘의 핵심 — 한국 대 에콰도르입니다. 한국은 이란과 무승부, 벨기에를 꺾고 현재 승점 4점으로 조 2위입니다. 에콰도르는 승점 3점으로 3위. 이기면 16강을 확정짓는 빅 매치입니다. AI 분석: 한국의 전방 압박과 황희찬의 스피드가 에콰도르의 고지대 체력을 저지대에서 무력화할 수 있습니다. 에콰도르는 발렌시아의 결정력이 변수. AI 예측 — 한국 2대 1 승리. 신뢰도 55%. 전반 선제골 후 동점 위기를 극복하는 시나리오.",
+      "narration_ja": "さて、今日の核心 — 韓国対エクアドルです。韓国はイランと引き分け、ベルギーを破って現在勝ち点4でグループ2位。エクアドルは勝ち点3で3位。勝てばグループステージ突破が確定するビッグマッチです。AI分析：韓国のハイプレスとファン・ヒチャンのスピードが、低地での試合においてエクアドルのスタミナを無力化できます。エクアドルはバレンシアの決定力が変数。AI予測 — 韓国2対1勝利。信頼度55%。前半の先制ゴール後、同点のピンチを乗り越えるシナリオ。",
+      "narration_en": "Now the centerpiece — South Korea vs Ecuador. Korea sit second in Group F with 4 points, after drawing Iran and beating Belgium. Ecuador are third with 3 points. Win today and Korea are through. AI analysis: Korea's high press and Hwang Hee-chan's pace can neutralize Ecuador's stamina at sea level. Ecuador's variable is Enner Valencia's clinical finishing. AI prediction — Korea 2-1. Confidence 55%. Expect Korea to take the lead before facing a nervy equalizer threat."
+    },
+    {
+      "id": "s04_other_predictions",
+      "narration": "나머지 세 경기 일괄 예측입니다. 미국 대 벨기에 — 홈 어드밴티지를 등에 업은 미국이지만 벨기에의 조직력도 만만치 않습니다. AI 예측: 1대 1 무승부, 신뢰도 48%. 잉글랜드 대 칠레 — 잉글랜드의 피지컬과 전술적 완성도가 앞섭니다. AI 예측: 잉글랜드 2대 0, 신뢰도 66%. 포르투갈 대 콜롬비아 — 호날두의 경험과 페르난도 산토스의 수비 전술이 콜롬비아의 역습을 막아냅니다. AI 예측: 포르투갈 2대 1, 신뢰도 60%.",
+      "narration_ja": "残りの3試合の一括予測です。アメリカ対ベルギー — ホームアドバンテージを持つアメリカですが、ベルギーの組織力も侮れません。AI予測：1対1引き分け、信頼度48%。イングランド対チリ — イングランドのフィジカルと戦術的完成度が上回ります。AI予測：イングランド2対0、信頼度66%。ポルトガル対コロンビア — ロナウドの経験とフェルナンド・サントスの守備戦術がコロンビアのカウンターを封じます。AI予測：ポルトガル2対1、信頼度60%。",
+      "narration_en": "Quick predictions for the other three matches. USA vs Belgium — home advantage helps the US, but Belgium's structure is no joke. AI call: 1-1 draw, confidence 48%. England vs Chile — England's physicality and tactical polish give them the edge. AI call: England 2-0, confidence 66%. Portugal vs Colombia — Ronaldo's experience and defensive discipline neutralize Colombia's counter-attack threat. AI call: Portugal 2-1, confidence 60%."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘의 AI 최종 픽입니다. 이변의 날 1순위: 에콰도르가 한국을 잡을 경우 — 그러면 한국은 3위로 내려앉고 16강 진출이 불투명해집니다. 반면 한국이 이기면 조 1위 진출도 가능합니다. 오늘의 AI 하이라이트 픽은 한국 2대 1 승리. 대한민국 월드컵 여정의 분기점이 될 이 경기, AI는 한국의 손을 들어줍니다. 내일도 이 자리에서 AI가 경기 결과를 함께 확인하겠습니다. 대~한민국!",
+      "narration_ja": "今日のAI最終ピックです。番狂わせ筆頭：エクアドルが韓国を破った場合 — 韓国はグループ3位に転落し、ラウンド16進出が不透明になります。一方、韓国が勝てばグループ首位も見えてきます。今日のAIハイライトピックは韓国2対1勝利。大韓民国のワールドカップの旅の分岐点となるこの試合、AIは韓国に軍配を上げます。明日もここでAIが試合結果をともに確認します。テーハンミングク！",
+      "narration_en": "Today's final AI verdict. Top upset alert: if Ecuador beats Korea, Korea drops to third and a Round of 32 spot becomes uncertain. But a Korea win opens the door to a group stage top finish. Today's highlighted AI pick: South Korea 2-1. This match is the turning point of Korea's World Cup journey, and AI backs the Taeguk Warriors. Join us tomorrow to review the results. Daehan Minguk!"
+    }
+  ]
+}

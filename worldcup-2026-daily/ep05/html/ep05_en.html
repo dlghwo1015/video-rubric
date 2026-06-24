@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>EP05 — 2026-06-24 Match Predictions by AI | Claude's Daily World Cup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1920px; height: 1080px; overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    background: #0a0e1a;
+    color: #e8ecf4;
+  }
+  .slide { width: 1920px; height: 1080px; position: absolute; top: 0; left: 0; display: none; }
+  .slide.active { display: flex; }
+
+  .col-left  { width: 520px; flex-shrink: 0; display: flex; flex-direction: column; justify-content: center; padding: 60px 50px; background: #060a14; }
+  .col-right { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 60px 70px; }
+
+  .series-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: linear-gradient(135deg, #1a2744, #0d1a33);
+    border: 1px solid #2a3a5c; border-radius: 8px;
+    padding: 10px 18px; margin-bottom: 30px;
+    font-size: 12px; font-weight: 600; color: #7a9fd4; letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .series-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #e74c3c; animation: pulse 1.5s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.3)} }
+
+  .ep-label   { font-size: 12px; font-weight: 600; color: #5a7aaa; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px; }
+  .date-label { font-size: 15px; font-weight: 300; color: #4a6a9a; margin-bottom: 24px; }
+
+  /* S01 */
+  #s01 { background: radial-gradient(ellipse at 20% 50%, #0d1e3a 0%, #0a0e1a 60%); }
+  #s01 .col-left { background: transparent; border-right: 1px solid #1a2744; }
+  #s01 .main-title { font-size: 52px; font-weight: 900; line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.02em; }
+  #s01 .main-title .accent { color: #e74c3c; }
+  #s01 .main-title .ko-accent { color: #3498db; }
+  #s01 .narration-box {
+    background: rgba(255,255,255,0.03); border: 1px solid #1e2e4a; border-radius: 12px;
+    padding: 28px 32px; font-size: 17px; line-height: 1.85; color: #c0cfe0; font-weight: 400;
+  }
+  .match-pill-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .match-pill {
+    background: #0d1a30; border: 1px solid #1e3050; border-radius: 24px;
+    padding: 8px 18px; font-size: 13px; font-weight: 600; color: #7a9fd4;
+  }
+  .match-pill.korea { background: #1a0d20; border-color: #e74c3c; color: #e74c3c; }
+
+  /* S02 */
+  #s02 { background: #080c18; }
+  #s02 .col-left { background: #060a12; }
+  .section-title { font-size: 26px; font-weight: 700; color: #e8ecf4; margin-bottom: 8px; letter-spacing: -0.01em; }
+  .section-sub   { font-size: 14px; color: #5a7aaa; margin-bottom: 36px; }
+  .result-card {
+    background: #0d1426; border: 1px solid #1a2740; border-radius: 14px;
+    padding: 22px 28px; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 20px;
+  }
+  .result-card .group-badge {
+    width: 36px; height: 36px; border-radius: 8px; background: #162040;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; color: #5a7aaa; flex-shrink: 0;
+  }
+  .result-card .teams { flex: 1; font-size: 17px; font-weight: 600; }
+  .result-card .teams .team-a { color: #e8ecf4; }
+  .result-card .teams .team-b { color: #8aa0c0; }
+  .result-card .score-box {
+    display: flex; align-items: center; gap: 10px;
+    background: #1a2844; border-radius: 10px; padding: 10px 16px;
+  }
+  .result-card .score-box .s { font-size: 28px; font-weight: 900; min-width: 28px; text-align: center; }
+  .result-card .score-box .s.win  { color: #2ecc71; }
+  .result-card .score-box .s.draw { color: #f39c12; }
+  .result-card .score-box .s.loss { color: #e74c3c; }
+  .result-card .score-box .dash  { font-size: 20px; color: #3a5070; }
+  .upset-tag {
+    background: #3a0a0a; border: 1px solid #e74c3c; border-radius: 6px;
+    padding: 4px 10px; font-size: 11px; font-weight: 700; color: #e74c3c; letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+  #s02 .narration-box {
+    background: rgba(255,255,255,0.02); border: 1px solid #1a2740; border-radius: 12px;
+    padding: 24px 28px; font-size: 16px; line-height: 1.85; color: #a0b4c8; margin-top: 20px;
+  }
+
+  /* S03 */
+  #s03 { background: radial-gradient(ellipse at 70% 50%, #1a0820 0%, #0a0e1a 60%); }
+  #s03 .col-left { background: rgba(6,10,20,0.8); border-right: 1px solid #2a1030; }
+  .korea-match-header { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+  .korea-match-header .flag { font-size: 36px; }
+  .korea-match-header .label { font-size: 11px; font-weight: 700; color: #e74c3c; letter-spacing: 0.15em; text-transform: uppercase; }
+  .korea-match-header .match-name { font-size: 20px; font-weight: 700; color: #e8ecf4; }
+  .prediction-scoreboard {
+    background: linear-gradient(135deg, #0d1a2e, #0a1220);
+    border: 2px solid #e74c3c; border-radius: 18px;
+    padding: 32px 40px; margin-bottom: 28px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .pred-team { text-align: center; }
+  .pred-team .flag { font-size: 48px; display: block; margin-bottom: 8px; }
+  .pred-team .name { font-size: 16px; font-weight: 700; color: #c0d0e4; }
+  .pred-score { font-size: 72px; font-weight: 900; color: #e8ecf4; display: flex; align-items: center; gap: 12px; }
+  .pred-score .dash { font-size: 36px; color: #3a5070; }
+  .confidence-bar-wrap { margin-bottom: 20px; }
+  .confidence-label { font-size: 12px; font-weight: 600; color: #7a9fd4; margin-bottom: 8px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .confidence-bar { height: 8px; background: #1a2744; border-radius: 4px; overflow: hidden; }
+  .confidence-bar .fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, #e74c3c, #c0392b); }
+  .analysis-points { list-style: none; }
+  .analysis-points li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; font-size: 15px; color: #a0b8d0; line-height: 1.65; }
+  .analysis-points li::before { content: '▶'; color: #e74c3c; font-size: 10px; margin-top: 4px; flex-shrink: 0; }
+
+  /* S04 */
+  #s04 { background: #080c18; }
+  #s04 .col-left { background: #060a12; }
+  .match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .match-card {
+    background: #0d1426; border: 1px solid #1a2740; border-radius: 14px; padding: 22px 24px;
+  }
+  .match-card .match-header { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+  .match-card .group-tag { font-size: 11px; font-weight: 700; color: #5a7aaa; background: #0a1428; border: 1px solid #1a2840; border-radius: 5px; padding: 3px 8px; }
+  .match-card .venue-tag { font-size: 11px; color: #3a5070; margin-left: auto; }
+  .match-card .vs-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+  .match-card .team-name { font-size: 15px; font-weight: 700; color: #c0d0e4; }
+  .match-card .pred-score-sm { font-size: 24px; font-weight: 900; color: #e8ecf4; display: flex; align-items: center; gap: 8px; }
+  .match-card .pred-score-sm .dash { font-size: 14px; color: #3a5070; }
+  .match-card .pick-row { display: flex; align-items: center; gap: 8px; padding-top: 12px; border-top: 1px solid #1a2740; }
+  .match-card .pick-label { font-size: 11px; color: #5a7aaa; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .match-card .pick-val { font-size: 13px; font-weight: 700; color: #3498db; }
+  .match-card .conf-val { font-size: 12px; color: #3a5070; margin-left: auto; }
+
+  /* S05 */
+  #s05 { background: radial-gradient(ellipse at 30% 50%, #0d1e38 0%, #0a0e1a 60%); }
+  #s05 .col-left { background: transparent; border-right: 1px solid #1a2744; }
+  .verdict-title { font-size: 28px; font-weight: 900; color: #e8ecf4; margin-bottom: 24px; line-height: 1.25; letter-spacing: -0.01em; }
+  .verdict-title .ai-label { color: #3498db; }
+  .verdict-grid { display: flex; flex-direction: column; gap: 14px; }
+  .verdict-row {
+    display: flex; align-items: center; gap: 18px;
+    background: #0d1426; border: 1px solid #1a2740; border-radius: 12px; padding: 16px 22px;
+  }
+  .verdict-row.highlight { border-color: #e74c3c; background: #120a1c; }
+  .verdict-row .teams-sm { flex: 1; font-size: 15px; font-weight: 600; color: #a0b8d0; }
+  .verdict-row .teams-sm .pick-highlight { color: #2ecc71; }
+  .verdict-row .score-sm { font-size: 20px; font-weight: 900; color: #e8ecf4; min-width: 70px; text-align: center; }
+  .verdict-row .conf-sm { font-size: 12px; color: #3a5070; min-width: 50px; text-align: right; }
+  .upset-alert {
+    background: #1a0a0a; border: 1px solid #c0392b; border-radius: 12px;
+    padding: 20px 24px; margin-top: 20px;
+    display: flex; align-items: flex-start; gap: 14px;
+  }
+  .upset-alert .icon { font-size: 24px; flex-shrink: 0; }
+  .upset-alert .text { font-size: 14px; color: #c0a0a0; line-height: 1.75; }
+  .upset-alert .text strong { color: #e74c3c; }
+
+  .nav {
+    position: fixed; bottom: 32px; right: 48px;
+    display: flex; gap: 10px; z-index: 100;
+  }
+  .nav button {
+    background: #0d1426; border: 1px solid #1a2740; color: #7a9fd4;
+    border-radius: 8px; padding: 10px 22px; font-size: 14px; font-weight: 600;
+    cursor: pointer; transition: all 0.2s; font-family: inherit;
+  }
+  .nav button:hover { background: #162040; border-color: #2a3a5c; color: #e8ecf4; }
+  .slide-counter {
+    position: fixed; bottom: 38px; left: 48px;
+    font-size: 13px; color: #3a5070; font-weight: 600; letter-spacing: 0.06em;
+  }
+</style>
+</head>
+<body>
+
+<!-- S01 HOOK -->
+<div class="slide active" id="s01">
+  <div class="col-left">
+    <div class="series-badge"><span class="dot"></span>Claude's Daily World Cup · EP05</div>
+    <div class="ep-label">2026 FIFA World Cup · Group Stage</div>
+    <div class="date-label">Wednesday, June 24, 2026</div>
+    <div class="main-title">
+      Korea's<br>
+      <span class="ko-accent">Moment of Truth</span><br>
+      <span class="accent">D-Day</span>
+    </div>
+    <div class="match-pill-row">
+      <span class="match-pill korea">🇰🇷 Korea vs Ecuador</span>
+      <span class="match-pill">🇺🇸 USA vs Belgium</span>
+      <span class="match-pill">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England vs Chile</span>
+      <span class="match-pill">🇵🇹 Portugal vs Colombia</span>
+    </div>
+  </div>
+  <div class="col-right">
+    <div class="narration-box">
+      Today is a nail-biting day for Korean fans.<br>
+      At 3 AM KST, <strong>South Korea faces Ecuador</strong><br>
+      at SoFi Stadium in Los Angeles.<br><br>
+      Win and they confirm a Round of 32 spot.<br>
+      Lose and the group stage exit looms large.<br><br>
+      AI breaks down all four of today's matches — no guesswork, pure analysis.
+    </div>
+  </div>
+</div>
+
+<!-- S02 YESTERDAY RESULTS -->
+<div class="slide" id="s02">
+  <div class="col-left">
+    <div class="series-badge"><span class="dot"></span>Yesterday's Results</div>
+    <div class="ep-label">June 23, 2026 Results</div>
+    <div style="margin-top: 16px; font-size: 15px; color: #5a7aaa; line-height: 2.0;">
+      Matches played: 3<br>Upsets: 1<br>Germany reversed
+    </div>
+    <div style="margin-top: 40px;">
+      <div style="font-size: 12px; font-weight: 700; color: #4a6a9a; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 8px;">Upset Alert</div>
+      <div style="font-size: 22px; font-weight: 900; color: #e74c3c; line-height: 1.3;">Germany<br>1–2<br>Colombia</div>
+    </div>
+  </div>
+  <div class="col-right">
+    <div class="section-title">Yesterday's Results</div>
+    <div class="section-sub">June 23, 2026 — Group Stage</div>
+
+    <div class="result-card">
+      <div class="group-badge">A</div>
+      <div class="teams">
+        <div class="team-a">Germany</div>
+        <div class="team-b">Colombia</div>
+      </div>
+      <div class="score-box">
+        <span class="s loss">1</span><span class="dash">–</span><span class="s win">2</span>
+      </div>
+      <div class="upset-tag">UPSET</div>
+    </div>
+
+    <div class="result-card">
+      <div class="group-badge">G</div>
+      <div class="teams">
+        <div class="team-a">Italy</div>
+        <div class="team-b">Croatia</div>
+      </div>
+      <div class="score-box">
+        <span class="s win">2</span><span class="dash">–</span><span class="s loss">1</span>
+      </div>
+    </div>
+
+    <div class="result-card">
+      <div class="group-badge">B</div>
+      <div class="teams">
+        <div class="team-a">France</div>
+        <div class="team-b">Saudi Arabia</div>
+      </div>
+      <div class="score-box">
+        <span class="s win">3</span><span class="dash">–</span><span class="s loss">0</span>
+      </div>
+    </div>
+
+    <div class="narration-box">
+      Biggest shock: Germany fell 1-2 to Colombia — led at halftime, conceded twice after the break.
+      Italy beat Croatia 2-1 and stay on track. France crushed Saudi Arabia 3-0, locking Group B top spot.
+    </div>
+  </div>
+</div>
+
+<!-- S03 KOREA MATCH -->
+<div class="slide" id="s03">
+  <div class="col-left">
+    <div class="series-badge"><span class="dot"></span>Feature Match Prediction</div>
+    <div class="korea-match-header" style="margin-top: 24px;">
+      <span class="flag">🇰🇷</span>
+      <div>
+        <div class="label">Korean Match</div>
+        <div class="match-name">South Korea vs Ecuador</div>
+      </div>
+    </div>
+    <div style="font-size: 13px; color: #5a7aaa; margin-bottom: 10px;">Group F · SoFi Stadium, LA</div>
+    <div style="font-size: 13px; color: #5a7aaa; margin-bottom: 32px;">KST 03:00</div>
+    <div style="font-size: 13px; font-weight: 700; color: #7a9fd4; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.08em;">Group F Standing</div>
+    <div style="font-size: 14px; color: #a0b8d0; line-height: 2.0;">
+      🇰🇷 South Korea — <strong style="color:#2ecc71">4 pts</strong><br>
+      🇪🇨 Ecuador — <strong style="color:#f39c12">3 pts</strong><br>
+      <span style="font-size:12px;color:#3a5070;margin-top:8px;display:block;">Win = Round of 32 confirmed</span>
+    </div>
+  </div>
+  <div class="col-right">
+    <div class="prediction-scoreboard">
+      <div class="pred-team">
+        <span class="flag">🇰🇷</span>
+        <div class="name">South Korea</div>
+      </div>
+      <div class="pred-score">
+        <span>2</span><span class="dash">–</span><span>1</span>
+      </div>
+      <div class="pred-team">
+        <span class="flag">🇪🇨</span>
+        <div class="name">Ecuador</div>
+      </div>
+    </div>
+
+    <div class="confidence-bar-wrap">
+      <div class="confidence-label">AI Confidence — 55% (Korea win)</div>
+      <div class="confidence-bar"><div class="fill" style="width:55%"></div></div>
+    </div>
+
+    <ul class="analysis-points">
+      <li>Hwang Hee-chan's explosive pace can exploit the depth behind Ecuador's defensive line</li>
+      <li>Korea's high-press system disrupts Ecuador's build-up — their primary tactical weapon</li>
+      <li>Ecuador's wildcard: Enner Valencia's set-piece threat; one lapse could be costly</li>
+      <li>Scenario: Korea strike first in the first half, survive an equalizer scare, seal it late</li>
+    </ul>
+  </div>
+</div>
+
+<!-- S04 OTHER MATCHES -->
+<div class="slide" id="s04">
+  <div class="col-left">
+    <div class="series-badge"><span class="dot"></span>Other Match Predictions</div>
+    <div class="ep-label">June 24, 2026</div>
+    <div style="margin-top: 28px; font-size: 15px; color: #5a7aaa; line-height: 2.0;">
+      3 additional matches<br>quick predictions
+    </div>
+    <div style="margin-top: 32px; display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-size: 14px; color: #7a9fd4;">USA vs Belgium → <strong style="color:#f39c12">Draw</strong></div>
+      <div style="font-size: 14px; color: #7a9fd4;">England vs Chile → <strong style="color:#2ecc71">England</strong></div>
+      <div style="font-size: 14px; color: #7a9fd4;">Portugal vs Colombia → <strong style="color:#2ecc71">Portugal</strong></div>
+    </div>
+  </div>
+  <div class="col-right">
+    <div class="section-title" style="margin-bottom: 24px;">Other Matches — AI Predictions</div>
+    <div class="match-grid">
+
+      <div class="match-card">
+        <div class="match-header">
+          <span class="group-tag">Group E</span>
+          <span class="venue-tag">MetLife Stadium</span>
+        </div>
+        <div class="vs-row">
+          <div class="team-name">🇺🇸 USA</div>
+          <div class="pred-score-sm"><span>1</span><span class="dash">–</span><span>1</span></div>
+          <div class="team-name">🇧🇪 Belgium</div>
+        </div>
+        <div class="pick-row">
+          <span class="pick-label">AI Pick</span>
+          <span class="pick-val">Draw</span>
+          <span class="conf-val">Confidence 48%</span>
+        </div>
+      </div>
+
+      <div class="match-card">
+        <div class="match-header">
+          <span class="group-tag">Group C</span>
+          <span class="venue-tag">AT&T Stadium</span>
+        </div>
+        <div class="vs-row">
+          <div class="team-name">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</div>
+          <div class="pred-score-sm"><span>2</span><span class="dash">–</span><span>0</span></div>
+          <div class="team-name">🇨🇱 Chile</div>
+        </div>
+        <div class="pick-row">
+          <span class="pick-label">AI Pick</span>
+          <span class="pick-val">England</span>
+          <span class="conf-val">Confidence 66%</span>
+        </div>
+      </div>
+
+      <div class="match-card" style="grid-column: 1 / -1;">
+        <div class="match-header">
+          <span class="group-tag">Group D</span>
+          <span class="venue-tag">Hard Rock Stadium, Miami</span>
+        </div>
+        <div class="vs-row">
+          <div class="team-name">🇵🇹 Portugal</div>
+          <div class="pred-score-sm" style="font-size:28px;"><span>2</span><span class="dash">–</span><span>1</span></div>
+          <div class="team-name">🇨🇴 Colombia</div>
+        </div>
+        <div class="pick-row">
+          <span class="pick-label">AI Pick</span>
+          <span class="pick-val">Portugal</span>
+          <span class="conf-val">Confidence 60% — Ronaldo's experience is decisive</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- S05 VERDICT -->
+<div class="slide" id="s05">
+  <div class="col-left">
+    <div class="series-badge"><span class="dot"></span>AI Final Verdict</div>
+    <div class="ep-label">June 24, 2026 · EP05</div>
+    <div class="verdict-title" style="margin-top: 24px;">
+      Today's<br><span class="ai-label">AI</span><br>Final Call
+    </div>
+    <div style="font-size: 14px; color: #5a7aaa; line-height: 2.0; margin-top: 16px;">
+      4 matches predicted<br>
+      🇰🇷 Korea win backed<br>
+      1 upset alert
+    </div>
+    <div style="margin-top: 32px; font-size: 13px; color: #3a5070; line-height: 1.8;">
+      Join us tomorrow<br>in EP06 to review<br>today's results.
+    </div>
+  </div>
+  <div class="col-right">
+    <div style="margin-bottom: 24px;">
+      <div class="verdict-title">Today's <span class="ai-label">AI</span> Picks — Summary</div>
+    </div>
+    <div class="verdict-grid">
+      <div class="verdict-row highlight">
+        <div class="teams-sm">🇰🇷 <span class="pick-highlight">South Korea</span> vs Ecuador 🇪🇨</div>
+        <div class="score-sm">2–1</div>
+        <div class="conf-sm">55%</div>
+      </div>
+      <div class="verdict-row">
+        <div class="teams-sm">🇺🇸 USA vs Belgium 🇧🇪</div>
+        <div class="score-sm">1–1</div>
+        <div class="conf-sm">48%</div>
+      </div>
+      <div class="verdict-row">
+        <div class="teams-sm">🏴󠁧󠁢󠁥󠁮󠁧󠁿 <span class="pick-highlight">England</span> vs Chile 🇨🇱</div>
+        <div class="score-sm">2–0</div>
+        <div class="conf-sm">66%</div>
+      </div>
+      <div class="verdict-row">
+        <div class="teams-sm">🇵🇹 <span class="pick-highlight">Portugal</span> vs Colombia 🇨🇴</div>
+        <div class="score-sm">2–1</div>
+        <div class="conf-sm">60%</div>
+      </div>
+    </div>
+    <div class="upset-alert">
+      <div class="icon">⚠️</div>
+      <div class="text">
+        <strong>Upset Alert:</strong> If Ecuador beats Korea, Korea drop to Group F third place
+        and a Round of 32 berth becomes uncertain — worst-case scenario.
+        AI backs <strong>Korea 2-1</strong>, but at 55% confidence — nothing is safe.
+        Daehan Minguk!
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide-counter" id="slide-counter">1 / 5</div>
+<div class="nav">
+  <button onclick="changeSlide(-1)">← Prev</button>
+  <button onclick="changeSlide(1)">Next →</button>
+</div>
+
+<script>
+  var current = 0;
+  var slides = document.querySelectorAll('.slide');
+
+  function showSlide(n) {
+    slides[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    document.getElementById('slide-counter').textContent = (current + 1) + ' / ' + slides.length;
+  }
+
+  function changeSlide(dir) {
+    showSlide(current + dir);
+  }
+
+  window.goToSlide = showSlide;
+</script>
+</body>
+</html>
