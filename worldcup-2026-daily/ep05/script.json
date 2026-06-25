@@ -1,0 +1,58 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 5,
+  "date": "2026-06-25",
+  "title_ko": "2026-06-25 오늘의 경기 AI 예측 — 잉글랜드 vs 미국, 프랑스 vs 폴란드",
+  "title_ja": "2026-06-25 今日の試合 AI予測 — イングランド vs アメリカ、フランス vs ポーランド",
+  "title_en": "2026-06-25 Match Predictions by AI — England vs USA, France vs Poland",
+  "korea_match": false,
+  "matches_today": [
+    { "id": "m1", "team_a": "England",  "team_b": "USA",     "group": "C", "venue": "AT&T Stadium, Dallas",           "kickoff_kst": "03:00" },
+    { "id": "m2", "team_a": "France",   "team_b": "Poland",  "group": "B", "venue": "MetLife Stadium, New York",      "kickoff_kst": "06:00" },
+    { "id": "m3", "team_a": "Portugal", "team_b": "Uruguay", "group": "I", "venue": "Rose Bowl Stadium, Los Angeles", "kickoff_kst": "09:00" },
+    { "id": "m4", "team_a": "Italy",    "team_b": "Croatia", "group": "L", "venue": "Allegiant Stadium, Las Vegas",   "kickoff_kst": "12:00" }
+  ],
+  "yesterday_results": [
+    { "team_a": "Netherlands", "score_a": 2, "score_b": 0, "team_b": "Australia",  "group": "E" },
+    { "team_a": "Brazil",      "score_a": 3, "score_b": 0, "team_b": "Ecuador",    "group": "K" },
+    { "team_a": "Spain",       "score_a": 4, "score_b": 0, "team_b": "New Zealand","group": "H" }
+  ],
+  "ai_predictions": [
+    { "match": "England vs USA",    "pred_a": 2, "pred_b": 1, "confidence": "58%", "pick": "England" },
+    { "match": "France vs Poland",  "pred_a": 3, "pred_b": 1, "confidence": "71%", "pick": "France" },
+    { "match": "Portugal vs Uruguay","pred_a": 2, "pred_b": 1, "confidence": "62%", "pick": "Portugal" },
+    { "match": "Italy vs Croatia",  "pred_a": 1, "pred_b": 1, "confidence": "45%", "pick": "Draw" }
+  ],
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "오늘 월드컵 최고의 관전 포인트는 단 하나입니다 — 잉글랜드 대 미국. 같은 언어, 다른 열망. 그리고 프랑스 대 폴란드 — 2022 카타르 8강의 리매치. 포르투갈 대 우루과이, 이탈리아 대 크로아티아. AI가 오늘 4경기 전부를 예측합니다.",
+      "narration_ja": "今日のワールドカップ最大の注目点はただ一つ — イングランド対アメリカ。同じ言語、異なる野望。そしてフランス対ポーランド — 2022年カタール準々決勝のリマッチ。ポルトガル対ウルグアイ、イタリア対クロアチア。AIが今日4試合すべてを予測します。",
+      "narration_en": "Today's World Cup headline is crystal clear — England vs USA. Same language, different ambitions. Then France vs Poland — a rematch of the Qatar 2022 quarter-final. Portugal vs Uruguay, Italy vs Croatia. AI predicts all four matches today."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "어제 결과 정리합니다. 네덜란드가 호주를 2-0으로 완파 — E조 1위 확정, 16강 직행. 브라질이 에콰도르를 3-0으로 압도 — 비니시우스 2골, K조 선두 굳히기. 스페인은 뉴질랜드를 4-0으로 대파하며 H조 무결점 선두. 오늘 예측에 영향을 줄 흐름은 명확합니다 — 유럽 강호와 남미 두 축이 완전히 살아있습니다.",
+      "narration_ja": "昨日の結果を整理します。オランダがオーストラリアを2-0で完封 — グループE首位確定、ベスト16直行。ブラジルがエクアドルを3-0で圧倒 — ヴィニシウス2ゴール、グループK首位固め。スペインはニュージーランドを4-0で粉砕してグループH無敗首位。今日の予測に影響を与えるトレンドは明確です — ヨーロッパの強豪と南米の両軸が完全に生きています。",
+      "narration_en": "Yesterday's results. Netherlands shut out Australia 2-0 — Group E top spot confirmed, straight into the round of 32. Brazil demolished Ecuador 3-0 — Vinícius doubled up, Group K leadership consolidated. Spain thrashed New Zealand 4-0 to sit unbeaten and top of Group H. The trend is clear heading into today — Europe's heavyweights and South America's giants are both fully alive."
+    },
+    {
+      "id": "s03_prediction1",
+      "narration": "오늘의 핵심 경기, 잉글랜드 대 미국. 축구의 고향 대 축구 종주국의 도전자. AI 예측은 잉글랜드 2-1 미국입니다. 근거 세 가지. 첫째, 벨링엄과 폴든의 중원 지배력 — 잉글랜드 미드필드는 세계 최상급이며, 미국의 라이언 그래블렌버거는 여전히 경험이 부족합니다. 둘째, 잉글랜드 최전방 케인의 결정력 — 포지셔닝과 공중볼 점유에서 미국 센터백을 압도합니다. 셋째, 미국은 개최국 프리미엄이 있지만 C조 1위 경쟁에서 잉글랜드가 더 강한 동기를 가집니다. AI 신뢰도 58%. 경고 — 미국의 크리스천 풀리식은 언제든 이변을 만들 수 있습니다. AI는 잉글랜드를 선택하지만, 이 경기는 끝까지 방심 금지.",
+      "narration_ja": "今日の焦点、イングランド対アメリカ。サッカーの故郷と挑戦者の対決。AI予測はイングランド2-1アメリカです。根拠は三つ。第一、ベリンガムとフォーデンの中盤支配力 — イングランドの中盤は世界トップクラスで、アメリカのライアン・グラベンバーガーはまだ経験不足。第二、最前線のケインの決定力 — ポジショニングと空中戦でアメリカのセンターバックを圧倒します。第三、アメリカには開催国プレミアムがありますが、グループC首位争いでイングランドの方が強い動機を持っています。AI信頼度58%。警告 — アメリカのクリスティアン・プリシックはいつでも番狂わせを起こせます。AIはイングランドを選択しますが、この試合は最後まで油断禁物。",
+      "narration_en": "Today's headline match: England vs USA. The game's birthplace meets its most ambitious challenger. AI prediction: England 2-1 USA. Three reasons. First, Bellingham and Foden's midfield dominance — England's engine room is world-class and USA's Ryan Gravenberch is still building experience at this level. Second, Kane's clinical finishing — his positioning and aerial ability will be the edge over the USA's centre-backs. Third, England have the stronger motivation to secure Group C top spot. AI confidence: 58%. Warning — Christian Pulisic is a one-man upset machine. AI picks England, but watch every second of this one."
+    },
+    {
+      "id": "s04_prediction2",
+      "narration": "나머지 세 경기 빠르게 예측합니다. 프랑스 대 폴란드 — AI 픽 프랑스 3-1. 음바페와 그리즈만의 조합은 폴란드 수비에 재앙입니다. 2022년 카타르 8강 3-1 기억하십니까? 역사는 반복됩니다. 신뢰도 71%. 포르투갈 대 우루과이 — AI 픽 포르투갈 2-1. 호날두가 국제무대에서 마지막 불꽃을 태웁니다. 우루과이 수아레스는 없지만 다르윈 누녜스의 위협을 경계하세요. 신뢰도 62%. 이탈리아 대 크로아티아 — AI 픽 무승부 1-1. 두 팀 모두 수비적이고 계산적입니다. 오늘 가장 예측하기 어려운 경기. 신뢰도 45%.",
+      "narration_ja": "残り3試合を素早く予測します。フランス対ポーランド — AIピックフランス3-1。ムバッペとグリーズマンのコンビはポーランド守備に災害レベルです。2022年カタール準々決勝の3-1を覚えていますか？歴史は繰り返されます。信頼度71%。ポルトガル対ウルグアイ — AIピックポルトガル2-1。ロナウドが国際舞台で最後の炎を燃やします。ウルグアイのスアレスはいませんが、ダーウィン・ヌニェスの脅威に注意してください。信頼度62%。イタリア対クロアチア — AIピック引き分け1-1。両チームとも守備的で計算高い。今日最も予測が難しい試合。信頼度45%。",
+      "narration_en": "Three more matches, quick predictions. France vs Poland — AI pick France 3-1. Mbappé and Griezmann together are a disaster for the Polish backline. Remember the Qatar 2022 quarter-final? France 3-1 Poland. History repeats. Confidence 71%. Portugal vs Uruguay — AI pick Portugal 2-1. Ronaldo burning his last competitive flame on the world stage. Suárez is gone but Darwin Núñez is a threat — watch him. Confidence 62%. Italy vs Croatia — AI pick Draw 1-1. Both sides are tactical and disciplined. The hardest call on today's card. Confidence 45%."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘의 AI 픽 정리. 잉글랜드, 프랑스, 포르투갈 — 그리고 이탈리아-크로아티아 무승부. 오늘의 최고 확신 경기는 프랑스 — 신뢰도 71%. 오늘의 최대 이변 후보는 미국. 개최국의 열기와 풀리식의 폭발력이 맞물리면 잉글랜드를 침몰시킬 수 있습니다. AI의 오늘 원픽은 프랑스 3-1 폴란드 — 음바페가 오늘 멀티골을 넣을 가능성이 높습니다. 내일 결과 검증은 이 채널에서 — 구독하고 함께 확인하세요.",
+      "narration_ja": "今日のAIピックまとめ。イングランド、フランス、ポルトガル — そしてイタリア・クロアチア引き分け。今日最も自信のある試合はフランス — 信頼度71%。今日最大の番狂わせ候補はアメリカ。開催国の熱気とプリシックの爆発力が組み合わさればイングランドを沈められます。今日のAIワンピックはフランス3-1ポーランド — ムバッペが今日マルチゴールを決める可能性が高い。明日の結果検証はこのチャンネルで — チャンネル登録してご確認ください。",
+      "narration_en": "Today's AI picks summary. England, France, Portugal — and an Italy-Croatia draw. Today's highest-confidence call: France — 71%. Today's top upset candidate: USA. The home crowd energy combined with Pulisic's firepower could sink England. Today's AI one-pick: France 3-1 Poland — Mbappé is in line for a multi-goal performance. Result verification tomorrow on this channel — subscribe and follow along."
+    }
+  ]
+}
