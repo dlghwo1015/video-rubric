@@ -1,0 +1,60 @@
+{
+  "series": "worldcup-2026",
+  "ep_number": 10,
+  "ep_role": "group_preview",
+  "group": "G조",
+  "title_ko": "G조 완전 분석 — 일본 vs 모로코, 그리고 멕시코의 홈 신화",
+  "title_ja": "Gグループ完全分析 — 日本vsモロッコ、そしてメキシコのホームの夢",
+  "title_en": "Group G Deep Dive — Japan vs Morocco & Mexico's Home Dream",
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "role": "hook",
+      "narration": "G조는 대륙의 경계를 허무는 흥분의 무대입니다. 아프리카의 영웅 모로코, 아시아의 강자 일본, 개최국 멕시코, 그리고 레반도프스키의 마지막 무대 폴란드. 단 2장의 16강 티켓을 두고 4개 대륙이 정면 충돌합니다.",
+      "narration_ja": "Gグループは大陸の境界を壊す興奮の舞台です。アフリカの英雄モロッコ、アジアの強豪日本、開催国メキシコ、そしてレヴァンドフスキ最後のステージ・ポーランド。たった2枚の決勝トーナメント進出権をかけて4大陸が正面衝突します。",
+      "narration_en": "Group G is where the continents collide. Morocco, Africa's heroes from 2022. Japan, Asia's tactical masters. Mexico, the passionate host. And Poland — Robert Lewandowski's final shot at World Cup glory. Four continents, two knockout spots, zero mercy."
+    },
+    {
+      "id": "s02_teams",
+      "role": "data",
+      "narration": "G조 4개 팀을 소개합니다. 1번 시드 모로코 — FIFA 랭킹 12위, 2022 카타르 4강 신화의 주인공. 일본 — FIFA 랭킹 18위, 아시아 최고의 조직력. 멕시코 — 개최국, FIFA 랭킹 15위, 8연속 16강의 굴레를 이번엔 넘는가. 폴란드 — FIFA 랭킹 26위, 레반도프스키의 마지막 월드컵.",
+      "narration_ja": "Gグループの4チームを紹介します。第1シードのモロッコ — FIFAランキング12位、2022カタール大会ベスト4の立役者。日本 — FIFAランキング18位、アジア最高の組織力。メキシコ — 開催国、FIFAランキング15位、8大会連続ベスト16の呪いを今回は破るか。ポーランド — FIFAランキング26位、レヴァンドフスキの最後のワールドカップ。",
+      "narration_en": "Meet the four teams of Group G. First seed Morocco — FIFA rank 12, architects of the 2022 semi-final miracle. Japan — FIFA rank 18, Asia's most disciplined tactical unit. Mexico — host nation, FIFA rank 15, can they finally break the round-of-16 curse eight tournaments running? Poland — FIFA rank 26, Robert Lewandowski's final World Cup bow."
+    },
+    {
+      "id": "s03_team1",
+      "role": "analysis",
+      "narration": "모로코는 2022 카타르에서 아프리카 최초 4강이라는 역사를 썼습니다. 하킴 지예흐, 소피안 부팔의 기술과 스피드. 왈리드 레그라기 감독의 철통 수비 시스템. 2026에서는 더 성숙해졌습니다. 모로코는 이제 이변이 아닌 진정한 우승 후보입니다.",
+      "narration_ja": "モロッコは2022カタール大会でアフリカ初のベスト4という歴史を作りました。ハキム・ジヤシュ、ソフィアン・ブファルのテクニックとスピード。ワリッド・レグラギ監督の鉄壁の守備システム。2026年にはさらに成熟しました。モロッコはもはやジャイアントキリングではなく、真の優勝候補です。",
+      "narration_en": "Morocco wrote history in Qatar 2022 — Africa's first ever World Cup semi-finalists. Hakim Ziyech and Sofiane Boufal bring technique and pace; Walid Regragui's defensive system is among the world's best organized. By 2026 they arrive even more mature. Morocco are no longer a surprise — they are genuine contenders for the title itself."
+    },
+    {
+      "id": "s04_team2",
+      "role": "analysis",
+      "narration": "일본은 2022 카타르에서 독일과 스페인을 꺾는 충격을 선사했습니다. 미토마 카오루, 도안 리츠 — 유럽에서 성장한 월드클래스 자원. 진짜 강점은 팀워크와 수비 조직력. 한국의 라이벌이자, G조에서 가장 과소평가된 팀. 일본을 얕보는 팀은 반드시 대가를 치릅니다.",
+      "narration_ja": "日本は2022カタールでドイツとスペインを撃破するという衝撃を与えました。三笘薫、堂安律 — ヨーロッパで成長したワールドクラスの人材。本当の強みはチームワークと守備の組織力。韓国のライバルであり、Gグループで最も過小評価されているチーム。日本を侮るチームは必ず代償を払います。",
+      "narration_en": "Japan shocked the world in Qatar — beating Germany and Spain on the way to the round of sixteen. Kaoru Mitoma and Ritsu Doan are world-class talents forged in European football. But Japan's real strength is collective discipline and defensive shape. They are South Korea's fiercest rival, and the most underrated team in this group. Any side that underestimates them pays the price."
+    },
+    {
+      "id": "s05_team3",
+      "role": "analysis",
+      "narration": "멕시코는 1986 이후 8회 연속 16강에 오른 전통 강호이지만, 한 번도 8강을 넘지 못했습니다. 2026은 다릅니다 — 개최국의 이점. 산티아고 히메네스의 폭발적인 공격력. 아스테카의 열화 같은 응원. 그 굴레를 끊는 순간이 온다면, 바로 지금 이 무대입니다.",
+      "narration_ja": "メキシコは1986年以降8大会連続でベスト16に進出した伝統の強豪ですが、一度もベスト8を超えたことがありません。2026年は違います — 開催国のアドバンテージ。サンティアゴ・ヒメネスの爆発的な攻撃力。アステカの熱狂的な応援。その呪縛を断ち切る瞬間が来るとすれば、まさに今この舞台です。",
+      "narration_en": "Mexico have reached the round of sixteen in eight consecutive World Cups since 1986 — but never once gone further. In 2026 they host on home soil. Santiago Gimenez brings lethal attacking threat. The Azteca roars behind them. If there is ever a moment to break the curse, it is here, in front of their own people, on this stage."
+    },
+    {
+      "id": "s06_predict",
+      "role": "analysis",
+      "narration": "변수를 분석합니다. 폴란드는 레반도프스키 한 명에게 지나치게 의존합니다 — 수비 조직력은 G조 최하. 모로코의 변수는 지예흐의 컨디션 관리. 일본의 변수는 체력 — 긴 유럽 시즌 이후의 월드컵. 멕시코는 홈 관중의 압박이 양날의 검. G조는 마지막 경기까지 예측 불가입니다.",
+      "narration_ja": "変数を分析します。ポーランドはレヴァンドフスキ1人に過度に依存 — 守備組織力はGグループ最下位。モロッコの変数はジヤシュのコンディション管理。日本の変数は体力 — 長いヨーロッパシーズン後のワールドカップ。メキシコはホーム観客のプレッシャーが両刃の剣。Gグループは最終戦まで予測不可能です。",
+      "narration_en": "Key variables: Poland lean too heavily on Lewandowski — the weakest defensive structure in the group. Morocco's wild card is Ziyech's fitness management across the tournament. Japan's risk is fatigue after a long European club season. Mexico face the double-edged sword of home pressure — it lifts, but every mistake gets magnified. Group G remains unpredictable through the final whistle."
+    },
+    {
+      "id": "s07_verdict",
+      "role": "verdict",
+      "narration": "최종 예측입니다. 16강 진출팀: 모로코와 일본. 모로코는 수비 철벽으로 1위 통과, 일본은 조직력으로 2위 진출. 멕시코는 아쉽게 3위, 폴란드는 4위. 진짜 관전 포인트: 아시아와 아프리카가 같은 조에서 동시 16강 — 새로운 역사. 다음 EP에서는 H조를 분석합니다.",
+      "narration_ja": "最終予測です。決勝トーナメント進出チーム: モロッコと日本。モロッコは守備の鉄壁で1位通過、日本は組織力で2位進出。メキシコは惜しくも3位、ポーランドは4位。真の見どころ: アジアとアフリカが同じグループから同時にベスト16へ — 新たな歴史。次のEPではHグループを分析します。",
+      "narration_en": "Final verdict. Teams advancing: Morocco and Japan. Morocco top the group — their defensive structure is simply unmatched. Japan squeeze through in second on discipline and tactical precision. Mexico exit in third despite home advantage; Poland finish fourth as Lewandowski's World Cup journey ends too soon. The real headline: Asia and Africa both advance from Group G — history written live. Next episode: Group H analysis."
+    }
+  ]
+}
