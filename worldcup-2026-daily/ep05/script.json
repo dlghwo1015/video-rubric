@@ -1,0 +1,135 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 5,
+  "date": "2026-06-26",
+  "title_ko": "2026-06-26 오늘의 경기 AI 예측 — 한국 vs 포르투갈, 잉글랜드 vs 프랑스",
+  "title_ja": "2026-06-26 今日の試合 AI予測 — 韓国 vs ポルトガル、イングランド vs フランス",
+  "title_en": "2026-06-26 Match Predictions by AI — South Korea vs Portugal, England vs France",
+  "korea_match": true,
+  "matches_today": [
+    {
+      "id": "m1",
+      "team_a": "South Korea",
+      "team_b": "Portugal",
+      "group": "F",
+      "venue": "SoFi Stadium, Los Angeles",
+      "kickoff_kst": "03:00"
+    },
+    {
+      "id": "m2",
+      "team_a": "England",
+      "team_b": "France",
+      "group": "C",
+      "venue": "MetLife Stadium, New York",
+      "kickoff_kst": "06:00"
+    },
+    {
+      "id": "m3",
+      "team_a": "Netherlands",
+      "team_b": "USA",
+      "group": "E",
+      "venue": "AT&T Stadium, Dallas",
+      "kickoff_kst": "09:00"
+    },
+    {
+      "id": "m4",
+      "team_a": "Italy",
+      "team_b": "Belgium",
+      "group": "D",
+      "venue": "Rose Bowl, Pasadena",
+      "kickoff_kst": "12:00"
+    }
+  ],
+  "yesterday_results": [
+    {
+      "team_a": "England",
+      "score_a": 3,
+      "score_b": 1,
+      "team_b": "Ecuador",
+      "group": "C"
+    },
+    {
+      "team_a": "France",
+      "score_a": 2,
+      "score_b": 0,
+      "team_b": "Chile",
+      "group": "B"
+    },
+    {
+      "team_a": "Japan",
+      "score_a": 3,
+      "score_b": 2,
+      "team_b": "Cameroon",
+      "group": "G"
+    },
+    {
+      "team_a": "Switzerland",
+      "score_a": 1,
+      "score_b": 0,
+      "team_b": "Serbia",
+      "group": "I"
+    }
+  ],
+  "ai_predictions": [
+    {
+      "match": "South Korea vs Portugal",
+      "pred_a": 2,
+      "pred_b": 1,
+      "confidence": "40%",
+      "pick": "South Korea"
+    },
+    {
+      "match": "England vs France",
+      "pred_a": 1,
+      "pred_b": 2,
+      "confidence": "58%",
+      "pick": "France"
+    },
+    {
+      "match": "Netherlands vs USA",
+      "pred_a": 2,
+      "pred_b": 0,
+      "confidence": "65%",
+      "pick": "Netherlands"
+    },
+    {
+      "match": "Italy vs Belgium",
+      "pred_a": 1,
+      "pred_b": 1,
+      "confidence": "52%",
+      "pick": "Draw"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "오늘은 AI도 심장이 뛰는 날입니다! 대한민국이 포르투갈과 맞붙습니다 — F조의 운명이 결정됩니다. 2002년의 기억이 되살아납니다. 그리고 잉글랜드 대 프랑스 — 유럽의 두 강호가 뉴욕에서 격돌. 네덜란드 대 미국 — 개최국의 자존심이 걸렸습니다. 이탈리아 대 벨기에까지. 오늘 네 경기 AI가 완전 분석합니다.",
+      "narration_ja": "今日はAIも心が躊ります！韓国がポルトガルと対戦します — グループFの命運が決まります。2002年の記憶がよみがえります。そしてイングランド対フランス — 欧州の強豪2チームがニューヨークで激突。オランダ対アメリカ — 開催国の誇りがかかっています。イタリア対ベルギーも。今日て4試合すべてをAIが完全分析します。",
+      "narration_en": "Today's the day even AI's heart races. South Korea take on Portugal — Group F destiny hangs in the balance. The echoes of 2002 are unmistakable. England vs France — Europe's giants clash in New York. Netherlands vs USA — host nation pride on the line in Dallas. Italy vs Belgium rounds it out. AI breaks down all four matches today."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "어제 결과부터 확인합니다. 잉글랜드가 에콰도르를 3-1로 완파 — 케인 2골로 C조 단독 선두 질주. 프랑스는 칠레를 2-0으로 제압 — 음바페 연속 득점으로 B조 독주. 일본이 카메룬에 3-2 극적 역전승! G조에서 독일을 바짝 추격 중입니다. 스위스는 세르비아를 1-0으로 꺾고 I조 선두를 지켰습니다.",
+      "narration_ja": "まず昨日の結果を確認します。イングランドがエクアドルを3-1で粉砕 — ケイン2ゴールでグループC単独首位。フランスはチリに2-0で快勝 — ムバッペの連続ゴールでグループBを独走。日本がカメルーンに3-2の劇的逆転勝利！グループGでドイツを猿追中です。スイスはセルビアを1-0で下してグループI首位を守りました。",
+      "narration_en": "Yesterday's results first. England demolished Ecuador 3-1 — Kane's brace sends them to the top of Group C. France swept Chile aside 2-0 — Mbappé again, dominant in Group B. Japan came from behind to beat Cameroon 3-2 in stunning fashion — Group G gets very tight. Switzerland edge Serbia 1-0 to hold the top of Group I."
+    },
+    {
+      "id": "s03_prediction1",
+      "narration": "오늘의 핵심 매치 — 대한민국 대 포르투갈. AI의 예측은 한국 2-1 포르투갈입니다. 충격적인 이변 예측, 신뢰도 40%. 이유 세 가지. 첫째, 손흥민의 역습 능력이 포르투갈의 높은 수비 라인을 강타합니다 — 스피드와 타이밍에서 한국이 절대 우위. 둘째, 포르투갈 수비의 전환 취약점 — 감독 체제가 바뀌어도 꾸준히 지적받는 조직력 문제. 셋째, 이란전 무실점 수비로 증명된 한국의 전술적 집중력 — 포르투갈 공격을 90분 내내 틀어막을 수 있습니다. AI 신뢰도 40% — 이변이지만, 역사는 언제나 이변으로 쓰입니다. AI는 한국을 선택합니다.",
+      "narration_ja": "今日の焦点 — 韓国対ポルトガル。AI予測は韓国2-1ポルトガルです。衝撃のアップセット予測、信頼度40%。理由は三つ。第一、ソン・フンミンのカウンター能力がポルトガルの高いディフェンスラインを直撃します — スピードとタイミングで韓国が絶対優位。第二、ポルトガル守備の切り替えの弱点 — 監督体制が変わっても指摘され続ける組織力の問題。第三、イラン戦無失点守備で証明された韓国の戦術的集中力 — ポルトガルの攻撃を。90分封じ込めます。AI信頼度40% — アップセットですが、歴史は常にアップセットで書かれます。AIは韓国を選択します。",
+      "narration_en": "Today's centrepiece — South Korea vs Portugal. AI prediction: South Korea 2-1 Portugal. A bold upset call — confidence 40%. Three reasons. First, Son Heung-min's counter-attacking precision is built to destroy Portugal's high defensive line — pace and timing, Korea's deadliest combination. Second, Portugal's defensive transitions remain a structural weakness — a persistent problem regardless of coaching setup. Third, Korea's tactical discipline, proven in the goalless draw against Iran, gives them every chance of frustrating Portugal's attack for 90 minutes. AI confidence 40% — it's an upset call, but history is always written by upsets. AI picks South Korea."
+    },
+    {
+      "id": "s04_prediction2",
+      "narration": "나머지 세 경기 빠르게 예측합니다. 잉글랜드 대 프랑스 — AI 픽 프랑스 2-1. 음바페 대 케인 — 개인 기량 최고봉의 대결이지만 음바페의 무게감이 더 크다. 신뢰도 58%. 네덜란드 대 미국 — AI 픽 네덜란드 2-0. 가크포의 연속 골 기세, 홈 분위기도 오란예를 막기엔 역부족. 신뢰도 65%. 이탈리아 대 벨기에 — AI 픽 1-1 무승부. D조 양 팀 모두 수비 우선 전략 — 오늘 가장 팽팽한 경기. 신뢰도 52%.",
+      "narration_ja": "残り3試合を素早く予測します。イングランド対フランス — AIピックフランス2-1。ムバッペ対ケイン — 個人能力の頂上決戦ですがムバッペの存在感が勝る。信頼度58%。オランダ対アメリカ — AIピックオランダ2-0。ガクポの連続ゴールの勢い、ホームの雰囲気もオラニエを止めるには不十分。信頼度65%。イタリア対ベルギー — AIピック1-1引き分け。グループD両チームとも守備優先戦略 — 今日最も接戦の試合。信頼度52%。",
+      "narration_en": "Three more games, fast predictions. England vs France — AI pick France 2-1. Mbappé against Kane — elite individual quality head-to-head, but Mbappé tips the balance. Confidence 58%. Netherlands vs USA — AI pick Netherlands 2-0. Gakpo's momentum is unstoppable; the home crowd in Dallas can't stop the Oranje. Confidence 65%. Italy vs Belgium — AI pick 1-1 draw. Both Group D sides prioritize defensive solidity — tightest game on the card today. Confidence 52%."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘의 AI 픽 정리. 한국 2-1 포르투갈 — 이변 예측 신뢰도 40%. 프랑스 2-1 잉글랜드, 네덜란드 2-0 미국, 이탈리아 1-1 벨기에. 오늘의 TOP AI 픽은 한국의 이변 승리. 손흥민이 LA SoFi 스타디움에서 역사를 씁니다. 2002년 히딩크의 한국도, 2022년 카타르의 일본도 아무도 예상하지 못했습니다. AI가 그 대담한 선택을 합니다. 단, 주의하세요 — 포르투갈의 호날두가 마지막 월드컵에서 영웅이 된다면, 역사의 방향이 뒤바뀝니다. 끝까지 눈을 떼지 마세요. 내일 결과 검증 — 채널 구독하고 함께 확인하세요.",
+      "narration_ja": "今日のAIピックまとめ。韓国2-1ポルトガル — アップセット予測信頼度40%。フランス2-1イングランド、オランダ2-0アメリカ、イタリア1-1ベルギー。今日のAI最高ピックは韓国のアップセット勝利。ソン・フンミンがラLAのSoFiスタジアムで歴史を書きます。2002年のヒディンクの韓国も。2022年カタールの日本も誤人が予想しませんでした。AIがその大脹な選択をします。ただし注意してください — ポルトガルのロナウドが最後のワールドカップで英雄になれば、歴史の方向が変わります。最後まで目を離さないでください。明日は結果検証 — チャンネル登録して一緒に確認しましょう。",
+      "narration_en": "Today's AI picks summary. South Korea 2-1 Portugal — the upset call, confidence 40%. France 2-1 England, Netherlands 2-0 USA, Italy 1-1 Belgium. Today's top AI pick is the Korean upset. Son Heung-min writes history at SoFi Stadium in LA. Nobody predicted Hiddink's Korea in 2002, nobody saw Japan vs Germany in Qatar coming. AI makes that bold call today. But watch out — if Ronaldo, in what could be his final World Cup, turns hero tonight — history flips entirely. Don't look away for a second. Result verification tomorrow — subscribe and follow along."
+    }
+  ]
+}
