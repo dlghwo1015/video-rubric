@@ -1,0 +1,143 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 6,
+  "date": "2026-06-27",
+  "title_ko": "2026-06-27 오늘의 경기 AI 예측 — 브라질 vs 독일, 아르헨티나 vs 크로아티아",
+  "title_ja": "2026-06-27 今日の試合 AI予測 — ブラジル vs ドイツ、アルゼンチン vs クロアチア",
+  "title_en": "2026-06-27 Match Predictions by AI — Brazil vs Germany, Argentina vs Croatia",
+  "korea_match": false,
+  "matches_today": [
+    {
+      "id": "m1",
+      "team_a": "Brazil",
+      "team_b": "Germany",
+      "group": "A",
+      "venue": "AT&T Stadium, Dallas",
+      "kickoff_kst": "03:00"
+    },
+    {
+      "id": "m2",
+      "team_a": "Argentina",
+      "team_b": "Croatia",
+      "group": "K",
+      "venue": "MetLife Stadium, New York",
+      "kickoff_kst": "06:00"
+    },
+    {
+      "id": "m3",
+      "team_a": "Spain",
+      "team_b": "Morocco",
+      "group": "C",
+      "venue": "Rose Bowl, Pasadena",
+      "kickoff_kst": "09:00"
+    },
+    {
+      "id": "m4",
+      "team_a": "Japan",
+      "team_b": "Saudi Arabia",
+      "group": "G",
+      "venue": "Levi's Stadium, San Jose",
+      "kickoff_kst": "12:00"
+    }
+  ],
+  "yesterday_results": [
+    {
+      "team_a": "South Korea",
+      "score_a": 1,
+      "score_b": 2,
+      "team_b": "Portugal",
+      "group": "F",
+      "ai_pred": "2-1 Korea",
+      "ai_correct": false
+    },
+    {
+      "team_a": "France",
+      "score_a": 2,
+      "score_b": 0,
+      "team_b": "England",
+      "group": "C",
+      "ai_pred": "2-1 France",
+      "ai_correct": true
+    },
+    {
+      "team_a": "Netherlands",
+      "score_a": 3,
+      "score_b": 0,
+      "team_b": "USA",
+      "group": "E",
+      "ai_pred": "2-0 Netherlands",
+      "ai_correct": true
+    },
+    {
+      "team_a": "Belgium",
+      "score_a": 1,
+      "score_b": 0,
+      "team_b": "Italy",
+      "group": "D",
+      "ai_pred": "1-1 Draw",
+      "ai_correct": false
+    }
+  ],
+  "ai_predictions": [
+    {
+      "match": "Brazil vs Germany",
+      "pred_a": 2,
+      "pred_b": 1,
+      "confidence": "58%",
+      "pick": "Brazil"
+    },
+    {
+      "match": "Argentina vs Croatia",
+      "pred_a": 2,
+      "pred_b": 1,
+      "confidence": "65%",
+      "pick": "Argentina"
+    },
+    {
+      "match": "Spain vs Morocco",
+      "pred_a": 1,
+      "pred_b": 1,
+      "confidence": "53%",
+      "pick": "Draw"
+    },
+    {
+      "match": "Japan vs Saudi Arabia",
+      "pred_a": 2,
+      "pred_b": 0,
+      "confidence": "62%",
+      "pick": "Japan"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "오늘은 AI도 긴장하는 날입니다. 브라질 대 독일 — 7대1의 악몽이 2026년에 다시 열립니다. 아르헨티나 대 크로아티아 — 2022년 카타르 준결승의 리매치, 메시의 마지막 월드컵 복수극. 스페인 대 모로코 — 2022년 카타르의 충격을 기억합니까? 일본 대 사우디아라비아 — 아시아의 자존심 대결. 오늘 네 경기, AI가 완전 분석합니다.",
+      "narration_ja": "今日はAIも緊張する日です。ブラジル対ドイツ — 7対1の悪夢が2026年に再び幕を開けます。アルゼンチン対クロアチア — 2022年カタール準決勝のリマッチ、メッシ最後のワールドカップでの復讐劇。スペイン対モロッコ — 2022年カタールの衝撃を覚えていますか？日本対サウジアラビア — アジアの誇りをかけた対決。今日の4試合、AIが完全分析します。",
+      "narration_en": "Today is the day even AI feels the tension. Brazil vs Germany — the 7–1 nightmare gets a 2026 sequel in Dallas. Argentina vs Croatia — the 2022 Qatar semi-final rematch: Messi's revenge in what could be his last World Cup. Spain vs Morocco — remember the shock of Qatar 2022? Japan vs Saudi Arabia — Asian pride on the line in San Jose. Four matches today, full AI breakdown."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "어제 결과 먼저 확인하겠습니다. AI 예측 적중률도 함께 살펴봅니다. 대한민국은 포르투갈에 1-2로 패배 — AI의 이변 예측은 빗나갔습니다. 한국의 16강 진출은 안타깝게 좌절됐습니다. 프랑스는 잉글랜드를 2-0으로 완파 — AI 픽 프랑스 적중! 방향은 맞았습니다. 네덜란드는 미국을 3-0으로 대파 — AI가 예측한 2-0보다 훨씬 큰 격차. 그리고 벨기에가 이탈리아를 1-0으로 꺾는 이변 — AI의 무승부 예측은 빗나갔습니다. 어제 적중률: 4경기 중 2경기 — 50%. AI도 겸손해집니다.",
+      "narration_ja": "まず昨日の結果を確認します。AI予測の的中率も一緒に見ていきます。韓国はポルトガルに1-2で敗戦 — AIのアップセット予測は外れました。韓国のラウンド16進出は惜しくも断たれました。フランスはイングランドを2-0で完封 — AIピックのフランス的中！方向は合っていました。オランダはアメリカを3-0で大破 — AIが予測した2-0より大きな差。そしてベルギーがイタリアを1-0で下す番狂わせ — AIの引き分け予測は外れました。昨日の的中率：4試合中2試合 — 50%。AIも謙虚になります。",
+      "narration_en": "Yesterday's results — and let's check the AI accuracy too. South Korea fell to Portugal 1-2 — the AI upset call was wrong. Korea's Round of 32 journey ends here. France shut out England 2-0 — AI picked France, and we got the direction right. Netherlands demolished the USA 3-0 — AI said 2-0, closer than it looked. And Belgium pulled off the surprise, beating Italy 1-0 — AI's draw call missed. Yesterday's accuracy: 2 from 4 — 50%. Even AI stays humble."
+    },
+    {
+      "id": "s03_prediction1",
+      "narration": "오늘의 최대 매치 — 브라질 대 독일. AI의 예측은 브라질 2-1 독일입니다. 신뢰도 58%. 세 가지 근거. 첫째, 비니시우스 주니오르의 현재 폼 — 이번 대회 최고의 개인 기량을 보여주고 있습니다. 독일 수비 라인 전방 공간을 파고드는 능력에서 독보적입니다. 둘째, 독일의 반다이크 딜레마 — 높은 압박 축구는 브라질의 빠른 역습에 취약합니다. 2014년 7-1의 트라우마가 독일 수비 전술을 더 조심스럽게 만들었습니다. 셋째, 달라스의 이점 — 남미 팬 베이스가 강한 텍사스에서 브라질의 홈 분위기가 기대됩니다. AI 신뢰도 58% — 브라질 승.",
+      "narration_ja": "今日の最大マッチ — ブラジル対ドイツ。AI予測はブラジル2-1ドイツです。信頼度58%。三つの根拠。第一、ヴィニシウス・ジュニオールの現在のフォーム — 今大会最高の個人技を見せています。ドイツのディフェンスライン前のスペースに切り込む能力は群を抜いています。第二、ドイツのハイプレス — ブラジルの素早いカウンターに脆弱です。2014年の7-1のトラウマがドイツの守備戦術をより慎重にしました。第三、ダラスの利点 — 南米ファンが多いテキサスでブラジルのホームの雰囲気が期待されます。AI信頼度58% — ブラジル勝利。",
+      "narration_en": "Today's headline clash — Brazil vs Germany. AI prediction: Brazil 2-1 Germany. Confidence 58%. Three reasons. First, Vinícius Júnior's form — the best individual display at this tournament so far. His ability to exploit space behind Germany's defensive line is unmatched. Second, Germany's high-press dilemma — aggressive pressing leaves gaps for Brazil's rapid counter-attacks. The 7-1 trauma in 2014 has made German defensive setups more cautious, not less exploitable. Third, the Dallas factor — Texas has one of the strongest South American fan bases in the host country. Expect a near-home atmosphere for Brazil. AI confidence 58% — Brazil wins."
+    },
+    {
+      "id": "s04_prediction2",
+      "narration": "나머지 세 경기 예측입니다. 아르헨티나 대 크로아티아 — AI 픽 아르헨티나 2-1. 신뢰도 65%. 2022년 준결승 복수전입니다. 메시의 마지막 월드컵이 될 수 있습니다 — 그 절박함이 힘이 됩니다. 모드리치는 여전히 위협적이나 38세의 나이가 변수. 스페인 대 모로코 — AI 픽 1-1 무승부. 신뢰도 53%. 2022년에 모로코가 스페인을 승부차기로 꺾은 그 수비 전술이 재현됩니다. 가장 접전이 예상되는 경기. 일본 대 사우디아라비아 — AI 픽 일본 2-0. 신뢰도 62%. 일본의 전술적 완성도와 체력 우위. 독일전 이변 기세가 살아있습니다.",
+      "narration_ja": "残り3試合の予測です。アルゼンチン対クロアチア — AIピックアルゼンチン2-1。信頼度65%。2022年準決勝の復讐戦です。メッシにとって最後のワールドカップになり得ます — その切迫感が力になります。モドリッチは依然として脅威ですが38歳という年齢が変数。スペイン対モロッコ — AIピック1-1引き分け。信頼度53%。2022年にモロッコがスペインをPKで下したあの守備戦術が再現されます。最も接戦が予想される試合。日本対サウジアラビア — AIピック日本2-0。信頼度62%。日本の戦術的完成度と体力優位。ドイツ戦の勢いが生きています。",
+      "narration_en": "Three more predictions. Argentina vs Croatia — AI pick Argentina 2-1, confidence 65%. This is the 2022 semi-final rematch. It could be Messi's last World Cup — that desperation becomes fuel. Modrić is still a threat but 38 years old is a real variable. Spain vs Morocco — AI pick 1-1 draw, confidence 53%. The defensive setup that sent Spain home on penalties in Qatar 2022 gets a revival today. Tightest game on the card. Japan vs Saudi Arabia — AI pick Japan 2-0, confidence 62%. Japan's tactical coherence and superior fitness edge it. The giant-killing momentum from the Germany group stage upset is still alive."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘의 AI 픽 총정리. 브라질 2-1 독일 — 신뢰도 58%. 아르헨티나 2-1 크로아티아 — 신뢰도 65%. 스페인 1-1 모로코 — 신뢰도 53%. 일본 2-0 사우디아라비아 — 신뢰도 62%. 오늘의 TOP AI 픽은 아르헨티나의 복수극입니다. 2022년 카타르, 크로아티아는 메시의 꿈에 제동을 걸었습니다. 2026년 뉴욕, 메시는 그 빚을 갚으러 옵니다. AI는 아르헨티나를 선택합니다 — 하지만 모드리치가 또 한 번 세상을 놀라게 할 수 있다는 것, 잊지 마십시오. 내일 결과 검증 — 채널 구독하고 함께 확인하세요.",
+      "narration_ja": "今日のAIピック総まとめ。ブラジル2-1ドイツ — 信頼度58%。アルゼンチン2-1クロアチア — 信頼度65%。スペイン1-1モロッコ — 信頼度53%。日本2-0サウジアラビア — 信頼度62%。今日のAI最高ピックはアルゼンチンの復讐劇です。2022年カタール、クロアチアはメッシの夢にブレーキをかけました。2026年ニューヨーク、メッシはその借りを返しにきます。AIはアルゼンチンを選択します — しかしモドリッチがまた世界を驚かせる可能性があることを忘れずに。明日は結果検証 — チャンネル登録して一緒に確認しましょう。",
+      "narration_en": "Today's AI picks summary. Brazil 2-1 Germany — confidence 58%. Argentina 2-1 Croatia — confidence 65%. Spain 1-1 Morocco — confidence 53%. Japan 2-0 Saudi Arabia — confidence 62%. Today's top AI pick is Argentina's revenge story. Qatar 2022 — Croatia put the brakes on Messi's dream. New York 2026 — Messi comes to collect that debt. AI picks Argentina — but never forget that Modrić has surprised the world before, and might do it again. Result verification tomorrow — subscribe and follow along."
+    }
+  ]
+}

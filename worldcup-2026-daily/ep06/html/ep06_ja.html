@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>2026-06-27 AI試合予測 — EP06 | デイリーワールドカップ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #080c18;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes slideLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes pulseGold {
+    0%, 100% { text-shadow: 0 0 40px rgba(201,162,39,0.4); }
+    50%       { text-shadow: 0 0 90px rgba(201,162,39,0.9); }
+  }
+  @keyframes glowGold {
+    0%, 100% { box-shadow: 0 0 24px rgba(201,162,39,0.3); }
+    50%       { box-shadow: 0 0 60px rgba(201,162,39,0.7); }
+  }
+  @keyframes glowBlue {
+    0%, 100% { box-shadow: 0 0 24px rgba(100,160,255,0.3); }
+    50%       { box-shadow: 0 0 60px rgba(100,160,255,0.7); }
+  }
+
+  .anim { opacity: 0; }
+  .anim.go { animation-fill-mode: forwards; }
+  .anim.go.fadeUp    { animation: fadeUp    0.7s cubic-bezier(.22,.68,0,1.2) forwards; }
+  .anim.go.fadeIn    { animation: fadeIn    0.6s ease forwards; }
+  .anim.go.slideLeft { animation: slideLeft 0.6s cubic-bezier(.22,.68,0,1.2) forwards; }
+
+  .ep-label {
+    position: absolute;
+    top: 36px; left: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .slide-num {
+    position: absolute;
+    top: 36px; right: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.1em;
+  }
+  .ai-badge {
+    position: absolute;
+    bottom: 42px; right: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    color: rgba(100,200,255,0.6);
+    letter-spacing: 0.12em;
+  }
+
+  /* ════ S01 — HOOK ════ */
+  #slide-1 {
+    background:
+      radial-gradient(ellipse 140% 90% at 50% 115%, rgba(201,162,39,0.18) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 50% at 80% 10%, rgba(0,82,148,0.1) 0%, transparent 45%),
+      #080c18;
+  }
+  #slide-1 .date-chip {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 28px;
+    color: rgba(201,162,39,0.9);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  #slide-1 .hook-title {
+    font-size: 88px;
+    font-weight: 900;
+    color: #f0ede4;
+    text-align: center;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+  #slide-1 .hook-title .acc { color: #c9a227; animation: pulseGold 3s ease-in-out infinite; }
+  #slide-1 .hook-sub {
+    font-size: 36px;
+    font-weight: 300;
+    color: rgba(240,237,228,0.6);
+    text-align: center;
+    margin-top: 28px;
+    letter-spacing: 0.03em;
+  }
+  #slide-1 .main-banner {
+    margin-top: 40px;
+    background: rgba(201,162,39,0.1);
+    border: 2px solid rgba(201,162,39,0.5);
+    border-radius: 16px;
+    padding: 18px 64px;
+    font-size: 40px;
+    font-weight: 700;
+    color: #f0ede4;
+    letter-spacing: 0.02em;
+    animation: glowGold 3s ease-in-out infinite;
+  }
+  #slide-1 .main-banner .vs { color: rgba(201,162,39,0.9); font-weight: 900; margin: 0 12px; }
+  #slide-1 .match-teasers {
+    display: flex;
+    gap: 24px;
+    margin-top: 28px;
+  }
+  #slide-1 .teaser {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 16px 32px;
+    font-size: 24px;
+    font-weight: 400;
+    color: rgba(240,237,228,0.7);
+    letter-spacing: 0.02em;
+  }
+  #slide-1 .teaser .vs { color: rgba(100,160,255,0.7); font-weight: 700; }
+
+  /* ════ S02 — YESTERDAY ════ */
+  #slide-2 {
+    background:
+      radial-gradient(ellipse 120% 80% at 50% 110%, rgba(79,200,122,0.1) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 40% at 80% 10%, rgba(225,29,72,0.06) 0%, transparent 45%),
+      #0d1a0f;
+    padding: 0 120px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  #slide-2 .section-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    color: rgba(79,200,122,0.8);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  #slide-2 .section-title {
+    font-size: 52px;
+    font-weight: 700;
+    color: #e8f5ed;
+    margin-bottom: 28px;
+    line-height: 1.2;
+  }
+  #slide-2 .section-title span { color: #4fc87a; }
+  #slide-2 .section-title .miss { color: #e11d48; }
+  #slide-2 .results-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    max-width: 1560px;
+  }
+  .result-row {
+    display: flex;
+    align-items: center;
+    background: rgba(79,200,122,0.07);
+    border: 1px solid rgba(79,200,122,0.2);
+    border-radius: 14px;
+    padding: 18px 44px;
+    gap: 0;
+  }
+  .result-row.miss-row {
+    background: rgba(225,29,72,0.05);
+    border-color: rgba(225,29,72,0.2);
+  }
+  .result-row .group-tag {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    color: rgba(79,200,122,0.7);
+    letter-spacing: 0.14em;
+    width: 90px;
+    flex-shrink: 0;
+  }
+  .result-row.miss-row .group-tag { color: rgba(225,29,72,0.6); }
+  .result-row .team-name {
+    font-size: 30px;
+    font-weight: 600;
+    color: #e8f5ed;
+    flex: 1;
+  }
+  .result-row .team-name.right { text-align: right; }
+  .result-row .score-box {
+    display: flex;
+    align-items: center;
+    padding: 0 44px;
+    flex-shrink: 0;
+  }
+  .result-row .score {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 52px;
+    font-weight: 600;
+    color: #4fc87a;
+    width: 50px;
+    text-align: center;
+  }
+  .result-row.miss-row .score { color: #e11d48; }
+  .result-row .score-dash {
+    font-size: 30px;
+    color: rgba(79,200,122,0.4);
+    padding: 0 10px;
+  }
+  .result-row.miss-row .score-dash { color: rgba(225,29,72,0.3); }
+  .result-row .ai-tag {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    padding: 6px 16px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    letter-spacing: 0.06em;
+  }
+  .result-row .ai-tag.hit {
+    background: rgba(79,200,122,0.15);
+    color: #4fc87a;
+    border: 1px solid rgba(79,200,122,0.3);
+  }
+  .result-row .ai-tag.miss {
+    background: rgba(225,29,72,0.12);
+    color: #fb7185;
+    border: 1px solid rgba(225,29,72,0.25);
+  }
+  #slide-2 .accuracy-bar {
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 28px;
+    color: rgba(232,245,237,0.55);
+  }
+  #slide-2 .accuracy-bar strong { color: #c9a227; font-size: 34px; }
+  #slide-2 .accuracy-bar span { color: #4fc87a; font-weight: 700; }
+
+  /* ════ S03 — PREDICTION 1 (BRAZIL vs GERMANY) ════ */
+  #slide-3 {
+    background:
+      radial-gradient(ellipse 140% 100% at 50% 120%, rgba(5,177,105,0.14) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 40% at 10% 15%, rgba(0,0,0,0.2) 0%, transparent 45%),
+      #060e08;
+    padding: 0 100px;
+  }
+  #slide-3 .section-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    color: rgba(5,177,105,0.85);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    align-self: flex-start;
+  }
+  #slide-3 .revenge-badge {
+    align-self: flex-start;
+    background: rgba(201,162,39,0.1);
+    border: 1px solid rgba(201,162,39,0.35);
+    border-radius: 8px;
+    padding: 6px 20px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    color: rgba(201,162,39,0.9);
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+  #slide-3 .match-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    margin: 24px 0 36px;
+    width: 100%;
+  }
+  #slide-3 .team-block { text-align: center; flex: 1; max-width: 480px; }
+  #slide-3 .team-flag { font-size: 80px; margin-bottom: 12px; }
+  #slide-3 .team-nm { font-size: 52px; font-weight: 700; color: #f0ede4; }
+  #slide-3 .team-nm.pick { color: #05b169; }
+  #slide-3 .pred-score-block { display: flex; align-items: center; flex-shrink: 0; }
+  #slide-3 .pred-score {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 120px;
+    font-weight: 600;
+    color: #05b169;
+    width: 100px;
+    text-align: center;
+    line-height: 1;
+  }
+  #slide-3 .pred-dash { font-size: 56px; color: rgba(5,177,105,0.3); padding: 0 16px; }
+  #slide-3 .analysis-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+    max-width: 1600px;
+  }
+  #slide-3 .reason-card {
+    background: rgba(5,177,105,0.06);
+    border: 1px solid rgba(5,177,105,0.2);
+    border-radius: 16px;
+    padding: 28px 36px;
+  }
+  #slide-3 .reason-num {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    color: rgba(5,177,105,0.6);
+    letter-spacing: 0.15em;
+    margin-bottom: 10px;
+  }
+  #slide-3 .reason-text { font-size: 24px; font-weight: 400; color: rgba(240,237,228,0.85); line-height: 1.6; }
+  #slide-3 .confidence-bar {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 28px;
+    align-self: flex-start;
+  }
+  #slide-3 .conf-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    color: rgba(240,237,228,0.5);
+    letter-spacing: 0.12em;
+  }
+  #slide-3 .conf-track {
+    width: 400px; height: 10px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 5px; overflow: hidden;
+  }
+  #slide-3 .conf-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #05b169, #34d399);
+    border-radius: 5px;
+    width: 58%;
+  }
+  #slide-3 .conf-pct {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 28px; font-weight: 600; color: #05b169;
+  }
+  #slide-3 .ai-pick-label {
+    font-size: 22px; color: rgba(5,177,105,0.7); letter-spacing: 0.08em;
+    margin-top: 8px; align-self: flex-start;
+  }
+  #slide-3 .ai-pick-label strong { color: #05b169; font-size: 28px; }
+
+  /* ════ S04 — QUICK PICKS ════ */
+  #slide-4 {
+    background:
+      radial-gradient(ellipse 100% 80% at 30% 110%, rgba(100,160,255,0.1) 0%, transparent 50%),
+      radial-gradient(ellipse 80% 60% at 80% 20%, rgba(201,162,39,0.07) 0%, transparent 45%),
+      #080c18;
+    padding: 0 100px;
+  }
+  #slide-4 .section-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px; color: rgba(100,160,255,0.8);
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 10px; align-self: flex-start;
+  }
+  #slide-4 .section-title {
+    font-size: 56px; font-weight: 700; color: #f0ede4;
+    margin-bottom: 44px; align-self: flex-start;
+  }
+  #slide-4 .section-title span { color: #64a0ff; }
+  #slide-4 .picks-grid {
+    display: flex; flex-direction: column; gap: 20px;
+    width: 100%; max-width: 1640px;
+  }
+  .pick-row {
+    display: grid;
+    grid-template-columns: 90px 1fr 180px 1fr 200px 140px;
+    align-items: center;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px; padding: 24px 36px; gap: 16px;
+  }
+  .pick-row.highlight-top {
+    border-color: rgba(201,162,39,0.5);
+    background: rgba(201,162,39,0.07);
+  }
+  .pick-row .grp {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px; color: rgba(255,255,255,0.35); letter-spacing: 0.12em;
+  }
+  .pick-row .t-name { font-size: 30px; font-weight: 600; color: #f0ede4; }
+  .pick-row .t-name.right { text-align: right; }
+  .pick-row .pred-sc {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 46px; font-weight: 600; text-align: center; color: #64a0ff;
+  }
+  .pick-row.highlight-top .pred-sc { color: #c9a227; }
+  .pick-row .conf {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 19px; color: rgba(255,255,255,0.35); text-align: right; letter-spacing: 0.06em;
+  }
+  .pick-row .pick-tag {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px; font-weight: 600; text-align: center;
+    padding: 8px 10px; border-radius: 8px;
+    background: rgba(100,160,255,0.15); color: #64a0ff; letter-spacing: 0.04em;
+  }
+  .pick-row.highlight-top .pick-tag { background: rgba(201,162,39,0.2); color: #c9a227; }
+
+  /* ════ S05 — VERDICT ════ */
+  #slide-5 {
+    background:
+      radial-gradient(ellipse 120% 80% at 50% 110%, rgba(201,162,39,0.12) 0%, transparent 55%),
+      radial-gradient(ellipse 70% 50% at 10% 30%, rgba(5,177,105,0.06) 0%, transparent 45%),
+      #0a0a08;
+    padding: 0 100px;
+  }
+  #slide-5 .verdict-top {
+    display: flex; align-items: flex-start; gap: 80px;
+    width: 100%; max-width: 1700px; margin-bottom: 44px;
+  }
+  #slide-5 .verdict-left { flex: 1; }
+  #slide-5 .section-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px; color: rgba(201,162,39,0.8);
+    letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px;
+  }
+  #slide-5 .verdict-title {
+    font-size: 64px; font-weight: 900; color: #f0ede4;
+    line-height: 1.1; margin-bottom: 32px;
+  }
+  #slide-5 .verdict-title .acc { color: #c9a227; }
+  #slide-5 .picks-summary { display: flex; flex-direction: column; gap: 14px; }
+  #slide-5 .pick-item {
+    display: flex; align-items: center; gap: 20px;
+    font-size: 26px; color: rgba(240,237,228,0.8);
+  }
+  #slide-5 .pick-item .dot { width: 10px; height: 10px; border-radius: 50%; background: #64a0ff; flex-shrink: 0; }
+  #slide-5 .pick-item .dot.gold { background: #c9a227; }
+  #slide-5 .pick-item strong { color: #f0ede4; font-weight: 700; }
+  #slide-5 .highlight-box {
+    background: rgba(201,162,39,0.09);
+    border: 2px solid rgba(201,162,39,0.45);
+    border-radius: 20px; padding: 40px 44px; flex: 0 0 640px;
+    animation: glowGold 3s ease-in-out infinite;
+  }
+  #slide-5 .highlight-box-title { font-size: 32px; font-weight: 900; color: #c9a227; margin-bottom: 16px; }
+  #slide-5 .highlight-pred {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 64px; font-weight: 600; color: #f0ede4;
+    text-align: center; margin: 20px 0; letter-spacing: 0.1em;
+  }
+  #slide-5 .highlight-pred span { color: #c9a227; }
+  #slide-5 .highlight-note {
+    font-size: 23px; font-weight: 400; color: rgba(240,237,228,0.7); line-height: 1.6; margin-top: 12px;
+  }
+  #slide-5 .highlight-note strong { color: #f0ede4; }
+  #slide-5 .caution-alert {
+    margin-top: 20px; background: rgba(100,160,255,0.07);
+    border: 1px solid rgba(100,160,255,0.25); border-radius: 12px;
+    padding: 18px 28px; font-size: 21px; color: rgba(140,180,255,0.85); line-height: 1.5;
+  }
+  #slide-5 .subscribe-cta {
+    margin-top: 40px; font-size: 26px; font-weight: 300;
+    color: rgba(240,237,228,0.45); letter-spacing: 0.02em; align-self: flex-start;
+  }
+  #slide-5 .subscribe-cta span { color: #c9a227; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<!-- ══ S01 HOOK ══ -->
+<div id="slide-1" class="slide active">
+  <div class="ep-label">WORLDCUP · DAILY EP06</div>
+  <div class="slide-num">01 / 05</div>
+  <div class="ai-badge">AI ANALYSIS · 2026.06.27</div>
+
+  <div class="date-chip anim go fadeIn">2026.06.27 · グループステージ Day 17</div>
+  <h1 class="hook-title anim go fadeUp" style="animation-delay:.1s">
+    今日の<span class="acc">AI予測</span>
+  </h1>
+  <p class="hook-sub anim go fadeUp" style="animation-delay:.2s">4試合完全分析 — ブラジル・アルゼンチン・スペイン・日本</p>
+
+  <div class="main-banner anim go fadeUp" style="animation-delay:.3s">
+    🇧🇷 ブラジル <span class="vs">vs</span> ドイツ 🇩🇪 &nbsp;·&nbsp; 7対1の悪夢のリマッチ — ダラス決戦
+  </div>
+
+  <div class="match-teasers anim go fadeUp" style="animation-delay:.44s">
+    <div class="teaser">🇦🇷 アルゼンチン <span class="vs">vs</span> クロアチア 🇭🇷 · メッシの復讐</div>
+    <div class="teaser">🇪🇸 スペイン <span class="vs">vs</span> モロッコ 🇲🇦</div>
+    <div class="teaser">🇯🇵 日本 <span class="vs">vs</span> サウジアラビア 🇸🇦</div>
+  </div>
+</div>
+
+<!-- ══ S02 YESTERDAY ══ -->
+<div id="slide-2" class="slide">
+  <div class="ep-label">WORLDCUP · DAILY EP06</div>
+  <div class="slide-num">02 / 05</div>
+  <div class="ai-badge">AI ANALYSIS · 2026.06.27</div>
+
+  <div class="section-label anim go fadeIn">昨日の結果 + AI精度検証 · June 26</div>
+  <h2 class="section-title anim go fadeUp" style="animation-delay:.1s">
+    韓国16強<span class="miss">敗退</span>、フランス・オランダ<span>AI的中</span>
+  </h2>
+
+  <div class="results-grid">
+    <div class="result-row miss-row anim go fadeUp" style="animation-delay:.15s">
+      <span class="group-tag">GRP F</span>
+      <span class="team-name">🇰🇷 韓国</span>
+      <div class="score-box">
+        <span class="score">1</span>
+        <span class="score-dash">—</span>
+        <span class="score">2</span>
+      </div>
+      <span class="team-name right">ポルトガル 🇵🇹</span>
+      <span class="ai-tag miss">MISS 番狂わせ外れ</span>
+    </div>
+    <div class="result-row anim go fadeUp" style="animation-delay:.25s">
+      <span class="group-tag">GRP C</span>
+      <span class="team-name">🇫🇷 フランス</span>
+      <div class="score-box">
+        <span class="score">2</span>
+        <span class="score-dash">—</span>
+        <span class="score">0</span>
+      </div>
+      <span class="team-name right">イングランド 🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+      <span class="ai-tag hit">HIT 方向的中</span>
+    </div>
+    <div class="result-row anim go fadeUp" style="animation-delay:.35s">
+      <span class="group-tag">GRP E</span>
+      <span class="team-name">🇳🇱 オランダ</span>
+      <div class="score-box">
+        <span class="score">3</span>
+        <span class="score-dash">—</span>
+        <span class="score">0</span>
+      </div>
+      <span class="team-name right">アメリカ 🇺🇸</span>
+      <span class="ai-tag hit">HIT 方向的中</span>
+    </div>
+    <div class="result-row miss-row anim go fadeUp" style="animation-delay:.45s">
+      <span class="group-tag">GRP D</span>
+      <span class="team-name">🇧🇪 ベルギー</span>
+      <div class="score-box">
+        <span class="score">1</span>
+        <span class="score-dash">—</span>
+        <span class="score">0</span>
+      </div>
+      <span class="team-name right">イタリア 🇮🇹</span>
+      <span class="ai-tag miss">MISS ベルギー番狂わせ</span>
+    </div>
+  </div>
+
+  <div class="accuracy-bar anim go fadeIn" style="animation-delay:.6s">
+    昨日のAI的中率 &nbsp;→&nbsp; 4試合中<span>2試合方向的中</span> &nbsp;·&nbsp; <strong>50%</strong> &nbsp;·&nbsp; AIも謙虚になります
+  </div>
+</div>
+
+<!-- ══ S03 PREDICTION 1 (BRAZIL vs GERMANY) ══ -->
+<div id="slide-3" class="slide">
+  <div class="ep-label">WORLDCUP · DAILY EP06</div>
+  <div class="slide-num">03 / 05</div>
+  <div class="ai-badge">AI ANALYSIS · 2026.06.27</div>
+
+  <span class="revenge-badge anim go fadeIn">⚡ 7対1リマッチ · グループA最終決戦</span>
+  <span class="section-label anim go fadeIn" style="animation-delay:.05s">メインマッチ AI予測</span>
+
+  <div class="match-banner anim go fadeUp" style="animation-delay:.1s">
+    <div class="team-block">
+      <div class="team-flag">🇧🇷</div>
+      <div class="team-nm pick">ブラジル</div>
+    </div>
+    <div class="pred-score-block">
+      <span class="pred-score">2</span>
+      <span class="pred-dash">—</span>
+      <span class="pred-score">1</span>
+    </div>
+    <div class="team-block">
+      <div class="team-flag">🇩🇪</div>
+      <div class="team-nm">ドイツ</div>
+    </div>
+  </div>
+
+  <div class="analysis-grid">
+    <div class="reason-card anim go fadeUp" style="animation-delay:.2s">
+      <div class="reason-num">REASON 01</div>
+      <div class="reason-text">ヴィニシウス・ジュニオール — 今大会最高フォーム、ドイツのディフェンスライン裏への侵入で群を抜く</div>
+    </div>
+    <div class="reason-card anim go fadeUp" style="animation-delay:.3s">
+      <div class="reason-num">REASON 02</div>
+      <div class="reason-text">ドイツのハイプレスの逆説 — ブラジルの素早いカウンターに脆弱。2014年のトラウマが守備戦術をより慎重にした</div>
+    </div>
+    <div class="reason-card anim go fadeUp" style="animation-delay:.4s">
+      <div class="reason-num">REASON 03</div>
+      <div class="reason-text">ダラスのホームアドバンテージ — テキサスは南米ファン層が強く、ブラジルのホームの雰囲気が期待される</div>
+    </div>
+  </div>
+
+  <div class="confidence-bar anim go fadeIn" style="animation-delay:.55s">
+    <span class="conf-label">AI CONFIDENCE</span>
+    <div class="conf-track"><div class="conf-fill"></div></div>
+    <span class="conf-pct">58%</span>
+  </div>
+  <div class="ai-pick-label anim go fadeIn" style="animation-delay:.65s">
+    AI PICK → <strong>ブラジル2-1勝利 · ヴィニシウス決定的活躍</strong>
+  </div>
+</div>
+
+<!-- ══ S04 QUICK PICKS ══ -->
+<div id="slide-4" class="slide">
+  <div class="ep-label">WORLDCUP · DAILY EP06</div>
+  <div class="slide-num">04 / 05</div>
+  <div class="ai-badge">AI ANALYSIS · 2026.06.27</div>
+
+  <span class="section-label anim go fadeIn">今日のAI予測</span>
+  <h2 class="section-title anim go fadeUp" style="animation-delay:.1s">
+    4試合<span>全体ピック</span>
+  </h2>
+
+  <div class="picks-grid">
+    <div class="pick-row anim go fadeUp" style="animation-delay:.15s">
+      <span class="grp">A組</span>
+      <span class="t-name">🇧🇷 ブラジル</span>
+      <span class="pred-sc">2 — 1</span>
+      <span class="t-name right">ドイツ 🇩🇪</span>
+      <span class="conf">信頼度 58%</span>
+      <span class="pick-tag">ブラジル勝</span>
+    </div>
+    <div class="pick-row highlight-top anim go fadeUp" style="animation-delay:.25s">
+      <span class="grp">K組</span>
+      <span class="t-name">🇦🇷 アルゼンチン</span>
+      <span class="pred-sc">2 — 1</span>
+      <span class="t-name right">クロアチア 🇭🇷</span>
+      <span class="conf">信頼度 65%</span>
+      <span class="pick-tag">⭐ TOP</span>
+    </div>
+    <div class="pick-row anim go fadeUp" style="animation-delay:.35s">
+      <span class="grp">C組</span>
+      <span class="t-name">🇪🇸 スペイン</span>
+      <span class="pred-sc">1 — 1</span>
+      <span class="t-name right">モロッコ 🇲🇦</span>
+      <span class="conf">信頼度 53%</span>
+      <span class="pick-tag">引き分け</span>
+    </div>
+    <div class="pick-row anim go fadeUp" style="animation-delay:.45s">
+      <span class="grp">G組</span>
+      <span class="t-name">🇯🇵 日本</span>
+      <span class="pred-sc">2 — 0</span>
+      <span class="t-name right">サウジアラビア 🇸🇦</span>
+      <span class="conf">信頼度 62%</span>
+      <span class="pick-tag">日本勝</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ S05 VERDICT ══ -->
+<div id="slide-5" class="slide">
+  <div class="ep-label">WORLDCUP · DAILY EP06</div>
+  <div class="slide-num">05 / 05</div>
+  <div class="ai-badge">AI ANALYSIS · 2026.06.27</div>
+
+  <div class="verdict-top anim go fadeUp">
+    <div class="verdict-left">
+      <div class="section-label">AI最終判定</div>
+      <h2 class="verdict-title">今日の<span class="acc">AIピック</span></h2>
+      <div class="picks-summary">
+        <div class="pick-item">
+          <div class="dot"></div>
+          <span><strong>ブラジル 2–1 ドイツ</strong> &nbsp;· 信頼度 58%</span>
+        </div>
+        <div class="pick-item">
+          <div class="dot gold"></div>
+          <span><strong>アルゼンチン 2–1 クロアチア</strong> &nbsp;· 信頼度 65% ⭐</span>
+        </div>
+        <div class="pick-item">
+          <div class="dot"></div>
+          <span><strong>スペイン 1–1 モロッコ</strong> &nbsp;· 信頼度 53%</span>
+        </div>
+        <div class="pick-item">
+          <div class="dot"></div>
+          <span><strong>日本 2–0 サウジアラビア</strong> &nbsp;· 信頼度 62%</span>
+        </div>
+      </div>
+    </div>
+    <div class="highlight-box">
+      <div class="highlight-box-title">今日のTOP AIピック</div>
+      <div class="highlight-pred">🇦🇷 <span>2</span> — <span>1</span> 🇭🇷</div>
+      <div class="highlight-note">
+        <strong>アルゼンチン vs クロアチア</strong> — 2022年カタール準決勝、クロアチアがメッシの夢にブレーキをかけました。ニューヨーク2026、メッシがその借りを返しにきます。信頼度<strong>65%</strong>、今日最高確信予測。
+      </div>
+      <div class="caution-alert">
+        ⚡ 注意 · モドリッチがまた世界を驚かせる可能性あり — 38歳の伝説はまだ終わっていない
+      </div>
+    </div>
+  </div>
+
+  <p class="subscribe-cta anim go fadeIn" style="animation-delay:.4s">
+    明日は結果検証 — <span>チャンネル登録</span>して一緒に確認しましょう
+  </p>
+</div>
+
+<script>
+  let current = 1;
+  const total = 5;
+
+  function showSlide(n) {
+    document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+    const target = document.getElementById('slide-' + n);
+    if (target) {
+      target.classList.add('active');
+      target.querySelectorAll('.anim').forEach(el => {
+        el.classList.remove('go');
+        void el.offsetWidth;
+        el.classList.add('go');
+      });
+      current = n;
+    }
+  }
+
+  window.goToSlide = showSlide;
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') showSlide(Math.min(current + 1, total));
+    if (e.key === 'ArrowLeft') showSlide(Math.max(current - 1, 1));
+  });
+
+  showSlide(1);
+</script>
+</body>
+</html>
