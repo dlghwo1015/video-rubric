@@ -1,0 +1,60 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 7,
+  "date": "2026-06-28",
+  "stage": "Round of 32 — Day 1",
+  "title_ko": "2026-06-28 오늘의 경기 AI 예측 — 아르헨티나 vs 잉글랜드, 프랑스 vs 네덜란드",
+  "title_ja": "2026-06-28 今日の試合 AI予測 — アルゼンチン vs イングランド、フランス vs オランダ",
+  "title_en": "2026-06-28 Match Predictions by AI — Argentina vs England, France vs Netherlands",
+  "korea_match": false,
+  "matches_today": [
+    { "id": "m1", "team_a": "Argentina",  "team_b": "England",     "stage": "R32", "venue": "MetLife Stadium, New York",  "kickoff_kst": "03:00" },
+    { "id": "m2", "team_a": "France",     "team_b": "Netherlands", "stage": "R32", "venue": "Rose Bowl, Pasadena",        "kickoff_kst": "06:00" },
+    { "id": "m3", "team_a": "Brazil",     "team_b": "Canada",      "stage": "R32", "venue": "AT&T Stadium, Dallas",       "kickoff_kst": "09:00" },
+    { "id": "m4", "team_a": "Spain",      "team_b": "Australia",   "stage": "R32", "venue": "Levi's Stadium, San Jose",   "kickoff_kst": "12:00" }
+  ],
+  "yesterday_results": [
+    { "team_a": "Brazil",     "score_a": 2, "score_b": 1, "team_b": "Germany",      "ai_pred": "2-1 Brazil",     "ai_correct": true  },
+    { "team_a": "Argentina",  "score_a": 2, "score_b": 1, "team_b": "Croatia",      "ai_pred": "2-1 Argentina",  "ai_correct": true  },
+    { "team_a": "Spain",      "score_a": 1, "score_b": 1, "team_b": "Morocco",      "ai_pred": "1-1 Draw",       "ai_correct": true  },
+    { "team_a": "Japan",      "score_a": 2, "score_b": 0, "team_b": "Saudi Arabia", "ai_pred": "2-0 Japan",      "ai_correct": true  }
+  ],
+  "ai_predictions": [
+    { "match": "Argentina vs England",   "pred_a": 2, "pred_b": 1, "confidence": "62%", "pick": "Argentina"   },
+    { "match": "France vs Netherlands",  "pred_a": 2, "pred_b": 0, "confidence": "67%", "pick": "France"      },
+    { "match": "Brazil vs Canada",       "pred_a": 3, "pred_b": 0, "confidence": "85%", "pick": "Brazil"      },
+    { "match": "Spain vs Australia",     "pred_a": 2, "pred_b": 0, "confidence": "78%", "pick": "Spain"       }
+  ],
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "16강, 드디어 시작됩니다. 아르헨티나 대 잉글랜드 — 1986년 마라도나의 '신의 손', 1998 생제르망, 2022 카타르의 기억이 한꺼번에 살아납니다. 프랑스 대 네덜란드, 브라질 대 캐나다, 스페인 대 오스트레일리아. AI가 오늘 16강 4경기를 완전 분석합니다.",
+      "narration_ja": "ラウンド32、ついに開幕です。アルゼンチン対イングランド — 1986年マラドーナの「神の手」、1998年サンジェルマン、2022年カタールの記憶が一斉によみがえります。フランス対オランダ、ブラジル対カナダ、スペイン対オーストラリア。AIが今日のラウンド32・4試合を完全分析します。",
+      "narration_en": "The Round of 32 begins. Argentina vs England — the Hand of God in '86, St. Germain in '98, Qatar 2022. Every grudge match in football history compressed into one fixture. France vs Netherlands, Brazil vs Canada, Spain vs Australia. AI breaks down all four Round of 32 matches today."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "먼저 어제 AI 예측 적중률 확인합니다. 브라질 2-1 독일 — AI 픽 적중! 아르헨티나 2-1 크로아티아 — AI 픽 적중! 스페인 1-1 모로코 무승부 — AI 픽 적중! 일본 2-0 사우디아라비아 — AI 픽 적중! 4경기 전승. 어제 AI 적중률 100%. 오늘도 이 기세를 이어갑니다.",
+      "narration_ja": "まず昨日のAI予測の的中率を確認します。ブラジル2-1ドイツ — AIピック的中！アルゼンチン2-1クロアチア — AIピック的中！スペイン1-1モロッコ引き分け — AIピック的中！日本2-0サウジアラビア — AIピック的中！4試合全勝。昨日のAI的中率100%。今日もこの勢いを続けます。",
+      "narration_en": "First — yesterday's AI accuracy check. Brazil 2-1 Germany — AI hit! Argentina 2-1 Croatia — AI hit! Spain 1-1 Morocco draw — AI hit! Japan 2-0 Saudi Arabia — AI hit! Four from four. Yesterday's AI accuracy: 100%. We carry that momentum into today."
+    },
+    {
+      "id": "s03_prediction1",
+      "narration": "오늘 최고의 매치, 아르헨티나 대 잉글랜드. AI 예측은 아르헨티나 2-1 잉글랜드. 신뢰도 62%. 세 가지 근거. 첫째, 메시는 이번이 마지막 월드컵 — 절박함이 가장 강한 연료입니다. 둘째, 잉글랜드 중원이 벨링엄 부재로 흔들렸습니다 — 조별리그 세 경기에서 드러난 창의력 부재가 오늘 치명타가 될 수 있습니다. 셋째, AI 데이터 분석 결과 역대 맞대결에서 아르헨티나가 통산 리드 중. 신뢰도 62% — 팽팽하지만 AI는 아르헨티나를 선택합니다.",
+      "narration_ja": "今日最大のマッチ、アルゼンチン対イングランド。AI予測はアルゼンチン2-1イングランド。信頼度62%。三つの根拠。第一、メッシにとってこれが最後のワールドカップ — 切迫感が最強の燃料です。第二、イングランドの中盤はベリンガム不在で揺れました — グループリーグ3試合で露呈した創造性の欠如が今日の致命傷になりえます。第三、AI過去データ分析ではアルゼンチンが通算リード中。信頼度62% — 接戦ですがAIはアルゼンチンを選択します。",
+      "narration_en": "Today's centrepiece: Argentina vs England. AI prediction — Argentina 2-1 England. Confidence 62%. Three reasons. First, Messi knows this could be his last World Cup — desperation is the most powerful fuel. Second, England's midfield has been shaky without Bellingham — three group stage games exposed a creativity gap that could prove fatal today. Third, AI historical data shows Argentina leading the all-time head-to-head. Confidence 62% — tight, but AI picks Argentina."
+    },
+    {
+      "id": "s04_prediction2",
+      "narration": "나머지 세 경기 예측합니다. 프랑스 대 네덜란드 — AI 픽 프랑스 2-0. 신뢰도 67%. 음바페 이후 프랑스는 두 번째 전성기입니다 — 뎁스가 여전히 최상급. 네덜란드 가크포는 위협적이지만 프랑스 수비 조직이 막아냅니다. 브라질 대 캐나다 — AI 픽 브라질 3-0. 신뢰도 85%. 오늘 가장 확실한 예측입니다. 비니시우스·로드리구의 투톱이 캐나다 수비를 완전히 능가합니다. 스페인 대 오스트레일리아 — AI 픽 스페인 2-0. 신뢰도 78%. 스페인의 볼 점유 축구가 오세아니아 대표를 압도합니다.",
+      "narration_ja": "残り3試合を予測します。フランス対オランダ — AIピックフランス2-0。信頼度67%。ムバッペ後のフランスは第2の全盛期 — 뎁스は依然として최상급。オランダ・ガクポは脅威的ですがフランスの守備組織が抑えます。ブラジル対カナダ — AIピックブラジル3-0。信頼度85%。今日最も確実な予測です。ヴィニシウス＆ロドリゴのツートップがカナダの守備を완전히 능가します。スペイン対オーストラリア — AIピックスペイン2-0。信頼度78%。スペインのボール支配サッカーがオセアニア代表を압도します。",
+      "narration_en": "Three more predictions. France vs Netherlands — AI pick France 2-0, confidence 67%. Post-Mbappé France is entering a second golden era — squad depth remains elite. Gakpo is dangerous, but France's defensive structure holds. Brazil vs Canada — AI pick Brazil 3-0, confidence 85%. Today's most certain call. Vinícius and Rodrygo's two-man press dismantles Canada's defense completely. Spain vs Australia — AI pick Spain 2-0, confidence 78%. Spain's possession football overwhelms the Oceania representative."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘 AI 최종 판정 정리합니다. 아르헨티나 2-1 잉글랜드, 신뢰도 62%. 프랑스 2-0 네덜란드, 신뢰도 67%. 브라질 3-0 캐나다, 신뢰도 85%. 스페인 2-0 오스트레일리아, 신뢰도 78%. 오늘의 TOP AI 픽은 아르헨티나의 잉글랜드 격파입니다. 메시의 마지막 춤 — AI는 아르헨티나를 선택합니다. 내일 결과 검증 — 채널 구독하고 함께 확인하세요.",
+      "narration_ja": "今日のAI最終判定をまとめます。アルゼンチン2-1イングランド、信頼度62%。フランス2-0オランダ、信頼度67%。ブラジル3-0カナダ、信頼度85%。スペイン2-0オーストラリア、信頼度78%。今日のAI最高ピックはアルゼンチンのイングランド撃破です。メッシの最後のダンス — AIはアルゼンチンを選択します。明日は結果検証 — チャンネル登録して一緒に確認しましょう。",
+      "narration_en": "Today's AI final verdict. Argentina 2-1 England, confidence 62%. France 2-0 Netherlands, confidence 67%. Brazil 3-0 Canada, confidence 85%. Spain 2-0 Australia, confidence 78%. Today's top AI pick: Argentina topples England. Messi's last dance — AI picks Argentina. Result verification tomorrow — subscribe and follow along."
+    }
+  ]
+}
