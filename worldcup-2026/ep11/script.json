@@ -1,0 +1,88 @@
+{
+  "series": "worldcup-2026",
+  "ep_number": 11,
+  "ep_role": "group_preview",
+  "group": "H조",
+  "title_ko": "H조 완전 분석 — 개최국 캐나다의 꿈 vs 루이스 디아스의 콜롬비아",
+  "title_ja": "H組完全分析 — 開催国カナダの夢 vs ルイス・ディアスのコロンビア",
+  "title_en": "Group H Deep Dive — Host Canada's Dream vs Luis Díaz's Colombia",
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "role": "hook",
+      "tone": "stadium",
+      "bg": "#0a0e1a",
+      "accent": "#c9a227",
+      "visual_note": "캐나다 단풍잎과 FIFA 트로피가 교차하는 인트로, 경기장 조명 플래시",
+      "narration": "H조는 대서양을 가로지르는 드라마입니다. 1986년 이후 40년 만에 월드컵에 나서는 개최국 캐나다. 루이스 디아스의 콜롬비아. 사디오 마네의 세네갈. 미트로비치의 세르비아. 단 2장의 16강 티켓을 향한 4팀의 전쟁이 시작됩니다.",
+      "narration_ja": "H組は大西洋を越えるドラマです。1986年以来40年ぶりにワールドカップに臨む開催国カナダ。ルイス・ディアスのコロンビア。サディオ・マネのセネガル。ミトロヴィッチのセルビア。たった2枚の決勝トーナメント進出チケットをかけた4チームの戦いが始まります。",
+      "narration_en": "Group H is a drama that spans the Atlantic. Host Canada returns to the World Cup for the first time since 1986. Luis Díaz's Colombia. Sadio Mané's Senegal. Mitrović's Serbia. The battle for just two knockout-stage tickets begins now."
+    },
+    {
+      "id": "s02_teams",
+      "role": "data",
+      "tone": "data",
+      "bg": "#0e1828",
+      "accent": "#2ecc71",
+      "visual_note": "4개국 국기 그리드, FIFA 랭킹 숫자 애니메이션",
+      "narration": "H조 4개 팀을 소개합니다. 개최국 캐나다 — FIFA 랭킹 42위, 알폰소 데이비스와 조나단 데이빗의 첫 홈 월드컵. 콜롬비아 — FIFA 랭킹 15위, 2024 코파 아메리카 준우승의 황금 세대. 세네갈 — FIFA 랭킹 21위, 아프리카 챔피언. 세르비아 — FIFA 랭킹 28위, 미트로비치-블라호비치 듀오.",
+      "narration_ja": "H組の4チームをご紹介します。開催国カナダ — FIFAランキング42位、アルフォンソ・デイヴィスとジョナサン・デイヴィッドの初のホームワールドカップ。コロンビア — FIFAランキング15位、2024コパ・アメリカ準優勝の黄金世代。セネガル — FIFAランキング21位、アフリカチャンピオン。セルビア — FIFAランキング28位、ミトロヴィッチ＆ブラホヴィッチのデュオ。",
+      "narration_en": "Meet the four teams of Group H. Host Canada — FIFA rank 42, Alphonso Davies and Jonathan David's first home World Cup. Colombia — FIFA rank 15, the golden generation after their 2024 Copa América final. Senegal — FIFA rank 21, reigning African champions. Serbia — FIFA rank 28, the Mitrović-Vlahović striker duo."
+    },
+    {
+      "id": "s03_team1",
+      "role": "analysis",
+      "tone": "analysis",
+      "bg": "#0e1828",
+      "accent": "#ff0000",
+      "visual_note": "캐나다 단풍잎 모티프, 알폰소 데이비스 액션샷 스타일",
+      "narration": "캐나다. 1986년 멕시코 월드컵 이후 40년 만의 본선 무대입니다. 개최국 자격으로 돌아온 이 팀은 더 이상 순수한 감동 팀이 아닙니다. 알폰소 데이비스 — 바이에른 뮌헨의 왼쪽 방패이자 세계 최고 레프트백. 조나단 데이빗 — 매 시즌 20골 이상을 기록하는 리그앙 최고의 스트라이커. 캐나다는 진짜 위험한 팀이 됐습니다.",
+      "narration_ja": "カナダ。1986年メキシコ大会以来40年ぶりのワールドカップ本大会です。開催国として戻ってきたこのチームはもはや感動だけのチームではありません。アルフォンソ・デイヴィス — バイエルン・ミュンヘンの左サイドバックで世界最高クラス。ジョナサン・デイヴィッド — フランスリーグで毎シーズン20ゴール以上を記録するストライカー。カナダは本当に危険なチームになりました。",
+      "narration_en": "Canada. Their first World Cup since 1986 — forty years away. Back as co-hosts, this team is no longer just a sentimental story. Alphonso Davies — Bayern Munich's world-class left back. Jonathan David — Ligue 1's most lethal striker, 20-plus goals every season. Canada is genuinely dangerous now."
+    },
+    {
+      "id": "s04_team2",
+      "role": "analysis",
+      "tone": "analysis",
+      "bg": "#0e1828",
+      "accent": "#ffd700",
+      "visual_note": "콜롬비아 노란 유니폼 모티프, 루이스 디아스 드리블 스타일",
+      "narration": "콜롬비아. 루이스 디아스가 이끄는 황금 세대입니다. 리버풀의 에이스 루이스 디아스는 2026년 최정상 컨디션에 있을 것입니다. 애스턴 빌라의 존 두란 — 폭발적인 스피드와 결정력. 2024 코파 아메리카 결승에서 아르헨티나에 惜敗했지만, 그 경험은 이 팀을 더 강하게 만들었습니다. 수비 조직력은 남미 최고 수준입니다.",
+      "narration_ja": "コロンビア。ルイス・ディアスが率いる黄金世代です。リバプールのエース、ルイス・ディアスは2026年にピークコンディションにあるでしょう。アストン・ヴィラのジョン・デュラン — 爆発的なスピードと決定力。2024コパ・アメリカ決勝でアルゼンチンに惜敗しましたが、その経験はチームをさらに強くしました。守備組織力は南米最高水準です。",
+      "narration_en": "Colombia. The golden generation led by Luis Díaz. Liverpool's star winger will be at his absolute peak in 2026. Jhon Durán of Aston Villa — explosive pace and clinical finishing. They fell to Argentina in the 2024 Copa América final, but that experience only hardened them. Their defensive organization is the best in South America."
+    },
+    {
+      "id": "s05_team3",
+      "role": "analysis",
+      "tone": "analysis",
+      "bg": "#0e1828",
+      "accent": "#1abc9c",
+      "visual_note": "세네갈 녹색-금색 모티프, 사디오 마네 특유의 세레모니",
+      "narration": "세네갈. 2021년 아프리카 네이션스컵 챔피언입니다. 사디오 마네 — 34세이지만 여전히 아프리카 축구의 살아있는 전설. 이스마일라 사르의 폭발적인 스피드. 첼시의 니콜라스 잭슨. 세네갈의 진짜 강점은 수비입니다. 쿨리발리가 이끄는 세계 최고 수준의 센터백 라인. 카타르에서 8강까지 오른 경험이 이 팀을 더욱 단단하게 만들었습니다.",
+      "narration_ja": "セネガル。2021年アフリカネイションズカップチャンピオンです。サディオ・マネ — 34歳でもアフリカサッカーの生ける伝説。イスマイラ・サールの爆発的なスピード。チェルシーのニコラス・ジャクソン。セネガルの本当の強みは守備です。クリバリが率いる世界最高水準のセンターバックライン。カタールでベスト8まで進んだ経験がこのチームをさらに強固にしました。",
+      "narration_en": "Senegal. 2021 Africa Cup of Nations champions. Sadio Mané — 34 years old but still the living legend of African football. Ismaïla Sarr's devastating pace. Nicolas Jackson of Chelsea. Senegal's true strength is their defense. Koulibaly-led center-back line among the world's best. Their run to the Qatar quarterfinals only made them stronger."
+    },
+    {
+      "id": "s06_predict",
+      "role": "analysis",
+      "tone": "analysis",
+      "bg": "#0e1828",
+      "accent": "#e74c3c",
+      "visual_note": "전술 보드 스타일, 3개 핵심 변수 카드 애니메이션",
+      "narration": "H조 결정적 변수 세 가지. 첫째, 캐나다의 홈 이점 — BMO 필드와 BC 플레이스에서의 홈 경기. 캐나다 팬의 열기는 조별리그를 뒤흔들 수 있습니다. 둘째, 마네의 컨디션 — 34세의 마네가 2022 카타르의 부상 악몽 없이 풀컨디션을 유지한다면 세네갈은 1위 통과도 가능합니다. 셋째, 세르비아의 폭발 가능성 — 미트로비치와 블라호비치가 동시에 터지면 어떤 팀도 막을 수 없습니다.",
+      "narration_ja": "H組の決定的な3つの変数。第一に、カナダのホームアドバンテージ — BMOフィールドとBCプレイスでのホームゲーム。カナダファンの熱気はグループリーグを揺るがす可能性があります。第二に、マネのコンディション — 34歳のマネが2022カタルでの負傷悪夢なくフルコンディションを維持すれば、セネガルは首位通過も可能です。第三に、セルビアの爆発の可能性 — ミトロヴィッチとブラホヴィッチが同時に爆発すれば、どのチームも止められません。",
+      "narration_en": "Three decisive variables in Group H. First, Canada's home advantage — games at BMO Field and BC Place. The crowd factor could swing any match. Second, Mané's fitness — if the 34-year-old stays clear of the injury nightmare that wrecked his Qatar campaign, Senegal could top the group. Third, Serbia's explosive potential — if Mitrović and Vlahović both fire at once, no defense in this group can hold."
+    },
+    {
+      "id": "s07_verdict",
+      "role": "verdict",
+      "tone": "verdict",
+      "bg": "#0a0e1a",
+      "accent": "#c9a227",
+      "visual_note": "최종 예측 테이블, 진출팀 녹색 하이라이트, 탈락팀 페이드",
+      "narration": "최종 예측입니다. 16강 진출팀: 콜롬비아와 세네갈. 콜롬비아는 루이스 디아스의 개인 능력과 강력한 수비 조직력으로 1위 통과. 세네갈은 마네와 쿨리발리의 리더십으로 2위 진출. 캐나다는 홈 이점에도 불구하고 국제 무대 경험 부족으로 3위 탈락. 세르비아는 공격 의존도 편중으로 4위에 그칩니다. 다음 EP12 — I조 완전 분석!",
+      "narration_ja": "最終予測です。決勝トーナメント進出チーム：コロンビアとセネガル。コロンビアはルイス・ディアスの個人能力と強固な守備組織力でグループ首位通過。セネガルはマネとクリバリのリーダーシップで2位進出。カナダはホームアドバンテージにもかかわらず国際舞台の経験不足で3位敗退。セルビアは攻撃依存度の偏重で4位に留まります。次回EP12 — I組完全分析！",
+      "narration_en": "Final prediction. Advancing to the round of sixteen: Colombia and Senegal. Colombia tops the group on the strength of Luis Díaz's brilliance and their ironclad defensive structure. Senegal advances second, driven by Mané and Koulibaly's leadership. Canada, despite the home crowd, falls short on international experience and finishes third. Serbia's striker-heavy one-dimensionality leaves them fourth. Next up: EP12 — Group I full breakdown!"
+    }
+  ]
+}
