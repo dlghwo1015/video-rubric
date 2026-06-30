@@ -1,0 +1,105 @@
+{
+  "series": "worldcup-2026",
+  "series_config": {
+    "name": "2026 월드컵 예측 대결",
+    "tagline": "역사상 가장 큰 월드컵을 예측하다",
+    "blogs": {
+      "ko": "honest-lab",
+      "ja": "dx-pioneer-jp",
+      "en": "dx-pioneer-en"
+    },
+    "youtube_channel": "honest-lab",
+    "langs": [
+      "ko",
+      "ja",
+      "en"
+    ],
+    "tts": {
+      "ko": "ko-KR-SunHiNeural",
+      "ja": "ja-JP-NanamiNeural",
+      "en": "en-US-AriaNeural"
+    }
+  },
+  "ep": {
+    "id": "worldcup-2026-011",
+    "series": "worldcup-2026",
+    "ep_number": 11,
+    "title_ko": "H조 완전 분석 — 개최국 캐나다의 꿈 vs 루이스 디아스의 콜롬비아",
+    "title_ja": "H組完全分析 — 開催国カナダの夢 vs ルイス・ディアスのコロンビア",
+    "title_en": "Group H Deep Dive — Host Canada's Dream vs Luis Díaz's Colombia",
+    "ep_role": "group_preview",
+    "group_label": "H조",
+    "needs_live_data": 0,
+    "pub_date": null,
+    "status": "planned",
+    "post_id_ko": null,
+    "post_id_ja": null,
+    "post_id_en": null,
+    "notes": null,
+    "created_at": null,
+    "youtube_video_id": null,
+    "youtube_video_id_ja": null,
+    "youtube_video_id_en": null,
+    "yt_public_ko": 0,
+    "yt_public_ja": 0,
+    "yt_public_en": 0,
+    "script_status": "none",
+    "github_commit": null
+  },
+  "ep_role": "group_preview",
+  "scene_structure": [
+    {
+      "id": "s01_hook",
+      "role": "hook",
+      "desc": "훅 — 40년 만의 귀환, 개최국 캐나다 vs 남미의 기세 콜롬비아"
+    },
+    {
+      "id": "s02_teams",
+      "role": "data",
+      "desc": "H조 4개 팀 소개 — 캐나다·콜롬비아·세네갈·세르비아"
+    },
+    {
+      "id": "s03_team1",
+      "role": "analysis",
+      "desc": "캐나다 분석 — 알폰소 데이비스·조나단 데이빗, 개최국의 가능성"
+    },
+    {
+      "id": "s04_team2",
+      "role": "analysis",
+      "desc": "콜롬비아 분석 — 루이스 디아스·존 두란, 2024 코파 아메리카 준우승의 기세"
+    },
+    {
+      "id": "s05_team3",
+      "role": "analysis",
+      "desc": "세네갈 분석 — 사디오 마네의 마지막 도전, 아프리카 챔피언의 저력"
+    },
+    {
+      "id": "s06_predict",
+      "role": "analysis",
+      "desc": "예측 + 변수 — 세르비아 미트로비치 위협, 캐나다 홈 압박의 양날"
+    },
+    {
+      "id": "s07_verdict",
+      "role": "verdict",
+      "desc": "최종 예측 — 16강 통과 2팀 발표"
+    }
+  ],
+  "research_guide": "FIFA rankings, recent form, key players for Canada/Colombia/Senegal/Serbia, Alfonso Davies/Jonathan David Canada stars, Luis Díaz/Jhon Duran Colombia, Sadio Mané/Ismaïla Sarr Senegal, Mitrović/Vlahović Serbia, host nation advantage, 2024 Copa America context",
+  "needs_live_data": false,
+  "pub_date": null,
+  "blogs": {
+    "ko": "honest-lab",
+    "ja": "dx-pioneer-jp",
+    "en": "dx-pioneer-en"
+  },
+  "langs": [
+    "ko",
+    "ja",
+    "en"
+  ],
+  "tts": {
+    "ko": "ko-KR-SunHiNeural",
+    "ja": "ja-JP-NanamiNeural",
+    "en": "en-US-AriaNeural"
+  }
+}
