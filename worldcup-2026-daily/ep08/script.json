@@ -1,0 +1,143 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 8,
+  "date": "2026-07-01",
+  "title_ko": "2026-07-01 오늘의 경기 AI 예측 — 네덜란드 vs 코트디부아르, 호주 vs 볼리비아",
+  "title_ja": "2026-07-01 今日の試合 AI予測 — オランダ vs コートジボワール、オーストラリア vs ボリビア",
+  "title_en": "2026-07-01 Match Predictions by AI — Netherlands vs Ivory Coast, Australia vs Bolivia",
+  "korea_match": false,
+  "matches_today": [
+    {
+      "id": "m1",
+      "team_a": "Netherlands",
+      "team_b": "Ivory Coast",
+      "group": "J",
+      "venue": "AT&T Stadium, Dallas",
+      "kickoff_kst": "03:00"
+    },
+    {
+      "id": "m2",
+      "team_a": "USA",
+      "team_b": "Poland",
+      "group": "K",
+      "venue": "Rose Bowl, Pasadena",
+      "kickoff_kst": "06:00"
+    },
+    {
+      "id": "m3",
+      "team_a": "Nigeria",
+      "team_b": "Serbia",
+      "group": "L",
+      "venue": "Levi's Stadium, Santa Clara",
+      "kickoff_kst": "09:00"
+    },
+    {
+      "id": "m4",
+      "team_a": "Australia",
+      "team_b": "Bolivia",
+      "group": "M",
+      "venue": "BMO Field, Toronto",
+      "kickoff_kst": "12:00"
+    }
+  ],
+  "yesterday_results": [
+    {
+      "team_a": "Brazil",
+      "score_a": 2,
+      "score_b": 0,
+      "team_b": "Chile",
+      "group": "E",
+      "ai_pred": "2-0 Brazil",
+      "ai_correct": true
+    },
+    {
+      "team_a": "Argentina",
+      "score_a": 2,
+      "score_b": 0,
+      "team_b": "Cameroon",
+      "group": "B",
+      "ai_pred": "2-0 Argentina",
+      "ai_correct": true
+    },
+    {
+      "team_a": "Belgium",
+      "score_a": 2,
+      "score_b": 1,
+      "team_b": "Egypt",
+      "group": "D",
+      "ai_pred": "2-0 Belgium",
+      "ai_correct": true
+    },
+    {
+      "team_a": "Iran",
+      "score_a": 2,
+      "score_b": 0,
+      "team_b": "Peru",
+      "group": "F",
+      "ai_pred": "1-1 Draw",
+      "ai_correct": false
+    }
+  ],
+  "ai_predictions": [
+    {
+      "match": "Netherlands vs Ivory Coast",
+      "pred_a": 2,
+      "pred_b": 0,
+      "confidence": "65%",
+      "pick": "Netherlands"
+    },
+    {
+      "match": "USA vs Poland",
+      "pred_a": 2,
+      "pred_b": 1,
+      "confidence": "58%",
+      "pick": "USA"
+    },
+    {
+      "match": "Nigeria vs Serbia",
+      "pred_a": 1,
+      "pred_b": 1,
+      "confidence": "52%",
+      "pick": "Draw"
+    },
+    {
+      "match": "Australia vs Bolivia",
+      "pred_a": 3,
+      "pred_b": 0,
+      "confidence": "72%",
+      "pick": "Australia"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "2026년 7월 1일. 그룹 스테이지가 막바지에 접어들었습니다. 오늘 AI가 가장 주목하는 경기는 네덜란드 대 코트디부아르입니다. 가나를 3-0으로 압살하며 최상의 폼에 오른 오렌지 군단이 16강을 향해 달립니다. 반면 코트디부아르는 오늘 반드시 이겨야만 살아남을 수 있는 절박한 상황. 미국 대 폴란드는 홈 팬의 열기가 뒤를 받치는 성조기 대 독수리의 대결. 나이지리아 대 세르비아는 아프리카와 유럽의 마지막 자존심 대결. 호주 대 볼리비아는 오늘 AI가 가장 자신 있는 경기 — 신뢰도 72%, 호주 3-0 완승 예측. 오늘 AI, 완전 분석합니다.",
+      "narration_ja": "2026年7月1日。グループステージがいよいよ終盤を迎えています。今日AIが最も注目する試合はオランダ対コートジボワールです。ガーナを3-0で粉砕した勢いそのまま、オレンジ軍団は決勝トーナメントへと突き進みます。一方コートジボワールは今日必ず勝たなければ敗退の瀬戸際。USA対ポーランドはホームファンの熱気が後押しする星条旗対鷹の戦い。ナイジェリア対セルビアはアフリカと欧州の最後のプライドをかけた一戦。オーストラリア対ボリビアは今日AIが最も自信を持つ試合 — 信頼度72%、オーストラリア3-0完勝予測。今日AI、完全分析します。",
+      "narration_en": "July 1st, 2026. The group stage is entering its final stretch. Today's headline match for the AI: Netherlands vs Ivory Coast. The Dutch obliterated Ghana 3-0 and are rolling at full speed toward the knockout stage. Ivory Coast, meanwhile, need a win today or they go home — desperation meets orange dominance. USA vs Poland is a star-spangled showcase in front of roaring American fans. Nigeria vs Serbia is Africa's pride against Europe's tenacity. And Australia vs Bolivia — today's highest-confidence AI pick at 72%, calling a 3-0 Australian rout. Four matches, full AI analysis."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "어제 결과 먼저 확인합니다. 브라질이 칠레를 2-0으로 완파 — AI 예측 2-0 브라질, 완벽 적중! 아르헨티나가 카메룬을 2-0으로 제압 — AI 예측 2-0 아르헨티나, 또 한 번 완벽 적중! 벨기에가 이집트를 2-1로 꺾었습니다 — AI는 2-0 벨기에 승리를 예측해 방향은 완벽하게 맞았습니다. 이란이 페루를 2-0으로 꺾는 이변 — AI는 1-1 무승부를 예측해 완전히 빗나갔습니다. 어제 AI 적중률: 4경기 중 3경기, 75%! 최근 흐름이 살아나고 있습니다 — 오늘도 이 기세를 이어갈 수 있을까요?",
+      "narration_ja": "まず昨日の結果を確認します。ブラジルがチリを2-0で完封 — AI予測2-0ブラジル、完璧的中！アルゼンチンがカメルーンを2-0で制圧 — AI予測2-0アルゼンチン、再び完璧的中！ベルギーがエジプトを2-1で下す — AIは2-0ベルギー勝利を予測し方向は完璧に合致。イランがペルーを2-0で下すサプライズ — AIは1-1引き分けを予測し完全に外れました。昨日のAI的中率：4試合中3試合、75%！最近の流れが復活しています — 今日もこの勢いを継続できるでしょうか？",
+      "narration_en": "Yesterday's results first. Brazil crushed Chile 2-0 — AI called Brazil 2-0, perfect hit! Argentina controlled Cameroon 2-0 — AI called Argentina 2-0, another perfect hit! Belgium edged Egypt 2-1 while AI predicted 2-0 Belgium — direction spot on, score one off. But Iran beat Peru 2-0 while AI predicted 1-1 — a clean miss. Yesterday's accuracy: 3 from 4, 75%! The AI's form is trending upward. Can we keep the streak going today?"
+    },
+    {
+      "id": "s03_prediction1",
+      "narration": "오늘의 핵심 매치 — 네덜란드 대 코트디부아르. AI 예측: 네덜란드 2-0 완승. 신뢰도 65%. 이유 세 가지. 첫째, 네덜란드는 현재 대회에서 가장 뜨거운 팀입니다. 가나를 3-0으로 압살하며 팀 전체가 완벽한 궤도에 올랐습니다. 판 다이크의 수비 장악력, 전방의 날카로운 마무리가 완벽하게 맞아돌아가고 있습니다. 둘째, 코트디부아르는 오늘 반드시 이겨야 살아남습니다. 절박함은 에너지가 되기도 하지만 리스크도 높아집니다 — 무리한 공격은 역습에 취약한 구조를 만들고 그것은 바로 네덜란드가 가장 잘 이용하는 공간입니다. 셋째, 역사 데이터: 네덜란드는 최근 월드컵 그룹 스테이지에서 5전 4승, 아프리카 팀 상대로는 특히 강세를 보여왔습니다. AI 신뢰도 65% — 오늘 달라스에서 네덜란드 2-0 완승 예측.",
+      "narration_ja": "今日の核心マッチ — オランダ対コートジボワール。AI予測：オランダ2-0完勝。信頼度65%。三つの理由。第一、オランダは現在大会で最も勢いのあるチームです。ガーナを3-0で粉砕し、チーム全体が完璧な軌道に乗っています。ファン・ダイクの守備制圧力、前線の鋭い仕上げが完璧に噛み合っています。第二、コートジボワールは今日必ず勝たなければ生き残れません。絶迫感はエネルギーにもなりますがリスクも高まります — 無理な攻撃はカウンターアタックに脆弱な構造を生み、それはまさにオランダが最も得意とするスペースです。第三、歴史データ：オランダは直近のワールドカップグループステージで5戦4勝、アフリカ勢相手には特に強さを見せています。AI信頼度65% — 今日ダラスでオランダ2-0完勝予測。",
+      "narration_en": "Today's key match — Netherlands vs Ivory Coast. AI prediction: Netherlands 2-0. Confidence 65%. Three reasons. First, Netherlands are the hottest side at this tournament right now. The 3-0 destruction of Ghana was no fluke — Van Dijk is commanding the backline, and the attacking unit is clicking into gear. Second, Ivory Coast must win today. Desperation creates energy, but it also creates risk — an overcommitted attack leaves exactly the kind of space Netherlands exploit on the counter. Third, history: Netherlands have won 4 of their last 5 World Cup group stage matches, and their record against African sides is particularly strong. AI confidence 65% — Netherlands 2-0 in Dallas."
+    },
+    {
+      "id": "s04_prediction2",
+      "narration": "나머지 세 경기 빠른 예측입니다. 미국 대 폴란드 — AI 픽 미국 2-1. 신뢰도 58%. 로즈볼 홈 팬의 열기가 미국 선수들의 등을 밀어줍니다. 폴란드의 레반도프스키는 건재하지만 이번 대회에서 부진한 모습. 미국의 강도 높은 압박 축구가 폴란드 수비를 무너뜨릴 것입니다. 나이지리아 대 세르비아 — AI 픽 1-1 무승부. 신뢰도 52%. 두 팀 모두 공수 균형이 잘 맞아 이변이 나기 어려운 매치업. 오시멘의 스피드가 세르비아 수비를 위협하지만 미트로비치도 살아있습니다. 호주 대 볼리비아 — AI 픽 호주 3-0. 신뢰도 72%. 오늘의 최고 자신작. 볼리비아는 이번 대회 3경기에서 단 1득점에 그쳤습니다. 호주의 피지컬과 조직력이 완전히 압도할 것입니다.",
+      "narration_ja": "残り3試合の素早い予測です。USA対ポーランド — AIピックUSA 2-1。信頼度58%。ローズボウルのホームファンの熱気が米国選手たちの背中を押します。ポーランドのレバンドフスキは健在ですが今大会は不調。米国の強度の高いプレッシングサッカーがポーランドの守備を崩すでしょう。ナイジェリア対セルビア — AIピック1-1引き分け。信頼度52%。両チームとも攻守バランスが取れており番狂わせが起きにくいマッチアップ。オシメンのスピードがセルビア守備を脅かしますがミトロビッチも健在です。オーストラリア対ボリビア — AIピックオーストラリア3-0。信頼度72%。今日の最高自信作。ボリビアは今大会3試合でわずか1得点に終わっています。オーストラリアのフィジカルと組織力が完全に圧倒するでしょう。",
+      "narration_en": "Three more quick predictions. USA vs Poland — AI pick USA 2-1, confidence 58%. The Rose Bowl crowd will be electric, and that home-crowd energy is a real factor. Poland's Lewandowski is still a threat, but he's been quiet this tournament. USA's high-press style should wear them down. Nigeria vs Serbia — AI pick 1-1 draw, confidence 52%. Well-matched sides: Osimhen's pace versus Mitrovic's aerial threat. Neither defence has been watertight but neither team can fully dominate. Australia vs Bolivia — AI pick Australia 3-0, confidence 72%. Today's top pick. Bolivia have scored just one goal in three games. Australia's physicality and defensive organization should be more than enough for a dominant clean-sheet win."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘의 AI 픽 총정리. 네덜란드 2-0 코트디부아르 — 신뢰도 65%. 미국 2-1 폴란드 — 신뢰도 58%. 나이지리아 1-1 세르비아 — 신뢰도 52%. 호주 3-0 볼리비아 — 신뢰도 72% ★. 오늘의 TOP AI 픽은 호주의 대승입니다. 볼리비아는 이번 대회 내내 수비가 무너졌고 득점력 또한 최하위 수준입니다. 호주는 오늘 토론토 팬들의 응원과 함께 대회 최고 신뢰도 72%로 3-0 완승을 예측합니다. 네덜란드의 2-0 예측도 놓치지 마세요 — 오렌지 군단이 드디어 자신들의 진짜 실력을 보여주고 있습니다. 내일은 그룹 스테이지 최종일 — AI 예측 시즌 클라이맥스. 구독하고 함께 확인하세요.",
+      "narration_ja": "今日のAIピック総まとめ。オランダ2-0コートジボワール — 信頼度65%。USA 2-1ポーランド — 信頼度58%。ナイジェリア1-1セルビア — 信頼度52%。オーストラリア3-0ボリビア — 信頼度72% ★。今日のAI最高ピックはオーストラリアの大勝です。ボリビアは今大会を通じて守備が崩れ、得点力も最低レベルです。オーストラリアは今日トロントのファンの応援とともに大会最高信頼度72%で3-0完勝を予測します。オランダの2-0予測も見逃せません — オレンジ軍団がついに本来の実力を発揮し始めています。明日はグループステージ最終日 — AI予測シーズンクライマックス。チャンネル登録してご一緒に確認を。",
+      "narration_en": "Today's AI picks summary. Netherlands 2-0 Ivory Coast — confidence 65%. USA 2-1 Poland — confidence 58%. Nigeria 1-1 Serbia — confidence 52%. Australia 3-0 Bolivia — confidence 72% ★. Today's top AI pick is Australia's dominant win. Bolivia have been the weakest team at this tournament statistically — one goal scored in three games. Australia get the TOP PICK badge at 72% confidence. Netherlands 2-0 is the second one to watch — the Dutch are finally hitting their stride at exactly the right moment. Tomorrow is the last group stage day — the climax of the AI's prediction season. Subscribe and join us for the countdown."
+    }
+  ]
+}
