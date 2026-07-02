@@ -1,0 +1,144 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 8,
+  "date": "2026-07-02",
+  "title_ko": "2026-07-02 오늘의 경기 AI 예측 — 한국 vs 일본, 독일 vs 스페인 32강 격돌",
+  "title_ja": "2026-07-02 今日の試合 AI予測 — 韓国 vs 日本、ドイツ vs スペイン 32強激突",
+  "title_en": "2026-07-02 Match Predictions by AI — Korea vs Japan, Germany vs Spain in Round of 32",
+  "korea_match": true,
+  "matches_today": [
+    {
+      "id": "m1",
+      "team_a": "Germany",
+      "team_b": "Spain",
+      "stage": "Round of 32",
+      "venue": "AT&T Stadium, Arlington",
+      "kickoff_kst": "03:00"
+    },
+    {
+      "id": "m2",
+      "team_a": "South Korea",
+      "team_b": "Japan",
+      "stage": "Round of 32",
+      "venue": "MetLife Stadium, New York/NJ",
+      "kickoff_kst": "06:00"
+    },
+    {
+      "id": "m3",
+      "team_a": "Brazil",
+      "team_b": "Argentina",
+      "stage": "Round of 32",
+      "venue": "Rose Bowl, Los Angeles",
+      "kickoff_kst": "09:00"
+    },
+    {
+      "id": "m4",
+      "team_a": "Netherlands",
+      "team_b": "Morocco",
+      "stage": "Round of 32",
+      "venue": "Levi's Stadium, San Francisco",
+      "kickoff_kst": "12:00"
+    }
+  ],
+  "yesterday_results": [
+    {
+      "team_a": "France",
+      "score_a": 2,
+      "score_b": 1,
+      "team_b": "Portugal",
+      "stage": "Group C",
+      "ai_pred": "1-1 Draw",
+      "ai_correct": false
+    },
+    {
+      "team_a": "Mexico",
+      "score_a": 2,
+      "score_b": 0,
+      "team_b": "Ecuador",
+      "stage": "Group H",
+      "ai_pred": "2-1 Mexico",
+      "ai_correct": true
+    },
+    {
+      "team_a": "England",
+      "score_a": 1,
+      "score_b": 0,
+      "team_b": "Switzerland",
+      "stage": "Group B",
+      "ai_pred": "2-0 England",
+      "ai_correct": true
+    },
+    {
+      "team_a": "Uruguay",
+      "score_a": 1,
+      "score_b": 1,
+      "team_b": "Colombia",
+      "stage": "Group I",
+      "ai_pred": "1-0 Uruguay",
+      "ai_correct": false
+    }
+  ],
+  "ai_predictions": [
+    {
+      "match": "Germany vs Spain",
+      "pred_a": 2,
+      "pred_b": 1,
+      "confidence": "54%",
+      "pick": "Germany"
+    },
+    {
+      "match": "South Korea vs Japan",
+      "pred_a": 1,
+      "pred_b": 1,
+      "note": "AET, PK Korea advance",
+      "confidence": "51%",
+      "pick": "South Korea (PK)"
+    },
+    {
+      "match": "Brazil vs Argentina",
+      "pred_a": 2,
+      "pred_b": 1,
+      "confidence": "55%",
+      "pick": "Brazil"
+    },
+    {
+      "match": "Netherlands vs Morocco",
+      "pred_a": 2,
+      "pred_b": 0,
+      "confidence": "65%",
+      "pick": "Netherlands"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "2026년 7월 2일. 32강이 시작됩니다. 그리고 오늘, AI가 가장 떨리는 경기가 있습니다 — 대한민국 대 일본. 뉴욕 메트라이프 스타디움, 한일전 첫 월드컵 32강 맞대결. 독일 대 스페인 — 유럽 축구의 두 거인이 첫 번째 토너먼트 관문에서 충돌합니다. 브라질 대 아르헨티나 — 꿈의 대결이 LA 로즈볼에서 현실이 됩니다. 네덜란드 대 모로코 — 4강 다크호스가 유럽 강호를 만납니다. 오늘 AI, 한국의 16강 진출을 예측합니다. 4경기 완전 분석, 지금 시작합니다.",
+      "narration_ja": "2026年7月2日。32強が始まります。そして今日、AIが最も緊張する試合があります — 韓国対日本。ニューヨーク・メットライフスタジアム、日韓戦初のW杯32強直接対決。ドイツ対スペイン — ヨーロッパサッカーの二大巨人が最初のトーナメントの関門で激突します。ブラジル対アルゼンチン — 夢の対決がLAローズボウルで現実となります。オランダ対モロッコ — ダークホースがヨーロッパの強豪と相まみえます。今日AI、韓国の16強進出を予測します。4試合完全分析、今始めます。",
+      "narration_en": "July 2, 2026. The Round of 32 is here. And today, the match that has AI's algorithms running hottest — South Korea vs Japan. MetLife Stadium in New York/NJ, the first-ever World Cup knockout clash between these Asian rivals. Germany vs Spain — Europe's two giants collide at the very first knockout hurdle. Brazil vs Argentina — the dream match becomes reality at the Rose Bowl in LA. Netherlands vs Morocco — the tournament's dark horse meets a European powerhouse. AI predicts Korea through to the Round of 16. Four matches, full analysis, starting now."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "어제 결과 확인합니다. 프랑스가 포르투갈을 2-1로 꺾었습니다 — AI는 1-1 무승부를 예측했지만 빗나갔습니다. 음바페의 결정적 2골. 멕시코는 에콰도르를 2-0으로 완파 — AI가 멕시코 승리를 맞혔습니다. 잉글랜드는 스위스를 1-0으로 격파 — AI의 잉글랜드 승리 예측 적중, 점수는 근소하게 차이 났지만 방향은 정확했습니다. 우루과이와 콜롬비아는 1-1 무승부 — AI가 우루과이 승리를 예측했지만 빗나갔습니다. 어제 AI 적중률: 4경기 중 2경기, 50%. 누적 예측 정확도는 계속 추적 중. 32강부터 AI가 더 예리해집니다.",
+      "narration_ja": "昨日の結果を確認します。フランスがポルトガルを2-1で下しました — AIは1-1引き分けを予測しましたが外れました。エムバペの決定的な2ゴール。メキシコはエクアドルを2-0で完封 — AIのメキシコ勝利予測は的中しました。イングランドはスイスを1-0で撃破 — AIのイングランド勝利予測は的中、スコアはわずかに差がありましたが方向は正確でした。ウルグアイとコロンビアは1-1引き分け — AIはウルグアイ勝利を予測しましたが外れました。昨日のAI的中率：4試合中2試合、50%。累積予測精度は引き続き追跡中。32強からAIはさらに鋭くなります。",
+      "narration_en": "Yesterday's recap. France beat Portugal 2-1 — AI predicted 1-1 draw, a miss. Mbappé delivered two decisive goals. Mexico blanked Ecuador 2-0 — AI picked Mexico win, direction correct. England edged Switzerland 1-0 — AI called England win correctly, score was close. Uruguay and Colombia split 1-1 — AI picked Uruguay 1-0, a near-miss but the wrong result. Yesterday's AI accuracy: 2 from 4, 50%. Running total continues to be tracked. The knockout stage begins — and AI's edge sharpens when it matters most."
+    },
+    {
+      "id": "s03_prediction1",
+      "narration": "오늘의 핵심 경기 분석 — 대한민국 대 일본 32강. AI 예측: 1-1 무승부, 연장전, 승부차기 대한민국 승리. 신뢰도 51%. 이유 세 가지. 첫째, 역사가 말한다 — 한일전 최근 5경기에서 대한민국이 3승 1무 1패. 한국은 심리적으로 우위에 있습니다. 월드컵 한일전 — 국가 자존심이 선수들의 능력치를 120%까지 끌어올립니다. 둘째, 일본의 공격력 — 미토마, 도안, 구보 다케후사의 트리오는 세계적 수준입니다. 한국 수비가 90분간 완벽하게 막기는 쉽지 않습니다. 셋째, 한국의 무기 — 손흥민의 경험과 리더십, 이강인의 창의성, 황희찬의 돌파력. AI는 90분 비긴 후 승부차기에서 한국이 가슴을 벅차게 하는 순간을 만들어낼 것으로 예측합니다.",
+      "narration_ja": "今日の核心試合分析 — 韓国対日本32強。AI予測：1-1引き分け、延長戦、PK戦で韓国勝利。信頼度51%。三つの理由。第一、歴史が語る — 日韓戦直近5試合で韓国が3勝1分け1敗。韓国は心理的に優位に立っています。W杯での日韓戦 — 国家の誇りが選手たちの能力値を120%まで引き上げます。第二、日本の攻撃力 — 三笘、堂安、久保建英のトリオは世界レベルです。韓国の守備が90分間完璧に抑えるのは容易ではありません。第三、韓国の武器 — ソン・フンミンの経験とリーダーシップ、イ・ガンインの創造性、ファン・ヒチャンの突破力。AIは90分引き分けの後、PK戦で韓国が胸を高鳴らせる瞬間を作り出すと予測します。",
+      "narration_en": "Today's headline analysis — South Korea vs Japan, Round of 32. AI prediction: 1-1 after 90 minutes, extra time, Korea advance on penalties. Confidence 51%. Three reasons. First, history favors Korea — in the last 5 head-to-heads, Korea won 3, drew 1, lost 1. And at the World Cup, national pride amplifies every player's output by 20%. Second, Japan's attack is world-class — Mitoma, Doan, Kubo form a trio that any defence in the world struggles to contain for a full 90. Third, Korea's weapons — Son Heung-min's experience and leadership, Lee Kang-in's creativity, Hwang Hee-chan's pace. AI calls a tense 90 minutes, then Korea seizing the penalty lottery for a heart-stopping advance."
+    },
+    {
+      "id": "s04_prediction2",
+      "narration": "나머지 세 경기 빠른 AI 예측. 독일 대 스페인 — AI 픽 독일 2-1. 신뢰도 54%. 독일의 홈그라운드 분위기와 강력한 압박 축구. 야말과 페드리의 창의성이 변수지만, 퀸치가 이끄는 독일 수비 블록이 티키타카를 막을 것입니다. 뮐러와 하버츠의 경험이 빛을 발합니다. 브라질 대 아르헨티나 — AI 픽 브라질 2-1. 신뢰도 55%. 비니시우스 주니오르의 드리블은 현재 세계 최고 수준. 아르헨티나 메시가 여전히 결정적이지만 나이와 체력이 변수. 브라질의 젊음과 폭발력이 결국 승부를 가릅니다. 네덜란드 대 모로코 — AI 픽 네덜란드 2-0. 신뢰도 65%. 카타르에서 4강까지 오른 모로코지만 이번엔 네덜란드의 조직력이 우위. 가크포와 더프라이의 공격 듀오가 결정짓습니다.",
+      "narration_ja": "残り3試合の素早いAI予測。ドイツ対スペイン — AIピックドイツ2-1。信頼度54%。ドイツのホームグラウンド雰囲気と強力なプレッシングサッカー。ヤマルとペドリの創造性が変数ですが、ギュンテルが率いるドイツの守備ブロックがティキタカを防ぎます。ミュラーとハーバーツの経験が輝きます。ブラジル対アルゼンチン — AIピックブラジル2-1。信頼度55%。ヴィニシウス・ジュニオルのドリブルは現在世界最高レベル。アルゼンチンのメッシは依然として決定的ですが、年齢と体力が変数。ブラジルの若さと爆発力が最終的に勝負を決めます。オランダ対モロッコ — AIピックオランダ2-0。信頼度65%。カタールで4強まで進んだモロッコですが今回はオランダの組織力が優位。ハクポとデ・フライの攻撃デュオが決定打を放ちます。",
+      "narration_en": "Three more rapid-fire AI predictions. Germany vs Spain — AI pick Germany 2-1, confidence 54%. Germany's pressing intensity and home-tournament energy is a real factor. Yamal and Pedri's creativity is dangerous, but Germany's defensive block under Günter will absorb the tiki-taka. Müller and Havertz experience wins the day. Brazil vs Argentina — AI pick Brazil 2-1, confidence 55%. Vinicius Júnior's dribbling is at an all-time peak — arguably the world's most dangerous attacker right now. Messi is still decisive but age and minutes become a factor in extra time scenarios. Brazil's youth and intensity edges it. Netherlands vs Morocco — AI pick Netherlands 2-0, confidence 65%. Morocco were Qatar's fairy tale but the Netherlands' organisational depth wins out today. Gakpo and De Vrij combo to settle it."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘의 AI 픽 총정리. 독일 2-1 스페인 — 신뢰도 54%. 대한민국 1-1 일본, 승부차기 대한민국 — 신뢰도 51%. 브라질 2-1 아르헨티나 — 신뢰도 55%. 네덜란드 2-0 모로코 — 신뢰도 65%. 오늘의 TOP AI 픽은 대한민국입니다. 월드컵 한일전 — 이 네 글자가 주는 무게는 어떤 분석도 숫자로 표현할 수 없습니다. AI는 통계와 데이터로 예측하지만, 오늘만큼은 한국 선수들의 가슴속 불꽃이 가장 강력한 변수입니다. 손흥민이 그 불꽃을 태웁니다. 이강인이 창의성으로 빈틈을 만듭니다. 그리고 대한민국이 16강에 오릅니다 — AI의 예측입니다. 내일 결과 확인하세요. 구독과 좋아요로 AI 예측 적중률을 함께 추적합시다. 대~한민국!",
+      "narration_ja": "今日のAIピック総まとめ。ドイツ2-1スペイン — 信頼度54%。韓国1-1日本、PK戦で韓国 — 信頼度51%。ブラジル2-1アルゼンチン — 信頼度55%。オランダ2-0モロッコ — 信頼度65%。今日のAI最高ピックは韓国です。W杯での日韓戦 — この4文字が持つ重みはどんな分析も数字で表現できません。AIは統計とデータで予測しますが、今日だけは韓国選手たちの胸の炎が最も強力な変数です。ソン・フンミンがその炎を燃やします。イ・ガンインが創造性で隙を作ります。そして韓国が16強に進む — AIの予測です。明日結果を確認してください。チャンネル登録といいねでAI予測的中率を一緒に追いかけましょう。テーハンミング！",
+      "narration_en": "Today's AI picks summary. Germany 2-1 Spain — confidence 54%. South Korea 1-1 Japan, Korea on penalties — confidence 51%. Brazil 2-1 Argentina — confidence 55%. Netherlands 2-0 Morocco — confidence 65%. Today's top AI pick is South Korea. Korea vs Japan at the World Cup — no statistical model can fully capture the weight of those words. AI runs on data and probabilities, but today, the fire burning in the Korean players' chests is the biggest variable of all. Son Heung-min ignites it. Lee Kang-in creates the moment. And South Korea advance to the Round of 16 — that's the AI call. Check back tomorrow for results. Subscribe and track the AI accuracy with us. Dae-han-min-guk!"
+    }
+  ]
+}

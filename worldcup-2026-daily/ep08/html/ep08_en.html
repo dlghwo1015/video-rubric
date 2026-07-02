@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>2026-07-02 AI Match Predictions — EP08 | Daily World Cup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    background: #080c18;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes pulseGold {
+    0%, 100% { text-shadow: 0 0 40px rgba(201,162,39,0.4); }
+    50%       { text-shadow: 0 0 90px rgba(201,162,39,0.9); }
+  }
+  @keyframes glowGold {
+    0%, 100% { box-shadow: 0 0 24px rgba(201,162,39,0.3); }
+    50%       { box-shadow: 0 0 60px rgba(201,162,39,0.7); }
+  }
+  @keyframes glowRed {
+    0%, 100% { box-shadow: 0 0 24px rgba(220,38,38,0.3); }
+    50%       { box-shadow: 0 0 70px rgba(220,38,38,0.7); }
+  }
+  @keyframes pulseRed {
+    0%, 100% { text-shadow: 0 0 30px rgba(220,38,38,0.5); }
+    50%       { text-shadow: 0 0 80px rgba(220,38,38,0.9); }
+  }
+
+  .anim { opacity: 0; }
+  .anim.go { animation-fill-mode: forwards; }
+  .anim.go.fadeUp { animation: fadeUp 0.7s cubic-bezier(.22,.68,0,1.2) forwards; }
+  .anim.go.fadeIn { animation: fadeIn 0.6s ease forwards; }
+
+  .ep-label {
+    position: absolute;
+    top: 36px; left: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .slide-num {
+    position: absolute;
+    top: 36px; right: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.1em;
+  }
+  .ai-badge {
+    position: absolute;
+    bottom: 42px; right: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    color: rgba(100,200,255,0.6);
+    letter-spacing: 0.12em;
+  }
+
+  /* S01 — HOOK */
+  #slide-1 {
+    background:
+      radial-gradient(ellipse 140% 90% at 50% 115%, rgba(220,38,38,0.14) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 50% at 80% 10%, rgba(0,82,148,0.1) 0%, transparent 45%),
+      #080c18;
+  }
+  #slide-1 .date-chip {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 28px;
+    color: rgba(201,162,39,0.9);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  #slide-1 .hook-title {
+    font-size: 88px;
+    font-weight: 900;
+    color: #f0ede4;
+    text-align: center;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  #slide-1 .hook-title .acc { color: #c9a227; animation: pulseGold 3s ease-in-out infinite; }
+  #slide-1 .hook-sub {
+    font-size: 36px;
+    font-weight: 300;
+    color: rgba(240,237,228,0.6);
+    text-align: center;
+    margin-top: 22px;
+    letter-spacing: 0.03em;
+  }
+  #slide-1 .main-banner {
+    margin-top: 34px;
+    background: rgba(220,38,38,0.1);
+    border: 2px solid rgba(220,38,38,0.5);
+    border-radius: 16px;
+    padding: 18px 68px;
+    font-size: 42px;
+    font-weight: 700;
+    color: #f0ede4;
+    letter-spacing: 0.03em;
+    animation: glowRed 3s ease-in-out infinite;
+  }
+  #slide-1 .main-banner .vs { color: rgba(220,38,38,0.9); font-weight: 900; margin: 0 14px; }
+  #slide-1 .round-badge {
+    margin-top: 14px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(201,162,39,0.75);
+    letter-spacing: 0.18em;
+  }
+  #slide-1 .match-teasers {
+    display: flex;
+    gap: 20px;
+    margin-top: 24px;
+  }
+  #slide-1 .teaser {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 14px 28px;
+    font-size: 24px;
+    color: rgba(240,237,228,0.7);
+    letter-spacing: 0.01em;
+  }
+  #slide-1 .teaser .vs { color: rgba(100,160,255,0.7); font-weight: 700; }
+
+  /* S02 — YESTERDAY */
+  #slide-2 {
+    background:
+      radial-gradient(ellipse 120% 80% at 50% 110%, rgba(79,200,122,0.1) 0%, transparent 55%),
+      #0d1a0f;
+    padding: 0 120px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  #slide-2 .section-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    color: rgba(79,200,122,0.8);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  #slide-2 .section-title {
+    font-size: 52px;
+    font-weight: 700;
+    color: #e8f5ed;
+    margin-bottom: 28px;
+    line-height: 1.1;
+  }
+  #slide-2 .section-title span { color: #4fc87a; }
+  #slide-2 .section-title .miss { color: #e11d48; }
+  #slide-2 .results-grid { display: flex; flex-direction: column; gap: 14px; width: 100%; max-width: 1560px; }
+  .result-row {
+    display: flex;
+    align-items: center;
+    background: rgba(79,200,122,0.07);
+    border: 1px solid rgba(79,200,122,0.2);
+    border-radius: 14px;
+    padding: 16px 44px;
+  }
+  .result-row.miss-row { background: rgba(225,29,72,0.05); border-color: rgba(225,29,72,0.2); }
+  .result-row .group-tag {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    color: rgba(79,200,122,0.7);
+    letter-spacing: 0.14em;
+    width: 100px;
+    flex-shrink: 0;
+  }
+  .result-row.miss-row .group-tag { color: rgba(225,29,72,0.6); }
+  .result-row .team-name { font-size: 30px; font-weight: 600; color: #e8f5ed; flex: 1; }
+  .result-row .team-name.right { text-align: right; }
+  .result-row .score-box { display: flex; align-items: center; padding: 0 44px; flex-shrink: 0; }
+  .result-row .score { font-family: 'Roboto Mono', monospace; font-size: 50px; font-weight: 600; color: #4fc87a; width: 50px; text-align: center; }
+  .result-row.miss-row .score { color: #e11d48; }
+  .result-row .score-dash { font-size: 28px; color: rgba(79,200,122,0.4); padding: 0 10px; }
+  .result-row.miss-row .score-dash { color: rgba(225,29,72,0.3); }
+  .result-row .ai-tag {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    padding: 5px 14px;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+  .result-row .ai-tag.hit { background: rgba(79,200,122,0.15); color: #4fc87a; border: 1px solid rgba(79,200,122,0.3); }
+  .result-row .ai-tag.miss { background: rgba(225,29,72,0.12); color: #fb7185; border: 1px solid rgba(225,29,72,0.25); }
+  #slide-2 .accuracy-bar { margin-top: 22px; display: flex; align-items: center; gap: 28px; font-size: 28px; color: rgba(232,245,237,0.55); }
+  #slide-2 .accuracy-bar strong { color: #c9a227; font-size: 34px; }
+  #slide-2 .accuracy-bar span { color: #4fc87a; font-weight: 700; }
+
+  /* S03 — PREDICTION 1 */
+  #slide-3 {
+    background:
+      radial-gradient(ellipse 140% 100% at 30% 120%, rgba(220,38,38,0.12) 0%, transparent 50%),
+      radial-gradient(ellipse 140% 100% at 70% 120%, rgba(0,82,148,0.08) 0%, transparent 50%),
+      #060a18;
+    padding: 0 100px;
+  }
+  #slide-3 .section-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    color: rgba(220,38,38,0.85);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    align-self: flex-start;
+  }
+  #slide-3 .context-badge {
+    align-self: flex-start;
+    background: rgba(201,162,39,0.1);
+    border: 1px solid rgba(201,162,39,0.35);
+    border-radius: 8px;
+    padding: 6px 20px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 17px;
+    color: rgba(201,162,39,0.9);
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+  #slide-3 .match-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    margin: 18px 0 26px;
+    width: 100%;
+  }
+  #slide-3 .team-block { text-align: center; flex: 1; max-width: 440px; }
+  #slide-3 .team-flag { font-size: 76px; margin-bottom: 10px; }
+  #slide-3 .team-nm { font-size: 50px; font-weight: 700; color: #f0ede4; letter-spacing: -0.01em; }
+  #slide-3 .team-nm.pick { color: #dc2626; }
+  #slide-3 .pred-score-block { display: flex; align-items: center; flex-shrink: 0; }
+  #slide-3 .pred-score { font-family: 'Roboto Mono', monospace; font-size: 110px; font-weight: 600; color: #64a0ff; width: 90px; text-align: center; line-height: 1; }
+  #slide-3 .pred-dash { font-size: 56px; color: rgba(100,160,255,0.3); padding: 0 14px; }
+  #slide-3 .pk-note {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 17px;
+    background: rgba(220,38,38,0.15);
+    border: 1px solid rgba(220,38,38,0.4);
+    border-radius: 8px;
+    color: #fca5a5;
+    padding: 6px 16px;
+    letter-spacing: 0.06em;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+  #slide-3 .analysis-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; max-width: 1640px; }
+  #slide-3 .reason-card { background: rgba(220,38,38,0.05); border: 1px solid rgba(220,38,38,0.2); border-radius: 16px; padding: 24px 30px; }
+  #slide-3 .reason-num { font-family: 'Roboto Mono', monospace; font-size: 16px; color: rgba(220,38,38,0.6); letter-spacing: 0.12em; margin-bottom: 10px; }
+  #slide-3 .reason-text { font-size: 24px; font-weight: 400; color: rgba(240,237,228,0.85); line-height: 1.55; }
+  #slide-3 .confidence-bar { display: flex; align-items: center; gap: 24px; margin-top: 22px; align-self: flex-start; }
+  #slide-3 .conf-label { font-family: 'Roboto Mono', monospace; font-size: 22px; color: rgba(240,237,228,0.5); }
+  #slide-3 .conf-track { width: 400px; height: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; overflow: hidden; }
+  #slide-3 .conf-fill { height: 100%; background: linear-gradient(90deg, #991b1b, #dc2626); border-radius: 5px; width: 51%; }
+  #slide-3 .conf-pct { font-family: 'Roboto Mono', monospace; font-size: 28px; font-weight: 600; color: #dc2626; }
+
+  /* S04 — QUICK PICKS */
+  #slide-4 {
+    background:
+      radial-gradient(ellipse 100% 80% at 30% 110%, rgba(100,160,255,0.1) 0%, transparent 50%),
+      #080c18;
+    padding: 0 100px;
+  }
+  #slide-4 .section-label { font-family: 'Roboto Mono', monospace; font-size: 22px; color: rgba(100,160,255,0.8); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 10px; align-self: flex-start; }
+  #slide-4 .section-title { font-size: 56px; font-weight: 700; color: #f0ede4; margin-bottom: 34px; align-self: flex-start; letter-spacing: -0.01em; }
+  #slide-4 .section-title span { color: #64a0ff; }
+  #slide-4 .picks-grid { display: flex; flex-direction: column; gap: 18px; width: 100%; max-width: 1680px; }
+  .pick-row {
+    display: grid;
+    grid-template-columns: 110px 1fr 200px 1fr 200px 160px;
+    align-items: center;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 20px 36px;
+    gap: 16px;
+  }
+  .pick-row.korea-highlight { border-color: rgba(220,38,38,0.5); background: rgba(220,38,38,0.07); animation: glowRed 3s ease-in-out infinite; }
+  .pick-row .grp { font-family: 'Roboto Mono', monospace; font-size: 16px; color: rgba(255,255,255,0.35); letter-spacing: 0.1em; }
+  .pick-row .t-name { font-size: 30px; font-weight: 600; color: #f0ede4; }
+  .pick-row .t-name.right { text-align: right; }
+  .pick-row .pred-sc { font-family: 'Roboto Mono', monospace; font-size: 44px; font-weight: 600; text-align: center; color: #64a0ff; }
+  .pick-row.korea-highlight .pred-sc { color: #dc2626; }
+  .pick-row .conf { font-family: 'Roboto Mono', monospace; font-size: 18px; color: rgba(255,255,255,0.35); text-align: right; }
+  .pick-row .pick-tag { font-family: 'Roboto Mono', monospace; font-size: 15px; font-weight: 600; text-align: center; padding: 7px 8px; border-radius: 8px; background: rgba(100,160,255,0.15); color: #64a0ff; }
+  .pick-row.korea-highlight .pick-tag { background: rgba(220,38,38,0.2); color: #fca5a5; }
+
+  /* S05 — VERDICT */
+  #slide-5 {
+    background:
+      radial-gradient(ellipse 120% 80% at 50% 110%, rgba(201,162,39,0.1) 0%, transparent 55%),
+      #0a0a08;
+    padding: 0 100px;
+  }
+  #slide-5 .verdict-top { display: flex; align-items: flex-start; gap: 80px; width: 100%; max-width: 1700px; margin-bottom: 40px; }
+  #slide-5 .verdict-left { flex: 1; }
+  #slide-5 .section-label { font-family: 'Roboto Mono', monospace; font-size: 22px; color: rgba(201,162,39,0.8); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px; }
+  #slide-5 .verdict-title { font-size: 62px; font-weight: 900; color: #f0ede4; line-height: 1.05; margin-bottom: 26px; letter-spacing: -0.02em; }
+  #slide-5 .verdict-title .acc { color: #c9a227; animation: pulseGold 3s ease-in-out infinite; }
+  #slide-5 .verdict-desc { font-size: 28px; font-weight: 300; color: rgba(240,237,228,0.72); line-height: 1.75; max-width: 840px; }
+  #slide-5 .summary-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; flex-shrink: 0; width: 620px; }
+  #slide-5 .sum-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 18px 22px; }
+  #slide-5 .sum-card.korea-card { background: rgba(220,38,38,0.08); border-color: rgba(220,38,38,0.4); }
+  #slide-5 .sum-card .match-nm { font-size: 18px; color: rgba(240,237,228,0.5); margin-bottom: 8px; }
+  #slide-5 .sum-card .sum-score { font-family: 'Roboto Mono', monospace; font-size: 38px; font-weight: 600; color: #c9a227; }
+  #slide-5 .sum-card.korea-card .sum-score { color: #dc2626; }
+  #slide-5 .sum-card .sum-conf { font-family: 'Roboto Mono', monospace; font-size: 14px; color: rgba(201,162,39,0.5); margin-top: 5px; }
+  #slide-5 .sum-card.korea-card .sum-conf { color: rgba(220,38,38,0.5); }
+  #slide-5 .cta-bar { display: flex; align-items: center; gap: 32px; padding: 22px 38px; background: rgba(201,162,39,0.07); border: 1px solid rgba(201,162,39,0.2); border-radius: 16px; width: 100%; max-width: 1700px; }
+  #slide-5 .cta-bar .cta-text { font-size: 26px; color: rgba(240,237,228,0.65); flex: 1; }
+  #slide-5 .cta-bar .cta-text strong { color: #c9a227; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: HOOK -->
+<div class="slide active" id="slide-1">
+  <div class="ep-label">WORLDCUP-2026-DAILY · EP08</div>
+  <div class="slide-num">01 / 05</div>
+  <div class="ai-badge">AI ANALYSIS</div>
+
+  <div class="date-chip anim fadeUp" style="animation-delay:0.1s">2026 · 07 · 02 · ROUND OF 32</div>
+  <h1 class="hook-title anim fadeUp" style="animation-delay:0.3s">
+    Son Heung-min <span class="acc">VS</span> Mitoma
+  </h1>
+  <p class="hook-sub anim fadeUp" style="animation-delay:0.5s">The first-ever World Cup knockout clash between Asian rivals — New York ignites</p>
+
+  <div class="main-banner anim fadeUp" style="animation-delay:0.7s">
+    🇰🇷 South Korea <span class="vs">VS</span> Japan 🇯🇵 — Round of 32
+  </div>
+  <div class="round-badge anim fadeIn" style="animation-delay:0.85s">METLIFE STADIUM, NEW YORK/NJ · KST 06:00</div>
+
+  <div class="match-teasers anim fadeIn" style="animation-delay:1.0s">
+    <div class="teaser">🇩🇪 Germany <span class="vs">vs</span> Spain 🇪🇸 · AT&amp;T Stadium 03:00</div>
+    <div class="teaser">🇧🇷 Brazil <span class="vs">vs</span> Argentina 🇦🇷 · Rose Bowl 09:00</div>
+    <div class="teaser">🇳🇱 Netherlands <span class="vs">vs</span> Morocco 🇲🇦 · SF 12:00</div>
+  </div>
+</div>
+
+<!-- SLIDE 2: YESTERDAY RESULTS -->
+<div class="slide" id="slide-2">
+  <div class="ep-label">WORLDCUP-2026-DAILY · EP08</div>
+  <div class="slide-num">02 / 05</div>
+  <div class="ai-badge">AI ANALYSIS</div>
+
+  <div class="section-label anim fadeIn" style="animation-delay:0.1s">YESTERDAY · 2026.06.29</div>
+  <h2 class="section-title anim fadeUp" style="animation-delay:0.25s">
+    Yesterday Results — AI Accuracy <span>50%</span>
+    <br><span class="miss" style="font-size:34px">Mbappé sinks Portugal · Mexico shutout · Two surprise draws</span>
+  </h2>
+
+  <div class="results-grid">
+    <div class="result-row miss-row anim fadeUp" style="animation-delay:0.35s">
+      <span class="group-tag">GRP C</span>
+      <span class="team-name">🇫🇷 France</span>
+      <div class="score-box">
+        <span class="score">2</span>
+        <span class="score-dash">–</span>
+        <span class="score">1</span>
+      </div>
+      <span class="team-name right">Portugal 🇵🇹</span>
+      <span class="ai-tag miss" style="margin-left:36px">✗ AI called 1-1 draw</span>
+    </div>
+
+    <div class="result-row anim fadeUp" style="animation-delay:0.48s">
+      <span class="group-tag">GRP H</span>
+      <span class="team-name">🇲🇽 Mexico</span>
+      <div class="score-box">
+        <span class="score">2</span>
+        <span class="score-dash">–</span>
+        <span class="score">0</span>
+      </div>
+      <span class="team-name right">Ecuador 🇪🇨</span>
+      <span class="ai-tag hit" style="margin-left:36px">✓ AI Mexico correct</span>
+    </div>
+
+    <div class="result-row anim fadeUp" style="animation-delay:0.61s">
+      <span class="group-tag">GRP B</span>
+      <span class="team-name">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</span>
+      <div class="score-box">
+        <span class="score">1</span>
+        <span class="score-dash">–</span>
+        <span class="score">0</span>
+      </div>
+      <span class="team-name right">Switzerland 🇨🇭</span>
+      <span class="ai-tag hit" style="margin-left:36px">✓ AI England correct</span>
+    </div>
+
+    <div class="result-row miss-row anim fadeUp" style="animation-delay:0.74s">
+      <span class="group-tag">GRP I</span>
+      <span class="team-name">🇺🇾 Uruguay</span>
+      <div class="score-box">
+        <span class="score">1</span>
+        <span class="score-dash">–</span>
+        <span class="score">1</span>
+      </div>
+      <span class="team-name right">Colombia 🇨🇴</span>
+      <span class="ai-tag miss" style="margin-left:36px">✗ AI called Uruguay 1-0</span>
+    </div>
+  </div>
+
+  <div class="accuracy-bar anim fadeIn" style="animation-delay:0.9s">
+    <strong>Yesterday AI Accuracy</strong>
+    <span>2 / 4 matches</span>
+    <span style="color:rgba(240,237,228,0.4)">— 50% · Mbappé decisive goal and two draws unpredicted</span>
+  </div>
+</div>
+
+<!-- SLIDE 3: KOREA vs JAPAN DEEP ANALYSIS -->
+<div class="slide" id="slide-3">
+  <div class="ep-label">WORLDCUP-2026-DAILY · EP08</div>
+  <div class="slide-num">03 / 05</div>
+  <div class="ai-badge">AI ANALYSIS</div>
+
+  <div class="section-label anim fadeIn" style="animation-delay:0.1s">HEADLINE MATCH · R32 · NEW YORK 06:00 KST</div>
+  <div class="context-badge anim fadeIn" style="animation-delay:0.2s">Son Heung-min × Lee Kang-in × Hwang Hee-chan · Historic Asia Derby in Knockout Stage</div>
+
+  <div class="match-banner anim fadeUp" style="animation-delay:0.3s">
+    <div class="team-block">
+      <div class="team-flag">🇰🇷</div>
+      <div class="team-nm pick">South Korea</div>
+    </div>
+    <div class="pred-score-block">
+      <span class="pred-score">1</span>
+      <span class="pred-dash">–</span>
+      <span class="pred-score">1</span>
+      <span class="pk-note">→ PK Korea ↑</span>
+    </div>
+    <div class="team-block">
+      <div class="team-flag">🇯🇵</div>
+      <div class="team-nm">Japan</div>
+    </div>
+  </div>
+
+  <div class="analysis-grid anim fadeUp" style="animation-delay:0.5s">
+    <div class="reason-card">
+      <div class="reason-num">REASON 01 — HISTORY</div>
+      <div class="reason-text">Korea leads the H2H 3-1-1 in recent meetings. At the World Cup, national pride amplifies performance beyond what statistics can capture — both teams raise their game to a different level</div>
+    </div>
+    <div class="reason-card">
+      <div class="reason-num">REASON 02 — JAPAN'S THREAT</div>
+      <div class="reason-text">Mitoma, Doan, Kubo form a world-class attacking trio. Keeping Japan scoreless for 90 minutes is a tall order. Conceding one goal is manageable — conceding two is match-ending</div>
+    </div>
+    <div class="reason-card">
+      <div class="reason-num">REASON 03 — KOREA'S WEAPONS</div>
+      <div class="reason-text">Son's leadership and finishing, Lee Kang-in's creative vision, Hwang Hee-chan's explosive pace. In extra time and penalties, Korea's mental fortitude becomes the deciding factor</div>
+    </div>
+  </div>
+
+  <div class="confidence-bar anim fadeIn" style="animation-delay:0.7s">
+    <span class="conf-label">AI Confidence</span>
+    <div class="conf-track"><div class="conf-fill"></div></div>
+    <span class="conf-pct">51%</span>
+    <span style="font-size:20px; color:rgba(240,237,228,0.4); margin-left:8px">→ AI Pick: South Korea advance on penalties</span>
+  </div>
+</div>
+
+<!-- SLIDE 4: ALL PICKS -->
+<div class="slide" id="slide-4">
+  <div class="ep-label">WORLDCUP-2026-DAILY · EP08</div>
+  <div class="slide-num">04 / 05</div>
+  <div class="ai-badge">AI ANALYSIS</div>
+
+  <div class="section-label anim fadeIn" style="animation-delay:0.1s">TODAY'S PICKS · 2026.07.02 · ROUND OF 32</div>
+  <h2 class="section-title anim fadeUp" style="animation-delay:0.2s">
+    All <span>4 Matches</span> Predicted — R32 Opening Day
+  </h2>
+
+  <div class="picks-grid anim fadeUp" style="animation-delay:0.35s">
+    <div class="pick-row">
+      <span class="grp">R32</span>
+      <span class="t-name">🇩🇪 Germany</span>
+      <span class="pred-sc">2–1</span>
+      <span class="t-name right">Spain 🇪🇸</span>
+      <span class="conf">Conf. 54%</span>
+      <span class="pick-tag">GERMANY</span>
+    </div>
+    <div class="pick-row korea-highlight">
+      <span class="grp">R32 ★</span>
+      <span class="t-name">🇰🇷 South Korea</span>
+      <span class="pred-sc">1–1</span>
+      <span class="t-name right">Japan 🇯🇵</span>
+      <span class="conf">Conf. 51%</span>
+      <span class="pick-tag">KOR PK ↑</span>
+    </div>
+    <div class="pick-row">
+      <span class="grp">R32</span>
+      <span class="t-name">🇧🇷 Brazil</span>
+      <span class="pred-sc">2–1</span>
+      <span class="t-name right">Argentina 🇦🇷</span>
+      <span class="conf">Conf. 55%</span>
+      <span class="pick-tag">BRAZIL</span>
+    </div>
+    <div class="pick-row">
+      <span class="grp">R32</span>
+      <span class="t-name">🇳🇱 Netherlands</span>
+      <span class="pred-sc">2–0</span>
+      <span class="t-name right">Morocco 🇲🇦</span>
+      <span class="conf">Conf. 65%</span>
+      <span class="pick-tag">NED</span>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5: VERDICT -->
+<div class="slide" id="slide-5">
+  <div class="ep-label">WORLDCUP-2026-DAILY · EP08</div>
+  <div class="slide-num">05 / 05</div>
+  <div class="ai-badge">AI ANALYSIS</div>
+
+  <div class="verdict-top anim fadeUp" style="animation-delay:0.2s">
+    <div class="verdict-left">
+      <div class="section-label">AI VERDICT · 2026.07.02</div>
+      <h2 class="verdict-title">
+        Today's Top Pick:<br><span class="acc">Korea to the Round of 16!</span>
+      </h2>
+      <p class="verdict-desc">
+        When Son Heung-min lights the fire, MetLife Stadium shakes.<br>
+        AI runs on data and probabilities — but today,<br>
+        the burning desire in Korea's players is the biggest variable of all.<br>
+        After a tense 1-1 draw, Korea hold their nerve in the penalty lottery.<br>
+        Germany and Brazil also advance; Netherlands forecast for a clean win.
+      </p>
+    </div>
+    <div class="summary-cards">
+      <div class="sum-card">
+        <div class="match-nm">🇩🇪 Germany vs Spain 🇪🇸</div>
+        <div class="sum-score">2 – 1</div>
+        <div class="sum-conf">54% · GERMANY</div>
+      </div>
+      <div class="sum-card korea-card">
+        <div class="match-nm">🇰🇷 S. Korea vs Japan 🇯🇵</div>
+        <div class="sum-score">1 – 1 PK</div>
+        <div class="sum-conf">51% · KOREA ★</div>
+      </div>
+      <div class="sum-card">
+        <div class="match-nm">🇧🇷 Brazil vs Argentina 🇦🇷</div>
+        <div class="sum-score">2 – 1</div>
+        <div class="sum-conf">55% · BRAZIL</div>
+      </div>
+      <div class="sum-card">
+        <div class="match-nm">🇳🇱 Netherlands vs Morocco 🇲🇦</div>
+        <div class="sum-score">2 – 0</div>
+        <div class="sum-conf">65% · NETHERLANDS</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-bar anim fadeIn" style="animation-delay:0.5s">
+    <span class="cta-text">Result check tomorrow — <strong>subscribe</strong> and track Korea's R16 advance with us · EP09 drops tomorrow morning</span>
+  </div>
+</div>
+
+<script>
+  function showSlide(n) {
+    document.querySelectorAll('.slide').forEach((s, i) => {
+      s.classList.toggle('active', i + 1 === n);
+    });
+    if (n >= 1 && n <= 5) {
+      setTimeout(() => {
+        document.querySelectorAll('#slide-' + n + ' .anim').forEach(el => {
+          el.classList.add('go');
+        });
+      }, 50);
+    }
+  }
+  window.goToSlide = showSlide;
+
+  setTimeout(() => {
+    document.querySelectorAll('#slide-1 .anim').forEach(el => el.classList.add('go'));
+  }, 100);
+</script>
+</body>
+</html>
