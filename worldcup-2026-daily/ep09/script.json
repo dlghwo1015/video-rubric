@@ -1,0 +1,144 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 9,
+  "date": "2026-07-03",
+  "title_ko": "2026-07-03 오늘의 경기 AI 예측 — 한국 16강 확정! 미국 홈 데뷔, 프랑스·잉글랜드 32강",
+  "title_ja": "2026-07-03 今日の試合 AI予測 — 韓国16強確定! 米国ホームデビュー、フランス・イングランド32強",
+  "title_en": "2026-07-03 Match Predictions by AI — Korea through to R16! USA Home Debut, France & England in R32",
+  "korea_match": false,
+  "matches_today": [
+    {
+      "id": "m1",
+      "team_a": "France",
+      "team_b": "Mexico",
+      "stage": "Round of 32",
+      "venue": "AT&T Stadium, Arlington",
+      "kickoff_kst": "03:00"
+    },
+    {
+      "id": "m2",
+      "team_a": "USA",
+      "team_b": "Senegal",
+      "stage": "Round of 32",
+      "venue": "MetLife Stadium, East Rutherford, NJ",
+      "kickoff_kst": "06:00"
+    },
+    {
+      "id": "m3",
+      "team_a": "England",
+      "team_b": "Colombia",
+      "stage": "Round of 32",
+      "venue": "Mercedes-Benz Stadium, Atlanta",
+      "kickoff_kst": "09:00"
+    },
+    {
+      "id": "m4",
+      "team_a": "Portugal",
+      "team_b": "Croatia",
+      "stage": "Round of 32",
+      "venue": "Rose Bowl, Pasadena",
+      "kickoff_kst": "12:00"
+    }
+  ],
+  "yesterday_results": [
+    {
+      "team_a": "Germany",
+      "score_a": 2,
+      "score_b": 1,
+      "team_b": "Spain",
+      "stage": "Round of 32",
+      "ai_pred": "2-1 Germany",
+      "ai_correct": true
+    },
+    {
+      "team_a": "South Korea",
+      "score_a": 1,
+      "score_b": 1,
+      "team_b": "Japan",
+      "note": "Korea advance 5-3 on penalties",
+      "stage": "Round of 32",
+      "ai_pred": "1-1 AET, PK Korea",
+      "ai_correct": true
+    },
+    {
+      "team_a": "Argentina",
+      "score_a": 2,
+      "score_b": 1,
+      "team_b": "Brazil",
+      "stage": "Round of 32",
+      "ai_pred": "2-1 Brazil",
+      "ai_correct": false
+    },
+    {
+      "team_a": "Netherlands",
+      "score_a": 2,
+      "score_b": 0,
+      "team_b": "Morocco",
+      "stage": "Round of 32",
+      "ai_pred": "2-0 Netherlands",
+      "ai_correct": true
+    }
+  ],
+  "ai_predictions": [
+    {
+      "match": "France vs Mexico",
+      "pred_a": 2,
+      "pred_b": 0,
+      "confidence": "65%",
+      "pick": "France"
+    },
+    {
+      "match": "USA vs Senegal",
+      "pred_a": 2,
+      "pred_b": 1,
+      "confidence": "62%",
+      "pick": "USA"
+    },
+    {
+      "match": "England vs Colombia",
+      "pred_a": 2,
+      "pred_b": 1,
+      "confidence": "60%",
+      "pick": "England"
+    },
+    {
+      "match": "Portugal vs Croatia",
+      "pred_a": 2,
+      "pred_b": 0,
+      "confidence": "58%",
+      "pick": "Portugal"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "2026년 7월 3일. 어제, 대~한민국이 해냈습니다! 뉴욕 메트라이프, 승부차기 5-3으로 일본을 제압한 태극전사들 — 대한민국 16강 확정! AI의 예측이 현실이 됐습니다. 그리고 오늘, 32강 2일차. 개최국 미국이 드디어 무대에 오릅니다 — 상대는 세네갈. 풀리시치와 레이나의 미국이 홈팬 앞에서 16강 티켓을 거머쥘 수 있을까. 프랑스 대 멕시코, 잉글랜드 대 콜롬비아, 포르투갈 대 크로아티아도 오늘 결판 납니다. 4경기 완전 분석, 지금 시작합니다.",
+      "narration_ja": "2026年7月3日。昨日、ついにやりました！ニューヨーク・メットライフ、PK戦5-3の末に日本を制した太極戦士たち — 韓国16強確定！AIの予測が現実となりました。そして今日、32強2日目。開催国アメリカがついに舞台に立ちます — 相手はセネガル。プリシッチとレイナのアメリカがホームファンの前で16強チケットを手にできるか。フランス対メキシコ、イングランド対コロンビア、ポルトガル対クロアチアも今日決着します。4試合完全分析、今始めます。",
+      "narration_en": "July 3, 2026. Yesterday, they did it! At MetLife Stadium in New York, South Korea defeated Japan 5-3 on penalties — Korea is through to the Round of 16! AI's prediction became reality. And today, Day 2 of the Round of 32. The host nation USA finally steps onto the stage — facing Senegal. Can Pulisic, Reyna and the Stars and Stripes seize a home Round of 16 ticket? France vs Mexico, England vs Colombia, and Portugal vs Croatia also settle today. Four matches, full AI analysis, starting now."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "어제 결과, 충격과 감동이 공존했습니다. 독일이 스페인을 2-1로 격파 — AI가 독일 승리를 정확히 맞혔습니다. 뮐러의 결정타. 대한민국은 일본과 1-1로 비긴 후 승부차기에서 5-3으로 승리 — AI 예측이 완벽히 적중했습니다. 16강! 브라질 대 아르헨티나 — 이것이 이변입니다. AI는 브라질 2-1을 예측했지만 메시가 골든 발로 결승골을 넣어 아르헨티나가 2-1 역전승. AI가 빗나갔습니다. 네덜란드는 모로코를 2-0으로 완파 — AI가 완벽하게 맞혔습니다. 어제 AI 적중률: 4경기 중 3경기, 75%. 메시의 매직 한 경기만 빗나간 AI, 32강에서 점점 강해집니다.",
+      "narration_ja": "昨日の結果、衝撃と感動が共存しました。ドイツがスペインを2-1で粉砕 — AIはドイツ勝利を正確に的中しました。ミュラーの決定打。韓国は日本と1-1で引き分けた後、PK戦で5-3で勝利 — AIの予測が完璧に的中しました。16強！ブラジル対アルゼンチン — これが番狂わせです。AIはブラジル2-1を予測しましたが、メッシがゴールデンゴールを決めてアルゼンチンが2-1で逆転勝利。AIが外れました。オランダはモロッコを2-0で完封 — AIが完璧に的中しました。昨日のAI的中率：4試合中3試合、75%。メッシの魔法の1試合だけ外れたAI、32強でますます鋭くなります。",
+      "narration_en": "Yesterday's recap — drama, upsets, and one emotional triumph. Germany beat Spain 2-1 — AI called Germany correctly. Müller delivered the decisive blow. South Korea drew 1-1 with Japan, then won 5-3 on penalties — AI prediction was spot on. Korea advances! Brazil vs Argentina — here's the shock. AI picked Brazil 2-1 but Messi conjured the golden touch and Argentina came back 2-1. A miss for AI. Netherlands blanked Morocco 2-0 — AI called it perfectly, 65% confidence rewarded. Yesterday's AI accuracy: 3 from 4, 75%. The Brazil-Argentina upset was the one AI missed — Messi being Messi is always the hardest thing to model."
+    },
+    {
+      "id": "s03_prediction1",
+      "narration": "오늘의 핵심 경기 분석 — 개최국 미국 대 세네갈 32강. 뉴저지 메트라이프 스타디움, 06:00 KST. AI 예측: 미국 2-1 세네갈. 신뢰도 62%. 이유 세 가지. 첫째, 홈 어드밴티지 — 7만 석 풀하우스, 성조기로 물든 뉴저지 메트라이프. 개최국 열기는 데이터로 측정할 수 없는 변수입니다. 미국 대표팀 역대 홈 월드컵 승률 62%가 말합니다. 둘째, 크리스천 풀리시치 — 첼시·AC밀란을 거친 미국 최고의 공격수. 좁은 공간에서 왼발로 만드는 결정적 슈팅이 오늘 세네갈 수비를 허뭅니다. 셋째, 세네갈의 위협 — 이스마일라 사르의 스피드와 파마라 디에두의 피지컬이 변수. 하지만 미국의 수비 조직력과 전술적 완성도가 90분을 지배합니다. AI 픽: 미국 16강 진출.",
+      "narration_ja": "今日の核心試合分析 — 開催国アメリカ対セネガル32強。ニュージャージー・メットライフスタジアム、06:00 KST。AI予測：アメリカ2-1セネガル。信頼度62%。三つの理由。第一、ホームアドバンテージ — 7万席のフルハウス、星条旗で染まるニュージャージー・メットライフ。開催国の熱気はデータでは測れない変数です。アメリカ代表の歴代ホームW杯勝率62%が語っています。第二、クリスチャン・プリシッチ — チェルシー・ACミランを経たアメリカ最高のアタッカー。狭いスペースで左足が生み出す決定的シュートが今日セネガルの守備を崩します。第三、セネガルの脅威 — イスマイラ・サールのスピードとファマラ・ジエドゥのフィジカルが変数。しかしアメリカの守備組織と戦術的完成度が90分を支配します。AIピック：アメリカ16強進出。",
+      "narration_en": "Today's headline analysis — USA vs Senegal, Round of 32. MetLife Stadium, New Jersey, 06:00 KST / 5pm local. AI prediction: USA 2-1 Senegal. Confidence 62%. Three reasons. First, home advantage — 70,000 fans packed in, MetLife soaked in red, white, and blue. The host-nation energy is a genuine variable no model fully captures. USA's home World Cup win rate historically sits at 62%. Second, Christian Pulisic — battle-tested at Chelsea and AC Milan, America's most dangerous attacker. His left foot in tight spaces will find the gaps Senegal's defensive line struggles to cover for 90 minutes. Third, Senegal's threat is real — Ismaïla Sarr's pace and Famara Diedhiou's physicality are genuine dangers. But USA's defensive structure and tactical cohesion edges the contest. AI pick: USA through to the Round of 16."
+    },
+    {
+      "id": "s04_prediction2",
+      "narration": "나머지 세 경기 빠른 AI 예측. 프랑스 대 멕시코 — AI 픽 프랑스 2-0. 신뢰도 65%. 음바페, 지루, 그리즈만의 프랑스 공격 삼각편대는 멕시코 수비를 능가합니다. 멕시코가 수비적으로 버티겠지만 프랑스의 고강도 압박이 결국 무너뜨립니다. 잉글랜드 대 콜롬비아 — AI 픽 잉글랜드 2-1. 신뢰도 60%. 벨링엄의 전진성, 살라의 사이드 압박이 핵심. 콜롬비아의 루이스 디아스가 위협적이지만 잉글랜드 수비 조직이 버팁니다. 포르투갈 대 크로아티아 — AI 픽 포르투갈 2-0. 신뢰도 58%. 크로아티아의 모드리치는 38세지만 여전히 창의적. 그러나 포르투갈의 풍부한 뎁스와 브루노 페르난데스의 결정력이 결국 압도합니다.",
+      "narration_ja": "残り3試合の素早いAI予測。フランス対メキシコ — AIピックフランス2-0。信頼度65%。エムバペ、ジルー、グリーズマンのフランス攻撃トライアングルはメキシコの守備を凌駕します。メキシコが守備的に耐えようとしますがフランスの高強度プレッシングが最終的に崩します。イングランド対コロンビア — AIピックイングランド2-1。信頼度60%。ベリンガムの推進力、サラーのサイドプレッシングが鍵。コロンビアのルイス・ディアスが脅威的ですがイングランドの守備組織が耐えます。ポルトガル対クロアチア — AIピックポルトガル2-0。信頼度58%。クロアチアのモドリッチは38歳ですが依然として創造的。しかしポルトガルの豊富な層の厚さとブルーノ・フェルナンデスの決定力が最終的に圧倒します。",
+      "narration_en": "Three more rapid-fire AI predictions. France vs Mexico — AI pick France 2-0, confidence 65%. Mbappé, Giroud, and Griezmann's attacking triangle is a tier above Mexico's defensive setup. Mexico will sit deep but France's high-intensity pressing breaks the lines eventually. England vs Colombia — AI pick England 2-1, confidence 60%. Bellingham's driving runs and Salah's wide pressure are key. Colombia's Luis Díaz is genuinely dangerous but England's defensive shape holds. Portugal vs Croatia — AI pick Portugal 2-0, confidence 58%. Modrić at 38 is still creative and influential, but Portugal's squad depth and Brunno Fernandes' decisiveness overwhelms. Croatia's best years may have passed since their Qatar run."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘의 AI 픽 총정리. 프랑스 2-0 멕시코 — 신뢰도 65%. 미국 2-1 세네갈 — 신뢰도 62%. 잉글랜드 2-1 콜롬비아 — 신뢰도 60%. 포르투갈 2-0 크로아티아 — 신뢰도 58%. 오늘의 TOP AI 픽은 개최국 미국입니다. 풀리시치의 왼발, 레이나의 창의성, 7만 팬의 열기 — 이것이 홈 월드컵의 힘입니다. 그리고 오늘 AI가 드리고 싶은 말씀은 하나입니다 — 어제 대한민국이 16강에 올랐습니다. AI가 예측한 대로, 손흥민이 이끌었고 뉴욕이 진동했습니다. 오늘은 한국의 16강 상대가 결정되는 날이기도 합니다. 대~한민국의 여정은 계속됩니다. 구독과 좋아요로 AI 예측 적중률을 함께 추적합시다. EP10에서 만납시다!",
+      "narration_ja": "今日のAIピック総まとめ。フランス2-0メキシコ — 信頼度65%。アメリカ2-1セネガル — 信頼度62%。イングランド2-1コロンビア — 信頼度60%。ポルトガル2-0クロアチア — 信頼度58%。今日のAI最高ピックは開催国アメリカです。プリシッチの左足、レイナの創造性、7万人のファンの熱気 — これがホームW杯の力です。そして今日AIが申し上げたいことは一つです — 昨日韓国が16強に進出しました。AIが予測した通り、ソン・フンミンが引っ張り、ニューヨークが震えました。今日は韓国の16強相手が決まる日でもあります。韓国の旅は続きます。チャンネル登録といいねでAI予測的中率を一緒に追いかけましょう。EP10でお会いしましょう！",
+      "narration_en": "Today's AI summary. France 2-0 Mexico — 65%. USA 2-1 Senegal — 62%. England 2-1 Colombia — 60%. Portugal 2-0 Croatia — 58%. Today's top AI pick is the host nation USA. Pulisic's left foot, Reyna's creativity, 70,000 fans in full voice — this is what a home World Cup looks like. And the one thing AI wants to say today: yesterday, South Korea made it. AI called it, Son Heung-min delivered it, and New York shook with it. Today is also the day Korea's Round of 16 opponent gets determined. The Korean journey continues. Subscribe and track the AI's running accuracy with us. See you in EP10!"
+    }
+  ]
+}
