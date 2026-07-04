@@ -1,0 +1,146 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 10,
+  "date": "2026-07-04",
+  "title_ko": "2026-07-04 오늘의 경기 AI 예측 — 크로아티아 대이변! 이탈리아·벨기에 32강 + 한국 16강 상대 결정",
+  "title_ja": "2026-07-04 今日の試合 AI予測 — クロアチア大番狂わせ！イタリア・ベルギー32強 + 韓国16強相手決定",
+  "title_en": "2026-07-04 Match Predictions by AI — Croatia's Shock! Italy & Belgium in R32 + Korea's R16 Opponent Decided",
+  "korea_match": false,
+  "matches_today": [
+    {
+      "id": "m1",
+      "team_a": "Italy",
+      "team_b": "Australia",
+      "stage": "Round of 32",
+      "venue": "Levi's Stadium, San Francisco",
+      "kickoff_kst": "03:00",
+      "note": "Winner faces South Korea in Round of 16"
+    },
+    {
+      "id": "m2",
+      "team_a": "Belgium",
+      "team_b": "Ecuador",
+      "stage": "Round of 32",
+      "venue": "SoFi Stadium, Los Angeles",
+      "kickoff_kst": "06:00"
+    },
+    {
+      "id": "m3",
+      "team_a": "Uruguay",
+      "team_b": "Poland",
+      "stage": "Round of 32",
+      "venue": "AT&T Stadium, Arlington",
+      "kickoff_kst": "09:00"
+    },
+    {
+      "id": "m4",
+      "team_a": "Switzerland",
+      "team_b": "Ghana",
+      "stage": "Round of 32",
+      "venue": "Allegiant Stadium, Las Vegas",
+      "kickoff_kst": "12:00"
+    }
+  ],
+  "yesterday_results": [
+    {
+      "team_a": "France",
+      "score_a": 2,
+      "score_b": 0,
+      "team_b": "Mexico",
+      "stage": "Round of 32",
+      "ai_pred": "2-0 France",
+      "ai_correct": true
+    },
+    {
+      "team_a": "USA",
+      "score_a": 2,
+      "score_b": 1,
+      "team_b": "Senegal",
+      "stage": "Round of 32",
+      "ai_pred": "2-1 USA",
+      "ai_correct": true
+    },
+    {
+      "team_a": "England",
+      "score_a": 2,
+      "score_b": 1,
+      "team_b": "Colombia",
+      "stage": "Round of 32",
+      "ai_pred": "2-1 England",
+      "ai_correct": true
+    },
+    {
+      "team_a": "Croatia",
+      "score_a": 1,
+      "score_b": 1,
+      "team_b": "Portugal",
+      "note": "Croatia advance 4-3 on penalties — Ronaldo era ends in R32",
+      "stage": "Round of 32",
+      "ai_pred": "2-0 Portugal",
+      "ai_correct": false
+    }
+  ],
+  "ai_predictions": [
+    {
+      "match": "Italy vs Australia",
+      "pred_a": 2,
+      "pred_b": 0,
+      "confidence": "72%",
+      "pick": "Italy",
+      "note": "Winner = Korea's R16 opponent"
+    },
+    {
+      "match": "Belgium vs Ecuador",
+      "pred_a": 2,
+      "pred_b": 1,
+      "confidence": "65%",
+      "pick": "Belgium"
+    },
+    {
+      "match": "Uruguay vs Poland",
+      "pred_a": 2,
+      "pred_b": 1,
+      "confidence": "60%",
+      "pick": "Uruguay"
+    },
+    {
+      "match": "Switzerland vs Ghana",
+      "pred_a": 2,
+      "pred_b": 1,
+      "confidence": "58%",
+      "pick": "Switzerland"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "2026년 7월 4일. 어제, 세계 축구 역사에 충격파가 몰아쳤습니다. 크로아티아가 포르투갈을 승부차기 4-3으로 제압 — 크리스티아누 호날두의 마지막 월드컵 여정이 32강에서 막을 내렸습니다. AI도 이것만큼은 맞추지 못했습니다. 그리고 오늘, 32강 3일차. 4경기가 펼쳐지는데, AI가 주목하는 경기가 하나 있습니다 — 이탈리아 대 호주. 왜냐고요? 이 경기 승자가 바로 대한민국의 16강 상대가 되기 때문입니다! 24년 전의 역사가 반복될 수 있을까요? 벨기에, 우루과이, 스위스도 오늘 운명을 가립니다. 4경기 완전 분석, 지금 시작합니다.",
+      "narration_ja": "2026年7月4日。昨日、世界サッカー史に衝撃が走りました。クロアチアがポルトガルをPK戦4-3で制圧 — クリスティアーノ・ロナウドの最後のW杯の旅が32強で幕を閉じました。AIもこれだけは予測できませんでした。そして今日、32強3日目。4試合が繰り広げられる中、AIが注目する試合が一つあります — イタリア対オーストラリア。なぜかというと、この試合の勝者が韓国の16強相手になるからです！24年前の歴史が繰り返されるでしょうか？ベルギー、ウルグアイ、スイスも今日運命を分けます。4試合完全分析、今始めます。",
+      "narration_en": "July 4, 2026. Yesterday, a shockwave hit world football. Croatia knocked out Portugal on penalties, 4-3 — Cristiano Ronaldo's final World Cup journey ends in the Round of 32. Even AI didn't see that one coming. And today, Day 3 of the Round of 32. Four matches on the card — and AI has one circled in red: Italy vs Australia. Why? Because the winner of that game becomes South Korea's Round of 16 opponent! Could history repeat itself from 24 years ago? Belgium, Uruguay, and Switzerland also settle their fates today. Four matches, full AI analysis, starting now."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "어제 결과 리뷰. 프랑스 2-0 멕시코 — AI가 정확하게 적중했습니다. 음바페가 두 골을 모두 직접 제조했습니다. 미국 2-1 세네갈 — AI 예측 완벽 적중. 풀리시치의 선제골과 추가골, 개최국 미국이 홈에서 16강 티켓을 거머쥐었습니다. 잉글랜드 2-1 콜롬비아 — AI 적중. 벨링엄의 리더십이 빛났습니다. 그리고 어제의 대이변 — 크로아티아 1-1 포르투갈 후 승부차기 4-3 크로아티아 승리. AI는 포르투갈 2-0을 예측했지만 완전히 빗나갔습니다. 호날두의 마지막 월드컵이 32강에서 끝났습니다. 어제 AI 적중률: 4경기 중 3경기, 75%. 세 경기는 완벽했지만 크로아티아의 이변 하나가 마음을 아프게 합니다.",
+      "narration_ja": "昨日の結果レビュー。フランス2-0メキシコ — AIが正確に的中しました。エムバペが2ゴールを直接演出しました。アメリカ2-1セネガル — AIの予測が完璧に的中。プリシッチの先制点と追加点、開催国アメリカがホームで16強チケットをつかみました。イングランド2-1コロンビア — AI的中。ベリンガムのリーダーシップが光りました。そして昨日の大番狂わせ — クロアチア1-1ポルトガル後、PK戦4-3でクロアチア勝利。AIはポルトガル2-0を予測しましたが完全に外れました。ロナウドの最後のW杯が32強で終わりました。昨日のAI的中率：4試合中3試合、75%。3試合は完璧でしたが、クロアチアの番狂わせが心を痛めます。",
+      "narration_en": "Yesterday's recap. France 2-0 Mexico — AI nailed it. Mbappé was directly involved in both goals. USA 2-1 Senegal — a perfect AI call. Pulisic with the opening goal and an assist, the host nation USA punches their Round of 16 ticket on home soil. England 2-1 Colombia — AI correct again. Bellingham's class carried England through. And then the shock of the tournament so far: Croatia 1-1 Portugal after 90 minutes, Croatia advance 4-3 on penalties. AI predicted Portugal 2-0 — a complete miss. Cristiano Ronaldo's final World Cup journey ends in the Round of 32. Yesterday's AI accuracy: 3 from 4, 75%. Three clinical calls, one historic heartbreak."
+    },
+    {
+      "id": "s03_prediction1",
+      "narration": "오늘의 핵심 경기 분석 — 이탈리아 대 호주 32강. 리바이스 스타디움, 샌프란시스코, 03:00 KST. 그리고 이 경기 승자가 대한민국의 16강 상대가 됩니다. AI 예측: 이탈리아 2-0 호주. 신뢰도 72%. 이유 세 가지. 첫째, 이탈리아의 철벽 수비 — 도나룸마, 본우치, 아차에르비. 이탈리아의 4-3-3 블록은 카타르 이후 더욱 단단해졌습니다. 호주의 공격이 파고들 틈이 없습니다. 둘째, 기술적 우위 — 로카텔리의 미드필더 장악, 키에사의 드리블과 침투 패스. 호주의 맥카이와 이어바인이 뛰어나지만 이탈리아의 기술적 완성도와 격차가 있습니다. 셋째, 한국 시나리오 — 이탈리아가 이기면 한국의 상대는 이탈리아. 2002년 이탈리아전의 황금골 — 안정환의 그 순간을 기억하십니까? AI는 이미 한국 대 이탈리아 16강 매치업 분석을 시작했습니다.",
+      "narration_ja": "今日の核心試合分析 — イタリア対オーストラリア32強。リーバイスタジアム、サンフランシスコ、03:00 KST。そしてこの試合の勝者が韓国の16強相手になります。AI予測：イタリア2-0オーストラリア。信頼度72%。三つの理由。第一、イタリアの鉄壁守備 — ドンナルンマ、ボヌッチ、アッチェルビ。イタリアの4-3-3ブロックはカタール以降さらに堅固になりました。オーストラリアの攻撃が入り込む隙はありません。第二、技術的優位 — ロカテッリのミッドフィールド支配、キエーザのドリブルと浸透パス。オーストラリアのマッカイとアーヴァインは優秀ですが、イタリアの技術的完成度との差があります。第三、韓国シナリオ — イタリアが勝てば韓国の相手はイタリア。2002年イタリア戦のゴールデンゴール — アン・ジョンファンのあの瞬間を覚えていますか？AIはすでに韓国対イタリアの16強マッチアップ分析を始めています。",
+      "narration_en": "Today's headline analysis — Italy vs Australia, Round of 32. Levi's Stadium, San Francisco, 03:00 KST. And the winner of this match becomes South Korea's Round of 16 opponent. AI prediction: Italy 2-0 Australia. Confidence 72%. Three reasons. First, Italy's defensive fortress — Donnarumma, Bonucci, Acerbi. Italy's 4-3-3 defensive block has only grown more compact since Qatar. Australia will find no gaps. Second, the technical gap — Locatelli's midfield control, Chiesa's dribbling and through-balls. Australia's Maclaren and Irvine are quality players, but Italy's technical completeness is a clear tier above. Third, the Korea scenario — if AI is right and Italy wins, South Korea's Round of 16 opponent is the Azzurri. In 2002, Ahn Jung-hwan's golden goal sent Italy home from the Round of 16. Could history replay itself? AI has already started modeling the Korea vs Italy R16 matchup."
+    },
+    {
+      "id": "s04_prediction2",
+      "narration": "나머지 세 경기 빠른 AI 예측. 벨기에 대 에콰도르 — AI 픽 벨기에 2-1. 신뢰도 65%. 드 브라이너의 원맨쇼가 이번 대회 마지막이 될 수도 있는 황금 세대의 간절함과 결합됩니다. 루카쿠의 피지컬이 에콰도르 수비를 압도합니다. 에콰도르의 반격 가능성은 존재하지만 벨기에의 개인기가 결국 결판을 냅니다. 우루과이 대 폴란드 — AI 픽 우루과이 2-1. 신뢰도 60%. 다르윈 누녜스의 스피드와 역습이 핵심 무기. 레반도프스키가 여전히 세계 최고 스트라이커이지만, 우루과이의 수비 블록이 그의 볼 공급을 차단합니다. 스위스 대 가나 — AI 픽 스위스 2-1. 신뢰도 58%. 샤키리와 엠볼로의 경험이 가나의 젊은 공격을 능가합니다. 극적인 장면은 없지만 안정적인 스위스의 전진이 예상됩니다.",
+      "narration_ja": "残り3試合の素早いAI予測。ベルギー対エクアドル — AIピックベルギー2-1。信頼度65%。デ・ブライネのワンマンショーが、今大会が最後になるかもしれない黄金世代の切実さと結合します。ルカクのフィジカルがエクアドルの守備を圧倒します。エクアドルの反撃の可能性はありますが、ベルギーの個人技が最終的に勝負を決めます。ウルグアイ対ポーランド — AIピックウルグアイ2-1。信頼度60%。ダーウィン・ヌニェスのスピードとカウンターアタックが核心武器。レヴァンドフスキは依然として世界最高のストライカーですが、ウルグアイの守備ブロックが彼へのボール供給を遮断します。スイス対ガーナ — AIピックスイス2-1。信頼度58%。シャキリとエンボロの経験がガーナの若い攻撃を凌駕します。劇的な場面はないですが、安定したスイスの前進が予想されます。",
+      "narration_en": "Three more rapid-fire AI predictions. Belgium vs Ecuador — AI pick Belgium 2-1, confidence 65%. De Bruyne's one-man show fuelled by the desperation of a golden generation that may never have another chance. Lukaku's physicality overwhelms Ecuador's backline. Ecuador will threaten on the counter but Belgian individual quality settles it. Uruguay vs Poland — AI pick Uruguay 2-1, confidence 60%. Darwin Núñez's pace and transition play is the key weapon. Lewandowski remains one of the world's elite strikers but Uruguay's defensive block will cut his supply lines. Switzerland vs Ghana — AI pick Switzerland 2-1, confidence 58%. Shaqiri and Embolo's tournament experience edges Ghana's youthful energy. No drama expected, just Switzerland's efficient, methodical progress."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘의 AI 픽 총정리. 이탈리아 2-0 호주 — 신뢰도 72%. TOP 픽. 벨기에 2-1 에콰도르 — 신뢰도 65%. 우루과이 2-1 폴란드 — 신뢰도 60%. 스위스 2-1 가나 — 신뢰도 58%. 오늘의 최고 관심 경기는 이탈리아 대 호주입니다. AI가 이탈리아의 16강 진출을 예측하는 이유는 단 하나 — 그리고 그것은 순수하게 축구 데이터입니다. 하지만 한국 팬 여러분께 드리고 싶은 말씀이 있습니다. 만약 AI의 예측이 맞는다면, 태극전사들의 16강 상대는 이탈리아입니다. 2002년 안정환의 골, 뉴욕의 응원, 지금의 손흥민 — 24년이 지난 지금, 역사는 다시 쓰일 준비가 되어 있을까요? AI가 한국 대 이탈리아 분석을 준비합니다. EP11에서 공개됩니다. 구독과 좋아요, 잊지 마세요. 대~한민국!",
+      "narration_ja": "今日のAIピック総まとめ。イタリア2-0オーストラリア — 信頼度72%。TOPピック。ベルギー2-1エクアドル — 信頼度65%。ウルグアイ2-1ポーランド — 信頼度60%。スイス2-1ガーナ — 信頼度58%。今日最も注目される試合はイタリア対オーストラリアです。AIがイタリアの16強進出を予測する理由はただ一つ — それは純粋にサッカーデータです。しかし韓国ファンの皆さんにお伝えしたいことがあります。もしAIの予測が当たれば、太極戦士たちの16強相手はイタリアです。2002年アン・ジョンファンのゴール、ニューヨークの応援、そして今のソン・フンミン — 24年が経った今、歴史はまた書き直される準備ができているのでしょうか？AIが韓国対イタリア分析を準備します。EP11で公開されます。チャンネル登録といいねをお忘れなく。テーハンミング！",
+      "narration_en": "Today's AI summary. Italy 2-0 Australia — confidence 72%, TOP pick. Belgium 2-1 Ecuador — 65%. Uruguay 2-1 Poland — 60%. Switzerland 2-1 Ghana — 58%. Today's most important match is Italy vs Australia — and the reason AI has it circled is pure football data and one extraordinary subplot: the winner meets South Korea in the Round of 16. If AI is correct and Italy advance, the Korean squad faces the Azzurri. In 2002, Ahn Jung-hwan's golden goal sent Italy home from this exact round. Twenty-four years later, Son Heung-min is ready. AI is already running the Korea vs Italy R16 model — the full analysis drops in EP11. Subscribe so you don't miss it. Dae-han-min-guk!"
+    }
+  ]
+}
