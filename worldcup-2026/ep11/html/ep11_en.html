@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>EP11 — Group H Deep Dive | 2026 World Cup Prediction Battle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    background: #0a0a1a;
+    color: #fff;
+  }
+  .slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 1920px;
+    height: 1080px;
+    display: none;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  .bg-stadium {
+    background:
+      radial-gradient(ellipse 120% 80% at 50% 110%, #0d5c2e 0%, transparent 60%),
+      radial-gradient(ellipse 80% 50% at 80% 20%, #1a3a6e 0%, transparent 50%),
+      linear-gradient(160deg, #04060f 0%, #0e1828 50%, #071410 100%);
+  }
+  .bg-analysis {
+    background:
+      radial-gradient(ellipse 100% 70% at 20% 90%, #1a3a6e 0%, transparent 55%),
+      radial-gradient(ellipse 60% 60% at 90% 10%, #0d5c2e 0%, transparent 50%),
+      linear-gradient(135deg, #06080f 0%, #0e1828 60%, #060d06 100%);
+  }
+  .bg-verdict {
+    background:
+      radial-gradient(ellipse 110% 80% at 50% 100%, #7c3b00 0%, transparent 55%),
+      radial-gradient(ellipse 70% 50% at 10% 10%, #1a3a6e 0%, transparent 50%),
+      linear-gradient(150deg, #06080f 0%, #1a1a0a 60%, #0e0604 100%);
+  }
+
+  .grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  .ep-badge {
+    position: absolute;
+    top: 48px; left: 72px;
+    background: linear-gradient(135deg, #1e8f4e, #0d5c2e);
+    border: 2px solid #2ecc71;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #2ecc71;
+    text-transform: uppercase;
+  }
+
+  .group-badge {
+    position: absolute;
+    top: 48px; right: 72px;
+    background: linear-gradient(135deg, rgba(255,215,0,0.15), rgba(255,165,0,0.1));
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+    padding: 10px 28px;
+    font-size: 26px;
+    font-weight: 900;
+    color: #ffd700;
+    letter-spacing: 3px;
+  }
+
+  .slide-counter {
+    position: absolute;
+    bottom: 40px; right: 72px;
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 3px;
+  }
+  .watermark {
+    position: absolute;
+    bottom: 40px; left: 72px;
+    font-size: 18px;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 2px;
+  }
+
+  #slide-1 {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .hook-subtitle {
+    font-size: 26px;
+    font-weight: 400;
+    color: #2ecc71;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hook-title {
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    max-width: 1400px;
+  }
+  .hook-title em { font-style: normal; color: #ffd700; }
+  .hook-divider {
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #2ecc71, #ffd700);
+    border-radius: 2px;
+    margin: 36px auto;
+  }
+  .hook-tagline {
+    font-size: 27px;
+    color: rgba(255,255,255,0.6);
+    max-width: 1100px;
+    line-height: 1.75;
+  }
+  .hook-flags {
+    margin-top: 40px;
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    font-size: 52px;
+  }
+  .flag-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .flag-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 1px;
+  }
+
+  .teams-header {
+    font-size: 44px;
+    font-weight: 900;
+    color: #ffd700;
+    letter-spacing: 2px;
+    margin-bottom: 48px;
+    text-align: center;
+  }
+  .teams-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .team-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+  }
+  .team-flag { font-size: 64px; margin-bottom: 16px; }
+  .team-name { font-size: 30px; font-weight: 900; margin-bottom: 8px; }
+  .team-rank { font-size: 17px; color: #2ecc71; font-weight: 700; margin-bottom: 12px; }
+  .team-desc { font-size: 15px; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+  .analysis-title {
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+  .analysis-title em { font-style: normal; color: #ffd700; }
+  .analysis-sub {
+    font-size: 22px;
+    color: #2ecc71;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 44px;
+  }
+  .analysis-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .stat-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-left: 4px solid #2ecc71;
+    border-radius: 12px;
+    padding: 28px 32px;
+  }
+  .stat-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #2ecc71;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .stat-value { font-size: 22px; font-weight: 700; line-height: 1.5; }
+  .stat-value em { font-style: normal; color: #ffd700; }
+
+  .player-row {
+    margin-top: 32px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .player-chip {
+    background: rgba(46,204,113,0.12);
+    border: 1px solid rgba(46,204,113,0.3);
+    border-radius: 100px;
+    padding: 10px 24px;
+    font-size: 19px;
+    font-weight: 700;
+    color: #2ecc71;
+  }
+
+  .predict-title {
+    font-size: 50px;
+    font-weight: 900;
+    margin-bottom: 44px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+  }
+  .predict-title em { font-style: normal; color: #ffd700; }
+  .variables-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .variable-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 28px 32px;
+  }
+  .var-team { font-size: 21px; font-weight: 900; color: #ffd700; margin-bottom: 12px; }
+  .var-text { font-size: 18px; color: rgba(255,255,255,0.7); line-height: 1.7; }
+
+  .verdict-label {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2ecc71;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .verdict-title { font-size: 62px; font-weight: 900; color: #ffd700; margin-bottom: 44px; letter-spacing: -1px; }
+  .verdict-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 1400px;
+  }
+  .verdict-card { border-radius: 16px; padding: 32px 20px; text-align: center; }
+  .verdict-card.advance { background: rgba(46,204,113,0.12); border: 2px solid #2ecc71; }
+  .verdict-card.out { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); }
+  .vc-rank { font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.45); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; }
+  .vc-team { font-size: 34px; font-weight: 900; margin-bottom: 12px; }
+  .vc-status { font-size: 16px; font-weight: 700; }
+  .verdict-card.advance .vc-status { color: #2ecc71; }
+  .verdict-card.out .vc-status { color: rgba(255,255,255,0.35); }
+  .verdict-next { margin-top: 40px; font-size: 24px; color: rgba(255,255,255,0.5); }
+  .verdict-next em { color: #ffd700; font-style: normal; font-weight: 900; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: HOOK -->
+<div class="slide bg-stadium active" id="slide-1">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP11</div>
+  <div class="group-badge">GROUP H</div>
+  <div style="width:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+    <div class="hook-subtitle">2026 World Cup Prediction Battle</div>
+    <div class="hook-title">Group H Deep Dive<br><em>Dreams Crash Into Ambition</em></div>
+    <div class="hook-divider"></div>
+    <div class="hook-tagline">Host nation USA, Africa's powerhouse Senegal, South America's dribbling maestros Colombia, and European dark horses Serbia<br>4 continents — only 2 tickets to the Round of 32</div>
+    <div class="hook-flags">
+      <div class="flag-item"><span>🇺🇸</span><span class="flag-name">USA</span></div>
+      <div class="flag-item"><span>🇸🇳</span><span class="flag-name">SENEGAL</span></div>
+      <div class="flag-item"><span>🇨🇴</span><span class="flag-name">COLOMBIA</span></div>
+      <div class="flag-item"><span>🇷🇸</span><span class="flag-name">SERBIA</span></div>
+    </div>
+  </div>
+  <div class="slide-counter">01 / 07</div>
+  <div class="watermark">2026 World Cup Prediction Battle</div>
+</div>
+
+<!-- SLIDE 2: TEAMS OVERVIEW -->
+<div class="slide bg-analysis" id="slide-2">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP11</div>
+  <div class="group-badge">GROUP H</div>
+  <div style="width:100%; padding:80px 120px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="teams-header">Group H — 4 Teams, Force Rankings</div>
+    <div class="teams-grid">
+      <div class="team-card">
+        <div class="team-flag">🇺🇸</div>
+        <div class="team-name">USA</div>
+        <div class="team-rank">FIFA #11 · 1st Seed · Co-Host</div>
+        <div class="team-desc">Pulisic · Balogun · McKennie<br>Europe-forged generation's main stage</div>
+      </div>
+      <div class="team-card">
+        <div class="team-flag">🇸🇳</div>
+        <div class="team-name">Senegal</div>
+        <div class="team-rank">FIFA #20 · African Champions</div>
+        <div class="team-desc">Ismaila Sarr · Pape Sarr<br>New generation rises after Mané</div>
+      </div>
+      <div class="team-card">
+        <div class="team-flag">🇨🇴</div>
+        <div class="team-name">Colombia</div>
+        <div class="team-rank">FIFA #17 · South American Dark Horse</div>
+        <div class="team-desc">Luís Díaz · James Rodríguez<br>Generational shift complete</div>
+      </div>
+      <div class="team-card">
+        <div class="team-flag">🇷🇸</div>
+        <div class="team-name">Serbia</div>
+        <div class="team-rank">FIFA #25 · European Powerhouse</div>
+        <div class="team-desc">Vlahović · Mitrović<br>Midfield dominance and finishing</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-counter">02 / 07</div>
+  <div class="watermark">2026 World Cup Prediction Battle</div>
+</div>
+
+<!-- SLIDE 3: USA ANALYSIS -->
+<div class="slide bg-analysis" id="slide-3">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP11</div>
+  <div class="group-badge">GROUP H</div>
+  <div style="width:100%; padding:80px 120px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="analysis-sub">Top Seed Analysis</div>
+    <div class="analysis-title">🇺🇸 USA<br><em>Host Nation's Dream, Europe-Hardened Generation</em></div>
+    <div class="analysis-body" style="margin-top:36px;">
+      <div class="stat-box">
+        <div class="stat-label">Core Strengths</div>
+        <div class="stat-value">Christian Pulisic leading the attack<br><em>Europe's big clubs shaped this roster</em><br>Co-host home crowd advantage</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Recent Form</div>
+        <div class="stat-value">2022 Qatar — Round of 16<br><em>Fell to Netherlands</em><br>CONCACAF's strongest squad ever</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Tactical Style</div>
+        <div class="stat-value">High-intensity pressing<br>Explosive counter-attacks<br><em>Fitness and pace as weapons</em></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">The Goal</div>
+        <div class="stat-value">First-ever World Cup quarterfinal<br>In front of the home crowd<br><em>History written here</em></div>
+      </div>
+    </div>
+    <div class="player-row">
+      <div class="player-chip">Christian Pulisic</div>
+      <div class="player-chip">Folarin Balogun</div>
+      <div class="player-chip">Weston McKennie</div>
+    </div>
+  </div>
+  <div class="slide-counter">03 / 07</div>
+  <div class="watermark">2026 World Cup Prediction Battle</div>
+</div>
+
+<!-- SLIDE 4: SENEGAL ANALYSIS -->
+<div class="slide bg-analysis" id="slide-4">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP11</div>
+  <div class="group-badge">GROUP H</div>
+  <div style="width:100%; padding:80px 120px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="analysis-sub">2nd Team Analysis</div>
+    <div class="analysis-title">🇸🇳 Senegal<br><em>After Mané — Africa's New Overlords</em></div>
+    <div class="analysis-body" style="margin-top:36px;">
+      <div class="stat-box">
+        <div class="stat-label">Core Strengths</div>
+        <div class="stat-value">Ismaila Sarr's blazing pace<br><em>Africa's most physical side</em><br>Iron-clad defensive organization</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">2022 Qatar</div>
+        <div class="stat-value">Reached Round of 16<br><em>Fell to England</em><br>Performed despite Mané injury</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Threat Factors</div>
+        <div class="stat-value">Lightning-quick transitions<br>Set-piece aerial dominance<br><em>Midfield battle winners</em></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">The Shift</div>
+        <div class="stat-value">From Mané's era to Sarr's era<br><em>Generational handover complete</em><br>Organization still elite-level</div>
+      </div>
+    </div>
+    <div class="player-row">
+      <div class="player-chip">Ismaila Sarr</div>
+      <div class="player-chip">Pape Sarr</div>
+      <div class="player-chip">Kalidou Koulibaly</div>
+    </div>
+  </div>
+  <div class="slide-counter">04 / 07</div>
+  <div class="watermark">2026 World Cup Prediction Battle</div>
+</div>
+
+<!-- SLIDE 5: COLOMBIA + SERBIA ANALYSIS -->
+<div class="slide bg-analysis" id="slide-5">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP11</div>
+  <div class="group-badge">GROUP H</div>
+  <div style="width:100%; padding:80px 120px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="analysis-sub">3rd & 4th Team Analysis</div>
+    <div class="analysis-title">🇨🇴 Colombia vs 🇷🇸 Serbia<br><em>South American Magic vs European Firepower</em></div>
+    <div class="analysis-body" style="margin-top:36px;">
+      <div class="stat-box">
+        <div class="stat-label">🇨🇴 Colombia Strengths</div>
+        <div class="stat-value">Luís Díaz — Liverpool's ace winger<br><em>Dribbling and finishing fused perfectly</em><br>James Rodríguez's creative vision</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">🇷🇸 Serbia Strengths</div>
+        <div class="stat-value">Dušan Vlahović — Juventus striker<br><em>Mitrović's unstoppable heading</em><br>Midfield engine Maksimović</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">🇨🇴 Colombia Risk</div>
+        <div class="stat-value">Luís Díaz injury risk is everything<br>Defensive fragility concerns<br><em>Without Díaz, attack halved</em></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">🇷🇸 Serbia Risk</div>
+        <div class="stat-value">Defensive concentration — repeat conceding patterns<br>Striker selection feud<br><em>Organization vs individual talent imbalance</em></div>
+      </div>
+    </div>
+    <div class="player-row">
+      <div class="player-chip">Luís Díaz</div>
+      <div class="player-chip">Dušan Vlahović</div>
+      <div class="player-chip">Aleksandar Mitrović</div>
+    </div>
+  </div>
+  <div class="slide-counter">05 / 07</div>
+  <div class="watermark">2026 World Cup Prediction Battle</div>
+</div>
+
+<!-- SLIDE 6: VARIABLES -->
+<div class="slide bg-analysis" id="slide-6">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP11</div>
+  <div class="group-badge">GROUP H</div>
+  <div style="width:100%; padding:80px 120px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="predict-title">Variable Analysis —<br><em>The Decisive Factors of Group H</em></div>
+    <div class="variables-grid">
+      <div class="variable-card">
+        <div class="var-team">🇺🇸 Home Pressure — Double-Edged Sword</div>
+        <div class="var-text">Tens of thousands of home fans can lift you — or bury you.<br>One mistake in front of the crowd multiplies into a crisis on the world's biggest stage.</div>
+      </div>
+      <div class="variable-card">
+        <div class="var-team">🇸🇳 Leadership Vacuum Post-Mané</div>
+        <div class="var-text">New leadership hasn't fully crystallized since Mané's era ended.<br>When it gets desperate, there's no undisputed ace to step up and take charge.</div>
+      </div>
+      <div class="variable-card">
+        <div class="var-team">🇨🇴 The Díaz Injury Question</div>
+        <div class="var-text">Every Colombia attacking move orbits Luís Díaz.<br>One injury and the title chances are cut in half — a structural overdependence.</div>
+      </div>
+      <div class="variable-card">
+        <div class="var-team">🇷🇸 The Striker Feud</div>
+        <div class="var-text">Vlahović vs Mitrović — Serbia's biggest unsolved dilemma.<br>Failure to find the right partnership could shatter the team's attacking balance.</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-counter">06 / 07</div>
+  <div class="watermark">2026 World Cup Prediction Battle</div>
+</div>
+
+<!-- SLIDE 7: VERDICT -->
+<div class="slide bg-verdict" id="slide-7">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP11</div>
+  <div class="group-badge">GROUP H</div>
+  <div style="width:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+    <div class="verdict-label">Final Prediction</div>
+    <div class="verdict-title">2 Teams Advance</div>
+    <div class="verdict-grid">
+      <div class="verdict-card advance">
+        <div class="vc-rank">1st Place</div>
+        <div class="vc-team">🇺🇸 USA</div>
+        <div class="vc-status">✓ Advances</div>
+      </div>
+      <div class="verdict-card advance">
+        <div class="vc-rank">2nd Place</div>
+        <div class="vc-team">🇸🇳 Senegal</div>
+        <div class="vc-status">✓ Advances</div>
+      </div>
+      <div class="verdict-card out">
+        <div class="vc-rank">3rd — Eliminated</div>
+        <div class="vc-team">🇨🇴 Colombia</div>
+        <div class="vc-status">— Group Stage Exit</div>
+      </div>
+      <div class="verdict-card out">
+        <div class="vc-rank">4th — Eliminated</div>
+        <div class="vc-team">🇷🇸 Serbia</div>
+        <div class="vc-status">— Group Stage Exit</div>
+      </div>
+    </div>
+    <div class="verdict-next">Next: EP12 → <em>Group I Complete Analysis</em></div>
+  </div>
+  <div class="slide-counter">07 / 07</div>
+  <div class="watermark">2026 World Cup Prediction Battle</div>
+</div>
+
+<script>
+  let current = 1;
+  const total = 7;
+
+  function showSlide(n) {
+    if (n < 1 || n > total) return;
+    const prev = document.getElementById('slide-' + current);
+    if (prev) prev.classList.remove('active');
+    current = n;
+    const next = document.getElementById('slide-' + current);
+    if (next) next.classList.add('active');
+  }
+
+  window.goToSlide = showSlide;
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') showSlide(current + 1);
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   showSlide(current - 1);
+  });
+
+  showSlide(1);
+</script>
+</body>
+</html>

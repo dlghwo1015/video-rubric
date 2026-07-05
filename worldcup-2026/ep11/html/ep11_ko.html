@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>EP11 — H조 완전 분석 | 2026 월드컵 예측 대결</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #0a0a1a;
+    color: #fff;
+  }
+  .slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 1920px;
+    height: 1080px;
+    display: none;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  .bg-stadium {
+    background:
+      radial-gradient(ellipse 120% 80% at 50% 110%, #0d5c2e 0%, transparent 60%),
+      radial-gradient(ellipse 80% 50% at 80% 20%, #1a3a6e 0%, transparent 50%),
+      linear-gradient(160deg, #04060f 0%, #0e1828 50%, #071410 100%);
+  }
+  .bg-analysis {
+    background:
+      radial-gradient(ellipse 100% 70% at 20% 90%, #1a3a6e 0%, transparent 55%),
+      radial-gradient(ellipse 60% 60% at 90% 10%, #0d5c2e 0%, transparent 50%),
+      linear-gradient(135deg, #06080f 0%, #0e1828 60%, #060d06 100%);
+  }
+  .bg-verdict {
+    background:
+      radial-gradient(ellipse 110% 80% at 50% 100%, #7c3b00 0%, transparent 55%),
+      radial-gradient(ellipse 70% 50% at 10% 10%, #1a3a6e 0%, transparent 50%),
+      linear-gradient(150deg, #06080f 0%, #1a1a0a 60%, #0e0604 100%);
+  }
+
+  .grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  .ep-badge {
+    position: absolute;
+    top: 48px; left: 72px;
+    background: linear-gradient(135deg, #1e8f4e, #0d5c2e);
+    border: 2px solid #2ecc71;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #2ecc71;
+    text-transform: uppercase;
+  }
+
+  .group-badge {
+    position: absolute;
+    top: 48px; right: 72px;
+    background: linear-gradient(135deg, rgba(255,215,0,0.15), rgba(255,165,0,0.1));
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+    padding: 10px 28px;
+    font-size: 26px;
+    font-weight: 900;
+    color: #ffd700;
+    letter-spacing: 3px;
+  }
+
+  .slide-counter {
+    position: absolute;
+    bottom: 40px; right: 72px;
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 3px;
+  }
+  .watermark {
+    position: absolute;
+    bottom: 40px; left: 72px;
+    font-size: 18px;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 2px;
+  }
+
+  /* SLIDE 1 — HOOK */
+  #slide-1 {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .hook-subtitle {
+    font-size: 28px;
+    font-weight: 400;
+    color: #2ecc71;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hook-title {
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    max-width: 1400px;
+  }
+  .hook-title em { font-style: normal; color: #ffd700; }
+  .hook-divider {
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #2ecc71, #ffd700);
+    border-radius: 2px;
+    margin: 36px auto;
+  }
+  .hook-tagline {
+    font-size: 28px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.6);
+    max-width: 1000px;
+    line-height: 1.7;
+  }
+  .hook-flags {
+    margin-top: 40px;
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    font-size: 52px;
+  }
+  .flag-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .flag-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 1px;
+  }
+
+  /* SLIDE 2 — TEAMS */
+  .teams-header {
+    font-size: 44px;
+    font-weight: 900;
+    color: #ffd700;
+    letter-spacing: 2px;
+    margin-bottom: 48px;
+    text-align: center;
+  }
+  .teams-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .team-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+  }
+  .team-flag { font-size: 64px; margin-bottom: 16px; }
+  .team-name { font-size: 32px; font-weight: 900; margin-bottom: 8px; }
+  .team-rank {
+    font-size: 18px;
+    color: #2ecc71;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .team-desc { font-size: 16px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+
+  /* SLIDE 3,4,5 — ANALYSIS */
+  .analysis-title {
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .analysis-title em { font-style: normal; color: #ffd700; }
+  .analysis-sub {
+    font-size: 24px;
+    color: #2ecc71;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 48px;
+  }
+  .analysis-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .stat-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-left: 4px solid #2ecc71;
+    border-radius: 12px;
+    padding: 28px 32px;
+  }
+  .stat-label {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2ecc71;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .stat-value { font-size: 24px; font-weight: 700; line-height: 1.4; }
+  .stat-value em { font-style: normal; color: #ffd700; }
+
+  .player-row {
+    margin-top: 36px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .player-chip {
+    background: rgba(46,204,113,0.12);
+    border: 1px solid rgba(46,204,113,0.3);
+    border-radius: 100px;
+    padding: 10px 24px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #2ecc71;
+  }
+
+  /* SLIDE 6 — VARIABLES */
+  .predict-title {
+    font-size: 52px;
+    font-weight: 900;
+    margin-bottom: 48px;
+    line-height: 1.2;
+  }
+  .predict-title em { font-style: normal; color: #ffd700; }
+  .variables-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .variable-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 28px 32px;
+  }
+  .var-team {
+    font-size: 22px;
+    font-weight: 900;
+    color: #ffd700;
+    margin-bottom: 12px;
+  }
+  .var-text { font-size: 19px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+  /* SLIDE 7 — VERDICT */
+  .verdict-label {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2ecc71;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .verdict-title {
+    font-size: 64px;
+    font-weight: 900;
+    color: #ffd700;
+    margin-bottom: 48px;
+  }
+  .verdict-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 1400px;
+  }
+  .verdict-card {
+    border-radius: 16px;
+    padding: 32px 20px;
+    text-align: center;
+  }
+  .verdict-card.advance {
+    background: rgba(46,204,113,0.12);
+    border: 2px solid #2ecc71;
+  }
+  .verdict-card.out {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .vc-rank {
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .vc-team { font-size: 36px; font-weight: 900; margin-bottom: 12px; }
+  .vc-status { font-size: 17px; font-weight: 700; }
+  .verdict-card.advance .vc-status { color: #2ecc71; }
+  .verdict-card.out .vc-status { color: rgba(255,255,255,0.35); }
+  .verdict-next {
+    margin-top: 40px;
+    font-size: 26px;
+    color: rgba(255,255,255,0.5);
+  }
+  .verdict-next em { color: #ffd700; font-style: normal; font-weight: 900; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: HOOK -->
+<div class="slide bg-stadium active" id="slide-1">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP11</div>
+  <div class="group-badge">H조</div>
+  <div style="width:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+    <div class="hook-subtitle">2026 월드컵 예측 대결</div>
+    <div class="hook-title">H조 완전 분석<br><em>꿈과 야망이 격돌하다</em></div>
+    <div class="hook-divider"></div>
+    <div class="hook-tagline">개최국 미국, 아프리카의 맹주 세네갈, 남미의 마에스트로 콜롬비아, 유럽의 다크호스 세르비아<br>4개 대륙, 단 2장의 16강 티켓</div>
+    <div class="hook-flags">
+      <div class="flag-item"><span>🇺🇸</span><span class="flag-name">미국</span></div>
+      <div class="flag-item"><span>🇸🇳</span><span class="flag-name">세네갈</span></div>
+      <div class="flag-item"><span>🇨🇴</span><span class="flag-name">콜롬비아</span></div>
+      <div class="flag-item"><span>🇷🇸</span><span class="flag-name">세르비아</span></div>
+    </div>
+  </div>
+  <div class="slide-counter">01 / 07</div>
+  <div class="watermark">2026 월드컵 예측 대결</div>
+</div>
+
+<!-- SLIDE 2: TEAMS OVERVIEW -->
+<div class="slide bg-analysis" id="slide-2">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP11</div>
+  <div class="group-badge">H조</div>
+  <div style="width:100%; padding:80px 120px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="teams-header">H조 4개 팀 — 전력 비교</div>
+    <div class="teams-grid">
+      <div class="team-card">
+        <div class="team-flag">🇺🇸</div>
+        <div class="team-name">미국</div>
+        <div class="team-rank">FIFA 11위 · 1번 시드 · 개최국</div>
+        <div class="team-desc">풀리식 · 폴더노프 · 맥케니<br>유럽 빅클럽 세대의 첫 무대</div>
+      </div>
+      <div class="team-card">
+        <div class="team-flag">🇸🇳</div>
+        <div class="team-name">세네갈</div>
+        <div class="team-rank">FIFA 20위 · 아프리카 챔피언</div>
+        <div class="team-desc">이스마일라 사르 · 팔다 사르<br>마네 이후 새 세대의 도전</div>
+      </div>
+      <div class="team-card">
+        <div class="team-flag">🇨🇴</div>
+        <div class="team-name">콜롬비아</div>
+        <div class="team-rank">FIFA 17위 · 남미 다크호스</div>
+        <div class="team-desc">루이스 디아스 · 하메스 로드리게스<br>세대 교체 완성의 팀</div>
+      </div>
+      <div class="team-card">
+        <div class="team-flag">🇷🇸</div>
+        <div class="team-name">세르비아</div>
+        <div class="team-rank">FIFA 25위 · 유럽 강호</div>
+        <div class="team-desc">블라호비치 · 미트로비치<br>중원 지배력과 결정력</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-counter">02 / 07</div>
+  <div class="watermark">2026 월드컵 예측 대결</div>
+</div>
+
+<!-- SLIDE 3: USA ANALYSIS -->
+<div class="slide bg-analysis" id="slide-3">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP11</div>
+  <div class="group-badge">H조</div>
+  <div style="width:100%; padding:80px 120px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="analysis-sub">1번 시드 분석</div>
+    <div class="analysis-title">🇺🇸 미국<br><em>개최국의 꿈, 유럽에서 단련된 세대</em></div>
+    <div class="analysis-body" style="margin-top:36px;">
+      <div class="stat-box">
+        <div class="stat-label">핵심 강점</div>
+        <div class="stat-value">크리스티안 풀리식의 지휘<br><em>유럽 빅클럽 출신 젊은 세대</em><br>개최국 홈 어드밴테지</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">최근 성적</div>
+        <div class="stat-value">2022 카타르 16강 진출<br><em>네덜란드에 석패</em><br>CONCACAF 최강 전력 완성</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">전술 스타일</div>
+        <div class="stat-value">고강도 압박 축구<br>폭발적인 역습 전환<br><em>체력과 스피드가 핵심</em></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">목표</div>
+        <div class="stat-value">사상 첫 월드컵 8강<br>홈 팬들 앞에서<br><em>역사를 쓴다</em></div>
+      </div>
+    </div>
+    <div class="player-row">
+      <div class="player-chip">크리스티안 풀리식</div>
+      <div class="player-chip">폴라린 발로군</div>
+      <div class="player-chip">위스턴 맥케니</div>
+    </div>
+  </div>
+  <div class="slide-counter">03 / 07</div>
+  <div class="watermark">2026 월드컵 예측 대결</div>
+</div>
+
+<!-- SLIDE 4: SENEGAL ANALYSIS -->
+<div class="slide bg-analysis" id="slide-4">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP11</div>
+  <div class="group-badge">H조</div>
+  <div style="width:100%; padding:80px 120px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="analysis-sub">2번 팀 분석</div>
+    <div class="analysis-title">🇸🇳 세네갈<br><em>마네 이후 — 아프리카의 새 맹주</em></div>
+    <div class="analysis-body" style="margin-top:36px;">
+      <div class="stat-box">
+        <div class="stat-label">핵심 강점</div>
+        <div class="stat-value">이스마일라 사르의 스피드<br><em>아프리카 최강 피지컬</em><br>철통 수비 조직력</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">2022 카타르</div>
+        <div class="stat-value">16강 진출<br><em>잉글랜드에 석패</em><br>마네 부상 속 선전</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">위협 요소</div>
+        <div class="stat-value">빠른 역습 전환<br>세트피스 높이 싸움<br><em>중원 점유율 전쟁</em></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">변화 포인트</div>
+        <div class="stat-value">마네 세대에서 사르 세대로<br><em>세대 교체 완성</em><br>조직력은 여전히 최상위</div>
+      </div>
+    </div>
+    <div class="player-row">
+      <div class="player-chip">이스마일라 사르</div>
+      <div class="player-chip">팔다 사르</div>
+      <div class="player-chip">카리두 디알로</div>
+    </div>
+  </div>
+  <div class="slide-counter">04 / 07</div>
+  <div class="watermark">2026 월드컵 예측 대결</div>
+</div>
+
+<!-- SLIDE 5: COLOMBIA ANALYSIS -->
+<div class="slide bg-analysis" id="slide-5">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP11</div>
+  <div class="group-badge">H조</div>
+  <div style="width:100%; padding:80px 120px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="analysis-sub">3번 팀 분석 + 4번 팀</div>
+    <div class="analysis-title">🇨🇴 콜롬비아 vs 🇷🇸 세르비아<br><em>남미의 마법 vs 유럽의 득점력</em></div>
+    <div class="analysis-body" style="margin-top:36px;">
+      <div class="stat-box">
+        <div class="stat-label">🇨🇴 콜롬비아 강점</div>
+        <div class="stat-value">루이스 디아스 — 리버풀 에이스<br><em>드리블 + 결정력의 완벽한 결합</em><br>하메스의 창의성이 더해진다</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">🇷🇸 세르비아 강점</div>
+        <div class="stat-value">두샨 블라호비치 — 유벤투스 스트라이커<br><em>알렉산다르 미트로비치의 헤더</em><br>중원 지배력 네마냐 막시모비치</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">🇨🇴 콜롬비아 리스크</div>
+        <div class="stat-value">루이스 디아스 부상 리스크<br>수비 안정성 불안<br><em>디아스 없으면 공격 반토막</em></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">🇷🇸 세르비아 리스크</div>
+        <div class="stat-value">수비 집중력 — 실점 패턴 반복<br>선발 스트라이커 갈등<br><em>조직력 vs 개인기 불균형</em></div>
+      </div>
+    </div>
+    <div class="player-row">
+      <div class="player-chip">루이스 디아스</div>
+      <div class="player-chip">두샨 블라호비치</div>
+      <div class="player-chip">알렉산다르 미트로비치</div>
+    </div>
+  </div>
+  <div class="slide-counter">05 / 07</div>
+  <div class="watermark">2026 월드컵 예측 대결</div>
+</div>
+
+<!-- SLIDE 6: PREDICTION & VARIABLES -->
+<div class="slide bg-analysis" id="slide-6">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP11</div>
+  <div class="group-badge">H조</div>
+  <div style="width:100%; padding:80px 120px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="predict-title">예측 변수 분석 —<br><em>H조의 결정적 요인들</em></div>
+    <div class="variables-grid">
+      <div class="variable-card">
+        <div class="var-team">🇺🇸 홈 압박의 양날</div>
+        <div class="var-text">수만 명 홈 팬의 응원은 날개이기도, 족쇄이기도 하다.<br>실수 하나가 홈 관중 앞에서 배가 되어 돌아올 수 있다.</div>
+      </div>
+      <div class="variable-card">
+        <div class="var-team">🇸🇳 리더십 공백</div>
+        <div class="var-text">마네 이후의 새 리더십이 아직 완전히 정착되지 않았다.<br>고비의 순간, 팀을 이끌 절대적 에이스가 보이지 않는다.</div>
+      </div>
+      <div class="variable-card">
+        <div class="var-team">🇨🇴 디아스 부상 리스크</div>
+        <div class="var-text">콜롬비아의 모든 공격 플레이는 루이스 디아스를 중심으로 회전.<br>부상 하나로 팀의 우승 가능성이 절반으로 줄어드는 구조.</div>
+      </div>
+      <div class="variable-card">
+        <div class="var-team">🇷🇸 스트라이커 갈등</div>
+        <div class="var-text">블라호비치 vs 미트로비치 — 세르비아의 최대 딜레마.<br>두 스타의 공존 실패가 팀 밸런스를 무너뜨릴 수 있다.</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-counter">06 / 07</div>
+  <div class="watermark">2026 월드컵 예측 대결</div>
+</div>
+
+<!-- SLIDE 7: VERDICT -->
+<div class="slide bg-verdict" id="slide-7">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP11</div>
+  <div class="group-badge">H조</div>
+  <div style="width:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+    <div class="verdict-label">최종 예측</div>
+    <div class="verdict-title">16강 진출 2팀</div>
+    <div class="verdict-grid">
+      <div class="verdict-card advance">
+        <div class="vc-rank">1위 통과</div>
+        <div class="vc-team">🇺🇸 미국</div>
+        <div class="vc-status">✓ 16강 진출</div>
+      </div>
+      <div class="verdict-card advance">
+        <div class="vc-rank">2위 통과</div>
+        <div class="vc-team">🇸🇳 세네갈</div>
+        <div class="vc-status">✓ 16강 진출</div>
+      </div>
+      <div class="verdict-card out">
+        <div class="vc-rank">3위 탈락</div>
+        <div class="vc-team">🇨🇴 콜롬비아</div>
+        <div class="vc-status">— 조별리그 탈락</div>
+      </div>
+      <div class="verdict-card out">
+        <div class="vc-rank">4위 탈락</div>
+        <div class="vc-team">🇷🇸 세르비아</div>
+        <div class="vc-status">— 조별리그 탈락</div>
+      </div>
+    </div>
+    <div class="verdict-next">다음 EP12 → <em>I조 완전 분석</em></div>
+  </div>
+  <div class="slide-counter">07 / 07</div>
+  <div class="watermark">2026 월드컵 예측 대결</div>
+</div>
+
+<script>
+  let current = 1;
+  const total = 7;
+
+  function showSlide(n) {
+    if (n < 1 || n > total) return;
+    const prev = document.getElementById('slide-' + current);
+    if (prev) prev.classList.remove('active');
+    current = n;
+    const next = document.getElementById('slide-' + current);
+    if (next) next.classList.add('active');
+  }
+
+  window.goToSlide = showSlide;
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') showSlide(current + 1);
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   showSlide(current - 1);
+  });
+
+  showSlide(1);
+</script>
+</body>
+</html>

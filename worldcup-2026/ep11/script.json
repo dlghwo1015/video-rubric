@@ -1,0 +1,60 @@
+{
+  "series": "worldcup-2026",
+  "ep_number": 11,
+  "ep_role": "group_preview",
+  "group": "H조",
+  "title_ko": "H조 완전 분석 — 세네갈 vs 콜롬비아, 그리고 개최국 미국의 꿈",
+  "title_ja": "Hグループ完全分析 — セネガルvsコロンビア、そして開催国アメリカの夢",
+  "title_en": "Group H Deep Dive — Senegal vs Colombia & Host USA's Dream",
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "role": "hook",
+      "narration": "H조는 꿈과 야망이 격돌하는 무대입니다. 개최국 미국, 아프리카의 맹주 세네갈, 남미 드리블의 마에스트로 콜롬비아, 유럽의 다크호스 세르비아. 단 2장의 16강 티켓을 두고 4개 대륙의 자존심이 충돌합니다.",
+      "narration_ja": "H組は夢と野望が激突する舞台です。開催国アメリカ、アフリカの覇者セネガル、南米ドリブルの達人コロンビア、ヨーロッパのダークホース セルビア。たった2枚の決勝トーナメント進出チケットを巡り、4大陸のプライドが衝突します。",
+      "narration_en": "Group H is where dreams crash into ambition. Host nation USA, Africa's powerhouse Senegal, South America's dribbling maestros Colombia, and European dark horses Serbia. Just two Round of 32 tickets — four continents, one clash of pride."
+    },
+    {
+      "id": "s02_teams",
+      "role": "data",
+      "narration": "H조 4개 팀을 소개합니다. 1번 시드 미국 — FIFA 랭킹 11위, 공동 개최국. 세네갈 — FIFA 랭킹 20위, 아프리카 챔피언. 콜롬비아 — FIFA 랭킹 17위, 남미의 다크호스. 세르비아 — FIFA 랭킹 25위, 유럽 중원의 강호. 가장 예측하기 어려운 조가 시작됩니다.",
+      "narration_ja": "H組の4チームを紹介します。第1シード アメリカ — FIFAランキング11位、共同開催国。セネガル — FIFAランキング20位、アフリカ王者。コロンビア — FIFAランキング17位、南米のダークホース。セルビア — FIFAランキング25位、ヨーロッパの強豪。最も予測困難な組が始まります。",
+      "narration_en": "Meet the four teams of Group H. USA — FIFA ranked 11th, co-host nation. Senegal — FIFA ranked 20th, African champions. Colombia — FIFA ranked 17th, South America's dark horse. Serbia — FIFA ranked 25th, Europe's midfield powerhouse. The most unpredictable group begins."
+    },
+    {
+      "id": "s03_team1",
+      "role": "analysis",
+      "narration": "미국은 2026의 진정한 주인공입니다. 크리스티안 풀리식의 지휘, 폴더노프의 스피드, 맥케니의 에너지. 개최국 프리미엄에 더해 유럽 빅클럽에서 단련된 젊은 세대. USMNT는 더 이상 다크호스가 아닙니다 — 진지한 우승 후보의 얼굴을 하고 있습니다.",
+      "narration_ja": "アメリカは2026の真の主人公です。クリスティアン・プリシッチの指揮、ポールデノフのスピード、マッケニーのエネルギー。開催国プレミアムに加え、ヨーロッパのビッグクラブで鍛えられた若い世代。USMNTはもはやダークホースではありません — 真剣な優勝候補の顔をしています。",
+      "narration_en": "USA is the true protagonist of 2026. Christian Pulisic leading the charge, Folarin Balogun's finishing, McKennie's relentless energy. Beyond the host advantage, a generation forged in Europe's biggest clubs. USMNT is no dark horse anymore — they arrive with the face of genuine contenders."
+    },
+    {
+      "id": "s04_team2",
+      "role": "analysis",
+      "narration": "세네갈은 2022 카타르의 아픔을 딛고 돌아왔습니다. 사디오 마네의 시대가 황혼에 접어들어도, 이스마일라 사르와 팔다 사르의 새 시대가 열립니다. 아프리카 최강의 피지컬, 빠른 역습, 철통 조직력. 세네갈을 가볍게 보는 팀은 반드시 대가를 치릅니다.",
+      "narration_ja": "セネガルは2022カタールの痛みを乗り越えて帰ってきました。サディオ・マネの時代が黄昏を迎えても、イスマイラ・サルとファルダ・サルの新時代が開きます。アフリカ最強の体格、素早いカウンター、鉄壁の組織力。セネガルを軽く見るチームは必ず代償を払います。",
+      "narration_en": "Senegal returns from the pain of 2022, hungrier than ever. Even as Sadio Mané's era fades, Ismaila Sarr and Pape Sarr usher in a new generation. Africa's most physical team, lightning-fast counters, disciplined defensive shape. Any team that underestimates Senegal will pay the price."
+    },
+    {
+      "id": "s05_team3",
+      "role": "analysis",
+      "narration": "콜롬비아는 루이스 디아스의 마법이 있습니다. 리버풀의 에이스, 드리블과 결정력의 결합. 하메스 로드리게스의 황혼, 루이스 디아스의 여명 — 콜롬비아는 세대 교체가 완성된 2026 월드컵 최대의 다크호스입니다. 세르비아는 블라호비치와 미트로비치의 득점력이 무기지만 수비 집중력이 관건.",
+      "narration_ja": "コロンビアにはルイス・ディアスの魔法があります。リバプールのエース、ドリブルと決定力の融合。ハメス・ロドリゲスの黄昏、ルイス・ディアスの夜明け — コロンビアは世代交代が完成した2026W杯最大のダークホース。セルビアはヴラホヴィッチとミトロヴィッチの得点力が武器ですが守備集中力が課題。",
+      "narration_en": "Colombia has the magic of Luís Díaz. Liverpool's ace — dribbles and finishing fused into one. James Rodríguez's twilight, Díaz's dawn — Colombia is the 2026 World Cup's greatest dark horse with a generational shift complete. Serbia counters with Vlahović and Mitrović's goals, but defensive focus is their question mark."
+    },
+    {
+      "id": "s06_predict",
+      "role": "analysis",
+      "narration": "변수를 분석합니다. 미국의 변수는 홈 압박 — 응원의 함성이 때로는 발목을 잡습니다. 세네갈의 변수는 마네 이후의 리더십 공백. 콜롬비아는 루이스 디아스의 부상 리스크가 전부입니다. 세르비아는 블라호비치와 미트로비치 중 누가 선발인지조차 변수. H조는 마지막 경기까지 완전히 열려 있는 카오스의 조입니다.",
+      "narration_ja": "変数を分析します。アメリカの変数はホームプレッシャー — 応援の歓声が時に足かせになります。セネガルの変数はマネ後のリーダーシップの空白。コロンビアはルイス・ディアスの負傷リスクが全てです。セルビアはヴラホヴィッチとミトロヴィッチのどちらが先発かすら変数。H組は最終節まで完全に開かれた混沌の組です。",
+      "narration_en": "Breaking down the variables. USA's wildcard: home pressure — the roar of the crowd can cut both ways. Senegal's gap: the leadership vacuum left by Mané. Colombia hinges entirely on Luís Díaz staying injury-free. Serbia can't even decide between Vlahović and Mitrović up front. Group H stays wide open through the final matchday — pure chaos."
+    },
+    {
+      "id": "s07_verdict",
+      "role": "verdict",
+      "narration": "최종 예측입니다. 16강 진출팀: 미국과 세네갈. 미국은 개최국 어드밴테지와 홈 관중의 힘으로 1위, 세네갈은 아프리카 최강의 조직력으로 2위 진출. 콜롬비아는 3위, 세르비아는 4위 탈락. 진짜 관전 포인트: 개최국 미국이 드디어 사상 첫 8강을 노린다! 다음 EP12에서는 I조를 분석합니다.",
+      "narration_ja": "最終予測です。決勝トーナメント進出チーム：アメリカとセネガル。アメリカは開催国アドバンテージとホームの力で1位、セネガルはアフリカ最強の組織力で2位進出。コロンビアは3位、セルビアは4位敗退。真の見どころ：開催国アメリカがついに史上初のベスト8を狙う！次回EP12ではIグループを分析します。",
+      "narration_en": "Final prediction. Round of 32 qualifiers: USA and Senegal. USA advances in 1st place on home advantage and crowd power; Senegal 2nd on African discipline and organization. Colombia finishes 3rd, Serbia 4th and out. The real storyline to watch: can host USA finally break through to their first-ever World Cup quarterfinal? Next up — EP12, Group I."
+    }
+  ]
+}
