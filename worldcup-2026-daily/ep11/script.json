@@ -1,0 +1,115 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 11,
+  "date": "2026-07-05",
+  "title_ko": "2026-07-05 AI 예측 — 대한민국 vs 이탈리아 16강! 24년 만의 리매치",
+  "title_ja": "2026-07-05 AI予測 — 韓国vsイタリア16強！24年ぶりの再戦",
+  "title_en": "2026-07-05 AI Predictions — Korea vs Italy R16! The 24-Year Rematch",
+  "korea_match": true,
+  "matches_today": [
+    {
+      "id": "m1",
+      "team_a": "South Korea",
+      "team_b": "Italy",
+      "stage": "Round of 16",
+      "venue": "MetLife Stadium, East Rutherford",
+      "kickoff_kst": "07:00"
+    },
+    {
+      "id": "m2",
+      "team_a": "France",
+      "team_b": "Croatia",
+      "stage": "Round of 16",
+      "venue": "Rose Bowl, Los Angeles",
+      "kickoff_kst": "10:00"
+    }
+  ],
+  "yesterday_results": [
+    {
+      "team_a": "Italy",
+      "score_a": 2,
+      "score_b": 0,
+      "team_b": "Australia",
+      "stage": "Round of 32",
+      "ai_pred": "2-0 Italy",
+      "ai_correct": true
+    },
+    {
+      "team_a": "Belgium",
+      "score_a": 2,
+      "score_b": 1,
+      "team_b": "Ecuador",
+      "stage": "Round of 32",
+      "ai_pred": "2-1 Belgium",
+      "ai_correct": true
+    },
+    {
+      "team_a": "Uruguay",
+      "score_a": 1,
+      "score_b": 0,
+      "team_b": "Poland",
+      "stage": "Round of 32",
+      "ai_pred": "Uruguay (win)",
+      "ai_correct": true
+    },
+    {
+      "team_a": "Switzerland",
+      "score_a": 2,
+      "score_b": 1,
+      "team_b": "Ghana",
+      "stage": "Round of 32",
+      "ai_pred": "2-1 Switzerland",
+      "ai_correct": true
+    }
+  ],
+  "ai_predictions": [
+    {
+      "match": "South Korea vs Italy",
+      "pred_a": 1,
+      "pred_b": 2,
+      "confidence": "52%",
+      "pick": "Italy",
+      "upset_prob": "39%",
+      "note": "Korea upset watch — Son Heung-min factor"
+    },
+    {
+      "match": "France vs Croatia",
+      "pred_a": 2,
+      "pred_b": 0,
+      "confidence": "70%",
+      "pick": "France"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "2026년 7월 5일. 드디어 이 날이 왔습니다. 대~한민국 vs 이탈리아. 16강. 24년 전, 안정환의 황금골이 세상을 뒤집었습니다. 2002년의 그 밤, 전 세계가 한국을 믿지 못했습니다. 그리고 오늘 — 손흥민이 선다. 메트라이프 스타디움, 뉴저지, KST 07:00. AI가 어제 예측한 대로 이탈리아가 호주를 2-0으로 제압했고, 한국의 상대가 확정됐습니다. 세계 최고의 수비, 역사적 라이벌 이탈리아. AI의 오늘 최대 화두는 단 하나 — 태극전사가 기적을 다시 쓸 수 있을까요? 프랑스 vs 크로아티아 R16도 함께 분석합니다. 지금 시작합니다.",
+      "narration_ja": "2026年7月5日。ついにこの日が来ました。大~韓民国 vs イタリア。16強。24年前、アン・ジョンファンのゴールデンゴールが世界をひっくり返しました。2002年のあの夜、全世界が韓国を信じることができませんでした。そして今日 — ソン・フンミンが立ちます。メットライフスタジアム、ニュージャージー、KST 07:00。AIが昨日予測した通りイタリアがオーストラリアを2-0で制圧し、韓国の相手が確定しました。世界最高の守備、歴史的ライバルのイタリア。AIの今日の最大の焦点はただ一つ — 太極戦士は奇跡をまた書くことができるでしょうか？フランス vs クロアチアR16も合わせて分析します。今始めます。",
+      "narration_en": "July 5, 2026. The day has arrived. South Korea vs Italy. Round of 16. Twenty-four years ago, Ahn Jung-hwan's golden goal stopped the world. Nobody believed what they were watching in 2002. And today — Son Heung-min takes the stage. MetLife Stadium, East Rutherford, 07:00 KST. Exactly as AI predicted yesterday, Italy swept Australia 2-0 — Korea's Round of 16 opponent is confirmed: the Azzurri. The world's finest defence. A historic rivalry. AI's central question today is simple: can the Taeguk Warriors write the miracle again? France vs Croatia R16 is also on today's card. Full analysis, starting now."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "어제 결과입니다. 이탈리아 2-0 호주 — AI 예측 정확 적중. 72% 신뢰도 예측이 현실이 됐습니다. 키에사가 전반 37분 선제골, 레테기가 후반 71분 쐐기골. 이탈리아 수비는 완벽했고, 한국의 16강 상대는 이탈리아로 확정됐습니다. 벨기에 2-1 에콰도르 — AI 적중. 드 브라이너의 어시스트 2개, 황금 세대의 마지막 불꽃. 우루과이 1-0 폴란드 — AI 픽 우루과이 적중. 다르윈 누녜스의 결승골. 스위스 2-1 가나 — AI 적중. 엠볼로의 멀티 골. 어제 AI 적중률: 4경기 전승, 100%. 완벽한 하루였습니다. 그리고 오늘은 더 중요한 날입니다.",
+      "narration_ja": "昨日の結果です。イタリア2-0オーストラリア — AI予測が正確に的中しました。72%の信頼度予測が現実になりました。キエーザが前半37分に先制点、レテギが後半71分に追加点。イタリアの守備は完璧で、韓国の16強相手はイタリアに確定しました。ベルギー2-1エクアドル — AI的中。デ・ブライネのアシスト2つ、黄金世代の最後の炎。ウルグアイ1-0ポーランド — AIピックのウルグアイが的中。ダーウィン・ヌニェスの決勝ゴール。スイス2-1ガーナ — AI的中。エンボロのマルチゴール。昨日のAI的中率：4試合全勝、100%。完璧な一日でした。そして今日はさらに重要な日です。",
+      "narration_en": "Yesterday's results. Italy 2-0 Australia — AI correct, 72% confidence call lands perfectly. Chiesa opened in the 37th minute, Retegui sealed it in the 71st. Italy's defensive block was impenetrable; Korea's Round of 16 opponent is confirmed: Italy. Belgium 2-1 Ecuador — AI correct. Two De Bruyne assists, the golden generation's final flames. Uruguay 1-0 Poland — AI's Uruguay call vindicated. Darwin Núñez with the winner. Switzerland 2-1 Ghana — AI correct. Embolo with a brace. Yesterday's AI accuracy: 4 from 4 — a perfect 100%. A clean sweep. And today matters even more."
+    },
+    {
+      "id": "s03_prediction1",
+      "narration": "오늘의 핵심 경기 — 대한민국 vs 이탈리아 16강. 메트라이프 스타디움, 07:00 KST. AI 예측: 이탈리아 2-1 한국. 신뢰도 52%. 하지만 한국 업셋 확률: 39%. 이것이 의미하는 것 — 오늘 밤은 정말 알 수 없습니다. 이탈리아 강점 세 가지. 첫째, 도나룸마의 골문 — 세계 최고 골키퍼. 한국의 슈팅으로 그를 뚫기 쉽지 않습니다. 둘째, 바레라와 로카텔리의 미드필더 지배력 — 이강인의 창의적 플레이를 차단하는 것이 이탈리아의 핵심 전략입니다. 셋째, 세트피스 위협 — 이탈리아는 이 대회에서 코너킥과 프리킥으로 평균 0.8골을 만들어냅니다. 하지만 한국의 무기도 만만치 않습니다. 손흥민의 오프 더 볼 움직임은 어떤 수비도 완벽히 막을 수 없습니다. 이강인이 자유를 얻는 순간 어시스트 공장이 작동합니다. 그리고 김민재 — 이 수비수는 이 대회 내내 단 한 골도 내주지 않았습니다. 2002년의 기억은 데이터가 아닙니다. 하지만 한국 축구의 DNA에는 이탈리아에 강하다는 것이 새겨져 있습니다. AI 최종 픽: 이탈리아 2-1 한국. 하지만 오늘 밤, AI도 두근댑니다.",
+      "narration_ja": "今日の核心試合 — 韓国vsイタリア16強。メットライフスタジアム、07:00 KST。AI予測：イタリア2-1韓国。信頼度52%。しかし韓国アップセット確率：39%。これが意味するのは — 今夜は本当に分かりません。イタリアの強み三つ。第一、ドンナルンマのゴール門 — 世界最高GK。韓国のシュートで彼を突破するのは容易ではありません。第二、バレッラとロカテッリのミッドフィールド支配 — イ・ガンインの創意的プレーを封じることがイタリアの核心戦略です。第三、セットプレー脅威 — イタリアは今大会でコーナーキックとフリーキックから平均0.8ゴールを作り出します。しかし韓国の武器も侮れません。ソン・フンミンのオフ・ザ・ボール動きは、どの守備も完璧に防ぐことはできません。イ・ガンインが自由を得た瞬間、アシスト工場が稼働します。そしてキム・ミンジェ — このDFは今大会を通じて一つのゴールも許していません。2002年の記憶はデータではありません。しかし韓国サッカーのDNAにはイタリアに強いという遺伝子が刻まれています。AI最終ピック：イタリア2-1韓国。しかし今夜、AIも胸が躍ります。",
+      "narration_en": "Today's centrepiece — South Korea vs Italy, Round of 16. MetLife Stadium, 07:00 KST. AI prediction: Italy 2-1 Korea. Confidence 52%. Korea upset probability: 39%. What that means: tonight is genuinely unpredictable. Three Italian advantages. First, Donnarumma — the world's best goalkeeper. Korea's shot volume alone won't break him. Second, Barella and Locatelli's midfield control — neutralising Lee Kang-in's creative freedom is Italy's tactical priority. Third, set-piece threat — Italy average 0.8 goals per game from dead-ball situations this tournament. But Korea's weapons are formidable. Son Heung-min's off-ball movement is uncoverable by any backline on earth. When Lee Kang-in finds space, the assists flow. And Kim Min-jae — this defender has conceded zero goals through the knockout stage. The 2002 memory isn't data. But Korea's football DNA has a proven immunity to Italian pressure, hardwired since Ahn Jung-hwan's golden goal. AI final pick: Italy 2-1 Korea, 52%. But tonight — even AI is nervous."
+    },
+    {
+      "id": "s04_prediction2",
+      "narration": "두 번째 경기 — 프랑스 vs 크로아티아 16강. 로즈 볼, 로스앤젤레스, 10:00 KST. AI 예측: 프랑스 2-0 크로아티아. 신뢰도 70%. 크로아티아가 포르투갈을 승부차기로 제압한 건 역사적인 이변이었습니다. 하지만 프랑스는 다른 이야기입니다. 음바페, 그리즈만, 뎀벨레 — 이 삼각 공격 라인을 막을 팀은 이 대회에서 손에 꼽힙니다. 크로아티아의 모드리치는 여전히 클래스 그 자체. 하지만 38세의 모드리치가 음바페의 폭발적 스피드를 따라가기는 쉽지 않습니다. 프랑스의 4-2-3-1은 크로아티아의 역습 공간을 철저히 틀어막습니다. 프랑스의 수비진 — 마이냥, 살리바, 우파메카노 — 은 포르투갈전에서 크로아티아가 보여준 역습 패턴을 이미 분석했을 겁니다. AI 픽: 프랑스 2-0 크로아티아. 신뢰도 70%. 오늘의 두 번째 안전 픽입니다.",
+      "narration_ja": "第二試合 — フランス vs クロアチア16強。ローズボウル、ロサンゼルス、10:00 KST。AI予測：フランス2-0クロアチア。信頼度70%。クロアチアがポルトガルをPK戦で制したのは歴史的な番狂わせでした。しかしフランスは別の話です。エムバペ、グリーズマン、デンベレ — この三角攻撃ラインを無力化できるチームは今大会ではほとんどいません。クロアチアのモドリッチは依然としてクラスそのもの。しかし38歳のモドリッチがエムバペの爆発的スピードについていくのは容易ではありません。フランスの4-2-3-1はクロアチアのカウンターアタックのスペースを徹底的に封じます。フランスの守備陣 — マイニャン、サリバ、ウパメカノ — は、ポルトガル戦でクロアチアが見せたカウンターのパターンをすでに分析しているでしょう。AIピック：フランス2-0クロアチア。信頼度70%。今日の二番目の安全なピックです。",
+      "narration_en": "Second match — France vs Croatia, Round of 16. Rose Bowl, Los Angeles, 10:00 KST. AI prediction: France 2-0 Croatia. Confidence 70%. Croatia's penalty shootout victory over Portugal was historic — but France is a different proposition entirely. Mbappé, Griezmann, Dembélé — very few teams on earth can neutralise that attacking triangle over 90 minutes. Modric remains a class act at 38, but tracking Mbappé's explosive pace is a brutal ask. France's 4-2-3-1 will systematically close Croatia's counter-attacking corridors. The French backline — Maignan, Saliba, Upamecano — will have mapped the exact counter-patterns Croatia deployed against Portugal. AI pick: France 2-0 Croatia, confidence 70%. The safer call of today's two matches."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘의 AI 최종 픽 총정리. 이탈리아 2-1 한국 — 신뢰도 52%. AI가 이 대회에서 가장 확신하기 어려운 경기. 프랑스 2-0 크로아티아 — 신뢰도 70%. 오늘의 안전 픽. 그리고 이제 AI가 한국 팬 여러분께 드리고 싶은 마지막 말씀. AI는 숫자를 분석합니다. 이탈리아가 더 많은 우위 지표를 가지고 있다는 것은 사실입니다. 하지만 축구에는 데이터가 계산하지 못하는 것이 있습니다 — 바로 '한국 vs 이탈리아'가 뜨는 순간의 태극전사의 에너지. 2002년의 기억이 살아있는 이상, 이 경기에서 한국을 완전히 배제할 수 없습니다. 손흥민이 단 한 번만 기회를 잡는다면? 김민재의 벽이 이탈리아를 단 한 번만 더 막아낸다면? AI의 마지막 메시지: 이탈리아가 유리하지만, 오늘 밤 뉴저지에서는 무슨 일이든 일어날 수 있습니다. 대~한민국! EP12에서 결과와 함께 돌아옵니다.",
+      "narration_ja": "今日のAI最終ピック総まとめ。イタリア2-1韓国 — 信頼度52%。AIが今大会で最も確信しにくい試合。フランス2-0クロアチア — 信頼度70%。今日の安全ピック。そしてこれでAIが韓国ファンの皆さんにお伝えしたい最後の言葉。AIは数字を分析します。イタリアがより多くの優位指標を持っているのは事実です。しかしサッカーにはデータが計算できないものがあります — それは「韓国vsイタリア」が始まる瞬間の太極戦士のエネルギー。2002年の記憶が生きている限り、この試合で韓国を完全に除外することはできません。ソン・フンミンがたった一度だけチャンスをつかんだら？キム・ミンジェの壁がイタリアをたった一度だけ防いだら？AIの最後のメッセージ：イタリアが有利ですが、今夜ニュージャージーでは何でも起こる可能性があります。テーハンミング！EP12で結果とともに戻ってきます。",
+      "narration_en": "Today's final AI summary. Italy 2-1 Korea — 52% confidence. The match AI is least certain about this entire tournament. France 2-0 Croatia — 70% confidence. The safer call today. And a final word for Korean fans. AI analyses numbers. Italy has more advantages by the data — that is simply true. But football has something data cannot compute: the energy of the Taeguk Warriors the moment 'Korea vs Italy' lights up on a scoreboard. As long as the memory of 2002 lives, you cannot write Korea out of this match. If Son Heung-min gets just one chance — if Kim Min-jae's wall holds Italy one more time — anything is possible. AI's final message: Italy are the slight favourites. But tonight, at MetLife Stadium in New Jersey, anything can happen. Dae-han-min-guk! See you in EP12 with the results."
+    }
+  ]
+}
