@@ -1,0 +1,60 @@
+{
+  "series": "worldcup-2026",
+  "ep_number": 12,
+  "ep_role": "group_preview",
+  "group": "I조",
+  "title_ko": "I조 완전 분석 — 튀르키예 vs 나이지리아, 지중해의 불꽃 vs 아프리카의 독수리",
+  "title_ja": "Iグループ完全分析 — トルコvsナイジェリア、地中海の炎vsアフリカの鷹",
+  "title_en": "Group I Deep Dive — Turkey vs Nigeria, Mediterranean Fire vs African Eagles",
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "role": "hook",
+      "narration": "I조는 아르다 귈레르의 시대를 선언하는 무대입니다. 레알 마드리드의 21세 천재, 튀르키예의 새로운 황제 — 2026은 그의 세계 무대 데뷔. 나이지리아의 빅토르 오시멘은 아프리카 최고의 스트라이커로서 역대급 골을 노립니다. 오스트레일리아의 열정, 이란의 철벽 수비까지. 단 2장의 16강 티켓, 4개 대륙의 자존심이 격돌합니다.",
+      "narration_ja": "I組はアルダ・ギュレルの時代を宣言する舞台です。レアル・マドリードの21歳の天才、トルコの新皇帝 — 2026は彼の世界デビューの場。ナイジェリアのビクター・オシメンはアフリカ最高のストライカーとして歴史的ゴールを狙います。オーストラリアの情熱、イランの鉄壁守備まで。たった2枚の決勝トーナメント進出チケット、4大陸のプライドが激突します。",
+      "narration_en": "Group I is where Arda Güler announces himself to the world. Real Madrid's 21-year-old genius, Turkey's new emperor — 2026 is his global coming-out party. Nigeria's Victor Osimhen hunts for history as Africa's deadliest striker. Australia's relentless passion and Iran's defensive discipline complete the picture. Four continents, two Round of 32 tickets — the clash begins."
+    },
+    {
+      "id": "s02_teams",
+      "role": "data",
+      "narration": "I조 4개 팀을 소개합니다. 1번 시드 튀르키예 — FIFA 랭킹 15위, 아르다 귈레르의 유럽 정복 이후 월드컵 도전. 나이지리아 — FIFA 랭킹 28위, 슈퍼 이글스의 부활. 오스트레일리아 — FIFA 랭킹 20위, 2022 카타르 16강 신화의 계승자. 이란 — FIFA 랭킹 30위, 아시아 최강 수비 조직력. 4개 대륙, 4가지 색깔의 대결이 펼쳐집니다.",
+      "narration_ja": "I組の4チームを紹介します。第1シード トルコ — FIFAランキング15位、アルダ・ギュレルのヨーロッパ制覇後のW杯挑戦。ナイジェリア — FIFAランキング28位、スーパーイーグルスの復活。オーストラリア — FIFAランキング20位、2022カタール16強神話の継承者。イラン — FIFAランキング30位、アジア最強の守備組織力。4大陸、4つの色の対決が繰り広げられます。",
+      "narration_en": "Meet Group I. Turkey — FIFA ranked 15th, the 1st seed, Arda Güler carrying Europe's crown into the World Cup. Nigeria — FIFA ranked 28th, the Super Eagles reborn. Australia — FIFA ranked 20th, carriers of Qatar 2022's miracle legacy. Iran — FIFA ranked 30th, Asia's most disciplined defensive side. Four continents. Four identities. One unforgettable group stage."
+    },
+    {
+      "id": "s03_team1",
+      "role": "analysis",
+      "narration": "튀르키예는 아르다 귈레르 한 명이 팀 전체를 바꿉니다. 2024년 레알 마드리드에서 데뷔, 챔피언스리그에서 빛난 21세의 천재. 귈레르의 드리블, 슈팅, 비전 패스는 세계 최고 수준입니다. 동료 케렘 아크튀르코을루의 측면 폭격까지 더해지면, 튀르키예는 8강도 노릴 수 있는 실제 위협으로 변모했습니다. 역대 최강의 튀르키예 대표팀이 온다.",
+      "narration_ja": "トルコはアルダ・ギュレル一人がチーム全体を変えます。2024年レアル・マドリードでデビュー、チャンピオンズリーグで輝いた21歳の天才。ギュレルのドリブル、シュート、ビジョンパスは世界最高水準です。チームメイトのケレム・アクテュルコール（ガラタサライ）の側面攻撃も加わり、トルコはダークホースから本物の脅威へと変貌しました。史上最強のトルコ代表がやってくる。",
+      "narration_en": "Turkey is built around one man: Arda Güler. Debuting at Real Madrid in 2024, lighting up the Champions League at 21 — his dribbling, shooting, and vision are world-class. Add Kerem Aktürkoğlu's wing destruction from Galatasaray and Turkey transforms from dark horse to genuine contender. This is the strongest Turkey squad in history — and 2026 is their moment."
+    },
+    {
+      "id": "s04_team2",
+      "role": "analysis",
+      "narration": "나이지리아는 빅토르 오시멘이 전부입니다. 나폴리의 황금 총알, 세리에A에서 두 시즌 연속 30골 이상을 기록한 현 세계 최고의 스트라이커 중 한 명. 슈퍼 이글스는 미드필더진도 탄탄합니다. 프랭크 오노르 주도의 중원, 사이먼 아이올랑의 측면 — 나이지리아가 조별리그를 통과한다면, 단순히 16강이 아니라 8강까지도 노릴 수 있는 잠재력을 품고 있습니다.",
+      "narration_ja": "ナイジェリアはビクター・オシメンが全てです。ナポリの黄金の弾丸、セリエAで2シーズン連続30ゴール以上を記録した現在世界最高のストライカーの一人。スーパーイーグルスの中盤も安定しています。フランク・オノール主導の中盤、サイモン・アイオランの側面攻撃 — ナイジェリアが組別リーグを突破すれば、単に16強だけでなく8強まで狙える潜在力を秘めています。",
+      "narration_en": "Nigeria is Victor Osimhen — full stop. Napoli's golden bullet, two seasons of 30-plus goals in Serie A, one of the best strikers on the planet. Behind him, Frank Onoh anchors a solid midfield and Simon Aiyolan terrorizes the flanks. If Osimhen stays fit, Nigeria doesn't just make the Round of 32 — they threaten the quarterfinals. The Super Eagles are built to soar."
+    },
+    {
+      "id": "s05_team3",
+      "role": "analysis",
+      "narration": "오스트레일리아는 2022 카타르의 기적을 이어가려 합니다. 매튜 레키의 투혼, 기강 잡힌 4-3-3 포메이션. 오스트레일리아의 최대 무기는 '포기 없는 90분' — 전술적 완성도보다 결코 꺾이지 않는 정신력이 강점. 이란은 사르다르 아즈문과 아시아 최강 수비 조직력을 앞세웁니다. 2022년 잉글랜드·미국·웨일스와 같은 조에서도 선전한 아시아 최고의 다크호스.",
+      "narration_ja": "オーストラリアは2022カタールの奇跡を継承しようとしています。マシュー・レッキーの闘志、引き締まった4-3-3フォーメーション。オーストラリアの最大の武器は「諦めない90分」 — 戦術的完成度よりも決して折れない精神力が強み。イランはサルダル・アズムンとアジア最強の守備組織力で挑みます。2022年にイングランド・アメリカ・ウェールズと同組でも善戦したアジア最大のダークホース。",
+      "narration_en": "Australia chases the Qatar miracle. Mathew Leckie's warrior spirit, a tightly organized 4-3-3. The Socceroos' greatest weapon is refusing to give up — 90 minutes of zero-compromise heart over tactical perfection. Iran brings Sardar Azmoun and Asia's most suffocating defensive structure. They held England, USA, and Wales in 2022 — never sleep on the Iranians."
+    },
+    {
+      "id": "s06_predict",
+      "role": "analysis",
+      "narration": "변수를 분석합니다. 튀르키예의 변수는 귈레르의 체력 — 레알 마드리드의 빡빡한 시즌 직후 월드컵이 독이 될 수 있습니다. 나이지리아의 변수는 오시멘의 부상 이력 — 시즌 막판 부상이 반복되는 패턴이 있습니다. 오스트레일리아는 수비 조직력만 유지되면 3위까지 충분합니다. 이란은 아즈문의 컨디션이 전부. I조의 운명을 가르는 경기는 튀르키예 vs 나이지리아 직접 대결입니다.",
+      "narration_ja": "変数を分析します。トルコの変数はギュレルの体力 — レアル・マドリードのタイトなシーズン直後のW杯が毒となる可能性があります。ナイジェリアの変数はオシメンの負傷歴 — シーズン終盤の負傷が繰り返されるパターンがあります。オーストラリアは守備組織力さえ維持できれば3位まで十分です。イランはアズムンのコンディションが全て。I組の命運を分けるのはトルコ対ナイジェリアの直接対決です。",
+      "narration_en": "Breaking down the variables. Turkey's risk: Güler's stamina — a full Champions League season before a World Cup grind can drain even the best. Nigeria's risk: Osimhen's injury history — a worrying late-season breakdown pattern. Australia holds firm if the defensive shape stays intact through three group games. Iran rises and falls with Azmoun's fitness. The decisive fixture that decides Group I: Turkey vs Nigeria, head-to-head."
+    },
+    {
+      "id": "s07_verdict",
+      "role": "verdict",
+      "narration": "최종 예측입니다. 16강 진출팀: 튀르키예와 나이지리아. 튀르키예는 아르다 귈레르의 유럽 경험과 전력 우위로 1위 통과. 나이지리아는 오시멘의 폭발력으로 2위 진출. 오스트레일리아는 3위, 이란은 4위 탈락. 진정한 관전 포인트는 아르다 귈레르가 이 무대에서 세계 최고임을 증명하느냐입니다. 다음 EP13에서는 J조를 분석합니다!",
+      "narration_ja": "最終予測です。決勝トーナメント進出チーム：トルコとナイジェリア。トルコはアルダ・ギュレルのヨーロッパ経験と戦力優位で1位通過。ナイジェリアはオシメンの爆発力で2位進出。オーストラリアは3位、イランは4位敗退。真の見どころはアルダ・ギュレルがこの舞台で世界最高であることを証明できるかです。次回EP13ではJグループを分析します！",
+      "narration_en": "Final prediction. Round of 32 qualifiers: Turkey and Nigeria. Turkey advances 1st on Güler's class and superior squad depth. Nigeria 2nd on Osimhen's finishing power. Australia finishes 3rd with heads held high. Iran exit 4th. The real story to watch: can Arda Güler prove on the world's biggest stage that he truly belongs among football's all-time elite? Next up — EP13: Group J!"
+    }
+  ]
+}

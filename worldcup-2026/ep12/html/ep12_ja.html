@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>EP12 — Iグループ完全分析 | 2026ワールドカップ予測バトル</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #0a0a1a;
+    color: #fff;
+  }
+  .slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 1920px;
+    height: 1080px;
+    display: none;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  .bg-stadium {
+    background:
+      radial-gradient(ellipse 120% 80% at 50% 110%, #0d5c2e 0%, transparent 60%),
+      radial-gradient(ellipse 80% 50% at 80% 20%, #1a3a6e 0%, transparent 50%),
+      linear-gradient(160deg, #04060f 0%, #0e1828 50%, #071410 100%);
+  }
+  .bg-analysis {
+    background:
+      radial-gradient(ellipse 100% 70% at 20% 90%, #1a3a6e 0%, transparent 55%),
+      radial-gradient(ellipse 60% 60% at 90% 10%, #0d5c2e 0%, transparent 50%),
+      linear-gradient(135deg, #06080f 0%, #0e1828 60%, #060d06 100%);
+  }
+  .bg-verdict {
+    background:
+      radial-gradient(ellipse 110% 80% at 50% 100%, #7c3b00 0%, transparent 55%),
+      radial-gradient(ellipse 70% 50% at 10% 10%, #1a3a6e 0%, transparent 50%),
+      linear-gradient(150deg, #06080f 0%, #1a1a0a 60%, #0e0604 100%);
+  }
+
+  .grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  .ep-badge {
+    position: absolute;
+    top: 48px; left: 72px;
+    background: linear-gradient(135deg, #1e8f4e, #0d5c2e);
+    border: 2px solid #2ecc71;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #2ecc71;
+    text-transform: uppercase;
+  }
+
+  .group-badge {
+    position: absolute;
+    top: 48px; right: 72px;
+    background: linear-gradient(135deg, rgba(255,215,0,0.15), rgba(255,165,0,0.1));
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+    padding: 10px 28px;
+    font-size: 26px;
+    font-weight: 900;
+    color: #ffd700;
+    letter-spacing: 3px;
+  }
+
+  .slide-counter {
+    position: absolute;
+    bottom: 40px; right: 72px;
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 3px;
+  }
+  .watermark {
+    position: absolute;
+    bottom: 40px; left: 72px;
+    font-size: 18px;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 2px;
+  }
+
+  #slide-1 {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .hook-subtitle {
+    font-size: 28px;
+    font-weight: 400;
+    color: #2ecc71;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hook-title {
+    font-size: 76px;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    max-width: 1400px;
+  }
+  .hook-title em { font-style: normal; color: #ffd700; }
+  .hook-divider {
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #2ecc71, #ffd700);
+    border-radius: 2px;
+    margin: 36px auto;
+  }
+  .hook-tagline {
+    font-size: 26px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.6);
+    max-width: 1100px;
+    line-height: 1.7;
+  }
+  .hook-flags {
+    margin-top: 40px;
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    font-size: 52px;
+  }
+  .flag-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .flag-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 1px;
+  }
+
+  .teams-header {
+    font-size: 44px;
+    font-weight: 900;
+    color: #ffd700;
+    letter-spacing: 2px;
+    margin-bottom: 48px;
+    text-align: center;
+  }
+  .teams-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .team-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+  }
+  .team-flag { font-size: 64px; margin-bottom: 16px; }
+  .team-name { font-size: 30px; font-weight: 900; margin-bottom: 8px; }
+  .team-rank {
+    font-size: 17px;
+    color: #2ecc71;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .team-desc { font-size: 15px; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+  .analysis-title {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .analysis-title em { font-style: normal; color: #ffd700; }
+  .analysis-sub {
+    font-size: 22px;
+    color: #2ecc71;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+  }
+  .analysis-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .stat-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-left: 4px solid #2ecc71;
+    border-radius: 12px;
+    padding: 26px 30px;
+  }
+  .stat-label {
+    font-size: 15px;
+    font-weight: 700;
+    color: #2ecc71;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .stat-value { font-size: 22px; font-weight: 700; line-height: 1.5; }
+  .stat-value em { font-style: normal; color: #ffd700; }
+
+  .player-row {
+    margin-top: 32px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .player-chip {
+    background: rgba(46,204,113,0.12);
+    border: 1px solid rgba(46,204,113,0.3);
+    border-radius: 100px;
+    padding: 10px 24px;
+    font-size: 19px;
+    font-weight: 700;
+    color: #2ecc71;
+  }
+
+  .predict-title {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 44px;
+    line-height: 1.2;
+  }
+  .predict-title em { font-style: normal; color: #ffd700; }
+  .variables-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .variable-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 28px 32px;
+  }
+  .var-team {
+    font-size: 21px;
+    font-weight: 900;
+    color: #ffd700;
+    margin-bottom: 12px;
+  }
+  .var-text { font-size: 18px; color: rgba(255,255,255,0.7); line-height: 1.7; }
+
+  .verdict-label {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2ecc71;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .verdict-title {
+    font-size: 60px;
+    font-weight: 900;
+    color: #ffd700;
+    margin-bottom: 44px;
+  }
+  .verdict-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 1400px;
+  }
+  .verdict-card {
+    border-radius: 16px;
+    padding: 32px 20px;
+    text-align: center;
+  }
+  .verdict-card.advance {
+    background: rgba(46,204,113,0.12);
+    border: 2px solid #2ecc71;
+  }
+  .verdict-card.out {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .vc-rank {
+    font-size: 15px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .vc-team { font-size: 34px; font-weight: 900; margin-bottom: 12px; }
+  .vc-status { font-size: 16px; font-weight: 700; }
+  .verdict-card.advance .vc-status { color: #2ecc71; }
+  .verdict-card.out .vc-status { color: rgba(255,255,255,0.35); }
+  .verdict-next {
+    margin-top: 40px;
+    font-size: 26px;
+    color: rgba(255,255,255,0.5);
+  }
+  .verdict-next em { color: #ffd700; font-style: normal; font-weight: 900; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: HOOK -->
+<div class="slide bg-stadium active" id="slide-1">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP12</div>
+  <div class="group-badge">Iグループ</div>
+  <div style="width:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+    <div class="hook-subtitle">2026ワールドカップ予測バトル</div>
+    <div class="hook-title">Iグループ完全分析<br><em>地中海の炎 vs アフリカの鷹</em></div>
+    <div class="hook-divider"></div>
+    <div class="hook-tagline">トルコの皇帝アルダ・ギュレル、ナイジェリアの弾丸オシメン<br>オーストラリアの闘志、イランの鉄壁 — たった2枚の決勝T進出チケット</div>
+    <div class="hook-flags">
+      <div class="flag-item"><span>🇹🇷</span><span class="flag-name">トルコ</span></div>
+      <div class="flag-item"><span>🇳🇬</span><span class="flag-name">ナイジェリア</span></div>
+      <div class="flag-item"><span>🇦🇺</span><span class="flag-name">オーストラリア</span></div>
+      <div class="flag-item"><span>🇮🇷</span><span class="flag-name">イラン</span></div>
+    </div>
+  </div>
+  <div class="slide-counter">01 / 07</div>
+  <div class="watermark">2026ワールドカップ予測バトル</div>
+</div>
+
+<!-- SLIDE 2: TEAMS OVERVIEW -->
+<div class="slide bg-analysis" id="slide-2">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP12</div>
+  <div class="group-badge">Iグループ</div>
+  <div style="width:100%; padding:80px 120px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="teams-header">Iグループ 4チーム — 戦力比較</div>
+    <div class="teams-grid">
+      <div class="team-card">
+        <div class="team-flag">🇹🇷</div>
+        <div class="team-name">トルコ</div>
+        <div class="team-rank">FIFAランク15位 · 第1シード</div>
+        <div class="team-desc">アルダ・ギュレル（レアル・マドリード）<br>ケレム・アクテュルコール（ガラタサライ）</div>
+      </div>
+      <div class="team-card">
+        <div class="team-flag">🇳🇬</div>
+        <div class="team-name">ナイジェリア</div>
+        <div class="team-rank">FIFAランク28位 · アフリカの強豪</div>
+        <div class="team-desc">ビクター・オシメン（ナポリ）<br>アフリカ最高のストライカー</div>
+      </div>
+      <div class="team-card">
+        <div class="team-flag">🇦🇺</div>
+        <div class="team-name">オーストラリア</div>
+        <div class="team-rank">FIFAランク20位 · カタール16強の継承者</div>
+        <div class="team-desc">マシュー・レッキー · ミッチ・デューク<br>諦めない90分のチーム</div>
+      </div>
+      <div class="team-card">
+        <div class="team-flag">🇮🇷</div>
+        <div class="team-name">イラン</div>
+        <div class="team-rank">FIFAランク30位 · アジア最強守備</div>
+        <div class="team-desc">サルダル・アズムン<br>アジア最高の組織的守備</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-counter">02 / 07</div>
+  <div class="watermark">2026ワールドカップ予測バトル</div>
+</div>
+
+<!-- SLIDE 3: TURKEY ANALYSIS -->
+<div class="slide bg-analysis" id="slide-3">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP12</div>
+  <div class="group-badge">Iグループ</div>
+  <div style="width:100%; padding:80px 120px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="analysis-sub">第1シード分析</div>
+    <div class="analysis-title">🇹🇷 トルコ<br><em>アルダ・ギュレル、世界へ飛翔する</em></div>
+    <div class="analysis-body" style="margin-top:36px;">
+      <div class="stat-box">
+        <div class="stat-label">エースの実力</div>
+        <div class="stat-value">アルダ・ギュレル — レアル・マドリード<br><em>21歳、CL核心MF</em><br>ドリブル·シュート·ビジョンは世界最高</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">最近の成績</div>
+        <div class="stat-value">UEFA EURO 2024 — 組別全勝<br><em>ギュレル2ゴールで強烈な印象</em><br>史上最強トルコ代表が完成</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">戦術スタイル</div>
+        <div class="stat-value">ギュレル中心の創造的攻撃<br>アクテュルコールの側面爆撃<br><em>カウンター転換スピードが核心</em></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">目標</div>
+        <div class="stat-value">2002年以来の最高成績に挑戦<br>ベスト8進出が現実的目標<br><em>ギュレルが率いる黄金世代</em></div>
+      </div>
+    </div>
+    <div class="player-row">
+      <div class="player-chip">アルダ・ギュレル</div>
+      <div class="player-chip">ケレム・アクテュルコール</div>
+      <div class="player-chip">エゲ・アイドゥン</div>
+    </div>
+  </div>
+  <div class="slide-counter">03 / 07</div>
+  <div class="watermark">2026ワールドカップ予測バトル</div>
+</div>
+
+<!-- SLIDE 4: NIGERIA ANALYSIS -->
+<div class="slide bg-analysis" id="slide-4">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP12</div>
+  <div class="group-badge">Iグループ</div>
+  <div style="width:100%; padding:80px 120px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="analysis-sub">第2チーム分析</div>
+    <div class="analysis-title">🇳🇬 ナイジェリア<br><em>オシメン — アフリカの黄金の弾丸</em></div>
+    <div class="analysis-body" style="margin-top:36px;">
+      <div class="stat-box">
+        <div class="stat-label">エースの実力</div>
+        <div class="stat-value">ビクター・オシメン — ナポリ<br><em>セリエA 2季連続30ゴール以上</em><br>現在世界最高のストライカーの一人</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">最近の成績</div>
+        <div class="stat-value">AFCON 2025 準優勝<br><em>オシメン5ゴール — 得点王</em><br>スーパーイーグルス復活の狼煙</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">戦術の強み</div>
+        <div class="stat-value">オシメン中心のプレスサッカー<br>高速カウンター & 制空権支配<br><em>アフリカ最強の攻撃力</em></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">ポテンシャル</div>
+        <div class="stat-value">健康なオシメンでベスト8も現実<br>2006年以来の最高戦力<br><em>今こそ本物のチャンス</em></div>
+      </div>
+    </div>
+    <div class="player-row">
+      <div class="player-chip">ビクター・オシメン</div>
+      <div class="player-chip">サイモン・アイオラン</div>
+      <div class="player-chip">フランク・オノール</div>
+    </div>
+  </div>
+  <div class="slide-counter">04 / 07</div>
+  <div class="watermark">2026ワールドカップ予測バトル</div>
+</div>
+
+<!-- SLIDE 5: AUSTRALIA + IRAN -->
+<div class="slide bg-analysis" id="slide-5">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP12</div>
+  <div class="group-badge">Iグループ</div>
+  <div style="width:100%; padding:80px 120px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="analysis-sub">第3·4チーム分析</div>
+    <div class="analysis-title">🇦🇺 オーストラリア vs 🇮🇷 イラン<br><em>闘志のチーム vs アジア最強守備</em></div>
+    <div class="analysis-body" style="margin-top:36px;">
+      <div class="stat-box">
+        <div class="stat-label">🇦🇺 オーストラリアの強み</div>
+        <div class="stat-value">レッキーの圧倒的な闘志<br><em>諦めない90分 — カタールの奇跡を再現</em><br>4-3-3組織守備が完成</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">🇮🇷 イランの強み</div>
+        <div class="stat-value">サルダル・アズムン — 攻撃エンジン<br><em>アジア最強の守備ブロック</em><br>2022年にイングランド・米国と善戦</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">🇦🇺 オーストラリアのリスク</div>
+        <div class="stat-value">攻撃の創造性が不足<br>トルコ・ナイジェリア相手に得点困難<br><em>守備中心戦術の限界</em></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">🇮🇷 イランのリスク</div>
+        <div class="stat-value">アズムン負傷時の攻撃空白<br>一人依存の偏った戦力構成<br><em>守備以外の戦術オプション限定</em></div>
+      </div>
+    </div>
+    <div class="player-row">
+      <div class="player-chip">マシュー・レッキー</div>
+      <div class="player-chip">サルダル・アズムン</div>
+      <div class="player-chip">ミッチ・デューク</div>
+    </div>
+  </div>
+  <div class="slide-counter">05 / 07</div>
+  <div class="watermark">2026ワールドカップ予測バトル</div>
+</div>
+
+<!-- SLIDE 6: PREDICTION & VARIABLES -->
+<div class="slide bg-analysis" id="slide-6">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP12</div>
+  <div class="group-badge">Iグループ</div>
+  <div style="width:100%; padding:80px 120px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="predict-title">予測変数分析 —<br><em>Iグループの決定的要因</em></div>
+    <div class="variables-grid">
+      <div class="variable-card">
+        <div class="var-team">🇹🇷 ギュレルのスタミナ</div>
+        <div class="var-text">レアル・マドリードのタイトなシーズン直後のW杯。<br>21歳の天才も体力消耗は避けられない。ギュレルが崩れればトルコも崩れる。</div>
+      </div>
+      <div class="variable-card">
+        <div class="var-team">🇳🇬 オシメンの負傷歴</div>
+        <div class="var-text">シーズン終盤に繰り返される負傷パターンが気になるオシメン。<br>健康なオシメン = 16強。負傷したオシメン = 早期敗退。これがナイジェリアの全て。</div>
+      </div>
+      <div class="variable-card">
+        <div class="var-team">🇦🇺 守備組織力の維持</div>
+        <div class="var-text">3試合すべてで守備集中力を維持できるか。<br>オーストラリアは1試合崩れれば敗退。体力管理こそが生存の鍵。</div>
+      </div>
+      <div class="variable-card">
+        <div class="var-team">⚔️ 核心マッチ: トルコ vs ナイジェリア</div>
+        <div class="var-text">この試合の結果がIグループ全体を決定する。<br>ギュレル vs オシメン — 時代を代表する二人の天才の直接対決。最高の試合を予告する。</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-counter">06 / 07</div>
+  <div class="watermark">2026ワールドカップ予測バトル</div>
+</div>
+
+<!-- SLIDE 7: VERDICT -->
+<div class="slide bg-verdict" id="slide-7">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP12</div>
+  <div class="group-badge">Iグループ</div>
+  <div style="width:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+    <div class="verdict-label">最終予測</div>
+    <div class="verdict-title">決勝T進出 2チーム</div>
+    <div class="verdict-grid">
+      <div class="verdict-card advance">
+        <div class="vc-rank">1位通過</div>
+        <div class="vc-team">🇹🇷 トルコ</div>
+        <div class="vc-status">✓ 決勝T進出</div>
+      </div>
+      <div class="verdict-card advance">
+        <div class="vc-rank">2位通過</div>
+        <div class="vc-team">🇳🇬 ナイジェリア</div>
+        <div class="vc-status">✓ 決勝T進出</div>
+      </div>
+      <div class="verdict-card out">
+        <div class="vc-rank">3位敗退</div>
+        <div class="vc-team">🇦🇺 オーストラリア</div>
+        <div class="vc-status">— グループ敗退</div>
+      </div>
+      <div class="verdict-card out">
+        <div class="vc-rank">4位敗退</div>
+        <div class="vc-team">🇮🇷 イラン</div>
+        <div class="vc-status">— グループ敗退</div>
+      </div>
+    </div>
+    <div class="verdict-next">次回 EP13 → <em>Jグループ完全分析</em></div>
+  </div>
+  <div class="slide-counter">07 / 07</div>
+  <div class="watermark">2026ワールドカップ予測バトル</div>
+</div>
+
+<script>
+  let current = 1;
+  const total = 7;
+
+  function showSlide(n) {
+    if (n < 1 || n > total) return;
+    const prev = document.getElementById('slide-' + current);
+    if (prev) prev.classList.remove('active');
+    current = n;
+    const next = document.getElementById('slide-' + current);
+    if (next) next.classList.add('active');
+  }
+
+  window.goToSlide = showSlide;
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') showSlide(current + 1);
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   showSlide(current - 1);
+  });
+
+  showSlide(1);
+</script>
+</body>
+</html>

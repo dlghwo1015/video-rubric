@@ -1,0 +1,105 @@
+{
+  "series": "worldcup-2026",
+  "series_config": {
+    "name": "2026 월드컵 예측 대결",
+    "tagline": "역사상 가장 큰 월드컵을 예측하다",
+    "blogs": {
+      "ko": "honest-lab",
+      "ja": "dx-pioneer-jp",
+      "en": "dx-pioneer-en"
+    },
+    "youtube_channel": "honest-lab",
+    "langs": [
+      "ko",
+      "ja",
+      "en"
+    ],
+    "tts": {
+      "ko": "ko-KR-SunHiNeural",
+      "ja": "ja-JP-NanamiNeural",
+      "en": "en-US-AriaNeural"
+    }
+  },
+  "ep": {
+    "id": "worldcup-2026-012",
+    "series": "worldcup-2026",
+    "ep_number": 12,
+    "title_ko": "I조 완전 분석 — 튀르키예 vs 나이지리아, 지중해의 불꽃 vs 아프리카의 독수리",
+    "title_ja": "Iグループ完全分析 — トルコvsナイジェリア、地中海の炎vsアフリカの鷹",
+    "title_en": "Group I Deep Dive — Turkey vs Nigeria, Mediterranean Fire vs African Eagles",
+    "ep_role": "group_preview",
+    "group_label": "I조",
+    "needs_live_data": 0,
+    "pub_date": null,
+    "status": "planned",
+    "post_id_ko": null,
+    "post_id_ja": null,
+    "post_id_en": null,
+    "notes": null,
+    "created_at": null,
+    "youtube_video_id": null,
+    "youtube_video_id_ja": null,
+    "youtube_video_id_en": null,
+    "yt_public_ko": 0,
+    "yt_public_ja": 0,
+    "yt_public_en": 0,
+    "script_status": "none",
+    "github_commit": null
+  },
+  "ep_role": "group_preview",
+  "scene_structure": [
+    {
+      "id": "s01_hook",
+      "role": "hook",
+      "desc": "훅 — 아르다 귈레르의 세계 무대 데뷔"
+    },
+    {
+      "id": "s02_teams",
+      "role": "data",
+      "desc": "4개 팀 소개"
+    },
+    {
+      "id": "s03_team1",
+      "role": "analysis",
+      "desc": "1번 시드 튀르키예 분석"
+    },
+    {
+      "id": "s04_team2",
+      "role": "analysis",
+      "desc": "나이지리아 분석 (오시멘)"
+    },
+    {
+      "id": "s05_team3",
+      "role": "analysis",
+      "desc": "오스트레일리아 + 이란 분석"
+    },
+    {
+      "id": "s06_predict",
+      "role": "analysis",
+      "desc": "예측 + 변수"
+    },
+    {
+      "id": "s07_verdict",
+      "role": "verdict",
+      "desc": "통과 예상 2팀 발표"
+    }
+  ],
+  "research_guide": "FIFA rankings, recent form, key players for Turkey (Arda Güler), Nigeria (Victor Osimhen), Australia (Leckie), Iran (Azmoun)",
+  "needs_live_data": false,
+  "pub_date": null,
+  "blogs": {
+    "ko": "honest-lab",
+    "ja": "dx-pioneer-jp",
+    "en": "dx-pioneer-en"
+  },
+  "langs": [
+    "ko",
+    "ja",
+    "en"
+  ],
+  "tts": {
+    "ko": "ko-KR-SunHiNeural",
+    "ja": "ja-JP-NanamiNeural",
+    "en": "en-US-AriaNeural"
+  }
+}
