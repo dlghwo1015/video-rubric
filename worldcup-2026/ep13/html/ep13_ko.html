@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>EP13 — J조 완전 분석 | 2026 월드컵 예측 대결</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #0a0a1a;
+    color: #fff;
+  }
+  .slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 1920px;
+    height: 1080px;
+    display: none;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  .bg-stadium {
+    background:
+      radial-gradient(ellipse 120% 80% at 50% 110%, #0d5c2e 0%, transparent 60%),
+      radial-gradient(ellipse 80% 50% at 80% 20%, #1a3a6e 0%, transparent 50%),
+      linear-gradient(160deg, #04060f 0%, #0e1828 50%, #071410 100%);
+  }
+  .bg-analysis {
+    background:
+      radial-gradient(ellipse 100% 70% at 20% 90%, #1a3a6e 0%, transparent 55%),
+      radial-gradient(ellipse 60% 60% at 90% 10%, #0d5c2e 0%, transparent 50%),
+      linear-gradient(135deg, #06080f 0%, #0e1828 60%, #060d06 100%);
+  }
+  .bg-verdict {
+    background:
+      radial-gradient(ellipse 110% 80% at 50% 100%, #7c3b00 0%, transparent 55%),
+      radial-gradient(ellipse 70% 50% at 10% 10%, #1a3a6e 0%, transparent 50%),
+      linear-gradient(150deg, #06080f 0%, #1a1a0a 60%, #0e0604 100%);
+  }
+
+  .grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  .ep-badge {
+    position: absolute;
+    top: 48px; left: 72px;
+    background: linear-gradient(135deg, #1e8f4e, #0d5c2e);
+    border: 2px solid #2ecc71;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #2ecc71;
+    text-transform: uppercase;
+  }
+
+  .group-badge {
+    position: absolute;
+    top: 48px; right: 72px;
+    background: linear-gradient(135deg, rgba(255,215,0,0.15), rgba(255,165,0,0.1));
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+    padding: 10px 28px;
+    font-size: 26px;
+    font-weight: 900;
+    color: #ffd700;
+    letter-spacing: 3px;
+  }
+
+  .slide-counter {
+    position: absolute;
+    bottom: 40px; right: 72px;
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 3px;
+  }
+  .watermark {
+    position: absolute;
+    bottom: 40px; left: 72px;
+    font-size: 18px;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 2px;
+  }
+
+  /* SLIDE 1 — HOOK */
+  #slide-1 {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .hook-subtitle {
+    font-size: 28px;
+    font-weight: 400;
+    color: #2ecc71;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hook-title {
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    max-width: 1400px;
+  }
+  .hook-title em { font-style: normal; color: #ffd700; }
+  .hook-divider {
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #2ecc71, #ffd700);
+    border-radius: 2px;
+    margin: 36px auto;
+  }
+  .hook-tagline {
+    font-size: 28px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.6);
+    max-width: 1000px;
+    line-height: 1.7;
+  }
+  .hook-flags {
+    margin-top: 40px;
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    font-size: 52px;
+  }
+  .flag-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .flag-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 1px;
+  }
+
+  /* SLIDE 2 — TEAMS */
+  .teams-header {
+    font-size: 44px;
+    font-weight: 900;
+    color: #ffd700;
+    letter-spacing: 2px;
+    margin-bottom: 48px;
+    text-align: center;
+  }
+  .teams-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .team-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+  }
+  .team-flag { font-size: 64px; margin-bottom: 16px; }
+  .team-name { font-size: 32px; font-weight: 900; margin-bottom: 8px; }
+  .team-rank {
+    font-size: 18px;
+    color: #2ecc71;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .team-desc { font-size: 16px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+
+  /* SLIDE 3,4,5 — ANALYSIS */
+  .analysis-title {
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .analysis-title em { font-style: normal; color: #ffd700; }
+  .analysis-sub {
+    font-size: 24px;
+    color: #2ecc71;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 48px;
+  }
+  .analysis-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .stat-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-left: 4px solid #2ecc71;
+    border-radius: 12px;
+    padding: 28px 32px;
+  }
+  .stat-label {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2ecc71;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .stat-value { font-size: 24px; font-weight: 700; line-height: 1.4; }
+  .stat-value em { font-style: normal; color: #ffd700; }
+
+  .player-row {
+    margin-top: 36px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .player-chip {
+    background: rgba(46,204,113,0.12);
+    border: 1px solid rgba(46,204,113,0.3);
+    border-radius: 100px;
+    padding: 10px 24px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #2ecc71;
+  }
+
+  /* SLIDE 6 — VARIABLES */
+  .predict-title {
+    font-size: 52px;
+    font-weight: 900;
+    margin-bottom: 48px;
+    line-height: 1.2;
+  }
+  .predict-title em { font-style: normal; color: #ffd700; }
+  .variables-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .variable-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 28px 32px;
+  }
+  .var-team {
+    font-size: 22px;
+    font-weight: 900;
+    color: #ffd700;
+    margin-bottom: 12px;
+  }
+  .var-text { font-size: 19px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+  /* SLIDE 7 — VERDICT */
+  .verdict-label {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2ecc71;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .verdict-title {
+    font-size: 64px;
+    font-weight: 900;
+    color: #ffd700;
+    margin-bottom: 48px;
+  }
+  .verdict-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 1400px;
+  }
+  .verdict-card {
+    border-radius: 16px;
+    padding: 32px 20px;
+    text-align: center;
+  }
+  .verdict-card.advance {
+    background: rgba(46,204,113,0.12);
+    border: 2px solid #2ecc71;
+  }
+  .verdict-card.out {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .vc-rank {
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .vc-team { font-size: 36px; font-weight: 900; margin-bottom: 12px; }
+  .vc-status { font-size: 17px; font-weight: 700; }
+  .verdict-card.advance .vc-status { color: #2ecc71; }
+  .verdict-card.out .vc-status { color: rgba(255,255,255,0.35); }
+  .verdict-next {
+    margin-top: 40px;
+    font-size: 26px;
+    color: rgba(255,255,255,0.5);
+  }
+  .verdict-next em { color: #ffd700; font-style: normal; font-weight: 900; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: HOOK -->
+<div class="slide bg-stadium active" id="slide-1">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP13</div>
+  <div class="group-badge">J조</div>
+  <div style="width:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+    <div class="hook-subtitle">2026 월드컵 예측 대결</div>
+    <div class="hook-title">J조 완전 분석<br><em>유럽 강호의 자존심 대결</em></div>
+    <div class="hook-divider"></div>
+    <div class="hook-tagline">스위스의 철벽 조직력 vs 덴마크의 전술 혁명<br>가나의 젊은 폭발력, 에콰도르의 카이세도 파워 — 단 2장의 16강 티켓</div>
+    <div class="hook-flags">
+      <div class="flag-item"><span>🇨🇭</span><span class="flag-name">스위스</span></div>
+      <div class="flag-item"><span>🇩🇰</span><span class="flag-name">덴마크</span></div>
+      <div class="flag-item"><span>🇬🇭</span><span class="flag-name">가나</span></div>
+      <div class="flag-item"><span>🇪🇨</span><span class="flag-name">에콰도르</span></div>
+    </div>
+  </div>
+  <div class="slide-counter">01 / 07</div>
+  <div class="watermark">2026 월드컵 예측 대결</div>
+</div>
+
+<!-- SLIDE 2: TEAMS OVERVIEW -->
+<div class="slide bg-analysis" id="slide-2">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP13</div>
+  <div class="group-badge">J조</div>
+  <div style="width:100%; padding:80px 120px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="teams-header">J조 4개 팀 — 전력 비교</div>
+    <div class="teams-grid">
+      <div class="team-card">
+        <div class="team-flag">🇨🇭</div>
+        <div class="team-name">스위스</div>
+        <div class="team-rank">FIFA 19위 · 1번 시드</div>
+        <div class="team-desc">그라니트 자카 (아스날)<br>2018·2022 연속 16강 진출</div>
+      </div>
+      <div class="team-card">
+        <div class="team-flag">🇩🇰</div>
+        <div class="team-name">덴마크</div>
+        <div class="team-rank">FIFA 21위 · 에릭센의 기적</div>
+        <div class="team-desc">크리스티안 에릭센 (맨유)<br>호이비에르 — 세계급 수비형 MF</div>
+      </div>
+      <div class="team-card">
+        <div class="team-flag">🇬🇭</div>
+        <div class="team-name">가나</div>
+        <div class="team-rank">FIFA 60위 · 아프리카 다크호스</div>
+        <div class="team-desc">모하메드 쿠두스 (아약스)<br>살리수 압둘 — 차세대 수비의 별</div>
+      </div>
+      <div class="team-card">
+        <div class="team-flag">🇪🇨</div>
+        <div class="team-name">에콰도르</div>
+        <div class="team-rank">FIFA 44위 · 남미의 강인함</div>
+        <div class="team-desc">모이세스 카이세도 (리버풀)<br>2022 WC 조별리그 진출 계승</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-counter">02 / 07</div>
+  <div class="watermark">2026 월드컵 예측 대결</div>
+</div>
+
+<!-- SLIDE 3: SWITZERLAND ANALYSIS -->
+<div class="slide bg-analysis" id="slide-3">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP13</div>
+  <div class="group-badge">J조</div>
+  <div style="width:100%; padding:80px 120px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="analysis-sub">1번 시드 분석</div>
+    <div class="analysis-title">🇨🇭 스위스<br><em>자카의 전술 제국 — 유럽에서 가장 안 지는 팀</em></div>
+    <div class="analysis-body" style="margin-top:36px;">
+      <div class="stat-box">
+        <div class="stat-label">핵심 에이스</div>
+        <div class="stat-value">그라니트 자카 — 아스날<br><em>프리미어리그 미드필드의 심장</em><br>볼 배급·수비 가담·세트피스 지배</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">최근 성적</div>
+        <div class="stat-value">UEFA 유로 2024 — 8강 진출<br><em>이탈리아·스코틀랜드 완파</em><br>잉글랜드에 PK 끝에 아쉽게 탈락</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">전술 스타일</div>
+        <div class="stat-value">야킨 감독 4-2-3-1 압박 시스템<br>엔두예·파리 측면 돌파 + 자카 컨트롤<br><em>수비 블록 유럽 최강 수준</em></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">목표</div>
+        <div class="stat-value">2022 8강 진출에 이어 4강 도전<br>조별리그 1위 통과 목표<br><em>황금 세대 완성형 스위스</em></div>
+      </div>
+    </div>
+    <div class="player-row">
+      <div class="player-chip">그라니트 자카</div>
+      <div class="player-chip">브릴 엔두예</div>
+      <div class="player-chip">레모 프로일러</div>
+      <div class="player-chip">마누엘 아카지</div>
+    </div>
+  </div>
+  <div class="slide-counter">03 / 07</div>
+  <div class="watermark">2026 월드컵 예측 대결</div>
+</div>
+
+<!-- SLIDE 4: DENMARK ANALYSIS -->
+<div class="slide bg-analysis" id="slide-4">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP13</div>
+  <div class="group-badge">J조</div>
+  <div style="width:100%; padding:80px 120px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="analysis-sub">2번 팀 분석</div>
+    <div class="analysis-title">🇩🇰 덴마크<br><em>에릭센의 기적 — 스칸디나비아 전술 혁명</em></div>
+    <div class="analysis-body" style="margin-top:36px;">
+      <div class="stat-box">
+        <div class="stat-label">핵심 에이스</div>
+        <div class="stat-value">크리스티안 에릭센 — 맨체스터 유나이티드<br><em>심장 수술 이후 더 강해진 전설</em><br>90분 전체를 설계하는 마스터 플레이메이커</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">최근 성적</div>
+        <div class="stat-value">UEFA 유로 2024 — 16강 진출<br><em>슬로베니아·잉글랜드와 접전</em><br>조별 무패 — 조직력 입증</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">전술 강점</div>
+        <div class="stat-value">호이비에르 — 세계 최고 수준 수비형 MF<br>에릭센 창의적 패스 + 링 중거리슛<br><em>공수 밸런스 유럽 최정상</em></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">목표</div>
+        <div class="stat-value">1992 유로 신화 재현 도전<br>스위스와 J조 패권 경쟁<br><em>에릭센이 건강하면 8강 현실</em></div>
+      </div>
+    </div>
+    <div class="player-row">
+      <div class="player-chip">크리스티안 에릭센</div>
+      <div class="player-chip">피에르-에밀 호이비에르</div>
+      <div class="player-chip">라스무스 호이룬트</div>
+      <div class="player-chip">안드레아스 크리스텐센</div>
+    </div>
+  </div>
+  <div class="slide-counter">04 / 07</div>
+  <div class="watermark">2026 월드컵 예측 대결</div>
+</div>
+
+<!-- SLIDE 5: GHANA + ECUADOR -->
+<div class="slide bg-analysis" id="slide-5">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP13</div>
+  <div class="group-badge">J조</div>
+  <div style="width:100%; padding:80px 120px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="analysis-sub">3번 팀 분석 + 4번 팀</div>
+    <div class="analysis-title">🇬🇭 가나 vs 🇪🇨 에콰도르<br><em>다크호스들의 이변 가능성</em></div>
+    <div class="analysis-body" style="margin-top:36px;">
+      <div class="stat-box">
+        <div class="stat-label">🇬🇭 가나 강점</div>
+        <div class="stat-value">모하메드 쿠두스의 드리블·창조력<br><em>평균 연령 23세 — 에너지 폭발</em><br>2022 포르투갈전 2-2 이변 DNA</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">🇪🇨 에콰도르 강점</div>
+        <div class="stat-value">모이세스 카이세도 — 리버풀 미드필드<br><em>중원 장악력 남미 최상위</em><br>피지컬 강도 + 역습 전환 속도</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">🇬🇭 가나 리스크</div>
+        <div class="stat-value">수비 조직력 불안정<br>쿠두스 외 제2 에이스 부재<br><em>유럽 스타일에 취약한 측면 수비</em></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">🇪🇨 에콰도르 리스크</div>
+        <div class="stat-value">발렌시아 은퇴 이후 결정력 공백<br>카이세도 집중 견제 시 창의성 저하<br><em>홈 이점 없이 유럽 강호 돌파 한계</em></div>
+      </div>
+    </div>
+    <div class="player-row">
+      <div class="player-chip">🇬🇭 쿠두스</div>
+      <div class="player-chip">🇬🇭 살리수 압둘</div>
+      <div class="player-chip">🇪🇨 카이세도</div>
+      <div class="player-chip">🇪🇨 에시킬</div>
+    </div>
+  </div>
+  <div class="slide-counter">05 / 07</div>
+  <div class="watermark">2026 월드컵 예측 대결</div>
+</div>
+
+<!-- SLIDE 6: PREDICTION + VARIABLES -->
+<div class="slide bg-analysis" id="slide-6">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP13</div>
+  <div class="group-badge">J조</div>
+  <div style="width:100%; padding:80px 120px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="predict-title">예측 변수 분석<br><em>J조의 운명을 가르는 4대 요소</em></div>
+    <div class="variables-grid">
+      <div class="variable-card">
+        <div class="var-team">⚔️ 핵심 직접 대결</div>
+        <div class="var-text">스위스 vs 덴마크 직접 대결이 조 1위를 결정한다. 역대 전적은 팽팽하지만 스위스가 중립 경기에서 강세. 자카 vs 에릭센 미드필드 대결이 승패를 가른다.</div>
+      </div>
+      <div class="variable-card">
+        <div class="var-team">🌡️ 기후·일정 변수</div>
+        <div class="var-text">북미 여름 경기 — 휴스턴·달라스 기온 35℃+. 체력 소모가 심한 유럽 팀에게 불리. 가나·에콰도르의 체력 우위가 변수로 작용 가능.</div>
+      </div>
+      <div class="variable-card">
+        <div class="var-team">⚡ 이변 시나리오</div>
+        <div class="var-text">가나가 덴마크를 꺾는 순간 J조 전체가 뒤집힌다. 2006년 가나의 16강처럼, 쿠두스 한 명이 전체 판을 바꿀 에너지를 가지고 있다.</div>
+      </div>
+      <div class="variable-card">
+        <div class="var-team">🩺 부상·컨디션</div>
+        <div class="var-text">에릭센 컨디션이 덴마크 운명의 전부. 자카 경고 누적도 스위스의 후반부 리스크. 카이세도 무릎 상태가 에콰도르 생존 관건.</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-counter">06 / 07</div>
+  <div class="watermark">2026 월드컵 예측 대결</div>
+</div>
+
+<!-- SLIDE 7: VERDICT -->
+<div class="slide bg-verdict" id="slide-7">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP13</div>
+  <div class="group-badge">J조</div>
+  <div style="width:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+    <div class="verdict-label">AI 예측 결론</div>
+    <div class="verdict-title">J조 통과 예상 팀</div>
+    <div class="verdict-grid">
+      <div class="verdict-card advance">
+        <div class="vc-rank">1위</div>
+        <div class="vc-team">🇨🇭 스위스</div>
+        <div class="vc-status">✅ 16강 진출</div>
+      </div>
+      <div class="verdict-card advance">
+        <div class="vc-rank">2위</div>
+        <div class="vc-team">🇩🇰 덴마크</div>
+        <div class="vc-status">✅ 16강 진출</div>
+      </div>
+      <div class="verdict-card out">
+        <div class="vc-rank">3위</div>
+        <div class="vc-team">🇬🇭 가나</div>
+        <div class="vc-status">⬛ 조별 탈락</div>
+      </div>
+      <div class="verdict-card out">
+        <div class="vc-rank">4위</div>
+        <div class="vc-team">🇪🇨 에콰도르</div>
+        <div class="vc-status">⬛ 조별 탈락</div>
+      </div>
+    </div>
+    <div class="verdict-next">다음 에피소드 → <em>K조 완전 분석</em> — 폴란드 vs 이란, 칠레, 카메룬의 격전</div>
+  </div>
+  <div class="slide-counter">07 / 07</div>
+  <div class="watermark">2026 월드컵 예측 대결</div>
+</div>
+
+<script>
+  var current = 1;
+  var total = 7;
+
+  function showSlide(n) {
+    var slides = document.querySelectorAll('.slide');
+    slides.forEach(function(s) { s.classList.remove('active'); });
+    var target = document.getElementById('slide-' + n);
+    if (target) {
+      target.classList.add('active');
+      current = n;
+    }
+  }
+
+  window.goToSlide = showSlide;
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight' || e.key === ' ') {
+      if (current < total) showSlide(current + 1);
+    } else if (e.key === 'ArrowLeft') {
+      if (current > 1) showSlide(current - 1);
+    }
+  });
+</script>
+</body>
+</html>
