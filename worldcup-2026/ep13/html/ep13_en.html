@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>EP13 — Group J Deep Dive | 2026 World Cup Prediction Battle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    background: #0a0a1a;
+    color: #fff;
+  }
+  .slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 1920px;
+    height: 1080px;
+    display: none;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  .bg-stadium {
+    background:
+      radial-gradient(ellipse 120% 80% at 50% 110%, #0d5c2e 0%, transparent 60%),
+      radial-gradient(ellipse 80% 50% at 80% 20%, #1a3a6e 0%, transparent 50%),
+      linear-gradient(160deg, #04060f 0%, #0e1828 50%, #071410 100%);
+  }
+  .bg-analysis {
+    background:
+      radial-gradient(ellipse 100% 70% at 20% 90%, #1a3a6e 0%, transparent 55%),
+      radial-gradient(ellipse 60% 60% at 90% 10%, #0d5c2e 0%, transparent 50%),
+      linear-gradient(135deg, #06080f 0%, #0e1828 60%, #060d06 100%);
+  }
+  .bg-verdict {
+    background:
+      radial-gradient(ellipse 110% 80% at 50% 100%, #7c3b00 0%, transparent 55%),
+      radial-gradient(ellipse 70% 50% at 10% 10%, #1a3a6e 0%, transparent 50%),
+      linear-gradient(150deg, #06080f 0%, #1a1a0a 60%, #0e0604 100%);
+  }
+
+  .grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  .ep-badge {
+    position: absolute;
+    top: 48px; left: 72px;
+    background: linear-gradient(135deg, #1e8f4e, #0d5c2e);
+    border: 2px solid #2ecc71;
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #2ecc71;
+    text-transform: uppercase;
+  }
+
+  .group-badge {
+    position: absolute;
+    top: 48px; right: 72px;
+    background: linear-gradient(135deg, rgba(255,215,0,0.15), rgba(255,165,0,0.1));
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+    padding: 10px 28px;
+    font-size: 26px;
+    font-weight: 900;
+    color: #ffd700;
+    letter-spacing: 3px;
+  }
+
+  .slide-counter {
+    position: absolute;
+    bottom: 40px; right: 72px;
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 3px;
+  }
+  .watermark {
+    position: absolute;
+    bottom: 40px; left: 72px;
+    font-size: 18px;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 2px;
+  }
+
+  #slide-1 {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .hook-subtitle {
+    font-size: 26px;
+    font-weight: 400;
+    color: #2ecc71;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hook-title {
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    max-width: 1400px;
+  }
+  .hook-title em { font-style: normal; color: #ffd700; }
+  .hook-divider {
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #2ecc71, #ffd700);
+    border-radius: 2px;
+    margin: 36px auto;
+  }
+  .hook-tagline {
+    font-size: 28px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.6);
+    max-width: 1100px;
+    line-height: 1.7;
+  }
+  .hook-flags {
+    margin-top: 40px;
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    font-size: 52px;
+  }
+  .flag-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .flag-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 1px;
+  }
+
+  .teams-header {
+    font-size: 42px;
+    font-weight: 900;
+    color: #ffd700;
+    letter-spacing: 2px;
+    margin-bottom: 48px;
+    text-align: center;
+  }
+  .teams-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .team-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+  }
+  .team-flag { font-size: 60px; margin-bottom: 16px; }
+  .team-name { font-size: 30px; font-weight: 900; margin-bottom: 8px; }
+  .team-rank { font-size: 17px; color: #2ecc71; font-weight: 700; margin-bottom: 12px; }
+  .team-desc { font-size: 15px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+
+  .analysis-title {
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .analysis-title em { font-style: normal; color: #ffd700; }
+  .analysis-sub {
+    font-size: 22px;
+    color: #2ecc71;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+  .analysis-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .stat-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-left: 4px solid #2ecc71;
+    border-radius: 12px;
+    padding: 26px 30px;
+  }
+  .stat-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #2ecc71;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .stat-value { font-size: 22px; font-weight: 700; line-height: 1.45; }
+  .stat-value em { font-style: normal; color: #ffd700; }
+
+  .player-row {
+    margin-top: 32px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .player-chip {
+    background: rgba(46,204,113,0.12);
+    border: 1px solid rgba(46,204,113,0.3);
+    border-radius: 100px;
+    padding: 10px 24px;
+    font-size: 19px;
+    font-weight: 700;
+    color: #2ecc71;
+  }
+
+  .predict-title {
+    font-size: 50px;
+    font-weight: 900;
+    margin-bottom: 44px;
+    line-height: 1.2;
+  }
+  .predict-title em { font-style: normal; color: #ffd700; }
+  .variables-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .variable-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 26px 30px;
+  }
+  .var-team {
+    font-size: 21px;
+    font-weight: 900;
+    color: #ffd700;
+    margin-bottom: 12px;
+  }
+  .var-text { font-size: 18px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+  .verdict-label {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2ecc71;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .verdict-title {
+    font-size: 60px;
+    font-weight: 900;
+    color: #ffd700;
+    margin-bottom: 48px;
+  }
+  .verdict-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 1400px;
+  }
+  .verdict-card {
+    border-radius: 16px;
+    padding: 32px 20px;
+    text-align: center;
+  }
+  .verdict-card.advance {
+    background: rgba(46,204,113,0.12);
+    border: 2px solid #2ecc71;
+  }
+  .verdict-card.out {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .vc-rank {
+    font-size: 15px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+  .vc-team { font-size: 34px; font-weight: 900; margin-bottom: 12px; }
+  .vc-status { font-size: 17px; font-weight: 700; }
+  .verdict-card.advance .vc-status { color: #2ecc71; }
+  .verdict-card.out .vc-status { color: rgba(255,255,255,0.35); }
+  .verdict-next {
+    margin-top: 40px;
+    font-size: 26px;
+    color: rgba(255,255,255,0.5);
+  }
+  .verdict-next em { color: #ffd700; font-style: normal; font-weight: 900; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: HOOK -->
+<div class="slide bg-stadium active" id="slide-1">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP13</div>
+  <div class="group-badge">GROUP J</div>
+  <div style="width:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+    <div class="hook-subtitle">2026 World Cup Prediction Battle</div>
+    <div class="hook-title">Group J Deep Dive<br><em>European Powerhouse Pride</em></div>
+    <div class="hook-divider"></div>
+    <div class="hook-tagline">Switzerland's iron-clad organization vs Denmark's tactical revolution<br>Ghana's youthful explosion, Ecuador's Caicedo power — just 2 last-16 tickets available</div>
+    <div class="hook-flags">
+      <div class="flag-item"><span>🇨🇭</span><span class="flag-name">SWITZERLAND</span></div>
+      <div class="flag-item"><span>🇩🇰</span><span class="flag-name">DENMARK</span></div>
+      <div class="flag-item"><span>🇬🇭</span><span class="flag-name">GHANA</span></div>
+      <div class="flag-item"><span>🇪🇨</span><span class="flag-name">ECUADOR</span></div>
+    </div>
+  </div>
+  <div class="slide-counter">01 / 07</div>
+  <div class="watermark">2026 World Cup Prediction Battle</div>
+</div>
+
+<!-- SLIDE 2: TEAMS OVERVIEW -->
+<div class="slide bg-analysis" id="slide-2">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP13</div>
+  <div class="group-badge">GROUP J</div>
+  <div style="width:100%; padding:80px 120px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="teams-header">Group J — 4 Teams at a Glance</div>
+    <div class="teams-grid">
+      <div class="team-card">
+        <div class="team-flag">🇨🇭</div>
+        <div class="team-name">Switzerland</div>
+        <div class="team-rank">FIFA #19 · 1st Seed</div>
+        <div class="team-desc">Granit Xhaka (Arsenal)<br>Back-to-back Round of 16: 2018 & 2022</div>
+      </div>
+      <div class="team-card">
+        <div class="team-flag">🇩🇰</div>
+        <div class="team-name">Denmark</div>
+        <div class="team-rank">FIFA #21 · Eriksen's Miracle</div>
+        <div class="team-desc">Christian Eriksen (Man Utd)<br>Højbjerg — world-class defensive MF</div>
+      </div>
+      <div class="team-card">
+        <div class="team-flag">🇬🇭</div>
+        <div class="team-name">Ghana</div>
+        <div class="team-rank">FIFA #60 · African Dark Horse</div>
+        <div class="team-desc">Mohammed Kudus (Ajax)<br>Salisu Abdul — next-gen defensive star</div>
+      </div>
+      <div class="team-card">
+        <div class="team-flag">🇪🇨</div>
+        <div class="team-name">Ecuador</div>
+        <div class="team-rank">FIFA #44 · South American Grit</div>
+        <div class="team-desc">Moisés Caicedo (Liverpool)<br>Carrying the 2022 WC legacy forward</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-counter">02 / 07</div>
+  <div class="watermark">2026 World Cup Prediction Battle</div>
+</div>
+
+<!-- SLIDE 3: SWITZERLAND ANALYSIS -->
+<div class="slide bg-analysis" id="slide-3">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP13</div>
+  <div class="group-badge">GROUP J</div>
+  <div style="width:100%; padding:80px 120px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="analysis-sub">1st Seed Analysis</div>
+    <div class="analysis-title">🇨🇭 Switzerland<br><em>Xhaka's Tactical Empire — Europe's Most Unbeatable Side</em></div>
+    <div class="analysis-body" style="margin-top:36px;">
+      <div class="stat-box">
+        <div class="stat-label">Key Ace</div>
+        <div class="stat-value">Granit Xhaka — Arsenal<br><em>The heartbeat of the Premier League midfield</em><br>Distribution, defensive cover, set-piece control</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Recent Form</div>
+        <div class="stat-value">UEFA Euro 2024 — Reached Quarterfinals<br><em>Dismantled Italy & Scotland</em><br>Eliminated by England in PK shootout</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Tactical Style</div>
+        <div class="stat-value">Yakin's 4-2-3-1 high-press system<br>Ndoye & Fari wide threats + Xhaka control<br><em>Defensive block among Europe's finest</em></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Ambition</div>
+        <div class="stat-value">Following 2022 QF — targeting semifinals<br>Aiming for Group J top spot<br><em>A golden generation at full maturity</em></div>
+      </div>
+    </div>
+    <div class="player-row">
+      <div class="player-chip">Granit Xhaka</div>
+      <div class="player-chip">Breel Embolo</div>
+      <div class="player-chip">Remo Freuler</div>
+      <div class="player-chip">Manuel Akanji</div>
+    </div>
+  </div>
+  <div class="slide-counter">03 / 07</div>
+  <div class="watermark">2026 World Cup Prediction Battle</div>
+</div>
+
+<!-- SLIDE 4: DENMARK ANALYSIS -->
+<div class="slide bg-analysis" id="slide-4">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP13</div>
+  <div class="group-badge">GROUP J</div>
+  <div style="width:100%; padding:80px 120px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="analysis-sub">2nd Team Analysis</div>
+    <div class="analysis-title">🇩🇰 Denmark<br><em>Eriksen's Miracle — Scandinavia's Tactical Revolution</em></div>
+    <div class="analysis-body" style="margin-top:36px;">
+      <div class="stat-box">
+        <div class="stat-label">Key Ace</div>
+        <div class="stat-value">Christian Eriksen — Manchester United<br><em>The legend who grew stronger after heart surgery</em><br>Master playmaker who architects 90 minutes</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Recent Form</div>
+        <div class="stat-value">UEFA Euro 2024 — Round of 16<br><em>Tight battles vs Slovenia & England</em><br>Group stage unbeaten — organization proven</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Tactical Strengths</div>
+        <div class="stat-value">Højbjerg — world-class defensive MF<br>Eriksen's creative passing + Lindstrøm long range<br><em>Attack-defense balance among Europe's best</em></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Ambition</div>
+        <div class="stat-value">Chasing the 1992 Euro mythology<br>Battle with Switzerland for Group J top<br><em>If Eriksen is fit, QF is realistic</em></div>
+      </div>
+    </div>
+    <div class="player-row">
+      <div class="player-chip">Christian Eriksen</div>
+      <div class="player-chip">Pierre-Emile Højbjerg</div>
+      <div class="player-chip">Rasmus Højlund</div>
+      <div class="player-chip">Andreas Christensen</div>
+    </div>
+  </div>
+  <div class="slide-counter">04 / 07</div>
+  <div class="watermark">2026 World Cup Prediction Battle</div>
+</div>
+
+<!-- SLIDE 5: GHANA + ECUADOR -->
+<div class="slide bg-analysis" id="slide-5">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP13</div>
+  <div class="group-badge">GROUP J</div>
+  <div style="width:100%; padding:80px 120px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="analysis-sub">3rd &amp; 4th Team Analysis</div>
+    <div class="analysis-title">🇬🇭 Ghana vs 🇪🇨 Ecuador<br><em>Dark Horses With Upset Potential</em></div>
+    <div class="analysis-body" style="margin-top:36px;">
+      <div class="stat-box">
+        <div class="stat-label">🇬🇭 Ghana's Strengths</div>
+        <div class="stat-value">Kudus's dribbling & creativity<br><em>Average age 23 — pure explosive energy</em><br>Carry the 2022 2-2 Portugal upset DNA</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">🇪🇨 Ecuador's Strengths</div>
+        <div class="stat-value">Moisés Caicedo — Liverpool midfield engine<br><em>Midfield dominance ranked top in South America</em><br>Physical intensity + counter-attack transition speed</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">🇬🇭 Ghana's Risks</div>
+        <div class="stat-value">Defensive organization unstable<br>No credible second ace beyond Kudus<br><em>Flank defense vulnerable to European style</em></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">🇪🇨 Ecuador's Risks</div>
+        <div class="stat-value">Finishing void left by Valencia's retirement<br>If Caicedo is targeted, creativity collapses<br><em>Ceiling against European sides without home advantage</em></div>
+      </div>
+    </div>
+    <div class="player-row">
+      <div class="player-chip">🇬🇭 Kudus</div>
+      <div class="player-chip">🇬🇭 Salisu Abdul</div>
+      <div class="player-chip">🇪🇨 Caicedo</div>
+      <div class="player-chip">🇪🇨 Estupiñán</div>
+    </div>
+  </div>
+  <div class="slide-counter">05 / 07</div>
+  <div class="watermark">2026 World Cup Prediction Battle</div>
+</div>
+
+<!-- SLIDE 6: PREDICTION + VARIABLES -->
+<div class="slide bg-analysis" id="slide-6">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP13</div>
+  <div class="group-badge">GROUP J</div>
+  <div style="width:100%; padding:80px 120px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="predict-title">Key Variables<br><em>The 4 Factors That Decide Group J's Fate</em></div>
+    <div class="variables-grid">
+      <div class="variable-card">
+        <div class="var-team">⚔️ The Head-to-Head That Matters</div>
+        <div class="var-text">Switzerland vs Denmark decides who tops the group. Their all-time record is tight, but Switzerland are stronger on neutral ground. The Xhaka vs Eriksen midfield battle is the fulcrum of the whole group.</div>
+      </div>
+      <div class="variable-card">
+        <div class="var-team">🌡️ Climate &amp; Schedule Factor</div>
+        <div class="var-text">North American summer heat — Houston and Dallas pushing 35°C+. European teams suffer the most from energy drain. Ghana and Ecuador's fitness advantage could be a decisive variable.</div>
+      </div>
+      <div class="variable-card">
+        <div class="var-team">⚡ The Upset Scenario</div>
+        <div class="var-text">The moment Ghana beats Denmark, the whole group flips. Just like Ghana's 2006 last-16 run, Kudus alone carries the energy to rewrite the entire Group J script.</div>
+      </div>
+      <div class="variable-card">
+        <div class="var-team">🩺 Fitness &amp; Injuries</div>
+        <div class="var-text">Eriksen's condition is Denmark's everything. Xhaka's yellow card tally is a late-tournament risk for Switzerland. Caicedo's knee status is Ecuador's survival key.</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-counter">06 / 07</div>
+  <div class="watermark">2026 World Cup Prediction Battle</div>
+</div>
+
+<!-- SLIDE 7: VERDICT -->
+<div class="slide bg-verdict" id="slide-7">
+  <div class="grid-lines"></div>
+  <div class="ep-badge">EP13</div>
+  <div class="group-badge">GROUP J</div>
+  <div style="width:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+    <div class="verdict-label">AI Prediction — Final Verdict</div>
+    <div class="verdict-title">Group J Predicted Qualifiers</div>
+    <div class="verdict-grid">
+      <div class="verdict-card advance">
+        <div class="vc-rank">1st Place</div>
+        <div class="vc-team">🇨🇭 Switzerland</div>
+        <div class="vc-status">✅ Advances</div>
+      </div>
+      <div class="verdict-card advance">
+        <div class="vc-rank">2nd Place</div>
+        <div class="vc-team">🇩🇰 Denmark</div>
+        <div class="vc-status">✅ Advances</div>
+      </div>
+      <div class="verdict-card out">
+        <div class="vc-rank">3rd Place</div>
+        <div class="vc-team">🇬🇭 Ghana</div>
+        <div class="vc-status">⬛ Eliminated</div>
+      </div>
+      <div class="verdict-card out">
+        <div class="vc-rank">4th Place</div>
+        <div class="vc-team">🇪🇨 Ecuador</div>
+        <div class="vc-status">⬛ Eliminated</div>
+      </div>
+    </div>
+    <div class="verdict-next">Next Episode → <em>Group K Deep Dive</em> — Poland vs Iran, Chile &amp; Cameroon in a clash of continents</div>
+  </div>
+  <div class="slide-counter">07 / 07</div>
+  <div class="watermark">2026 World Cup Prediction Battle</div>
+</div>
+
+<script>
+  var current = 1;
+  var total = 7;
+
+  function showSlide(n) {
+    var slides = document.querySelectorAll('.slide');
+    slides.forEach(function(s) { s.classList.remove('active'); });
+    var target = document.getElementById('slide-' + n);
+    if (target) {
+      target.classList.add('active');
+      current = n;
+    }
+  }
+
+  window.goToSlide = showSlide;
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight' || e.key === ' ') {
+      if (current < total) showSlide(current + 1);
+    } else if (e.key === 'ArrowLeft') {
+      if (current > 1) showSlide(current - 1);
+    }
+  });
+</script>
+</body>
+</html>

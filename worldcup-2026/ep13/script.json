@@ -1,0 +1,60 @@
+{
+  "series": "worldcup-2026",
+  "ep_number": 13,
+  "ep_role": "group_preview",
+  "group": "J조",
+  "title_ko": "J조 완전 분석 — 스위스 vs 덴마크, 유럽 강호의 자존심 대결",
+  "title_ja": "Jグループ完全分析 — スイスvsデンマーク、欧州強豪のプライドを懸けた戦い",
+  "title_en": "Group J Deep Dive — Switzerland vs Denmark, European Powerhouse Pride",
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "role": "hook",
+      "narration": "J조는 겉으로는 조용해 보이지만, 유럽 강호 두 팀이 단 한 장의 16강 티켓을 두고 맞붙는 숨막히는 격전지입니다. 스위스와 덴마크 — 둘 중 하나는 반드시 탈락합니다.",
+      "narration_ja": "Jグループは一見静かに見えますが、ヨーロッパの強豪2チームがわずか一枚の決勝トーナメント切符を争う、息をのむ激戦区です。スイスとデンマーク——どちらか一方は必ず敗退します。",
+      "narration_en": "Group J may look quiet on the surface, but it's a suffocating battleground where two European powerhouses fight for a single last-16 ticket. Switzerland or Denmark — one of them is going home early."
+    },
+    {
+      "id": "s02_teams",
+      "role": "data",
+      "narration": "J조의 4개국: 스위스(FIFA 19위), 덴마크(21위), 가나(60위), 에콰도르(44위). 유럽 두 강호가 선두 경쟁을 벌이는 가운데, 가나와 에콰도르가 이변의 불씨를 품고 있는 구도입니다.",
+      "narration_ja": "Jグループの4カ国：スイス（FIFA19位）、デンマーク（21位）、ガーナ（60位）、エクアドル（44位）。欧州の2強豪が首位争いを繰り広げる一方、ガーナとエクアドルが番狂わせの火種を抱えた構図です。",
+      "narration_en": "The four teams in Group J: Switzerland (FIFA 19th), Denmark (21st), Ghana (60th), and Ecuador (44th). The two European heavyweights battle for top spot, while Ghana and Ecuador carry the spark of an upset."
+    },
+    {
+      "id": "s03_team1",
+      "role": "analysis",
+      "narration": "스위스는 2018·2022 월드컵 16강 연속 진출의 저력을 가진 팀입니다. 야킨 감독의 4-2-3-1 전술, 자카의 미드필드 장악력, 그리고 은두예의 공격력이 핵심 무기. 유럽에서 가장 '안 지는' 팀으로 불립니다.",
+      "narration_ja": "スイスは2018年・2022年ワールドカップ連続ベスト16進出の実力を持つチームです。ヤキン監督の4-2-3-1戦術、シャカのミッドフィールド制圧力、そしてンドイェの攻撃力が主要な武器。欧州で最も「負けない」チームと称されています。",
+      "narration_en": "Switzerland are a team of proven pedigree — back-to-back last-16 finishes at the 2018 and 2022 World Cups. Murat Yakin's 4-2-3-1 system, Xhaka's midfield dominance, and Ndoye's attacking threat are their key weapons. They're Europe's most resilient side."
+    },
+    {
+      "id": "s04_team2",
+      "role": "analysis",
+      "narration": "덴마크는 에릭센의 기적 같은 복귀 이후 팀 정체성이 더욱 강해졌습니다. UEFA 유로 2024에서 8강을 노렸고, 호이비에르의 수비형 미드필드는 세계 최고 수준. 크리스티안 에릭센의 플레이메이킹은 J조 최고의 변수입니다.",
+      "narration_ja": "デンマークはエリクセンの奇跡的な復帰以降、チームのアイデンティティがさらに強固になりました。UEFA EURO 2024でベスト8を狙い、ホイビュアのディフェンシブミッドフィールドは世界最高水準。クリスチャン・エリクセンのプレーメイキングはJグループ最大の変数です。",
+      "narration_en": "Denmark have grown stronger in identity since Eriksen's miraculous return. They pushed for the quarterfinals at UEFA Euro 2024, Højbjerg's defensive midfield is world-class, and Christian Eriksen's playmaking remains the biggest wildcard in Group J."
+    },
+    {
+      "id": "s05_team3",
+      "role": "analysis",
+      "narration": "가나는 쿠두스와 살리수 압둘의 젊은 에너지로 무장했습니다. 2022 월드컵에서 포르투갈을 위협한 경험이 있고, 에콰도르는 엔너 발렌시아 없이도 카이세도의 리버풀 파워로 중원을 지배할 잠재력이 있습니다. 두 팀 모두 이변을 만들 수 있는 팀입니다.",
+      "narration_ja": "ガーナはクドゥスとサリス・アブドゥルの若いエネルギーで武装しています。2022年ワールドカップでポルトガルを脅かした経験を持ち、エクアドルはエネル・バレンシア不在でも、カイセドのリバプール・パワーで中盤を支配できる可能性があります。両チームとも番狂わせを起こせる存在です。",
+      "narration_en": "Ghana are armed with the young energy of Kudus and Salisu Abdul. They threatened Portugal at the 2022 World Cup. Ecuador, even without Enner Valencia, have the potential to dominate midfield with Caicedo's Liverpool-grade power. Both sides are genuine upset candidates."
+    },
+    {
+      "id": "s06_predict",
+      "role": "analysis",
+      "narration": "핵심 변수는 스위스-덴마크 직접 대결입니다. 역대 상대 전적은 팽팽하지만, 스위스는 조별 1위를 확정하는 경향이 있습니다. 가나는 에콰도르와의 아프리카-남미 더비에서 승점을 챙길 가능성이 높고, 에콰도르의 빠른 역습은 유럽 팀들을 당황하게 할 수 있습니다.",
+      "narration_ja": "最大の変数はスイスとデンマークの直接対決です。これまでの対戦成績は拮抗していますが、スイスはグループ首位を確定させる傾向があります。ガーナはエクアドルとのアフリカ対南米ダービーで勝ち点を取る可能性が高く、エクアドルの素早いカウンターは欧州チームを困惑させるかもしれません。",
+      "narration_en": "The key variable is the Switzerland-Denmark head-to-head. Their all-time record is tight, but Switzerland tend to secure top spot in their group. Ghana are likely to pick up points in the Africa vs South America derby against Ecuador, while Ecuador's quick counter-attacks could unsettle the Europeans."
+    },
+    {
+      "id": "s07_verdict",
+      "role": "verdict",
+      "narration": "AI 예측 결론: 1위 스위스, 2위 덴마크로 J조를 통과합니다. 가나가 에콰도르를 꺾고 3위로 마무리할 가능성도 열려 있습니다. 다음 에피소드에서는 K조 — 폴란드, 이란, 칠레, 카메룬의 격전을 분석합니다. 기대해주세요!",
+      "narration_ja": "AI予測の結論：スイスが1位、デンマークが2位でJグループを突破します。ガーナがエクアドルを下して3位でフィニッシュする可能性も残されています。次のエピソードでは、Kグループ——ポーランド、イラン、チリ、カメルーンの激戦を分析します。お楽しみに！",
+      "narration_en": "AI Verdict: Switzerland 1st, Denmark 2nd — both advancing from Group J. There is still a chance Ghana edge Ecuador to finish 3rd. Next episode we break down Group K — Poland, Iran, Chile, and Cameroon in a clash of continents. Stay tuned!"
+    }
+  ]
+}
