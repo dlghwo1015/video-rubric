@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>2026-07-07 AI Match Predictions — EP12 | Daily World Cup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    background: #080c18;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes slideLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes pulseRed {
+    0%,100% { text-shadow: 0 0 40px rgba(220,38,38,.5); }
+    50%     { text-shadow: 0 0 100px rgba(220,38,38,1); }
+  }
+  @keyframes pulseGold {
+    0%,100% { text-shadow: 0 0 40px rgba(201,162,39,.5); }
+    50%     { text-shadow: 0 0 90px rgba(201,162,39,1); }
+  }
+  @keyframes pulseBlue {
+    0%,100% { text-shadow: 0 0 40px rgba(100,160,255,.5); }
+    50%     { text-shadow: 0 0 90px rgba(100,160,255,1); }
+  }
+  @keyframes glowRed {
+    0%,100% { box-shadow: 0 0 24px rgba(220,38,38,.3); }
+    50%     { box-shadow: 0 0 80px rgba(220,38,38,.75); }
+  }
+  @keyframes glowGold {
+    0%,100% { box-shadow: 0 0 24px rgba(201,162,39,.3); }
+    50%     { box-shadow: 0 0 70px rgba(201,162,39,.7); }
+  }
+  @keyframes glowNord {
+    0%,100% { box-shadow: 0 0 24px rgba(100,160,255,.3); }
+    50%     { box-shadow: 0 0 70px rgba(100,160,255,.7); }
+  }
+
+  .anim { opacity: 0; }
+  .anim.go { animation-fill-mode: forwards; }
+  .anim.go.fadeUp    { animation: fadeUp    0.7s cubic-bezier(.22,.68,0,1.2) forwards; }
+  .anim.go.fadeIn    { animation: fadeIn    0.6s ease forwards; }
+  .anim.go.slideLeft { animation: slideLeft 0.6s cubic-bezier(.22,.68,0,1.2) forwards; }
+
+  .ep-label {
+    position: absolute; top: 36px; left: 56px;
+    font-family: 'Roboto Mono', monospace; font-size: 20px;
+    color: rgba(255,255,255,.3); letter-spacing: .14em; text-transform: uppercase;
+  }
+  .slide-num {
+    position: absolute; top: 36px; right: 56px;
+    font-family: 'Roboto Mono', monospace; font-size: 20px;
+    color: rgba(255,255,255,.3); letter-spacing: .1em;
+  }
+  .ai-badge {
+    position: absolute; bottom: 42px; right: 56px;
+    font-family: 'Roboto Mono', monospace; font-size: 18px;
+    color: rgba(100,200,255,.6); letter-spacing: .12em;
+  }
+
+  /* S01 */
+  #slide-1 {
+    background:
+      radial-gradient(ellipse 130% 90% at 50% 120%, rgba(60,90,180,.12) 0%, transparent 55%),
+      radial-gradient(ellipse 70% 55% at 10% 20%, rgba(100,160,255,.08) 0%, transparent 45%),
+      #080c18;
+  }
+  #slide-1 .date-chip { font-family:'Roboto Mono',monospace; font-size:26px; color:rgba(100,160,255,.9); letter-spacing:.22em; text-transform:uppercase; margin-bottom:10px; }
+  #slide-1 .r16-chip  { font-family:'Roboto Mono',monospace; font-size:20px; color:rgba(201,162,39,.8);  letter-spacing:.2em;  text-transform:uppercase; margin-bottom:6px; }
+  #slide-1 .hook-title { font-size:68px; font-weight:900; color:#f0ede4; text-align:center; line-height:1.1; margin-bottom:6px; }
+  #slide-1 .hook-title .acc-blue { color:#64a0ff; animation:pulseBlue 3s ease-in-out infinite; }
+  #slide-1 .hook-title .acc-gold { color:#c9a227; animation:pulseGold 3s ease-in-out infinite; }
+  #slide-1 .korea-memorial {
+    margin-top:6px; background:rgba(220,38,38,.06); border:1px solid rgba(220,38,38,.35); border-radius:14px;
+    padding:10px 44px; font-size:26px; font-weight:400; color:rgba(240,180,180,.8); text-align:center;
+  }
+  #slide-1 .korea-memorial .son { color:#dc2626; font-weight:700; animation:pulseRed 3s ease-in-out infinite; }
+  #slide-1 .derby-banner {
+    margin-top:16px; background:linear-gradient(90deg,rgba(100,140,255,.08),rgba(220,50,50,.06));
+    border:2px solid rgba(100,160,255,.5); border-radius:20px;
+    padding:16px 56px; font-size:50px; font-weight:900; color:#f0ede4; animation:glowNord 3s ease-in-out infinite;
+  }
+  #slide-1 .derby-banner .vs { color:#c9a227; font-size:40px; margin:0 20px; }
+  #slide-1 .derby-label { margin-top:8px; font-family:'Roboto Mono',monospace; font-size:21px; color:rgba(100,160,255,.9); letter-spacing:.16em; text-transform:uppercase; animation:pulseBlue 3s ease-in-out infinite; }
+  #slide-1 .match-teasers { display:flex; gap:14px; margin-top:16px; }
+  #slide-1 .teaser { background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:10px 20px; font-size:21px; color:rgba(240,237,228,.65); }
+  #slide-1 .teaser .vs { color:rgba(100,160,255,.7); font-weight:700; }
+  #slide-1 .teaser.derby-t { background:rgba(100,160,255,.08); border-color:rgba(100,160,255,.45); color:rgba(200,220,255,.9); animation:glowNord 3s ease-in-out infinite; }
+
+  /* S02 */
+  #slide-2 { background: radial-gradient(ellipse 120% 80% at 50% 110%, rgba(79,200,122,.07) 0%, transparent 55%), #0a140d; padding:0 100px; align-items:flex-start; justify-content:center; }
+  #slide-2 .section-label { font-family:'Roboto Mono',monospace; font-size:20px; color:rgba(79,200,122,.8); letter-spacing:.2em; text-transform:uppercase; margin-bottom:8px; }
+  #slide-2 .section-title { font-size:42px; font-weight:700; color:#e8f5ed; margin-bottom:16px; }
+  #slide-2 .section-title .hit { color:#4fc87a; }
+  #slide-2 .section-title .gold { color:#c9a227; }
+  #slide-2 .results-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px 38px; width:100%; max-width:1680px; }
+  .res-row { display:flex; align-items:center; background:rgba(79,200,122,.05); border:1px solid rgba(79,200,122,.16); border-radius:14px; padding:14px 22px; gap:0; }
+  .res-row.special { background:rgba(220,38,38,.07); border-color:rgba(220,38,38,.38); animation:glowRed 3.5s ease-in-out infinite; }
+  .res-row .t { font-size:26px; font-weight:600; color:#e8f5ed; flex:1; }
+  .res-row .t.right { text-align:right; }
+  .res-row .sc { font-family:'Roboto Mono',monospace; font-size:36px; font-weight:600; color:#4fc87a; padding:0 20px; flex-shrink:0; }
+  .res-row.special .sc { color:#dc2626; }
+  .res-row .tag { font-family:'Roboto Mono',monospace; font-size:13px; padding:4px 12px; border-radius:6px; background:rgba(79,200,122,.12); color:#4fc87a; border:1px solid rgba(79,200,122,.25); flex-shrink:0; margin-left:12px; }
+  .res-row.special .tag { background:rgba(220,38,38,.12); color:#fb7185; border-color:rgba(220,38,38,.3); }
+  .res-row .note { font-size:12px; color:rgba(240,237,228,.35); margin-left:8px; flex-shrink:0; }
+  #slide-2 .acc-bar { margin-top:20px; display:flex; align-items:center; gap:36px; font-size:25px; color:rgba(232,245,237,.5); width:100%; max-width:1680px; }
+  #slide-2 .acc-bar strong { color:#c9a227; font-size:30px; }
+  #slide-2 .acc-bar .hit-val { color:#4fc87a; font-weight:700; }
+
+  /* S03 */
+  #slide-3 { background: radial-gradient(ellipse 130% 90% at 20% 120%, rgba(100,140,255,.1) 0%, transparent 52%), radial-gradient(ellipse 100% 80% at 80% 120%, rgba(200,50,50,.07) 0%, transparent 50%), #060810; padding:0 90px; }
+  #slide-3 .section-label { font-family:'Roboto Mono',monospace; font-size:20px; color:rgba(100,160,255,.85); letter-spacing:.2em; text-transform:uppercase; margin-bottom:6px; align-self:flex-start; }
+  #slide-3 .derby-badge { align-self:flex-start; background:rgba(100,160,255,.08); border:1px solid rgba(100,160,255,.45); border-radius:8px; padding:6px 20px; font-family:'Roboto Mono',monospace; font-size:17px; color:rgba(100,160,255,.95); letter-spacing:.06em; margin-bottom:10px; animation:glowNord 3s ease-in-out infinite; }
+  #slide-3 .match-banner { display:flex; align-items:center; justify-content:center; gap:44px; margin:8px 0 16px; width:100%; }
+  #slide-3 .team-block { text-align:center; flex:1; max-width:380px; }
+  #slide-3 .team-flag { font-size:68px; margin-bottom:6px; }
+  #slide-3 .team-nm { font-size:42px; font-weight:700; color:#f0ede4; }
+  #slide-3 .team-nm.den { color:#dc2626; animation:pulseRed 3s ease-in-out infinite; }
+  #slide-3 .team-nm.swe { color:rgba(240,237,228,.7); }
+  #slide-3 .pred-score-block { display:flex; align-items:center; flex-shrink:0; }
+  #slide-3 .pred-score { font-family:'Roboto Mono',monospace; font-size:100px; font-weight:600; color:#64a0ff; width:80px; text-align:center; line-height:1; }
+  #slide-3 .pred-score.swe-sc { color:rgba(240,237,228,.35); }
+  #slide-3 .pred-dash { font-size:50px; color:rgba(255,255,255,.2); padding:0 10px; }
+  #slide-3 .analysis-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; width:100%; max-width:1700px; }
+  #slide-3 .reason-card { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); border-radius:16px; padding:18px 24px; }
+  #slide-3 .reason-card.den-card { background:rgba(220,38,38,.06); border-color:rgba(220,38,38,.3); }
+  #slide-3 .reason-card.swe-card { background:rgba(255,220,60,.05); border-color:rgba(255,200,0,.25); }
+  #slide-3 .reason-card.ctx-card { background:rgba(100,160,255,.05); border-color:rgba(100,160,255,.25); animation:glowNord 4s ease-in-out infinite; }
+  #slide-3 .reason-num { font-family:'Roboto Mono',monospace; font-size:14px; color:rgba(255,255,255,.35); letter-spacing:.12em; margin-bottom:8px; }
+  #slide-3 .reason-card.den-card .reason-num { color:rgba(220,38,38,.75); }
+  #slide-3 .reason-card.swe-card .reason-num { color:rgba(255,200,0,.7); }
+  #slide-3 .reason-card.ctx-card .reason-num { color:rgba(100,160,255,.75); }
+  #slide-3 .reason-text { font-size:22px; color:rgba(240,237,228,.8); line-height:1.65; }
+  #slide-3 .conf-row { display:flex; align-items:center; gap:22px; margin-top:14px; align-self:flex-start; }
+  #slide-3 .conf-label { font-family:'Roboto Mono',monospace; font-size:20px; color:rgba(240,237,228,.45); letter-spacing:.1em; }
+  #slide-3 .conf-track { width:340px; height:10px; background:rgba(255,255,255,.1); border-radius:5px; overflow:hidden; }
+  #slide-3 .conf-fill { height:100%; background:linear-gradient(90deg,#1e3a6e,#64a0ff); border-radius:5px; width:54%; }
+  #slide-3 .conf-pct { font-family:'Roboto Mono',monospace; font-size:26px; font-weight:600; color:#64a0ff; }
+  #slide-3 .conf-note { font-size:17px; color:rgba(201,162,39,.7); font-style:italic; margin-left:6px; }
+
+  /* S04 */
+  #slide-4 { background: radial-gradient(ellipse 100% 80% at 30% 110%, rgba(59,130,246,.09) 0%, transparent 50%), #080c18; padding:0 100px; }
+  #slide-4 .section-label { font-family:'Roboto Mono',monospace; font-size:22px; color:rgba(100,160,255,.8); letter-spacing:.2em; text-transform:uppercase; margin-bottom:10px; align-self:flex-start; }
+  #slide-4 .section-title { font-size:52px; font-weight:700; color:#f0ede4; margin-bottom:28px; align-self:flex-start; }
+  #slide-4 .section-title span { color:#64a0ff; }
+  #slide-4 .picks-grid { display:flex; flex-direction:column; gap:20px; width:100%; max-width:1680px; }
+  .pick-row { display:grid; grid-template-columns:110px 1fr 200px 1fr 210px 170px; align-items:center; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); border-radius:14px; padding:20px 34px; gap:14px; }
+  .pick-row.bel-hl { border-color:rgba(255,200,0,.35); background:rgba(255,200,0,.04); }
+  .pick-row.uru-hl { border-color:rgba(79,200,122,.35); background:rgba(79,200,122,.04); }
+  .pick-row.sui-hl { border-color:rgba(220,38,38,.3);  background:rgba(220,38,38,.04); }
+  .pick-row .grp { font-family:'Roboto Mono',monospace; font-size:17px; color:rgba(255,255,255,.3); letter-spacing:.1em; }
+  .pick-row .t-name { font-size:30px; font-weight:600; color:#f0ede4; }
+  .pick-row .t-name.right { text-align:right; }
+  .pick-row .pred-sc { font-family:'Roboto Mono',monospace; font-size:44px; font-weight:600; text-align:center; color:#64a0ff; }
+  .pick-row .pick-lbl { font-size:22px; font-weight:700; color:#c9a227; text-align:center; }
+  .pick-row .conf-chip { font-family:'Roboto Mono',monospace; font-size:20px; font-weight:600; color:rgba(100,200,255,.8); text-align:right; }
+
+  /* S05 */
+  #slide-5 { background: radial-gradient(ellipse 120% 90% at 50% 110%, rgba(100,140,255,.1) 0%, transparent 55%), #07090f; padding:0 110px; align-items:flex-start; justify-content:center; }
+  #slide-5 .section-label { font-family:'Roboto Mono',monospace; font-size:20px; color:rgba(201,162,39,.8); letter-spacing:.2em; text-transform:uppercase; margin-bottom:8px; }
+  #slide-5 .section-title { font-size:50px; font-weight:700; color:#f0ede4; margin-bottom:26px; }
+  #slide-5 .section-title .gold { color:#c9a227; }
+  #slide-5 .picks-final { display:grid; grid-template-columns:1fr 1fr; gap:14px 38px; width:100%; max-width:1680px; margin-bottom:22px; }
+  .verdict-row { display:flex; align-items:center; gap:18px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); border-radius:14px; padding:16px 26px; }
+  .verdict-row.derby-v { border-color:rgba(100,160,255,.45); background:rgba(100,140,255,.07); animation:glowNord 3s ease-in-out infinite; }
+  .verdict-row .match-nm { font-size:26px; font-weight:600; color:#f0ede4; flex:1; }
+  .verdict-row .v-score { font-family:'Roboto Mono',monospace; font-size:36px; font-weight:600; color:#64a0ff; flex-shrink:0; }
+  .verdict-row .v-conf { font-family:'Roboto Mono',monospace; font-size:19px; color:rgba(201,162,39,.8); flex-shrink:0; }
+  #slide-5 .qf-confirmed { display:flex; align-items:center; gap:14px; width:100%; max-width:1680px; background:rgba(201,162,39,.05); border:1px solid rgba(201,162,39,.25); border-radius:14px; padding:14px 28px; animation:glowGold 4s ease-in-out infinite; }
+  #slide-5 .qf-label { font-family:'Roboto Mono',monospace; font-size:17px; color:rgba(201,162,39,.75); letter-spacing:.12em; flex-shrink:0; }
+  #slide-5 .qf-teams { font-size:22px; font-weight:600; color:rgba(240,237,228,.75); }
+  #slide-5 .qf-teams .team-chip { display:inline-block; background:rgba(79,200,122,.1); border:1px solid rgba(79,200,122,.3); border-radius:8px; padding:2px 12px; margin:0 4px; font-size:20px; color:#4fc87a; }
+  #slide-5 .memorial { margin-top:14px; width:100%; max-width:1680px; text-align:center; font-size:24px; color:rgba(240,180,180,.6); font-style:italic; }
+  #slide-5 .memorial .son { color:#dc2626; font-weight:700; font-style:normal; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1 -->
+<div id="slide-1" class="slide active">
+  <span class="ep-label">EP12 · WORLDCUP-2026-DAILY</span>
+  <span class="slide-num">01 / 05</span>
+  <span class="ai-badge">AI · CLAUDE</span>
+  <div class="date-chip anim fadeUp" style="animation-delay:.1s">2026 · 07 · 07 · R16 DAY 2</div>
+  <div class="r16-chip anim fadeUp" style="animation-delay:.25s">Round of 16 — Day 2 — 4 Matches</div>
+  <h1 class="hook-title anim fadeUp" style="animation-delay:.4s">
+    The <span class="acc-blue">Scandinavian Derby</span> &amp;<br>
+    <span class="acc-gold">USA Must Win</span> Night
+  </h1>
+  <div class="korea-memorial anim fadeIn" style="animation-delay:.65s">
+    <span class="son">Son Heung-min</span>'s equalizer — that goal will be remembered forever · South Korea eliminated
+  </div>
+  <div class="derby-banner anim fadeUp" style="animation-delay:.85s">
+    🇩🇰 Denmark <span class="vs">VS</span> Sweden 🇸🇪
+  </div>
+  <div class="derby-label anim fadeIn" style="animation-delay:1.05s">SCANDINAVIAN DERBY · GILLETTE STADIUM, FOXBORO · 09:00 KST</div>
+  <div class="match-teasers anim fadeUp" style="animation-delay:1.2s">
+    <div class="teaser">🇧🇪 Belgium <span class="vs">vs</span> Canada 🇨🇦 · 00:00</div>
+    <div class="teaser">🇺🇾 Uruguay <span class="vs">vs</span> USA 🇺🇸 · 03:00</div>
+    <div class="teaser">🇨🇭 Switzerland <span class="vs">vs</span> Turkey 🇹🇷 · 06:00</div>
+    <div class="teaser derby-t">🇩🇰 Denmark <span class="vs">vs</span> Sweden 🇸🇪 · 09:00 ★</div>
+  </div>
+</div>
+
+<!-- SLIDE 2 -->
+<div id="slide-2" class="slide">
+  <span class="ep-label">EP12 · WORLDCUP-2026-DAILY</span>
+  <span class="slide-num">02 / 05</span>
+  <span class="ai-badge">AI · CLAUDE</span>
+  <div class="section-label anim slideLeft" style="animation-delay:.1s">RESULT CHECK · R16 DAY 1 · 2026-07-06</div>
+  <h2 class="section-title anim fadeUp" style="animation-delay:.25s">
+    Yesterday: AI <span class="hit">4 / 4 Correct</span> · <span class="gold">Cumulative 90%</span>
+    <span style="font-size:28px;color:#dc2626;font-weight:400;"> · Korea eliminated</span>
+  </h2>
+  <div class="results-grid anim fadeIn" style="animation-delay:.45s">
+    <div class="res-row">
+      <span class="t">🇫🇷 France</span>
+      <span class="sc">2–1</span>
+      <span class="t right">Germany 🇩🇪</span>
+      <span class="tag">✓ Correct</span>
+    </div>
+    <div class="res-row">
+      <span class="t">🇧🇷 Brazil</span>
+      <span class="sc">3–1</span>
+      <span class="t right">England 🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+      <span class="tag">✓ Direction hit</span>
+      <span class="note">AI said 2-1</span>
+    </div>
+    <div class="res-row special">
+      <span class="t">🇮🇹 Italy</span>
+      <span class="sc">2–1</span>
+      <span class="t right">South Korea 🇰🇷</span>
+      <span class="tag">✓ Correct</span>
+      <span class="note">Son equalized → Chiesa winner</span>
+    </div>
+    <div class="res-row">
+      <span class="t">🇳🇱 Netherlands</span>
+      <span class="sc">2–0</span>
+      <span class="t right">Croatia 🇭🇷</span>
+      <span class="tag">✓ Perfect score</span>
+    </div>
+  </div>
+  <div class="acc-bar anim fadeIn" style="animation-delay:.7s">
+    <span>R16 Day 1</span>
+    <strong class="hit-val">4 / 4 · 100%</strong>
+    <span style="color:rgba(255,255,255,.2)">|</span>
+    <span>Cumulative (20 matches)</span>
+    <strong>18 / 20</strong>
+    <span class="hit-val">90%</span>
+    <span style="font-size:19px;color:rgba(255,255,255,.3)">· Series-high accuracy</span>
+  </div>
+</div>
+
+<!-- SLIDE 3 -->
+<div id="slide-3" class="slide">
+  <span class="ep-label">EP12 · WORLDCUP-2026-DAILY</span>
+  <span class="slide-num">03 / 05</span>
+  <span class="ai-badge">AI · CLAUDE</span>
+  <div class="section-label anim slideLeft" style="animation-delay:.1s">TODAY'S SPOTLIGHT · R16 · 09:00 KST</div>
+  <div class="derby-badge anim fadeIn" style="animation-delay:.25s">⚡ SCANDINAVIAN DERBY — GILLETTE STADIUM, FOXBORO</div>
+  <div class="match-banner anim fadeUp" style="animation-delay:.4s">
+    <div class="team-block">
+      <div class="team-flag">🇩🇰</div>
+      <div class="team-nm den">Denmark</div>
+    </div>
+    <div class="pred-score-block">
+      <span class="pred-score">2</span>
+      <span class="pred-dash">–</span>
+      <span class="pred-score swe-sc">1</span>
+    </div>
+    <div class="team-block">
+      <div class="team-flag">🇸🇪</div>
+      <div class="team-nm swe">Sweden</div>
+    </div>
+  </div>
+  <div class="analysis-grid anim fadeIn" style="animation-delay:.6s">
+    <div class="reason-card den-card">
+      <div class="reason-num">FACTOR 01 · DENMARK</div>
+      <div class="reason-text">Christian Eriksen. The man who suffered a cardiac arrest at Euro 2020, who was resuscitated on that pitch — he stands in a World Cup Round of 16 today. Eriksen's through-ball range and spatial reading is Denmark's heartbeat. The whole team coalesces around him.</div>
+    </div>
+    <div class="reason-card swe-card">
+      <div class="reason-num">FACTOR 02 · SWEDEN</div>
+      <div class="reason-text">Alexander Isak. Two goals against Chile in the Round of 32. Newcastle's ace striker, widely regarded as Sweden's finest since Ibrahimović. Isak's aerial dominance and composure in front of goal will test Denmark's defensive line to its absolute limit.</div>
+    </div>
+    <div class="reason-card ctx-card">
+      <div class="reason-num">FACTOR 03 · PSYCHOLOGY</div>
+      <div class="reason-text">Scandinavian derbies defy data. Many of these players are club teammates in European leagues. The collision of club friendship and national rivalry creates a psychological variable that is at its maximum. AI confidence: 54%. The number says everything.</div>
+    </div>
+  </div>
+  <div class="conf-row anim fadeIn" style="animation-delay:.85s">
+    <span class="conf-label">AI CONFIDENCE</span>
+    <div class="conf-track"><div class="conf-fill"></div></div>
+    <span class="conf-pct">54%</span>
+    <span class="conf-note">— 2nd lowest confidence in this series</span>
+  </div>
+</div>
+
+<!-- SLIDE 4 -->
+<div id="slide-4" class="slide">
+  <span class="ep-label">EP12 · WORLDCUP-2026-DAILY</span>
+  <span class="slide-num">04 / 05</span>
+  <span class="ai-badge">AI · CLAUDE</span>
+  <div class="section-label anim slideLeft" style="animation-delay:.1s">AI QUICK PICKS · R16 DAY 2</div>
+  <h2 class="section-title anim fadeUp" style="animation-delay:.25s">The Other <span>3 Matches</span></h2>
+  <div class="picks-grid anim fadeIn" style="animation-delay:.45s">
+    <div class="pick-row bel-hl">
+      <span class="grp">00:00</span>
+      <span class="t-name right">🇧🇪 Belgium</span>
+      <span class="pred-sc">2–1</span>
+      <span class="t-name">Canada 🇨🇦</span>
+      <span class="pick-lbl">Pick: Belgium</span>
+      <span class="conf-chip">61%</span>
+    </div>
+    <div class="pick-row uru-hl">
+      <span class="grp">03:00</span>
+      <span class="t-name right">🇺🇾 Uruguay</span>
+      <span class="pred-sc">2–1</span>
+      <span class="t-name">USA 🇺🇸</span>
+      <span class="pick-lbl">Pick: Uruguay</span>
+      <span class="conf-chip">57%</span>
+    </div>
+    <div class="pick-row sui-hl">
+      <span class="grp">06:00</span>
+      <span class="t-name right">🇨🇭 Switzerland</span>
+      <span class="pred-sc">2–1</span>
+      <span class="t-name">Turkey 🇹🇷</span>
+      <span class="pick-lbl">Pick: Switzerland</span>
+      <span class="conf-chip">59%</span>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5 -->
+<div id="slide-5" class="slide">
+  <span class="ep-label">EP12 · WORLDCUP-2026-DAILY</span>
+  <span class="slide-num">05 / 05</span>
+  <span class="ai-badge">AI · CLAUDE</span>
+  <div class="section-label anim slideLeft" style="animation-delay:.1s">AI VERDICT · EP12 · 2026-07-07</div>
+  <h2 class="section-title anim fadeUp" style="animation-delay:.25s">Today's <span class="gold">AI Picks</span> — Final Summary</h2>
+  <div class="picks-final anim fadeIn" style="animation-delay:.45s">
+    <div class="verdict-row">
+      <span class="match-nm">🇧🇪 Belgium vs Canada 🇨🇦</span>
+      <span class="v-score">2–1</span>
+      <span class="v-conf">61%</span>
+    </div>
+    <div class="verdict-row">
+      <span class="match-nm">🇺🇾 Uruguay vs USA 🇺🇸</span>
+      <span class="v-score">2–1</span>
+      <span class="v-conf">57%</span>
+    </div>
+    <div class="verdict-row">
+      <span class="match-nm">🇨🇭 Switzerland vs Turkey 🇹🇷</span>
+      <span class="v-score">2–1</span>
+      <span class="v-conf">59%</span>
+    </div>
+    <div class="verdict-row derby-v">
+      <span class="match-nm">🇩🇰 Denmark vs Sweden 🇸🇪 ★</span>
+      <span class="v-score">2–1</span>
+      <span class="v-conf">54%</span>
+    </div>
+  </div>
+  <div class="qf-confirmed anim fadeIn" style="animation-delay:.7s">
+    <span class="qf-label">QF CONFIRMED ▸</span>
+    <span class="qf-teams">
+      <span class="team-chip">🇫🇷 France</span>
+      <span class="team-chip">🇧🇷 Brazil</span>
+      <span class="team-chip">🇮🇹 Italy</span>
+      <span class="team-chip">🇳🇱 Netherlands</span>
+      <span style="color:rgba(255,255,255,.35);margin:0 8px;">+ 4 more confirmed today</span>
+    </span>
+  </div>
+  <div class="memorial anim fadeIn" style="animation-delay:.9s">
+    "<span class="son">Son Heung-min</span>'s equalizer is one of the most beautiful moments this World Cup will remember — AI genuinely hoped to be wrong on that one" · QF preview arrives in EP13
+  </div>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let cur = 0;
+  function showSlide(n) {
+    slides[cur].classList.remove('active');
+    cur = (n + slides.length) % slides.length;
+    slides[cur].classList.add('active');
+    slides[cur].querySelectorAll('.anim').forEach(el => {
+      el.classList.remove('go'); void el.offsetWidth; el.classList.add('go');
+    });
+  }
+  window.goToSlide = showSlide;
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') showSlide(cur + 1);
+    if (e.key === 'ArrowLeft') showSlide(cur - 1);
+  });
+  slides[0].querySelectorAll('.anim').forEach(el => { void el.offsetWidth; el.classList.add('go'); });
+</script>
+</body>
+</html>

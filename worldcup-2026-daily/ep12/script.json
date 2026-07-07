@@ -1,0 +1,153 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 12,
+  "date": "2026-07-07",
+  "title_ko": "2026-07-07 오늘의 경기 AI 예측 — 16강 2일차! 스칸디나비아 더비 & 미국의 생존",
+  "title_ja": "2026-07-07 今日の試合 AI予測 — 16強2日目！スカンジナビアダービー & アメリカの生存",
+  "title_en": "2026-07-07 Match Predictions by AI — R16 Day 2! Scandinavian Derby & USA Survival",
+  "korea_match": false,
+  "matches_today": [
+    {
+      "id": "m1",
+      "team_a": "Belgium",
+      "team_b": "Canada",
+      "stage": "Round of 16",
+      "venue": "MetLife Stadium, East Rutherford",
+      "kickoff_kst": "00:00"
+    },
+    {
+      "id": "m2",
+      "team_a": "Uruguay",
+      "team_b": "USA",
+      "stage": "Round of 16",
+      "venue": "SoFi Stadium, Los Angeles",
+      "kickoff_kst": "03:00",
+      "note": "HOST NATION — USA at home"
+    },
+    {
+      "id": "m3",
+      "team_a": "Switzerland",
+      "team_b": "Turkey",
+      "stage": "Round of 16",
+      "venue": "Allegiant Stadium, Las Vegas",
+      "kickoff_kst": "06:00"
+    },
+    {
+      "id": "m4",
+      "team_a": "Denmark",
+      "team_b": "Sweden",
+      "stage": "Round of 16",
+      "venue": "Gillette Stadium, Foxboro",
+      "kickoff_kst": "09:00",
+      "note": "SCANDINAVIAN DERBY"
+    }
+  ],
+  "yesterday_results": [
+    {
+      "date": "2026-07-06",
+      "team_a": "France",
+      "score_a": 2,
+      "score_b": 1,
+      "team_b": "Germany",
+      "stage": "Round of 16",
+      "ai_pred": "2-1 France",
+      "ai_correct": true
+    },
+    {
+      "date": "2026-07-06",
+      "team_a": "Brazil",
+      "score_a": 3,
+      "score_b": 1,
+      "team_b": "England",
+      "stage": "Round of 16",
+      "ai_pred": "2-1 Brazil",
+      "ai_correct": true,
+      "note": "방향 적중, 스코어 차이"
+    },
+    {
+      "date": "2026-07-06",
+      "team_a": "Italy",
+      "score_a": 2,
+      "score_b": 1,
+      "team_b": "South Korea",
+      "stage": "Round of 16",
+      "ai_pred": "2-1 Italy",
+      "ai_correct": true,
+      "note": "대한민국 16강 탈락 — 손흥민의 마지막 월드컵"
+    },
+    {
+      "date": "2026-07-06",
+      "team_a": "Netherlands",
+      "score_a": 2,
+      "score_b": 0,
+      "team_b": "Croatia",
+      "stage": "Round of 16",
+      "ai_pred": "2-0 Netherlands",
+      "ai_correct": true,
+      "note": "완벽 스코어 예측"
+    }
+  ],
+  "ai_predictions": [
+    {
+      "match": "Belgium vs Canada",
+      "pred_a": 2,
+      "pred_b": 1,
+      "confidence": "61%",
+      "pick": "Belgium"
+    },
+    {
+      "match": "Uruguay vs USA",
+      "pred_a": 2,
+      "pred_b": 1,
+      "confidence": "57%",
+      "pick": "Uruguay"
+    },
+    {
+      "match": "Switzerland vs Turkey",
+      "pred_a": 2,
+      "pred_b": 1,
+      "confidence": "59%",
+      "pick": "Switzerland"
+    },
+    {
+      "match": "Denmark vs Sweden",
+      "pred_a": 2,
+      "pred_b": 1,
+      "confidence": "54%",
+      "pick": "Denmark",
+      "note": "이번 시리즈 두 번째로 낮은 신뢰도 — 스칸디나비아 더비"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "2026년 7월 7일. 어제 16강 1일차, 4경기가 모두 끝났습니다. 그리고 대한민국은 이탈리아에 2대1로 패하며 8강의 꿈이 멈췄습니다. 손흥민, 이강인, 김민재 — 태극전사들이 보여준 투혼에 온 나라가 뜨거웠습니다. AI의 예측이 맞은 게 오늘만큼은 기쁘지 않습니다. 하지만 월드컵은 계속됩니다. 오늘 16강 2일차, 4경기가 펼쳐집니다. 벨기에 대 캐나다, 우루과이 대 미국, 스위스 대 튀르키예, 그리고 오늘의 하이라이트 — 덴마크 대 스웨덴. 같은 언어를 쓰는 두 나라, 같은 리그에서 뛰는 선수들이 월드컵 16강에서 맞붙습니다. 스칸디나비아 더비! 4경기 완전 AI 분석, 지금 시작합니다!",
+      "narration_ja": "2026年7月7日。昨日16強1日目、4試合がすべて終わりました。そして韓国はイタリアに2対1で敗れ、8強への夢が止まりました。ソン・フンミン、イ・ガンイン、キム・ミンジェ — 太極戦士たちが見せた闘志に国全体が熱くなりました。AIの予測が当たったことが今日だけは嬉しくありません。しかし、W杯は続きます。今日16強2日目、4試合が繰り広げられます。ベルギー対カナダ、ウルグアイ対アメリカ、スイス対トルコ、そして今日のハイライト — デンマーク対スウェーデン。同じ言語を話す2か国、同じリーグでプレーする選手たちがW杯16強で対戦します。スカンジナビアダービー！4試合完全AI分析、今始めます！",
+      "narration_en": "July 7, 2026. The Round of 16 continues. Yesterday, four matches settled — and South Korea's World Cup journey came to an end, falling to Italy 2-1. Son Heung-min, Lee Kang-in, Kim Min-jae — the spirit they brought to that Texas stadium moved an entire nation. AI called it correctly, and it hurts. But the tournament does not pause for grief. Round of 16 Day 2 kicks off today: Belgium vs Canada, Uruguay vs USA, Switzerland vs Turkey — and the headline event — Denmark vs Sweden. The Scandinavian Derby. Two nations who share a language, share leagues, and share football culture — now facing each other on the biggest stage. Full AI analysis starts now."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "16강 1일차 결과 정리. 프랑스 2-1 독일 — AI 완벽 적중! 음바페의 선제골, 키에자가 만든 기회를 그리즈만이 마무리. 프랑스 8강 진출. 브라질 3-1 잉글랜드 — AI 픽 방향 적중. AI는 2-1을 예측했지만 비니시우스가 혼자 두 골. 잉글랜드는 후반 벨링엄 1골로 명예를 지켰습니다. 다음, 이탈리아 2-1 대한민국 — AI 예측 적중, 그러나 오늘만큼은 틀렸으면 했습니다. 전반 바렐라 선제골, 후반 손흥민이 환상적인 동점골로 경기를 뒤집는 듯 했으나 키에사의 역전골로 이탈리아 승리. 손흥민이 보여준 마지막 무대의 투혼 — 영원히 기억될 것입니다. 마지막, 네덜란드 2-0 크로아티아 — AI 완벽 스코어 예측! 판데이크의 헤더와 덤프리스의 쐐기골. 16강 1일차 AI 적중률 4경기 중 4경기, 100%. 누적 20경기 중 18경기, 90%!",
+      "narration_ja": "16強1日目結果まとめ。フランス2-1ドイツ — AI完璧的中！エムバペの先制ゴール、キエーザが作った機会をグリーズマンが仕上げ。フランス8強進出。ブラジル3-1イングランド — AIピック方向的中。AIは2-1を予測しましたがヴィニシウスが一人で2ゴール。イングランドは後半ベリンガムの1ゴールで名誉を守りました。次、イタリア2-1韓国 — AI予測的中、しかし今日だけは外れてほしかったです。前半バレッラの先制ゴール、後半ソン・フンミンが幻想的な同点ゴールで試合を引っくり返すかと思われましたがキエーザの逆転ゴールでイタリア勝利。ソン・フンミンが見せた最後の舞台の闘志 — 永遠に記憶されるでしょう。最後、オランダ2-0クロアチア — AI完璧スコア予測！ファン・ダイクのヘダーとダンフリースのダメ押しゴール。16強1日目AI的中率4試合中4試合、100%。累計20試合中18試合、90%！",
+      "narration_en": "Round of 16 Day 1 results. France 2-1 Germany — AI correct. Mbappé opened, Griezmann closed it out. France march to the quarter-finals. Brazil 3-1 England — AI direction correct, score slightly off. Vinícius claimed two goals; Bellingham pulled one back in the second half for England's honor. Then: Italy 2-1 South Korea — AI correct, and the most bittersweet result of the tournament. Barella opened, Son Heung-min leveled with a goal that had an entire nation on its feet — and then Chiesa broke Korean hearts with the winner. That Son Heung-min equalizer will be replayed for years. Finally, Netherlands 2-0 Croatia — AI nailed the exact score. Van Dijk with the header, Dumfries with the seal. Day 1 accuracy: 4 from 4, 100%. Cumulative: 18 from 20, 90%."
+    },
+    {
+      "id": "s03_prediction1",
+      "narration": "오늘의 핵심 경기 — 덴마크 대 스웨덴. 스칸디나비아 더비. 질레트 스타디움, 폭스버로, 09:00 KST. AI 예측: 덴마크 2-1 스웨덴. 신뢰도 54%. 이번 시리즈에서 한국 대 이탈리아 55% 다음으로 낮은 신뢰도. 분석 세 가지. 첫째, 덴마크의 팀워크 — 크리스티안 에릭센. 2021년 유럽선수권에서 심장마비 후 복귀한 그 사나이가 오늘 월드컵 16강 피치 위에 서 있습니다. 에릭센의 창의적인 패스와 위치 선정은 덴마크 중원의 심장입니다. 마치 에릭센을 위한 무대처럼, 덴마크는 하나로 뭉칩니다. 둘째, 스웨덴의 위협 — 알렉산더 이삭. 32강에서 칠레전 2골을 넣은 뉴캐슬의 에이스. 이브라히모비치 이후 스웨덴 최고의 스트라이커로 손꼽히는 이삭의 공중볼 지배력과 결정력이 덴마크 수비를 시험합니다. 셋째, 역사적 맥락 — 스칸디나비아 더비는 항상 결과를 예측하기 어렵습니다. 두 팀의 선수들 다수가 같은 유럽 리그에서 팀 동료입니다. 심리적 변수가 최대. AI 신뢰도 54%가 모든 것을 말해줍니다.",
+      "narration_ja": "今日の核心試合 — デンマーク対スウェーデン。スカンジナビアダービー。ジレットスタジアム、フォクスボロ、09:00 KST。AI予測：デンマーク2-1スウェーデン。信頼度54%。本シリーズで韓国対イタリアの55%に次いで低い信頼度。分析三つ。第一、デンマークのチームワーク — クリスティアン・エリクセン。2021年欧州選手権で心臓発作後に復帰したその男が今日W杯16強のピッチに立っています。エリクセンのクリエイティブなパスとポジショニングはデンマーク中盤の心臓です。まるでエリクセンのための舞台のように、デンマークは一つに団結します。第二、スウェーデンの脅威 — アレクサンデル・イサク。32強チリ戦で2ゴールを決めたニューカッスルのエース。イブラヒモビッチ以来スウェーデン最高のストライカーと称されるイサクの制空権支配と決定力がデンマーク守備を試します。第三、歴史的文脈 — スカンジナビアダービーは常に結果を予測しにくいです。両チームの選手の多くが同じヨーロッパリーグでチームメイトです。心理的変数が最大。AI信頼度54%がすべてを語っています。",
+      "narration_en": "Today's spotlight match — Denmark vs Sweden. The Scandinavian Derby. Gillette Stadium, Foxboro, 09:00 KST. AI prediction: Denmark 2-1 Sweden. Confidence 54% — the second-lowest confidence rating in this entire series, just one point below Korea vs Italy. Three factors. First, Denmark's collective spirit, centered on Christian Eriksen. The man who suffered a cardiac arrest at Euro 2020, who the world watched be resuscitated on that pitch, is here — at a World Cup Round of 16, running the midfield. Eriksen's through-ball range and positional intelligence is Denmark's heartbeat. Second, Sweden's threat: Alexander Isak. Two goals against Chile in the Round of 32. The Newcastle striker widely regarded as Sweden's finest since Ibrahimović — his aerial dominance and finishing composure will test Denmark's defensive line all night. Third, context: Scandinavian derbies defy data. Many of these players are teammates in European club football. The psychological variable is at its maximum here. The 54% confidence score says it all."
+    },
+    {
+      "id": "s04_prediction2",
+      "narration": "나머지 세 경기 AI 빠른 예측. 벨기에 대 캐나다 — AI 픽 벨기에 2-1. 신뢰도 61%. 루카쿠, 데 브라위너의 경험이 캐나다의 열정을 제압합니다. 캐나다의 알폰소 데이비스가 측면에서 위협이 되겠지만 벨기에의 중원 장악력이 결국 차이를 만들 것입니다. 다음, 우루과이 대 미국 — AI 픽 우루과이 2-1. 신뢰도 57%. 홈 어드밴티지를 가진 미국이 SoFi 스타디움에서 로스앤젤레스의 열광적인 응원 속에 강하게 싸우겠지만, 누네스와 아라우호의 수비 조직력, 그리고 다르윈 누네스의 결정력이 미국보다 한 수 위입니다. 마지막, 스위스 대 튀르키예 — AI 픽 스위스 2-1. 신뢰도 59%. 스위스는 가나전 무실점 승리로 조직력을 증명했습니다. 튀르키예는 이란전 승부차기 이후 체력이 변수지만, 아르다 귈러의 마법 같은 드리블이 언제든 경기를 바꿀 수 있습니다. 접전 예상.",
+      "narration_ja": "残り3試合AIの素早い予測。ベルギー対カナダ — AIピックベルギー2-1。信頼度61%。ルカク、デ・ブライネの経験がカナダの情熱を制圧します。カナダのアルフォンソ・デイビスがサイドで脅威になりますが、ベルギーの中盤掌握力が最終的に差を生むでしょう。次、ウルグアイ対アメリカ — AIピックウルグアイ2-1。信頼度57%。ホームアドバンテージを持つアメリカがSoFiスタジアムでロサンゼルスの熱狂的な応援の中で強く戦いますが、ヌニェスとアラウホの守備組織力、そしてダルウィン・ヌニェスの決定力がアメリカより一枚上手です。最後、スイス対トルコ — AIピックスイス2-1。信頼度59%。スイスはガーナ戦無失点勝利で組織力を証明しました。トルコはイラン戦PK戦後の体力が変数ですが、アルダ・ギュレルの魔法のようなドリブルがいつでも試合を変えられます。接戦予想。",
+      "narration_en": "Three more rapid AI calls. Belgium vs Canada — AI pick Belgium 2-1, confidence 61%. Lukaku and De Bruyne's experience controls Canada's momentum. Alphonso Davies will threaten down the left, but Belgium's midfield engine is the stronger unit. Next: Uruguay vs USA — AI pick Uruguay 2-1, confidence 57%. Home advantage matters — SoFi Stadium in Los Angeles will be a wall of noise for the Stars and Stripes. But Uruguay's defensive organization around Araújo and Darwin Núñez's finishing composure gives the edge to the South Americans. Close. Finally: Switzerland vs Turkey — AI pick Switzerland 2-1, confidence 59%. Switzerland proved their structure shutting out Ghana 2-0. Turkey carry fatigue from extra time and penalties against Iran, but Arda Güler's dribbling brilliance can flip a match in 30 seconds. Expect a tighter game than the score suggests."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘의 AI 픽 총정리. 벨기에 2-1 캐나다 — 신뢰도 61%. 우루과이 2-1 미국 — 57%. 스위스 2-1 튀르키예 — 59%. 그리고 오늘의 핵심 경기, 덴마크 2-1 스웨덴 — 54%. 16강 2일차가 끝나면 8강 진출 8팀이 확정됩니다. 현재 8강 진출 확정 팀: 프랑스, 브라질, 이탈리아, 네덜란드. 오늘 4경기 결과에 따라 나머지 4팀이 합류합니다. 대한민국은 비록 16강에서 멈췄지만, 손흥민이 이탈리아전에서 보여준 동점골은 이 대회의 가장 극적인 순간 중 하나로 기록될 것입니다. AI는 데이터를 보고, 대한민국 선수들은 혼을 보여줬습니다. 8강 프리뷰와 16강 2일차 결과 분석은 EP13에서 만납니다. 구독과 좋아요 잊지 마세요!",
+      "narration_ja": "今日のAIピック総まとめ。ベルギー2-1カナダ — 信頼度61%。ウルグアイ2-1アメリカ — 57%。スイス2-1トルコ — 59%。そして今日の核心試合、デンマーク2-1スウェーデン — 54%。16強2日目が終わると8強進出8チームが確定します。現在8強進出確定チーム：フランス、ブラジル、イタリア、オランダ。今日4試合の結果によって残り4チームが加わります。韓国は16強で止まりましたが、ソン・フンミンがイタリア戦で見せた同点ゴールはこの大会の最も劇的な瞬間の一つとして記録されるでしょう。AIはデータを見て、韓国の選手たちは魂を見せてくれました。準々決勝プレビューと16強2日目結果分析はEP13でお会いします。チャンネル登録といいねをお忘れなく！",
+      "narration_en": "Today's AI summary. Belgium 2-1 Canada — 61%. Uruguay 2-1 USA — 57%. Switzerland 2-1 Turkey — 59%. And today's headliner: Denmark 2-1 Sweden — 54%. When Day 2 ends, all eight quarter-finalists will be set. Confirmed so far: France, Brazil, Italy, Netherlands. Tonight's four matches fill the remaining bracket. South Korea may have stopped at the Round of 16, but Son Heung-min's equalizer against Italy will be replayed as one of the great individual moments of this entire World Cup. AI reads numbers — those players showed something numbers cannot measure. Quarter-final previews and Day 2 results analysis arrive in EP13. Subscribe and like so you don't miss it."
+    }
+  ]
+}
