@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>2026-07-09 QF Day 1! France vs Belgium & Brazil vs USA — EP14 | Daily World Cup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    background: #080c18;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  @keyframes pulseGold {
+    0%, 100% { text-shadow: 0 0 40px rgba(201,162,39,0.5); }
+    50%       { text-shadow: 0 0 90px rgba(201,162,39,1); }
+  }
+  @keyframes pulseBlue {
+    0%, 100% { text-shadow: 0 0 40px rgba(59,130,246,0.5); }
+    50%       { text-shadow: 0 0 90px rgba(59,130,246,1); }
+  }
+  @keyframes glowGold {
+    0%, 100% { box-shadow: 0 0 24px rgba(201,162,39,0.25); }
+    50%       { box-shadow: 0 0 70px rgba(201,162,39,0.65); }
+  }
+  @keyframes glowBlue {
+    0%, 100% { box-shadow: 0 0 24px rgba(59,130,246,0.25); }
+    50%       { box-shadow: 0 0 60px rgba(59,130,246,0.6); }
+  }
+
+  .ep-label {
+    position: absolute;
+    top: 36px; left: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(255,255,255,0.28);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .slide-num {
+    position: absolute;
+    top: 36px; right: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(255,255,255,0.28);
+  }
+  .ai-badge {
+    position: absolute;
+    bottom: 42px; right: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    color: rgba(100,200,255,0.55);
+    letter-spacing: 0.12em;
+  }
+
+  /* ════ S01 HOOK ════ */
+  #slide-1 {
+    background:
+      radial-gradient(ellipse 140% 90% at 50% 130%, rgba(201,162,39,0.1) 0%, transparent 55%),
+      radial-gradient(ellipse 70% 50% at 5% 10%, rgba(0,90,255,0.07) 0%, transparent 45%),
+      radial-gradient(ellipse 60% 45% at 95% 10%, rgba(0,200,80,0.06) 0%, transparent 45%),
+      #080c18;
+  }
+  #slide-1 .date-chip {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 26px;
+    color: rgba(100,160,255,0.9);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  #slide-1 .stage-chip {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(201,162,39,0.85);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  #slide-1 .hook-title {
+    font-size: 88px;
+    font-weight: 900;
+    color: #f0ede4;
+    text-align: center;
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+    animation: pulseGold 3.5s ease-in-out infinite;
+  }
+  #slide-1 .hook-title .acc-gold { color: #c9a227; }
+  #slide-1 .hook-title .acc-blue { color: #64a0ff; animation: pulseBlue 3s ease-in-out infinite; }
+  #slide-1 .match-strip {
+    display: flex;
+    gap: 24px;
+    margin-top: 6px;
+  }
+  .match-card {
+    background: rgba(201,162,39,0.06);
+    border: 2px solid rgba(201,162,39,0.35);
+    border-radius: 20px;
+    padding: 18px 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    animation: glowGold 4s ease-in-out infinite;
+    min-width: 430px;
+  }
+  .match-card.dream {
+    background: rgba(100,160,255,0.06);
+    border-color: rgba(100,160,255,0.4);
+    animation: glowBlue 3.5s ease-in-out infinite;
+  }
+  .match-card .mc-id {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 15px;
+    color: rgba(201,162,39,0.75);
+    letter-spacing: 0.12em;
+  }
+  .match-card.dream .mc-id { color: rgba(100,160,255,0.8); }
+  .match-card .mc-teams {
+    font-size: 36px;
+    font-weight: 700;
+    color: #f0ede4;
+    letter-spacing: -0.01em;
+  }
+  .match-card .mc-teams .vs { color: rgba(201,162,39,0.8); margin: 0 12px; font-size: 26px; font-weight: 400; }
+  .match-card.dream .mc-teams .vs { color: rgba(100,160,255,0.8); }
+  .match-card .mc-time {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    color: rgba(240,237,228,0.38);
+  }
+
+  /* ════ S02 CONTEXT ════ */
+  #slide-2 {
+    background:
+      radial-gradient(ellipse 110% 70% at 50% 110%, rgba(59,130,246,0.06) 0%, transparent 55%),
+      #08080f;
+    padding: 0 120px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  #slide-2 .section-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(100,160,255,0.75);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  #slide-2 .section-title {
+    font-size: 50px;
+    font-weight: 700;
+    color: #f0ede4;
+    margin-bottom: 28px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  #slide-2 .section-title .acc { color: #c9a227; }
+  .stat-row {
+    display: flex;
+    gap: 28px;
+    margin-bottom: 36px;
+  }
+  .stat-chip {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 18px 36px;
+    text-align: center;
+  }
+  .stat-chip .snum {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 52px;
+    font-weight: 600;
+    color: #4fc87a;
+    line-height: 1;
+  }
+  .stat-chip .slbl { font-size: 17px; color: rgba(240,237,228,0.45); margin-top: 6px; }
+  .stat-chip.gold .snum { color: #c9a227; }
+  .stat-chip.red  .snum { color: #fb7185; }
+  #slide-2 .context-block p {
+    font-size: 27px;
+    color: rgba(240,237,228,0.62);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+  #slide-2 .context-block p .hl { color: #f0ede4; font-weight: 600; }
+  #slide-2 .context-block p .warn { color: #fb7185; font-weight: 600; }
+  #slide-2 .context-block p .acc { color: #c9a227; font-weight: 600; }
+
+  /* ════ S03 QF1 ════ */
+  #slide-3 {
+    background:
+      radial-gradient(ellipse 120% 80% at 50% 120%, rgba(0,90,255,0.07) 0%, transparent 55%),
+      #06080f;
+    padding: 0 80px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  #slide-3 .section-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(201,162,39,0.8);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .pred-header {
+    display: flex;
+    align-items: flex-end;
+    gap: 44px;
+    margin-bottom: 22px;
+  }
+  .pred-header .matchup-big {
+    font-size: 72px;
+    font-weight: 900;
+    color: #f0ede4;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  .pred-header .matchup-big .vs { color: rgba(201,162,39,0.75); font-size: 52px; margin: 0 18px; font-weight: 300; }
+  .pred-header .meta-col {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-bottom: 10px;
+  }
+  .pred-header .meta-col span {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 17px;
+    color: rgba(240,237,228,0.38);
+    letter-spacing: 0.06em;
+  }
+  .score-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    background: rgba(201,162,39,0.06);
+    border: 2px solid rgba(201,162,39,0.45);
+    border-radius: 24px;
+    padding: 18px 60px;
+    margin-bottom: 22px;
+    animation: glowGold 3.5s ease-in-out infinite;
+    width: fit-content;
+  }
+  .score-box .sb-team { font-size: 32px; font-weight: 600; color: rgba(240,237,228,0.82); }
+  .score-box .sb-score {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 72px;
+    font-weight: 600;
+    color: #c9a227;
+    letter-spacing: 0.05em;
+    animation: pulseGold 3s ease-in-out infinite;
+  }
+  .confidence-bar-wrap {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 20px;
+  }
+  .confidence-bar-wrap .cb-lbl {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 17px;
+    color: rgba(240,237,228,0.38);
+    letter-spacing: 0.1em;
+    width: 220px;
+    flex-shrink: 0;
+  }
+  .confidence-bar {
+    height: 10px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 6px;
+    flex: 1;
+    max-width: 580px;
+    overflow: hidden;
+  }
+  .confidence-bar .fill {
+    height: 100%;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #c9a227, #f0c040);
+  }
+  .confidence-bar-wrap .cb-pct {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 28px;
+    font-weight: 600;
+    color: #c9a227;
+  }
+  .analysis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    width: 100%;
+    max-width: 1720px;
+  }
+  .analysis-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 16px 22px;
+  }
+  .analysis-card .ac-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px;
+    color: rgba(201,162,39,0.65);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .analysis-card .ac-text {
+    font-size: 19px;
+    color: rgba(240,237,228,0.72);
+    line-height: 1.58;
+  }
+  .analysis-card .ac-text .hl { color: #c9a227; font-weight: 600; }
+  .analysis-card .ac-text .warn { color: #fb7185; }
+
+  /* ════ S04 QF2 + TOMORROW ════ */
+  #slide-4 {
+    background:
+      radial-gradient(ellipse 130% 85% at 50% 120%, rgba(0,200,80,0.05) 0%, transparent 55%),
+      #060c06;
+    padding: 0 80px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  #slide-4 .section-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(100,160,255,0.8);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .qf2-header {
+    display: flex;
+    align-items: flex-end;
+    gap: 44px;
+    margin-bottom: 14px;
+  }
+  .qf2-header .matchup-big {
+    font-size: 68px;
+    font-weight: 900;
+    color: #f0ede4;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  .qf2-header .matchup-big .vs { color: rgba(100,160,255,0.75); font-size: 48px; margin: 0 18px; font-weight: 300; }
+  .score-box.blue {
+    background: rgba(100,160,255,0.06);
+    border-color: rgba(100,160,255,0.45);
+    animation: glowBlue 3.5s ease-in-out infinite;
+  }
+  .score-box.blue .sb-score { color: #64a0ff; animation: pulseBlue 3s ease-in-out infinite; }
+  .tomorrow-preview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 40px;
+    width: 100%;
+    max-width: 1720px;
+    margin-top: 18px;
+  }
+  .tomorrow-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 15px 22px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .tomorrow-card .tc-id {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    color: rgba(201,162,39,0.6);
+    width: 80px;
+    flex-shrink: 0;
+  }
+  .tomorrow-card .tc-match {
+    font-size: 24px;
+    font-weight: 600;
+    color: rgba(240,237,228,0.8);
+    flex: 1;
+  }
+  .tomorrow-card .tc-match .vs { color: rgba(255,255,255,0.28); margin: 0 8px; font-weight: 300; font-size: 18px; }
+  .tomorrow-card .tc-pred {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 28px;
+    font-weight: 600;
+    color: #c9a227;
+    flex-shrink: 0;
+  }
+  .tomorrow-card .tc-conf {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 15px;
+    color: rgba(240,237,228,0.28);
+    flex-shrink: 0;
+    width: 60px;
+    text-align: right;
+  }
+
+  /* ════ S05 VERDICT ════ */
+  #slide-5 {
+    background:
+      radial-gradient(ellipse 130% 90% at 50% 120%, rgba(201,162,39,0.1) 0%, transparent 55%),
+      #080c18;
+    padding: 0 80px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  #slide-5 .verdict-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    color: rgba(201,162,39,0.8);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  #slide-5 .verdict-title {
+    font-size: 66px;
+    font-weight: 900;
+    color: #f0ede4;
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+    animation: pulseGold 3s ease-in-out infinite;
+  }
+  #slide-5 .verdict-title .pick { color: #c9a227; }
+  .picks-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 50px;
+    width: 100%;
+    max-width: 1720px;
+    margin-bottom: 22px;
+  }
+  .pick-card {
+    background: rgba(201,162,39,0.05);
+    border: 1px solid rgba(201,162,39,0.3);
+    border-radius: 18px;
+    padding: 18px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    animation: glowGold 4s ease-in-out infinite;
+  }
+  .pick-card.blue-card {
+    background: rgba(100,160,255,0.05);
+    border-color: rgba(100,160,255,0.35);
+    animation: glowBlue 4s ease-in-out infinite;
+  }
+  .pick-card .pc-id {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    color: rgba(201,162,39,0.7);
+    letter-spacing: 0.1em;
+  }
+  .pick-card.blue-card .pc-id { color: rgba(100,160,255,0.75); }
+  .pick-card .pc-match { font-size: 26px; font-weight: 600; color: #f0ede4; }
+  .pick-card .pc-match .vs { color: rgba(255,255,255,0.28); margin: 0 8px; font-weight: 300; }
+  .pick-card .pc-score {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 46px;
+    font-weight: 600;
+    color: #c9a227;
+    animation: pulseGold 3s ease-in-out infinite;
+  }
+  .pick-card.blue-card .pc-score { color: #64a0ff; animation: pulseBlue 3s ease-in-out infinite; }
+  .pick-card .pc-conf {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    color: rgba(240,237,228,0.33);
+    letter-spacing: 0.04em;
+  }
+  .verdict-footer {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1720px;
+  }
+  .acc-chip-v {
+    background: rgba(79,200,122,0.08);
+    border: 1px solid rgba(79,200,122,0.3);
+    border-radius: 14px;
+    padding: 12px 28px;
+    text-align: center;
+  }
+  .acc-chip-v .num { font-size: 42px; font-weight: 900; color: #4fc87a; font-family: 'Roboto Mono', monospace; }
+  .acc-chip-v .lbl { font-size: 15px; color: rgba(240,237,228,0.42); margin-top: 2px; }
+  .verdict-footer .trophy-line {
+    font-size: 25px;
+    color: rgba(240,237,228,0.52);
+    flex: 1;
+    line-height: 1.6;
+  }
+  .verdict-footer .trophy-line .hl { color: #c9a227; font-weight: 700; }
+  .verdict-footer .next-ep-badge {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(100,160,255,0.7);
+    border: 1px solid rgba(100,160,255,0.25);
+    border-radius: 12px;
+    padding: 10px 24px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ════ SLIDE 1 · HOOK ════ -->
+<div class="slide active" id="slide-1">
+  <div class="ep-label">EP·14 · WORLDCUP-2026-DAILY</div>
+  <div class="slide-num">01 / 05</div>
+  <div class="ai-badge">CLAUDE AI</div>
+
+  <div class="date-chip">2026 · 07 · 09 · KST</div>
+  <div class="stage-chip">QUARTER-FINALS · DAY 1 · QF1 &amp; QF2</div>
+
+  <div class="hook-title">
+    <span class="acc-gold">QF Day 1</span><br>
+    <span class="acc-blue">Full AI Predictions</span>
+  </div>
+
+  <div class="match-strip">
+    <div class="match-card">
+      <div class="mc-id">QF1 · 06:00 KST · Dallas</div>
+      <div class="mc-teams">France <span class="vs">VS</span> Belgium</div>
+      <div class="mc-time">AT&T Stadium · Mbappé vs De Bruyne</div>
+    </div>
+    <div class="match-card dream">
+      <div class="mc-id">QF2 · 09:00 KST · Los Angeles</div>
+      <div class="mc-teams">Brazil <span class="vs">VS</span> USA</div>
+      <div class="mc-time">SoFi Stadium · Vinícius vs Pulisic</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ SLIDE 2 · CONTEXT ════ -->
+<div class="slide" id="slide-2">
+  <div class="ep-label">EP·14 · WORLDCUP-2026-DAILY</div>
+  <div class="slide-num">02 / 05</div>
+  <div class="ai-badge">CLAUDE AI</div>
+
+  <div class="section-label">AI Status · Cumulative Record · Today's Context</div>
+  <div class="section-title">87.5% — AI <span class="acc">Accuracy</span> Maintained</div>
+
+  <div class="stat-row">
+    <div class="stat-chip">
+      <div class="snum">21/24</div>
+      <div class="slbl">Correct Predictions</div>
+    </div>
+    <div class="stat-chip gold">
+      <div class="snum">87.5%</div>
+      <div class="slbl">Accuracy Rate</div>
+    </div>
+    <div class="stat-chip red">
+      <div class="snum">1</div>
+      <div class="slbl">Upset Miss (USA)</div>
+    </div>
+  </div>
+
+  <div class="context-block">
+    <p>July 8th was a <span class="hl">rest day</span> — no matches. The quarter-final bracket was confirmed.</p>
+    <p>Key variable AI is tracking: two days ago, <span class="warn">USA beat Uruguay 2–1 at this same SoFi Stadium.</span> Pulisic's form and home advantage overrode AI's Uruguay call.</p>
+    <p>Today in QF2, USA faces <span class="acc">Brazil</span> at the same venue, in front of the same crowd — different opponent. AI has factored every dimension of this into the calculation.</p>
+  </div>
+</div>
+
+<!-- ════ SLIDE 3 · QF1 ════ -->
+<div class="slide" id="slide-3">
+  <div class="ep-label">EP·14 · WORLDCUP-2026-DAILY</div>
+  <div class="slide-num">03 / 05</div>
+  <div class="ai-badge">CLAUDE AI</div>
+
+  <div class="section-label">AI PREDICTION · QF1 · 2026-07-09 · 06:00 KST</div>
+
+  <div class="pred-header">
+    <div class="matchup-big">France <span class="vs">VS</span> Belgium</div>
+    <div class="meta-col">
+      <span>AT&amp;T Stadium, Dallas</span>
+      <span>Mbappé vs De Bruyne</span>
+    </div>
+  </div>
+
+  <div class="score-box">
+    <span class="sb-team">🇫🇷 France</span>
+    <span class="sb-score">2 – 1</span>
+    <span class="sb-team">Belgium 🇧🇪</span>
+  </div>
+
+  <div class="confidence-bar-wrap">
+    <span class="cb-lbl">AI Confidence</span>
+    <div class="confidence-bar"><div class="fill" style="width:65%"></div></div>
+    <span class="cb-pct">65%</span>
+  </div>
+
+  <div class="analysis-grid">
+    <div class="analysis-card">
+      <div class="ac-label">France Strengths</div>
+      <div class="ac-text"><span class="hl">Mbappé</span> — decisive in every match. <span class="hl">Griezmann</span> controls the midfield. Not a single unconvincing performance from group stage through R16.</div>
+    </div>
+    <div class="analysis-card">
+      <div class="ac-label">Belgium Threat</div>
+      <div class="ac-text"><span class="hl">De Bruyne</span>'s creativity cannot be put in a spreadsheet. <span class="hl">Lukaku</span>'s finishing in tight spaces. Golden generation's last World Cup — maximum motivation.</div>
+    </div>
+    <div class="analysis-card">
+      <div class="ac-label">AI Reasoning</div>
+      <div class="ac-text">France's <span class="hl">complete system</span> ultimately produces the difference. AI concedes one to Belgium — <span class="warn">65%</span> means this match is genuinely open in both directions.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ SLIDE 4 · QF2 + TOMORROW ════ -->
+<div class="slide" id="slide-4">
+  <div class="ep-label">EP·14 · WORLDCUP-2026-DAILY</div>
+  <div class="slide-num">04 / 05</div>
+  <div class="ai-badge">CLAUDE AI</div>
+
+  <div class="section-label">AI PREDICTION · QF2 · 2026-07-09 · 09:00 KST + TOMORROW PREVIEW</div>
+
+  <div class="qf2-header">
+    <div class="matchup-big">Brazil <span class="vs">VS</span> USA</div>
+    <div class="meta-col">
+      <span style="font-family:'Roboto Mono',monospace;font-size:17px;color:rgba(240,237,228,0.38);">SoFi Stadium, Los Angeles</span>
+      <span style="font-family:'Roboto Mono',monospace;font-size:17px;color:rgba(240,237,228,0.38);">Vinícius vs Pulisic</span>
+    </div>
+  </div>
+
+  <div class="score-box blue" style="margin-bottom:14px;">
+    <span class="sb-team">🇧🇷 Brazil</span>
+    <span class="sb-score">2 – 1</span>
+    <span class="sb-team">USA 🇺🇸</span>
+  </div>
+
+  <div class="confidence-bar-wrap" style="max-width:500px;">
+    <span class="cb-lbl">AI Confidence</span>
+    <div class="confidence-bar"><div class="fill" style="width:71%;background:linear-gradient(90deg,#3b82f6,#60a5fa);"></div></div>
+    <span class="cb-pct" style="color:#64a0ff;">71%</span>
+  </div>
+
+  <div class="tomorrow-preview">
+    <div style="font-size:18px;font-family:'Roboto Mono',monospace;color:rgba(201,162,39,0.7);letter-spacing:0.12em;text-transform:uppercase;align-self:center;">TOMORROW QF3 · 07-10 · 06:00 KST</div>
+    <div style="font-size:18px;font-family:'Roboto Mono',monospace;color:rgba(201,162,39,0.7);letter-spacing:0.12em;text-transform:uppercase;align-self:center;">TOMORROW QF4 · 07-10 · 09:00 KST</div>
+    <div class="tomorrow-card">
+      <div class="tc-id">QF3</div>
+      <div class="tc-match">🇮🇹 Italy <span class="vs">VS</span> Switzerland 🇨🇭</div>
+      <div class="tc-pred">2–0</div>
+      <div class="tc-conf">68%</div>
+    </div>
+    <div class="tomorrow-card">
+      <div class="tc-id">QF4</div>
+      <div class="tc-match">🇳🇱 Netherlands <span class="vs">VS</span> Denmark 🇩🇰</div>
+      <div class="tc-pred">2–1</div>
+      <div class="tc-conf">63%</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ SLIDE 5 · VERDICT ════ -->
+<div class="slide" id="slide-5">
+  <div class="ep-label">EP·14 · WORLDCUP-2026-DAILY</div>
+  <div class="slide-num">05 / 05</div>
+  <div class="ai-badge">CLAUDE AI</div>
+
+  <div class="verdict-label">AI VERDICT · EP14 · Today's Picks</div>
+  <div class="verdict-title">
+    Tournament Pick — <span class="pick">🇫🇷 France</span>
+  </div>
+
+  <div class="picks-grid">
+    <div class="pick-card">
+      <div class="pc-id">QF1 · 06:00 KST · Dallas</div>
+      <div class="pc-match">🇫🇷 France <span class="vs">vs</span> Belgium 🇧🇪</div>
+      <div class="pc-score">2 – 1</div>
+      <div class="pc-conf">Confidence 65% · Mbappé winner predicted</div>
+    </div>
+    <div class="pick-card blue-card">
+      <div class="pc-id">QF2 · 09:00 KST · Los Angeles</div>
+      <div class="pc-match">🇧🇷 Brazil <span class="vs">vs</span> USA 🇺🇸</div>
+      <div class="pc-score">2 – 1</div>
+      <div class="pc-conf">Confidence 71% · SoFi crowd vs Brazil's technical density</div>
+    </div>
+  </div>
+
+  <div class="verdict-footer">
+    <div class="acc-chip-v">
+      <div class="num">21/24</div>
+      <div class="lbl">Cumulative</div>
+    </div>
+    <div class="acc-chip-v">
+      <div class="num" style="color:#c9a227;">87.5%</div>
+      <div class="lbl">Accuracy</div>
+    </div>
+    <div class="trophy-line">
+      Projected semi-finals: <span class="hl">France vs Brazil</span> · <span class="hl">Italy vs Netherlands</span><br>
+      Results review + QF3 &amp; QF4 predictions → tomorrow <span class="hl">EP15</span>
+    </div>
+    <div class="next-ep-badge">EP·15 → 07·10 KST</div>
+  </div>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+
+  function showSlide(n) {
+    slides.forEach(s => s.classList.remove('active'));
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+  }
+
+  window.goToSlide = showSlide;
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') showSlide(current + 1);
+    if (e.key === 'ArrowLeft') showSlide(current - 1);
+  });
+</script>
+</body>
+</html>
