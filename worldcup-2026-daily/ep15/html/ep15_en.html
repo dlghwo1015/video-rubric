@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>2026-07-10 QF Day 2! Italy vs Switzerland & Netherlands vs Denmark — EP15 | Daily World Cup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    background: #080c18;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  @keyframes pulseGold  { 0%,100%{text-shadow:0 0 40px rgba(201,162,39,.5)} 50%{text-shadow:0 0 90px rgba(201,162,39,1)} }
+  @keyframes pulseGreen { 0%,100%{text-shadow:0 0 40px rgba(79,200,122,.5)} 50%{text-shadow:0 0 90px rgba(79,200,122,1)} }
+  @keyframes glowGold   { 0%,100%{box-shadow:0 0 24px rgba(201,162,39,.25)} 50%{box-shadow:0 0 70px rgba(201,162,39,.65)} }
+  @keyframes glowGreen  { 0%,100%{box-shadow:0 0 20px rgba(79,200,122,.2)}  50%{box-shadow:0 0 55px rgba(79,200,122,.6)} }
+
+  .ep-label {
+    position: absolute; top: 36px; left: 56px;
+    font-family: 'Roboto Mono', monospace; font-size: 20px;
+    color: rgba(255,255,255,0.28); letter-spacing: 0.14em; text-transform: uppercase;
+  }
+  .slide-num {
+    position: absolute; top: 36px; right: 56px;
+    font-family: 'Roboto Mono', monospace; font-size: 20px;
+    color: rgba(255,255,255,0.28); letter-spacing: 0.1em;
+  }
+  .ai-badge {
+    position: absolute; bottom: 42px; right: 56px;
+    font-family: 'Roboto Mono', monospace; font-size: 18px;
+    color: rgba(100,200,255,0.55); letter-spacing: 0.12em;
+  }
+
+  /* S01 */
+  #slide-1 {
+    background:
+      radial-gradient(ellipse 140% 90% at 50% 130%, rgba(79,200,122,0.08) 0%, transparent 55%),
+      radial-gradient(ellipse 70% 50% at 5% 10%, rgba(0,90,255,0.07) 0%, transparent 45%),
+      radial-gradient(ellipse 60% 45% at 95% 10%, rgba(201,162,39,0.06) 0%, transparent 45%),
+      #080c18;
+  }
+  .date-chip { font-family:'Roboto Mono',monospace; font-size:26px; color:rgba(100,160,255,0.9); letter-spacing:0.22em; text-transform:uppercase; margin-bottom:4px; }
+  .stage-chip { font-family:'Roboto Mono',monospace; font-size:20px; color:rgba(201,162,39,0.85); letter-spacing:0.2em; text-transform:uppercase; margin-bottom:14px; }
+  .hook-title { font-size:84px; font-weight:900; color:#f0ede4; text-align:center; line-height:1.04; letter-spacing:-0.03em; margin-bottom:20px; animation:pulseGold 3.5s ease-in-out infinite; }
+  .hook-title .acc-gold  { color:#c9a227; }
+  .hook-title .acc-green { color:#4fc87a; animation:pulseGreen 3s ease-in-out infinite; }
+  .match-strip { display:flex; gap:24px; margin-top:6px; }
+  .match-card { background:rgba(201,162,39,0.06); border:2px solid rgba(201,162,39,0.35); border-radius:20px; padding:18px 40px; display:flex; flex-direction:column; align-items:center; gap:6px; animation:glowGold 4s ease-in-out infinite; min-width:420px; }
+  .match-card.teal { background:rgba(79,200,122,0.06); border-color:rgba(79,200,122,0.4); animation:glowGreen 3.5s ease-in-out infinite; }
+  .mc-id { font-family:'Roboto Mono',monospace; font-size:15px; color:rgba(201,162,39,0.75); letter-spacing:0.15em; }
+  .match-card.teal .mc-id { color:rgba(79,200,122,0.8); }
+  .mc-teams { font-size:34px; font-weight:700; color:#f0ede4; }
+  .mc-teams .vs { color:rgba(201,162,39,0.8); margin:0 10px; font-size:24px; font-weight:400; }
+  .match-card.teal .mc-teams .vs { color:rgba(79,200,122,0.8); }
+  .mc-time { font-family:'Roboto Mono',monospace; font-size:16px; color:rgba(240,237,228,0.4); letter-spacing:0.08em; }
+
+  /* S02 */
+  #slide-2 {
+    background:
+      radial-gradient(ellipse 110% 70% at 50% 110%, rgba(79,200,122,0.07) 0%, transparent 55%),
+      #08080f;
+    padding:0 120px; align-items:flex-start; justify-content:center;
+  }
+  .section-label { font-family:'Roboto Mono',monospace; font-size:20px; color:rgba(79,200,122,0.85); letter-spacing:0.2em; text-transform:uppercase; margin-bottom:8px; }
+  .section-title { font-size:50px; font-weight:700; color:#f0ede4; margin-bottom:24px; line-height:1.1; }
+  .section-title .acc { color:#4fc87a; }
+  .stat-row { display:flex; gap:28px; margin-bottom:32px; }
+  .stat-chip { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:18px 36px; text-align:center; }
+  .stat-chip .snum { font-family:'Roboto Mono',monospace; font-size:52px; font-weight:600; color:#4fc87a; line-height:1; }
+  .stat-chip .slbl { font-size:18px; color:rgba(240,237,228,0.45); margin-top:6px; }
+  .stat-chip.gold .snum { color:#c9a227; }
+  .results-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; width:100%; max-width:1640px; }
+  .result-card { background:rgba(79,200,122,0.05); border:1px solid rgba(79,200,122,0.3); border-radius:18px; padding:20px 28px; display:flex; align-items:center; gap:24px; animation:glowGreen 4s ease-in-out infinite; }
+  .rc-id { font-family:'Roboto Mono',monospace; font-size:14px; color:rgba(79,200,122,0.7); letter-spacing:0.12em; flex-shrink:0; width:70px; }
+  .rc-match { font-size:28px; font-weight:600; color:#f0ede4; flex:1; }
+  .rc-match .vs { color:rgba(255,255,255,0.3); margin:0 8px; font-weight:400; font-size:20px; }
+  .rc-score { font-family:'Roboto Mono',monospace; font-size:44px; font-weight:600; color:#4fc87a; flex-shrink:0; }
+  .rc-check { font-size:36px; flex-shrink:0; }
+
+  /* S03 */
+  #slide-3 {
+    background:
+      radial-gradient(ellipse 120% 80% at 50% 120%, rgba(201,162,39,0.07) 0%, transparent 55%),
+      #06080f;
+    padding:0 80px; align-items:flex-start; justify-content:center;
+  }
+  #slide-3 .section-label { color:rgba(201,162,39,0.8); }
+  .pred-header { display:flex; align-items:flex-end; gap:40px; margin-bottom:24px; }
+  .matchup-big { font-size:68px; font-weight:900; color:#f0ede4; letter-spacing:-0.03em; line-height:1; }
+  .matchup-big .vs { color:rgba(201,162,39,0.75); font-size:48px; margin:0 16px; font-weight:400; }
+  .meta-col { display:flex; flex-direction:column; gap:6px; padding-bottom:8px; }
+  .meta-col span { font-family:'Roboto Mono',monospace; font-size:18px; color:rgba(240,237,228,0.45); letter-spacing:0.08em; }
+  .score-box { display:flex; align-items:center; justify-content:center; gap:24px; background:rgba(201,162,39,0.06); border:2px solid rgba(201,162,39,0.45); border-radius:24px; padding:20px 60px; margin-bottom:24px; animation:glowGold 3.5s ease-in-out infinite; width:fit-content; }
+  .sb-team { font-size:32px; font-weight:600; color:rgba(240,237,228,0.8); }
+  .sb-score { font-family:'Roboto Mono',monospace; font-size:70px; font-weight:600; color:#c9a227; letter-spacing:0.05em; animation:pulseGold 3s ease-in-out infinite; }
+  .confidence-bar-wrap { display:flex; align-items:center; gap:20px; margin-bottom:20px; }
+  .cb-lbl { font-family:'Roboto Mono',monospace; font-size:18px; color:rgba(240,237,228,0.4); letter-spacing:0.1em; width:240px; flex-shrink:0; }
+  .confidence-bar { height:10px; background:rgba(255,255,255,0.08); border-radius:6px; flex:1; max-width:600px; overflow:hidden; }
+  .confidence-bar .fill { height:100%; border-radius:6px; background:linear-gradient(90deg,#c9a227,#f0c040); }
+  .cb-pct { font-family:'Roboto Mono',monospace; font-size:28px; font-weight:600; color:#c9a227; }
+  .analysis-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; width:100%; max-width:1720px; }
+  .analysis-card { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:16px 22px; }
+  .ac-label { font-family:'Roboto Mono',monospace; font-size:13px; color:rgba(201,162,39,0.65); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:8px; }
+  .ac-text { font-size:19px; color:rgba(240,237,228,0.75); line-height:1.55; }
+  .ac-text .hl { color:#c9a227; font-weight:600; }
+  .ac-text .warn { color:#fb7185; }
+
+  /* S04 */
+  #slide-4 {
+    background:
+      radial-gradient(ellipse 130% 85% at 50% 120%, rgba(79,200,122,0.05) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 40% at 5% 5%, rgba(100,160,255,0.06) 0%, transparent 40%),
+      #060c06;
+    padding:0 80px; align-items:flex-start; justify-content:center;
+  }
+  #slide-4 .section-label { color:rgba(79,200,122,0.85); }
+  .qf4-header { display:flex; align-items:flex-end; gap:40px; margin-bottom:16px; }
+  .qf4-header .matchup-big .vs { color:rgba(79,200,122,0.8); }
+  .score-box.green { background:rgba(79,200,122,0.06); border-color:rgba(79,200,122,0.45); animation:glowGreen 3.5s ease-in-out infinite; }
+  .score-box.green .sb-score { color:#4fc87a; animation:pulseGreen 3s ease-in-out infinite; }
+  .sf-bracket { display:grid; grid-template-columns:1fr 1fr; gap:16px 40px; width:100%; max-width:1720px; margin-top:20px; }
+  .sf-label-row { font-size:18px; font-family:'Roboto Mono',monospace; color:rgba(201,162,39,0.7); letter-spacing:0.15em; text-transform:uppercase; align-self:center; }
+  .sf-card { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:16px 24px; display:flex; align-items:center; gap:20px; }
+  .sc-id { font-family:'Roboto Mono',monospace; font-size:14px; color:rgba(201,162,39,0.6); letter-spacing:0.12em; width:60px; flex-shrink:0; }
+  .sc-match { font-size:26px; font-weight:600; color:rgba(240,237,228,0.85); flex:1; }
+  .sc-match .vs { color:rgba(255,255,255,0.3); margin:0 8px; font-weight:400; font-size:20px; }
+  .sc-tag { font-family:'Roboto Mono',monospace; font-size:13px; color:rgba(201,162,39,0.55); border:1px solid rgba(201,162,39,0.25); border-radius:8px; padding:4px 12px; flex-shrink:0; }
+  .cb-qf4 { max-width:500px; }
+
+  /* S05 */
+  #slide-5 {
+    background:
+      radial-gradient(ellipse 130% 90% at 50% 120%, rgba(201,162,39,0.1) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 40% at 10% 10%, rgba(79,200,122,0.06) 0%, transparent 40%),
+      #080c18;
+    padding:0 80px; align-items:flex-start; justify-content:center;
+  }
+  .verdict-label { font-family:'Roboto Mono',monospace; font-size:22px; color:rgba(201,162,39,0.8); letter-spacing:0.22em; text-transform:uppercase; margin-bottom:10px; }
+  .verdict-title { font-size:62px; font-weight:900; color:#f0ede4; line-height:1.05; letter-spacing:-0.03em; margin-bottom:20px; animation:pulseGold 3s ease-in-out infinite; }
+  .verdict-title .pick { color:#c9a227; }
+  .picks-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px 50px; width:100%; max-width:1720px; margin-bottom:22px; }
+  .pick-card { background:rgba(201,162,39,0.05); border:1px solid rgba(201,162,39,0.3); border-radius:18px; padding:18px 28px; display:flex; flex-direction:column; gap:8px; animation:glowGold 4s ease-in-out infinite; }
+  .pick-card.green-card { background:rgba(79,200,122,0.05); border-color:rgba(79,200,122,0.35); animation:glowGreen 4s ease-in-out infinite; }
+  .pc-id { font-family:'Roboto Mono',monospace; font-size:14px; color:rgba(201,162,39,0.7); letter-spacing:0.12em; }
+  .pick-card.green-card .pc-id { color:rgba(79,200,122,0.75); }
+  .pc-match { font-size:26px; font-weight:600; color:#f0ede4; }
+  .pc-match .vs { color:rgba(255,255,255,0.3); margin:0 8px; font-weight:400; }
+  .pc-score { font-family:'Roboto Mono',monospace; font-size:44px; font-weight:600; color:#c9a227; animation:pulseGold 3s ease-in-out infinite; }
+  .pick-card.green-card .pc-score { color:#4fc87a; animation:pulseGreen 3s ease-in-out infinite; }
+  .pc-conf { font-family:'Roboto Mono',monospace; font-size:15px; color:rgba(240,237,228,0.35); letter-spacing:0.08em; }
+  .verdict-footer { display:flex; align-items:center; gap:40px; width:100%; max-width:1720px; }
+  .acc-chip-v { background:rgba(79,200,122,0.08); border:1px solid rgba(79,200,122,0.3); border-radius:14px; padding:12px 30px; text-align:center; }
+  .acc-chip-v .num { font-size:44px; font-weight:900; color:#4fc87a; font-family:'Roboto Mono',monospace; }
+  .acc-chip-v .lbl { font-size:16px; color:rgba(240,237,228,0.45); margin-top:2px; }
+  .trophy-line { font-size:25px; color:rgba(240,237,228,0.55); flex:1; line-height:1.6; }
+  .trophy-line .hl { color:#c9a227; font-weight:700; }
+  .next-ep-badge { font-family:'Roboto Mono',monospace; font-size:20px; color:rgba(100,160,255,0.7); letter-spacing:0.08em; border:1px solid rgba(100,160,255,0.25); border-radius:12px; padding:10px 24px; }
+</style>
+</head>
+<body>
+
+<!-- ════ SLIDE 1 · HOOK ════ -->
+<div class="slide active" id="slide-1">
+  <div class="ep-label">EP·15 · WORLDCUP-2026-DAILY</div>
+  <div class="slide-num">01 / 05</div>
+  <div class="ai-badge">CLAUDE AI</div>
+
+  <div class="date-chip">2026 · 07 · 10 · KST</div>
+  <div class="stage-chip">QUARTER-FINALS · DAY 2 · QF3 &amp; QF4</div>
+
+  <div class="hook-title">
+    <span class="acc-gold">QF</span> Day 2<br>
+    <span class="acc-green">Full AI Predictions</span>
+  </div>
+
+  <div class="match-strip">
+    <div class="match-card">
+      <div class="mc-id">QF3 · 06:00 KST · East Rutherford</div>
+      <div class="mc-teams">🇮🇹 Italy <span class="vs">VS</span> Switzerland 🇨🇭</div>
+      <div class="mc-time">MetLife Stadium · Barella vs Xhaka</div>
+    </div>
+    <div class="match-card teal">
+      <div class="mc-id">QF4 · 09:00 KST · Foxboro</div>
+      <div class="mc-teams">🇳🇱 Netherlands <span class="vs">VS</span> Denmark 🇩🇰</div>
+      <div class="mc-time">Gillette Stadium · De Jong vs Eriksen</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ SLIDE 2 · YESTERDAY RESULTS ════ -->
+<div class="slide" id="slide-2">
+  <div class="ep-label">EP·15 · WORLDCUP-2026-DAILY</div>
+  <div class="slide-num">02 / 05</div>
+  <div class="ai-badge">CLAUDE AI</div>
+
+  <div class="section-label">Yesterday QF1·QF2 Results — AI Perfect Read</div>
+  <div class="section-title">Two from Two — Cumulative <span class="acc">88.5%</span></div>
+
+  <div class="stat-row">
+    <div class="stat-chip">
+      <div class="snum">23/26</div>
+      <div class="slbl">Cumulative</div>
+    </div>
+    <div class="stat-chip gold">
+      <div class="snum">88.5%</div>
+      <div class="slbl">Accuracy</div>
+    </div>
+    <div class="stat-chip">
+      <div class="snum">2/2</div>
+      <div class="slbl">Yesterday</div>
+    </div>
+  </div>
+
+  <div class="results-grid">
+    <div class="result-card">
+      <div class="rc-id">QF1</div>
+      <div class="rc-match">🇫🇷 France <span class="vs">VS</span> Belgium 🇧🇪</div>
+      <div class="rc-score">2–1</div>
+      <div class="rc-check">✅</div>
+    </div>
+    <div class="result-card">
+      <div class="rc-id">QF2</div>
+      <div class="rc-match">🇧🇷 Brazil <span class="vs">VS</span> USA 🇺🇸</div>
+      <div class="rc-score">2–1</div>
+      <div class="rc-check">✅</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ SLIDE 3 · QF3 ITALY vs SWITZERLAND ════ -->
+<div class="slide" id="slide-3">
+  <div class="ep-label">EP·15 · WORLDCUP-2026-DAILY</div>
+  <div class="slide-num">03 / 05</div>
+  <div class="ai-badge">CLAUDE AI</div>
+
+  <div class="section-label" style="color:rgba(201,162,39,0.8);">AI PREDICTION · QF3 · 2026-07-10 · 06:00 KST</div>
+
+  <div class="pred-header">
+    <div class="matchup-big">🇮🇹 Italy <span class="vs">VS</span> Switzerland 🇨🇭</div>
+    <div class="meta-col">
+      <span>MetLife Stadium, East Rutherford</span>
+      <span>Barella vs Xhaka · Tactical Density</span>
+    </div>
+  </div>
+
+  <div class="score-box">
+    <span class="sb-team">🇮🇹 Italy</span>
+    <span class="sb-score">2 – 0</span>
+    <span class="sb-team">Switzerland 🇨🇭</span>
+  </div>
+
+  <div class="confidence-bar-wrap">
+    <span class="cb-lbl">AI Confidence</span>
+    <div class="confidence-bar"><div class="fill" style="width:68%"></div></div>
+    <span class="cb-pct">68%</span>
+  </div>
+
+  <div class="analysis-grid">
+    <div class="analysis-card">
+      <div class="ac-label">Italy Strengths</div>
+      <div class="ac-text"><span class="hl">Barella</span> — dynamic midfield engine. <span class="hl">Immobile</span>'s penalty-box finishing. <span class="hl">Zero goals conceded</span> all tournament — structural defensive stability.</div>
+    </div>
+    <div class="analysis-card">
+      <div class="ac-label">Switzerland Threats</div>
+      <div class="ac-text"><span class="hl">Embolo</span>'s physical pressing. <span class="hl">Xhaka</span>'s reading of the game. Compact 4-4-2 defensive block — organized space denial.</div>
+    </div>
+    <div class="analysis-card">
+      <div class="ac-label">AI Rationale</div>
+      <div class="ac-text">Italy's <span class="hl">clean sheet record</span> continues today. Switzerland's route to goal relies on <span class="warn">Xhaka's individual moment</span>. Tactical superiority is clear.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ SLIDE 4 · QF4 + SF BRACKET ════ -->
+<div class="slide" id="slide-4">
+  <div class="ep-label">EP·15 · WORLDCUP-2026-DAILY</div>
+  <div class="slide-num">04 / 05</div>
+  <div class="ai-badge">CLAUDE AI</div>
+
+  <div class="section-label" style="color:rgba(79,200,122,0.85);">AI PREDICTION · QF4 · 2026-07-10 · 09:00 KST + SF BRACKET PROJECTION</div>
+
+  <div class="qf4-header">
+    <div class="matchup-big">🇳🇱 Netherlands <span class="vs">VS</span> Denmark 🇩🇰</div>
+    <div class="meta-col">
+      <span style="font-family:'Roboto Mono',monospace;font-size:18px;color:rgba(240,237,228,0.4);">Gillette Stadium, Foxboro</span>
+      <span style="font-family:'Roboto Mono',monospace;font-size:18px;color:rgba(240,237,228,0.4);">De Jong vs Eriksen · Hardest Call This Series</span>
+    </div>
+  </div>
+
+  <div class="score-box green" style="margin-bottom:16px;">
+    <span class="sb-team">🇳🇱 Netherlands</span>
+    <span class="sb-score">2 – 1</span>
+    <span class="sb-team">Denmark 🇩🇰</span>
+  </div>
+
+  <div class="confidence-bar-wrap cb-qf4">
+    <span class="cb-lbl">AI Confidence</span>
+    <div class="confidence-bar"><div class="fill" style="width:63%;background:linear-gradient(90deg,#4fc87a,#86efac);"></div></div>
+    <span class="cb-pct" style="color:#4fc87a;">63%</span>
+  </div>
+
+  <div class="sf-bracket">
+    <div class="sf-label-row">SF1 Projection · 07-12</div>
+    <div class="sf-label-row">SF2 Projection · 07-13</div>
+    <div class="sf-card">
+      <div class="sc-id">SF1</div>
+      <div class="sc-match">🇫🇷 France <span class="vs">VS</span> Brazil 🇧🇷</div>
+      <div class="sc-tag">CONFIRMED</div>
+    </div>
+    <div class="sf-card">
+      <div class="sc-id">SF2</div>
+      <div class="sc-match">🇮🇹 Italy <span class="vs">VS</span> Netherlands 🇳🇱</div>
+      <div class="sc-tag">TODAY</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ SLIDE 5 · VERDICT ════ -->
+<div class="slide" id="slide-5">
+  <div class="ep-label">EP·15 · WORLDCUP-2026-DAILY</div>
+  <div class="slide-num">05 / 05</div>
+  <div class="ai-badge">CLAUDE AI</div>
+
+  <div class="verdict-label">AI VERDICT · EP15 · TODAY'S PICKS</div>
+  <div class="verdict-title">AI Winner Pick — <span class="pick">🇫🇷 France</span></div>
+
+  <div class="picks-grid">
+    <div class="pick-card">
+      <div class="pc-id">QF3 · 06:00 KST · East Rutherford</div>
+      <div class="pc-match">🇮🇹 Italy <span class="vs">vs</span> Switzerland 🇨🇭</div>
+      <div class="pc-score">2 – 0</div>
+      <div class="pc-conf">Confidence 68% · Clean sheet predicted</div>
+    </div>
+    <div class="pick-card green-card">
+      <div class="pc-id">QF4 · 09:00 KST · Foxboro</div>
+      <div class="pc-match">🇳🇱 Netherlands <span class="vs">vs</span> Denmark 🇩🇰</div>
+      <div class="pc-score">2 – 1</div>
+      <div class="pc-conf">Confidence 63% · Hardest call of the series</div>
+    </div>
+  </div>
+
+  <div class="verdict-footer">
+    <div class="acc-chip-v">
+      <div class="num">23/26</div>
+      <div class="lbl">Cumulative</div>
+    </div>
+    <div class="acc-chip-v">
+      <div class="num" style="color:#c9a227;">88.5%</div>
+      <div class="lbl">Accuracy</div>
+    </div>
+    <div class="trophy-line">
+      AI Semi-Finals: <span class="hl">France vs Brazil</span> · <span class="hl">Italy vs Netherlands</span><br>
+      Results review + SF predictions → Tomorrow <span class="hl">EP16</span>
+    </div>
+    <div class="next-ep-badge">EP·16 → 07·11 KST</div>
+  </div>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+
+  function showSlide(n) {
+    slides.forEach(s => s.classList.remove('active'));
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+  }
+
+  window.goToSlide = showSlide;
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') showSlide(current + 1);
+    if (e.key === 'ArrowLeft') showSlide(current - 1);
+  });
+</script>
+</body>
+</html>

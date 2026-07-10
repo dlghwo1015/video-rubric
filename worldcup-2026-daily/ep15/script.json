@@ -1,0 +1,100 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 15,
+  "date": "2026-07-10",
+  "title_ko": "2026-07-10 8강 DAY 2! 이탈리아 vs 스위스 · 네덜란드 vs 덴마크 — AI 완전 예측",
+  "title_ja": "2026-07-10 準々決勝DAY2！イタリアvsスイス・オランダvsデンマーク — AI完全予測",
+  "title_en": "2026-07-10 QF Day 2! Italy vs Switzerland & Netherlands vs Denmark — Full AI Predictions",
+  "korea_match": false,
+  "matches_today": [
+    {
+      "qf_id": "QF3",
+      "team_a": "Italy",
+      "team_b": "Switzerland",
+      "venue": "MetLife Stadium, East Rutherford",
+      "kickoff_kst": "06:00",
+      "ai_pred_a": 2,
+      "ai_pred_b": 0,
+      "ai_winner": "Italy",
+      "confidence": 68,
+      "key_battle": "Barella vs Xhaka"
+    },
+    {
+      "qf_id": "QF4",
+      "team_a": "Netherlands",
+      "team_b": "Denmark",
+      "venue": "Gillette Stadium, Foxboro",
+      "kickoff_kst": "09:00",
+      "ai_pred_a": 2,
+      "ai_pred_b": 1,
+      "ai_winner": "Netherlands",
+      "confidence": 63,
+      "key_battle": "De Jong vs Eriksen"
+    }
+  ],
+  "yesterday_results": [
+    {
+      "qf_id": "QF1",
+      "team_a": "France",
+      "team_b": "Belgium",
+      "result_a": 2,
+      "result_b": 1,
+      "ai_pred_a": 2,
+      "ai_pred_b": 1,
+      "ai_correct": true
+    },
+    {
+      "qf_id": "QF2",
+      "team_a": "Brazil",
+      "team_b": "USA",
+      "result_a": 2,
+      "result_b": 1,
+      "ai_pred_a": 2,
+      "ai_pred_b": 1,
+      "ai_correct": true
+    }
+  ],
+  "rest_day": false,
+  "cumulative_accuracy": {
+    "correct": 23,
+    "total": 26,
+    "pct": 88.5
+  },
+  "sf_projection": [
+    { "sf_id": "SF1", "team_a": "France", "team_b": "Brazil" },
+    { "sf_id": "SF2", "team_a": "Italy", "team_b": "Netherlands" }
+  ],
+  "tournament_winner_pick": "France",
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "2026년 7월 10일. 8강 DAY 2. 오늘 두 경기가 모든 준결승 대진표를 완성합니다. 새벽 6시, 이스트 러더퍼드 메트라이프 스타디움 — 이탈리아 대 스위스. 그리고 9시, 폭스버로 질레트 스타디움 — 네덜란드 대 덴마크. 어제 AI는 두 경기를 모두 맞혔습니다. 프랑스 2-1 벨기에, 브라질 2-1 미국. 완벽한 예측. 하지만 오늘은 다릅니다. 바렐라 대 샤카리, 데 용 대 에릭센. 전술의 밀도가 결과를 가릅니다. AI의 8강 완전 예측, DAY 2 시작합니다.",
+      "narration_ja": "2026年7月10日。準々決勝DAY2。今日の2試合がすべての準決勝組み合わせを完成させます。朝6時、イーストラザーフォード、メットライフスタジアム — イタリア対スイス。そして9時、フォックスボロ、ジレットスタジアム — オランダ対デンマーク。昨日AIは2試合すべてを的中しました。フランス2-1ベルギー、ブラジル2-1アメリカ。完璧な予測。しかし今日は違います。バレッラ対ジャカ、デ・ヨング対エリクセン。戦術の密度が結果を分けます。AIの準々決勝完全予測、DAY2始まります。",
+      "narration_en": "July 10, 2026. Quarter-final Day 2. Today's two matches complete the entire semi-final bracket. 06:00 KST — MetLife Stadium, East Rutherford: Italy versus Switzerland. 09:00 KST — Gillette Stadium, Foxboro: Netherlands versus Denmark. Yesterday AI went two from two. France 2–1 Belgium. Brazil 2–1 USA. Both exact. But today is a different kind of puzzle. Barella against Xhaka. De Jong against Eriksen. Tactical density determines the outcome. AI full predictions — Day 2 — starting now."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "어제 7월 9일, AI가 두 경기를 모두 정확히 맞혔습니다. QF1 — 프랑스 2-1 벨기에. AI 예측 그대로. 음바페가 두 골에 관여했고, 벨기에가 1골로 응수했습니다. QF2 — 브라질 2-1 미국. 비니시우스와 호드리구의 골. 풀리식이 1골로 홈 군중을 달아오르게 했지만 브라질의 밀도가 끝내 막았습니다. 두 경기 모두 정확히 예측. 대회 누적 적중률 26경기 중 23경기, 88.5%. 역대 AI 예측 시리즈 중 가장 높은 수치를 기록 중입니다. 그러나 오늘은 어제보다 훨씬 어렵습니다.",
+      "narration_ja": "昨日7月9日、AIは2試合すべてを正確に的中しました。QF1 — フランス2-1ベルギー。AI予測通り。エムバペが2ゴールに関与し、ベルギーが1ゴールで応戦しました。QF2 — ブラジル2-1アメリカ。ヴィニシウスとホジリーニョのゴール。プリシッチが1ゴールでホームの観衆を沸かせましたがブラジルの密度が最後まで抑えました。2試合ともに正確に予測。大会累計的中率26試合中23試合、88.5%。これまでのAI予測シリーズの中で最高の数値を記録中です。しかし今日は昨日よりはるかに難しいです。",
+      "narration_en": "Yesterday, July 9th — AI went two from two. QF1: France 2–1 Belgium, exactly as predicted. Mbappé involved in both goals, Belgium reduced the deficit in the second half but France held. QF2: Brazil 2–1 USA, again exactly as predicted. Vinícius and Rodrygo on the scoresheet, Pulisic's goal momentarily silenced the Brazilian bench, but Brazil's technical superiority was never in real doubt. Both predictions correct. Cumulative record: 23 from 26 matches, 88.5% accuracy — the highest the series has reached. Today, however, is a genuinely harder set of predictions."
+    },
+    {
+      "id": "s03_pred1",
+      "narration": "QF3 — 이탈리아 대 스위스. 메트라이프 스타디움, 이스트 러더퍼드. 06:00 KST. AI 예측: 이탈리아 2-0 스위스. 신뢰도 68%. 이탈리아는 이 대회에서 단 1골도 허용하지 않은 채 8강에 올랐습니다. 바렐라의 역동적인 미드필드 장악과 이모빌레의 페널티박스 내 결정력. 스위스는 전혀 만만한 상대가 아닙니다. 엠볼로의 피지컬, 샤카리의 창의성, 그리고 4-4-2 수비 블록. 하지만 이탈리아의 전술적 우위는 스위스의 조직적 수비를 결국 무너뜨릴 것입니다. AI가 클린시트를 예측하는 이유는 이탈리아 수비의 구조적 안정성에 있습니다. 68% 신뢰도. 샤카리의 한 방을 제외하면 스위스의 상위 이변 시나리오는 제한적입니다. AI 픽: 이탈리아 2-0 스위스.",
+      "narration_ja": "QF3 — イタリア対スイス。メットライフスタジアム、イーストラザーフォード。06:00 KST。AI予測：イタリア2-0スイス。信頼度68%。イタリアはこの大会で1ゴールも許さずに準々決勝に進出しました。バレッラの躍動的なミッドフィールド支配とイモービレのペナルティボックス内での決定力。スイスは決して侮れない相手ではありません。エンボロのフィジカル、ジャカの創造性、そして4-4-2守備ブロック。しかしイタリアの戦術的優位性はスイスの組織的守備を最終的に崩すでしょう。AIがクリーンシートを予測する理由はイタリア守備の構造的安定性にあります。68%の信頼度。ジャカの一発を除けばスイスの大番狂わせシナリオは限定的です。AIピック：イタリア2-0スイス。",
+      "narration_en": "QF3 — Italy versus Switzerland. MetLife Stadium, East Rutherford. 06:00 KST. AI prediction: Italy 2–0 Switzerland. Confidence: 68%. Italy have not conceded a single goal in this tournament. Not one. Barella has been the midfield engine of the competition, and Immobile's penalty-box finishing is as reliable as it gets. Switzerland are not a gentle opposition. Embolo's physicality, Xhaka's reading of the game, a compact 4-4-2 defensive block that has frustrated better teams. But Italy's tactical depth in the final third, combined with a defense that has yet to be breached, creates a structural advantage that AI cannot look past. The clean sheet prediction — 2–0 — is not overconfidence. It is the logical outcome of Italy's defensive record meeting Switzerland's limited route to goal. AI pick: Italy 2–0 Switzerland."
+    },
+    {
+      "id": "s04_pred2",
+      "narration": "QF4 — 네덜란드 대 덴마크. 질레트 스타디움, 폭스버로. 09:00 KST. AI 예측: 네덜란드 2-1 덴마크. 신뢰도 63%. 이것이 오늘의 진짜 난제입니다. 데 용의 패스 공급과 반 다이크의 제공권 장악, 덤프리스의 오버랩 — 네덜란드의 공격 메커니즘은 완성형입니다. 하지만 덴마크는 이 대회에서 가장 저평가된 팀입니다. 에릭센의 시야, 마엘레의 측면 압박, 힐만의 피지컬 미드필드. 덴마크는 전 경기에서 압박 강도를 끝까지 유지했습니다. 63%는 AI가 이 경기를 사실상 동전 던지기에 가깝게 보고 있다는 신호입니다. 그럼에도 AI는 네덜란드를 픽합니다. 기술적 우위와 공격 볼륨의 차이. 하지만 덴마크가 이변을 만든다면 AI는 놀라지 않겠습니다. AI 준결승 전망: 프랑스 대 브라질 · 이탈리아 대 네덜란드.",
+      "narration_ja": "QF4 — オランダ対デンマーク。ジレットスタジアム、フォックスボロ。09:00 KST。AI予測：オランダ2-1デンマーク。信頼度63%。これが今日の本当の難問です。デ・ヨングのパス供給とファン・ダイクの制空権支配、ダンフリースのオーバーラップ — オランダの攻撃メカニズムは完成形です。しかしデンマークはこの大会で最も過小評価されたチームです。エリクセンの視野、ムヒレの側面プレス、ヒュルマンのフィジカルミッドフィールド。デンマークはすべての試合でプレス強度を最後まで維持しました。63%はAIがこの試合を実質的にコイントスに近いと見ているシグナルです。それでもAIはオランダをピックします。技術的優位性と攻撃ボリュームの差。しかしデンマークが番狂わせを起こしてもAIは驚きません。AI準決勝展望：フランス対ブラジル・イタリア対オランダ。",
+      "narration_en": "QF4 — Netherlands versus Denmark. Gillette Stadium, Foxboro. 09:00 KST. AI prediction: Netherlands 2–1 Denmark. Confidence: 63%. This is today's genuinely hard match. De Jong's passing range, Van Dijk's aerial dominance, Dumfries overlapping at pace — the Dutch attacking mechanism is complete and well-practiced. Denmark, however, are the most underrated team remaining in this tournament. Eriksen's vision cannot be replicated by a database. Maehle's wide pressing has unlocked defenses all tournament. Hjulmand's midfield physicality has outworked more technical opponents before. Denmark have maintained their press intensity to the final whistle in every match. 63% confidence is AI acknowledging that this match is close to a coin toss. AI still picks Netherlands — on technical superiority and attacking volume. But if Denmark advance, AI will not be surprised. Semi-final projections if today holds: France versus Brazil and Italy versus Netherlands."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘의 AI 총 픽. QF3 이탈리아 2-0 스위스, 신뢰도 68%. QF4 네덜란드 2-1 덴마크, 신뢰도 63%. 오늘의 주목 경기는 네덜란드 대 덴마크입니다. AI가 이 시리즈에서 가장 낮은 신뢰도 중 하나를 부여한 경기입니다. 에릭센의 한 번의 찬스가 모든 것을 바꿀 수 있습니다. 대회 전체 AI 우승 예측은 여전히 프랑스. 어제 두 경기를 완벽히 맞히며 누적 적중률이 88.5%로 상승했습니다. 오늘 두 경기 결과가 어떻게 되든, AI가 예측한 준결승 — 프랑스 대 브라질 · 이탈리아 대 네덜란드 — 가 실현될지 내일 확인됩니다. EP16에서 만납니다. 구독과 알림 설정 부탁드립니다.",
+      "narration_ja": "今日のAI総ピック。QF3イタリア2-0スイス、信頼度68%。QF4オランダ2-1デンマーク、信頼度63%。今日の注目試合はオランダ対デンマークです。AIがこのシリーズで最も低い信頼度の一つを付与した試合です。エリクセンの一度のチャンスがすべてを変えられます。大会全体のAI優勝予測は依然としてフランス。昨日2試合を完璧に的中し、累計的中率が88.5%に上昇しました。今日の2試合の結果がどうなっても、AIが予測した準決勝 — フランス対ブラジル・イタリア対オランダ — が実現するかどうか明日確認されます。EP16でお会いします。チャンネル登録と通知設定をお願いします。",
+      "narration_en": "Today's AI picks summary. QF3: Italy 2–0 Switzerland, confidence 68%. QF4: Netherlands 2–1 Denmark, confidence 63%. The match AI is watching most closely: Netherlands versus Denmark. One of the lowest confidence readings in this series — Eriksen's single moment of brilliance can overturn the entire calculation. Tournament winner pick remains France. Yesterday's perfect two-from-two performance pushed cumulative accuracy to 88.5% across 26 matches. Today's results will determine whether AI's projected semi-final bracket — France versus Brazil, Italy versus Netherlands — becomes reality. Results review and semi-final predictions in EP16 tomorrow. Subscribe and set the notification — the analysis does not stop."
+    }
+  ]
+}
