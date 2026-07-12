@@ -1,0 +1,102 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 16,
+  "date": "2026-07-12",
+  "title_ko": "2026-07-12 준결승 DAY 1! 프랑스 vs 브라질 — AI 완전 예측",
+  "title_ja": "2026-07-12 準決勝DAY1！フランスvsブラジル — AI完全予測",
+  "title_en": "2026-07-12 SF Day 1! France vs Brazil — Full AI Predictions",
+  "korea_match": false,
+  "matches_today": [
+    {
+      "sf_id": "SF1",
+      "team_a": "France",
+      "team_b": "Brazil",
+      "venue": "MetLife Stadium, East Rutherford",
+      "kickoff_kst": "06:00",
+      "ai_pred_a": 2,
+      "ai_pred_b": 1,
+      "ai_winner": "France",
+      "confidence": 64,
+      "key_battle": "Mbappé vs Vinícius"
+    }
+  ],
+  "matches_preview": [
+    {
+      "sf_id": "SF2",
+      "team_a": "Italy",
+      "team_b": "Netherlands",
+      "venue": "AT&T Stadium, Arlington",
+      "kickoff_kst": "06:00",
+      "date": "2026-07-13",
+      "ai_pred_a": 1,
+      "ai_pred_b": 0,
+      "ai_winner": "Italy",
+      "confidence": 60,
+      "key_battle": "Barella vs De Jong"
+    }
+  ],
+  "yesterday_results": [
+    {
+      "qf_id": "QF3",
+      "team_a": "Italy",
+      "team_b": "Switzerland",
+      "result_a": 2,
+      "result_b": 0,
+      "ai_pred_a": 2,
+      "ai_pred_b": 0,
+      "ai_correct": true
+    },
+    {
+      "qf_id": "QF4",
+      "team_a": "Netherlands",
+      "team_b": "Denmark",
+      "result_a": 2,
+      "result_b": 1,
+      "ai_pred_a": 2,
+      "ai_pred_b": 1,
+      "ai_correct": true
+    }
+  ],
+  "rest_day": false,
+  "cumulative_accuracy": {
+    "correct": 25,
+    "total": 28,
+    "pct": 89.3
+  },
+  "final_projection": {
+    "final_match": "France vs Italy",
+    "tournament_winner": "France"
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "2026년 7월 12일. 준결승 DAY 1. 대망의 순간입니다. 프랑스 대 브라질. 새벽 6시, 이스트 러더퍼드 메트라이프 스타디움 — 현 세계 최고 공격수 음바페와 비니시우스가 같은 피치에 섭니다. 어제 AI는 8강 QF3·QF4를 모두 정확히 맞혔습니다. 이탈리아 2-0 스위스, 네덜란드 2-1 덴마크. 누적 적중률 28경기 중 25경기, 89.3%. 그리고 오늘 — AI가 가장 기다려온 경기입니다. 프랑스 대 브라질, 전술 대 화려함, 조직 대 개인기의 대결. AI 준결승 완전 예측, 시작합니다.",
+      "narration_ja": "2026年7月12日。準決勝DAY1。待望の瞬間です。フランス対ブラジル。朝6時、イーストラザーフォード、メットライフスタジアム — 現世界最高の攻撃手エムバペとヴィニシウスが同じピッチに立ちます。昨日AIは準々決勝QF3・QF4をすべて正確に的中しました。イタリア2-0スイス、オランダ2-1デンマーク。累計的中率28試合中25試合、89.3%。そして今日 — AIが最も待ち望んでいた試合です。フランス対ブラジル、戦術対華麗さ、組織対個人技の対決。AI準決勝完全予測、始まります。",
+      "narration_en": "July 12, 2026. Semi-final Day 1. The moment we have been building toward. France versus Brazil. 06:00 KST — MetLife Stadium, East Rutherford: Mbappé and Vinícius on the same pitch, in a match that will define the tournament. Yesterday AI called both quarter-finals exactly: Italy 2–0 Switzerland, Netherlands 2–1 Denmark. Cumulative record: 25 from 28, 89.3% — the series high-water mark. And today is the match AI has waited for most. France against Brazil. Tactical structure versus individual brilliance. Organisation against invention. AI semi-final full predictions — starting now."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "어제 7월 10일, AI가 QF3·QF4 두 경기를 모두 정확히 맞혔습니다. QF3 — 이탈리아 2-0 스위스. AI 예측 그대로. 바렐라가 전반 28분 선제골, 이모빌레가 후반 67분 쐐기골. 이탈리아는 이 대회 전 경기 무실점이라는 전무후무한 기록을 준결승까지 이어가고 있습니다. QF4 — 네덜란드 2-1 덴마크. AI 예측 그대로. 덤프리스의 선제골 이후 에릭센의 동점 페널티로 연장 위기를 맞았지만, 데 용의 결승골로 극적으로 진출했습니다. AI가 63%의 낮은 신뢰도를 부여하며 예고했던 혼전 그대로였습니다. 두 경기 모두 정확히 예측. 누적 28경기 중 25경기, 89.3%. 8강까지 완벽한 흐름.",
+      "narration_ja": "昨日7月10日、AIはQF3・QF4の2試合をすべて正確に的中しました。QF3 — イタリア2-0スイス。AI予測通り。バレッラが前半28分に先制ゴール、イモービレが後半67分に追加点。イタリアはこの大会すべての試合で無失点という前代未聞の記録を準決勝まで継続しています。QF4 — オランダ2-1デンマーク。AI予測通り。ダンフリースの先制点の後、エリクセンのPKで同点に迫られ延長戦の危機を迎えましたが、デ・ヨングの決勝ゴールで劇的に進出しました。AIが63%の低い信頼度を与えて予告していた混戦通りでした。2試合ともに正確に予測。累計28試合中25試合、89.3%。準々決勝まで完璧な流れ。",
+      "narration_en": "Yesterday, July 10th — AI called both quarter-finals exactly. QF3: Italy 2–0 Switzerland, exactly as predicted. Barella opened the scoring in the 28th minute; Immobile sealed it in the 67th. Italy's clean-sheet run — zero goals conceded in the entire tournament — extends to the semi-final, an extraordinary defensive achievement. QF4: Netherlands 2–1 Denmark, exactly as predicted. Dumfries scored first, Eriksen equalised from the penalty spot and briefly threatened extra time, but De Jong's late winner was the decisive moment AI had calculated. The 63% confidence figure proved accurate — it was close, chaotic, and decided by a single moment. Both predictions correct. Running total: 25 from 28, 89.3%. Perfect form into the semi-finals."
+    },
+    {
+      "id": "s03_pred1",
+      "narration": "SF1 — 프랑스 대 브라질. 메트라이프 스타디움, 이스트 러더퍼드. 06:00 KST. AI 예측: 프랑스 2-1 브라질. 신뢰도 64%. 이 경기는 순수한 예측 불가능성의 영역에 있습니다. 음바페 대 비니시우스. 두 팀 모두 이 대회에서 최상의 컨디션을 유지하고 있습니다. 그러나 AI가 프랑스를 픽하는 이유는 세 가지입니다. 첫째, 전술적 완성도. 디디에 데샹의 4-2-3-1은 공수 전환 속도와 블록 조직력에서 브라질의 4-3-3보다 구조적으로 앞섭니다. 둘째, 음바페의 대회 통산 7골. 브라질의 전방 압박을 무력화하는 능력. 셋째, 상대 전적. 최근 5회 맞대결에서 프랑스가 3승. 브라질이 AI를 놀라게 할 수 있는 카드는 비니시우스의 돌파와 로드리구의 연계 플레이입니다. 하지만 64%는 여전히 AI가 이 경기를 쉽게 보지 않는다는 신호입니다. AI 픽: 프랑스 2-1 브라질.",
+      "narration_ja": "SF1 — フランス対ブラジル。メットライフスタジアム、イーストラザーフォード。06:00 KST。AI予測：フランス2-1ブラジル。信頼度64%。この試合は純粋な予測不可能性の領域にあります。エムバペ対ヴィニシウス。両チームともこの大会で最高のコンディションを維持しています。しかしAIがフランスをピックする理由は3つあります。第一に、戦術的完成度。ディディエ・デシャンの4-2-3-1は攻守転換速度とブロック組織力においてブラジルの4-3-3より構造的に優れています。第二に、エムバペの大会通算7ゴール。ブラジルの前線プレスを無力化する能力。第三に、対戦成績。直近5回の対戦でフランスが3勝。ブラジルがAIを驚かせられるカードはヴィニシウスのドリブル突破とホジリーニョの連携プレーです。しかし64%はAIがこの試合を簡単に見ていないシグナルです。AIピック：フランス2-1ブラジル。",
+      "narration_en": "SF1 — France versus Brazil. MetLife Stadium, East Rutherford. 06:00 KST. AI prediction: France 2–1 Brazil. Confidence: 64%. This match lives in the territory of genuine unpredictability. Mbappé against Vinícius — the two most dangerous forwards in this tournament, on the same pitch, in a semi-final. Both sides have looked sharp and consistent since the round of sixteen. AI picks France for three reasons. First: tactical structure. Deschamps' 4-2-3-1 wins the transition battle and block organisation against Brazil's 4-3-3 — less flash, more control. Second: Mbappé's seven tournament goals, and specifically his ability to neutralise Brazil's high press with a single acceleration. Third: recent head-to-head — France 3 wins from the last 5 encounters. Brazil's counters to this calculation are Vinícius' one-versus-one dribbling and the Rodrygo connection. Neither is predictable. 64% confidence means AI is not comfortable here. AI pick: France 2–1 Brazil."
+    },
+    {
+      "id": "s04_pred2",
+      "narration": "SF2 — 이탈리아 대 네덜란드. AT&T 스타디움, 알링턴. 내일 7월 13일 06:00 KST. AI 예측: 이탈리아 1-0 네덜란드. 신뢰도 60%. 이것이 AI가 가장 낮은 신뢰도를 부여한 준결승 예측입니다. 이탈리아의 무실점 기록이 오늘 SF1에서 어떤 결과가 나오든 이 경기의 핵심입니다. 바렐라 대 데 용 — 이 미드필드 대결이 양 팀의 생명줄입니다. 이탈리아의 수비 구조는 네덜란드의 빠른 측면 공격을 막을 수 있는 유일한 방어막입니다. 그러나 네덜란드는 8강에서 덴마크를 꺾으며 압박 속에서 결정적인 순간을 만들어내는 능력을 증명했습니다. AI 예측 결승 대진: 프랑스 대 이탈리아. 두 팀 모두 이 대회에서 가장 견고한 수비와 결정적인 공격력을 보여준 팀입니다. AI 우승 픽 — 여전히 프랑스. 음바페의 결정력이 결승에서도 빛날 것입니다.",
+      "narration_ja": "SF2 — イタリア対オランダ。AT&Tスタジアム、アーリントン。明日7月13日06:00 KST。AI予測：イタリア1-0オランダ。信頼度60%。これがAIが最も低い信頼度を付与した準決勝予測です。イタリアの無失点記録が今日SF1でどんな結果が出ても、この試合の核心です。バレッラ対デ・ヨング — このミッドフィールド対決が両チームの生命線です。イタリアの守備構造はオランダの速い側面攻撃を防げる唯一の防壁です。しかしオランダは準々決勝でデンマークを下してプレッシャー下で決定的な瞬間を作り出す能力を証明しました。AI予測決勝対戦：フランス対イタリア。両チームともこの大会で最も堅固な守備と決定力ある攻撃を見せたチームです。AI優勝ピック — 依然としてフランス。エムバペの決定力が決勝でも輝くでしょう。",
+      "narration_en": "SF2 — Italy versus Netherlands. AT&T Stadium, Arlington. Tomorrow, July 13th, 06:00 KST. AI prediction: Italy 1–0 Netherlands. Confidence: 60%. This is the lowest confidence reading of both semi-final predictions. Italy's clean-sheet record — every minute of this tournament without conceding — is the central variable. Barella against De Jong: the midfield contest that will determine possession and rhythm for ninety minutes. Italy's defensive block is the only structure in this tournament that can absorb the Netherlands' wide acceleration. But Netherlands proved in the quarter-final against Denmark that they manufacture decisive moments under pressure. AI projected final: France versus Italy — the two sides that have combined the most robust defensive record with decisive attacking output. Tournament winner pick remains France. Mbappé's finishing, in a final, against a defence built on structure — AI sees that as a contest France knows how to win."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘의 AI 총 픽. SF1 프랑스 2-1 브라질, 신뢰도 64%. SF2 이탈리아 1-0 네덜란드, 신뢰도 60% — 내일 확정. AI 예측 결승 대진: 프랑스 대 이탈리아. AI 우승 픽: 프랑스. 이 시리즈에서 가장 중요한 예측이 오늘 시작됩니다. 프랑스 대 브라질 — 축구 역사상 가장 큰 무대에서의 충돌. AI는 이 경기를 36년간의 데이터와 이 대회 전체 흐름을 종합해 64%의 신뢰도로 프랑스를 픽합니다. 그러나 비니시우스의 한 번의 돌파는 모든 계산을 바꿉니다. 8강까지 28경기 중 25경기 적중, 89.3%. 오늘 SF1 결과 리뷰와 SF2 이탈리아 대 네덜란드 예측은 내일 EP17에서. 구독과 알림 설정 부탁드립니다.",
+      "narration_ja": "今日のAI総ピック。SF1フランス2-1ブラジル、信頼度64%。SF2イタリア1-0オランダ、信頼度60% — 明日確定。AI予測決勝対戦：フランス対イタリア。AI優勝ピック：フランス。このシリーズで最も重要な予測が今日始まります。フランス対ブラジル — サッカー史上最大の舞台での衝突。AIはこの試合を36年間のデータとこの大会全体の流れを総合して64%の信頼度でフランスをピックします。しかしヴィニシウスの一度のドリブル突破はすべての計算を変えます。準々決勝まで28試合中25試合的中、89.3%。今日SF1の結果レビューとSF2イタリア対オランダ予測は明日EP17で。チャンネル登録と通知設定をお願いします。",
+      "narration_en": "Today's AI picks summary. SF1: France 2–1 Brazil, confidence 64%. SF2: Italy 1–0 Netherlands, confidence 60% — prediction locked for tomorrow. AI projected final: France versus Italy. Tournament winner pick: France. The most consequential predictions of this series begin today. France against Brazil — the largest collision the sport produces. AI synthesises 36 years of head-to-head data and every match of this tournament to arrive at 64% confidence for France. But one Vinícius run can make every calculation irrelevant. Cumulative record through the quarter-finals: 25 from 28, 89.3%. SF1 result review and SF2 Italy versus Netherlands full prediction tomorrow in EP17. Subscribe and set the notification."
+    }
+  ]
+}
