@@ -1,0 +1,77 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 17,
+  "date": "2026-07-13",
+  "title_ko": "2026-07-13 준결승 DAY 2! 이탈리아 vs 네덜란드 — AI 완전 예측",
+  "title_ja": "2026-07-13 準決勝DAY2！イタリアvsオランダ — AI完全予測",
+  "title_en": "2026-07-13 SF Day 2! Italy vs Netherlands — Full AI Predictions",
+  "korea_match": false,
+  "matches_today": [
+    {
+      "sf_id": "SF2",
+      "team_a": "Italy",
+      "team_b": "Netherlands",
+      "venue": "AT&T Stadium, Arlington",
+      "kickoff_kst": "06:00",
+      "ai_pred_a": 1,
+      "ai_pred_b": 0,
+      "ai_winner": "Italy",
+      "confidence": 60,
+      "key_battle": "Barella vs De Jong"
+    }
+  ],
+  "yesterday_results": [
+    {
+      "sf_id": "SF1",
+      "team_a": "France",
+      "team_b": "Brazil",
+      "result_a": 2,
+      "result_b": 1,
+      "ai_pred_a": 2,
+      "ai_pred_b": 1,
+      "ai_correct": true
+    }
+  ],
+  "rest_day": false,
+  "cumulative_accuracy": {
+    "correct": 26,
+    "total": 29,
+    "pct": 89.7
+  },
+  "final_projection": {
+    "final_match": "France vs Italy",
+    "tournament_winner": "France"
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "2026년 7월 13일. 준결승 DAY 2. 어제 AI는 프랑스 대 브라질에서 2-1을 정확히 맞혔습니다. 새벽 6시, 알링턴 AT&T 스타디움 — 이제 반대쪽 대진표가 결승 진출자를 결정합니다. 이탈리아 대 네덜란드. 이 대회 단 한 골도 실점하지 않은 이탈리아의 무적 수비 대, 8강에서 덴마크를 꺾고 올라온 네덜란드의 역동적 공격. 바렐라 대 데 용. 이 시리즈에서 가장 치밀한 전술 예측이 될 준결승 DAY 2, 시작합니다.",
+      "narration_ja": "2026年7月13日。準決勝DAY2。昨日AIはフランス対ブラジルで2-1を正確に的中しました。朝6時、アーリントン、AT&Tスタジアム — 今度は逆サイドの組み合わせが決勝進出者を決めます。イタリア対オランダ。この大会で1点も失点していないイタリアの無敵守備対、準々決勝でデンマークを破って勝ち上がったオランダのダイナミックな攻撃。バレッラ対デ・ヨング。このシリーズで最も緻密な戦術予測になる準決勝DAY2、始まります。",
+      "narration_en": "July 13, 2026. Semi-final Day 2. Yesterday AI called France versus Brazil exactly — 2 to 1. Now, 06:00 KST, AT&T Stadium in Arlington — the other side of the bracket decides who joins France in the final. Italy against the Netherlands. Italy, who have conceded zero goals in every minute of this tournament. Netherlands, who came back from a one-goal deficit to eliminate Denmark in the quarter-final. Barella versus De Jong. The most tactically dense prediction of this series — semi-final Day 2, starting now."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "어제 7월 12일, SF1 — 프랑스 2-1 브라질. AI 예측 그대로. 경기는 예측대로 첫 20분은 브라질이 압박했고, 음바페가 30분 선제골을 터뜨렸습니다. 비니시우스가 58분 동점골로 응수하며 AI가 경고했던 혼전이 현실이 됐습니다. 그러나 그리즈만이 74분 결승골을 터뜨리며 프랑스가 극적으로 결승 진출을 확정했습니다. AI 예측 스코어 2-1, 정확히 일치. 29경기 중 26경기 적중, 누적 정확도 89.7%로 신고점 갱신. 이제 오늘 — 나머지 결승 진출자가 이탈리아인지 네덜란드인지를 결정하는 경기입니다.",
+      "narration_ja": "昨日7月12日、SF1 — フランス2-1ブラジル。AI予測通り。試合は予測通り最初の20分はブラジルがプレスをかけ、エムバペが30分に先制ゴールを決めました。ヴィニシウスが58分に同点ゴールで応えてAIが警告していた混戦が現実になりました。しかしグリーズマンが74分に決勝ゴールを決めてフランスが劇的に決勝進出を確定しました。AI予測スコア2-1、完全一致。29試合中26試合的中、累計正確度89.7%で最高記録を更新。さて今日 — 残る決勝進出者がイタリアなのかオランダなのかを決める試合です。",
+      "narration_en": "Yesterday, July 12th. SF1 — France 2–1 Brazil. Exactly as AI predicted. The match unfolded precisely as calculated: Brazil pressed aggressively for the opening twenty minutes, Mbappé broke the deadlock in the 30th, Vinícius equalised in the 58th — the chaotic phase AI had flagged at 64% confidence. Griezmann then delivered the winner in the 74th minute, sending France to the final. AI score prediction: 2–1. Exact match. Running total: 26 from 29, 89.7% — a new series high. Now today — we find out whether the other finalist is Italy or the Netherlands."
+    },
+    {
+      "id": "s03_pred1",
+      "narration": "SF2 — 이탈리아 대 네덜란드. AT&T 스타디움, 알링턴. 06:00 KST. AI 예측: 이탈리아 1-0 네덜란드. 신뢰도 60%. 이 예측은 AI가 이번 시리즈에서 가장 낮은 신뢰도를 부여한 경기 중 하나입니다. 그 이유는 세 가지입니다. 첫째, 이탈리아의 대회 무실점 기록. 5경기 0실점. 이것은 전술적 사실이 아니라 확률적 이상치입니다. 언제든 깨질 수 있습니다. 둘째, 네덜란드의 역동성. 덤프리스의 측면 오버랩과 데 용의 패스 공급은 이탈리아 블록을 지속적으로 시험하는 도구입니다. 8강 덴마크전에서 에릭센 동점 페널티를 허용했음에도 이겨낸 저력. 셋째, 그럼에도 AI가 이탈리아를 픽하는 이유 — 바렐라. 이 대회에서 가장 꾸준한 미드필더입니다. 공수 전환, 압박 저지, 세트피스 기여. 이탈리아의 1-0은 수비 구조의 승리입니다. AI 픽: 이탈리아 1-0 네덜란드.",
+      "narration_ja": "SF2 — イタリア対オランダ。AT&Tスタジアム、アーリントン。06:00 KST。AI予測：イタリア1-0オランダ。信頼度60%。この予測はAIが今シリーズで最も低い信頼度を付与した試合の一つです。その理由は3つあります。第一に、イタリアの大会無失点記録。5試合0失点。これは戦術的事実ではなく確率的異常値です。いつでも崩れる可能性があります。第二に、オランダのダイナミズム。ダンフリースの側面オーバーラップとデ・ヨングのパス供給はイタリアのブロックを継続的に試すツールです。準々決勝デンマーク戦でエリクセンの同点PKを許しながらも勝ち抜いた底力。第三に、それでもAIがイタリアをピックする理由 — バレッラ。この大会で最も安定したミッドフィールダーです。攻守転換、プレス阻止、セットプレー貢献。イタリアの1-0は守備構造の勝利です。AIピック：イタリア1-0オランダ。",
+      "narration_en": "SF2 — Italy versus Netherlands. AT&T Stadium, Arlington. 06:00 KST. AI prediction: Italy 1–0 Netherlands. Confidence: 60%. This is among the lowest confidence ratings in the entire series, and the reason is threefold. First: Italy's zero-goals-conceded record across five matches. That is a statistical outlier, not a tactical guarantee — it can end on a single misjudged clearance. Second: Netherlands' dynamism. Dumfries' overlapping runs and De Jong's passing range are instruments designed to probe exactly the kind of low block Italy sets. They showed in the Denmark quarter-final that they manufacture decisive moments under pressure. Third — and this is why AI still picks Italy — Barella. The most consistently complete midfielder in this tournament. Transition, press resistance, set-piece delivery. Italy's 1–0 is a defensive structure win. AI pick: Italy 1–0 Netherlands."
+    },
+    {
+      "id": "s04_pred2",
+      "narration": "이탈리아 대 네덜란드 심층 분석. 포메이션 대결: 이탈리아 4-3-3 수비형 vs 네덜란드 4-3-3 공격형. 이탈리아의 수비 블록은 이 대회 가장 촘촘한 공간 압박을 구현합니다. 네덜란드가 공격할 때 이탈리아의 두 번째 라인 — 바렐라, 베라티, 잔도나토 — 이 세 명이 데 용에게 공간을 주지 않는 것이 핵심입니다. 반면 이탈리아의 공격 루트는 단순합니다. 세트피스와 이모빌레의 클리닝 런. 오늘 경기의 핵심 변수: 네덜란드가 측면에서 크로스를 5개 이상 시도하면 이탈리아의 무실점 기록이 위협받습니다. 그러나 AI의 모델은 이탈리아가 전반 집중력을 유지하며 단 하나의 세트피스 또는 역습으로 1-0을 만드는 시나리오를 61% 확률로 제시합니다. 가장 경계해야 할 변수는 네덜란드의 코너킥 헤더 — 판 다이크가 살아있습니다. AI 파이널 픽: 프랑스 대 이탈리아. 우승 픽: 프랑스.",
+      "narration_ja": "イタリア対オランダ深層分析。フォーメーション対決：イタリア4-3-3守備型vsオランダ4-3-3攻撃型。イタリアの守備ブロックはこの大会で最も密なスペース圧縮を実現しています。オランダが攻撃する際、イタリアの2列目 — バレッラ、ベラッティ、ザンドナート — この3人がデ・ヨングにスペースを与えないことが核心です。一方、イタリアの攻撃ルートはシンプルです。セットプレーとイモービレのクリーニングラン。今日の試合の核心変数：オランダが側面からクロスを5本以上試みればイタリアの無失点記録が脅かされます。しかしAIのモデルはイタリアが前半の集中力を維持して、たった一つのセットプレーまたはカウンターで1-0を作るシナリオを61%の確率で示します。最も警戒すべき変数はオランダのコーナーキックからのヘダー — ファン・ダイクが健在です。AIファイナルピック：フランス対イタリア。優勝ピック：フランス。",
+      "narration_en": "Italy versus Netherlands — deep-structure analysis. Formation battle: Italy's defensive 4-3-3 versus Netherlands' attacking 4-3-3. Italy's block produces the tightest spatial compression in this tournament. When Netherlands attack, the key suppression task falls on Italy's second line — Barella, Verratti, Zandona — denying De Jong any receiving space between the lines. Italy's own attacking routes are deliberately simple: set-piece delivery and Immobile's third-man runs off knockdowns. The critical variable today: if Netherlands generate five or more quality crosses, Italy's clean-sheet record faces genuine pressure. But the AI model returns a 61% scenario where Italy holds concentration through the first forty-five and converts a single set-piece or counter to 1–0. One variable that breaks the model: Van Dijk attacking a corner kick. He is still here. AI projected final: France versus Italy. Tournament winner: France."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘의 AI 총 픽. SF2 이탈리아 1-0 네덜란드, 신뢰도 60%. 어제 SF1 프랑스 2-1 브라질 — AI 정확히 적중, 29경기 중 26경기, 89.7% 신기록. 이탈리아가 오늘 이기면 — AI 예측 결승 대진 프랑스 대 이탈리아 확정. AI 우승 픽은 처음부터 한 번도 흔들리지 않았습니다 — 프랑스. 음바페가 결승 무대에서 이탈리아의 철벽 수비를 어떻게 뚫는가. 이것이 이 시리즈 마지막 예측 과제입니다. 오늘 SF2 결과와 결승 완전 예측은 EP18에서. 누적 정확도 89.7%가 이 대회 끝까지 이어질 수 있을지 — AI의 가장 중요한 도전이 결승에서 시작됩니다. 구독과 알림 설정 부탁드립니다.",
+      "narration_ja": "今日のAI総ピック。SF2イタリア1-0オランダ、信頼度60%。昨日SF1フランス2-1ブラジル — AI完全的中、29試合中26試合、89.7%の新記録。イタリアが今日勝てば — AI予測決勝対戦フランス対イタリア確定。AI優勝ピックは最初から一度もブレていない — フランス。エムバペが決勝の舞台でイタリアの鉄壁守備をどう崩すか。これがこのシリーズ最後の予測課題です。今日SF2の結果と決勝完全予測はEP18で。累計正確度89.7%がこの大会最後まで続けられるか — AIの最も重要な挑戦が決勝で始まります。チャンネル登録と通知設定をお願いします。",
+      "narration_en": "Today's AI summary pick. SF2: Italy 1–0 Netherlands, confidence 60%. Yesterday's SF1 France 2–1 Brazil — AI exact, 26 from 29, 89.7% — a new series record. If Italy win today, the AI-projected final is confirmed: France versus Italy. The tournament winner pick has not wavered once across this entire series — France. The final prediction task is this: how does Mbappé break through the best defensive structure in this World Cup. That is the last question this series needs to answer. SF2 result review and full final prediction in EP18. Whether 89.7% holds through the last match — AI's most important challenge starts in the final. Subscribe and set the notification."
+    }
+  ]
+}
