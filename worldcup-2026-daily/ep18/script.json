@@ -1,0 +1,89 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 18,
+  "date": "2026-07-14",
+  "title_ko": "2026-07-14 결승 완전 예측! 프랑스 vs 이탈리아 — AI 파이널 픽",
+  "title_ja": "2026-07-14 決勝完全予測！フランスvsイタリア — AIファイナルピック",
+  "title_en": "2026-07-14 FINAL Full Prediction! France vs Italy — AI Championship Pick",
+  "korea_match": false,
+  "rest_day": true,
+  "matches_today": [],
+  "upcoming_matches": [
+    {
+      "match_id": "3RD",
+      "team_a": "Netherlands",
+      "team_b": "Brazil",
+      "venue": "SoFi Stadium, Los Angeles",
+      "kickoff_kst": "2026-07-19 04:00",
+      "note": "3rd Place Play-off"
+    },
+    {
+      "match_id": "FINAL",
+      "team_a": "France",
+      "team_b": "Italy",
+      "venue": "MetLife Stadium, East Rutherford",
+      "kickoff_kst": "2026-07-20 04:00",
+      "ai_pred_a": 2,
+      "ai_pred_b": 1,
+      "ai_winner": "France",
+      "confidence": 65,
+      "key_battle": "Mbappé vs Donnarumma"
+    }
+  ],
+  "yesterday_results": [
+    {
+      "match_id": "SF2",
+      "team_a": "Italy",
+      "team_b": "Netherlands",
+      "result_a": 1,
+      "result_b": 0,
+      "ai_pred_a": 1,
+      "ai_pred_b": 0,
+      "ai_correct": true,
+      "key_moment": "Barella 54' (set piece) · Donnarumma saves Van Dijk header 78'"
+    }
+  ],
+  "cumulative_accuracy": {
+    "correct": 27,
+    "total": 30,
+    "pct": 90.0
+  },
+  "final_projection": {
+    "final_match": "France vs Italy",
+    "tournament_winner": "France",
+    "final_score_prediction": "2-1",
+    "confidence": 65
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "2026년 7월 14일. 결승 진출팀이 확정됐습니다. 프랑스 대 이탈리아. AI가 이 시리즈를 시작한 첫 날부터 예측한 결승 대진 그대로입니다. 어제 SF2 — 이탈리아가 네덜란드를 1-0으로 꺾었습니다. AI 예측 스코어 1-0, 정확히 일치. 누적 30경기 중 27경기 적중, 90.0%. 이 시리즈 사상 최초로 90% 장벽을 돌파했습니다. 오늘은 경기가 없습니다. 하지만 이 에피소드가 이 시리즈에서 가장 중요한 이유 — 7월 19일 결승, 프랑스 대 이탈리아. AI의 이번 월드컵 최종 예측. 지금 시작합니다.",
+      "narration_ja": "2026年7月14日。決勝進出チームが確定しました。フランス対イタリア。AIがこのシリーズを始めた初日から予測していた決勝の顔合わせ、その通りです。昨日のSF2 — イタリアがオランダを1-0で下しました。AI予測スコア1-0、完全一致。累計30試合中27試合的中、90.0%。このシリーズ史上初めて90%の壁を突破しました。今日は試合がありません。しかしこのエピソードがこのシリーズで最も重要な理由 — 7月19日決勝、フランス対イタリア。AIの今大会最終予測。今すぐ始まります。",
+      "narration_en": "July 14, 2026. The finalists are confirmed. France against Italy. Exactly the final AI predicted on the first day of this series. Yesterday, SF2 — Italy eliminated the Netherlands 1-0. AI score prediction: 1-0. Exact. Running total: 27 from 30, ninety percent. For the first time in this series, the ninety-percent barrier has been crossed. There are no matches today. But this is the most important episode of the series — July 19th, the Final, France versus Italy. AI's last prediction for this World Cup. Starting now."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "어제 7월 13일, SF2 — 이탈리아 1-0 네덜란드. AI 예측 그대로. 경기는 AI가 61% 확률로 제시한 시나리오를 정확히 따랐습니다. 54분, 바렐라의 세트피스 상황에서 이탈리아가 선제골을 넣었습니다. 네덜란드는 측면 크로스를 7개 시도하며 이탈리아의 무실점 기록을 위협했고, AI가 경고했던 판 다이크의 78분 코너킥 헤더 — 도나룸마의 극적인 선방으로 막혔습니다. 이탈리아는 이 대회 6경기 무실점을 유지했습니다. AI 예측 적중: 30경기 중 27경기, 정확도 90.0% — 이 시리즈 첫 90% 돌파. 결승 진출: 프랑스와 이탈리아.",
+      "narration_ja": "昨日7月13日、SF2 — イタリア1-0オランダ。AI予測通り。試合はAIが61%の確率で示したシナリオを正確にたどりました。54分、バレッラのセットプレーの場面でイタリアが先制ゴールを決めました。オランダは側面クロスを7本試みてイタリアの無失点記録を脅かし、AIが警告していたファン・ダイクの78分コーナーキックのヘダー — ドンナルンマの劇的なセーブで阻みました。イタリアはこの大会6試合無失点を維持しました。AI予測的中：30試合中27試合、正確度90.0% — このシリーズ初の90%突破。決勝進出：フランスとイタリア。",
+      "narration_en": "Yesterday, July 13th. SF2 — Italy 1-0 Netherlands. As AI predicted. The match followed precisely the 61-percent scenario AI had modelled. 54th minute: Barella on a set piece, Italy takes the lead. Netherlands pushed hard, generating seven crossing attempts — the Van Dijk corner header in the 78th minute, flagged by AI as the highest-risk moment, was kept out by a decisive Donnarumma save. Italy's clean-sheet record survives six matches in this tournament. AI correct: 27 from 30, 90.0% — the first time this series has crossed ninety. Finalists: France and Italy."
+    },
+    {
+      "id": "s03_pred1",
+      "narration": "결승전 — 프랑스 대 이탈리아. 7월 19일 04:00 KST. 메트라이프 스타디움, 이스트 러더퍼드. AI 예측: 프랑스 2-1 이탈리아. 신뢰도 65%. 이 대회 최종 예측입니다. AI가 프랑스를 픽하는 이유 세 가지. 첫째, 음바페. 이 대회 5골 2도움. 이탈리아 수비가 아무리 단단해도 개인 능력으로 공간을 창출하는 음바페는 다른 팀에서는 존재하지 않는 변수입니다. 이탈리아의 무실점 기록은 지금까지 음바페와 상대한 적이 없습니다. 둘째, 그리즈만의 역할. 이탈리아의 두 번째 라인 — 바렐라와 베라티 — 이 두 선수에 대한 그리즈만의 압박이 이탈리아의 빌드업을 차단합니다. 셋째, 프랑스의 경험. 2018년 우승, 2022년 결승. 이탈리아는 2006년 이후 결승 경험이 없습니다. AI 결승 픽: 프랑스 2-1 이탈리아.",
+      "narration_ja": "決勝戦 — フランス対イタリア。7月19日04:00 KST。メットライフスタジアム、イーストラザフォード。AI予測：フランス2-1イタリア。信頼度65%。この大会最終予測です。AIがフランスをピックする理由3つ。第一に、エムバペ。この大会5ゴール2アシスト。イタリア守備がどれほど堅くても、個人能力でスペースを創出するエムバペは他のチームには存在しない変数です。イタリアの無失点記録はここまでエムバペと対戦したことがありません。第二に、グリーズマンの役割。イタリアの2列目 — バレッラとベラッティ — この2選手へのグリーズマンのプレスがイタリアのビルドアップを遮断します。第三に、フランスの経験。2018年優勝、2022年決勝。イタリアは2006年以来決勝経験がありません。AI決勝ピック：フランス2-1イタリア。",
+      "narration_en": "The Final — France versus Italy. July 19th, 04:00 KST. MetLife Stadium, East Rutherford. AI prediction: France 2-1 Italy. Confidence: 65%. This is the last prediction of the tournament. Three reasons AI picks France. One: Mbappé. Five goals and two assists in this tournament. No matter how compact Italy's block is, Mbappé creates space through individual ability in a way that no other player in this competition can replicate. Italy's clean-sheet record has never faced him. Two: Griezmann's pressing role. Italy's second line — Barella and Verratti — will be disrupted by Griezmann's aggressive pressing, blocking Italy's ability to build from the back. Three: tournament experience. France won in 2018 and reached the final in 2022. Italy has not been in a World Cup final since 2006. AI Final pick: France 2-1 Italy."
+    },
+    {
+      "id": "s04_pred2",
+      "narration": "결승 심층 분석. 이 경기의 핵심은 단 하나입니다 — 이탈리아의 무실점 기록이 음바페 앞에서 무너지는가. AI 모델이 제시하는 세 가지 시나리오. 시나리오 A, 53% — 음바페가 전반 또는 후반 초반 선제골을 터뜨리고 프랑스가 2-1로 승리. 이탈리아는 동점을 만들지만 프랑스의 두 번째 골에 무너집니다. 시나리오 B, 27% — 이탈리아가 세트피스로 먼저 1-0을 만들고 수비 잠금 전략. 프랑스는 60분 이후 음바페의 개인기로 역전. 결과 2-1 프랑스 — 이 시나리오에서도 AI 픽은 동일합니다. 시나리오 C, 20% — 이탈리아가 이 대회 유일한 무실점 우승팀이 됩니다. 조건: 전반 무득점, 후반 이탈리아 선제, 음바페 부상 또는 무기력화. AI는 이 시나리오를 20%로 낮게 봅니다. 판 다이크와 코바치치는 결승 무대에 없습니다. 이탈리아 측에서 가장 중요한 선수는 도나룸마 — 그가 결승 MVP 후보가 되는 경우는 이탈리아가 이기는 경우뿐입니다. AI 최종 판단: 음바페와 프랑스의 공격 밀도는 이 대회 이탈리아 수비가 처음으로 맞서는 진정한 테스트입니다.",
+      "narration_ja": "決勝深層分析。この試合の核心はただ一つです — イタリアの無失点記録がエムバペの前に崩れるか。AIモデルが示す3つのシナリオ。シナリオA、53% — エムバペが前半または後半序盤に先制ゴールを決めてフランスが2-1で勝利。イタリアは同点にするがフランスの2点目に崩れます。シナリオB、27% — イタリアがセットプレーで先に1-0を作って守備封鎖戦略。フランスは60分以降エムバペの個人技で逆転。結果2-1フランス — このシナリオでもAIピックは同じです。シナリオC、20% — イタリアがこの大会唯一の無失点優勝チームになります。条件：前半無得点、後半イタリア先制、エムバペ負傷または無力化。AIはこのシナリオを20%と低く見ます。決勝の舞台にはファン・ダイクもコバチッチもいません。イタリア側で最も重要な選手はドンナルンマ — 彼が決勝MVPの候補になる場合はイタリアが勝つ場合のみです。AIの最終判断：エムバペとフランスの攻撃密度はこの大会イタリア守備が初めて直面する真のテストです。",
+      "narration_en": "Final deep analysis. There is one question at the heart of this match — does Italy's clean-sheet record survive against Mbappé. AI models three scenarios. Scenario A, 53 percent: Mbappé scores in the first half or early second half, France leads, Italy equalise, France find a second. France win 2-1. Scenario B, 27 percent: Italy score first from a set piece and lock down. France recover through Mbappé's individual quality after the 60th minute. Still France 2-1 — same AI outcome, different route. Scenario C, 20 percent: Italy become the only team in this World Cup to go through the entire tournament without conceding. Requirements: scoreless first half, Italy open the scoring, Mbappé neutralised or injured. AI rates this at 20 percent. Neither Van Dijk nor Kovacic are on this stage anymore. The single most important player on Italy's side is Donnarumma — he only becomes Final MVP if Italy win. AI's ultimate assessment: Mbappé and France's attacking density is the first genuine test this tournament has delivered to Italy's defence."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "이 시리즈의 마지막 AI 픽. 결승전: 프랑스 2-1 이탈리아, 신뢰도 65%. 3위 결정전: 네덜란드 대 브라질, 7월 18일 04:00 KST, 로스앤젤레스 SoFi 스타디움 — 이 경기 AI 예측은 브라질 2-1 네덜란드, 신뢰도 58%. 누적 정확도 90.0% — 30경기 중 27경기 적중. AI의 우승 픽은 이 시리즈 첫 날부터 단 한 번도 바뀐 적이 없습니다. 프랑스. 음바페. 메트라이프 스타디움. 7월 19일. 이 예측이 맞든 틀리든 — 이 시리즈의 AI는 결승까지 89.7%, 90.0%를 유지하며 완주했습니다. 결승 결과 리뷰와 시리즈 최종 정산은 EP19에서. 이 채널을 끝까지 함께해주셔서 감사합니다.",
+      "narration_ja": "このシリーズの最後のAIピック。決勝戦：フランス2-1イタリア、信頼度65%。3位決定戦：オランダ対ブラジル、7月18日04:00 KST、ロサンゼルスSoFiスタジアム — この試合のAI予測はブラジル2-1オランダ、信頼度58%。累計正確度90.0% — 30試合中27試合的中。AIの優勝ピックはこのシリーズ初日から一度も変わっていません。フランス。エムバペ。メットライフスタジアム。7月19日。この予測が合っても外れても — このシリーズのAIは決勝まで89.7%、90.0%を維持して完走しました。決勝結果レビューとシリーズ最終集計はEP19で。このチャンネルを最後まで共にしてくださってありがとうございます。",
+      "narration_en": "The last AI pick of this series. Final: France 2-1 Italy, confidence 65%. Third-place play-off: Netherlands versus Brazil, July 18th, 04:00 KST, SoFi Stadium, Los Angeles — AI prediction Brazil 2-1 Netherlands, confidence 58%. Running accuracy: 90.0% — 27 from 30. The AI tournament winner pick has not changed once since the first episode of this series. France. Mbappé. MetLife Stadium. July 19th. Whether this prediction lands or not — the AI in this series completed the full run at 89.7% through the semi-finals, and 90.0% going into the Final. Final result review and complete series audit in EP19. Thank you for watching until the end."
+    }
+  ]
+}
