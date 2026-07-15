@@ -1,0 +1,97 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 18,
+  "date": "2026-07-15",
+  "title_ko": "2026-07-15 결승 D-4! SF2 이탈리아 1-0 적중 + 결승 완전 예측 [프랑스 vs 이탈리아]",
+  "title_ja": "2026-07-15 決勝D-4！SF2イタリア1-0的中＋決勝完全予測【フランスvsイタリア】",
+  "title_en": "2026-07-15 Final D-4! SF2 Italy 1-0 Confirmed + Full Final Prediction [France vs Italy]",
+  "korea_match": false,
+  "rest_day": true,
+  "matches_today": [],
+  "yesterday_results": [
+    {
+      "match_id": "SF2",
+      "match_date": "2026-07-13",
+      "team_a": "Italy",
+      "team_b": "Netherlands",
+      "result_a": 1,
+      "result_b": 0,
+      "ai_pred_a": 1,
+      "ai_pred_b": 0,
+      "ai_correct": true,
+      "note": "SF2 결과 확인 (2026-07-13)"
+    }
+  ],
+  "upcoming_matches": [
+    {
+      "match_id": "3RD",
+      "date": "2026-07-18",
+      "team_a": "Brazil",
+      "team_b": "Netherlands",
+      "venue": "Levi's Stadium, Santa Clara",
+      "kickoff_kst": "06:00",
+      "ai_pred_a": 2,
+      "ai_pred_b": 1,
+      "ai_winner": "Brazil",
+      "confidence": 65,
+      "key_battle": "Vinícius Jr vs Dumfries"
+    },
+    {
+      "match_id": "FINAL",
+      "date": "2026-07-19",
+      "team_a": "France",
+      "team_b": "Italy",
+      "venue": "MetLife Stadium, East Rutherford",
+      "kickoff_kst": "09:00",
+      "ai_pred_a": 2,
+      "ai_pred_b": 1,
+      "ai_winner": "France",
+      "confidence": 58,
+      "key_battle": "Mbappé vs Di Lorenzo",
+      "scenario": "Mbappé 65' → Barella 78' equaliser → France winner 103' AET",
+      "historical_ref": "Euro 2000 Final: France 2-1 Italy (golden goal)"
+    }
+  ],
+  "cumulative_accuracy": {
+    "correct": 27,
+    "total": 30,
+    "pct": 90.0
+  },
+  "final_projection": {
+    "final_match": "France vs Italy",
+    "tournament_winner": "France",
+    "champion_pick_since": "EP01"
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "2026년 7월 15일. 결승 4일 전. 이탈리아가 네덜란드를 1-0으로 꺾었습니다 — AI 예측 정확히 일치. 30경기 중 27경기 적중, 누적 정확도 90.0%. 대회 시작 첫날부터 한 번도 바뀌지 않았던 이 예측 — 프랑스 대 이탈리아. 그 결승이 4일 후 열립니다. 오늘 EP18은 이 시리즈의 가장 중요한 예측을 담습니다. SF2 완전 분석, 3위 결정전 예측, 그리고 결승 완전 분석과 우승팀 최종 선언. 클라이맥스, 시작합니다.",
+      "narration_ja": "2026年7月15日。決勝4日前。イタリアがオランダを1-0で下しました — AI予測完全一致。30試合中27試合的中、累計正確度90.0%。大会開幕初日から一度も変わらなかったこの予測 — フランス対イタリア。その決勝が4日後に開催されます。今日EP18はこのシリーズで最も重要な予測を収録します。SF2完全分析、3位決定戦予測、そして決勝完全分析と優勝チーム最終宣言。クライマックス、始まります。",
+      "narration_en": "July 15, 2026. Four days to the Final. Italy eliminated the Netherlands 1–0 — exactly as AI predicted. 27 from 30. 90.0% running accuracy. The prediction that has not changed since Episode 1 — France versus Italy — will be decided in four days. Today, EP18 delivers the most important analysis of this series: SF2 full debrief, 3rd-place prediction, and the complete Final forecast with a tournament-winner declaration. The climax begins now."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "7월 13일, SF2 — 이탈리아 1-0 네덜란드. AI 예측 스코어와 완전 일치. 경기는 예측 시나리오 그대로 전개됐습니다. 바렐라가 데 용을 완벽히 봉쇄했고, 이모빌레가 33분 세트피스 선제골을 터뜨렸습니다. AI가 가장 위험한 변수로 꼽았던 판 다이크의 코너킥 헤더는 두 차례 시도됐지만 모두 불발. 이탈리아 — 대회 전 6경기 무실점. 그 철벽 기록이 계속됩니다. 누적 27경기 적중, 3경기 오차, 정확도 90.0%. 시리즈 신기록. 이제 남은 경기 두 개 — 7월 18일 3위 결정전과 7월 19일 결승.",
+      "narration_ja": "7月13日、SF2 — イタリア1-0オランダ。AI予測スコアと完全一致。試合は予測シナリオ通りに展開しました。バレッラがデ・ヨングを完璧に封鎖し、イモービレが33分のセットプレーで先制ゴールを決めました。AIが最も危険な変数として挙げたファン・ダイクのコーナーキックからのヘダーは2度試みられましたが不発。イタリア — 大会全6試合無失点。その鉄壁記録が続きます。累計27試合的中、3試合誤差、正確度90.0%。シリーズ最高記録。残る試合は2つ — 7月18日3位決定戦と7月19日決勝。",
+      "narration_en": "July 13th. SF2 — Italy 1–0 Netherlands. AI score prediction: exact match. The match unfolded precisely as calculated: Barella suffocated De Jong across the full ninety minutes, Immobile converted a 33rd-minute set-piece for the only goal. Van Dijk's corner-kick headers — the biggest variable AI had flagged at 60% confidence — came twice and went nowhere. Italy: six matches, zero goals conceded. The record holds. Running total: 27 correct, 3 wrong, 90.0% — a new series high. Two matches remain: 3rd place on July 18th and the Final on July 19th."
+    },
+    {
+      "id": "s03_pred1",
+      "narration": "3위 결정전 — 7월 18일, 리바이스 스타디움, 산타클라라. 브라질 vs 네덜란드. AI 예측: 브라질 2-1 네덜란드. 신뢰도 65%. 브라질의 비니시우스는 프랑스전 패배 이후 분노합니다. 3위 결정전은 그에게 이 대회 최고 선수 논쟁에서 마지막 발언권입니다. 반면 네덜란드는 SF2 이탈리아전에서 소진 상태. 판 다이크와 데 용의 주력 선수들은 체력 한계에 달했습니다. 브라질의 공격 삼각형 — 비니시우스, 호드리고, 파케타 — 이것이 소진된 네덜란드 미드필드를 관통합니다. AI 픽: 브라질 2-1 네덜란드.",
+      "narration_ja": "3位決定戦 — 7月18日、リーバイスタジアム、サンタクララ。ブラジル対オランダ。AI予測：ブラジル2-1オランダ。信頼度65%。ブラジルのヴィニシウスはフランス戦敗北後に怒りを抱えています。3位決定戦は彼にとってこの大会最優秀選手議論での最後の発言権です。一方オランダはSF2イタリア戦で消耗状態。ファン・ダイクとデ・ヨングら主力選手は体力的に限界に達しています。ブラジルの攻撃トライアングル — ヴィニシウス、ホジリゴ、パケタ — これが消耗したオランダのミッドフィールドを貫きます。AIピック：ブラジル2-1オランダ。",
+      "narration_en": "Third-place match — July 18th, Levi's Stadium, Santa Clara. Brazil versus Netherlands. AI prediction: Brazil 2–1 Netherlands. Confidence: 65%. Vinícius Jr carries the fury of a semi-final defeat into this fixture. For him, the third-place match is the final statement in the tournament's best-player debate. Netherlands, by contrast, are physically spent after SF2. Van Dijk and De Jong are at or beyond their reserve capacity. Brazil's attacking triangle — Vinícius, Rodrygo, Paquetá — cuts through a depleted Dutch midfield. AI pick: Brazil 2–1 Netherlands."
+    },
+    {
+      "id": "s04_pred2",
+      "narration": "결승 완전 예측. 7월 19일, 메트라이프 스타디움, 이스트 러더포드, 뉴저지. 프랑스 vs 이탈리아. 09:00 KST. AI 예측: 프랑스 2-1 이탈리아. 신뢰도 58%. 이것은 이 시리즈에서 가장 낮은 신뢰도, 그리고 가장 중요한 예측입니다. 이탈리아의 6경기 무실점은 결승의 핵심 변수. 그 철벽을 깰 수 있는 선수는 단 한 명 — 음바페. 대회 8골, 결정적 순간마다 나타나는 플레이어. AI 시나리오: 음바페 65분 선제골, 이탈리아 바렐라 78분 동점, 음바페 또는 그리즈만 연장전 결승골. 역사적 참고: 2000년 유로 결승 프랑스 대 이탈리아 — 프랑스가 황금골로 2-1. AI 픽: 프랑스 2-1 이탈리아. EP1부터 한 번도 바뀌지 않은 우승 픽 — 프랑스.",
+      "narration_ja": "決勝完全予測。7月19日、メットライフスタジアム、イーストラザーフォード、ニュージャージー。フランス対イタリア。09:00 KST。AI予測：フランス2-1イタリア。信頼度58%。これはこのシリーズで最も低い信頼度、そして最も重要な予測です。イタリアの6試合無失点は決勝の核心変数。その鉄壁を破れる選手はただ一人 — エムバペ。大会8ゴール、決定的な瞬間ごとに現れるプレイヤー。AIシナリオ：エムバペ65分先制、イタリア・バレッラ78分同点、エムバペまたはグリーズマン延長戦決勝ゴール。歴史的参考：2000年欧州選手権決勝フランス対イタリア — フランスがゴールデンゴールで2-1。AIピック：フランス2-1イタリア。EP1から一度も変わらない優勝ピック — フランス。",
+      "narration_en": "Full Final prediction. July 19th, MetLife Stadium, East Rutherford, New Jersey. France versus Italy. 09:00 KST. AI prediction: France 2–1 Italy. Confidence: 58%. This is the lowest confidence rating in this series and the most important prediction in it. Italy's six-match clean sheet is the defining variable of this Final. One player can break it — Mbappé. Eight goals in this tournament; shows up in the decisive moments. AI scenario: Mbappé scores at 65 minutes, Barella equalises at 78, Mbappé or Griezmann wins it in extra time at 103. Historical reference: Euro 2000 Final, France versus Italy — France won 2–1 with a golden goal. AI pick: France 2–1 Italy. The tournament winner pick that has not changed since Episode 1 — France."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘 AI 총 픽. 3위 결정전(7월 18일): 브라질 2-1 네덜란드, 신뢰도 65%. 결승(7월 19일): 프랑스 2-1 이탈리아, 신뢰도 58%. 대회 챔피언: 프랑스. 음바페. EP1부터 한 번도 흔들리지 않은 예측. 현재 누적 적중 27/30, 정확도 90.0%. 7월 18일 3위 결정전 결과 확인과 7월 19일 결승 라이브 결과 리뷰, 그리고 이 시리즈 최종 정확도 집계는 EP19에서. 구독과 알림 설정 부탁드립니다.",
+      "narration_ja": "今日のAI総ピック。3位決定戦（7月18日）：ブラジル2-1オランダ、信頼度65%。決勝（7月19日）：フランス2-1イタリア、信頼度58%。大会チャンピオン：フランス。エムバペ。EP1から一度もブレなかった予測。現在累計的中27/30、正確度90.0%。7月18日3位決定戦結果確認と7月19日決勝ライブ結果レビュー、そしてこのシリーズ最終正確度集計はEP19で。チャンネル登録と通知設定をお願いします。",
+      "narration_en": "Today's AI summary picks. Third place, July 18th: Brazil 2–1 Netherlands, confidence 65%. Final, July 19th: France 2–1 Italy, confidence 58%. Tournament champion: France. Mbappé. The prediction that has not wavered once since Episode 1. Running total: 27 from 30, 90.0%. July 18th third-place result review, July 19th Final live result analysis, and this series' final accuracy tally — all in EP19. Subscribe and set the notification."
+    }
+  ]
+}
