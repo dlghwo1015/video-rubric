@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>2026-07-16 결승 D-3! 프랑스 vs 이탈리아 전술 완전 해부 — EP19 | 데일리 월드컵</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #080c18;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulseGold {
+    0%, 100% { text-shadow: 0 0 40px rgba(201,162,39,0.5); }
+    50%       { text-shadow: 0 0 100px rgba(201,162,39,1); }
+  }
+  @keyframes pulseBlue {
+    0%, 100% { text-shadow: 0 0 40px rgba(59,130,246,0.5); }
+    50%       { text-shadow: 0 0 90px rgba(59,130,246,1); }
+  }
+  @keyframes pulseGreen {
+    0%, 100% { text-shadow: 0 0 40px rgba(79,200,122,0.5); }
+    50%       { text-shadow: 0 0 90px rgba(79,200,122,1); }
+  }
+  @keyframes pulseRed {
+    0%, 100% { text-shadow: 0 0 30px rgba(251,113,133,0.4); }
+    50%       { text-shadow: 0 0 80px rgba(251,113,133,0.9); }
+  }
+  @keyframes glowGold {
+    0%, 100% { box-shadow: 0 0 30px rgba(201,162,39,0.3); }
+    50%       { box-shadow: 0 0 90px rgba(201,162,39,0.7); }
+  }
+  @keyframes glowBlue {
+    0%, 100% { box-shadow: 0 0 24px rgba(59,130,246,0.25); }
+    50%       { box-shadow: 0 0 70px rgba(59,130,246,0.65); }
+  }
+  @keyframes glowGreen {
+    0%, 100% { box-shadow: 0 0 20px rgba(79,200,122,0.2); }
+    50%       { box-shadow: 0 0 60px rgba(79,200,122,0.65); }
+  }
+  @keyframes glowRed {
+    0%, 100% { box-shadow: 0 0 20px rgba(251,113,133,0.2); }
+    50%       { box-shadow: 0 0 60px rgba(251,113,133,0.55); }
+  }
+
+  .ep-label {
+    position: absolute;
+    top: 36px; left: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(255,255,255,0.28);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .slide-num {
+    position: absolute;
+    top: 36px; right: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(255,255,255,0.28);
+    letter-spacing: 0.1em;
+  }
+  .ai-badge {
+    position: absolute;
+    bottom: 42px; right: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    color: rgba(100,200,255,0.55);
+    letter-spacing: 0.12em;
+  }
+
+  /* ════ S01 HOOK ════ */
+  #slide-1 {
+    background:
+      radial-gradient(ellipse 160% 110% at 50% 140%, rgba(201,162,39,0.12) 0%, transparent 55%),
+      radial-gradient(ellipse 65% 50% at 10% 10%, rgba(0,60,200,0.07) 0%, transparent 45%),
+      radial-gradient(ellipse 65% 50% at 90% 10%, rgba(200,60,40,0.07) 0%, transparent 45%),
+      #080c18;
+  }
+  .hook-date-chip {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 26px;
+    color: rgba(201,162,39,0.9);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .hook-stage-chip {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .hook-title {
+    font-size: 88px;
+    font-weight: 900;
+    color: #f0ede4;
+    text-align: center;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 30px;
+    animation: pulseGold 3.5s ease-in-out infinite;
+  }
+  .hook-title .acc-gold { color: #c9a227; }
+  .hook-title .acc-blue { color: #60a5fa; animation: pulseBlue 3s ease-in-out infinite; }
+
+  .final-strip {
+    display: flex;
+    align-items: center;
+    background: rgba(201,162,39,0.06);
+    border: 2px solid rgba(201,162,39,0.5);
+    border-radius: 28px;
+    padding: 26px 72px;
+    animation: glowGold 4s ease-in-out infinite;
+    gap: 0;
+  }
+  .final-strip .team-bloc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    min-width: 300px;
+  }
+  .final-strip .team-flag { font-size: 72px; line-height: 1; }
+  .final-strip .team-name { font-size: 40px; font-weight: 700; color: #f0ede4; }
+  .final-strip .vs-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 0 52px;
+  }
+  .final-strip .vs-text {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 48px;
+    font-weight: 600;
+    color: rgba(201,162,39,0.9);
+    animation: pulseGold 3.5s ease-in-out infinite;
+  }
+  .final-strip .final-meta {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    color: rgba(240,237,228,0.4);
+    letter-spacing: 0.08em;
+    text-align: center;
+    line-height: 1.7;
+  }
+
+  /* ════ S02 JOURNEY ════ */
+  #slide-2 {
+    background:
+      radial-gradient(ellipse 130% 80% at 50% 120%, rgba(201,162,39,0.08) 0%, transparent 55%),
+      radial-gradient(ellipse 50% 40% at 5% 5%, rgba(79,200,122,0.05) 0%, transparent 40%),
+      #08080f;
+    padding: 0 100px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .journey-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(201,162,39,0.85);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .journey-title {
+    font-size: 54px;
+    font-weight: 700;
+    color: #f0ede4;
+    margin-bottom: 26px;
+    line-height: 1.1;
+  }
+  .journey-title .acc { color: #c9a227; }
+  .journey-stats-row {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 26px;
+  }
+  .jstat {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 18px;
+    padding: 20px 44px;
+    text-align: center;
+    flex: 1;
+  }
+  .jstat .jnum {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 56px;
+    font-weight: 600;
+    color: #4fc87a;
+    line-height: 1;
+  }
+  .jstat.gold .jnum { color: #c9a227; animation: pulseGold 3s ease-in-out infinite; }
+  .jstat.blue .jnum { color: #60a5fa; }
+  .jstat .jlbl { font-size: 18px; color: rgba(240,237,228,0.45); margin-top: 8px; }
+  .journey-timeline {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 16px;
+    width: 100%;
+    max-width: 1700px;
+    margin-bottom: 22px;
+  }
+  .jtl-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 16px 20px;
+  }
+  .jtl-card .jtl-ep {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px;
+    color: rgba(201,162,39,0.6);
+    letter-spacing: 0.12em;
+    margin-bottom: 6px;
+  }
+  .jtl-card .jtl-text { font-size: 19px; color: rgba(240,237,228,0.7); line-height: 1.5; }
+  .jtl-card .jtl-text .hl { color: #c9a227; font-weight: 600; }
+  .jtl-card .jtl-text .grn { color: #4fc87a; font-weight: 600; }
+  .jtl-card .jtl-text .bl { color: #60a5fa; font-weight: 600; }
+  .journey-banner {
+    background: rgba(201,162,39,0.07);
+    border: 1px solid rgba(201,162,39,0.35);
+    border-radius: 16px;
+    padding: 16px 32px;
+    width: 100%;
+    max-width: 1700px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    animation: glowGold 5s ease-in-out infinite;
+  }
+  .journey-banner .jb-icon { font-size: 38px; flex-shrink: 0; }
+  .journey-banner .jb-text { font-size: 24px; color: rgba(240,237,228,0.7); flex: 1; }
+  .journey-banner .jb-text .hl { color: #c9a227; font-weight: 700; }
+  .journey-banner .jb-ep1 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(201,162,39,0.8);
+    letter-spacing: 0.08em;
+    border: 1px solid rgba(201,162,39,0.35);
+    border-radius: 10px;
+    padding: 8px 20px;
+  }
+
+  /* ════ S03 FRANCE TACTICS ════ */
+  #slide-3 {
+    background:
+      radial-gradient(ellipse 130% 85% at 50% 120%, rgba(0,60,200,0.07) 0%, transparent 55%),
+      radial-gradient(ellipse 55% 40% at 5% 5%, rgba(0,80,200,0.05) 0%, transparent 40%),
+      #060a10;
+    padding: 0 80px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .tactic-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(96,165,250,0.85);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .tactic-title {
+    font-size: 58px;
+    font-weight: 900;
+    color: #f0ede4;
+    margin-bottom: 22px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .tactic-title .acc { color: #60a5fa; animation: pulseBlue 3s ease-in-out infinite; }
+  .formation-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(59,130,246,0.07);
+    border: 1px solid rgba(59,130,246,0.4);
+    border-radius: 14px;
+    padding: 10px 28px;
+    margin-bottom: 20px;
+  }
+  .formation-badge .fb-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    color: rgba(96,165,250,0.7);
+    letter-spacing: 0.1em;
+  }
+  .formation-badge .fb-form {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 28px;
+    font-weight: 600;
+    color: #60a5fa;
+  }
+  .tactic-flow {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 22px;
+    width: 100%;
+    max-width: 1720px;
+  }
+  .flow-step {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 14px 22px;
+    text-align: center;
+    flex: 1;
+  }
+  .flow-step .fs-num {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px;
+    color: rgba(96,165,250,0.6);
+    letter-spacing: 0.12em;
+    margin-bottom: 6px;
+  }
+  .flow-step .fs-text { font-size: 20px; color: rgba(240,237,228,0.75); line-height: 1.45; }
+  .flow-step .fs-text .hl { color: #60a5fa; font-weight: 600; }
+  .flow-arrow {
+    font-size: 30px;
+    color: rgba(96,165,250,0.4);
+    flex-shrink: 0;
+  }
+  .tactic-analysis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    width: 100%;
+    max-width: 1720px;
+    margin-bottom: 20px;
+  }
+  .tac-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 18px 24px;
+  }
+  .tac-card .tc-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px;
+    color: rgba(96,165,250,0.65);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .tac-card .tc-text { font-size: 20px; color: rgba(240,237,228,0.75); line-height: 1.55; }
+  .tac-card .tc-text .hl  { color: #60a5fa; font-weight: 600; }
+  .tac-card .tc-text .hl2 { color: #c9a227; font-weight: 600; }
+  .tac-card .tc-text .warn { color: #fb7185; }
+  .tac-card .tc-text .grn  { color: #4fc87a; font-weight: 600; }
+  .mbappe-prob {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background: rgba(201,162,39,0.06);
+    border: 1px solid rgba(201,162,39,0.35);
+    border-radius: 14px;
+    padding: 14px 28px;
+    width: 100%;
+    max-width: 1720px;
+    animation: glowGold 4s ease-in-out infinite;
+  }
+  .mbappe-prob .mp-label { font-size: 22px; color: rgba(240,237,228,0.65); flex: 1; }
+  .mbappe-prob .mp-label .hl { color: #c9a227; font-weight: 700; }
+  .mbappe-prob .mp-pct {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 52px;
+    font-weight: 600;
+    color: #c9a227;
+    animation: pulseGold 3s ease-in-out infinite;
+  }
+  .mbappe-prob .mp-lbl { font-size: 16px; color: rgba(240,237,228,0.4); }
+
+  /* ════ S04 ITALY UPSET ════ */
+  #slide-4 {
+    background:
+      radial-gradient(ellipse 130% 85% at 50% 120%, rgba(251,113,133,0.06) 0%, transparent 55%),
+      radial-gradient(ellipse 55% 40% at 5% 5%, rgba(200,40,40,0.05) 0%, transparent 40%),
+      radial-gradient(ellipse 55% 40% at 95% 5%, rgba(0,60,200,0.05) 0%, transparent 40%),
+      #060810;
+    padding: 0 80px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .upset-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(251,113,133,0.85);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .upset-title {
+    font-size: 58px;
+    font-weight: 900;
+    color: #f0ede4;
+    margin-bottom: 22px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .upset-title .acc { color: #fb7185; animation: pulseRed 3s ease-in-out infinite; }
+  .conditions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    width: 100%;
+    max-width: 1720px;
+    margin-bottom: 22px;
+  }
+  .cond-card {
+    background: rgba(251,113,133,0.04);
+    border: 1px solid rgba(251,113,133,0.25);
+    border-radius: 16px;
+    padding: 20px 24px;
+    animation: glowRed 5s ease-in-out infinite;
+  }
+  .cond-card .cc-num {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px;
+    color: rgba(251,113,133,0.7);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .cond-card .cc-text { font-size: 21px; color: rgba(240,237,228,0.78); line-height: 1.55; }
+  .cond-card .cc-text .hl  { color: #fb7185; font-weight: 600; }
+  .cond-card .cc-text .hl2 { color: #c9a227; font-weight: 600; }
+  .cond-card .cc-text .grn  { color: #4fc87a; font-weight: 600; }
+  .cond-card .cc-text .bl  { color: #60a5fa; font-weight: 600; }
+  .prob-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 1720px;
+    margin-bottom: 18px;
+  }
+  .prob-bar-row .pb-label { font-size: 22px; color: rgba(240,237,228,0.55); width: 420px; flex-shrink: 0; }
+  .prob-bar-row .pb-label .warn { color: #fb7185; font-weight: 600; }
+  .prob-bar {
+    height: 12px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 6px;
+    flex: 1;
+    overflow: hidden;
+  }
+  .prob-bar .fill-red  { height: 100%; border-radius: 6px; background: linear-gradient(90deg, #b02040, #fb7185); }
+  .prob-bar .fill-blue { height: 100%; border-radius: 6px; background: linear-gradient(90deg, #2050b0, #60a5fa); }
+  .prob-bar-row .pb-pct {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 36px;
+    font-weight: 600;
+    color: #fb7185;
+    width: 100px;
+    text-align: right;
+  }
+  .italy-history {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 16px 28px;
+    width: 100%;
+    max-width: 1720px;
+    font-size: 22px;
+    color: rgba(240,237,228,0.6);
+    line-height: 1.6;
+  }
+  .italy-history .hl  { color: #c9a227; font-weight: 600; }
+  .italy-history .warn { color: #fb7185; font-weight: 600; }
+  .italy-history .grn  { color: #4fc87a; font-weight: 600; }
+
+  /* ════ S05 VERDICT ════ */
+  #slide-5 {
+    background:
+      radial-gradient(ellipse 160% 120% at 50% 140%, rgba(201,162,39,0.13) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 40% at 10% 10%, rgba(0,50,200,0.06) 0%, transparent 40%),
+      radial-gradient(ellipse 55% 35% at 90% 10%, rgba(200,40,40,0.05) 0%, transparent 40%),
+      #080c18;
+    padding: 0 80px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .verdict-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    color: rgba(201,162,39,0.8);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .verdict-title {
+    font-size: 60px;
+    font-weight: 900;
+    color: #f0ede4;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 22px;
+    animation: pulseGold 3s ease-in-out infinite;
+  }
+  .verdict-title .pick-gold { color: #c9a227; }
+  .picks-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 40px;
+    width: 100%;
+    max-width: 1720px;
+    margin-bottom: 22px;
+  }
+  .pick-card {
+    background: rgba(100,160,255,0.05);
+    border: 1px solid rgba(100,160,255,0.3);
+    border-radius: 18px;
+    padding: 18px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    animation: glowBlue 4s ease-in-out infinite;
+  }
+  .pick-card .pc-id {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    color: rgba(100,160,255,0.7);
+    letter-spacing: 0.12em;
+  }
+  .pick-card .pc-match { font-size: 28px; font-weight: 600; color: #f0ede4; }
+  .pick-card .pc-match .vs { color: rgba(255,255,255,0.3); margin: 0 8px; }
+  .pick-card .pc-score {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 46px;
+    font-weight: 600;
+    color: #60a5fa;
+    animation: pulseBlue 3s ease-in-out infinite;
+  }
+  .pick-card .pc-conf {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 15px;
+    color: rgba(240,237,228,0.35);
+    letter-spacing: 0.08em;
+  }
+  .pick-card.final-card {
+    background: rgba(201,162,39,0.06);
+    border-color: rgba(201,162,39,0.4);
+    animation: glowGold 4s ease-in-out infinite;
+  }
+  .pick-card.final-card .pc-id { color: rgba(201,162,39,0.7); }
+  .pick-card.final-card .pc-score { color: #c9a227; animation: pulseGold 3s ease-in-out infinite; }
+  .verdict-footer {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    width: 100%;
+    max-width: 1720px;
+  }
+  .acc-chip-v {
+    background: rgba(79,200,122,0.08);
+    border: 1px solid rgba(79,200,122,0.3);
+    border-radius: 14px;
+    padding: 12px 30px;
+    text-align: center;
+  }
+  .acc-chip-v .num { font-size: 44px; font-weight: 900; color: #4fc87a; font-family: 'Roboto Mono', monospace; }
+  .acc-chip-v .lbl { font-size: 16px; color: rgba(240,237,228,0.45); margin-top: 2px; }
+  .verdict-footer .champion-line {
+    font-size: 26px;
+    color: rgba(240,237,228,0.6);
+    flex: 1;
+    line-height: 1.6;
+  }
+  .verdict-footer .champion-line .hl { color: #c9a227; font-weight: 700; }
+  .verdict-footer .champion-line .bl { color: #60a5fa; font-weight: 700; }
+  .next-ep-badge {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(201,162,39,0.75);
+    letter-spacing: 0.08em;
+    border: 1px solid rgba(201,162,39,0.3);
+    border-radius: 12px;
+    padding: 10px 24px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ════ SLIDE 1 · HOOK ════ -->
+<div class="slide active" id="slide-1">
+  <div class="ep-label">EP·19 · WORLDCUP-2026-DAILY</div>
+  <div class="slide-num">01 / 05</div>
+  <div class="ai-badge">CLAUDE AI</div>
+
+  <div class="hook-date-chip">2026 · 07 · 16 · KST</div>
+  <div class="hook-stage-chip">FINAL · D-3 · REST DAY · 전술 해부</div>
+
+  <div class="hook-title">
+    <span class="acc-gold">결승 D-3!</span> 프랑스 vs 이탈리아<br>
+    <span class="acc-blue">AI 전술 완전 해부</span>
+  </div>
+
+  <div class="final-strip">
+    <div class="team-bloc">
+      <div class="team-flag">🇫🇷</div>
+      <div class="team-name">프랑스</div>
+    </div>
+    <div class="vs-block">
+      <div class="vs-text">FINAL</div>
+      <div class="final-meta">결승 · 07 · 19 · 09:00 KST<br>MetLife Stadium · E. Rutherford<br>음바페 vs 디 로렌초</div>
+    </div>
+    <div class="team-bloc">
+      <div class="team-flag">🇮🇹</div>
+      <div class="team-name">이탈리아</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ SLIDE 2 · AI JOURNEY ════ -->
+<div class="slide" id="slide-2">
+  <div class="ep-label">EP·19 · WORLDCUP-2026-DAILY</div>
+  <div class="slide-num">02 / 05</div>
+  <div class="ai-badge">CLAUDE AI</div>
+
+  <div class="journey-label">AI 시리즈 여정 — EP1 → EP19 · 30경기의 기록</div>
+  <div class="journey-title">27/30 적중 · 90.0% · <span class="acc">EP1부터 한 번도 바뀌지 않은 예측</span></div>
+
+  <div class="journey-stats-row">
+    <div class="jstat">
+      <div class="jnum">30</div>
+      <div class="jlbl">총 예측 경기</div>
+    </div>
+    <div class="jstat">
+      <div class="jnum">27</div>
+      <div class="jlbl">적중</div>
+    </div>
+    <div class="jstat gold">
+      <div class="jnum">90.0%</div>
+      <div class="jlbl">시리즈 정확도 최고</div>
+    </div>
+    <div class="jstat blue">
+      <div class="jnum">8</div>
+      <div class="jlbl">음바페 대회 골</div>
+    </div>
+    <div class="jstat">
+      <div class="jnum">6</div>
+      <div class="jlbl">이탈리아 무실점 경기</div>
+    </div>
+  </div>
+
+  <div class="journey-timeline">
+    <div class="jtl-card">
+      <div class="jtl-ep">EP01 · 조별 예선 개막</div>
+      <div class="jtl-text">AI 선언: <span class="hl">결승 = 프랑스 vs 이탈리아</span>. 우승 픽: <span class="grn">프랑스</span>. 이 예측 이후 한 번도 변경 없음.</div>
+    </div>
+    <div class="jtl-card">
+      <div class="jtl-ep">EP09 · 16강 → 8강</div>
+      <div class="jtl-text">이탈리아 <span class="hl">무실점 수비</span> 기록 확인. 음바페 <span class="bl">6골</span> 돌파. 결승 대진 유력 → 확정 접근.</div>
+    </div>
+    <div class="jtl-card">
+      <div class="jtl-ep">EP16·17 · 준결승</div>
+      <div class="jtl-text">SF1 프랑스 <span class="grn">2-1 브라질 적중</span>. SF2 이탈리아 <span class="grn">1-0 네덜란드 적중</span>. EP1 예측 결승 대진 현실화.</div>
+    </div>
+    <div class="jtl-card">
+      <div class="jtl-ep">EP18·19 · 결승 D-4·D-3</div>
+      <div class="jtl-text">AI 픽 유지: <span class="hl">프랑스 2-1 이탈리아</span>. 신뢰도 58%. 이탈리아 역전 확률 <span class="hl">34%</span>.</div>
+    </div>
+  </div>
+
+  <div class="journey-banner">
+    <div class="jb-icon">🏆</div>
+    <div class="jb-text">EP1에서 선언한 결승 대진이 <span class="hl">현실</span>이 됐습니다 — 이제 <span class="hl">우승팀 선언</span>이 검증될 차례입니다.</div>
+    <div class="jb-ep1">EP1 픽: 🇫🇷 프랑스</div>
+  </div>
+</div>
+
+<!-- ════ SLIDE 3 · FRANCE TACTICS ════ -->
+<div class="slide" id="slide-3">
+  <div class="ep-label">EP·19 · WORLDCUP-2026-DAILY</div>
+  <div class="slide-num">03 / 05</div>
+  <div class="ai-badge">CLAUDE AI</div>
+
+  <div class="tactic-label">프랑스 전술 분석 · 4-2-3-1 · 음바페를 위한 공간 창출</div>
+  <div class="tactic-title">🇫🇷 프랑스 공격 메커니즘 — <span class="acc">음바페 55% 선제골</span></div>
+
+  <div class="formation-badge">
+    <span class="fb-label">프랑스 포메이션</span>
+    <span class="fb-form">4 · 2 · 3 · 1</span>
+    <span class="fb-label" style="margin-left:20px;">이탈리아 대응</span>
+    <span class="fb-form" style="color:#fb7185;">4 · 3 · 3 수비형</span>
+  </div>
+
+  <div class="tactic-flow">
+    <div class="flow-step">
+      <div class="fs-num">STEP 1</div>
+      <div class="fs-text"><span class="hl">그리즈만</span> 10번 포지션 → 이탈리아 미드필더 끌어당김</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <div class="fs-num">STEP 2</div>
+      <div class="fs-text"><span class="hl">테오 에르난데스</span> 왼쪽 오버랩 → 디 로렌초 끌어냄</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <div class="fs-num">STEP 3</div>
+      <div class="fs-text">왼쪽 채널 공간 오픈 → <span class="hl">음바페 침투</span></div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <div class="fs-num">결과</div>
+      <div class="fs-text">발동 빈도 경기당 <span class="hl">평균 8회</span> — 단 1회가 골로 연결</div>
+    </div>
+  </div>
+
+  <div class="tactic-analysis-grid">
+    <div class="tac-card">
+      <div class="tc-label">이탈리아 대응 수단</div>
+      <div class="tc-text"><span class="hl">바렐라</span>가 그리즈만 연결 차단 시도. <span class="hl">디 로렌초</span> 테오 에르난데스 1:1 방어. 이 대회 두 선수 모두 높은 수행. <span class="warn">하지만 음바페 봉쇄 선수는 없었다.</span></div>
+    </div>
+    <div class="tac-card">
+      <div class="tc-label">음바페 대회 기록</div>
+      <div class="tc-text">대회 <span class="hl">8골</span> — 골든부트 독주. 결정적 순간 발동률: SF1 2-1 결승골 어시스트 포함. <span class="hl2">단 한 번의 기회</span>로 결승 분위기 바꾸는 플레이어.</div>
+    </div>
+    <div class="tac-card">
+      <div class="tc-label">그리즈만의 역할</div>
+      <div class="tc-text">메시 스타일 자유 배회로 이탈리아 블록 혼란. <span class="hl">카마빙가</span>와의 박스투박스 연계가 핵심. 이탈리아가 그리즈만을 막으면 <span class="grn">음바페 공간이 열린다.</span></div>
+    </div>
+  </div>
+
+  <div class="mbappe-prob">
+    <span class="mp-label">AI 확률: <span class="hl">음바페 선제골</span> — 이 대회 8골의 플레이어가 결승 최초 득점자</span>
+    <div>
+      <div class="mp-pct">55%</div>
+      <div class="mp-lbl" style="text-align:center;">신뢰도</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ SLIDE 4 · ITALY UPSET SCENARIO ════ -->
+<div class="slide" id="slide-4">
+  <div class="ep-label">EP·19 · WORLDCUP-2026-DAILY</div>
+  <div class="slide-num">04 / 05</div>
+  <div class="ai-badge">CLAUDE AI</div>
+
+  <div class="upset-label">이탈리아 역전 시나리오 — AI 계산 · 세 가지 조건</div>
+  <div class="upset-title">🇮🇹 이탈리아가 이기는 법 — <span class="acc">역전 확률 34%</span></div>
+
+  <div class="conditions-grid">
+    <div class="cond-card">
+      <div class="cc-num">조건 1</div>
+      <div class="cc-text"><span class="hl">무실점 7번째 경기</span> 달성. 이탈리아가 실점하지 않으면 프랑스는 연장전에 들어갑니다. 이탈리아의 체력 관리 우위 — 6경기 중 교체 합산이 프랑스보다 적음. <span class="grn">연장전에서 이탈리아가 유리.</span></div>
+    </div>
+    <div class="cond-card">
+      <div class="cc-num">조건 2</div>
+      <div class="cc-text"><span class="hl">이모빌레 또는 키에사</span> 단 한 번 역습 성공. 테오 에르난데스의 오버랩 후 빈 공간이 <span class="hl">이탈리아 최대 공격 통로</span>. 키에사의 스피드 + 이모빌레의 위치 선정이 결합하면 위험.</div>
+    </div>
+    <div class="cond-card">
+      <div class="cc-num">조건 3</div>
+      <div class="cc-text"><span class="hl">바렐라가 카마빙가 완전 봉쇄.</span> 카마빙가가 창의적 공간을 만들지 못하면 그리즈만 공급이 차단. <span class="warn">음바페 고립</span> → 이탈리아 수비 블록 유지. 바렐라의 이 대회 활동 범위: 최상위.</div>
+    </div>
+  </div>
+
+  <div class="prob-bar-row">
+    <div class="pb-label">이탈리아 역전 확률 (<span class="warn">3조건 모두 충족 시</span>)</div>
+    <div class="prob-bar"><div class="fill-red" style="width:34%"></div></div>
+    <div class="pb-pct">34%</div>
+  </div>
+
+  <div class="prob-bar-row" style="margin-bottom:16px;">
+    <div class="pb-label" style="color:rgba(96,165,250,0.7);">프랑스 우승 확률 (AI 기본 시나리오)</div>
+    <div class="prob-bar"><div class="fill-blue" style="width:66%"></div></div>
+    <div class="pb-pct" style="color:#60a5fa;">66%</div>
+  </div>
+
+  <div class="italy-history">
+    🏆 이탈리아 월드컵 결승 기록: <span class="hl">4회 진출 · 3회 우승</span> (1934, 1938, 1982, 2006). 역사는 이들 편입니다.
+    하지만 AI는 <span class="warn">이탈리아 역대 3번의 우승 패턴</span>에서 공통점을 찾습니다 — 모두 수비 결정력 + 상대 수비 실수. 음바페가 <span class="grn">그 실수를 유발하는 선수</span>입니다. AI 최종 픽: 프랑스.
+  </div>
+</div>
+
+<!-- ════ SLIDE 5 · VERDICT ════ -->
+<div class="slide" id="slide-5">
+  <div class="ep-label">EP·19 · WORLDCUP-2026-DAILY</div>
+  <div class="slide-num">05 / 05</div>
+  <div class="ai-badge">CLAUDE AI</div>
+
+  <div class="verdict-label">AI VERDICT · EP19 · 결승 D-3 최종 픽</div>
+  <div class="verdict-title">
+    AI 챔피언 픽 — <span class="pick-gold">🇫🇷 프랑스 2–1 이탈리아</span>
+  </div>
+
+  <div class="picks-grid">
+    <div class="pick-card">
+      <div class="pc-id">3위 결정전 · 07-18 · Santa Clara</div>
+      <div class="pc-match">🇧🇷 브라질 <span class="vs">vs</span> 네덜란드 🇳🇱</div>
+      <div class="pc-score">2 – 1</div>
+      <div class="pc-conf">신뢰도 65% · 비니시우스 리덤프션 · 06:00 KST</div>
+    </div>
+    <div class="pick-card final-card">
+      <div class="pc-id">결승 · 07-19 · MetLife Stadium</div>
+      <div class="pc-match">🇫🇷 프랑스 <span class="vs">vs</span> 이탈리아 🇮🇹</div>
+      <div class="pc-score">2 – 1 🏆</div>
+      <div class="pc-conf">신뢰도 58% · EP1부터 변하지 않은 픽</div>
+    </div>
+    <div class="pick-card" style="background:rgba(251,113,133,0.04);border-color:rgba(251,113,133,0.25);">
+      <div class="pc-id" style="color:rgba(251,113,133,0.7);">이탈리아 역전 조건</div>
+      <div class="pc-match" style="font-size:22px;">무실점 7경기 + 역습 + 바렐라 봉쇄</div>
+      <div class="pc-score" style="color:#fb7185;font-size:38px;animation:pulseRed 3s ease-in-out infinite;">34%</div>
+      <div class="pc-conf">세 조건 모두 충족 시 이탈리아 우세</div>
+    </div>
+    <div class="pick-card" style="background:rgba(201,162,39,0.03);border-color:rgba(201,162,39,0.2);">
+      <div class="pc-id" style="color:rgba(201,162,39,0.6);">우승팀 AI 선언</div>
+      <div class="pc-match" style="font-size:36px;">🇫🇷 프랑스 · 음바페</div>
+      <div class="pc-score" style="color:#c9a227;animation:pulseGold 3s ease-in-out infinite;">CHAMPION</div>
+      <div class="pc-conf">대회 8골 · EP1 선언 유지</div>
+    </div>
+  </div>
+
+  <div class="verdict-footer">
+    <div class="acc-chip-v">
+      <div class="num">27/30</div>
+      <div class="lbl">누적 적중</div>
+    </div>
+    <div class="acc-chip-v">
+      <div class="num" style="color:#c9a227;">90.0%</div>
+      <div class="lbl">시리즈 최고</div>
+    </div>
+    <div class="champion-line">
+      이탈리아 역전 확률 <span class="hl">34%</span>를 인정하지만 — <span class="hl">66%는 프랑스</span>, 음바페.
+      3위 결정전 + 결승 결과 리뷰 + 최종 정확도 → <span class="bl">EP20</span>
+    </div>
+    <div class="next-ep-badge">EP·20 → 결승 리뷰</div>
+  </div>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+
+  function showSlide(n) {
+    slides.forEach(s => s.classList.remove('active'));
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+  }
+
+  window.goToSlide = showSlide;
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') showSlide(current + 1);
+    if (e.key === 'ArrowLeft') showSlide(current - 1);
+  });
+</script>
+</body>
+</html>
