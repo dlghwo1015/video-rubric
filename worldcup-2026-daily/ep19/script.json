@@ -1,0 +1,96 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 19,
+  "date": "2026-07-16",
+  "title_ko": "2026-07-16 결승 D-3! 프랑스 vs 이탈리아 전술 완전 해부 + 이탈리아 역전 시나리오",
+  "title_ja": "2026-07-16 決勝D-3！フランスvsイタリア戦術完全解剖＋イタリア逆転シナリオ",
+  "title_en": "2026-07-16 Final D-3! France vs Italy Full Tactical Breakdown + Italy Upset Scenario",
+  "korea_match": false,
+  "rest_day": true,
+  "matches_today": [],
+  "yesterday_results": [],
+  "upcoming_matches": [
+    {
+      "match_id": "3RD",
+      "date": "2026-07-18",
+      "team_a": "Brazil",
+      "team_b": "Netherlands",
+      "venue": "Levi's Stadium, Santa Clara",
+      "kickoff_kst": "06:00",
+      "ai_pred_a": 2,
+      "ai_pred_b": 1,
+      "ai_winner": "Brazil",
+      "confidence": 65,
+      "key_battle": "Vinícius Jr vs Dumfries"
+    },
+    {
+      "match_id": "FINAL",
+      "date": "2026-07-19",
+      "team_a": "France",
+      "team_b": "Italy",
+      "venue": "MetLife Stadium, East Rutherford",
+      "kickoff_kst": "09:00",
+      "ai_pred_a": 2,
+      "ai_pred_b": 1,
+      "ai_winner": "France",
+      "confidence": 58,
+      "key_battle": "Mbappé vs Di Lorenzo",
+      "scenario": "Mbappé 65' → Barella 78' equaliser → France winner 103' AET",
+      "historical_ref": "Euro 2000 Final: France 2-1 Italy (golden goal)"
+    }
+  ],
+  "cumulative_accuracy": {
+    "correct": 27,
+    "total": 30,
+    "pct": 90.0
+  },
+  "final_projection": {
+    "final_match": "France vs Italy",
+    "tournament_winner": "France",
+    "champion_pick_since": "EP01"
+  },
+  "tactical_analysis": {
+    "france_formation": "4-2-3-1",
+    "italy_formation": "4-3-3 defensive",
+    "france_mechanism": "Griezmann pulls midfield block → left channel opens → Mbappé",
+    "italy_upset_conditions": [
+      "7th consecutive clean sheet maintained",
+      "One Immobile/Chiesa counter-attack lands",
+      "Barella completely suppresses Camavinga"
+    ],
+    "italy_upset_probability": 34,
+    "mbappe_scores_first_prob": 55
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "2026년 7월 16일. 결승 3일 전. 오늘 경기는 없습니다. 하지만 메트라이프 스타디움이 가까워지고 있습니다. 프랑스 대 이탈리아 — 이 시리즈 EP1에서부터 AI가 예측한 결승 대진. 그리고 우승 팀: 프랑스. EP19는 이 예측을 뒷받침하는 전술의 해부입니다. 음바페가 이탈리아의 6경기 무실점 장벽을 어떻게 깨는가. 프랑스가 이기는 메커니즘과 이탈리아가 역전할 수 있는 세 가지 조건을 동시에 분석합니다. AI의 결승 예측 — D-3.",
+      "narration_ja": "2026年7月16日。決勝3日前。今日試合はありません。しかしメットライフスタジアムが近づいています。フランス対イタリア — このシリーズEP1からAIが予測した決勝の組み合わせ。そして優勝チーム：フランス。EP19はこの予測を裏付ける戦術の解剖です。エムバペがイタリアの6試合無失点の壁をどう崩すか。フランスが勝つメカニズムとイタリアが逆転できる3つの条件を同時に分析します。AIの決勝予測 — D-3。",
+      "narration_en": "July 16, 2026. Three days to the Final. No match today. But MetLife Stadium is closing in. France versus Italy — the Final this AI called from Episode 1. And the tournament winner: France. EP19 is the tactical anatomy behind that prediction. How Mbappé breaks through Italy's six-match clean-sheet wall. The mechanism that wins it for France, and the three conditions under which Italy could still pull off the upset. AI's Final prediction — D-3."
+    },
+    {
+      "id": "s02_journey",
+      "narration": "이 시리즈는 30경기를 예측했습니다. 27개 적중. 정확도 90.0%. 그 여정을 돌아봅니다. EP1에서 AI가 선언했습니다 — 결승은 프랑스 대 이탈리아, 우승은 프랑스. 18개 에피소드와 30경기 뒤 그 예측은 현실이 됐습니다. 음바페는 이 대회 8골 — 골든부트 유력. 이탈리아는 무실점 수비 6경기 — 이 대회 역대 최고 기록. 두 팀 모두 AI가 처음부터 결승에 올 것이라고 예측했습니다. 이제 남은 질문 하나 — 누가 우승하는가. AI의 답은 EP1부터 변하지 않았습니다: 프랑스.",
+      "narration_ja": "このシリーズは30試合を予測しました。27個的中。正確度90.0%。その旅を振り返ります。EP1でAIが宣言しました — 決勝はフランス対イタリア、優勝はフランス。18エピソードと30試合後、その予測は現実になりました。エムバペはこの大会8ゴール — ゴールデンブーツ有力。イタリアは無失点守備6試合 — この大会史上最高記録。両チームともAIが最初から決勝に来ると予測しました。今残る質問一つ — 誰が優勝するか。AIの答えはEP1から変わっていません：フランス。",
+      "narration_en": "This series predicted 30 matches. 27 correct. 90.0% accuracy. A retrospective on the journey. In Episode 1, the AI declared: the Final is France versus Italy, and the winner is France. Eighteen episodes and thirty matches later, the prediction is real. Mbappé: eight goals in this tournament — the Golden Boot frontrunner. Italy: six matches, zero goals conceded — the best clean-sheet run in the history of this competition. Both teams were in the AI's Final from Day 1. One question remains: who wins? AI's answer has not changed since Episode 1: France."
+    },
+    {
+      "id": "s03_france_tactics",
+      "narration": "프랑스의 공격 메커니즘. 포메이션: 4-2-3-1. 핵심 원리는 하나 — 음바페를 위한 공간 창출. 그리즈만이 10번 포지션에서 이탈리아 미드필더를 끌어당기면 음바페의 왼쪽 채널이 열립니다. 테오 에르난데스가 왼쪽 풀백에서 오버랩하면 디 로렌초가 끌려나오고 — 그 공간에 음바페가 침투합니다. AI 분석: 이 메커니즘이 발동되는 빈도는 경기당 평균 8회. 이탈리아 대응 수단은 바렐라가 그리즈만 연결을 차단하는 것. 그러나 음바페가 이 대회에서 8번의 결정적 순간을 단 한 번의 기회로 마무리해 온 것처럼 — 결승에서도 그 한 번이 옵니다. AI 음바페 선제골 확률: 55%.",
+      "narration_ja": "フランスの攻撃メカニズム。フォーメーション：4-2-3-1。核心原理は一つ — エムバペのためのスペース創出。グリーズマンが10番ポジションでイタリアのミッドフィールダーを引きつければエムバペの左チャンネルが開きます。テオ・エルナンデスが左サイドバックからオーバーラップするとディ・ロレンツォが引き出され — そのスペースにエムバペが侵入します。AI分析：このメカニズムが発動する頻度は試合あたり平均8回。イタリアの対応手段はバレッラがグリーズマンのつなぎを遮断すること。しかしエムバペがこの大会で8回の決定的瞬間を一度のチャンスで決めてきたように — 決勝でもその一回が来ます。AIエムバペ先制ゴール確率：55%。",
+      "narration_en": "France's attacking mechanism. Formation: 4-2-3-1. One core principle — creating space for Mbappé. Griezmann pulls Italy's midfield block as the No.10, opening the left channel. Théo Hernández's overlapping runs force Di Lorenzo off his mark — Mbappé penetrates the space. AI analysis: this mechanism fires an average of eight times per match. Italy's counter — Barella cuts Griezmann's supply line. But Mbappé has converted eight decisive moments in this tournament from a single window of opportunity. The Final gives him one more. AI probability Mbappé scores first: 55%."
+    },
+    {
+      "id": "s04_italy_upset",
+      "narration": "이탈리아가 이기는 세 가지 조건. 조건 1: 무실점 수비 7번째 경기 달성. 이탈리아가 실점하지 않으면 프랑스는 연장전으로 끌립니다 — 이탈리아는 체력 관리에서 우위를 점합니다. 조건 2: 이모빌레 또는 키에사의 단 한 번 역습 성공. 테오 에르난데스의 오버랩 후 빈 공간이 이탈리아의 가장 위험한 공격 통로입니다. 조건 3: 바렐라가 카마빙가를 완전 봉쇄. 카마빙가가 창의적 공간을 만들지 못하면 그리즈만의 공급이 끊기고 음바페가 고립됩니다. AI 계산: 세 조건 모두 충족될 확률 34%. 이탈리아는 역대 결승 4회 진출 중 3번 우승한 팀. 역사는 그들 편입니다. 그러나 AI의 픽은 프랑스.",
+      "narration_ja": "イタリアが勝つ3つの条件。条件1：無失点守備7試合目の達成。イタリアが失点しなければフランスは延長戦に引き込まれます — イタリアは体力管理で優位に立ちます。条件2：イモービレまたはキエーザのたった一度のカウンター成功。テオ・エルナンデスのオーバーラップ後の空いたスペースがイタリアの最も危険な攻撃ルートです。条件3：バレッラがカマヴィンガを完全封鎖。カマヴィンガが創造的スペースを作れなければグリーズマンの供給が断たれエムバペが孤立します。AI計算：3条件すべて充足の確率34%。イタリアは歴代決勝4回進出中3回優勝のチーム。歴史は彼らの味方です。しかしAIのピックはフランス。",
+      "narration_en": "The three conditions for Italy to win. Condition one: a seventh consecutive clean sheet. If Italy concede nothing, France go to extra time — and Italy's squad management gives them a fitness edge. Condition two: one successful Immobile or Chiesa counter-attack. The space Théo Hernández vacates on his overlaps is Italy's most dangerous attacking channel. Condition three: Barella completely suppresses Camavinga. Without Camavinga creating, Griezmann's supply drops and Mbappé gets isolated. AI probability all three conditions are met: 34%. Italy have reached the Final four times and won three. History is on their side. The AI pick is still France."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "EP19 AI 최종 픽. 3위 결정전 (7월 18일): 브라질 2-1 네덜란드, 신뢰도 65%. 결승 (7월 19일): 프랑스 2-1 이탈리아, 신뢰도 58%. 대회 우승: 프랑스. 이 시리즈에서 EP1부터 변하지 않은 단 하나의 상수. AI는 이탈리아의 34% 역전 확률을 인정합니다. 하지만 66% — 음바페와 프랑스가 이 대회를 마무리합니다. 7월 18일 3위 결정전, 7월 19일 결승 결과 확인과 이 시리즈 최종 정확도 집계는 EP20에서. 누적 27/30, 90.0%. D-3. 구독과 알림 설정 부탁드립니다.",
+      "narration_ja": "EP19 AI最終ピック。3位決定戦（7月18日）：ブラジル2-1オランダ、信頼度65%。決勝（7月19日）：フランス2-1イタリア、信頼度58%。大会優勝：フランス。このシリーズでEP1から変わらなかった唯一の定数。AIはイタリアの34%逆転確率を認めます。しかし66% — エムバペとフランスがこの大会を締めくくります。7月18日3位決定戦、7月19日決勝の結果確認とこのシリーズ最終正確度集計はEP20で。累計27/30、90.0%。D-3。チャンネル登録と通知設定をお願いします。",
+      "narration_en": "EP19 AI final picks. Third place, July 18th: Brazil 2–1 Netherlands, confidence 65%. Final, July 19th: France 2–1 Italy, confidence 58%. Tournament winner: France. The one constant that has not changed in this series since Episode 1. AI acknowledges Italy's 34% upset probability. But 66% — Mbappé and France close this tournament out. Third-place result, Final result, and this series' final accuracy tally — all in EP20. Running total 27 from 30, 90.0%. D-3. Subscribe and set the notification."
+    }
+  ]
+}
