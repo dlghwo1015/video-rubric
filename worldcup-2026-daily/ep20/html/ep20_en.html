@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>2026-07-18 3rd Place Result! Brazil 2–1 + Final AI Pick Tomorrow — EP20 | Daily World Cup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    background: #080c18;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  @keyframes pulseGold {
+    0%, 100% { text-shadow: 0 0 40px rgba(201,162,39,0.5); }
+    50%       { text-shadow: 0 0 100px rgba(201,162,39,1); }
+  }
+  @keyframes pulseGreen {
+    0%, 100% { text-shadow: 0 0 40px rgba(79,200,122,0.5); }
+    50%       { text-shadow: 0 0 90px rgba(79,200,122,1); }
+  }
+  @keyframes glowGold {
+    0%, 100% { box-shadow: 0 0 30px rgba(201,162,39,0.3); }
+    50%       { box-shadow: 0 0 90px rgba(201,162,39,0.7); }
+  }
+  @keyframes glowGreen {
+    0%, 100% { box-shadow: 0 0 20px rgba(79,200,122,0.2); }
+    50%       { box-shadow: 0 0 60px rgba(79,200,122,0.65); }
+  }
+
+  .ep-label {
+    position: absolute;
+    top: 36px; left: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(255,255,255,0.28);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .slide-num {
+    position: absolute;
+    top: 36px; right: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(255,255,255,0.28);
+    letter-spacing: 0.1em;
+  }
+  .ai-badge {
+    position: absolute;
+    bottom: 42px; right: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    color: rgba(100,200,255,0.55);
+    letter-spacing: 0.12em;
+  }
+
+  /* ════ S01 HOOK ════ */
+  #slide-1 {
+    background:
+      radial-gradient(ellipse 170% 120% at 50% 150%, rgba(79,200,122,0.12) 0%, transparent 52%),
+      radial-gradient(ellipse 60% 45% at 5% 5%, rgba(0,60,200,0.07) 0%, transparent 45%),
+      radial-gradient(ellipse 60% 45% at 95% 5%, rgba(201,162,39,0.07) 0%, transparent 45%),
+      #080c18;
+  }
+  #slide-1 .date-chip {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 24px;
+    color: rgba(79,200,122,0.85);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  #slide-1 .stage-chip {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  #slide-1 .hook-title {
+    font-size: 86px;
+    font-weight: 900;
+    color: #f0ede4;
+    text-align: center;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+    animation: pulseGreen 3.5s ease-in-out infinite;
+  }
+  #slide-1 .hook-title .acc-green { color: #4fc87a; }
+  #slide-1 .hook-title .acc-gold  { color: #c9a227; }
+
+  .result-hook-strip {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 24px;
+  }
+  .result-box-hook {
+    background: rgba(79,200,122,0.08);
+    border: 2px solid rgba(79,200,122,0.5);
+    border-radius: 20px;
+    padding: 18px 44px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    animation: glowGreen 4s ease-in-out infinite;
+  }
+  .result-box-hook .rbh-flag { font-size: 44px; line-height: 1; }
+  .result-box-hook .rbh-score {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 68px;
+    font-weight: 600;
+    color: #4fc87a;
+    line-height: 1;
+  }
+  .result-box-hook .rbh-dash {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 48px;
+    color: rgba(255,255,255,0.2);
+  }
+  .result-box-hook .rbh-name { font-size: 24px; font-weight: 700; color: #f0ede4; letter-spacing: -0.01em; }
+  .result-box-hook .rbh-correct {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    color: #4fc87a;
+    background: rgba(79,200,122,0.12);
+    border: 1px solid rgba(79,200,122,0.4);
+    border-radius: 10px;
+    padding: 6px 14px;
+  }
+
+  .countdown-final {
+    background: rgba(201,162,39,0.07);
+    border: 2px solid rgba(201,162,39,0.45);
+    border-radius: 18px;
+    padding: 14px 36px;
+    text-align: center;
+    animation: glowGold 4s ease-in-out infinite;
+  }
+  .countdown-final .cd-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    color: rgba(240,237,228,0.45);
+    letter-spacing: 0.12em;
+    margin-bottom: 4px;
+  }
+  .countdown-final .cd-match {
+    font-size: 26px;
+    font-weight: 700;
+    color: #c9a227;
+    animation: pulseGold 3s ease-in-out infinite;
+  }
+  .countdown-final .cd-sub {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 15px;
+    color: rgba(240,237,228,0.35);
+    margin-top: 4px;
+  }
+
+  .acc-strip-hook {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 16px 52px;
+  }
+  .acc-strip-hook .as-label { font-size: 22px; color: rgba(240,237,228,0.5); }
+  .acc-strip-hook .as-val {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 52px;
+    font-weight: 600;
+    color: #4fc87a;
+    animation: pulseGreen 3s ease-in-out infinite;
+  }
+  .acc-strip-hook .as-sub { font-size: 20px; color: rgba(240,237,228,0.35); }
+
+  /* ════ S02 RECAP ════ */
+  #slide-2 {
+    background:
+      radial-gradient(ellipse 120% 80% at 50% 110%, rgba(100,100,200,0.06) 0%, transparent 55%),
+      #07080f;
+    padding: 0 120px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .section-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(180,160,255,0.8);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-size: 52px;
+    font-weight: 700;
+    color: #f0ede4;
+    margin-bottom: 28px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .section-title .acc { color: #c9a227; }
+
+  .journey-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1680px;
+    margin-bottom: 24px;
+  }
+  .journey-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 18px;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .journey-card .jc-stage {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    color: rgba(201,162,39,0.7);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .journey-card .jc-num {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 56px;
+    font-weight: 600;
+    color: #f0ede4;
+    line-height: 1;
+  }
+  .journey-card .jc-sub { font-size: 17px; color: rgba(240,237,228,0.4); margin-top: 6px; }
+  .journey-card.highlight-card {
+    background: rgba(201,162,39,0.07);
+    border-color: rgba(201,162,39,0.4);
+    animation: glowGold 4s ease-in-out infinite;
+  }
+  .journey-card.highlight-card .jc-num { color: #c9a227; }
+
+  .narrative-block {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 22px 36px;
+    width: 100%;
+    max-width: 1680px;
+    font-size: 25px;
+    color: rgba(240,237,228,0.65);
+    line-height: 1.65;
+    letter-spacing: -0.01em;
+  }
+  .narrative-block .hl { color: #c9a227; font-weight: 600; }
+  .narrative-block .grn { color: #4fc87a; font-weight: 600; }
+
+  /* ════ S03 3RD PLACE RESULT ════ */
+  #slide-3 {
+    background:
+      radial-gradient(ellipse 130% 90% at 50% 125%, rgba(0,120,60,0.09) 0%, transparent 55%),
+      #060a10;
+    padding: 0 80px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .venue-strip {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 18px;
+  }
+  .venue-strip .vs-chip {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    color: rgba(240,237,228,0.4);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 6px 18px;
+    letter-spacing: 0.06em;
+  }
+  .result-header {
+    display: flex;
+    align-items: flex-end;
+    gap: 40px;
+    margin-bottom: 20px;
+  }
+  .result-header .matchup-big {
+    font-size: 68px;
+    font-weight: 900;
+    color: #f0ede4;
+    letter-spacing: -0.02em;
+  }
+  .result-header .matchup-big .vs { color: rgba(255,255,255,0.25); font-weight: 300; margin: 0 16px; }
+  .result-header .correct-badge {
+    background: rgba(79,200,122,0.12);
+    border: 2px solid rgba(79,200,122,0.5);
+    border-radius: 14px;
+    padding: 10px 24px;
+    margin-bottom: 8px;
+  }
+  .result-header .correct-badge .cb-pct {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 32px;
+    font-weight: 600;
+    color: #4fc87a;
+  }
+  .result-header .correct-badge .cb-lbl { font-size: 14px; color: rgba(240,237,228,0.4); }
+
+  .score-box-result {
+    background: rgba(79,200,122,0.08);
+    border: 3px solid rgba(79,200,122,0.55);
+    border-radius: 24px;
+    padding: 18px 52px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 20px;
+    animation: glowGreen 4s ease-in-out infinite;
+  }
+  .score-box-result .sb-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    min-width: 200px;
+  }
+  .score-box-result .sb-flag { font-size: 50px; }
+  .score-box-result .sb-name { font-size: 28px; font-weight: 700; color: #f0ede4; letter-spacing: -0.01em; }
+  .score-box-result .sb-tag {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px;
+    color: rgba(79,200,122,0.8);
+    letter-spacing: 0.08em;
+  }
+  .score-box-result .sb-score-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .score-box-result .sb-scores-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .score-box-result .sb-score {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 96px;
+    font-weight: 600;
+    color: #4fc87a;
+    line-height: 1;
+  }
+  .score-box-result .sb-dash {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 72px;
+    color: rgba(255,255,255,0.2);
+  }
+  .score-box-result .ai-match-tag {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 17px;
+    color: rgba(79,200,122,0.7);
+    background: rgba(79,200,122,0.08);
+    border: 1px solid rgba(79,200,122,0.3);
+    border-radius: 8px;
+    padding: 4px 14px;
+  }
+
+  .scorer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px;
+    width: 100%;
+    max-width: 1760px;
+  }
+  .scorer-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 16px;
+    padding: 18px 24px;
+  }
+  .scorer-card .sc-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px;
+    color: rgba(79,200,122,0.6);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .scorer-card .sc-name { font-size: 26px; font-weight: 700; color: #f0ede4; margin-bottom: 4px; letter-spacing: -0.01em; }
+  .scorer-card .sc-detail { font-size: 20px; color: rgba(240,237,228,0.5); }
+  .scorer-card .sc-detail .hl { color: #4fc87a; font-weight: 600; }
+  .scorer-card.dim-card .sc-label { color: rgba(180,180,180,0.5); }
+  .scorer-card.dim-card .sc-name { color: rgba(240,237,228,0.6); }
+
+  /* ════ S04 FINAL ════ */
+  #slide-4 {
+    background:
+      radial-gradient(ellipse 160% 110% at 50% 140%, rgba(201,162,39,0.11) 0%, transparent 52%),
+      radial-gradient(ellipse 60% 45% at 3% 3%, rgba(0,60,200,0.06) 0%, transparent 40%),
+      radial-gradient(ellipse 60% 45% at 97% 3%, rgba(200,60,40,0.06) 0%, transparent 40%),
+      #07050e;
+    padding: 0 80px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .pred-header {
+    display: flex;
+    align-items: flex-end;
+    gap: 36px;
+    margin-bottom: 20px;
+  }
+  .pred-header .matchup-big {
+    font-size: 68px;
+    font-weight: 900;
+    color: #f0ede4;
+    letter-spacing: -0.02em;
+  }
+  .pred-header .matchup-big .vs { color: rgba(255,255,255,0.25); font-weight: 300; margin: 0 14px; }
+  .pred-header .conf-badge {
+    background: rgba(201,162,39,0.08);
+    border: 2px solid rgba(201,162,39,0.5);
+    border-radius: 14px;
+    padding: 10px 24px;
+    margin-bottom: 8px;
+  }
+  .pred-header .conf-badge .cb-pct {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 32px;
+    font-weight: 600;
+    color: #c9a227;
+  }
+  .pred-header .conf-badge .cb-lbl { font-size: 13px; color: rgba(240,237,228,0.4); }
+
+  .score-box-final {
+    background: rgba(201,162,39,0.07);
+    border: 3px solid rgba(201,162,39,0.55);
+    border-radius: 24px;
+    padding: 18px 52px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 20px;
+    animation: glowGold 4s ease-in-out infinite;
+  }
+  .score-box-final .sb-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    min-width: 220px;
+  }
+  .score-box-final .sb-flag { font-size: 50px; }
+  .score-box-final .sb-name { font-size: 28px; font-weight: 700; color: #f0ede4; letter-spacing: -0.01em; }
+  .score-box-final .sb-score-block {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex: 1;
+    justify-content: center;
+  }
+  .score-box-final .sb-score {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 96px;
+    font-weight: 600;
+    color: #c9a227;
+    line-height: 1;
+    animation: pulseGold 3s ease-in-out infinite;
+  }
+  .score-box-final .sb-dash {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 72px;
+    color: rgba(255,255,255,0.2);
+  }
+  .score-box-final .sb-conf {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    color: rgba(201,162,39,0.6);
+    letter-spacing: 0.1em;
+    flex-shrink: 0;
+  }
+
+  .analysis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    width: 100%;
+    max-width: 1760px;
+    margin-bottom: 18px;
+  }
+  .analysis-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 18px;
+    padding: 20px 26px;
+  }
+  .analysis-card .ac-title {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    color: rgba(201,162,39,0.7);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .analysis-card .ac-body { font-size: 21px; color: rgba(240,237,228,0.7); line-height: 1.55; letter-spacing: -0.01em; }
+  .analysis-card .ac-body .hl { color: #c9a227; font-weight: 600; }
+  .analysis-card .ac-body .red { color: #fb7185; font-weight: 600; }
+
+  .key-variable-strip {
+    background: rgba(251,113,133,0.06);
+    border: 1px solid rgba(251,113,133,0.3);
+    border-radius: 14px;
+    padding: 16px 30px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+    max-width: 1760px;
+  }
+  .key-variable-strip .kv-icon { font-size: 34px; flex-shrink: 0; }
+  .key-variable-strip .kv-text { font-size: 21px; color: rgba(240,237,228,0.65); flex: 1; letter-spacing: -0.01em; }
+  .key-variable-strip .kv-text .hl { color: #fb7185; font-weight: 600; }
+
+  /* ════ S05 VERDICT ════ */
+  #slide-5 {
+    background:
+      radial-gradient(ellipse 200% 140% at 50% 160%, rgba(201,162,39,0.12) 0%, transparent 50%),
+      #060810;
+    padding: 0 100px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  #slide-5 .verdict-title {
+    font-size: 60px;
+    font-weight: 900;
+    color: #f0ede4;
+    margin-bottom: 28px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  #slide-5 .verdict-title .acc { color: #c9a227; animation: pulseGold 3s ease-in-out infinite; }
+  #slide-5 .verdict-title .grn { color: #4fc87a; }
+
+  .picks-table {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 1720px;
+    margin-bottom: 24px;
+  }
+  .pick-row {
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 18px;
+    padding: 18px 36px;
+    gap: 28px;
+  }
+  .pick-row.gold-row {
+    background: rgba(201,162,39,0.06);
+    border-color: rgba(201,162,39,0.4);
+    animation: glowGold 5s ease-in-out infinite;
+  }
+  .pick-row.correct-row {
+    background: rgba(79,200,122,0.05);
+    border-color: rgba(79,200,122,0.35);
+    animation: glowGreen 5s ease-in-out infinite;
+  }
+  .pick-row .pr-date {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    color: rgba(240,237,228,0.4);
+    flex-shrink: 0;
+    width: 120px;
+  }
+  .pick-row .pr-match { font-size: 30px; font-weight: 700; color: #f0ede4; flex: 1; letter-spacing: -0.01em; }
+  .pick-row .pr-match .vs { color: rgba(255,255,255,0.25); font-weight: 300; margin: 0 8px; }
+  .pick-row .pr-score {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 48px;
+    font-weight: 600;
+    color: #4fc87a;
+    flex-shrink: 0;
+    min-width: 120px;
+    text-align: center;
+  }
+  .pick-row.gold-row .pr-score { color: #c9a227; }
+  .pick-row .pr-conf {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    color: rgba(240,237,228,0.35);
+    flex-shrink: 0;
+    width: 90px;
+    text-align: right;
+  }
+  .pick-row .pr-result-tag {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    color: #4fc87a;
+    background: rgba(79,200,122,0.1);
+    border: 1px solid rgba(79,200,122,0.35);
+    border-radius: 8px;
+    padding: 4px 12px;
+    flex-shrink: 0;
+  }
+
+  .champion-block {
+    background: rgba(201,162,39,0.08);
+    border: 2px solid rgba(201,162,39,0.5);
+    border-radius: 20px;
+    padding: 20px 44px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    width: 100%;
+    max-width: 1720px;
+    animation: glowGold 3.5s ease-in-out infinite;
+    margin-bottom: 18px;
+  }
+  .champion-block .champ-icon { font-size: 50px; flex-shrink: 0; }
+  .champion-block .champ-text { font-size: 28px; color: rgba(240,237,228,0.75); flex: 1; letter-spacing: -0.01em; }
+  .champion-block .champ-text .hl { color: #c9a227; font-weight: 700; }
+  .champion-block .champ-since {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 17px;
+    color: rgba(201,162,39,0.5);
+    flex-shrink: 0;
+    letter-spacing: 0.08em;
+  }
+
+  .acc-final-bar {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 16px 36px;
+    width: 100%;
+    max-width: 1720px;
+  }
+  .acc-final-bar .afb-label { font-size: 21px; color: rgba(240,237,228,0.45); }
+  .acc-final-bar .afb-val {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 54px;
+    font-weight: 600;
+    color: #4fc87a;
+    animation: pulseGreen 3s ease-in-out infinite;
+  }
+  .acc-final-bar .afb-frac {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 24px;
+    color: rgba(240,237,228,0.35);
+  }
+  .acc-final-bar .afb-proj {
+    margin-left: auto;
+    font-size: 19px;
+    color: rgba(240,237,228,0.4);
+    text-align: right;
+    line-height: 1.55;
+  }
+  .acc-final-bar .afb-proj .hl { color: #c9a227; font-weight: 600; }
+
+  /* NAV */
+  .nav-dots {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+  }
+  .nav-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .nav-dot.active { background: #c9a227; transform: scale(1.3); }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: HOOK -->
+<div class="slide active" id="slide-1">
+  <div class="ep-label">EP20 · Daily World Cup</div>
+  <div class="slide-num">01 / 05</div>
+  <div class="ai-badge">AI ANALYSIS · 2026-07-18</div>
+
+  <div class="date-chip">2026 · 07 · 18 · 3RD PLACE COMPLETE</div>
+  <div class="stage-chip">WORLD CUP 2026 · 3RD PLACE RESULT + FINAL D-1</div>
+
+  <div class="hook-title"><span class="acc-green">AI Called It.</span> Brazil 2–1 Netherlands<br>Tomorrow: <span class="acc-gold">France vs Italy</span> — The Final</div>
+
+  <div class="result-hook-strip">
+    <div class="result-box-hook">
+      <div class="rbh-flag">🇧🇷</div>
+      <div class="rbh-score">2</div>
+      <div class="rbh-dash">–</div>
+      <div class="rbh-score" style="color:rgba(79,200,122,0.45);">1</div>
+      <div class="rbh-flag">🇳🇱</div>
+      <div class="rbh-name" style="margin-left:8px;">Brazil 3rd</div>
+      <div class="rbh-correct">✓ AI CORRECT</div>
+    </div>
+    <div class="countdown-final">
+      <div class="cd-label">FINAL D-1</div>
+      <div class="cd-match">🇫🇷 France vs Italy 🇮🇹</div>
+      <div class="cd-sub">07/19 SUN · 09:00 KST · MetLife Stadium, East Rutherford</div>
+    </div>
+  </div>
+
+  <div class="acc-strip-hook">
+    <div class="as-label">AI Running Accuracy</div>
+    <div class="as-val">90.3%</div>
+    <div class="as-sub">28 from 31 · Champion pick France held since EP01</div>
+  </div>
+</div>
+
+<!-- SLIDE 2: TOURNAMENT RECAP -->
+<div class="slide" id="slide-2">
+  <div class="ep-label">EP20 · Daily World Cup</div>
+  <div class="slide-num">02 / 05</div>
+  <div class="ai-badge">AI ANALYSIS · 2026-07-18</div>
+
+  <div class="section-label" style="color:rgba(180,160,255,0.8);">Tournament Recap · THE ROAD HERE</div>
+  <div class="section-title">72 matches done — <span class="acc">One</span> match left</div>
+
+  <div class="journey-grid">
+    <div class="journey-card">
+      <div class="jc-stage">Group Stage</div>
+      <div class="jc-num">48</div>
+      <div class="jc-sub">matches done</div>
+    </div>
+    <div class="journey-card">
+      <div class="jc-stage">R16 · QF · SF</div>
+      <div class="jc-num">24</div>
+      <div class="jc-sub">matches done</div>
+    </div>
+    <div class="journey-card">
+      <div class="jc-stage">Today — 3rd Place</div>
+      <div class="jc-num">1</div>
+      <div class="jc-sub">BRA 2–1 NED ✓</div>
+    </div>
+    <div class="journey-card highlight-card">
+      <div class="jc-stage">Tomorrow — Final</div>
+      <div class="jc-num">1</div>
+      <div class="jc-sub">FRA vs ITA</div>
+    </div>
+  </div>
+
+  <div class="narrative-block">
+    July 17 was a full rest day — no matches. 48 teams entered June 11. <span class="hl">74 total matches</span>. <span class="grn">73 now complete</span>.<br>
+    France beat Brazil 3–1 in the semi-final on an Mbappé hat-trick. Italy shut out Netherlands 1–0 to advance. The World Cup Final is tomorrow, 09:00 KST.
+  </div>
+</div>
+
+<!-- SLIDE 3: 3RD PLACE RESULT -->
+<div class="slide" id="slide-3">
+  <div class="ep-label">EP20 · Daily World Cup</div>
+  <div class="slide-num">03 / 05</div>
+  <div class="ai-badge">AI ANALYSIS · 2026-07-18</div>
+
+  <div class="section-label" style="color:rgba(100,220,140,0.8);">3rd Place Result Review · MATCH RECAP</div>
+
+  <div class="venue-strip">
+    <div class="vs-chip">2026-07-18 SAT</div>
+    <div class="vs-chip">05:00 KST</div>
+    <div class="vs-chip">Levi's Stadium · Santa Clara</div>
+    <div class="vs-chip" style="color:#4fc87a; border-color:rgba(79,200,122,0.3);">✓ AI PREDICTION CORRECT</div>
+  </div>
+
+  <div class="result-header">
+    <div class="matchup-big">🇧🇷 Brazil <span class="vs">vs</span> Netherlands 🇳🇱</div>
+    <div class="correct-badge">
+      <div class="cb-pct">CORRECT</div>
+      <div class="cb-lbl">AI called it · 65% confidence</div>
+    </div>
+  </div>
+
+  <div class="score-box-result">
+    <div class="sb-team">
+      <div class="sb-flag">🇧🇷</div>
+      <div class="sb-name">Brazil</div>
+      <div class="sb-tag">AI WINNER ✓</div>
+    </div>
+    <div class="sb-score-block">
+      <div class="sb-scores-row">
+        <div class="sb-score">2</div>
+        <div class="sb-dash">–</div>
+        <div class="sb-score" style="color:rgba(79,200,122,0.45);">1</div>
+      </div>
+      <div class="ai-match-tag">AI predicted 2–1 · exact match</div>
+    </div>
+    <div class="sb-team">
+      <div class="sb-flag">🇳🇱</div>
+      <div class="sb-name">Netherlands</div>
+    </div>
+  </div>
+
+  <div class="scorer-grid">
+    <div class="scorer-card">
+      <div class="sc-label">🇧🇷 GOAL 1</div>
+      <div class="sc-name">Vinícius Jr.</div>
+      <div class="sc-detail"><span class="hl">23'</span> · Tournament goal 8 · Joint top scorer with Mbappé</div>
+    </div>
+    <div class="scorer-card">
+      <div class="sc-label">🇧🇷 GOAL 2</div>
+      <div class="sc-name">Rodrygo</div>
+      <div class="sc-detail"><span class="hl">67'</span> · Near-post header from corner · Sealed the win</div>
+    </div>
+    <div class="scorer-card dim-card">
+      <div class="sc-label">🇳🇱 GOAL 1</div>
+      <div class="sc-name">Gakpo</div>
+      <div class="sc-detail"><span class="hl">51'</span> · Long-range effort · Consolation only</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4: FINAL PREVIEW -->
+<div class="slide" id="slide-4">
+  <div class="ep-label">EP20 · Daily World Cup</div>
+  <div class="slide-num">04 / 05</div>
+  <div class="ai-badge">AI ANALYSIS · 2026-07-18</div>
+
+  <div class="section-label" style="color:rgba(201,162,39,0.85);">World Cup Final AI Pick · TOMORROW'S MATCH</div>
+
+  <div class="venue-strip">
+    <div class="vs-chip">2026-07-19 SUN</div>
+    <div class="vs-chip">09:00 KST</div>
+    <div class="vs-chip">MetLife Stadium · East Rutherford, NJ</div>
+  </div>
+
+  <div class="pred-header">
+    <div class="matchup-big">🇫🇷 France <span class="vs">vs</span> Italy 🇮🇹</div>
+    <div class="conf-badge">
+      <div class="cb-pct">58%</div>
+      <div class="cb-lbl">AI confidence (series low)</div>
+    </div>
+  </div>
+
+  <div class="score-box-final">
+    <div class="sb-team">
+      <div class="sb-flag">🇫🇷</div>
+      <div class="sb-name">France</div>
+    </div>
+    <div class="sb-score-block">
+      <div class="sb-score">2</div>
+      <div class="sb-dash">–</div>
+      <div class="sb-score" style="color:rgba(201,162,39,0.45);">1</div>
+    </div>
+    <div class="sb-team">
+      <div class="sb-flag">🇮🇹</div>
+      <div class="sb-name">Italy</div>
+    </div>
+    <div class="sb-conf">CONF 58%</div>
+  </div>
+
+  <div class="analysis-grid">
+    <div class="analysis-card">
+      <div class="ac-title">Why AI picks France</div>
+      <div class="ac-body"><span class="hl">Mbappé's</span> off-ball movement exploits Italy's right half-space during 3-5-2 transitions. Probability of France scoring within 30 minutes: <span class="hl">64%</span>. <span class="hl">8 goals</span> this tournament — joint top.</div>
+    </div>
+    <div class="analysis-card">
+      <div class="ac-title">Italy's threat</div>
+      <div class="ac-body"><span class="red">6 clean sheets</span> in 6 tournament matches. Not a statistical quirk — a tactical structure. Immobile's set-piece headers. The reason this is 58%, not higher.</div>
+    </div>
+  </div>
+
+  <div class="key-variable-strip">
+    <div class="kv-icon">⚠️</div>
+    <div class="kv-text">Key variable: if Italy keep a <span class="hl">clean sheet through 45 minutes</span>, every probability resets. The single reason AI assigned this its lowest confidence number of the series.</div>
+  </div>
+</div>
+
+<!-- SLIDE 5: VERDICT -->
+<div class="slide" id="slide-5">
+  <div class="ep-label">EP20 · Daily World Cup</div>
+  <div class="slide-num">05 / 05</div>
+  <div class="ai-badge">AI ANALYSIS · 2026-07-18</div>
+
+  <div class="section-label" style="color:rgba(201,162,39,0.85);">AI Final Pick · UPDATED VERDICT</div>
+  <div class="verdict-title"><span class="grn">28 from 31</span> — One match left. AI champion pick: <span class="acc">France</span></div>
+
+  <div class="picks-table">
+    <div class="pick-row correct-row">
+      <div class="pr-date">07/18</div>
+      <div class="pr-match">🇧🇷 Brazil <span class="vs">vs</span> Netherlands 🇳🇱</div>
+      <div class="pr-score">2–1</div>
+      <div class="pr-conf">65%</div>
+      <div class="pr-result-tag">✓ CORRECT</div>
+    </div>
+    <div class="pick-row gold-row">
+      <div class="pr-date">07/19</div>
+      <div class="pr-match">🇫🇷 France <span class="vs">vs</span> Italy 🇮🇹</div>
+      <div class="pr-score">2–1</div>
+      <div class="pr-conf">58%</div>
+    </div>
+  </div>
+
+  <div class="champion-block">
+    <div class="champ-icon">🏆</div>
+    <div class="champ-text">AI World Cup champion: <span class="hl">France</span> · Mbappé MVP · unchanged across all 20 episodes since EP01</div>
+    <div class="champ-since">SINCE EP01</div>
+  </div>
+
+  <div class="acc-final-bar">
+    <div class="afb-label">Running accuracy</div>
+    <div class="afb-val">90.3%</div>
+    <div class="afb-frac">28 / 31</div>
+    <div class="afb-proj">If France win: <span class="hl">90.6%</span> (29/32)<br>Final results review + full series retrospective — post-tournament</div>
+  </div>
+</div>
+
+<div class="nav-dots">
+  <div class="nav-dot active" onclick="showSlide(1)"></div>
+  <div class="nav-dot" onclick="showSlide(2)"></div>
+  <div class="nav-dot" onclick="showSlide(3)"></div>
+  <div class="nav-dot" onclick="showSlide(4)"></div>
+  <div class="nav-dot" onclick="showSlide(5)"></div>
+</div>
+
+<script>
+  var currentSlide = 1;
+  var totalSlides = 5;
+
+  function showSlide(n) {
+    var slides = document.querySelectorAll('.slide');
+    var dots = document.querySelectorAll('.nav-dot');
+    slides.forEach(function(s) { s.classList.remove('active'); });
+    dots.forEach(function(d) { d.classList.remove('active'); });
+    if (n < 1) n = totalSlides;
+    if (n > totalSlides) n = 1;
+    currentSlide = n;
+    document.getElementById('slide-' + n).classList.add('active');
+    dots[n - 1].classList.add('active');
+  }
+
+  window.goToSlide = showSlide;
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight' || e.key === ' ') showSlide(currentSlide + 1);
+    if (e.key === 'ArrowLeft') showSlide(currentSlide - 1);
+  });
+</script>
+</body>
+</html>

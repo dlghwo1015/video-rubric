@@ -1,0 +1,85 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 20,
+  "date": "2026-07-18",
+  "title_ko": "2026-07-18 3위 결정전 결과! 브라질 2-1 + 내일 결승 최종 AI 픽",
+  "title_ja": "2026-07-18 3位決定戦結果！ブラジル2-1＋明日決勝最終AIピック",
+  "title_en": "2026-07-18 3rd Place Result! Brazil 2–1 + Final AI Pick Tomorrow",
+  "korea_match": false,
+  "rest_day": false,
+  "matches_today": [
+    {
+      "match_id": "3RD",
+      "stage": "3rd Place",
+      "team_a": "Brazil",
+      "team_b": "Netherlands",
+      "date": "2026-07-18",
+      "venue": "Levi's Stadium, Santa Clara",
+      "kickoff_kst": "05:00",
+      "result_a": 2,
+      "result_b": 1,
+      "ai_pred_a": 2,
+      "ai_pred_b": 1,
+      "ai_correct": true,
+      "scorers_a": ["Vinícius Jr. 23'", "Rodrygo 67'"],
+      "scorers_b": ["Gakpo 51'"]
+    }
+  ],
+  "upcoming_matches": [
+    {
+      "match_id": "FNL",
+      "stage": "Final",
+      "team_a": "France",
+      "team_b": "Italy",
+      "date": "2026-07-19",
+      "venue": "MetLife Stadium, East Rutherford",
+      "kickoff_kst": "09:00",
+      "ai_pred_a": 2,
+      "ai_pred_b": 1,
+      "ai_winner": "France",
+      "confidence": 58
+    }
+  ],
+  "cumulative_accuracy": {
+    "correct": 28,
+    "total": 31,
+    "pct": 90.3
+  },
+  "final_projection": {
+    "final_match": "France vs Italy",
+    "tournament_winner": "France",
+    "champion_pick_since": "EP01"
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "2026년 7월 18일. 3위 결정전 완료. AI 또 적중. 브라질 2-1 네덜란드. 비니시우스가 23분 선제골, 호드리구가 67분 쐐기. 네덜란드 가크포가 51분 한 골 만회했지만 역부족이었습니다. 현재 누적 정확도 28경기 중 31경기 적중, 90.3%. 내일 단 하나의 경기가 남았습니다. 메트라이프 스타디움 — 프랑스 대 이탈리아. 음바페의 마지막 무대. AI가 EP1부터 한 번도 바꾸지 않은 우승 픽이 내일 검증받습니다.",
+      "narration_ja": "2026年7月18日。3位決定戦完了。AIまた的中。ブラジル2-1オランダ。ヴィニシウスが23分に先制点、ホドリゴが67分に追加点。オランダのガクポが51分に1点返しましたが力及ばずでした。現在累計精度31試合中28試合的中、90.3%。明日、たった1試合が残っています。メットライフ・スタジアム — フランス対イタリア。エムバペの最後の舞台。AIがEP1から一度も変えなかった優勝ピックが明日検証されます。",
+      "narration_en": "July 18, 2026. Third place match: done. AI called it again. Brazil 2–1 Netherlands. Vinícius Jr. opened the scoring at 23 minutes, Rodrygo sealed it at 67. Gakpo pulled one back for the Dutch at 51 — not enough. Running total: 28 from 31, 90.3%. One match remains. MetLife Stadium — France versus Italy. Mbappé's final stage. The World Cup champion pick AI locked in from Episode One gets its verdict tomorrow."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "7월 17일은 완전한 휴식일이었습니다. 이 대회의 마지막 침묵. 조별리그 개막인 6월 11일부터 총 74경기 일정 중 72경기가 끝났습니다. 어제 그 긴 여정의 마지막 휴지부였습니다. 오늘 아침 브라질이 3위를 확정지었고, 이제 남은 건 단 하나. 프랑스 대 이탈리아. 이 두 팀은 7월 12일 준결승에서 각각 네덜란드, 브라질을 꺾고 올라왔습니다. 프랑스는 음바페의 해트트릭으로 3-1, 이탈리아는 무실점 1-0으로 네덜란드를 잡았습니다.",
+      "narration_ja": "7月17日は完全な休息日でした。この大会の最後の沈黙。グループステージ開幕の6月11日から総74試合のスケジュールのうち72試合が終了しました。昨日はその長い旅の最後の休止点でした。今朝ブラジルが3位を確定し、残るのはたった一つ。フランス対イタリア。この両チームは7月12日の準決勝でそれぞれオランダ、ブラジルを破って勝ち上がりました。フランスはエムバペのハットトリックで3-1、イタリアは無失点で1-0オランダを倒しました。",
+      "narration_en": "July 17th was a full rest day — the tournament's last pause. Since the group stage opened on June 11th, 72 of 74 scheduled matches are done. Yesterday was the final breath before the ending. This morning Brazil claimed third. Tonight the bracket has one line left. France versus Italy. These two sides reached the final by beating Netherlands and Brazil respectively in the semi-finals on July 12th — France through an Mbappé hat-trick in a 3–1 win, Italy through a clean-sheet 1–0 over Netherlands."
+    },
+    {
+      "id": "s03_pred1",
+      "narration": "3위 결정전 리뷰. 브라질 2-1 네덜란드. AI 예측 완전 일치. 신뢰도 65%로 가장 높았던 경기가 예측대로 흘렀습니다. 비니시우스 주니오르. 전반 23분, 페널티 박스 왼쪽에서 네덜란드 수비를 홀로 제친 단독 돌파 후 오른발 슛. 이 대회 8번째 골. 음바페와 나란히 최다 득점 공동 1위로 마무리. 호드리구는 67분, 코너킥 상황에서 니어포스트 헤더로 2-0을 만들었습니다. 가크포는 51분 중거리 슛으로 한 골을 넣으며 자존심을 지켰지만 역전에는 실패. 브라질 3위 확정. 비니시우스는 사실상 이 대회 공동 최다 득점자로 기록됩니다.",
+      "narration_ja": "3位決定戦レビュー。ブラジル2-1オランダ。AI予測完全一致。信頼度65%で最も高かった試合が予測通りに流れました。ヴィニシウス・ジュニオール。前半23分、ペナルティボックス左からオランダ守備を一人でかわした単独突破後の右足シュート。この大会8ゴール目。エムバペと並んで最多得点共同1位でフィニッシュ。ホドリゴは67分、コーナーキックの場面でニアポストヘッダーで2-0にしました。ガクポは51分に中距離シュートで1ゴールを決め面目を保ちましたが逆転には失敗。ブラジル3位確定。ヴィニシウスはこの大会の事実上の共同最多得点者として記録されます。",
+      "narration_en": "Third place review: Brazil 2–1 Netherlands. AI call: exact. The 65%-confidence pick — highest confidence of any remaining match heading in — tracked perfectly. Vinícius Júnior at 23 minutes: isolated on the left edge of the penalty area, dropped shoulder past the Dutch centre-back, right-foot finish low to the keeper's right. Tournament goal number eight. He finishes level with Mbappé as the leading scorer. Rodrygo at 67: near-post header from a corner, 2–0. Gakpo's 51st-minute long-range effort — clean connection, good save beaten — gave the Dutch a consolation but never threatened the outcome. Brazil third. Vinícius closes the tournament as joint top scorer, and as the reason the AI's 65% wasn't higher — the only uncertainty was the scoreline, not the winner."
+    },
+    {
+      "id": "s04_pred2",
+      "narration": "내일 — 7월 19일 일요일. 09:00 KST. 메트라이프 스타디움. 프랑스 대 이탈리아. 이것이 2026 FIFA 월드컵의 마지막 경기입니다. AI 픽은 EP19에서 이미 확정됐습니다: 프랑스 2-1 이탈리아. 신뢰도 58%. 이 시리즈 전체에서 가장 낮은 신뢰도. 그 이유는 명확합니다 — 이탈리아의 6경기 무실점. AI가 이것을 통계적 노이즈로 처리하지 않습니다. 그러나 AI가 프랑스를 픽하는 결정적 이유도 하나입니다: 음바페의 오프더볼 움직임. 이탈리아의 고압 수비는 공 있는 곳을 좁히는 데 최적화돼 있습니다. 음바페는 공 없을 때 움직입니다. 3-5-2 전환 시 노출되는 우측 하프스페이스. 그 공간이 이 경기의 열쇠입니다. 키 변수: 이탈리아가 전반 무실점으로 막으면 확률이 재설정됩니다. AI 파이널 픽 유지: 프랑스 2-1 이탈리아.",
+      "narration_ja": "明日 — 7月19日日曜日。09:00 KST。メットライフ・スタジアム。フランス対イタリア。これが2026 FIFA ワールドカップの最後の試合です。AIピックはEP19で既に確定しました：フランス2-1イタリア。信頼度58%。このシリーズ全体で最も低い信頼度。その理由は明確です — イタリアの6試合無失点。AIはこれを統計的ノイズとして処理しません。しかしAIがフランスをピックする決定的理由も一つです：エムバペのオフ・ザ・ボールの動き。イタリアの高プレス守備はボールのある場所を狭めるのに最適化されています。エムバペはボールがないときに動きます。3-5-2転換時に露出する右ハーフスペース。そのスペースがこの試合の鍵です。キー変数：イタリアが前半無失点で抑えれば確率がリセットされます。AIファイナルピック維持：フランス2-1イタリア。",
+      "narration_en": "Tomorrow — Sunday July 19th. 09:00 KST. MetLife Stadium. France versus Italy. The last match of the 2026 FIFA World Cup. AI's pick was locked in EP19: France 2–1 Italy. Confidence 58% — the lowest number this series has produced. The reason is clear: Italy's six-match clean sheet. AI does not treat that as noise. But the factor that tips the read to France is equally specific: Mbappé's off-ball movement. Italy's high-press defence is calibrated to compress the space around the ball. Mbappé moves without it. The right half-space that opens when Italy's 3-5-2 shifts into transition — that is the crack in the wall. Key variable: if Italy keep a clean sheet through 45 minutes, every probability resets. AI final pick stands: France 2–1 Italy."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "누적 통계 업데이트. 31경기 28적중. 90.3%. 브라질 3위 결정전 적중으로 어제 90.0%에서 올랐습니다. 내일 프랑스가 우승하면: 29/32, 90.6%로 이 시리즈 종료. AI 우승 픽: 프랑스 — EP1부터 한 번도 바뀌지 않았습니다. 내일 09:00 KST 결승. 이 시리즈의 마지막 경기. 결과 리뷰와 시리즈 총결산은 결승 직후 최종 에피소드에서 공개됩니다. 오늘도 시청해주셔서 감사합니다. 내일 결승을 함께 지켜봐 주십시오.",
+      "narration_ja": "累計統計更新。31試合28的中。90.3%。ブラジル3位決定戦的中で昨日の90.0%から上がりました。明日フランスが優勝すれば：29/32、90.6%でこのシリーズ終了。AI優勝ピック：フランス — EP1から一度も変わりませんでした。明日09:00 KST決勝。このシリーズの最後の試合。結果レビューとシリーズ総決算は決勝直後の最終エピソードで公開されます。今日もご視聴いただきありがとうございます。明日の決勝をともにご覧ください。",
+      "narration_en": "Updated running total: 28 from 31. 90.3%. Up from 90.0% following today's Brazil call. If France win tomorrow: 29 from 32, 90.6% — the number AI projected in Episode One as the likely closing figure. World Cup champion pick: France. Unchanged since Episode One. Tomorrow, 09:00 KST, MetLife Stadium. The last match. The series' final results review and complete retrospective will drop immediately after the Final whistle. Thank you for watching. See you at the Final."
+    }
+  ]
+}
