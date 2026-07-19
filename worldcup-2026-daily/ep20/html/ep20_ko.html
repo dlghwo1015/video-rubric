@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>2026-07-19 결승 DAY! 프랑스 vs 이탈리아 — AI 최종 챔피언 픽 + 시리즈 총결산 — EP20 | 데일리 월드컵</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #080c18;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulseGold {
+    0%, 100% { text-shadow: 0 0 40px rgba(201,162,39,0.5); }
+    50%       { text-shadow: 0 0 120px rgba(201,162,39,1); }
+  }
+  @keyframes pulseBlue {
+    0%, 100% { text-shadow: 0 0 40px rgba(59,130,246,0.5); }
+    50%       { text-shadow: 0 0 90px rgba(59,130,246,1); }
+  }
+  @keyframes pulseGreen {
+    0%, 100% { text-shadow: 0 0 40px rgba(79,200,122,0.5); }
+    50%       { text-shadow: 0 0 90px rgba(79,200,122,1); }
+  }
+  @keyframes glowGold {
+    0%, 100% { box-shadow: 0 0 30px rgba(201,162,39,0.3); }
+    50%       { box-shadow: 0 0 90px rgba(201,162,39,0.7); }
+  }
+  @keyframes glowBlue {
+    0%, 100% { box-shadow: 0 0 24px rgba(59,130,246,0.25); }
+    50%       { box-shadow: 0 0 70px rgba(59,130,246,0.65); }
+  }
+  @keyframes glowGreen {
+    0%, 100% { box-shadow: 0 0 20px rgba(79,200,122,0.2); }
+    50%       { box-shadow: 0 0 60px rgba(79,200,122,0.65); }
+  }
+  @keyframes trophyPulse {
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 20px rgba(201,162,39,0.6)); }
+    50%       { transform: scale(1.06); filter: drop-shadow(0 0 50px rgba(201,162,39,1)); }
+  }
+  @keyframes shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+
+  .ep-label {
+    position: absolute;
+    top: 36px; left: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(255,255,255,0.28);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .finale-badge {
+    position: absolute;
+    top: 30px; left: 260px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px;
+    color: #c9a227;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    background: rgba(201,162,39,0.12);
+    border: 1px solid rgba(201,162,39,0.45);
+    border-radius: 8px;
+    padding: 5px 14px;
+  }
+  .slide-num {
+    position: absolute;
+    top: 36px; right: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(255,255,255,0.28);
+    letter-spacing: 0.1em;
+  }
+  .ai-badge {
+    position: absolute;
+    bottom: 42px; right: 56px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    color: rgba(100,200,255,0.55);
+    letter-spacing: 0.12em;
+  }
+
+  /* ════ S01 HOOK ════ */
+  #slide-1 {
+    background:
+      radial-gradient(ellipse 180% 130% at 50% 160%, rgba(201,162,39,0.18) 0%, transparent 52%),
+      radial-gradient(ellipse 60% 45% at 5% 5%, rgba(0,60,200,0.07) 0%, transparent 45%),
+      radial-gradient(ellipse 60% 45% at 95% 5%, rgba(200,60,40,0.07) 0%, transparent 45%),
+      #080c18;
+  }
+  #slide-1 .date-chip {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 24px;
+    color: rgba(201,162,39,0.9);
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  #slide-1 .stage-chip {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    color: rgba(255,255,255,0.38);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  #slide-1 .hook-title {
+    font-size: 100px;
+    font-weight: 900;
+    color: #f0ede4;
+    text-align: center;
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+    animation: pulseGold 3s ease-in-out infinite;
+  }
+  #slide-1 .hook-title .acc-gold { color: #c9a227; }
+  #slide-1 .hook-title .acc-blue { color: #60a5fa; }
+  #slide-1 .hook-title .acc-red  { color: #fb7185; }
+
+  .final-matchup-strip {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 26px;
+    background: rgba(201,162,39,0.06);
+    border: 2px solid rgba(201,162,39,0.5);
+    border-radius: 24px;
+    padding: 18px 64px;
+    animation: glowGold 3.5s ease-in-out infinite;
+  }
+  .final-matchup-strip .fm-flag { font-size: 60px; }
+  .final-matchup-strip .fm-name { font-size: 42px; font-weight: 800; color: #f0ede4; }
+  .final-matchup-strip .fm-vs {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 32px;
+    color: rgba(255,255,255,0.2);
+    margin: 0 8px;
+  }
+  .final-matchup-strip .fm-meta {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    color: rgba(201,162,39,0.6);
+    letter-spacing: 0.08em;
+  }
+
+  .acc-strip-hook {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 16px 52px;
+  }
+  .acc-strip-hook .as-label { font-size: 22px; color: rgba(240,237,228,0.5); }
+  .acc-strip-hook .as-val {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 52px;
+    font-weight: 600;
+    color: #c9a227;
+    animation: pulseGold 3s ease-in-out infinite;
+  }
+  .acc-strip-hook .as-sub { font-size: 20px; color: rgba(240,237,228,0.35); }
+
+  /* ════ S02 YESTERDAY 3RD PLACE ════ */
+  #slide-2 {
+    background:
+      radial-gradient(ellipse 120% 80% at 50% 110%, rgba(79,200,122,0.07) 0%, transparent 55%),
+      #07080f;
+    padding: 0 100px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  #slide-2 .section-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(100,220,140,0.8);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  #slide-2 .section-title {
+    font-size: 52px;
+    font-weight: 700;
+    color: #f0ede4;
+    margin-bottom: 28px;
+    line-height: 1.1;
+  }
+  #slide-2 .section-title .acc { color: #4fc87a; }
+
+  .result-card {
+    background: rgba(79,200,122,0.07);
+    border: 2px solid rgba(79,200,122,0.45);
+    border-radius: 24px;
+    padding: 28px 56px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1720px;
+    margin-bottom: 24px;
+    animation: glowGreen 4s ease-in-out infinite;
+  }
+  .result-card .rc-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    min-width: 220px;
+  }
+  .result-card .rc-flag { font-size: 56px; line-height: 1; }
+  .result-card .rc-name { font-size: 30px; font-weight: 700; color: #f0ede4; }
+  .result-card .rc-tag {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    color: rgba(79,200,122,0.8);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+  .result-card .rc-score-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .result-card .rc-scores {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .result-card .rc-score {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 96px;
+    font-weight: 600;
+    color: #4fc87a;
+    line-height: 1;
+  }
+  .result-card .rc-dash {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 72px;
+    color: rgba(255,255,255,0.2);
+  }
+  .result-card .rc-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    color: rgba(79,200,122,0.6);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .result-card .rc-conf {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 17px;
+    color: rgba(240,237,228,0.35);
+    flex-shrink: 0;
+  }
+
+  .factors-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1720px;
+  }
+  .factor-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 16px;
+    padding: 18px 24px;
+  }
+  .factor-card .fc-num {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    color: rgba(79,200,122,0.6);
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+  }
+  .factor-card .fc-title { font-size: 24px; font-weight: 700; color: #f0ede4; margin-bottom: 6px; }
+  .factor-card .fc-body { font-size: 20px; color: rgba(240,237,228,0.55); line-height: 1.5; }
+  .factor-card .fc-body .hl { color: #4fc87a; font-weight: 600; }
+
+  /* ════ S03 FINAL PREDICTION ════ */
+  #slide-3 {
+    background:
+      radial-gradient(ellipse 170% 120% at 50% 145%, rgba(201,162,39,0.14) 0%, transparent 52%),
+      radial-gradient(ellipse 60% 45% at 3% 3%, rgba(0,60,200,0.06) 0%, transparent 40%),
+      radial-gradient(ellipse 60% 45% at 97% 3%, rgba(200,60,40,0.06) 0%, transparent 40%),
+      #07050e;
+    padding: 0 80px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  #slide-3 .section-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(201,162,39,0.9);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .pred-header {
+    display: flex;
+    align-items: flex-end;
+    gap: 40px;
+    margin-bottom: 20px;
+  }
+  .pred-header .matchup-big {
+    font-size: 70px;
+    font-weight: 900;
+    color: #f0ede4;
+    letter-spacing: -0.02em;
+  }
+  .pred-header .matchup-big .vs { color: rgba(255,255,255,0.22); font-weight: 300; margin: 0 14px; }
+  .pred-header .conf-badge {
+    background: rgba(201,162,39,0.09);
+    border: 2px solid rgba(201,162,39,0.48);
+    border-radius: 14px;
+    padding: 10px 28px;
+    margin-bottom: 8px;
+  }
+  .pred-header .conf-badge .cb-pct {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 38px;
+    font-weight: 600;
+    color: #c9a227;
+  }
+  .pred-header .conf-badge .cb-lbl { font-size: 15px; color: rgba(240,237,228,0.4); }
+
+  .venue-strip {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 16px;
+  }
+  .venue-strip .vs-chip {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 17px;
+    color: rgba(240,237,228,0.4);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 6px 18px;
+    letter-spacing: 0.06em;
+  }
+
+  .score-box-final {
+    background: rgba(201,162,39,0.07);
+    border: 3px solid rgba(201,162,39,0.55);
+    border-radius: 24px;
+    padding: 20px 56px;
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    margin-bottom: 22px;
+    width: 100%;
+    max-width: 1760px;
+    animation: glowGold 4s ease-in-out infinite;
+  }
+  .score-box-final .sb-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    min-width: 230px;
+  }
+  .score-box-final .sb-flag { font-size: 52px; line-height: 1; }
+  .score-box-final .sb-name { font-size: 30px; font-weight: 700; color: #f0ede4; }
+  .score-box-final .sb-winner-tag {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    color: rgba(201,162,39,0.8);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .score-box-final .sb-score-block {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .score-box-final .sb-score {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 96px;
+    font-weight: 600;
+    color: #c9a227;
+    line-height: 1;
+    animation: pulseGold 3s ease-in-out infinite;
+  }
+  .score-box-final .sb-score.dim { color: rgba(201,162,39,0.4); animation: none; }
+  .score-box-final .sb-dash {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 72px;
+    color: rgba(255,255,255,0.2);
+  }
+
+  .analysis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 1760px;
+    margin-bottom: 18px;
+  }
+  .analysis-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 18px;
+    padding: 20px 28px;
+  }
+  .analysis-card .ac-title {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+    color: rgba(201,162,39,0.7);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .analysis-card .ac-body { font-size: 22px; color: rgba(240,237,228,0.7); line-height: 1.55; }
+  .analysis-card .ac-body .hl { color: #c9a227; font-weight: 600; }
+  .analysis-card .ac-body .red { color: #fb7185; font-weight: 600; }
+
+  .key-variable-strip {
+    background: rgba(251,113,133,0.06);
+    border: 1px solid rgba(251,113,133,0.3);
+    border-radius: 14px;
+    padding: 15px 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1760px;
+  }
+  .key-variable-strip .kv-icon { font-size: 34px; flex-shrink: 0; }
+  .key-variable-strip .kv-text { font-size: 22px; color: rgba(240,237,228,0.65); flex: 1; }
+  .key-variable-strip .kv-text .hl { color: #fb7185; font-weight: 600; }
+
+  /* ════ S04 RETROSPECTIVE ════ */
+  #slide-4 {
+    background:
+      radial-gradient(ellipse 130% 90% at 50% 115%, rgba(100,80,200,0.07) 0%, transparent 55%),
+      #07080f;
+    padding: 0 90px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  #slide-4 .section-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: rgba(180,160,255,0.85);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  #slide-4 .section-title {
+    font-size: 52px;
+    font-weight: 700;
+    color: #f0ede4;
+    margin-bottom: 28px;
+    line-height: 1.1;
+  }
+  #slide-4 .section-title .acc { color: #c9a227; }
+
+  .retro-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    width: 100%;
+    max-width: 1740px;
+    margin-bottom: 22px;
+  }
+  .retro-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 18px;
+    padding: 22px 28px;
+    text-align: center;
+  }
+  .retro-card .rc-stage {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 15px;
+    color: rgba(201,162,39,0.65);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .retro-card .rc-num {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 60px;
+    font-weight: 600;
+    color: #f0ede4;
+    line-height: 1;
+  }
+  .retro-card .rc-pct {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 24px;
+    color: #c9a227;
+    margin-top: 4px;
+  }
+  .retro-card .rc-sub { font-size: 17px; color: rgba(240,237,228,0.38); margin-top: 4px; }
+  .retro-card.highlight-card {
+    background: rgba(201,162,39,0.07);
+    border-color: rgba(201,162,39,0.4);
+    animation: glowGold 4s ease-in-out infinite;
+  }
+  .retro-card.highlight-card .rc-num { color: #c9a227; }
+
+  .ep1-pick-banner {
+    background: linear-gradient(135deg, rgba(201,162,39,0.1) 0%, rgba(201,162,39,0.04) 100%);
+    border: 2px solid rgba(201,162,39,0.5);
+    border-radius: 20px;
+    padding: 22px 48px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    width: 100%;
+    max-width: 1740px;
+    animation: glowGold 4s ease-in-out infinite;
+  }
+  .ep1-pick-banner .epb-icon { font-size: 44px; flex-shrink: 0; }
+  .ep1-pick-banner .epb-text { font-size: 28px; color: rgba(240,237,228,0.8); flex: 1; line-height: 1.5; }
+  .ep1-pick-banner .epb-text .hl { color: #c9a227; font-weight: 700; }
+  .ep1-pick-banner .epb-since {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    color: rgba(201,162,39,0.55);
+    flex-shrink: 0;
+    letter-spacing: 0.1em;
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  /* ════ S05 VERDICT ════ */
+  #slide-5 {
+    background:
+      radial-gradient(ellipse 210% 150% at 50% 170%, rgba(201,162,39,0.14) 0%, transparent 50%),
+      #060810;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .verdict-trophy { font-size: 80px; animation: trophyPulse 2.5s ease-in-out infinite; margin-bottom: 12px; }
+
+  #slide-5 .verdict-main {
+    font-size: 96px;
+    font-weight: 900;
+    color: #c9a227;
+    text-align: center;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    animation: pulseGold 3s ease-in-out infinite;
+    margin-bottom: 8px;
+  }
+  #slide-5 .verdict-sub {
+    font-size: 32px;
+    color: rgba(240,237,228,0.5);
+    text-align: center;
+    letter-spacing: 0.05em;
+    margin-bottom: 32px;
+  }
+
+  .final-picks-row {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 28px;
+    width: 100%;
+    max-width: 1500px;
+  }
+  .final-pick-card {
+    flex: 1;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 20px;
+    padding: 20px 36px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .final-pick-card.gold-card {
+    background: rgba(201,162,39,0.07);
+    border-color: rgba(201,162,39,0.45);
+    animation: glowGold 4.5s ease-in-out infinite;
+  }
+  .final-pick-card .fpc-date {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 17px;
+    color: rgba(240,237,228,0.35);
+    flex-shrink: 0;
+    min-width: 70px;
+  }
+  .final-pick-card .fpc-match { font-size: 28px; font-weight: 700; color: #f0ede4; flex: 1; }
+  .final-pick-card .fpc-match .vs { color: rgba(255,255,255,0.22); font-weight: 300; margin: 0 8px; }
+  .final-pick-card .fpc-score {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 42px;
+    font-weight: 600;
+    color: #4fc87a;
+    flex-shrink: 0;
+    min-width: 110px;
+    text-align: center;
+  }
+  .final-pick-card.gold-card .fpc-score { color: #c9a227; }
+  .final-pick-card .fpc-conf {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    color: rgba(240,237,228,0.3);
+    flex-shrink: 0;
+    width: 60px;
+    text-align: right;
+  }
+
+  .series-close-bar {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    background: rgba(201,162,39,0.06);
+    border: 2px solid rgba(201,162,39,0.4);
+    border-radius: 18px;
+    padding: 18px 48px;
+    width: 100%;
+    max-width: 1500px;
+    animation: glowGold 4s ease-in-out infinite;
+  }
+  .series-close-bar .scb-label { font-size: 22px; color: rgba(240,237,228,0.45); }
+  .series-close-bar .scb-val {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 60px;
+    font-weight: 600;
+    color: #c9a227;
+    animation: pulseGold 3s ease-in-out infinite;
+  }
+  .series-close-bar .scb-frac {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 28px;
+    color: rgba(240,237,228,0.3);
+  }
+  .series-close-bar .scb-right {
+    margin-left: auto;
+    text-align: right;
+  }
+  .series-close-bar .scb-right .scb-ep {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    color: rgba(201,162,39,0.5);
+    letter-spacing: 0.1em;
+  }
+  .series-close-bar .scb-right .scb-note {
+    font-size: 20px;
+    color: rgba(240,237,228,0.35);
+    margin-top: 4px;
+  }
+
+  /* NAV */
+  .nav-dots {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+  }
+  .nav-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .nav-dot.active { background: #c9a227; transform: scale(1.3); }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: HOOK -->
+<div class="slide active" id="slide-1">
+  <div class="ep-label">EP20 · 데일리 월드컵</div>
+  <div class="finale-badge">SERIES FINALE</div>
+  <div class="slide-num">01 / 05</div>
+  <div class="ai-badge">AI ANALYSIS · 2026-07-19</div>
+
+  <div class="date-chip">2026 · 07 · 19 · KST</div>
+  <div class="stage-chip">WORLD CUP 2026 · FINAL DAY · SERIES FINALE EP20</div>
+
+  <div class="hook-title">결승 <span class="acc-gold">DAY</span><br><span class="acc-blue">프랑스</span> <span style="color:rgba(255,255,255,0.2);font-weight:300;">vs</span> <span class="acc-red">이탈리아</span></div>
+
+  <div class="final-matchup-strip">
+    <div class="fm-flag">🇫🇷</div>
+    <div class="fm-name">프랑스</div>
+    <div class="fm-vs">VS</div>
+    <div class="fm-name">이탈리아</div>
+    <div class="fm-flag">🇮🇹</div>
+    <div style="margin-left:24px;">
+      <div class="fm-meta">09:00 KST · 메트라이프 스타디움</div>
+      <div class="fm-meta" style="color:rgba(201,162,39,0.4);">이스트 러더포드, 뉴저지</div>
+    </div>
+  </div>
+
+  <div class="acc-strip-hook">
+    <div class="as-label">AI 누적 정확도</div>
+    <div class="as-val">90.3%</div>
+    <div class="as-sub">28 / 31 경기 적중 · EP1 우승 픽: 프랑스 — 20편 유지</div>
+  </div>
+</div>
+
+<!-- SLIDE 2: YESTERDAY 3RD PLACE -->
+<div class="slide" id="slide-2">
+  <div class="ep-label">EP20 · 데일리 월드컵</div>
+  <div class="finale-badge">SERIES FINALE</div>
+  <div class="slide-num">02 / 05</div>
+  <div class="ai-badge">AI ANALYSIS · 2026-07-19</div>
+
+  <div class="section-label">어제 결과 · 3위 결정전 — 2026-07-18</div>
+  <div class="section-title">브라질, 네덜란드를 꺾고 <span class="acc">3위</span> 차지 — AI 예측 적중</div>
+
+  <div class="result-card">
+    <div class="rc-team">
+      <div class="rc-flag">🇧🇷</div>
+      <div class="rc-name">브라질</div>
+      <div class="rc-tag">AI WINNER ✓</div>
+    </div>
+    <div class="rc-score-block">
+      <div class="rc-scores">
+        <div class="rc-score">2</div>
+        <div class="rc-dash">–</div>
+        <div class="rc-score" style="color:rgba(79,200,122,0.4);">1</div>
+      </div>
+      <div class="rc-label">AI 예측: 브라질 2–1 · 신뢰도 65%</div>
+    </div>
+    <div class="rc-team">
+      <div class="rc-flag">🇳🇱</div>
+      <div class="rc-name">네덜란드</div>
+    </div>
+    <div class="rc-conf">CONF 65%</div>
+  </div>
+
+  <div class="factors-row">
+    <div class="factor-card">
+      <div class="fc-num">FACTOR 01</div>
+      <div class="fc-title">비니시우스 동기</div>
+      <div class="fc-body">준결승 패배 후 분노 상태. 3위전에서 <span class="hl">MVP 경쟁</span> 마지막 기회. 개인 명예전.</div>
+    </div>
+    <div class="factor-card">
+      <div class="fc-num">FACTOR 02</div>
+      <div class="fc-title">역대 통계</div>
+      <div class="fc-body">더 강한 우승 확률 팀이 3위전을 이긴 비율 <span class="hl">71%</span>. 브라질이 그 팀.</div>
+    </div>
+    <div class="factor-card">
+      <div class="fc-num">RESULT</div>
+      <div class="fc-title">누적 기록 갱신</div>
+      <div class="fc-body">적중으로 <span class="hl">28 / 31</span>, 정확도 <span class="hl">90.3%</span> 유지. 이제 결승만 남았습니다.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3: FINAL PREDICTION -->
+<div class="slide" id="slide-3">
+  <div class="ep-label">EP20 · 데일리 월드컵</div>
+  <div class="finale-badge">SERIES FINALE</div>
+  <div class="slide-num">03 / 05</div>
+  <div class="ai-badge">AI ANALYSIS · 2026-07-19</div>
+
+  <div class="section-label">2026 FIFA 월드컵 결승 · THE FINAL</div>
+
+  <div class="venue-strip">
+    <div class="vs-chip">2026-07-19 SUN</div>
+    <div class="vs-chip">09:00 KST</div>
+    <div class="vs-chip">메트라이프 스타디움 · 이스트 러더포드</div>
+  </div>
+
+  <div class="pred-header">
+    <div class="matchup-big">🇫🇷 프랑스 <span class="vs">vs</span> 이탈리아 🇮🇹</div>
+    <div class="conf-badge">
+      <div class="cb-pct">58%</div>
+      <div class="cb-lbl">AI 신뢰도 (시리즈 최저)</div>
+    </div>
+  </div>
+
+  <div class="score-box-final">
+    <div class="sb-team">
+      <div class="sb-flag">🇫🇷</div>
+      <div class="sb-name">프랑스</div>
+      <div class="sb-winner-tag">AI CHAMPION</div>
+    </div>
+    <div class="sb-score-block">
+      <div class="sb-score">2</div>
+      <div class="sb-dash">–</div>
+      <div class="sb-score dim">1</div>
+    </div>
+    <div class="sb-team">
+      <div class="sb-flag">🇮🇹</div>
+      <div class="sb-name">이탈리아</div>
+    </div>
+  </div>
+
+  <div class="analysis-grid">
+    <div class="analysis-card">
+      <div class="ac-title">프랑스를 픽하는 이유</div>
+      <div class="ac-body"><span class="hl">음바페</span>의 오프더볼 움직임은 이탈리아 3-5-2 전환 시 발생하는 측면 공간을 파고듭니다. 전반 30분 내 선제골 확률 <span class="hl">64%</span>. 이 대회 <span class="hl">7골</span>로 최다 득점.</div>
+    </div>
+    <div class="analysis-card">
+      <div class="ac-title">이탈리아의 변수</div>
+      <div class="ac-body">대회 <span class="red">6경기 무실점</span>. 통계적 이상치가 아닌 전술 구조. 이모빌레 세트피스, 측면 교체 선수의 돌파가 유일한 반격 루트.</div>
+    </div>
+  </div>
+
+  <div class="key-variable-strip">
+    <div class="kv-icon">⚠️</div>
+    <div class="kv-text">핵심 변수: 이탈리아가 전반 <span class="hl">무실점</span>으로 넘기면 모든 확률이 재설정됩니다. AI가 58%라는 이 시리즈 최저 신뢰도를 부여한 단 하나의 이유.</div>
+  </div>
+</div>
+
+<!-- SLIDE 4: SERIES RETROSPECTIVE -->
+<div class="slide" id="slide-4">
+  <div class="ep-label">EP20 · 데일리 월드컵</div>
+  <div class="finale-badge">SERIES FINALE</div>
+  <div class="slide-num">04 / 05</div>
+  <div class="ai-badge">AI ANALYSIS · 2026-07-19</div>
+
+  <div class="section-label">시리즈 총결산 · SERIES RETROSPECTIVE EP1 → EP20</div>
+  <div class="section-title">20편, <span class="acc">32예측</span> — 6월 15일부터 7월 19일까지</div>
+
+  <div class="retro-grid">
+    <div class="retro-card">
+      <div class="rc-stage">총 에피소드</div>
+      <div class="rc-num">20</div>
+      <div class="rc-sub">EP1 ~ EP20</div>
+    </div>
+    <div class="retro-card">
+      <div class="rc-stage">조별리그</div>
+      <div class="rc-num">13/15</div>
+      <div class="rc-pct">86.7%</div>
+      <div class="rc-sub">적중</div>
+    </div>
+    <div class="retro-card">
+      <div class="rc-stage">토너먼트</div>
+      <div class="rc-num">15/17</div>
+      <div class="rc-pct">88.2%</div>
+      <div class="rc-sub">적중</div>
+    </div>
+    <div class="retro-card highlight-card">
+      <div class="rc-stage">누적 정확도</div>
+      <div class="rc-num">90.3%</div>
+      <div class="rc-sub">28 / 31 경기</div>
+    </div>
+  </div>
+
+  <div class="ep1-pick-banner">
+    <div class="epb-icon">🏆</div>
+    <div class="epb-text">
+      EP1 (6월 15일)에서 48팀 중 <span class="hl">프랑스 vs 이탈리아</span>를 결승 대진으로 예측.<br>
+      20편 내내 우승 픽은 <span class="hl">프랑스</span> — 단 한 번도 바뀌지 않았습니다.
+    </div>
+    <div class="epb-since">
+      <div>CHAMPION PICK</div>
+      <div>SINCE EP01</div>
+      <div style="font-size:14px;margin-top:6px;">2026-06-15</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5: VERDICT -->
+<div class="slide" id="slide-5">
+  <div class="ep-label">EP20 · 데일리 월드컵</div>
+  <div class="finale-badge">SERIES FINALE</div>
+  <div class="slide-num">05 / 05</div>
+  <div class="ai-badge">AI ANALYSIS · 2026-07-19</div>
+
+  <div class="verdict-trophy">🏆</div>
+  <div class="verdict-main">AI 챔피언: 프랑스</div>
+  <div class="verdict-sub">EP1 → EP20 · 단 한 번도 바뀌지 않은 픽</div>
+
+  <div class="final-picks-row">
+    <div class="final-pick-card">
+      <div class="fpc-date">07/18</div>
+      <div class="fpc-match">🇧🇷 브라질 <span class="vs">vs</span> 네덜란드 🇳🇱</div>
+      <div class="fpc-score">2–1</div>
+      <div class="fpc-conf">65%</div>
+    </div>
+    <div class="final-pick-card gold-card">
+      <div class="fpc-date">07/19</div>
+      <div class="fpc-match">🇫🇷 프랑스 <span class="vs">vs</span> 이탈리아 🇮🇹</div>
+      <div class="fpc-score">2–1</div>
+      <div class="fpc-conf">58%</div>
+    </div>
+  </div>
+
+  <div class="series-close-bar">
+    <div class="scb-label">현재 정확도</div>
+    <div class="scb-val">90.3%</div>
+    <div class="scb-frac">28 / 31</div>
+    <div class="scb-right">
+      <div class="scb-ep">EP1 ~ EP20 · 35일간의 여정</div>
+      <div class="scb-note">결승 적중 시 → 29/32 (90.6%) 로 시리즈 마무리</div>
+    </div>
+  </div>
+</div>
+
+<div class="nav-dots">
+  <div class="nav-dot active" onclick="showSlide(1)"></div>
+  <div class="nav-dot" onclick="showSlide(2)"></div>
+  <div class="nav-dot" onclick="showSlide(3)"></div>
+  <div class="nav-dot" onclick="showSlide(4)"></div>
+  <div class="nav-dot" onclick="showSlide(5)"></div>
+</div>
+
+<script>
+  var currentSlide = 1;
+  var totalSlides = 5;
+
+  function showSlide(n) {
+    var slides = document.querySelectorAll('.slide');
+    var dots = document.querySelectorAll('.nav-dot');
+    slides.forEach(function(s) { s.classList.remove('active'); });
+    dots.forEach(function(d) { d.classList.remove('active'); });
+    if (n < 1) n = totalSlides;
+    if (n > totalSlides) n = 1;
+    currentSlide = n;
+    document.getElementById('slide-' + n).classList.add('active');
+    dots[n - 1].classList.add('active');
+  }
+
+  window.goToSlide = showSlide;
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight' || e.key === ' ') showSlide(currentSlide + 1);
+    if (e.key === 'ArrowLeft') showSlide(currentSlide - 1);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 20,
+  "date": "2026-07-19",
+  "title_ko": "2026-07-19 결승 DAY! 프랑스 vs 이탈리아 — AI 최종 챔피언 픽 + 시리즈 총결산",
+  "title_ja": "2026-07-19 決勝DAY！フランスvsイタリア — AI最終チャンピオンピック＋シリーズ総決算",
+  "title_en": "2026-07-19 FINAL DAY! France vs Italy — AI Ultimate Champion Pick + Series Retrospective",
+  "korea_match": false,
+  "rest_day": false,
+  "series_finale": true,
+  "matches_today": [
+    {
+      "match_id": "FNL",
+      "stage": "Final",
+      "team_a": "France",
+      "team_b": "Italy",
+      "date": "2026-07-19",
+      "venue": "MetLife Stadium, East Rutherford",
+      "kickoff_kst": "09:00",
+      "ai_pred_a": 2,
+      "ai_pred_b": 1,
+      "ai_winner": "France",
+      "confidence": 58
+    }
+  ],
+  "yesterday_results": [
+    {
+      "match_id": "3RD",
+      "stage": "3rd Place",
+      "team_a": "Brazil",
+      "team_b": "Netherlands",
+      "date": "2026-07-18",
+      "venue": "Levi's Stadium, Santa Clara",
+      "kickoff_kst": "05:00",
+      "ai_pred_a": 2,
+      "ai_pred_b": 1,
+      "ai_winner": "Brazil",
+      "confidence": 65
+    }
+  ],
+  "cumulative_accuracy": {
+    "correct": 28,
+    "total": 31,
+    "pct": 90.3
+  },
+  "final_projection": {
+    "final_match": "France vs Italy",
+    "tournament_winner": "France",
+    "champion_pick_since": "EP01"
+  },
+  "series_stats": {
+    "total_episodes": 20,
+    "total_predictions": 32,
+    "group_stage": { "correct": 13, "total": 15, "pct": 86.7 },
+    "knockout": { "correct": 15, "total": 17, "pct": 88.2 },
+    "champion_correct": "TBD"
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "2026년 7월 19일. 결승 DAY. 메트라이프 스타디움, 이스트 러더포드. 09:00 KST. 프랑스 대 이탈리아. EP1에서 처음 예측한 이 대진이 오늘 현실이 됩니다. 어제 3위 결정전에서 브라질이 네덜란드를 꺾으며 AI 예측이 또 한 번 적중했습니다. 현재 AI 누적 정확도 90.3% — 31경기 중 28경기. 오늘 이 시리즈 마지막 예측입니다. EP20, 시리즈 파이널.",
+      "narration_ja": "2026年7月19日。決勝DAY。メットライフ・スタジアム、イースト・ラザフォード。09:00 KST。フランス対イタリア。EP1で最初に予測したこの対戦が今日現実になります。昨日の3位決定戦でブラジルがオランダを下し、AI予測がまたも的中しました。現在のAI累計精度90.3% — 31試合中28試合。今日がこのシリーズ最後の予測です。EP20、シリーズファイナル。",
+      "narration_en": "July 19, 2026. Final Day. MetLife Stadium, East Rutherford. 09:00 KST. France versus Italy. The exact final AI called from Episode One is now happening. Yesterday, Brazil defeated Netherlands in the third-place match — another correct AI prediction. Cumulative accuracy now sits at 90.3% — 28 from 31 matches. Today is the last prediction in this series. Episode 20. Series finale."
+    },
+    {
+      "id": "s02_yesterday",
+      "narration": "어제 7월 18일 3위 결정전 — 브라질 대 네덜란드. AI 예측: 브라질 2-1 네덜란드, 신뢰도 65%. 비니시우스의 동기, 네덜란드의 심리적 피로, 역대 통계 71%를 근거로 브라질을 픽했습니다. 브라질이 승리하며 예측 적중. 이로써 누적 28승 31예측, 정확도 90.3%. 이 시리즈에서 3위 결정전은 유일하게 65% 신뢰도로 가장 낮은 편이었지만 결과는 정확했습니다.",
+      "narration_ja": "昨日7月18日の3位決定戦 — ブラジル対オランダ。AI予測：ブラジル2-1オランダ、信頼度65%。ヴィニシウスのモチベーション、オランダの心理的疲弊、歴代統計71%を根拠にブラジルをピック。ブラジルが勝利し予測的中。これで累計28勝31予測、精度90.3%。このシリーズで3位決定戦は65%と比較的低い信頼度でしたが結果は正確でした。",
+      "narration_en": "Yesterday, July 18th. Third place — Brazil versus Netherlands. AI prediction: Brazil 2–1 Netherlands, 65% confidence. The call was built on Vinícius Júnior's motivation, Netherlands' psychological fatigue, and the 71% historical base rate for higher-seeded semi-final losers. Brazil won. Prediction correct. Cumulative record: 28 from 31, 90.3%. The third-place confidence was the second-lowest in the series at 65%, but the result held."
+    },
+    {
+      "id": "s03_pred1",
+      "narration": "결승 — 프랑스 대 이탈리아. AI 예측: 프랑스 2-1 이탈리아. 신뢰도 58% — 시리즈 최저. 그 이유는 명확합니다. 이탈리아는 이 대회 6경기 무실점. 어떤 AI 모델도 이것을 노이즈로 처리하지 않습니다. 하지만 AI가 프랑스를 픽하는 결정적 이유: 음바페의 오프더볼 움직임. 이탈리아가 3-5-2 블록을 설정하면 전환 시 발생하는 측면 공간을 음바페가 정확히 파고듭니다. 전반 30분 내 선제골 확률 64%. 이탈리아의 반격 루트는 이모빌레 세트피스와 교체 선수의 측면 돌파. AI 파이널 챔피언: 프랑스. 음바페 MVP.",
+      "narration_ja": "決勝 — フランス対イタリア。AI予測：フランス2-1イタリア。信頼度58% — シリーズ最低。その理由は明確です。イタリアはこの大会6試合無失点。どのAIモデルもこれをノイズとして処理しません。しかしAIがフランスをピックする決定的理由：エムバペのオフ・ザ・ボールの動き。イタリアが3-5-2ブロックを設定すると、転換時に発生するサイドスペースにエムバペが正確に走り込みます。前半30分以内の先制ゴール確率64%。イタリアの反撃ルートはイモービレのセットプレーと交代選手のサイド突破。AIファイナルチャンピオン：フランス。エムバペMVP。",
+      "narration_en": "The Final — France versus Italy. AI prediction: France 2–1 Italy. Confidence: 58% — the lowest in the series. The reason is simple: Italy's zero goals conceded across six tournament matches. No AI model discounts that. But the decisive reason AI calls France: Mbappé's off-ball movement. When Italy sets their 3-to-5-2 block, the space that opens on the flanks during transition is exactly where Mbappé arrives. Probability of a France goal within 30 minutes: 64%. Italy's only counter-route: Immobile at set-pieces and late substitutes on the wings. AI Final Champion: France. Mbappé: tournament MVP."
+    },
+    {
+      "id": "s04_pred2",
+      "narration": "시리즈 총결산. 2026년 6월 15일 EP1부터 오늘 EP20까지. 20편, 32예측. 조별리그 15경기 중 13경기 적중 (86.7%). 토너먼트 17경기 중 15경기 적중 (88.2%). 오늘 결승까지 포함 시 최종 누적: 29/32, 90.6% 예상. EP1 우승 예측 — 프랑스. 20편 내내 단 한 번도 바뀌지 않았습니다. 이 시리즈의 가장 큰 성과: EP1에서 48팀 중 프랑스와 이탈리아를 결승 대진으로 예측했고, 그것이 현실이 됐습니다.",
+      "narration_ja": "シリーズ総決算。2026年6月15日EP1から今日EP20まで。20話、32予測。グループステージ15試合中13試合的中（86.7%）。トーナメント17試合中15試合的中（88.2%）。今日の決勝まで含むと最終累計：29/32、90.6%予想。EP1優勝予測 — フランス。20話通して一度も変わりませんでした。このシリーズ最大の成果：EP1で48チーム中フランスとイタリアを決勝の顔合わせとして予測し、それが現実になりました。",
+      "narration_en": "Series retrospective. Episode 1, June 15th, 2026, through Episode 20 today. Twenty episodes. Thirty-two predictions. Group stage: 13 from 15, 86.7%. Knockout rounds: 15 from 17, 88.2%. With today's Final included, projected series close: 29 from 32, 90.6%. The EP1 champion pick — France — has not changed across all twenty episodes. The series' defining call: from 48 teams, AI named France and Italy as the final two on Day One of this series. That call is now on the pitch."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "오늘의 AI 최종 픽. 결승 (7월 19일 일, 09:00 KST): 프랑스 2-1 이탈리아, 신뢰도 58%. AI 월드컵 2026 챔피언: 프랑스. EP1부터 EP20, 단 한 번도 바뀌지 않은 픽입니다. 현재 누적 28/31, 90.3%. 오늘 결승이 끝나면 시리즈 완결. 20편 동안 함께해주셔서 감사합니다. 구독과 알림 설정으로 결승 결과를 놓치지 마세요.",
+      "narration_ja": "今日のAI最終ピック。決勝（7月19日日曜日、09:00 KST）：フランス2-1イタリア、信頼度58%。AIワールドカップ2026チャンピオン：フランス。EP1からEP20、一度も変わらなかったピックです。現在の累計28/31、90.3%。今日の決勝が終われば、シリーズ完結。20話にわたりご視聴いただきありがとうございました。チャンネル登録と通知設定で決勝結果をお見逃しなく。",
+      "narration_en": "Today's AI final pick. The Final — Sunday, July 19th, 09:00 KST: France 2–1 Italy, confidence 58%. AI World Cup 2026 champion: France. That pick has not moved from Episode 1 through Episode 20. Current record: 28 from 31, 90.3%. When the Final whistle blows today, this series closes. Twenty episodes. Thank you for following along. Subscribe and set the notification bell — do not miss the final score and series closing numbers."
+    }
+  ]
+}
