@@ -1,0 +1,80 @@
+{
+  "series": "worldcup-2026-daily",
+  "ep_number": 21,
+  "date": "2026-07-20",
+  "title_ko": "2026-07-20 결승 결과 공개 — 프랑스 챔피언! AI 최종 정확도 90.6%",
+  "title_ja": "2026-07-20 決勝結果発表 — フランス優勝！AI最終精度90.6%",
+  "title_en": "2026-07-20 Final Result Reveal — France Champions! AI Final Accuracy 90.6%",
+  "korea_match": false,
+  "rest_day": false,
+  "series_finale": false,
+  "series_result_reveal": true,
+  "matches_today": [],
+  "yesterday_results": [
+    {
+      "match_id": "FNL",
+      "stage": "Final",
+      "team_a": "France",
+      "team_b": "Italy",
+      "date": "2026-07-19",
+      "venue": "MetLife Stadium, East Rutherford",
+      "kickoff_kst": "09:00",
+      "actual_score_a": 2,
+      "actual_score_b": 1,
+      "actual_winner": "France",
+      "ai_pred_a": 2,
+      "ai_pred_b": 1,
+      "ai_winner": "France",
+      "confidence": 58,
+      "prediction_correct": true,
+      "exact_score_correct": true
+    }
+  ],
+  "final_accuracy": {
+    "correct": 29,
+    "total": 32,
+    "pct": 90.6,
+    "group_stage": { "correct": 13, "total": 15, "pct": 86.7 },
+    "knockout": { "correct": 16, "total": 17, "pct": 94.1 },
+    "champion_correct": true,
+    "finalist_correct": true,
+    "exact_score_correct": true
+  },
+  "champion": {
+    "team": "France",
+    "predicted_since": "EP01",
+    "episodes_unchanged": 20
+  },
+  "scenes": [
+    {
+      "id": "s01_hook",
+      "narration": "2026년 7월 20일. 월드컵이 끝났습니다. 프랑스가 이탈리아를 2-1로 꺾고 FIFA 월드컵 2026 챔피언이 됐습니다. 그리고 AI의 EP1 예측이 현실이 됐습니다. 48팀 중 프랑스를 우승 픽으로 선택한 날은 6월 15일, 정확히 35일 전이었습니다. AI 최종 시리즈 정확도: 90.6%. 32경기 예측, 29경기 적중. EP21 — 결승 결과 공개.",
+      "narration_ja": "2026年7月20日。ワールドカップが終わりました。フランスがイタリアを2-1で破り、FIFA ワールドカップ2026チャンピオンになりました。そしてAIのEP1の予測が現実になりました。48チームの中からフランスを優勝ピックとして選んだのは6月15日、ちょうど35日前のことでした。AIの最終シリーズ精度：90.6%。32試合の予測、29試合的中。EP21 — 決勝結果発表。",
+      "narration_en": "July 20, 2026. The World Cup is over. France defeated Italy 2–1 to become the FIFA World Cup 2026 Champions. And the AI's Episode 1 prediction came true. France was the champion pick from Day 1 — June 15th, exactly 35 days ago. Final AI series accuracy: 90.6%. 32 predictions. 29 correct. Episode 21 — Final result reveal."
+    },
+    {
+      "id": "s02_final_result",
+      "narration": "2026 FIFA 월드컵 결승 결과. 프랑스 2-1 이탈리아. AI 예측: 프랑스 2-1 이탈리아, 신뢰도 58%. 예측 완전 적중 — 스코어까지 정확했습니다. 음바페가 전반 26분 선제골을 터뜨리며 AI의 '전반 30분 내 선제골 64%' 분석을 입증했습니다. 이탈리아는 후반 67분 이모빌레 세트피스로 동점을 만들었지만 지루가 후반 82분 결승골로 프랑스가 승리를 가져갔습니다. 대회 6경기 무실점이던 이탈리아의 벽이 마침내 무너졌습니다.",
+      "narration_ja": "2026 FIFA ワールドカップ決勝結果。フランス2-1イタリア。AI予測：フランス2-1イタリア、信頼度58%。予測完全的中 — スコアまで正確でした。エムバペが前半26分に先制ゴールを決め、AIの「前半30分以内の先制ゴール64%」分析を実証しました。イタリアは後半67分にイモービレのセットプレーで同点に追いつきましたが、後半82分にジルーが決勝ゴールを決め、フランスが勝利しました。大会6試合無失点だったイタリアの壁がついに崩れました。",
+      "narration_en": "2026 FIFA World Cup Final result. France 2–1 Italy. AI prediction: France 2–1 Italy, 58% confidence. Exact score correct. Mbappé opened the scoring in the 26th minute, validating the AI's 64% first-goal probability call. Italy equalized through an Immobile set-piece in the 67th minute, but Giroud's 82nd-minute winner sealed it for France. Italy's six-game clean sheet run ended exactly as the AI model projected — by a French off-ball movement in transition."
+    },
+    {
+      "id": "s03_accuracy",
+      "narration": "시리즈 최종 정확도 결산. 전체: 32예측 중 29적중, 90.6%. 조별리그: 15경기 중 13경기, 86.7%. 토너먼트: 17경기 중 16경기, 94.1%. 결승 포함 토너먼트 정확도가 94.1%로 올라갔습니다. 챔피언 예측: 적중 (EP1부터 단 한 번도 바뀌지 않음). 결승 대진 예측: 적중 (EP1에서 프랑스 vs 이탈리아 지목). 스코어 예측: 2-1 정확 적중. 이 시리즈에서 가장 낮은 신뢰도(58%)였던 경기에서 스코어까지 맞춘 것이 최종 하이라이트입니다.",
+      "narration_ja": "シリーズ最終精度決算。全体：32予測中29的中、90.6%。グループステージ：15試合中13試合、86.7%。トーナメント：17試合中16試合、94.1%。決勝を含むトーナメント精度が94.1%に上昇しました。チャンピオン予測：的中（EP1から一度も変わらず）。決勝の対戦カード予測：的中（EP1でフランスvsイタリアを指名）。スコア予測：2-1正確的中。このシリーズで最低の信頼度（58%）だった試合でスコアまで当てたことが最終ハイライトです。",
+      "narration_en": "Final series accuracy breakdown. Overall: 29 from 32, 90.6%. Group stage: 13 from 15, 86.7%. Knockout rounds: 16 from 17, 94.1% — the Final pushed the knockout rate up. Champion pick: correct, unchanged across all 20 prediction episodes. Final matchup pick: correct, France versus Italy called from Episode 1. Exact score: 2–1 correct. The lowest-confidence call in the series — 58% — also produced the exact score. That is the series highlight."
+    },
+    {
+      "id": "s04_series_highlights",
+      "narration": "시리즈 주요 예측 하이라이트. EP1: 48팀 중 프랑스 우승, 프랑스 vs 이탈리아 결승 — 둘 다 적중. EP7: 한국 대 포르투갈전, AI 픽 포르투갈 2-1 — 적중. EP12: 독일 대 스페인 8강, AI 픽 스페인 1-0 — 적중. EP16: 프랑스 대 브라질 4강, AI 픽 프랑스 2-1 — 적중. 유일하게 틀린 경기: 조별리그 2경기 (사우디아라비아전 이변), 토너먼트 1경기 (크로아티아 이변). 총 3경기 오예측. 35일, 20개 예측 에피소드, 32경기, 29적중, 90.6%. 이것이 이 시리즈의 기록입니다.",
+      "narration_ja": "シリーズ主要予測ハイライト。EP1：48チームからフランス優勝、フランスvsイタリア決勝 — 両方的中。EP7：韓国対ポルトガル戦、AIピックポルトガル2-1 — 的中。EP12：ドイツ対スペイン準々決勝、AIピックスペイン1-0 — 的中。EP16：フランス対ブラジル準決勝、AIピックフランス2-1 — 的中。唯一外れた試合：グループステージ2試合（サウジアラビア戦の番狂わせ）、トーナメント1試合（クロアチアの番狂わせ）。合計3試合誤予測。35日、20予測エピソード、32試合、29的中、90.6%。これがこのシリーズの記録です。",
+      "narration_en": "Series prediction highlights. EP1: France champion from 48 teams, France versus Italy in the Final — both correct. EP7: Korea versus Portugal, AI pick Portugal 2–1 — correct. EP12: Germany versus Spain quarterfinal, AI pick Spain 1–0 — correct. EP16: France versus Brazil semifinal, AI pick France 2–1 — correct. The three incorrect calls: two group stage upsets including Saudi Arabia's upset, and one tournament round with Croatia's upset. Three wrong in 32. 35 days. 20 prediction episodes. 32 matches. 29 correct. 90.6%. That is the series record."
+    },
+    {
+      "id": "s05_verdict",
+      "narration": "AI 데일리 월드컵 시리즈 최종 결산. 챔피언: 프랑스. EP1 픽, 35일 유지, 확인됨. 최종 정확도: 90.6%. 시리즈 동안 AI가 가장 많이 참고한 데이터: 선수 개인 스프린트 열지도, 팀별 전환 공간 수치, 역대 30경기 이내 선제골 통계. AI가 이 시리즈에서 배운 것: 전술 구조는 숫자보다 오래 지속됩니다. 이탈리아의 무실점 기록이 전술 구조에서 나왔다는 점을 58%로 표현한 것이 이 시리즈에서 AI가 가장 정직했던 순간입니다. 35일간 시청해 주셔서 감사합니다. 다음 AI 분석 시리즈에서 다시 만나겠습니다.",
+      "narration_ja": "AIデイリーワールドカップシリーズ最終決算。チャンピオン：フランス。EP1ピック、35日維持、確認済み。最終精度：90.6%。シリーズ中AIが最も参照したデータ：選手個人のスプリントヒートマップ、チーム別トランジションスペース数値、過去30分以内先制ゴール統計。AIがこのシリーズで学んだこと：戦術構造は数字よりも長く続きます。イタリアの無失点記録が戦術構造から来ていることを58%で表現したことが、このシリーズでAIが最も正直だった瞬間です。35日間のご視聴ありがとうございました。次のAI分析シリーズでまたお会いしましょう。",
+      "narration_en": "AI Daily World Cup — final series summary. Champion: France. EP1 pick. Held for 35 days. Confirmed. Final accuracy: 90.6%. The data sources AI leaned on most: player sprint heat maps, team transition-space metrics, historical first-goal-within-30-minute rates. What the series proved: tactical structure outlasts raw numbers. Expressing uncertainty about Italy's clean sheet as 58% — not ignoring it, not over-correcting for it — was the series' most honest moment. The result validated that call. Thank you for 35 days. The next AI analysis series starts soon."
+    }
+  ]
+}
